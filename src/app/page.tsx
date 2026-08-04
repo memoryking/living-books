@@ -5,8 +5,17 @@ const books = [
     id: "home-medicine",
     emoji: "💊",
     title: "가정에서 꼭 필요한 상비약과 사용법",
-    subtitle: "밤에 약국 문 닫았을 때 당황하지 않는 법",
+    subtitle: "유원소망약국 김약사가 친절하게 알려드립니다",
     tags: ["건강", "상비약", "응급처치"],
+    lastUpdated: "2026-08-05",
+    version: 2,
+  },
+  {
+    id: "pet-medicine",
+    emoji: "🐾",
+    title: "김약사가 알려주는 동물의약품",
+    subtitle: "우리 아이 약, 약국에서도 살 수 있어요",
+    tags: ["반려동물", "동물의약품", "강아지", "고양이"],
     lastUpdated: "2026-08-05",
     version: 1,
   },
@@ -17,10 +26,11 @@ export default function Home() {
     <main className="max-w-4xl mx-auto px-4 py-12">
       <header className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">살아있는 정보책</h1>
+        <p className="text-gray-500 dark:text-gray-400 mb-2">유원소망약국 김약사</p>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           교과서적인 딱딱한 정보가 아닌,<br />
           사람들이 <strong>진짜 궁금해하는 것들</strong>에 대한 시원한 답변.<br />
-          커뮤니티의 생생한 경험 + 전문가 검증 = 살아있는 정보.
+          커뮤니티의 생생한 경험 + 약사가 직접 검증 = 살아있는 정보.
         </p>
       </header>
 

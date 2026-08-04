@@ -1,0 +1,67 @@
+{
+  "bookId": "pet-medicine",
+  "title": "김약사가 알려주는 동물의약품",
+  "lastUpdated": "2026-08-05",
+  "searches": [
+    {
+      "date": "2026-08-05",
+      "query": "동물의약품 반려동물 약국 상비약",
+      "sources": [
+        {
+          "url": "https://www.hyunbulnews.com/news/articleView.html?idxno=500871",
+          "title": "동네약국 사용설명서 - 동물 의약품",
+          "type": "expert",
+          "summary": "약국 동물의약품 판매 법적 근거, 처방전 필요/불필요 의약품 구분, 구매 방법"
+        },
+        {
+          "url": "https://www.dailyvet.co.kr/news/policy/9236",
+          "title": "동물약국에서 처방전 없이 파는데 처방제 왜 하나 - 데일리벳",
+          "type": "expert",
+          "summary": "동물약국 처방제 현황과 205개 성분 지정 관리"
+        },
+        {
+          "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148939963",
+          "title": "동물용의약품의 약국 판매 제도 개선 추진 - 정책브리핑",
+          "type": "news",
+          "summary": "정부 동물약국 제도 개선 방향"
+        },
+        {
+          "url": "https://healingystory.com/entry/심장사상충약-종류-특징",
+          "title": "심장사상충약 종류, 특징 및 가격 정보",
+          "type": "expert",
+          "summary": "하트가드, 레볼루션, 애드보킷, 넥스가드 비교"
+        },
+        {
+          "url": "https://mypetlife.co.kr/39178/",
+          "title": "고양이 타이레놀 중독의 위험성 - 비마이펫",
+          "type": "expert",
+          "summary": "고양이 아세트아미노펜 극도로 민감, 소량으로 사망 가능"
+        },
+        {
+          "url": "https://www.dailyvet.co.kr/news/practice/companion-animal/37830",
+          "title": "반려동물에게 해로운 10가지 사람 약 - 데일리벳",
+          "type": "expert",
+          "summary": "타이레놀, 이부프로펜, 감기약 등 사람약의 동물 독성"
+        },
+        {
+          "url": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0002269866",
+          "title": "사람이 먹는 약 강아지에게 먹인다고? - 오마이뉴스",
+          "type": "news",
+          "summary": "사람약 임의 투여의 위험성 경고"
+        },
+        {
+          "url": "https://anipharm.net/mypetcolumn/32432",
+          "title": "반려동물과 보호자의 구충제 - 대한동물약국협회",
+          "type": "expert",
+          "summary": "동물약국에서 구충제 구매 안내"
+        },
+        {
+          "url": "https://mypetlife.co.kr/122302/",
+          "title": "강아지 영양제 추천 15가지 - 비마이펫",
+          "type": "expert",
+          "summary": "유산균, 오메가3, 관절 영양제 등 종류별 가이드"
+        }
+      ]
+    }
+  ]
+}
