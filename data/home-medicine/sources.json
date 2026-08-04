@@ -1,0 +1,67 @@
+{
+  "bookId": "home-medicine",
+  "title": "가정에서 꼭 필요한 상비약과 사용법",
+  "lastUpdated": "2026-08-05",
+  "searches": [
+    {
+      "date": "2026-08-05",
+      "query": "가정 상비약 필수 추천",
+      "sources": [
+        {
+          "url": "https://news.hidoc.co.kr/news/articleView.html?idxno=33466",
+          "title": "처방전 없이도 살 수 있는 필수 상비약 8가지 - 하이닥",
+          "type": "expert",
+          "summary": "약사 추천 필수 상비약 8종: 해열진통제, 소염진통제, 소화제, 지사제, 항히스타민제, 소독약, 위장약, 종합감기약"
+        },
+        {
+          "url": "https://v.daum.net/v/0yXTUVqynT?f=p",
+          "title": "전문 약사가 추천하는 가정용 필수 상비약",
+          "type": "expert",
+          "summary": "약사 권도영 추천: 파워콜, 큐어반H, 애니클렌액, 타이레놀, 이지엔애니, 바스포연고 + 추가 4종"
+        },
+        {
+          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=193405",
+          "title": "상비약 체크리스트 - 약사공론",
+          "type": "expert",
+          "summary": "약사 추천 10가지 체크리스트: 해열진통소염제, 소화제, 지사제, 감기약, 살균소독제, 상처연고, 드레싱, 모기기피제, 멀미약, 우황청심원"
+        },
+        {
+          "url": "https://www.fmkorea.com/best/10161873879",
+          "title": "약사 유튜버의 시청자 상비약 훈수두기 - 에펨코리아",
+          "type": "community",
+          "summary": "커뮤니티에서 화제된 약사 유튜버 상비약 리뷰 콘텐츠"
+        },
+        {
+          "url": "https://www.hankyung.com/article/2021042301821",
+          "title": "소화제 1,2위 다투는 훼스탈·베아제 차이 - 한국경제",
+          "type": "expert",
+          "summary": "육류 급체엔 베아제, 탄수화물이면 훼스탈"
+        },
+        {
+          "url": "https://doctornow.co.kr/content/qna/54583ab020d84972a3a1b387d6343b4a",
+          "title": "베아제와 훼스탈의 차이점 - 닥터나우",
+          "type": "expert",
+          "summary": "베아제: 소화불량/복부팽만, 훼스탈: 지방소화불량/과식"
+        },
+        {
+          "url": "https://blog.meditial.co.kr/전문가칼럼/타이레놀/",
+          "title": "타이레놀 vs 이부프로펜 비교 - 메디셜",
+          "type": "expert",
+          "summary": "타이레놀은 해열진통(위장부담 적음), 이부프로펜은 소염+진통(식후복용)"
+        },
+        {
+          "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148752949",
+          "title": "약국 문 닫아 밤새 끙끙 - 정책브리핑",
+          "type": "news",
+          "summary": "편의점 상비약 제도 안내, 야간 약국 찾는 법"
+        },
+        {
+          "url": "https://www.kpanews.co.kr/news/articleView.html?idxno=537511",
+          "title": "편의점약 511억8400만원 유통 - 약사공론",
+          "type": "expert",
+          "summary": "편의점 상비약 11종, 해열진통소염제 80% 차지, 2026년 20종 확대 추진"
+        }
+      ]
+    }
+  ]
+}
