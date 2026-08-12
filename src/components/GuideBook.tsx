@@ -65,7 +65,7 @@ function TTSButton({ items }: { items: TopItem[] }) {
 
       setCurrentIndex(index);
       const item = items[index];
-      const text = `${item.number}번째. ${item.title}. ${item.oneLiner}. 이런 상황에서 적용하세요. ${item.situation}. 실천 방법. ${item.action}`;
+      const text = `${item.number}번째. ${item.title}.`;
 
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = "ko-KR";
