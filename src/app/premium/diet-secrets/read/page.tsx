@@ -368,6 +368,318 @@ const sections: ContentSection[] = [
       </>
     ),
   },
+  {
+    id: "bonus1",
+    title: "🎁 보너스 1: 3주 벽 돌파 가이드",
+    body: (
+      <>
+        <p className="text-lg font-semibold mb-4">Day 15~21, 매일 구체적으로 무엇을 하면 되는지.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 15 (월) — 축소의 날</h3>
+        <p>모든 것을 절반으로 줄이세요. 운동 30분→15분, 완벽하지 않아도 OK. <strong>기록만 멈추지 마세요.</strong></p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 16 (화) — 이유를 기억하는 날</h3>
+        <p>&quot;내가 시작한 이유&quot;를 다시 읽으세요. 시작 전 사진을 보세요. 포기하면 돌아갈 곳을 기억하세요.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 17 (수) — 비상 식단의 날</h3>
+        <p>의지력 0일 때 먹을 <strong>비상 식단 5가지</strong>를 정하세요. 준비 10분 이내, 500kcal 이내.</p>
+        <div className="overflow-x-auto mt-3">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="bg-gray-100 dark:bg-gray-800"><th className="p-2 border">#</th><th className="p-2 border">메뉴</th><th className="p-2 border">시간</th><th className="p-2 border">kcal</th></tr></thead>
+            <tbody>
+              <tr><td className="p-2 border">1</td><td className="p-2 border">계란 2개 스크램블 + 통밀빵</td><td className="p-2 border">5분</td><td className="p-2 border">~350</td></tr>
+              <tr><td className="p-2 border">2</td><td className="p-2 border">참치캔 + 밥 반 공기 + 김</td><td className="p-2 border">3분</td><td className="p-2 border">~400</td></tr>
+              <tr><td className="p-2 border">3</td><td className="p-2 border">그릭 요거트 + 바나나 + 견과류</td><td className="p-2 border">2분</td><td className="p-2 border">~350</td></tr>
+              <tr><td className="p-2 border">4</td><td className="p-2 border">냉동 닭가슴살 + 샐러드</td><td className="p-2 border">7분</td><td className="p-2 border">~400</td></tr>
+              <tr><td className="p-2 border">5</td><td className="p-2 border">두부 반 모 + 간장 + 밥 반 공기</td><td className="p-2 border">5분</td><td className="p-2 border">~350</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 18 (목) — 작은 승리의 날</h3>
+        <p>&quot;아직 멀었어&quot; 대신 &quot;여기까지 왔다&quot;에 집중. 18일간의 작은 승리 3가지를 적어보세요.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 19 (금) — 계획된 유연성의 날</h3>
+        <p>오늘 저녁 1끼는 자유. 죄책감 없이 즐기세요. 먹은 후 30초 리셋.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 20 (토) — 움직임의 날</h3>
+        <p>&quot;운동&quot;이 아니라 즐거운 활동 1가지. 30분 산책, 자전거, 청소, 춤 — 뭐든 OK.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Day 21 (일) — 선언의 날</h3>
+        <p className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 italic">
+          &quot;나는 3주를 넘겼다. 완벽하지 않았지만, 멈추지 않았다. 이번이 마지막 다이어트다.&quot;
+        </p>
+        <p className="mt-3 font-semibold">3주를 넘긴 당신은 이미 상위 20%입니다. 80%는 여기서 포기했으니까요.</p>
+      </>
+    ),
+  },
+  {
+    id: "bonus2",
+    title: "🎁 보너스 2: 감정적 식사 탈출 매뉴얼",
+    body: (
+      <>
+        <h3 className="text-lg font-semibold mt-4 mb-3">도구 1: HALT 체크리스트</h3>
+        <p>갈망이 올 때 냉장고 문 앞에서 체크:</p>
+        <ul className="list-disc list-inside space-y-1 ml-4">
+          <li><strong>H</strong>ungry? — 진짜 배고픈가? → 맞으면 먹으세요</li>
+          <li><strong>A</strong>ngry/Anxious? — 화나거나 불안한가? → 5분 산책 또는 심호흡 5회</li>
+          <li><strong>L</strong>onely? — 외로운가? → 누군가에게 메시지</li>
+          <li><strong>T</strong>ired? — 피곤한가? → 물 한 잔 + 15분 휴식</li>
+        </ul>
+        <p className="mt-2 text-sm text-gray-500">이 체크리스트를 냉장고에 붙여두세요. 진짜로.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">도구 2: 5분 딜레이 기법</h3>
+        <p>감정적 갈망은 5~10분이면 피크가 지나갑니다. 타이머 5분 → 대체 행동 → 5분 후 재확인.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">도구 3: 대체 보상 메뉴 30가지 (일부)</h3>
+        <div className="grid md:grid-cols-2 gap-3 mt-3">
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-2">1분 이내</p>
+            <ul className="text-sm space-y-1">
+              <li>물 한 잔</li>
+              <li>심호흡 5회</li>
+              <li>좋아하는 노래 1곡</li>
+              <li>양치질</li>
+            </ul>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-2">5분 이내</p>
+            <ul className="text-sm space-y-1">
+              <li>짧은 스트레칭</li>
+              <li>좋아하는 사람에게 메시지</li>
+              <li>식물에 물 주기</li>
+              <li>일기 3줄 적기</li>
+            </ul>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-2">15분 이내</p>
+            <ul className="text-sm space-y-1">
+              <li>동네 산책</li>
+              <li>샤워하기</li>
+              <li>명상 앱 10분</li>
+              <li>청소 한 구역</li>
+            </ul>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-2">자기 돌봄</p>
+            <ul className="text-sm space-y-1">
+              <li>따뜻한 허브티</li>
+              <li>좋아하는 책 10분</li>
+              <li>친구에게 전화</li>
+              <li>팟캐스트 듣기</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">도구 4: 위기 순간 자기 대화</h3>
+        <div className="p-4 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
+          <p className="text-sm"><strong>1. 인정:</strong> &quot;갈망이 왔다. 이것은 정상이다.&quot;</p>
+          <p className="text-sm"><strong>2. 명명:</strong> &quot;이것은 배고픔이 아니라 [스트레스/지루함]이다.&quot;</p>
+          <p className="text-sm"><strong>3. 선택:</strong> &quot;5분만 기다려보자.&quot;</p>
+          <p className="text-sm"><strong>4. 결과:</strong> 지나갔으면 → &quot;잘했다.&quot; / 먹었으면 → &quot;괜찮다. 연습이다.&quot;</p>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: "bonus3",
+    title: "🎁 보너스 3: 회식·모임 서바이벌 카드",
+    body: (
+      <>
+        <h3 className="text-lg font-semibold mt-4 mb-3">원칙: &quot;다이어트 중&quot;이라고 말하지 않는다</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="bg-gray-100 dark:bg-gray-800"><th className="p-2 border">상황</th><th className="p-2 border">❌ 피할 말</th><th className="p-2 border">✅ 자연스러운 대안</th></tr></thead>
+            <tbody>
+              <tr><td className="p-2 border">음식 권유</td><td className="p-2 border">&quot;다이어트 중이라...&quot;</td><td className="p-2 border">&quot;지금은 배가 좀 불러서&quot;</td></tr>
+              <tr><td className="p-2 border">술 권유</td><td className="p-2 border">&quot;술 끊었어&quot;</td><td className="p-2 border">&quot;오늘은 차로 왔어&quot;</td></tr>
+              <tr><td className="p-2 border">많이 먹으라는 압박</td><td className="p-2 border">&quot;칼로리 세고 있어&quot;</td><td className="p-2 border">&quot;점심을 늦게 먹어서&quot;</td></tr>
+              <tr><td className="p-2 border">&quot;왜 적게 먹어?&quot;</td><td className="p-2 border">&quot;살 빼는 중&quot;</td><td className="p-2 border">&quot;요즘 위가 좀 예민해서&quot;</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">회식 3단계 전략</h3>
+        <ol className="list-decimal list-inside space-y-2 ml-4">
+          <li><strong>가기 전:</strong> 메뉴 미리 확인 + 아침/점심 가볍게 + 가기 전 간식(계란 1개)</li>
+          <li><strong>먹는 중:</strong> 채소로 접시 절반 + 느리게 먹기 + 물 먼저/술과 번갈아</li>
+          <li><strong>먹은 후:</strong> 30초 리셋 + 다음 날 정상 복귀</li>
+        </ol>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">음식 종류별 핵심 전략</h3>
+        <div className="space-y-3">
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold">🥩 삼겹살</p>
+            <p className="text-sm">목살로 변경, 쌈 채소 많이, 볶음밥 마무리 건너뛰기</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold">🍗 치맥</p>
+            <p className="text-sm">3~4조각 + 맥주 2잔까지. 하이볼은 절반 칼로리</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold">🍣 일식</p>
+            <p className="text-sm">회/사시미 위주, 초밥 8~10개 이내, 튀김 피하기</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold">🍽️ 뷔페</p>
+            <p className="text-sm">첫 접시 샐러드+단백질, 한 바퀴 돌고 선택, &quot;본전&quot; 잊기</p>
+          </div>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">음주 칼로리</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="bg-gray-100 dark:bg-gray-800"><th className="p-2 border">음료</th><th className="p-2 border">kcal</th><th className="p-2 border">전략</th></tr></thead>
+            <tbody>
+              <tr><td className="p-2 border">소주 1잔</td><td className="p-2 border">65</td><td className="p-2 border">물과 번갈아</td></tr>
+              <tr><td className="p-2 border">맥주 500ml</td><td className="p-2 border">200~250</td><td className="p-2 border">2잔까지만</td></tr>
+              <tr><td className="p-2 border">하이볼</td><td className="p-2 border">100~150</td><td className="p-2 border">맥주 대안</td></tr>
+              <tr><td className="p-2 border">소주 1병</td><td className="p-2 border">540</td><td className="p-2 border">반 병이면 270</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: "bonus4",
+    title: "🎁 보너스 4: 주방 리셋 체크리스트",
+    body: (
+      <>
+        <p>소요 시간 1~2시간. 냉장고와 찬장을 한 번에 리셋합니다.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">찬장: 다 먹고 재구매 안 할 것</h3>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>과자/칩, 초콜릿/캔디/젤리</li>
+          <li>컵라면 (2~3개만 남기고)</li>
+          <li>설탕이 첫 번째 성분인 시리얼</li>
+          <li>믹스 커피 (설탕+크림)</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">냉장고: 다 먹고 재구매 안 할 것</h3>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>탄산음료/주스, 초콜릿 우유</li>
+          <li>아이스크림 (유발 음식 1위)</li>
+          <li>케이크/빵류</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">냉장고 구역 설정</h3>
+        <div className="p-4 rounded-lg bg-gray-50 dark:bg-gray-900 font-mono text-sm">
+          <p><strong>눈높이:</strong> 삶은 계란, 방울토마토, 과일, 그릭 요거트, 당근 스틱</p>
+          <p><strong>중간:</strong> 반찬, 두부, Meal Prep 용기</p>
+          <p><strong>아래:</strong> 생고기, 생선, 채소 서랍</p>
+          <p><strong>문쪽:</strong> 물, 탄산수, 소스류</p>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">필수 구매 리스트</h3>
+        <div className="grid md:grid-cols-2 gap-3">
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-1">단백질</p>
+            <p className="text-xs">계란, 닭가슴살, 두부, 그릭 요거트, 참치캔, 콩/렌틸</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-1">채소</p>
+            <p className="text-xs">브로콜리, 방울토마토, 오이, 양배추, 시금치, 당근, 파프리카</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-1">탄수화물</p>
+            <p className="text-xs">현미/잡곡, 통밀빵, 오트밀, 고구마</p>
+          </div>
+          <div className="p-3 rounded-lg bg-gray-50 dark:bg-gray-900">
+            <p className="font-semibold text-sm mb-1">양념</p>
+            <p className="text-xs">간장, 식초, 고추가루, 마늘, 레몬즙, 핫소스, 올리브유, 참기름</p>
+          </div>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Meal Prep 1주일 예시</h3>
+        <p className="text-sm mb-2"><strong>일요일 1시간:</strong> 닭가슴살 500g 굽기 + 잡곡밥 4공기 소분 + 채소 데치기 + 계란 6개 삶기</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="bg-gray-100 dark:bg-gray-800"><th className="p-2 border"></th><th className="p-2 border">아침</th><th className="p-2 border">점심</th><th className="p-2 border">저녁</th></tr></thead>
+            <tbody>
+              <tr><td className="p-2 border font-semibold">월~목</td><td className="p-2 border">계란/요거트 로테이션</td><td className="p-2 border">닭가슴살+밥+채소</td><td className="p-2 border">자유</td></tr>
+              <tr><td className="p-2 border font-semibold">금</td><td className="p-2 border">동일</td><td className="p-2 border">참치/두부 변형</td><td className="p-2 border">계획된 유연성</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </>
+    ),
+  },
+  {
+    id: "bonus5",
+    title: "🎁 보너스 5: 유지 모드 전환 가이드",
+    body: (
+      <>
+        <p className="text-lg font-semibold mb-4">감량 후 요요 없이 새로운 체중을 안착시키는 12주 로드맵</p>
+
+        <h3 className="text-lg font-semibold mt-4 mb-3">Phase 1: 칼로리 전환 (1~4주)</h3>
+        <p>감량 칼로리에서 주당 100kcal씩 증가. 매주 체중 모니터링.</p>
+        <div className="overflow-x-auto mt-3">
+          <table className="w-full text-sm border-collapse">
+            <thead><tr className="bg-gray-100 dark:bg-gray-800"><th className="p-2 border">주차</th><th className="p-2 border">칼로리</th><th className="p-2 border">모니터링</th></tr></thead>
+            <tbody>
+              <tr><td className="p-2 border">1주차</td><td className="p-2 border">감량 + 100kcal</td><td className="p-2 border">매일 측정 → 주간 평균</td></tr>
+              <tr><td className="p-2 border">2주차</td><td className="p-2 border">+ 100kcal 추가</td><td className="p-2 border">주간 평균 비교</td></tr>
+              <tr><td className="p-2 border">3주차</td><td className="p-2 border">+ 100kcal 추가</td><td className="p-2 border">주간 평균 비교</td></tr>
+              <tr><td className="p-2 border">4주차</td><td className="p-2 border">+ 100kcal 추가</td><td className="p-2 border">안정 지점 확인</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="text-sm text-gray-500 mt-2">※ 처음 1~2kg 증가는 글리코겐+수분입니다. 당황하지 마세요.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Phase 2: 습관 안정화 (5~8주)</h3>
+        <p>유지 칼로리에서 편안하게 먹는 법을 익히는 단계.</p>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>주간 체중 평균이 목표 ±1kg 이내인가?</li>
+          <li>반복 식단/움직임 습관 유지 중인가?</li>
+          <li>감정적 식사가 증가하지 않았는가?</li>
+          <li>&quot;이제 됐다&quot; 심리가 오지 않았는가?</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Phase 3: 자유와 경계 (9~12주)</h3>
+        <p>추적을 단계적으로 완화하되, 모니터링은 유지.</p>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>9~10주: 평일만 추적, 주말 자유</li>
+          <li>11~12주: 대략적 인식만. 체중은 최소 주 1회</li>
+        </ul>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">체중 신호등 시스템</h3>
+        <div className="space-y-2">
+          <div className="p-3 rounded-lg bg-green-50 dark:bg-green-950 border border-green-200 dark:border-green-800">
+            <p className="text-sm"><strong>🟢 목표 ±1kg:</strong> 정상 변동. 유지.</p>
+          </div>
+          <div className="p-3 rounded-lg bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800">
+            <p className="text-sm"><strong>🟡 목표 +1~3kg:</strong> 1주간 칼로리 추적 재개. 환경 점검.</p>
+          </div>
+          <div className="p-3 rounded-lg bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800">
+            <p className="text-sm"><strong>🔴 목표 +3kg 이상:</strong> 즉시 추적 재개 + 주방 리셋 + 감량 모드 재진입.</p>
+          </div>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">위험 신호 조기 감지</h3>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>&quot;오늘은 기록 안 해도 되겠지&quot;가 3일 연속</li>
+          <li>체중계를 의도적으로 피하기 시작</li>
+          <li>Meal Prep을 건너뛰기 시작</li>
+          <li>배달 주문이 주 3회 이상</li>
+          <li>&quot;이제 됐다&quot; — 가장 위험한 단어</li>
+        </ul>
+        <p className="mt-2 text-sm font-semibold">3개 이상 동시에 나타나면: 비상 프로토콜 실행.</p>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">월간 점검 (5분)</h3>
+        <ul className="list-disc list-inside space-y-1 ml-4 text-sm">
+          <li>체중이 목표 ±2kg 이내인가?</li>
+          <li>주 1회 이상 체중을 재고 있는가?</li>
+          <li>움직임/식사 구조를 유지하고 있는가?</li>
+          <li>주방 환경이 유지되고 있는가?</li>
+        </ul>
+
+        <blockquote className="border-l-4 border-blue-400 pl-4 my-6 italic text-gray-600 dark:text-gray-400">
+          &quot;이게 내 삶이다. 다이어트가 아니라.&quot; — u/Lisadazy (60kg 감량, 유지 20년)
+        </blockquote>
+      </>
+    ),
+  },
 ];
 
 const updateLogs: UpdateLog[] = [
