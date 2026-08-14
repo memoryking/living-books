@@ -43,6 +43,15 @@ const premiumBooks = [
     lastUpdated: "2026-08-15",
     version: 1,
   },
+  {
+    id: "endocrine-disruptors",
+    emoji: "🧪",
+    title: "생활 속 환경호르몬과 질병",
+    subtitle: "BPA Free의 함정부터 PFAS, 미세플라스틱까지 — 과학 기반 실천 가이드",
+    tags: ["환경호르몬", "건강", "미세플라스틱", "PFAS"],
+    lastUpdated: "2026-08-15",
+    version: 1,
+  },
 ];
 
 function BookCard({
