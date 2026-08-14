@@ -33,6 +33,18 @@ const generalBooks = [
   },
 ];
 
+const premiumBooks = [
+  {
+    id: "diet-secrets",
+    emoji: "🏋️",
+    title: "다이어트 서바이벌 시스템",
+    subtitle: "1,673명의 실패와 성공에서 뽑아낸 생존 가이드",
+    tags: ["다이어트", "체중감량", "습관"],
+    lastUpdated: "2026-08-15",
+    version: 1,
+  },
+];
+
 function BookCard({
   book,
   basePath,
@@ -125,6 +137,26 @@ export default function Home() {
         <div className="grid gap-6">
           {generalBooks.map((book) => (
             <BookCard key={book.id} book={book} basePath="/guides" />
+          ))}
+        </div>
+      </section>
+
+      {/* 프리미엄 가이드 */}
+      <section className="mb-16">
+        <div className="flex items-center gap-3 mb-6 border-b pb-3">
+          <span className="text-2xl">🔥</span>
+          <h2 className="text-2xl font-semibold">프리미엄 가이드</h2>
+          <span className="text-xs px-2 py-1 rounded-full bg-amber-100 dark:bg-amber-900 text-amber-600 dark:text-amber-300">
+            NEW
+          </span>
+        </div>
+        <p className="text-gray-500 dark:text-gray-400 text-sm mb-6">
+          Reddit 커뮤니티 리서치 기반. 상세페이지 → 본문보기 구조의 깊이 있는
+          가이드.
+        </p>
+        <div className="grid gap-6">
+          {premiumBooks.map((book) => (
+            <BookCard key={book.id} book={book} basePath="/premium" />
           ))}
         </div>
       </section>
