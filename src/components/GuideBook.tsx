@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 /* ─────────────────────────────────────────────
    Types
@@ -433,6 +434,8 @@ export default function GuideBook({
   currentVersion,
 }: GuideBookProps) {
   const [activeTab, setActiveTab] = useState<"top10" | "content">("top10");
+  const searchParams = useSearchParams();
+  const isEmbed = searchParams.get("embed") === "true";
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -440,15 +443,17 @@ export default function GuideBook({
 
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
-      {/* Header */}
-      <div className="mb-6">
-        <Link
-          href="/"
-          className="text-sm text-gray-400 hover:text-blue-500 transition-colors"
-        >
-          ← 전체 목록으로
-        </Link>
-      </div>
+      {/* Header — embed 모드에서는 숨김 */}
+      {!isEmbed && (
+        <div className="mb-6">
+          <Link
+            href="/"
+            className="text-sm text-gray-400 hover:text-blue-500 transition-colors"
+          >
+            ← 전체 목록으로
+          </Link>
+        </div>
+      )}
 
       <header className="text-center mb-10">
         <span className="text-5xl mb-4 block">{emoji}</span>

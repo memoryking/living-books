@@ -23,7 +23,19 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="ko"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        {/* embed 모드: 비타코치 iframe에서 열릴 때 "전체 목록으로" 링크 숨김 */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          if(window.location.search.includes('embed=true')){
+            document.documentElement.classList.add('embed-mode');
+          }
+        `}} />
+        <style dangerouslySetInnerHTML={{ __html: `
+          .embed-mode a[href="/"] { display: none !important; }
+          .embed-mode footer { display: none !important; }
+        `}} />
+      </body>
     </html>
   );
 }
