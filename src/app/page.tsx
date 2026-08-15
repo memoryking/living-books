@@ -52,6 +52,15 @@ const premiumBooks = [
     lastUpdated: "2026-08-15",
     version: 1,
   },
+  {
+    id: "declutter-clean",
+    emoji: "🧹",
+    title: "정리와 청소의 기술",
+    subtitle: "서랍 하나부터 시작하는 살아있는 가이드 — 5분이면 충분합니다",
+    tags: ["정리", "청소", "미니멀리즘", "습관"],
+    lastUpdated: "2026-08-15",
+    version: 1,
+  },
 ];
 
 function BookCard({
