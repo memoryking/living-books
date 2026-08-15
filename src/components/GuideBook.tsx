@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 
 /* ─────────────────────────────────────────────
    Types
@@ -434,8 +433,8 @@ export default function GuideBook({
   currentVersion,
 }: GuideBookProps) {
   const [activeTab, setActiveTab] = useState<"top10" | "content">("top10");
-  const searchParams = useSearchParams();
-  const isEmbed = searchParams.get("embed") === "true";
+  const [isEmbed, setIsEmbed] = useState(false);
+  useEffect(() => { setIsEmbed(window.location.search.includes("embed=true")); }, []);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });

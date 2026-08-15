@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
   title: "다이어트 서바이벌 시스템 | 살아있는 정보책",
@@ -86,14 +87,7 @@ export default function DietSecretsLanding() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
       {/* Back */}
-      <div className="mb-6">
-        <Link
-          href="/"
-          className="text-sm text-gray-400 hover:text-blue-500 transition-colors"
-        >
-          ← 전체 목록으로
-        </Link>
-      </div>
+      <BackToHome />
 
       {/* Hero */}
       <header className="text-center mb-16">

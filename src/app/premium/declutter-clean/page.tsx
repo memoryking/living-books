@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
   title: "정리와 청소의 기술 | 살아있는 정보책",
@@ -47,9 +48,7 @@ function BonusItem({ title, desc }: { title: string; desc: string }) {
 export default function DeclutterCleanLanding() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
-      <div className="mb-6">
-        <Link href="/" className="text-sm text-gray-400 hover:text-blue-500 transition-colors">← 전체 목록으로</Link>
-      </div>
+      <BackToHome />
 
       <header className="text-center mb-16">
         <span className="text-6xl mb-6 block">🧹</span>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import BackToHome from "@/components/BackToHome";
 
 export const metadata = {
   title: "생활 속 환경호르몬과 질병 | 살아있는 정보책",
@@ -58,14 +59,7 @@ function BonusItem({ title, desc }: { title: string; desc: string }) {
 export default function EndocrineDisruptorsLanding() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-8">
-      <div className="mb-6">
-        <Link
-          href="/"
-          className="text-sm text-gray-400 hover:text-blue-500 transition-colors"
-        >
-          ← 전체 목록으로
-        </Link>
-      </div>
+      <BackToHome />
 
       {/* Hero */}
       <header className="text-center mb-16">
