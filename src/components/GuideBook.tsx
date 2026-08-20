@@ -320,20 +320,109 @@ function UpdateHistory({ logs }: { logs: UpdateLog[] }) {
 }
 
 /* ─────────────────────────────────────────────
-   Top 10 Card
+   Checkin Stats Banner
+   ───────────────────────────────────────────── */
+
+interface CheckinStats {
+  stats: Record<number, { total: number; today: number }>;
+  myChecks: Record<number, string>;
+  totalCheckins: number;
+}
+
+function CheckinBanner({ stats }: { stats: CheckinStats | null }) {
+  if (!stats || stats.totalCheckins === 0) return null;
+
+  const todayTotal = Object.values(stats.stats).reduce((s, v) => s + v.today, 0);
+
+  return (
+    <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 border border-blue-200 dark:border-blue-800">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-sm font-semibold text-blue-700 dark:text-blue-300">
+            실천 현황
+          </p>
+          <p className="text-xs text-gray-500 mt-1">
+            총 <strong>{stats.totalCheckins.toLocaleString()}</strong>회 실천 · 오늘 <strong>{todayTotal}</strong>회
+          </p>
+        </div>
+        <div className="text-right">
+          <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+            {stats.totalCheckins.toLocaleString()}
+          </p>
+          <p className="text-xs text-gray-400">누적 실천</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   Top 10 Card (with check button)
    ───────────────────────────────────────────── */
 
 function TopItemCard({
   item,
   isHighlighted,
+  bookId,
+  userId,
+  airtableUserId,
+  isChecked,
+  checkCount,
+  onChecked,
 }: {
   item: TopItem;
   isHighlighted: boolean;
+  bookId: string;
+  userId: string;
+  airtableUserId: string;
+  isChecked: boolean;
+  checkCount: number;
+  onChecked: () => void;
 }) {
+  const [loading, setLoading] = useState(false);
+  const [justChecked, setJustChecked] = useState(false);
+
+  const handleCheck = async () => {
+    if (!userId) {
+      alert("비타코치 앱에서 이용해주세요.\n포인트 적립과 실천 기록이 저장됩니다.");
+      return;
+    }
+    if (isChecked || loading) return;
+
+    setLoading(true);
+    try {
+      const res = await fetch("/api/checkin", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          book_id: bookId,
+          item_number: item.number,
+          user_id: userId,
+          airtable_user_id: airtableUserId,
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setJustChecked(true);
+        onChecked();
+      } else if (data.already) {
+        alert("오늘 이미 체크했습니다!");
+      }
+    } catch {
+      alert("체크인 실패. 다시 시도해주세요.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const checked = isChecked || justChecked;
+
   return (
     <div
       className={`p-5 rounded-xl border transition-all ${
-        isHighlighted
+        checked
+          ? "border-green-400 bg-green-50 dark:bg-green-950"
+          : isHighlighted
           ? "border-blue-400 bg-blue-50 dark:bg-blue-950 ring-2 ring-blue-300"
           : "border-gray-200 dark:border-gray-700"
       }`}
@@ -359,6 +448,32 @@ function TopItemCard({
             <p className="text-sm">
               <span className="font-semibold">✅ 실천법:</span> {item.action}
             </p>
+          </div>
+
+          {/* 체크 버튼 + 실천 수 */}
+          <div className="flex items-center justify-between mt-3">
+            <button
+              onClick={handleCheck}
+              disabled={checked || loading}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all ${
+                checked
+                  ? "bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 cursor-default"
+                  : "bg-blue-500 hover:bg-blue-600 text-white cursor-pointer"
+              }`}
+            >
+              {loading ? (
+                "..."
+              ) : checked ? (
+                <><span>✅</span> 오늘 실천 완료</>
+              ) : (
+                <><span>☑️</span> 오늘 실천했어요</>
+              )}
+            </button>
+            {checkCount > 0 && (
+              <span className="text-xs text-gray-400">
+                {checkCount.toLocaleString()}명 실천
+              </span>
+            )}
           </div>
         </div>
       </div>
@@ -434,7 +549,25 @@ export default function GuideBook({
 }: GuideBookProps) {
   const [activeTab, setActiveTab] = useState<"top10" | "content">("top10");
   const [isEmbed, setIsEmbed] = useState(false);
-  useEffect(() => { setIsEmbed(window.location.search.includes("embed=true")); }, []);
+  const [userId, setUserId] = useState("");
+  const [airtableUserId, setAirtableUserId] = useState("");
+  const [checkinStats, setCheckinStats] = useState<CheckinStats | null>(null);
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    setIsEmbed(params.has("embed"));
+    setUserId(params.get("user_id") || params.get("user") || "");
+    setAirtableUserId(params.get("airtable_id") || "");
+  }, []);
+
+  // 체크인 통계 로드
+  useEffect(() => {
+    fetch(`/api/checkin?book_id=${bookId}${userId ? `&user_id=${userId}` : ""}`)
+      .then(r => r.json())
+      .then(data => { if (!data.error) setCheckinStats(data); })
+      .catch(() => {});
+  }, [bookId, userId, refreshKey]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -490,6 +623,9 @@ export default function GuideBook({
       {/* ─── Top 10 Tab ─── */}
       {activeTab === "top10" && (
         <div>
+          {/* Checkin Stats */}
+          <CheckinBanner stats={checkinStats} />
+
           {/* TTS */}
           <div className="mb-6">
             <TTSButton items={topItems} />
@@ -508,7 +644,17 @@ export default function GuideBook({
           {/* Top 10 Cards */}
           <div className="space-y-4">
             {topItems.map((item) => (
-              <TopItemCard key={item.number} item={item} isHighlighted={false} />
+              <TopItemCard
+                key={item.number}
+                item={item}
+                isHighlighted={false}
+                bookId={bookId}
+                userId={userId}
+                airtableUserId={airtableUserId}
+                isChecked={!!checkinStats?.myChecks?.[item.number]}
+                checkCount={checkinStats?.stats?.[item.number]?.total || 0}
+                onChecked={() => setRefreshKey(k => k + 1)}
+              />
             ))}
           </div>
 
