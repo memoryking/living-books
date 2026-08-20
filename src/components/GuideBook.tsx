@@ -716,9 +716,6 @@ export default function GuideBook({
             ))}
           </div>
 
-          {/* Checklist */}
-          <Checklist bookId={bookId} items={topItems} />
-
           {/* Update History */}
           <UpdateHistory logs={updateLogs} />
         </div>
