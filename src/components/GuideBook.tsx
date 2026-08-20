@@ -15,6 +15,7 @@ export interface TopItem {
   situation: string; // 상황 트리거
   action: string; // 구체적 실천법
   mission: string; // 오늘의 미션
+  isNew?: boolean; // 새로 교체된 항목 표시
 }
 
 export interface ContentSection {
@@ -336,7 +337,7 @@ function CheckinBanner({
   stats: CheckinStats | null;
   items: TopItem[];
 }) {
-  if (!stats || stats.totalCheckins === 0) return null;
+  if (!stats) return null;
 
   const todayTotal = Object.values(stats.stats).reduce((s, v) => s + v.today, 0);
 
@@ -373,8 +374,8 @@ function CheckinBanner({
         </div>
       </div>
 
-      {/* 항목별 순위 */}
-      <div className="space-y-2">
+      {/* 항목별 순위 — 데이터 있을 때만 */}
+      {stats.totalCheckins > 0 && <div className="space-y-2">
         <p className="text-xs font-semibold text-gray-500 mb-1">항목별 실천 순위</p>
         {ranked.map((r) => (
           <div key={r.number} className="flex items-center gap-2">
@@ -399,7 +400,14 @@ function CheckinBanner({
             </div>
           </div>
         ))}
-      </div>
+      </div>}
+
+      {/* 데이터 없을 때 안내 */}
+      {stats.totalCheckins === 0 && (
+        <p className="text-xs text-center text-gray-400 mt-2">
+          아래 항목을 실천하고 체크하면 통계에 반영됩니다.
+        </p>
+      )}
     </div>
   );
 }
@@ -480,7 +488,14 @@ function TopItemCard({
           {item.number}
         </span>
         <div className="flex-1">
-          <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+          <h3 className="text-lg font-bold mb-1">
+            {item.title}
+            {item.isNew && (
+              <span className="ml-2 text-xs px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-300 font-semibold align-middle">
+                NEW
+              </span>
+            )}
+          </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-3">
             {item.description}
           </p>

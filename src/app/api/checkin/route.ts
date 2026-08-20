@@ -106,6 +106,48 @@ export async function GET(req: NextRequest) {
   }
 }
 
+// DELETE /api/checkin — 항목 교체 시 기존 통계 삭제
+// body: { book_id, item_number }
+export async function DELETE(req: NextRequest) {
+  try {
+    const body = await req.json();
+    const { book_id, item_number } = body;
+
+    if (!book_id || !item_number) {
+      return NextResponse.json({ error: "book_id, item_number 필수" }, { status: 400 });
+    }
+
+    // 해당 항목의 모든 체크인 기록 조회
+    const allData = await ncbRead(
+      CHECKIN_TABLE,
+      `book_id=${encodeURIComponent(book_id)}&item_number=${item_number}&limit=5000`
+    );
+    const records = extractRecords(allData);
+
+    // 각 레코드 삭제
+    let deleted = 0;
+    for (const r of records) {
+      const id = r.id || r.ID || r._id;
+      if (id) {
+        await fetch(ncbUrl(`/delete/${CHECKIN_TABLE}/${id}`), {
+          method: "DELETE",
+          headers: ncbHeaders(),
+        });
+        deleted++;
+      }
+    }
+
+    return NextResponse.json({
+      success: true,
+      deleted,
+      book_id,
+      item_number: Number(item_number),
+    });
+  } catch (err) {
+    return NextResponse.json({ error: String(err) }, { status: 500 });
+  }
+}
+
 // POST /api/checkin
 export async function POST(req: NextRequest) {
   try {
