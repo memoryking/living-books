@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const NCB_BASE = "https://api.nocodebackend.com";
+const NCB_BASE = process.env.NOCODEBACKEND_BASE_URL || "https://api.nocodebackend.com";
 const NCB_INSTANCE = "55910_pharma_health_db";
 const CHECKIN_TABLE = "ebook_checkins";
 const POINTS_PER_CHECKIN = 5;
 
-// Airtable config (same as vitacoach)
 const AT_BASE = "https://api.airtable.com/v0";
 const AT_USERS_TABLE = "tblQMtkyFsQ8krin9";
 
@@ -26,7 +25,6 @@ function atHeaders() {
   };
 }
 
-// KST date string (YYYY-MM-DD)
 function kstToday() {
   return new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
 }
@@ -34,33 +32,52 @@ function kstNow() {
   return new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 19).replace("T", " ");
 }
 
-// GET /api/checkin?book_id=diet-secrets
-// → 통계: 각 항목별 총 체크 수 + 오늘 체크 수
-// → user_id 있으면 내 체크 기록도
+// ncbRead — GET with query params (비타코치 패턴과 동일)
+async function ncbRead(table: string, filters = "") {
+  const res = await fetch(ncbUrl(`/read/${table}`, filters), {
+    method: "GET",
+    headers: ncbHeaders(),
+  });
+  return res.json();
+}
+
+// ncbCreate — POST
+async function ncbCreate(table: string, data: Record<string, unknown>) {
+  const res = await fetch(ncbUrl(`/create/${table}`), {
+    method: "POST",
+    headers: ncbHeaders(),
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+// 응답에서 레코드 배열 추출 (nocodebackend 응답 형식 대응)
+function extractRecords(response: unknown): Record<string, unknown>[] {
+  if (Array.isArray(response)) return response;
+  const obj = response as Record<string, unknown>;
+  if (Array.isArray(obj?.data)) return obj.data as Record<string, unknown>[];
+  if (Array.isArray(obj?.records)) return obj.records as Record<string, unknown>[];
+  return [];
+}
+
+// GET /api/checkin?book_id=diet-secrets&user_id=recXXX
 export async function GET(req: NextRequest) {
   const bookId = req.nextUrl.searchParams.get("book_id") || "";
   const userId = req.nextUrl.searchParams.get("user_id") || "";
   const today = kstToday();
 
   try {
-    // 전체 체크인 기록 가져오기
-    const allRes = await fetch(
-      ncbUrl(`/search/${CHECKIN_TABLE}`),
-      {
-        method: "POST",
-        headers: ncbHeaders(),
-        body: JSON.stringify({ book_id: bookId }),
-      }
-    );
-    const allData = await allRes.json();
-    const records = Array.isArray(allData) ? allData : allData.data || [];
+    // ncbRead로 book_id 필터링 (비타코치 패턴)
+    const allData = await ncbRead(CHECKIN_TABLE, `book_id=${encodeURIComponent(bookId)}&limit=5000`);
+    const records = extractRecords(allData);
 
     // 항목별 통계 집계
     const stats: Record<number, { total: number; today: number }> = {};
-    const myChecks: Record<number, string> = {}; // item_number → checked_date
+    const myChecks: Record<number, string> = {};
 
     for (const r of records) {
       const num = Number(r.item_number);
+      if (!num) continue;
       if (!stats[num]) stats[num] = { total: 0, today: 0 };
       stats[num].total++;
       if (String(r.checked_date) === today) stats[num].today++;
@@ -77,12 +94,19 @@ export async function GET(req: NextRequest) {
       totalCheckins: records.length,
     });
   } catch (err) {
-    return NextResponse.json({ error: String(err) }, { status: 500 });
+    // 테이블이 없거나 에러 시 빈 통계 반환 (에러로 인한 UI 깨짐 방지)
+    return NextResponse.json({
+      book_id: bookId,
+      today,
+      stats: {},
+      myChecks: {},
+      totalCheckins: 0,
+      _error: String(err),
+    });
   }
 }
 
 // POST /api/checkin
-// body: { book_id, item_number, user_id, airtable_user_id }
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -94,42 +118,25 @@ export async function POST(req: NextRequest) {
 
     const today = kstToday();
 
-    // 오늘 이미 체크했는지 확인
-    const checkRes = await fetch(
-      ncbUrl(`/search/${CHECKIN_TABLE}`),
-      {
-        method: "POST",
-        headers: ncbHeaders(),
-        body: JSON.stringify({
-          book_id,
-          item_number: Number(item_number),
-          user_id: String(user_id),
-          checked_date: today,
-        }),
-      }
+    // 오늘 이미 체크했는지 확인 (ncbRead로 필터)
+    const checkData = await ncbRead(
+      CHECKIN_TABLE,
+      `book_id=${encodeURIComponent(book_id)}&item_number=${item_number}&user_id=${encodeURIComponent(user_id)}&checked_date=${today}&limit=1`
     );
-    const existing = await checkRes.json();
-    const existArr = Array.isArray(existing) ? existing : existing.data || [];
+    const existArr = extractRecords(checkData);
 
     if (existArr.length > 0) {
       return NextResponse.json({ error: "오늘 이미 체크했습니다", already: true }, { status: 409 });
     }
 
     // 체크인 기록 생성
-    const record = {
+    const result = await ncbCreate(CHECKIN_TABLE, {
       book_id,
       item_number: Number(item_number),
       user_id: String(user_id),
       checked_date: today,
       created_at: kstNow(),
-    };
-
-    const createRes = await fetch(ncbUrl(`/create/${CHECKIN_TABLE}`), {
-      method: "POST",
-      headers: ncbHeaders(),
-      body: JSON.stringify(record),
     });
-    const result = await createRes.json();
 
     // 포인트 적립 (Airtable)
     if (airtable_user_id && POINTS_PER_CHECKIN > 0) {
@@ -139,9 +146,9 @@ export async function POST(req: NextRequest) {
           { headers: atHeaders(), cache: "no-store" }
         );
         const userData = await userRes.json();
-        const records = userData.records || [];
-        if (records.length > 0) {
-          const currentPoints = Number(records[0].fields?.point || 0);
+        const userRecords = userData.records || [];
+        if (userRecords.length > 0) {
+          const currentPoints = Number(userRecords[0].fields?.point || 0);
           await fetch(
             `${AT_BASE}/${process.env.AIRTABLE_BASE_ID}/${AT_USERS_TABLE}/${airtable_user_id}`,
             {
