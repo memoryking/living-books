@@ -329,20 +329,40 @@ interface CheckinStats {
   totalCheckins: number;
 }
 
-function CheckinBanner({ stats }: { stats: CheckinStats | null }) {
+function CheckinBanner({
+  stats,
+  items,
+}: {
+  stats: CheckinStats | null;
+  items: TopItem[];
+}) {
   if (!stats || stats.totalCheckins === 0) return null;
 
   const todayTotal = Object.values(stats.stats).reduce((s, v) => s + v.today, 0);
 
+  // 항목별 통계를 실천 수 내림차순으로 정렬
+  const ranked = items
+    .map((item) => ({
+      number: item.number,
+      title: item.title,
+      total: stats.stats[item.number]?.total || 0,
+      today: stats.stats[item.number]?.today || 0,
+    }))
+    .sort((a, b) => b.total - a.total);
+
+  const maxTotal = ranked[0]?.total || 1;
+
   return (
-    <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 border border-blue-200 dark:border-blue-800">
-      <div className="flex items-center justify-between">
+    <div className="mb-6 p-5 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950 border border-blue-200 dark:border-blue-800">
+      {/* 요약 */}
+      <div className="flex items-center justify-between mb-4">
         <div>
           <p className="text-sm font-semibold text-blue-700 dark:text-blue-300">
             실천 현황
           </p>
           <p className="text-xs text-gray-500 mt-1">
-            총 <strong>{stats.totalCheckins.toLocaleString()}</strong>회 실천 · 오늘 <strong>{todayTotal}</strong>회
+            총 <strong>{stats.totalCheckins.toLocaleString()}</strong>회 실천 · 오늘{" "}
+            <strong>{todayTotal}</strong>회
           </p>
         </div>
         <div className="text-right">
@@ -351,6 +371,34 @@ function CheckinBanner({ stats }: { stats: CheckinStats | null }) {
           </p>
           <p className="text-xs text-gray-400">누적 실천</p>
         </div>
+      </div>
+
+      {/* 항목별 순위 */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold text-gray-500 mb-1">항목별 실천 순위</p>
+        {ranked.map((r) => (
+          <div key={r.number} className="flex items-center gap-2">
+            <span className="text-xs font-bold text-blue-600 w-5 text-right">
+              {r.number}
+            </span>
+            <div className="flex-1">
+              <div className="flex items-center justify-between mb-0.5">
+                <span className="text-xs text-gray-700 dark:text-gray-300 truncate max-w-[180px]">
+                  {r.title}
+                </span>
+                <span className="text-xs text-gray-400 flex-shrink-0 ml-2">
+                  {r.total}회{r.today > 0 ? ` (+${r.today})` : ""}
+                </span>
+              </div>
+              <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5">
+                <div
+                  className="bg-blue-500 h-1.5 rounded-full transition-all duration-500"
+                  style={{ width: `${(r.total / maxTotal) * 100}%` }}
+                />
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -624,7 +672,7 @@ export default function GuideBook({
       {activeTab === "top10" && (
         <div>
           {/* Checkin Stats */}
-          <CheckinBanner stats={checkinStats} />
+          <CheckinBanner stats={checkinStats} items={topItems} />
 
           {/* TTS */}
           <div className="mb-6">
@@ -634,11 +682,6 @@ export default function GuideBook({
               <br />
               &quot;5번째는 뭐였지?&quot; → 바로 떠올릴 수 있을 때까지.
             </p>
-          </div>
-
-          {/* Daily Mission */}
-          <div className="mb-8">
-            <DailyMission bookId={bookId} items={topItems} />
           </div>
 
           {/* Top 10 Cards */}
