@@ -61,6 +61,15 @@ const premiumBooks = [
     lastUpdated: "2026-08-15",
     version: 1,
   },
+  {
+    id: "glp1-guide",
+    emoji: "💊",
+    title: "약사가 알려주는 GLP-1 비만약 완전 가이드",
+    subtitle: "오젬픽·위고비·마운자로 — 41만 명의 실제 경험 + 최신 의학 연구 기반",
+    tags: ["GLP-1", "비만약", "오젬픽", "마운자로"],
+    lastUpdated: "2026-09-06",
+    version: 1,
+  },
 ];
 
 function BookCard({
