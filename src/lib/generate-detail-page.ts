@@ -11,6 +11,24 @@ function esc(s: string): string {
    공통 섹션 빌더 (다양한 레이아웃)
    ═══════════════════════════════════════════ */
 
+/** 모바일 반응형 스타일 — 각 상세페이지 상단에 삽입 */
+const mobileStyles = `<style>
+  @media(max-width:640px){
+    .dp-wrap section{padding-left:20px!important;padding-right:20px!important;padding-top:48px!important;padding-bottom:48px!important}
+    .dp-wrap h2{font-size:26px!important}
+    .dp-wrap [style*="font-size:42"]{font-size:26px!important;line-height:1.3!important;padding:6px 12px!important}
+    .dp-wrap [style*="font-size:40px"]{font-size:28px!important}
+    .dp-wrap [style*="font-size:32px"]{font-size:24px!important}
+    .dp-wrap [style*="font-size:28px"]{font-size:22px!important}
+    .dp-wrap [style*="font-size:24px"]{font-size:20px!important}
+    .dp-wrap [style*="flex:1 1 280px"]{flex:1 1 100%!important;max-width:100%!important}
+    .dp-wrap [style*="flex:1 1 240px"]{flex:1 1 100%!important;max-width:100%!important}
+    .dp-wrap [style*="flex:1 1 220px"]{flex:1 1 100%!important;max-width:100%!important}
+    .dp-wrap [style*="flex:1 1 200px"]{flex:1 1 45%!important;max-width:48%!important}
+    .dp-wrap blockquote,.dp-wrap [style*="max-width:580px"],.dp-wrap [style*="max-width:600px"],.dp-wrap [style*="max-width:620px"]{max-width:100%!important}
+  }
+</style>`;
+
 /** 풀폭 섹션 래퍼 */
 const sec = (bg: string, extra = "") =>
   `display:block;box-sizing:border-box;width:100%;max-width:860px;margin:0 auto;padding:72px 40px;text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;${bg}${extra}`;
@@ -110,6 +128,40 @@ function divider(): string {
 
 function spacer(h = 40): string {
   return `<div style="height:${h}px;"></div>`;
+}
+
+/** 가격 뱃지 — 취소선 정가 + 특가 */
+function priceBadge(originalPrice: string, salePrice: string, note: string): string {
+  return `<div style="display:inline-flex;align-items:center;gap:12px;padding:12px 28px;background:#fff;border-radius:999px;box-shadow:0 2px 12px rgba(0,0,0,.08);margin:16px 0;">
+  <span style="font-size:15px;color:#9ca3af;text-decoration:line-through;">${esc(originalPrice)}</span>
+  <span style="font-size:28px;font-weight:800;color:#dc2626;">${esc(salePrice)}</span>
+  <span style="font-size:11px;color:#fff;background:#dc2626;padding:3px 10px;border-radius:20px;font-weight:700;">${esc(note)}</span>
+</div>`;
+}
+
+/** 긴급성 띠배너 — 히어로 하단 */
+function urgencyBanner(): string {
+  return `<div style="max-width:500px;margin:24px auto 0;padding:14px 20px;background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:10px;border:1px solid #f59e0b;">
+  <span style="font-size:14px;font-weight:600;color:#92400e;">⏰ 출시 특가 — 이 가격은 곧 인상될 수 있습니다</span>
+</div>`;
+}
+
+/** CTA 버튼 블록 — 취소선 가격 포함 */
+function ctaBlock(emoji: string, headline1: string, headline2: string, subtext: string, accent: string): string {
+  return `<section style="${sec(`background:linear-gradient(160deg,${accent},${accent}cc);`)}padding:80px 40px;">
+    <div style="font-size:48px;margin-bottom:16px;">${emoji}</div>
+    <h2 style="font-size:clamp(24px,4.5vw,38px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.3;">${esc(headline1)}<br>${esc(headline2)}</h2>
+    <p style="font-size:16px;color:rgba(255,255,255,.8);margin:0 0 8px;line-height:1.7;">${esc(subtext)}</p>
+    <div style="margin:16px 0 24px;">
+      <span style="font-size:16px;color:rgba(255,255,255,.5);text-decoration:line-through;">정가 3,900원</span>
+      <span style="font-size:14px;color:rgba(255,255,255,.6);margin:0 8px;">→</span>
+      <span style="font-size:28px;font-weight:800;color:#fff;">1,000원</span>
+      <span style="font-size:12px;color:#fde68a;margin-left:8px;font-weight:600;">출시 특가</span>
+    </div>
+    <div style="display:inline-block;padding:16px 48px;background:#fff;color:${accent};font-size:18px;font-weight:700;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.15);">지금 시작하기</div>
+    ${spacer(16)}
+    <div style="font-size:13px;color:rgba(255,255,255,.5);">1개월 열람 · 계속 업데이트 · 유원소망약국 김약사</div>
+  </section>`;
 }
 
 /** 풀 미리보기 섹션 — 실제 본문 + 섹션 헤딩 목록 */
@@ -234,7 +286,8 @@ const ALL_BOOKS_FOR_CROSSSELL = [
 
 function buildDietSecrets(): string {
   return `<!-- 🏋️ 다이어트 서바이벌 시스템 — 아임웹 상세페이지 -->
-<div style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
 
   <!-- Hero -->
   <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#a7f3d0);")}">
@@ -247,6 +300,8 @@ function buildDietSecrets(): string {
       { num: "10", label: "개 챕터 + 보너스 5개", color: "#059669" },
       { num: "1,000", label: "원 · 1개월 열람", color: "#059669" },
     ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
   </section>
 
   <!-- 공감: 실패 경험 -->
@@ -378,14 +433,7 @@ function buildDietSecrets(): string {
   </section>
 
   <!-- CTA -->
-  <section style="${sec("background:linear-gradient(160deg,#059669,#047857);")}padding:80px 40px;">
-    <div style="font-size:48px;margin-bottom:16px;">🏋️</div>
-    <h2 style="font-size:clamp(24px,4.5vw,38px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.3;">"이번이 마지막 다이어트"가<br>진짜가 되는 시스템</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.8);margin:0 0 32px;line-height:1.7;">커피 한 잔보다 저렴한 1,000원.<br>계속 업데이트되는 살아있는 가이드.</p>
-    <div style="display:inline-block;padding:16px 48px;background:#fff;color:#059669;font-size:18px;font-weight:700;border-radius:999px;">지금 시작하기</div>
-    ${spacer(24)}
-    <div style="font-size:13px;color:rgba(255,255,255,.6);">유원소망약국 김약사 · 살아있는 정보책</div>
-  </section>
+  ${ctaBlock("🏋️", '"이번이 마지막 다이어트"가', "진짜가 되는 시스템", "계속 업데이트되는 살아있는 가이드", "#059669")}
 
 </div>`;
 }
@@ -396,7 +444,8 @@ function buildDietSecrets(): string {
 
 function buildEndocrineDisruptors(): string {
   return `<!-- 🧪 생활 속 환경호르몬과 질병 — 아임웹 상세페이지 -->
-<div style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
 
   <!-- Hero -->
   <section style="${sec("background:linear-gradient(160deg,#f0fdfa,#ccfbf1,#99f6e4);")}">
@@ -409,6 +458,8 @@ function buildEndocrineDisruptors(): string {
       { num: "20", label: "개 피해야 할 성분 정리", color: "#0d9488" },
       { num: "10+5", label: "챕터 + 보너스 체크리스트", color: "#0d9488" },
     ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
   </section>
 
   <!-- 문제 인식: 충격 팩트 -->
@@ -534,14 +585,7 @@ function buildEndocrineDisruptors(): string {
   </section>
 
   <!-- CTA -->
-  <section style="${sec("background:linear-gradient(160deg,#0d9488,#115e59);")}padding:80px 40px;">
-    <div style="font-size:48px;margin-bottom:16px;">🧪</div>
-    <h2 style="font-size:clamp(24px,4.5vw,38px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.3;">불안하지 않아도 됩니다.<br>할 수 있는 것부터 바꾸세요.</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.8);margin:0 0 32px;line-height:1.7;">3가지만 바꾸면 80%가 해결됩니다.<br>1,000원 · 계속 업데이트되는 살아있는 가이드.</p>
-    <div style="display:inline-block;padding:16px 48px;background:#fff;color:#0d9488;font-size:18px;font-weight:700;border-radius:999px;">지금 시작하기</div>
-    ${spacer(24)}
-    <div style="font-size:13px;color:rgba(255,255,255,.6);">유원소망약국 김약사 · 살아있는 정보책</div>
-  </section>
+  ${ctaBlock("🧪", "불안하지 않아도 됩니다.", "할 수 있는 것부터 바꾸세요.", "3가지만 바꾸면 80%가 해결됩니다.", "#0d9488")}
 
 </div>`;
 }
@@ -552,7 +596,8 @@ function buildEndocrineDisruptors(): string {
 
 function buildDeclutterClean(): string {
   return `<!-- 🧹 정리와 청소의 기술 — 아임웹 상세페이지 -->
-<div style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
 
   <!-- Hero -->
   <section style="${sec("background:linear-gradient(160deg,#fffbeb,#fef3c7,#fde68a);")}">
@@ -561,6 +606,8 @@ function buildDeclutterClean(): string {
     ${bigTitle("서랍 하나.", "5분 타이머.")}
     <p style="font-size:20px;color:#92400e;font-weight:600;margin:0 0 8px;">이것만으로 시작됩니다.</p>
     ${subtitle("정리는 의지력이 아닙니다. 시스템입니다. — Reddit 수백 명의 실전 경험 기반")}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
   </section>
 
   <!-- 공감: 3단계 감정 -->
@@ -691,14 +738,7 @@ function buildDeclutterClean(): string {
   </section>
 
   <!-- CTA -->
-  <section style="${sec("background:linear-gradient(160deg,#d97706,#b45309);")}padding:80px 40px;">
-    <div style="font-size:48px;margin-bottom:16px;">🧹</div>
-    <h2 style="font-size:clamp(24px,4.5vw,38px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.3;">서랍 하나, 5분 타이머.<br>오늘부터 시스템이 대신 해줍니다.</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.8);margin:0 0 32px;line-height:1.7;">1,000원 · 계속 업데이트되는 살아있는 가이드.</p>
-    <div style="display:inline-block;padding:16px 48px;background:#fff;color:#d97706;font-size:18px;font-weight:700;border-radius:999px;">지금 시작하기</div>
-    ${spacer(24)}
-    <div style="font-size:13px;color:rgba(255,255,255,.6);">유원소망약국 김약사 · 살아있는 정보책</div>
-  </section>
+  ${ctaBlock("🧹", "서랍 하나, 5분 타이머.", "오늘부터 시스템이 대신 해줍니다.", "계속 업데이트되는 살아있는 가이드", "#d97706")}
 
 </div>`;
 }
@@ -709,7 +749,8 @@ function buildDeclutterClean(): string {
 
 function buildGlp1Guide(): string {
   return `<!-- 💊 GLP-1 비만약 완전 가이드 — 아임웹 상세페이지 -->
-<div style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
 
   <!-- Hero -->
   <section style="${sec("background:linear-gradient(160deg,#eff6ff,#dbeafe,#bfdbfe);")}">
@@ -722,6 +763,8 @@ function buildGlp1Guide(): string {
       { num: "10+5", label: "챕터 + 보너스 가이드", color: "#2563eb" },
       { num: "약사", label: "가 직접 쓴 전문 가이드", color: "#2563eb" },
     ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
   </section>
 
   <!-- 공감: 불안 -->
@@ -871,14 +914,7 @@ function buildGlp1Guide(): string {
   </section>
 
   <!-- CTA -->
-  <section style="${sec("background:linear-gradient(160deg,#2563eb,#1e40af);")}padding:80px 40px;">
-    <div style="font-size:48px;margin-bottom:16px;">💊</div>
-    <h2 style="font-size:clamp(24px,4.5vw,38px);font-weight:800;color:#fff;margin:0 0 16px;line-height:1.3;">30분짜리 약사 상담을<br>한 권에 담았습니다.</h2>
-    <p style="font-size:16px;color:rgba(255,255,255,.8);margin:0 0 32px;line-height:1.7;">지금 결정을 도와드립니다.<br>1,000원 · 계속 업데이트되는 살아있는 가이드.</p>
-    <div style="display:inline-block;padding:16px 48px;background:#fff;color:#2563eb;font-size:18px;font-weight:700;border-radius:999px;">지금 시작하기</div>
-    ${spacer(24)}
-    <div style="font-size:13px;color:rgba(255,255,255,.6);">유원소망약국 김약사 · 살아있는 정보책</div>
-  </section>
+  ${ctaBlock("💊", "30분짜리 약사 상담을", "한 권에 담았습니다.", "지금 결정을 도와드립니다.", "#2563eb")}
 
 </div>`;
 }
