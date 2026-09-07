@@ -70,6 +70,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-06",
     version: 1,
   },
+  {
+    id: "slow-aging",
+    emoji: "🌿",
+    title: "몸이 젊어지는 4주 저속노화 리셋",
+    subtitle: "식단·혈당·운동·수면까지 — 노화 속도를 되돌리는 28일 실전 프로그램",
+    tags: ["저속노화", "혈당관리", "건강루틴", "4주챌린지"],
+    lastUpdated: "2026-09-08",
+    version: 1,
+  },
 ];
 
 function BookCard({

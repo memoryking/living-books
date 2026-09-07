@@ -278,6 +278,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "endocrine-disruptors", emoji: "🧪", title: "생활 속 환경호르몬과 질병", oneLiner: "20%만 바꿔도 80% 노출 감소" },
   { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", oneLiner: "서랍 하나, 5분 타이머로 시작" },
   { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", oneLiner: "41만 명 경험 + 약사가 직접 정리" },
+  { id: "slow-aging", emoji: "🌿", title: "4주 저속노화 리셋", oneLiner: "식단·혈당·운동·수면 28일 프로그램" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -920,6 +921,181 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   5. 몸이 젊어지는 4주 저속노화 리셋
+   ═══════════════════════════════════════════ */
+
+function buildSlowAging(): string {
+  return `<!-- 🌿 몸이 젊어지는 4주 저속노화 리셋 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#a7f3d0);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🌿</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#14532d;letter-spacing:-0.5px;">저속노화 영상 100개 봤는데<br>렌틸콩은 아직 냉장고에?</h2>
+    <p style="font-size:20px;color:#166534;font-weight:600;margin:0 0 8px;">이 책은 응원하지 않습니다. 시킵니다.</p>
+    ${subtitle("식단·혈당·운동·수면, 4주 28일 실전 프로그램 — 매일 O/X만 체크하세요")}
+    ${statGrid([
+      { num: "4주", label: "28일 실전 프로그램", color: "#059669" },
+      { num: "10+1", label: "챕터 + 실행 키트 부록", color: "#059669" },
+      { num: "70%", label: "합격선 — 무너져도 OK", color: "#059669" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 가속노화 신호 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 신호들,", "익숙하시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">😴</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">식후 졸음</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">점심만 먹으면<br>쏟아지는 잠</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🪞</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">거울 속 변화</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">1년 새 부쩍<br>달라진 얼굴</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔋</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">오후 무기력</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">안 개운한 아침,<br>계단 앞 엘리베이터</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;">이것들은 나이 탓이 아닙니다. <strong style="color:#059669;">가속노화 신호</strong>이고, 되돌릴 수 있습니다.</p>
+  </section>
+
+  <!-- 핵심 시스템 -->
+  <section style="${sec("background:#14532d;color:#fff;")}">
+    <div style="font-size:13px;color:#86efac;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE 4-WEEK SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">매주 하나씩, 4가지만 바꿉니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">1주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">식탁 리셋<br><small style="color:rgba(255,255,255,.5);">밥솥 기본값 교체</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">2주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">혈당 안정<br><small style="color:rgba(255,255,255,.5);">거꾸로 먹기+식후 걷기</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">3주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">움직임 리셋<br><small style="color:rgba(255,255,255,.5);">거실 근력 주 2회</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">4주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">수면 리셋<br><small style="color:rgba(255,255,255,.5);">취침 전 90분 활주로</small></div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:24px;">판단은 책이 하고, 당신은 O/X만 체크하면 됩니다</p>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("00", "들어가며: 이 책은 응원하지 않습니다, 시킵니다", false, "#059669")}
+    ${tocItem("01", "당신은 지금도 늙고 있다: 가속노화 자가진단", false, "#059669")}
+    ${tocItem("02", "저속노화의 과학: 노화 속도를 정하는 5개의 스위치", false, "#059669")}
+    ${tocItem("03", "시작 전 준비: 측정하고, 비우고, 채워라", false, "#059669")}
+    ${tocItem("04", "1주차 — 식탁 리셋: 저속노화 식단의 뼈대", true, "#059669")}
+    ${tocItem("05", "2주차 — 혈당 안정: 혈당 스파이크를 잡는 기술", true, "#059669")}
+    ${tocItem("06", "3주차 — 움직임 리셋: 근육은 노후 연금이다", true, "#059669")}
+    ${tocItem("07", "4주차 — 수면·회복 리셋: 자는 동안 젊어져라", true, "#059669")}
+    ${tocItem("08", "보이지 않는 액셀: 스트레스와 뇌의 저속노화", false, "#059669")}
+    ${tocItem("09", "트러블슈팅: 무너지는 7가지 순간과 복구 프로토콜", true, "#059669")}
+    ${tocItem("10", "28일 이후: 평생 가는 저속노화 시스템", false, "#059669")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 4주 식단표 / 28일 로드맵 / 주간 체크리스트 / 외식 생존 가이드 / 15분 레시피 7선</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "9",
+    "트러블슈팅: 무너지는 7가지 순간과 복구 프로토콜",
+    [
+      "무너짐은 변수인가, 상수인가",
+      "상황 1: 회식과 외식이 연달아 잡혔다",
+      "상황 2: 야식 욕구가 폭발했다",
+      "상황 3: 여행·명절·휴가로 리듬이 깨졌다",
+      "상황 4: 2주째, 체중이 꿈쩍도 하지 않는다",
+      "상황 5: 운동할 시간이 도저히 안 나온다",
+      "상황 6: 가족이 협조하지 않는다",
+      "상황 7: 다 귀찮고 의욕이 사라졌다",
+    ],
+    `<p style="margin:0 0 16px;">4주짜리 습관 프로그램을 시작한 사람 중 끝까지 한 번도 안 무너지는 사람은 없습니다. <strong>무너짐은 변수가 아니라 상수입니다.</strong></p>
+      <p style="margin:0 0 16px;">그렇다면 성패를 가르는 것은 무너지느냐가 아니라, <strong>무너진 뒤 몇 시간 만에 복귀하느냐</strong>입니다.</p>
+      <p style="margin:0 0 16px;">실패자는 한 번의 일탈을 "다 망했다"로 해석해 폭주하고, 성공자는 같은 일탈을 <strong>"다음 끼니에 복구"</strong>로 처리합니다. 심리학에서는 전자를 <em>"에라 모르겠다 효과(what-the-hell effect)"</em>라고 부릅니다.</p>
+      <p style="margin:0;padding:16px;background:#f0fdf4;border-radius:10px;font-weight:600;color:#059669;">💡 그래서 이 챕터는 사과문이 아니라 정비 매뉴얼입니다. 사고가 난 뒤에 매뉴얼을 찾는 정비사는 없습니다.</p>`,
+    "#059669",
+    "linear-gradient(160deg,#f0fdf4,#ecfdf5)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(
+      [
+        "저속노화 정보는 많이 봤지만 실행으로 옮기지 못한 분",
+        "식후 졸음, 오후 무기력이 일상이 된 30~50대",
+        "헬스장 없이 집과 일상 안에서 시작하고 싶은 분",
+        "다이어트가 아니라 '천천히 늙는 몸'을 원하는 분",
+      ],
+      "✅",
+      "#f0fdf4"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "읽기만 하고 실행하지 않을 분",
+        "4주 만에 극적인 체중 감량을 원하는 분",
+        "질환 치료 목적의 의학 정보를 찾는 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("운동 완전 초보도 가능한가요?", "네. 모든 운동은 맨몸·거실 기준이며, 50대 이상을 위한 강도 조절 안내도 포함되어 있습니다.")}
+    ${faqItem("식단이 어렵거나 비싸지 않나요?", "대형마트 1회 장보기로 시작할 수 있고, 모든 레시피는 15분 이내 조리 기준입니다. 외식/편의점 대응 가이드도 들어 있습니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "저속노화 온라인 강의", price: "89,000원~", note: "일방적 강의" },
+        { what: "건강 코칭 1:1 상담", price: "100,000원~", note: "1회" },
+        { what: "저속노화 관련 서적", price: "18,000원~", note: "업데이트 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 실행 키트 + 계속 업데이트",
+      "#059669"
+    )}
+    ${proofBanner(
+      ["💊 현직 약사 저자", "📋 28일 로드맵 포함", "🍽️ 15분 레시피 7선", "🔄 계속 업데이트"],
+      "#f0fdf4",
+      "#059669"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("slow-aging", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🌿", "오늘 저녁 식탁부터,", "늙는 속도가 달라집니다.", "매일 O/X만 체크하세요. 판단은 책이 합니다.", "#059669")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -964,6 +1140,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "딥블루(#2563eb)에서 짙은 네이비(#1e3a5f)로",
     symbol: "주사기(펜형)와 체중계, 주위에 분자 구조·그래프 아이콘이 도는 의료 플랫 일러스트",
     mood: "전문적, 신뢰, 안심",
+  },
+  "slow-aging": {
+    title: "몸이 젊어지는 4주 저속노화 리셋",
+    subtitle: "식단·혈당·운동·수면, 28일 실전 프로그램",
+    author: "김약사 · 유원소망약국",
+    gradient: "밝은 민트(#a7f3d0)에서 딥그린(#14532d)으로",
+    symbol: "모래시계 안에서 초록 새싹이 자라나는 모습의 플랫 일러스트 (노화 시간을 되돌리는 상징)",
+    mood: "청량, 생기, 실행력",
   },
 };
 
@@ -1046,6 +1230,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "30분짜리 약사 상담을 한 권에, 1,000원에 시작하세요.",
     tags: "#오젬픽 #마운자로 #GLP1 #비만약 #위고비",
   },
+  "slow-aging": {
+    title: "몸이 젊어지는 4주 저속노화 리셋",
+    hook: "저속노화 영상 100개 봤는데 렌틸콩은 아직 냉장고에 방치 중이시죠?",
+    stat: "10챕터 + 실행 키트 부록 · 28일 O/X 체크리스트 · 무너져도 복구 프로토콜",
+    quote: "무너짐은 변수가 아니라 상수입니다. 성패는 복귀 속도가 결정합니다.",
+    cta: "오늘 저녁 식탁부터 늙는 속도가 달라집니다. 1,000원에 시작하세요.",
+    tags: "#저속노화 #혈당관리 #건강루틴 #4주챌린지 #습관만들기",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1097,6 +1289,7 @@ const BOOK_META = [
   { id: "endocrine-disruptors", title: "생활 속 환경호르몬과 질병", emoji: "🧪", builder: buildEndocrineDisruptors },
   { id: "declutter-clean", title: "정리와 청소의 기술", emoji: "🧹", builder: buildDeclutterClean },
   { id: "glp1-guide", title: "GLP-1 비만약 완전 가이드", emoji: "💊", builder: buildGlp1Guide },
+  { id: "slow-aging", title: "4주 저속노화 리셋", emoji: "🌿", builder: buildSlowAging },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

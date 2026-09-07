@@ -34,6 +34,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "💊",
     subtitle: "오젬픽·위고비·마운자로 — 실제 경험 + 최신 의학 연구 기반",
   },
+  {
+    id: "slow-aging",
+    title: "몸이 젊어지는 4주 저속노화 리셋",
+    emoji: "🌿",
+    subtitle: "식단·혈당·운동·수면 — 노화 속도를 되돌리는 28일 실전 프로그램",
+  },
 ];
 
 interface Section {
@@ -71,6 +77,7 @@ const CROSS_SELL_BOOKS = [
   { id: "endocrine-disruptors", emoji: "🧪", title: "생활 속 환경호르몬과 질병", sub: "20%만 바꿔도 80% 감소" },
   { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", sub: "서랍 하나, 5분 타이머" },
   { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", sub: "41만 명 경험 + 약사 검증" },
+  { id: "slow-aging", emoji: "🌿", title: "4주 저속노화 리셋", sub: "식단·혈당·운동·수면 28일 프로그램" },
 ];
 
 function buildCrossSell(currentId: string): string {
