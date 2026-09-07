@@ -112,6 +112,43 @@ function spacer(h = 40): string {
   return `<div style="height:${h}px;"></div>`;
 }
 
+/** 풀 미리보기 섹션 — 실제 본문 + 섹션 헤딩 목록 */
+function fullPreview(
+  chapterNum: string,
+  chapterTitle: string,
+  sectionHeadings: string[],
+  contentHtml: string,
+  accentColor: string,
+  bgGradient: string
+): string {
+  return `
+  <section style="${sec(`background:${bgGradient};`)}">
+    ${label("PREVIEW · 본문 미리보기")}
+    ${bigTitle("이런 내용이 들어있습니다")}
+    ${subtitle(`챕터 ${chapterNum}에서 발췌 — "${chapterTitle}"`)}
+
+    <!-- 이 챕터의 섹션 목록 -->
+    <div style="max-width:480px;margin:0 auto 28px;padding:20px 24px;background:rgba(255,255,255,.7);border-radius:12px;text-align:left;border:1px solid rgba(0,0,0,.06);">
+      <div style="font-size:12px;font-weight:700;color:${accentColor};margin-bottom:10px;">📂 이 챕터에 포함된 내용</div>
+      ${sectionHeadings.map((h, i) => `<div style="padding:4px 0;font-size:13px;color:#4b5563;${i === 0 ? "font-weight:600;" : ""}">${i === 0 ? "▶ " : "· "}${esc(h)}</div>`).join("\n")}
+    </div>
+
+    <!-- 실제 본문 발췌 -->
+    <div style="max-width:620px;margin:0 auto;padding:36px 32px;background:#fff;border-radius:20px;text-align:left;box-shadow:0 4px 24px rgba(0,0,0,.07);line-height:1.85;font-size:15px;color:#374151;position:relative;">
+      <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:${accentColor};color:#fff;font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;">실제 본문</div>
+      ${contentHtml}
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;text-align:center;">
+        <span style="font-size:13px;color:#9ca3af;">이 내용은 전체 가이드의 일부입니다 · 10개 챕터 + 보너스 5개</span>
+      </div>
+    </div>
+
+    <!-- 블러 효과 안내 -->
+    <div style="margin-top:24px;font-size:14px;color:${accentColor};font-weight:600;">
+      ↓ 나머지 내용은 가이드에서 확인하세요
+    </div>
+  </section>`;
+}
+
 /** 가격 앵커링 섹션 */
 function priceAnchor(
   comparisons: { what: string; price: string; note: string }[],
@@ -264,16 +301,24 @@ function buildDietSecrets(): string {
   </section>
 
   <!-- 미리보기 -->
-  <section style="${sec("background:linear-gradient(160deg,#f0fdf4,#ecfdf5);")}">
-    ${label("PREVIEW")}
-    ${bigTitle("본문 미리보기")}
-    <div style="max-width:580px;margin:0 auto;padding:32px;background:#fff;border-radius:16px;text-align:left;box-shadow:0 4px 20px rgba(0,0,0,.06);line-height:1.8;font-size:15px;color:#374151;">
-      <p style="margin:0 0 16px;">실제로 성공한 사람들은 <strong>'다이어트'를 하지 않았습니다.</strong></p>
-      <p style="margin:0 0 16px;">의지력이 아니라 환경을 바꿨습니다. 냉장고를 열었을 때 건강한 선택이 가장 쉬운 선택이 되도록. 접시 크기를 바꾸면 무의식적으로 양이 줄도록.</p>
-      <p style="margin:0;"><strong>이것이 시스템입니다.</strong> 의지력은 소모되지만, 시스템은 자동으로 작동합니다.</p>
-    </div>
-    <div style="margin-top:12px;font-size:13px;color:#9ca3af;">— 챕터 3에서 발췌</div>
-  </section>
+  ${fullPreview(
+    "3",
+    "환경을 바꾸면 의지력이 필요 없다",
+    [
+      '"냉장고를 바꾸면 몸이 바뀐다"',
+      "행동경제학이 알려주는 비밀: 기본값을 바꿔라",
+      "환경 설계 전략 6가지",
+      "환경 vs 의지력: 최종 비교",
+      "실천 과제",
+    ],
+    `<p style="margin:0 0 16px;">노벨경제학상을 받은 행동경제학자 리처드 탈러는 이런 사실을 발견했습니다:</p>
+      <p style="margin:0 0 16px;font-weight:700;font-size:17px;color:#111;">사람들은 "기본 선택지(default)"를 거의 항상 고른다.</p>
+      <p style="margin:0 0 16px;">구내식당 실험에서, 과일을 눈높이에 놓고 디저트를 구석에 놓자 과일 소비가 <strong>25% 증가</strong>했습니다. 메뉴가 바뀐 것이 아닙니다. <strong>위치만 바뀌었습니다.</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#f0fdf4;border-radius:10px;font-weight:600;color:#059669;">💡 의지력으로 행동을 바꾸려 하지 말고, 환경을 바꿔서 행동이 자동으로 바뀌게 하라.</p>
+      <p style="margin:0;">코넬 대학교 연구: 접시 크기를 12인치에서 10인치로 줄이면, 같은 양의 음식이 <strong>22% 더 많아 보입니다.</strong> 작은 접시에 가득 담으면, 적게 먹으면서도 "충분히 먹었다"는 만족감을 느낍니다.</p>`,
+    "#059669",
+    "linear-gradient(160deg,#f0fdf4,#ecfdf5)"
+  )}
 
   <!-- 추천 대상 -->
   <section style="${sec("background:#fff;")}">
@@ -423,6 +468,26 @@ function buildEndocrineDisruptors(): string {
     <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 주방 교체 가이드 / 성분표 해독기 / 아이 안전 체크리스트 / 세면도구 교체 / 가정 리셋</div>
   </section>
 
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    "주방 — 가장 쉽게 바꿀 수 있는 곳",
+    [
+      "왜 주방부터인가",
+      "1단계: 플라스틱 용기 → 유리/스테인리스",
+      "2단계: 논스틱 팬 → 스테인리스/주철/세라믹",
+      "3단계: 랩 → 밀랍랩 또는 실리콘 뚜껑",
+      "4단계: 정수기 — 수돗물의 진실",
+    ],
+    `<p style="margin:0 0 16px;">프탈레이트의 체내 반감기는 약 12시간입니다. BPA도 6시간 정도입니다. <strong>노출원을 차단하면 며칠 안에 체내 농도가 크게 감소합니다.</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#fef2f2;border-radius:10px;font-weight:700;color:#991b1b;">🚨 가장 위험한 행동: 플라스틱 용기에 음식을 넣고 전자레인지 돌리기</p>
+      <p style="margin:0 0 16px;">이것 하나만 멈추세요. 이것이 이 책 전체에서 <strong>가장 중요한 실천 사항</strong>일 수 있습니다.</p>
+      <p style="margin:0 0 16px;">2023년 네브래스카 대학 연구에 따르면, 전자레인지에 3분간 가열한 플라스틱 용기에서 <strong>수십억 개의 나노플라스틱</strong>이 방출되었습니다.</p>
+      <p style="margin:0;padding:16px;background:#f0fdfa;border-radius:10px;color:#0d9488;">💡 그리고 한 가지 더: 생수 속 미세플라스틱은 수돗물의 <strong>2배 이상</strong>입니다 (2018년 SUNY 연구). 안전하려고 선택한 것이 오히려 더 위험했던 셈입니다.</p>`,
+    "#0d9488",
+    "linear-gradient(160deg,#f0fdfa,#ecfdf5)"
+  )}
+
   <!-- 추천 + FAQ -->
   <section style="${sec("background:#f9fafb;")}">
     ${bigTitle("이런 분께 추천합니다")}
@@ -559,6 +624,26 @@ function buildDeclutterClean(): string {
     ${spacer(16)}
     <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 30일 챌린지 / 주방 완전 리셋 / 옷장 정리 / ADHD·우울증 특별 가이드 / 가족 참여 전략</div>
   </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "4",
+    "5분 타이머의 마법",
+    [
+      "압도감을 이기는 가장 쉬운 무기",
+      "왜 5분인가",
+      "5분 타이머 실전 가이드",
+      "ADHD와 5분 타이머",
+      "우울증과 5분 타이머",
+    ],
+    `<p style="margin:0 0 16px;">정리에서 가장 어려운 것은 <strong>"시작하는 것"</strong>입니다. 일단 시작하면, 관성이 생깁니다.</p>
+      <p style="margin:0 0 16px;">심리학에서 이것을 <strong>"제이가르닉 효과(Zeigarnik Effect)"</strong>라고 합니다. 시작한 일은 끝내고 싶어지는 심리입니다. 5분 타이머는 시작의 장벽을 극도로 낮춰서 관성을 만들어줍니다.</p>
+      <p style="margin:0 0 16px;">이것이 5분 타이머의 진짜 비밀입니다. "5분만 하자"고 시작하면, 대부분의 사람들은 <strong>15~20분을 하게 됩니다.</strong> 일단 시작하면 "여기까지만 더 하자"가 반복되기 때문입니다.</p>
+      <p style="margin:0 0 16px;">수학적으로, 매일 5분씩 정리하면 한 달에 <strong>150분(2시간 30분)</strong>입니다. 일주일에 한 번 "제대로" 해야지 하면서 결국 안 하면 <strong>0분</strong>입니다.</p>
+      <p style="margin:0;padding:16px;background:#fffbeb;border-radius:10px;font-weight:700;font-size:17px;color:#92400e;">💡 불완벽한 5분이 완벽한 0분보다 백 배 낫습니다.</p>`,
+    "#d97706",
+    "linear-gradient(160deg,#fffbeb,#fef3c7)"
+  )}
 
   <!-- 추천 + FAQ -->
   <section style="${sec("background:#fff;")}">
@@ -717,6 +802,28 @@ function buildGlp1Guide(): string {
     ${spacer(16)}
     <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 부작용 119 매뉴얼 / 식단 가이드 / 약물 비교표 / 약물 상호작용 체크 / 중단 후 12주 로드맵</div>
   </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    '"Food Noise"의 소멸 — 뇌가 바뀌는 경험',
+    [
+      '"그냥... 멈췄어요"',
+      "Food Noise는 어떤 느낌인가?",
+      "과학적으로 무슨 일이 일어나는가",
+      "알코올 갈망도 줄어든다?",
+      "약을 끊으면 food noise는 돌아오나?",
+    ],
+    `<p style="margin:0 0 16px;font-style:italic;color:#6b7280;">"아침을 먹으면서 점심에 뭘 먹을지 생각했어요. 점심을 먹으면서 저녁에 뭘 먹을지 생각했어요. 매 순간이 다음 식사를 향한 카운트다운이었어요."</p>
+      <p style="margin:0 0 16px;font-style:italic;color:#6b7280;">"회의 중에도 머릿속에서는 '냉장고에 치즈케이크가 있었지...'가 재생되고 있었어요. 집중할 수가 없었어요."</p>
+      <div style="margin:16px 0;padding:20px;background:#eff6ff;border-radius:12px;border-left:4px solid #2563eb;">
+        <p style="margin:0 0 8px;font-size:13px;color:#2563eb;font-weight:600;">Reddit 사용자 Salty_beach:</p>
+        <p style="margin:0;font-style:italic;font-size:14px;line-height:1.8;color:#374151;">"ADHD가 있어서 제 뇌는 탄수화물이나 단것에서 오는 도파민 히트를 사랑했어요. TV를 보다가 무의식적으로 부엌에 가서 시리얼 한 줌을 입에 넣고 있었어요. 일어난 것도, 시리얼을 꺼낸 것도 기억이 안 나요. <strong>자기 뇌와 싸워서 이길 수 있는 사람이 있나요?</strong> 이 약을 먹고 나서 음식은 더 이상 제 관심사가 아니에요."</p>
+      </div>
+      <p style="margin:0;font-style:italic;text-align:center;font-size:17px;font-weight:600;color:#1e3a5f;">"먹어. 지금. 항상. — 이렇게 떠들던 머릿속 목소리가 꺼진 것이 정말 놀라워요."</p>`,
+    "#2563eb",
+    "linear-gradient(160deg,#eff6ff,#dbeafe)"
+  )}
 
   <!-- 추천 + FAQ -->
   <section style="${sec("background:#f9fafb;")}">
