@@ -112,6 +112,85 @@ function spacer(h = 40): string {
   return `<div style="height:${h}px;"></div>`;
 }
 
+/** 가격 앵커링 섹션 */
+function priceAnchor(
+  comparisons: { what: string; price: string; note: string }[],
+  ourPrice: string,
+  ourNote: string,
+  accent: string
+): string {
+  return `<div style="max-width:600px;margin:32px auto;">
+${comparisons
+  .map(
+    (c) => `<div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;margin:6px 0;background:#f9fafb;border-radius:10px;">
+    <div>
+      <span style="font-size:15px;color:#6b7280;">${esc(c.what)}</span>
+      <span style="font-size:12px;color:#9ca3af;margin-left:8px;">${esc(c.note)}</span>
+    </div>
+    <span style="font-size:15px;color:#9ca3af;text-decoration:line-through;">${esc(c.price)}</span>
+  </div>`
+  )
+  .join("\n")}
+  <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 24px;margin:12px 0 0;background:${accent};border-radius:12px;">
+    <div>
+      <span style="font-size:17px;font-weight:700;color:#fff;">이 가이드</span>
+      <span style="font-size:13px;color:rgba(255,255,255,.8);margin-left:8px;">${esc(ourNote)}</span>
+    </div>
+    <span style="font-size:24px;font-weight:800;color:#fff;">${esc(ourPrice)}</span>
+  </div>
+</div>`;
+}
+
+/** 중간 CTA 배너 */
+function midCta(text: string, accent: string): string {
+  return `<div style="max-width:600px;margin:40px auto;padding:24px 32px;background:linear-gradient(135deg,${accent},${accent}dd);border-radius:16px;text-align:center;">
+  <p style="font-size:17px;font-weight:700;color:#fff;margin:0 0 4px;">${esc(text)}</p>
+  <p style="font-size:13px;color:rgba(255,255,255,.7);margin:0;">↓ 아래에서 계속 읽어보세요</p>
+</div>`;
+}
+
+/** 소셜프루프 띠배너 */
+function proofBanner(items: string[], bg: string, color: string): string {
+  return `<div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;padding:20px;background:${bg};border-radius:12px;margin:24px 0;">
+${items
+  .map(
+    (item) =>
+      `<span style="font-size:13px;font-weight:600;color:${color};">${esc(item)}</span>`
+  )
+  .join("\n")}
+</div>`;
+}
+
+/** 크로스셀 섹션 */
+function crossSell(
+  currentId: string,
+  books: { id: string; emoji: string; title: string; oneLiner: string }[]
+): string {
+  const others = books.filter((b) => b.id !== currentId);
+  return `<div style="max-width:600px;margin:32px auto;">
+  <p style="font-size:14px;font-weight:600;color:#9ca3af;margin-bottom:16px;text-align:center;">이 가이드를 읽은 분들이 함께 본 책</p>
+${others
+  .map(
+    (b) => `<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;margin:8px 0;background:#fff;border-radius:12px;border:1px solid #f3f4f6;">
+    <span style="font-size:32px;flex-shrink:0;">${b.emoji}</span>
+    <div style="text-align:left;">
+      <div style="font-size:15px;font-weight:700;color:#111827;">${esc(b.title)}</div>
+      <div style="font-size:13px;color:#6b7280;margin-top:2px;">${esc(b.oneLiner)}</div>
+    </div>
+    <span style="margin-left:auto;font-size:14px;font-weight:700;color:#2563eb;flex-shrink:0;">1,000원</span>
+  </div>`
+  )
+  .join("\n")}
+</div>`;
+}
+
+const ALL_BOOKS_FOR_CROSSSELL = [
+  { id: "diet-secrets", emoji: "🏋️", title: "다이어트 서바이벌 시스템", oneLiner: "1,673명의 실전 데이터 기반 생존 가이드" },
+  { id: "endocrine-disruptors", emoji: "🧪", title: "생활 속 환경호르몬과 질병", oneLiner: "20%만 바꿔도 80% 노출 감소" },
+  { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", oneLiner: "서랍 하나, 5분 타이머로 시작" },
+  { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", oneLiner: "41만 명 경험 + 약사가 직접 정리" },
+];
+
 /* ═══════════════════════════════════════════
    1. 다이어트 서바이벌 시스템
    ═══════════════════════════════════════════ */
@@ -228,6 +307,31 @@ function buildDietSecrets(): string {
     ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
   </section>
 
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "영양사 1:1 상담", price: "50,000원~", note: "1회" },
+        { what: "다이어트 전문 서적", price: "18,000원~", note: "업데이트 없음" },
+        { what: "온라인 다이어트 강의", price: "99,000원~", note: "일방적 강의" },
+      ],
+      "1,000원",
+      "1개월 열람 · 계속 업데이트",
+      "#059669"
+    )}
+    ${proofBanner(
+      ["📊 Reddit 1,673명 분석", "🔄 계속 업데이트", "💊 약사가 검증", "📱 모바일 최적화"],
+      "#f0fdf4",
+      "#059669"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("diet-secrets", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
   <!-- CTA -->
   <section style="${sec("background:linear-gradient(160deg,#059669,#047857);")}padding:80px 40px;">
     <div style="font-size:48px;margin-bottom:16px;">🏋️</div>
@@ -337,6 +441,31 @@ function buildEndocrineDisruptors(): string {
     ${faqItem("BPA Free 제품이 정말 안전한가요?", "아닙니다. BPS, BPF 등 대체물질이 사용되며 일부는 BPA만큼 위험합니다. 가이드에서 대안을 구체적으로 알려드립니다.")}
     ${faqItem("예산이 적다면 뭘 먼저 바꿔야 하나요?", "주방 플라스틱 용기 → 스테인리스/유리로 교체가 1순위입니다. 가장 적은 비용으로 가장 큰 노출 감소 효과를 봅니다.")}
     ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새 연구가 나오면 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "환경 컨설팅 업체", price: "200,000원~", note: "가정용" },
+        { what: "환경호르몬 관련 서적", price: "20,000원~", note: "업데이트 없음" },
+        { what: "성분 분석 앱 구독", price: "5,000원/월", note: "성분만 확인" },
+      ],
+      "1,000원",
+      "실천 가이드 + 체크리스트 5개 + 업데이트",
+      "#0d9488"
+    )}
+    ${proofBanner(
+      ["🔬 NIH/EPA 교차 검증", "📋 체크리스트 5종", "💊 약사가 검증", "🔄 새 연구 반영 업데이트"],
+      "#f0fdfa",
+      "#0d9488"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("endocrine-disruptors", ALL_BOOKS_FOR_CROSSSELL)}
   </section>
 
   <!-- CTA -->
@@ -449,6 +578,31 @@ function buildDeclutterClean(): string {
     ${faqItem("서랍 하나부터 시작하면 집 전체가 정말 바뀌나요?", "네. 작은 성공이 동기를 만들고, 동기가 다음 행동을 만듭니다. Reddit에서 가장 많이 추천된 방법이 바로 이것입니다.")}
     ${faqItem("ADHD가 있어도 따라할 수 있나요?", "이 가이드는 ADHD를 전제로 설계되었습니다. 'The Basket' 시스템, 5분 타이머 등 ADHD 친화적 방법만 모았습니다.")}
     ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "정리 컨설턴트 방문", price: "150,000원~", note: "1회" },
+        { what: "정리 관련 서적", price: "16,000원~", note: "업데이트 없음" },
+        { what: "정리 온라인 클래스", price: "49,000원~", note: "일방적 강의" },
+      ],
+      "1,000원",
+      "ADHD 가이드 포함 · 계속 업데이트",
+      "#d97706"
+    )}
+    ${proofBanner(
+      ["🧹 Reddit 실전 경험", "🧠 ADHD 맞춤 설계", "👨‍👩‍👧 가족 참여 전략", "🔄 계속 업데이트"],
+      "#fffbeb",
+      "#92400e"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("declutter-clean", ALL_BOOKS_FOR_CROSSSELL)}
   </section>
 
   <!-- CTA -->
@@ -582,6 +736,31 @@ function buildGlp1Guide(): string {
     ${faqItem("오젬픽과 마운자로 중 어떤 것이 맞나요?", "챕터 2에서 41만 명 분석 데이터를 기반으로 상세 비교합니다. 일반적으로 티르제파타이드(마운자로)가 더 강력하지만, 개인 상황에 따라 다릅니다.")}
     ${faqItem("근육이 빠진다는데 어떻게 막나요?", "체중 감소분의 25~40%가 근육일 수 있습니다. 단백질 1.2~1.5g/kg, 주 3회 근력운동이 핵심입니다. 챕터 6에서 구체적 식단·운동 프로토콜을 다룹니다.")}
     ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새 연구·약물 정보가 나오면 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "약사 1:1 상담 30분", price: "50,000원~", note: "1회성" },
+        { what: "비만 클리닉 초진", price: "80,000원~", note: "검사비 별도" },
+        { what: "GLP-1 관련 해외 서적", price: "25,000원~", note: "영어·업데이트 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 보너스 5개 + 계속 업데이트",
+      "#2563eb"
+    )}
+    ${proofBanner(
+      ["👨‍⚕️ 현직 약사 저자", "📊 41만 명 분석", "📚 BMJ·NEJM 검증", "🔄 새 약물 정보 업데이트"],
+      "#eff6ff",
+      "#2563eb"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("glp1-guide", ALL_BOOKS_FOR_CROSSSELL)}
   </section>
 
   <!-- CTA -->

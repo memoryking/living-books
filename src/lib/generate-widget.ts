@@ -66,6 +66,32 @@ function readBookSections(bookId: string): Section[] {
   return sections;
 }
 
+const CROSS_SELL_BOOKS = [
+  { id: "diet-secrets", emoji: "🏋️", title: "다이어트 서바이벌 시스템", sub: "1,673명 실전 데이터 기반" },
+  { id: "endocrine-disruptors", emoji: "🧪", title: "생활 속 환경호르몬과 질병", sub: "20%만 바꿔도 80% 감소" },
+  { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", sub: "서랍 하나, 5분 타이머" },
+  { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", sub: "41만 명 경험 + 약사 검증" },
+];
+
+function buildCrossSell(currentId: string): string {
+  const others = CROSS_SELL_BOOKS.filter((b) => b.id !== currentId);
+  return `<div class="eb-cross">
+    <h3>이 가이드를 읽은 분들이 함께 본 책</h3>
+    ${others
+      .map(
+        (b) => `<div class="eb-cross-item">
+      <span class="eb-ci-emoji">${b.emoji}</span>
+      <div>
+        <div class="eb-ci-title">${escHtml(b.title)}</div>
+        <div class="eb-ci-sub">${escHtml(b.sub)}</div>
+      </div>
+      <span class="eb-ci-price">1,000원</span>
+    </div>`
+      )
+      .join("\n")}
+  </div>`;
+}
+
 function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   // Build TOC
   const tocItems = sections
@@ -88,12 +114,31 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
   return `<!-- ${escHtml(book.emoji)} ${escHtml(book.title)} — 아임웹 위젯용 -->
 <style>
-  .eb-viewer{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.85;color:#333;max-width:780px;margin:0 auto;padding:0 16px 80px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;}
+  .eb-viewer{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.85;color:#333;max-width:780px;margin:0 auto;padding:0 16px 80px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:background .3s,color .3s}
   .eb-viewer.eb-sm{font-size:15px}
   .eb-viewer.eb-md{font-size:17px}
   .eb-viewer.eb-lg{font-size:20px}
 
-  .eb-bar{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;padding:10px 0;z-index:100;display:flex;justify-content:center;gap:8px}
+  .eb-viewer.eb-dark{background:#1a1a2e;color:#e0e0e0}
+  .eb-viewer.eb-dark .eb-bar{background:#1a1a2e;border-color:#333}
+  .eb-viewer.eb-dark .eb-bar button{background:#2a2a3e;color:#ccc;border-color:#444}
+  .eb-viewer.eb-dark .eb-bar button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+  .eb-viewer.eb-dark .eb-toc{background:#222;border-color:#333}
+  .eb-viewer.eb-dark .eb-toc a{color:#60a5fa}
+  .eb-viewer.eb-dark .eb-section{color:#d1d5db}
+  .eb-viewer.eb-dark h1,.eb-viewer.eb-dark h2,.eb-viewer.eb-dark h3{color:#f3f4f6}
+  .eb-viewer.eb-dark blockquote{background:#222;border-color:#3b82f6;color:#93c5fd}
+  .eb-viewer.eb-dark th{background:#2a2a3e}
+  .eb-viewer.eb-dark td,.eb-viewer.eb-dark th{border-color:#444}
+  .eb-viewer.eb-dark tr:nth-child(even){background:#222}
+  .eb-viewer.eb-dark code{background:#2a2a3e;color:#e0e0e0}
+  .eb-viewer.eb-dark .eb-cross{background:#222;border-color:#333}
+
+  .eb-progress{position:sticky;top:0;z-index:110;height:3px;background:#e5e7eb}
+  .eb-progress-bar{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);width:0%;transition:width .15s}
+  .eb-viewer.eb-dark .eb-progress{background:#333}
+
+  .eb-bar{position:sticky;top:3px;background:#fff;border-bottom:1px solid #eee;padding:10px 0;z-index:100;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
   .eb-bar button{padding:7px 18px;border:1px solid #d1d5db;background:#fff;border-radius:24px;cursor:pointer;font-size:14px;font-weight:600;color:#555;transition:all .2s}
   .eb-bar button:hover{border-color:#2563eb;color:#2563eb}
   .eb-bar button.active{background:#2563eb;color:#fff;border-color:#2563eb}
@@ -136,6 +181,14 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   .eb-back{display:inline-block;margin:24px 0 8px;color:#2563eb;font-size:14px;cursor:pointer;font-weight:500}
   .eb-back:hover{text-decoration:underline}
 
+  .eb-cross{margin:48px 0 0;padding:32px 24px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;text-align:center}
+  .eb-cross h3{font-size:14px;font-weight:600;color:#9ca3af;margin:0 0 16px}
+  .eb-cross-item{display:flex;align-items:center;gap:14px;padding:14px 16px;margin:8px 0;background:#fff;border-radius:10px;border:1px solid #f3f4f6;text-align:left;cursor:default}
+  .eb-cross-item .eb-ci-emoji{font-size:28px;flex-shrink:0}
+  .eb-cross-item .eb-ci-title{font-size:14px;font-weight:700;color:#111}
+  .eb-cross-item .eb-ci-sub{font-size:12px;color:#6b7280;margin-top:2px}
+  .eb-cross-item .eb-ci-price{margin-left:auto;font-size:13px;font-weight:700;color:#2563eb;flex-shrink:0}
+
   @media(max-width:640px){
     .eb-viewer{padding:0 12px 80px}
     .eb-float{bottom:16px;right:16px;padding:9px 15px;font-size:13px}
@@ -145,10 +198,12 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 </style>
 
 <div id="eb-root" class="eb-viewer eb-md">
+  <div class="eb-progress"><div id="eb-prog-bar" class="eb-progress-bar"></div></div>
   <div class="eb-bar">
     <button data-size="sm" onclick="ebFont('sm',this)">가-</button>
     <button data-size="md" class="active" onclick="ebFont('md',this)">가</button>
     <button data-size="lg" onclick="ebFont('lg',this)">가+</button>
+    <button id="eb-dark-btn" onclick="ebDark()" style="margin-left:8px">🌙</button>
   </div>
 
   <div class="eb-header">
@@ -165,6 +220,8 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   </div>
 
   ${contentSections}
+
+  ${buildCrossSell(book.id)}
 </div>
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
@@ -174,11 +231,18 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   var root=document.getElementById('eb-root');
   var fb=document.getElementById('eb-float-toc');
   var toc=document.getElementById('eb-toc');
+  var progBar=document.getElementById('eb-prog-bar');
 
   window.ebFont=function(s,btn){
     root.className=root.className.replace(/eb-(sm|md|lg)/g,'eb-'+s);
-    root.querySelectorAll('.eb-bar button').forEach(function(b){b.classList.remove('active')});
+    root.querySelectorAll('.eb-bar button[data-size]').forEach(function(b){b.classList.remove('active')});
     if(btn)btn.classList.add('active');
+  };
+
+  window.ebDark=function(){
+    root.classList.toggle('eb-dark');
+    var btn=document.getElementById('eb-dark-btn');
+    btn.textContent=root.classList.contains('eb-dark')?'☀️':'🌙';
   };
 
   window.ebNav=function(id){
@@ -187,16 +251,18 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   };
 
   var lastScroll=0;
-  function checkFloat(){
-    if(!toc)return;
-    var r=toc.getBoundingClientRect();
-    fb.style.display=r.bottom<0?'block':'none';
-  }
-  window.addEventListener('scroll',function(){
+  function onScroll(){
     var now=Date.now();
-    if(now-lastScroll>100){lastScroll=now;checkFloat()}
-  });
-  checkFloat();
+    if(now-lastScroll<50)return;
+    lastScroll=now;
+    // floating toc
+    if(toc){var r=toc.getBoundingClientRect();fb.style.display=r.bottom<0?'block':'none';}
+    // progress bar
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    if(h>0&&progBar){progBar.style.width=Math.min(100,Math.round(window.scrollY/h*100))+'%';}
+  }
+  window.addEventListener('scroll',onScroll);
+  onScroll();
 })();
 </script>`;
 }
