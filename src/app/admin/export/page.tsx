@@ -1,4 +1,5 @@
 import { generateAllWidgets } from "@/lib/generate-widget";
+import { generateAllDetails } from "@/lib/generate-detail-page";
 import WidgetExportClient from "./WidgetExportClient";
 
 export const metadata = {
@@ -8,6 +9,7 @@ export const metadata = {
 
 export default function ExportPage() {
   const widgets = generateAllWidgets();
+  const details = generateAllDetails();
 
   return (
     <WidgetExportClient
@@ -18,6 +20,15 @@ export default function ExportPage() {
         subtitle: w.book.subtitle,
         html: w.html,
         charCount: w.html.length,
+      }))}
+      details={details.map((d) => ({
+        id: d.id,
+        title: d.title,
+        emoji: d.emoji,
+        detailHtml: d.detailHtml,
+        detailSize: d.detailSize,
+        coverPrompt: d.coverPrompt,
+        marketingCopy: d.marketingCopy,
       }))}
     />
   );
