@@ -79,6 +79,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-08",
     version: 1,
   },
+  {
+    id: "love-skills",
+    emoji: "💕",
+    title: "밀당 없이 사랑받는 연애의 기술",
+    subtitle: "불안한 연애를 반복하는 당신을 위한 애착·소통·관계 심리학 수업",
+    tags: ["연애심리", "애착유형", "관계심리학", "소통"],
+    lastUpdated: "2026-09-08",
+    version: 1,
+  },
 ];
 
 function BookCard({

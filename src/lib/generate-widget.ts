@@ -40,6 +40,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🌿",
     subtitle: "식단·혈당·운동·수면 — 노화 속도를 되돌리는 28일 실전 프로그램",
   },
+  {
+    id: "love-skills",
+    title: "밀당 없이 사랑받는 연애의 기술",
+    emoji: "💕",
+    subtitle: "애착·소통·관계 심리학 수업",
+  },
 ];
 
 interface Section {
@@ -78,6 +84,7 @@ const CROSS_SELL_BOOKS = [
   { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", sub: "서랍 하나, 5분 타이머" },
   { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", sub: "41만 명 경험 + 약사 검증" },
   { id: "slow-aging", emoji: "🌿", title: "4주 저속노화 리셋", sub: "식단·혈당·운동·수면 28일 프로그램" },
+  { id: "love-skills", emoji: "💕", title: "밀당 없이 사랑받는 연애의 기술", sub: "애착·소통·관계 심리학 수업" },
 ];
 
 function buildCrossSell(currentId: string): string {

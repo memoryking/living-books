@@ -279,6 +279,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "declutter-clean", emoji: "🧹", title: "정리와 청소의 기술", oneLiner: "서랍 하나, 5분 타이머로 시작" },
   { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", oneLiner: "41만 명 경험 + 약사가 직접 정리" },
   { id: "slow-aging", emoji: "🌿", title: "4주 저속노화 리셋", oneLiner: "식단·혈당·운동·수면 28일 프로그램" },
+  { id: "love-skills", emoji: "💕", title: "밀당 없이 사랑받는 연애의 기술", oneLiner: "애착·소통·관계 심리학 수업" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1096,6 +1097,165 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   6. 밀당 없이 사랑받는 연애의 기술
+   ═══════════════════════════════════════════ */
+
+function buildLoveSkills(): string {
+  return `<!-- 💕 밀당 없이 사랑받는 연애의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fdf2f8,#fce7f3,#fbcfe8);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💕</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#831843;letter-spacing:-0.5px;">새벽 두 시,<br>메시지를 썼다 지웠다 하시나요?</h2>
+    <p style="font-size:18px;color:#9d174d;font-weight:600;margin:0 0 8px;">그 패턴에는 이름과 이유가 있고, 바꾸는 방법도 있습니다.</p>
+    ${subtitle("밀당이 아닌 진정성으로 — 애착·소통·관계 심리학 수업")}
+    ${statGrid([
+      { num: "10+1", label: "챕터 + 관계 도구함 부록", color: "#db2777" },
+      { num: "15", label: "상황별 대화 스크립트", color: "#db2777" },
+      { num: "30", label: "마음이 깊어지는 질문", color: "#db2777" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 불안 패턴 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 감정들,", "익숙하시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fdf2f8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📱</div>
+        <div style="font-size:16px;font-weight:700;color:#9d174d;margin-bottom:8px;">답장 불안</div>
+        <div style="font-size:14px;color:#831843;line-height:1.6;">답장이 한 시간만 늦어도<br>마음이 바닥까지 내려감</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔄</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">반복 패턴</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">연애할 때마다<br>비슷한 지점에서 무너짐</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🤐</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">소통 어려움</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">서운함을 말 못 하고<br>쌓아 두다 터뜨림</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;">이것은 성격 문제가 아닙니다. <strong style="color:#db2777;">사랑을 다르게 배운 것</strong>뿐이고, 바꿀 수 있습니다.</p>
+  </section>
+
+  <!-- 밀당의 진실 -->
+  <section style="${sec("background:#831843;color:#fff;")}">
+    <div style="font-size:13px;color:#f9a8d4;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE TRUTH ABOUT PUSH-PULL</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">밀당이 만드는 건<br>사랑이 아니라 불안입니다</h2>
+    <div style="max-width:560px;margin:0 auto;padding:28px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(249,168,212,.3);text-align:left;">
+      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.8;margin:0 0 16px;">밀당은 <strong>불확실성을 제조하는 기술</strong>이에요. 보상이 예측 불가능하게 주어질 때 집착이 강해지는 건 잘 알려진 심리 현상이죠.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.8;margin:0 0 16px;">밀당이 만들어 낸 그 마음의 정체가 뭘까요? <strong style="color:#f9a8d4;">사랑이 아니라 불안이에요.</strong></p>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.8;margin:0;">불안 위에 지어진 관계는 두 가지 길로 가요. 상대가 떠나거나, 경보 상태가 기본값이 되거나. 어느 쪽이든, 원하던 사랑은 아니에요.</p>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">이 책은 밀당 대신 <strong style="color:#f9a8d4;">진정성의 기술</strong>을 알려드립니다</p>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("00", "들어가며: 사랑이 어려운 건 당신 탓이 아니에요", false, "#db2777")}
+    ${tocItem("01", "반복되는 패턴: 왜 늘 비슷한 지점에서 무너질까", false, "#db2777")}
+    ${tocItem("02", "애착 유형: 내 연애의 설계도 읽기", true, "#db2777")}
+    ${tocItem("03", "자존감이라는 그릇: 사랑받을 준비에 대하여", false, "#db2777")}
+    ${tocItem("04", "시작의 심리학: 호감은 기술이 아니라 조건에서 자란다", false, "#db2777")}
+    ${tocItem("05", "밀당의 진실: 불안을 파는 게임을 그만두면 생기는 일", true, "#db2777")}
+    ${tocItem("06", "대화의 기술: 마음은 저절로 통하지 않는다", true, "#db2777")}
+    ${tocItem("07", "싸움의 기술: 갈등은 관계의 끝이 아니라 문법이다", true, "#db2777")}
+    ${tocItem("08", "경계선의 기술: 둘이면서 각자로 사는 법", false, "#db2777")}
+    ${tocItem("09", "흔들리는 순간들: 관계의 응급실", true, "#db2777")}
+    ${tocItem("10", "오래가는 사랑: 유지가 아니라 가꾸기", false, "#db2777")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 대화 스크립트 15개 / 월간 관계 점검표 / 마음이 깊어지는 질문 30 / 감정 단어 사전</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    "밀당의 진실: 불안을 파는 게임을 그만두면 생기는 일",
+    [
+      "밀당은 왜 통하는 것처럼 보이는가",
+      "불확실성과 간헐적 강화",
+      "밀당이 만들어 내는 감정의 정체",
+      "진정성의 기술: 밀당을 대체하는 것",
+      "밀당 없이 관계를 시작하는 법",
+    ],
+    `<p style="margin:0 0 16px;">심리학적으로 보면 밀당은 <strong>불확실성을 제조하는 기술</strong>이에요. 보상이 예측 불가능하게 주어질 때 집착이 강해지는 것은 잘 알려진 심리 현상이죠. 답장이 올 듯 말 듯한 상대에게 자꾸 마음이 쓰이는 건 그래서예요.</p>
+      <p style="margin:0 0 16px;">인정할 건 인정할게요. 밀당은 상대의 주의를 붙잡는 데 종종 성공해요. 문제는 그다음이에요. 밀당이 만들어 낸 그 마음의 정체가 뭘까요? <strong>사랑일까요?</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#fdf2f8;border-radius:10px;font-weight:700;color:#9d174d;">아니요. 그건 불안이에요. 밀당은 상대의 애착 시스템에 경보를 울려서, 불안을 사랑으로 착각하게 만드는 기술이에요.</p>
+      <p style="margin:0;">그리고 불안 위에 지어진 관계는 두 가지 길로 가요. 경보에 지친 상대가 떠나거나, 경보 상태가 관계의 기본값이 되거나. 어느 쪽이든, 우리가 원하던 사랑의 모습은 아니에요.</p>`,
+    "#db2777",
+    "linear-gradient(160deg,#fdf2f8,#fce7f3)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천해요")}
+    ${checkList(
+      [
+        "연애할 때마다 비슷한 지점에서 무너지는 패턴을 반복하는 분",
+        "상대의 답장 속도에 하루의 기분이 좌우되는 분",
+        "서운함을 말하는 법을 몰라 쌓아 두다 터뜨리는 분",
+        "지금의 관계를 더 단단하게 가꾸고 싶은 커플",
+      ],
+      "✅",
+      "#fdf2f8"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "상대를 '넘어오게 만드는' 공략법을 찾는 분",
+        "읽기만 하고 대화 연습은 하지 않을 분",
+        "심리 치료를 대신할 자료를 찾는 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("모태솔로도 볼 수 있나요?", "네. 앞 절반이 관계 시작 전 준비(패턴·자존감·시작의 기술)이고, 대화·갈등 기술은 우정과 가족 관계에도 그대로 쓰여요.")}
+    ${faqItem("연애 중인데 도움이 되나요?", "후반부(대화·싸움·경계선·권태기·오래가는 습관)가 연애 중인 분들을 위한 파트예요. 커플이 함께 읽기에도 좋아요.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "커플 심리상담 1회", price: "100,000원~", note: "1시간" },
+        { what: "연애·심리 서적", price: "16,000원~", note: "업데이트 없음" },
+        { what: "관계 코칭 프로그램", price: "200,000원~", note: "4주" },
+      ],
+      "1,000원",
+      "10챕터 + 대화 스크립트 15개 + 질문 30개 + 업데이트",
+      "#db2777"
+    )}
+    ${proofBanner(
+      ["💬 대화 스크립트 15개", "❤️ 질문 30개", "📋 월간 점검표", "🔄 계속 업데이트"],
+      "#fdf2f8",
+      "#db2777"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("love-skills", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("💕", "새벽 두 시의 불안 대신,", "오늘 저녁의 다정한 한마디부터.", "밀당 대신 진정성의 기술을 배우세요.", "#db2777")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -1148,6 +1308,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "밝은 민트(#a7f3d0)에서 딥그린(#14532d)으로",
     symbol: "모래시계 안에서 초록 새싹이 자라나는 모습의 플랫 일러스트 (노화 시간을 되돌리는 상징)",
     mood: "청량, 생기, 실행력",
+  },
+  "love-skills": {
+    title: "밀당 없이 사랑받는 연애의 기술",
+    subtitle: "애착·소통·관계 심리학 수업",
+    author: "김약사 · 유원소망약국",
+    gradient: "로즈핑크(#db2777)에서 웜톤 살구색(#fda4af)으로",
+    symbol: "두 개의 원이 부드럽게 겹쳐지고 겹친 부분에 작은 하트가 있는 플랫 일러스트 (건강한 관계의 상징)",
+    mood: "따뜻함, 공감, 포근함",
   },
 };
 
@@ -1238,6 +1406,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "오늘 저녁 식탁부터 늙는 속도가 달라집니다. 1,000원에 시작하세요.",
     tags: "#저속노화 #혈당관리 #건강루틴 #4주챌린지 #습관만들기",
   },
+  "love-skills": {
+    title: "밀당 없이 사랑받는 연애의 기술",
+    hook: "답장이 한 시간만 늦어도 마음이 바닥까지 내려가시죠? 그 패턴에는 이름이 있어요.",
+    stat: "10챕터 + 대화 스크립트 15개 + 질문 30개 · 애착 심리학 기반",
+    quote: "밀당이 만드는 건 사랑이 아니라 불안이에요. 불안 위에 지어진 관계는 오래 못 가요.",
+    cta: "새벽 두 시의 불안 대신, 오늘 저녁의 다정한 한마디. 1,000원에 시작하세요.",
+    tags: "#연애심리 #애착유형 #관계심리학 #밀당 #자존감",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1290,6 +1466,7 @@ const BOOK_META = [
   { id: "declutter-clean", title: "정리와 청소의 기술", emoji: "🧹", builder: buildDeclutterClean },
   { id: "glp1-guide", title: "GLP-1 비만약 완전 가이드", emoji: "💊", builder: buildGlp1Guide },
   { id: "slow-aging", title: "4주 저속노화 리셋", emoji: "🌿", builder: buildSlowAging },
+  { id: "love-skills", title: "밀당 없이 사랑받는 연애의 기술", emoji: "💕", builder: buildLoveSkills },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
