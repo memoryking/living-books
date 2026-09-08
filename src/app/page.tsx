@@ -88,6 +88,24 @@ const premiumBooks = [
     lastUpdated: "2026-09-08",
     version: 1,
   },
+  {
+    id: "ai-sidejob",
+    emoji: "🤖",
+    title: "하루 1시간, AI 부업 자동화 시스템",
+    subtitle: "퇴근 후 1시간으로 월 수익 파이프라인 3개를 만드는 직장인 실전 가이드",
+    tags: ["AI부업", "자동화", "블로그", "숏폼"],
+    lastUpdated: "2026-09-08",
+    version: 1,
+  },
+  {
+    id: "threads-marketing",
+    emoji: "🧵",
+    title: "0팔로워로 시작하는 스레드 마케팅",
+    subtitle: "계정 세팅부터 수익화까지 — 텍스트 한 줄로 성장하는 28일 공략집",
+    tags: ["스레드", "SNS마케팅", "수익화", "텍스트"],
+    lastUpdated: "2026-09-08",
+    version: 1,
+  },
 ];
 
 function BookCard({

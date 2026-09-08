@@ -280,6 +280,8 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "glp1-guide", emoji: "💊", title: "GLP-1 비만약 완전 가이드", oneLiner: "41만 명 경험 + 약사가 직접 정리" },
   { id: "slow-aging", emoji: "🌿", title: "4주 저속노화 리셋", oneLiner: "식단·혈당·운동·수면 28일 프로그램" },
   { id: "love-skills", emoji: "💕", title: "밀당 없이 사랑받는 연애의 기술", oneLiner: "애착·소통·관계 심리학 수업" },
+  { id: "ai-sidejob", emoji: "🤖", title: "AI 부업 자동화 시스템", oneLiner: "하루 1시간, 수익 파이프라인 3개" },
+  { id: "threads-marketing", emoji: "🧵", title: "0팔로워 스레드 마케팅", oneLiner: "28일 공략집 + 훅 템플릿 30개" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1097,7 +1099,208 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
-   6. 밀당 없이 사랑받는 연애의 기술
+   6. 하루 1시간, AI 부업 자동화 시스템
+   ═══════════════════════════════════════════ */
+
+function buildAiSidejob(): string {
+  return `<!-- 🤖 하루 1시간, AI 부업 자동화 시스템 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#eff6ff,#dbeafe,#bfdbfe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🤖</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#1e3a5f;">부업 영상 100개 봤는데<br>아직 시작을 못 하셨나요?</h2>
+    <p style="font-size:18px;color:#1d4ed8;font-weight:600;margin:0 0 8px;">부족한 건 정보가 아니라 '순서'입니다.</p>
+    ${subtitle("퇴근 후 1시간, 블로그→숏폼→디지털상품 — AI가 대신하는 파이프라인")}
+    ${statGrid([
+      { num: "1시간", label: "하루 투자 시간", color: "#2563eb" },
+      { num: "15", label: "복사해 쓰는 AI 프롬프트", color: "#2563eb" },
+      { num: "3", label: "수익 파이프라인", color: "#2563eb" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 루프에 갇혀 있지 않나요?")}
+    ${redditQuote("블로그 3번 만들었고, 3번 다 글 5개에서 멈췄어. 문제는 소재 고갈이야. AI로 해결할 수 있다는 걸 너무 늦게 알았어.", "sidehustle")}
+    ${redditQuote("유튜브 편집이 무서워서 시작도 못 했는데, 텍스트 오버레이 쇼츠는 30분이면 3개 만들 수 있더라.", "passive_income")}
+  </section>
+  <section style="${sec("background:#1e3a5f;color:#fff;")}">
+    <div style="font-size:13px;color:#93c5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">하루 1시간, 3개의 파이프라인</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">블로그 자동화<br><small style="color:rgba(255,255,255,.5);">검색이 일하게 하라</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">숏폼 자동화<br><small style="color:rgba(255,255,255,.5);">얼굴 없이 조회수</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">디지털 상품<br><small style="color:rgba(255,255,255,.5);">단가를 끌어올리는 엔진</small></div>
+      </div>
+    </div>
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 지금, AI 부업인가", false, "#2563eb")}
+    ${tocItem("02", "시작 전 준비: 도구, 계정, 마인드셋", false, "#2563eb")}
+    ${tocItem("03", "1단계: 팔리는 주제를 데이터로 찾는 법", true, "#2563eb")}
+    ${tocItem("04", "2단계: 블로그 자동화 — 검색이 일하게 하라", false, "#2563eb")}
+    ${tocItem("05", "3단계: 숏폼 자동화 — 얼굴 없이 조회수 만들기", true, "#2563eb")}
+    ${tocItem("06", "4단계: 디지털 상품 — 단가를 끌어올리는 엔진", false, "#2563eb")}
+    ${tocItem("07", "막히는 지점 해결: 실패 패턴 7가지와 처방전", true, "#2563eb")}
+    ${tocItem("08", "시스템 유지와 확장: 30일 실행 캘린더", false, "#2563eb")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 바로 복사해 쓰는 AI 프롬프트 15선 ⭐</div>
+  </section>
+  ${fullPreview(
+    "5",
+    "3단계: 숏폼 자동화 — 얼굴 없이 조회수 만들기",
+    ["얼굴·목소리 없이 가능한 3가지 포맷", "블로그 글 1개 = 쇼츠 3개", "잘 터지는 쇼츠 대본의 공통 구조", "해시태그·제목 전략", "30개까지는 같은 포맷"],
+    `<p style="margin:0 0 16px;">직장인 부업의 최대 걸림돌인 '신상 노출'은 포맷 선택으로 해결합니다.</p>
+      <p style="margin:0 0 16px;"><strong>1. 텍스트 오버레이형</strong> — 배경 영상(무료 스톡) 위에 자막이 흐르는 형식. 정보성 주제에 최적이며 제작이 가장 빠릅니다.</p>
+      <p style="margin:0 0 16px;"><strong>2. AI 보이스 내레이션형</strong> — 대본을 AI 음성이 읽어 줍니다. VREW, 캡컷 내장 기능으로 자연스러운 한국어 음성을 쓸 수 있습니다.</p>
+      <p style="margin:0 0 16px;"><strong>3. 슬라이드 카드형</strong> — 캔바로 만든 카드 이미지 5~7장을 넘기는 형식. 릴스와 스레드에 동시 활용됩니다.</p>
+      <p style="margin:0;padding:16px;background:#eff6ff;border-radius:10px;font-weight:600;color:#1d4ed8;">💡 이미 발행한 블로그 글을 AI에게 주면 60초 쇼츠 대본 3개로 쪼개줍니다. 소재를 새로 찾지 않습니다.</p>`,
+    "#2563eb",
+    "linear-gradient(160deg,#eff6ff,#dbeafe)"
+  )}
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["부업 정보만 모으다 6개월이 지난 직장인", "얼굴·실명 없이 온라인 수익을 만들고 싶은 분", "AI 프롬프트부터 막히는 분", "블로그·유튜브를 시작했다가 소재 고갈로 멈춘 분"], "✅", "#eff6ff")}
+    ${spacer(16)}
+    ${checkList(["한 달 안에 수백만 원 비법을 찾는 분", "읽기만 하고 실행하지 않을 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("완전 초보도 따라 할 수 있나요?", "네. 계정 개설부터 분 단위로 안내합니다. 프롬프트 15개를 복사해 붙여넣기만 하면 됩니다.")}
+    ${faqItem("수익이 보장되나요?", "아니요. 이 책이 제공하는 건 검증된 '구조와 순서'이며, 결과는 주제 선택과 실행에 따라 달라집니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "부업 온라인 강의", price: "99,000원~", note: "일방적 강의" },
+      { what: "부업 코칭 1:1", price: "200,000원~", note: "1회" },
+      { what: "AI 부업 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "8챕터 + 프롬프트 15개 + 계속 업데이트", "#2563eb")}
+    ${proofBanner(["🤖 AI 프롬프트 15개", "📅 30일 실행 캘린더", "📋 체크리스트 12개", "🔄 계속 업데이트"], "#eff6ff", "#2563eb")}
+  </section>
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("ai-sidejob", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+  ${ctaBlock("🤖", "부업 영상 100개 대신,", "실행 매뉴얼 1권으로 시작하세요.", "하루 1시간, AI가 대신하는 파이프라인.", "#2563eb")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   7. 0팔로워로 시작하는 스레드 마케팅
+   ═══════════════════════════════════════════ */
+
+function buildThreadsMarketing(): string {
+  return `<!-- 🧵 0팔로워로 시작하는 스레드 마케팅 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#f5f3ff,#ede9fe,#ddd6fe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🧵</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#4c1d95;">유튜브는 늦은 것 같고,<br>인스타는 사진 감각이 없고?</h2>
+    <p style="font-size:18px;color:#6d28d9;font-weight:600;margin:0 0 8px;">글 몇 줄로 시작할 수 있는 판이 열려 있어요.</p>
+    ${subtitle("0팔로워부터 수익화까지 — 스레드 28일 공략집")}
+    ${statGrid([
+      { num: "30", label: "첫 줄 훅 템플릿", color: "#7c3aed" },
+      { num: "60", label: "글감 아이디어", color: "#7c3aed" },
+      { num: "28일", label: "데일리 미션 로드맵", color: "#7c3aed" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+  <section style="${sec("background:#4c1d95;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">WHY THREADS, WHY NOW</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">스레드, 지금이 골든타임입니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px 0;">
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">1.4억</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">글로벌 DAU<br><small style="color:rgba(255,255,255,.4);">X 추월 보도</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">543만</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">국내 MAU<br><small style="color:rgba(255,255,255,.4);">전년 대비 2배</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">텍스트</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">사진·영상 없이<br><small style="color:rgba(255,255,255,.4);">글 몇 줄로 시작</small></div>
+      </div>
+    </div>
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분들이 고민하시죠")}
+    ${redditQuote("솔직히 스레드를 우습게 봤어. 그런데 사진 없이 글 몇 줄로 모르는 사람들이 반응하고 팔로우하는 경험을 하면서 생각이 바뀌었어.", "socialmedia")}
+    ${redditQuote("문제는 제대로 된 공략집이 없다는 거야. 0팔로워가 첫 4주에 뭘 해야 하는지 순서대로 알려 주는 자료가 없더라.", "marketing")}
+  </section>
+  <section style="${sec("background:#f5f3ff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 지금 스레드인가: 텍스트 SNS의 골든타임", false, "#7c3aed")}
+    ${tocItem("02", "알고리즘이 보는 것들: 한 편의 글이 겪는 24시간", true, "#7c3aed")}
+    ${tocItem("03", "계정 세팅: 시작 3일 안에 끝내는 기초 공사", false, "#7c3aed")}
+    ${tocItem("04", "글쓰기 공식: 멈추게 하고, 대답하게 하라", true, "#7c3aed")}
+    ${tocItem("05", "콘텐츠 시스템: 글감이 마르지 않는 공장", false, "#7c3aed")}
+    ${tocItem("06", "팔로워 참여 전략: 혼자 크는 계정은 없다", true, "#7c3aed")}
+    ${tocItem("07", "플랫폼 연계: 스레드를 허브로 만드는 법", false, "#7c3aed")}
+    ${tocItem("08", "수익화: 돈이 들어오는 5갈래 길", true, "#7c3aed")}
+    ${tocItem("09", "트러블슈팅: 막히는 순간들의 해결책", false, "#7c3aed")}
+    ${tocItem("10", "28일 이후: 90일 로드맵과 브랜드로 가는 길", false, "#7c3aed")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 훅 템플릿 30 / 발행 캘린더 / 글감 60 / 체크리스트 / 용어 사전</div>
+  </section>
+  ${fullPreview(
+    "4",
+    "글쓰기 공식: 멈추게 하고, 대답하게 하라",
+    ["스레드 글의 해부학", "첫 줄 공식 6가지", "몸통 구성법", "마지막 줄: 참여 유도", "실전 첨삭 사례"],
+    `<p style="margin:0 0 16px;">첫 줄의 사명은 단 하나, <strong>엄지를 멈추는 것</strong>이에요. 검증된 공식 6개:</p>
+      <p style="margin:0 0 8px;"><strong>1. 숫자 선언형</strong> — "월급 250만 원에서 매달 100만 원을 저축하게 된 방법 3가지"</p>
+      <p style="margin:0 0 8px;"><strong>2. 의외성/반전형</strong> — "저는 새벽 기상을 포기하고 나서 더 부지런해졌어요"</p>
+      <p style="margin:0 0 8px;"><strong>3. 실패 고백형</strong> — "스마트스토어로 3개월간 매출 0원이었던 이유"</p>
+      <p style="margin:0 0 8px;"><strong>4. 질문 직격형</strong> — "혹시 적금 만기 되면 그 돈 어디에 두세요?"</p>
+      <p style="margin:0 0 8px;"><strong>5. 손해 회피형</strong> — "이거 모르고 연말정산 하면 몇십만 원 날립니다"</p>
+      <p style="margin:0 0 16px;"><strong>6. 경험 티저형</strong> — "어제 퇴사 통보하고 왔습니다"</p>
+      <p style="margin:0;padding:16px;background:#f5f3ff;border-radius:10px;font-weight:600;color:#6d28d9;">💡 부록에 이 6가지를 변주한 템플릿 30개를 담아 뒀어요. 막힐 때마다 꺼내 쓰세요.</p>`,
+    "#7c3aed",
+    "linear-gradient(160deg,#f5f3ff,#ede9fe)"
+  )}
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천해요")}
+    ${checkList(["SNS 부업을 시작하고 싶지만 얼굴 공개가 부담스러운 분", "팔로워 0명에서 무엇부터 할지 순서를 알고 싶은 분", "글 쓰는 건 괜찮은데 뭘 언제 올릴지 막막한 분", "내 전자책·서비스·브랜드로 수익을 만들고 싶은 분"], "✅", "#f5f3ff")}
+    ${spacer(16)}
+    ${checkList(["1주일 만에 만 팔로워를 약속받고 싶은 분", "글 쓰는 걸 전혀 하고 싶지 않은 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("팔로워 0명인데 의미가 있나요?", "이 책이 바로 0팔로워를 위한 28일 로드맵입니다. 1일차 세팅부터 28일차 결산까지 순서대로 따라가면 됩니다.")}
+    ${faqItem("글쓰기에 자신이 없는데요?", "공식이 있습니다. 첫 줄 훅 템플릿 30개 + 글감 60개를 부록으로 드려요. 복사해서 변주하면 됩니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "SNS 마케팅 강의", price: "149,000원~", note: "일방적 강의" },
+      { what: "마케팅 컨설팅 1회", price: "150,000원~", note: "1시간" },
+      { what: "SNS 관련 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 훅 30개 + 글감 60개 + 업데이트", "#7c3aed")}
+    ${proofBanner(["📝 훅 템플릿 30개", "💡 글감 60개", "📅 28일 캘린더", "🔄 계속 업데이트"], "#f5f3ff", "#7c3aed")}
+  </section>
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("threads-marketing", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+  ${ctaBlock("🧵", "글 몇 줄로 시작하는", "나만의 브랜드, 오늘부터.", "0팔로워도 괜찮아요. 28일이면 달라집니다.", "#7c3aed")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   8. 밀당 없이 사랑받는 연애의 기술
    ═══════════════════════════════════════════ */
 
 function buildLoveSkills(): string {
@@ -1317,6 +1520,22 @@ const COVER_INFO: Record<string, CoverInfo> = {
     symbol: "두 개의 원이 부드럽게 겹쳐지고 겹친 부분에 작은 하트가 있는 플랫 일러스트 (건강한 관계의 상징)",
     mood: "따뜻함, 공감, 포근함",
   },
+  "ai-sidejob": {
+    title: "하루 1시간, AI 부업 자동화 시스템",
+    subtitle: "수익 파이프라인 3개를 만드는 실전 가이드",
+    author: "김약사 · 유원소망약국",
+    gradient: "딥블루(#2563eb)에서 짙은 네이비(#1e3a5f)로",
+    symbol: "노트북 화면에서 3개의 빛나는 파이프라인이 뻗어 나와 동전·그래프·문서로 연결되는 플랫 일러스트",
+    mood: "테크, 미래적, 실행력",
+  },
+  "threads-marketing": {
+    title: "0팔로워로 시작하는 스레드 마케팅",
+    subtitle: "텍스트 한 줄로 성장하는 28일 공략집",
+    author: "김약사 · 유원소망약국",
+    gradient: "퍼플(#7c3aed)에서 딥퍼플(#4c1d95)로",
+    symbol: "실 뭉치(스레드)에서 말풍선들이 연결되어 퍼져나가는 플랫 일러스트 (텍스트로 연결되는 커뮤니티)",
+    mood: "트렌디, 활기, 성장",
+  },
 };
 
 function buildCoverPrompt(id: string): string {
@@ -1414,6 +1633,22 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "새벽 두 시의 불안 대신, 오늘 저녁의 다정한 한마디. 1,000원에 시작하세요.",
     tags: "#연애심리 #애착유형 #관계심리학 #밀당 #자존감",
   },
+  "ai-sidejob": {
+    title: "하루 1시간, AI 부업 자동화 시스템",
+    hook: "부업 영상 100개 봤는데 아직 시작 못 하셨죠? 부족한 건 정보가 아니라 순서입니다.",
+    stat: "8챕터 + AI 프롬프트 15개 + 30일 실행 캘린더 · 하루 1시간 전제",
+    quote: "블로그 글 1개 = 쇼츠 3개. 소재를 새로 찾지 않습니다. AI가 쪼개줍니다.",
+    cta: "부업 영상 100개 대신 실행 매뉴얼 1권. 1,000원에 시작하세요.",
+    tags: "#AI부업 #자동화 #부업추천 #직장인부업 #사이드잡",
+  },
+  "threads-marketing": {
+    title: "0팔로워로 시작하는 스레드 마케팅",
+    hook: "유튜브는 늦은 것 같고, 인스타는 사진이 필요하고. 글 몇 줄로 시작할 수 있는 판이 있어요.",
+    stat: "10챕터 + 훅 템플릿 30개 + 글감 60개 · 28일 데일리 미션 로드맵",
+    quote: "첫 줄의 사명은 단 하나, 엄지를 멈추는 것. 검증된 공식 6개를 드릴게요.",
+    cta: "글 몇 줄로 시작하는 나만의 브랜드. 1,000원에 시작하세요.",
+    tags: "#스레드 #스레드마케팅 #SNS부업 #텍스트마케팅 #0팔로워",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1467,6 +1702,8 @@ const BOOK_META = [
   { id: "glp1-guide", title: "GLP-1 비만약 완전 가이드", emoji: "💊", builder: buildGlp1Guide },
   { id: "slow-aging", title: "4주 저속노화 리셋", emoji: "🌿", builder: buildSlowAging },
   { id: "love-skills", title: "밀당 없이 사랑받는 연애의 기술", emoji: "💕", builder: buildLoveSkills },
+  { id: "ai-sidejob", title: "AI 부업 자동화 시스템", emoji: "🤖", builder: buildAiSidejob },
+  { id: "threads-marketing", title: "0팔로워 스레드 마케팅", emoji: "🧵", builder: buildThreadsMarketing },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
