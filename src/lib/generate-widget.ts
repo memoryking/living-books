@@ -100,6 +100,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🔬",
     subtitle: "시장 조사부터 MVP·피벗까지",
   },
+  {
+    id: "micro-audience",
+    title: "팔로워 1,000명으로 평생 먹고 사는 법",
+    emoji: "👥",
+    subtitle: "100명의 진짜 팬이면 충분합니다",
+  },
 ];
 
 interface Section {
@@ -148,6 +154,7 @@ const CROSS_SELL_BOOKS = [
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", sub: "프리런칭→수익화 루프" },
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", sub: "CLEAR·IMPACT 모델" },
   { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", sub: "시장조사→MVP→피벗" },
+  { id: "micro-audience", emoji: "👥", title: "팔로워 1,000명 수익화", sub: "100명 진짜 팬이면 충분" },
 ];
 
 function buildCrossSell(currentId: string): string {

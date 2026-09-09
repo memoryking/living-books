@@ -289,6 +289,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", oneLiner: "프리런칭→수익화 루프" },
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", oneLiner: "CLEAR·IMPACT 모델" },
   { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", oneLiner: "시장조사→MVP→피벗" },
+  { id: "micro-audience", emoji: "👥", title: "팔로워 1,000명 수익화", oneLiner: "100명 진짜 팬이면 충분" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2253,6 +2254,112 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   16. 팔로워 1,000명으로 평생 먹고 사는 법
+   ═══════════════════════════════════════════ */
+
+function buildMicroAudience(): string {
+  return `<!-- 👥 팔로워 1,000명으로 평생 먹고 사는 법 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#faf5ff,#ede9fe,#ddd6fe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">👥</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#4c1d95;">10만 팔로워가 필요하다는<br>거짓말을 멈추세요.</h2>
+    <p style="font-size:18px;color:#7c3aed;font-weight:600;margin:0 0 8px;">100명의 진짜 팬이면 충분합니다.</p>
+    ${subtitle("마이크로 오디언스 수익화 — 500~5,000명 사이에서 월 수익 만드는 완전 가이드")}
+    ${statGrid([
+      { num: "100", label: "명의 진짜 팬이면 충분", color: "#7c3aed" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#7c3aed" },
+      { num: "30일", label: "수익화 로드맵", color: "#7c3aed" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 착각, 하고 계시죠?")}
+    ${beforeAfter(
+      ["팔로워 10만은 되어야 돈이 되지", "광고·협찬 아니면 수익이 안 나", "아직 전문가가 아니라서..."],
+      ["진짜 팬 100명이면 연 3,000만원 가능", "자체 상품 하나가 광고 100개보다 강력", "70점 전문성 + 솔직함 = 최강 조합"],
+      "흔한 착각", "실제 현실",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#7c3aed;">Kevin Kelly의 '1,000 True Fans' 이론: 1,000명이 연 10만원씩 쓰면 연 1억입니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#4c1d95;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE MICRO-AUDIENCE SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">마이크로 오디언스 수익화 5단계</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">전문 영역 찾기</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">진짜 팬 프로필</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">마이크로 오퍼 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">수익 모델 구축</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">30일 실행</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "마이크로 수학: 100명의 진짜 팬이면 충분한 이유", true, "#7c3aed")}
+    ${tocItem("02", "내 전문 영역 찾기: 70점 전문성의 스위트 스팟", true, "#7c3aed")}
+    ${tocItem("03", "진짜 팬 프로필: 구독자가 아닌 관계 설계", true, "#7c3aed")}
+    ${tocItem("04", "마이크로 오퍼 설계: 카페 테스트부터 가격 전략까지", true, "#7c3aed")}
+    ${tocItem("05", "3가지 수익 모델: 지식형·서비스형·하이브리드", false, "#7c3aed")}
+    ${tocItem("06", "콘텐츠 전략: 알고리즘이 아닌 신뢰를 쌓는 법", false, "#7c3aed")}
+    ${tocItem("07", "커뮤니티 빌딩: 팬이 팬을 데려오는 구조", false, "#7c3aed")}
+    ${tocItem("08", "수익화 실행: 첫 상품 출시부터 반복 매출까지", false, "#7c3aed")}
+    ${tocItem("09", "확장과 보호: 번아웃 없이 성장하는 시스템", false, "#7c3aed")}
+    ${tocItem("10", "30일 마이크로 오디언스 빌딩 로드맵", true, "#7c3aed")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 전문성 진단 워크시트 / 진짜 팬 프로필 템플릿 / 마이크로 오퍼 캔버스 / 가격 전략 가이드 / 30일 캘린더</div>
+  </section>
+
+  <section style="${sec("background:linear-gradient(160deg,#faf5ff,#f5f3ff);")}">
+    ${bigTitle("숫자로 보는 마이크로 오디언스")}
+    ${statGrid([
+      { num: "500", label: "팔로워면 월 100만원 시작", color: "#7c3aed" },
+      { num: "3가지", label: "수익 모델 조합", color: "#7c3aed" },
+      { num: "30일", label: "첫 수익까지의 로드맵", color: "#7c3aed" },
+    ])}
+    ${redditQuote("I quit my 100K follower account and started fresh with 800 followers in my niche. I make 3x more money now.", "EntrepreneurRideAlong")}
+    ${redditQuote("팔로워 수보다 DM 답장률이 수익을 결정합니다. 500명이지만 월 200만원 벌고 있어요.", "creator_economy")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["SNS를 하고 있지만 수익화 방법을 모르는 분", "팔로워 수에 집착하다 지쳐버린 분", "전문 지식은 있는데 어떻게 팔지 모르는 분", "부업으로 안정적인 수익 파이프라인을 만들고 싶은 분"], "✅", "#faf5ff")}
+    ${spacer(16)}
+    ${checkList(["단기간에 팔로워 10만 명을 만들고 싶은 분", "광고 수익만으로 돈 벌고 싶은 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("팔로워가 거의 없는데 시작할 수 있나요?", "0명부터 시작하는 30일 로드맵이 포함되어 있습니다. 핵심은 팔로워 수가 아니라 진짜 팬 밀도입니다.")}
+    ${faqItem("어떤 플랫폼이 가장 좋은가요?", "플랫폼보다 당신의 전문 영역에 맞는 곳이 중요합니다. 챕터 6에서 플랫폼별 전략을 다룹니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "크리에이터 수익화 컨설팅", price: "500,000원~", note: "1시간" },
+      { what: "온라인 크리에이터 강의", price: "299,000원~", note: "일방적 강의" },
+      { what: "SNS 마케팅 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 5종 + 30일 로드맵 + 업데이트", "#7c3aed")}
+    ${proofBanner(["👥 진짜 팬 프로필 템플릿", "💰 3가지 수익 모델 설계", "📅 30일 빌딩 로드맵", "🔄 계속 업데이트"], "#faf5ff", "#7c3aed")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("micro-audience", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("👥", "10만 팔로워는 필요 없습니다.", "100명의 진짜 팬이면 충분합니다.", "마이크로 오디언스 수익화 30일 로드맵.", "#7c3aed")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2385,6 +2492,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "시안(#0891b2)에서 딥시안(#164e63)으로",
     symbol: "현미경 렌즈 안에 체크마크와 그래프가 보이는 플랫 일러스트 (아이디어 검증의 과학)",
     mood: "정밀, 실험, 확신",
+  },
+  "micro-audience": {
+    title: "팔로워 1,000명으로 평생 먹고 사는 법",
+    subtitle: "100명의 진짜 팬이면 충분합니다",
+    author: "김약사 · 유원소망약국",
+    gradient: "보라(#7c3aed)에서 딥퍼플(#4c1d95)로",
+    symbol: "작은 원(팬)들이 중앙의 큰 하트에 연결된 네트워크 플랫 일러스트 (마이크로 커뮤니티)",
+    mood: "연결, 따뜻함, 성장",
   },
 };
 
@@ -2555,6 +2670,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "실패 확률을 줄이는 검증 시스템. 1,000원에 시작하세요.",
     tags: "#아이디어검증 #MVP #린스타트업 #스타트업 #사업검증",
   },
+  "micro-audience": {
+    title: "팔로워 1,000명으로 평생 먹고 사는 법",
+    hook: "10만 팔로워가 필요하다는 건 거짓말입니다. 진짜 팬 100명이면 연 3,000만원이 가능합니다.",
+    stat: "10챕터 + 실행 키트 · 3가지 수익 모델 · 30일 빌딩 로드맵",
+    quote: "팔로워 수보다 DM 답장률이 수익을 결정합니다. 적은 팔로워, 깊은 관계가 답입니다.",
+    cta: "마이크로 오디언스 수익화 시스템. 1,000원에 시작하세요.",
+    tags: "#마이크로오디언스 #크리에이터수익화 #팔로워 #진짜팬 #수익화",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2617,6 +2740,7 @@ const BOOK_META = [
   { id: "launch-storytelling", title: "완판의 런칭 스토리텔링", emoji: "🚀", builder: buildLaunchStorytelling },
   { id: "money-psychology", title: "돈의 심리학", emoji: "💰", builder: buildMoneyPsychology },
   { id: "idea-validation", title: "사업 아이디어 검증법", emoji: "🔬", builder: buildIdeaValidation },
+  { id: "micro-audience", title: "팔로워 1,000명 수익화", emoji: "👥", builder: buildMicroAudience },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

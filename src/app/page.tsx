@@ -169,6 +169,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "micro-audience",
+    emoji: "👥",
+    title: "팔로워 1,000명으로 평생 먹고 사는 법",
+    subtitle: "100명의 진짜 팬이면 충분합니다 — 마이크로 오디언스 수익화 완전 가이드",
+    tags: ["마이크로오디언스", "수익화", "팔로워", "크리에이터"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({
