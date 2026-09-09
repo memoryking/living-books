@@ -160,6 +160,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "idea-validation",
+    emoji: "🔬",
+    title: "망하지 않는 사업 아이디어 검증법",
+    subtitle: "시장 조사부터 MVP·피벗까지 — 실패 확률을 줄이는 데이터 중심 검증 시스템",
+    tags: ["아이디어검증", "MVP", "스타트업", "린스타트업"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

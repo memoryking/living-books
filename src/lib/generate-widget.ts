@@ -94,6 +94,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "💰",
     subtitle: "감정에 흔들리지 않는 재정 판단력",
   },
+  {
+    id: "idea-validation",
+    title: "망하지 않는 사업 아이디어 검증법",
+    emoji: "🔬",
+    subtitle: "시장 조사부터 MVP·피벗까지",
+  },
 ];
 
 interface Section {
@@ -141,6 +147,7 @@ const CROSS_SELL_BOOKS = [
   { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", sub: "이탈 방지 + 추천 엔진" },
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", sub: "프리런칭→수익화 루프" },
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", sub: "CLEAR·IMPACT 모델" },
+  { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", sub: "시장조사→MVP→피벗" },
 ];
 
 function buildCrossSell(currentId: string): string {

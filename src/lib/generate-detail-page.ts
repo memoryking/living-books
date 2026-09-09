@@ -288,6 +288,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", oneLiner: "이탈 방지 + 추천 엔진" },
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", oneLiner: "프리런칭→수익화 루프" },
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", oneLiner: "CLEAR·IMPACT 모델" },
+  { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", oneLiner: "시장조사→MVP→피벗" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2148,6 +2149,110 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   15. 사업 아이디어 검증법
+   ═══════════════════════════════════════════ */
+
+function buildIdeaValidation(): string {
+  return `<!-- 🔬 망하지 않는 사업 아이디어 검증법 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#ecfeff,#cffafe,#a5f3fc);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🔬</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#164e63;">스타트업 실패의 42%는<br>'시장이 원하지 않는 것을 만들었기 때문'</h2>
+    <p style="font-size:18px;color:#0891b2;font-weight:600;margin:0 0 8px;">검증 없이 시작하지 마세요.</p>
+    ${subtitle("시장 조사부터 MVP·피벗까지 — 실패 확률을 줄이는 데이터 중심 검증 시스템")}
+    ${statGrid([
+      { num: "5", label: "가지 MVP 유형 비교", color: "#0891b2" },
+      { num: "6", label: "단계 실험 설계 프로세스", color: "#0891b2" },
+      { num: "90일", label: "아이디어 검증 로드맵", color: "#0891b2" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 실수, 하고 계시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">💡</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">감으로 시작</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">검증 없이 "될 것 같아서"<br>바로 개발 시작</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#ecfeff;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🎯</div>
+        <div style="font-size:16px;font-weight:700;color:#164e63;margin-bottom:8px;">고객 부재</div>
+        <div style="font-size:14px;color:#155e75;line-height:1.6;">누가 살지도 모르면서<br>완벽한 제품 만들기</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">💸</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">자원 낭비</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">시장이 원하지 않는 것에<br>시간과 돈을 쏟음</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#0891b2;">CB Insights: 스타트업이 실패하는 2번째 이유는 '시장의 필요성 부재'입니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#164e63;color:#fff;")}">
+    <div style="font-size:13px;color:#67e8f9;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE VALIDATION SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">5단계 검증 시스템</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(103,232,249,.15);border:1px solid rgba(103,232,249,.3);border-radius:12px;"><span style="color:#67e8f9;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">시장 찾기</span></div>
+      <div style="padding:16px 20px;background:rgba(103,232,249,.15);border:1px solid rgba(103,232,249,.3);border-radius:12px;"><span style="color:#67e8f9;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">가설 검증</span></div>
+      <div style="padding:16px 20px;background:rgba(103,232,249,.15);border:1px solid rgba(103,232,249,.3);border-radius:12px;"><span style="color:#67e8f9;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">MVP 개발</span></div>
+      <div style="padding:16px 20px;background:rgba(103,232,249,.15);border:1px solid rgba(103,232,249,.3);border-radius:12px;"><span style="color:#67e8f9;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">피드백 루프</span></div>
+      <div style="padding:16px 20px;background:rgba(103,232,249,.15);border:1px solid rgba(103,232,249,.3);border-radius:12px;"><span style="color:#67e8f9;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">피벗 or 확장</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "내게 맞는 시장 찾기: 페르소나부터 틈새시장까지", true, "#0891b2")}
+    ${tocItem("02", "가설 검증하기: 4가지 가정 유형과 우선순위", true, "#0891b2")}
+    ${tocItem("03", "심화 검증: A/B 테스트, 파일럿, 스모크 테스트", true, "#0891b2")}
+    ${tocItem("04", "MVP 만들기: 5가지 유형과 범위 정의", true, "#0891b2")}
+    ${tocItem("05", "애자일 MVP 개발: 단순함과 정교함의 균형", false, "#0891b2")}
+    ${tocItem("06", "피벗인가 지속인가: 방향 전환의 기술", true, "#0891b2")}
+    ${tocItem("07", "고객 피드백 루프: 5단계 시스템", false, "#0891b2")}
+    ${tocItem("08", "검증에서 실행으로: MVP를 확장 가능한 사업으로", false, "#0891b2")}
+    ${tocItem("09", "지속적 검증: 시장은 멈추지 않는다", false, "#0891b2")}
+    ${tocItem("10", "90일 아이디어 검증 로드맵", true, "#0891b2")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 페르소나 워크시트 / 경쟁사 매트릭스 / 실험 설계 템플릿 / MVP 선택 가이드 / 피벗 판단 프레임워크 / 90일 캘린더</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["사업 아이디어가 있는데 시장에서 통할지 확신이 없는 분", "검증 없이 시작했다가 실패한 경험이 있는 분", "MVP를 어떻게 만들어야 할지 모르는 분", "피벗해야 할지 밀어붙여야 할지 고민 중인 분"], "✅", "#ecfeff")}
+    ${spacer(16)}
+    ${checkList(["검증 없이 감으로 밀어붙이고 싶은 분", "완벽한 제품을 만든 후에 시장을 찾겠다는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("아이디어가 아직 막연한 상태인데 시작할 수 있나요?", "오히려 막연할 때 시작하는 것이 가장 좋습니다. 챕터 1의 시장 조사부터 시작하면 아이디어가 구체화됩니다.")}
+    ${faqItem("기술 없이도 MVP를 만들 수 있나요?", "네. 5가지 MVP 유형 중 코딩 없이 만들 수 있는 유형(랜딩페이지, 컨시어지, 조각모음)을 안내합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "스타트업 컨설팅 1회", price: "300,000원~", note: "1시간" },
+      { what: "린스타트업 온라인 강의", price: "199,000원~", note: "일방적 강의" },
+      { what: "창업 서적", price: "20,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 9종 + 90일 로드맵 + 업데이트", "#0891b2")}
+    ${proofBanner(["🔬 MVP 5유형 비교", "📋 90일 검증 로드맵", "🔄 피벗/지속 프레임워크", "🔄 계속 업데이트"], "#ecfeff", "#0891b2")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("idea-validation", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("🔬", "검증 없이 시작하지 마세요.", "데이터로 확인된 아이디어만 살아남습니다.", "실패 확률을 줄이는 90일 검증 시스템.", "#0891b2")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2272,6 +2377,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "골드(#ca8a04)에서 딥브라운(#78350f)으로",
     symbol: "뇌와 동전이 연결된 저울, 한쪽에 감정 아이콘 다른 쪽에 차트 아이콘이 있는 플랫 일러스트 (감정과 이성의 균형)",
     mood: "지혜, 균형, 통찰",
+  },
+  "idea-validation": {
+    title: "망하지 않는 사업 아이디어 검증법",
+    subtitle: "시장 조사부터 MVP·피벗까지",
+    author: "김약사 · 유원소망약국",
+    gradient: "시안(#0891b2)에서 딥시안(#164e63)으로",
+    symbol: "현미경 렌즈 안에 체크마크와 그래프가 보이는 플랫 일러스트 (아이디어 검증의 과학)",
+    mood: "정밀, 실험, 확신",
   },
 };
 
@@ -2434,6 +2547,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "돈 앞에서 흔들리지 마세요. 1,000원에 시작하세요.",
     tags: "#돈심리학 #재정관리 #인지편향 #CLEAR모델 #창업마인드",
   },
+  "idea-validation": {
+    title: "망하지 않는 사업 아이디어 검증법",
+    hook: "스타트업 실패의 42%는 '시장이 원하지 않는 것을 만들었기 때문'입니다. 검증 없이 시작하지 마세요.",
+    stat: "10챕터 + 실행 키트 · MVP 5유형 + 피벗/지속 판단 · 90일 검증 로드맵",
+    quote: "좋은 아이디어는 시장에서 검증된 아이디어입니다. 감이 아니라 데이터로 확인하세요.",
+    cta: "실패 확률을 줄이는 검증 시스템. 1,000원에 시작하세요.",
+    tags: "#아이디어검증 #MVP #린스타트업 #스타트업 #사업검증",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2495,6 +2616,7 @@ const BOOK_META = [
   { id: "customer-retention", title: "평생고객 만들기", emoji: "🤝", builder: buildCustomerRetention },
   { id: "launch-storytelling", title: "완판의 런칭 스토리텔링", emoji: "🚀", builder: buildLaunchStorytelling },
   { id: "money-psychology", title: "돈의 심리학", emoji: "💰", builder: buildMoneyPsychology },
+  { id: "idea-validation", title: "사업 아이디어 검증법", emoji: "🔬", builder: buildIdeaValidation },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
