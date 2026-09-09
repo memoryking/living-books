@@ -287,6 +287,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", oneLiner: "브랜드 스토리로 팬을 만드는 법" },
   { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", oneLiner: "이탈 방지 + 추천 엔진" },
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", oneLiner: "프리런칭→수익화 루프" },
+  { id: "money-psychology", emoji: "💰", title: "돈의 심리학", oneLiner: "CLEAR·IMPACT 모델" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2040,6 +2041,113 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   14. 돈의 심리학
+   ═══════════════════════════════════════════ */
+
+function buildMoneyPsychology(): string {
+  return `<!-- 💰 사업 성패를 좌우하는 돈의 심리학 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fefce8,#fef3c7,#fde68a);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💰</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#78350f;">같은 실력인데 왜 어떤 창업가만<br>돈 걱정 없이 성장할까요?</h2>
+    <p style="font-size:18px;color:#92400e;font-weight:600;margin:0 0 8px;">차이는 '돈에 대한 심리적 이해'에서 시작됩니다.</p>
+    ${subtitle("인지 편향부터 CLEAR·IMPACT 모델까지 — 감정에 흔들리지 않는 재정 판단력")}
+    ${statGrid([
+      { num: "CLEAR", label: "5단계 의사결정 모델", color: "#ca8a04" },
+      { num: "IMPACT", label: "6단계 심리 구조 프레임워크", color: "#ca8a04" },
+      { num: "65%", label: "감정 지능 높은 창업가의 위기 생존율 향상", color: "#ca8a04" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 함정에 빠져 있지 않나요?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">😰</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">손실 공포</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">잃을까봐 두려워서<br>기회를 계속 놓침</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🧠</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">과신 편향</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">"이번엔 확실해"라며<br>데이터 없이 결정</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#f0fdf4;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🎭</div>
+        <div style="font-size:16px;font-weight:700;color:#166534;margin-bottom:8px;">감정적 판단</div>
+        <div style="font-size:14px;color:#14532d;line-height:1.6;">"이성적 판단"이라 믿지만<br>실은 감정이 먼저 결정</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#92400e;">100만원을 잃는 두려움은 100만원을 버는 기쁨보다 2배 강합니다.</strong> 이것이 당신의 판단을 왜곡합니다.</p>
+  </section>
+
+  <section style="${sec("background:#78350f;color:#fff;")}">
+    <div style="font-size:13px;color:#fde68a;font-weight:600;letter-spacing:2px;margin-bottom:24px;">TWO PROVEN FRAMEWORKS</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">감정과 이성을 함께 다루는 2가지 모델</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(253,230,138,.1);border:1px solid rgba(253,230,138,.3);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#fde68a;margin-bottom:12px;">CLEAR</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.8;">C — 감정 포착<br>L — 사실 목록화<br>E — 영향 평가<br>A — 대안 분석<br>R — 균형 결정</div>
+      </div>
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(253,230,138,.1);border:1px solid rgba(253,230,138,.3);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#fde68a;margin-bottom:12px;">IMPACT</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.8;">I — 감정 상태 인식<br>M — 인지 편향 매핑<br>P — 데이터 처리<br>A — 대안 분석<br>C — 문화 요인 고려<br>T — 결과 추적</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "금전적 결정 뒤에 숨어있는 힘: 인지 편향과 문화", true, "#ca8a04")}
+    ${tocItem("02", "재정적 성공을 위한 성장 마인드셋", false, "#ca8a04")}
+    ${tocItem("03", "미래를 결정하는 매일의 작은 습관: 30분 루틴", true, "#ca8a04")}
+    ${tocItem("04", "돈 앞에서 흔들릴 때: CLEAR 의사결정 모델", true, "#ca8a04")}
+    ${tocItem("05", "사업적 결정에서 인지 편향 극복하기", true, "#ca8a04")}
+    ${tocItem("06", "위기 인식과 리스크 관리: 4단계 프레임워크", false, "#ca8a04")}
+    ${tocItem("07", "부를 만드는 마인드셋 장착하기", false, "#ca8a04")}
+    ${tocItem("08", "IMPACT 모델: 심리 구조로 부를 설계하기", true, "#ca8a04")}
+    ${tocItem("09", "팀 전체가 똑똑하게 판단하는 조직 문화", false, "#ca8a04")}
+    ${tocItem("10", "변화 속에서도 흔들리지 않는 재정 판단력", false, "#ca8a04")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 인지 편향 자가진단 / CLEAR 워크시트 / 30분 루틴 / 대시보드 5대 지표 / IMPACT 카드 / 리스크 매트릭스</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["돈 앞에서 감정적으로 흔들리는 사업자", "인지 편향을 인식하고 극복하고 싶은 분", "재정 판단에 체계적인 프레임워크가 필요한 분", "팀 전체의 의사결정 품질을 높이고 싶은 리더"], "✅", "#fefce8")}
+    ${spacer(16)}
+    ${checkList(["숫자만으로 충분하다고 생각하는 분", "자기 인식에 관심이 없는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("심리학을 몰라도 이해할 수 있나요?", "네. 모든 개념은 사업 현장의 구체적인 사례로 설명되어 있고, CLEAR·IMPACT 모델은 빈칸만 채우면 바로 사용 가능합니다.")}
+    ${faqItem("1인 사업자에게도 적용 가능한가요?", "오히려 혼자 결정을 내려야 하는 1인 사업자에게 더 필요합니다. 감정에 휘둘리지 않는 판단 구조가 곧 수익 구조입니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "재무 심리 코칭 1회", price: "200,000원~", note: "1시간" },
+      { what: "행동경제학 온라인 강의", price: "149,000원~", note: "일방적 강의" },
+      { what: "심리학 서적", price: "20,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + CLEAR·IMPACT 모델 + 실행 키트 + 업데이트", "#ca8a04")}
+    ${proofBanner(["🧠 CLEAR 5단계 모델", "📊 IMPACT 6단계", "📋 대시보드 5대 지표", "🔄 계속 업데이트"], "#fefce8", "#92400e")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("money-psychology", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("💰", "돈 앞에서 흔들리지 마세요.", "감정이 아니라 구조로 판단하세요.", "감정 지능 높은 창업가가 65% 더 생존합니다.", "#ca8a04")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2156,6 +2264,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "레드오렌지(#ea580c)에서 딥레드(#991b1b)로",
     symbol: "로켓이 발사되면서 주변에 이메일·차트·메가폰 아이콘이 퍼져나가는 플랫 일러스트 (런칭의 폭발력)",
     mood: "열정, 실행력, 폭발적 성장",
+  },
+  "money-psychology": {
+    title: "사업 성패를 좌우하는 돈의 심리학",
+    subtitle: "감정에 흔들리지 않는 재정 판단력",
+    author: "김약사 · 유원소망약국",
+    gradient: "골드(#ca8a04)에서 딥브라운(#78350f)으로",
+    symbol: "뇌와 동전이 연결된 저울, 한쪽에 감정 아이콘 다른 쪽에 차트 아이콘이 있는 플랫 일러스트 (감정과 이성의 균형)",
+    mood: "지혜, 균형, 통찰",
   },
 };
 
@@ -2310,6 +2426,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "프리런칭부터 수익화 루프까지. 1,000원에 시작하세요.",
     tags: "#런칭 #제품출시 #프리런칭 #완판 #마케팅전략",
   },
+  "money-psychology": {
+    title: "사업 성패를 좌우하는 돈의 심리학",
+    hook: "같은 실력인데 어떤 창업가는 성장하고 어떤 창업가는 제자리인 이유? 돈에 대한 '심리적 이해'가 다릅니다.",
+    stat: "10챕터 + 실행 키트 · CLEAR 5단계 + IMPACT 6단계 · 대시보드 5대 지표",
+    quote: "감정 지능이 높은 창업가는 경제 위기에서 65% 더 생존합니다. — Frontiers of Psychology",
+    cta: "돈 앞에서 흔들리지 마세요. 1,000원에 시작하세요.",
+    tags: "#돈심리학 #재정관리 #인지편향 #CLEAR모델 #창업마인드",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2370,6 +2494,7 @@ const BOOK_META = [
   { id: "storytelling", title: "스토리텔링의 기술", emoji: "📖", builder: buildStorytelling },
   { id: "customer-retention", title: "평생고객 만들기", emoji: "🤝", builder: buildCustomerRetention },
   { id: "launch-storytelling", title: "완판의 런칭 스토리텔링", emoji: "🚀", builder: buildLaunchStorytelling },
+  { id: "money-psychology", title: "돈의 심리학", emoji: "💰", builder: buildMoneyPsychology },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

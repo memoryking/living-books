@@ -151,6 +151,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "money-psychology",
+    emoji: "💰",
+    title: "사업 성패를 좌우하는 돈의 심리학",
+    subtitle: "인지 편향부터 CLEAR·IMPACT 모델까지 — 감정에 흔들리지 않는 재정 판단력",
+    tags: ["돈심리학", "재정관리", "인지편향", "마인드셋"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

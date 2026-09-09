@@ -88,6 +88,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🚀",
     subtitle: "프리런칭부터 수익화 루프까지",
   },
+  {
+    id: "money-psychology",
+    title: "사업 성패를 좌우하는 돈의 심리학",
+    emoji: "💰",
+    subtitle: "감정에 흔들리지 않는 재정 판단력",
+  },
 ];
 
 interface Section {
@@ -134,6 +140,7 @@ const CROSS_SELL_BOOKS = [
   { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", sub: "브랜드 스토리로 팬을 만드는 법" },
   { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", sub: "이탈 방지 + 추천 엔진" },
   { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", sub: "프리런칭→수익화 루프" },
+  { id: "money-psychology", emoji: "💰", title: "돈의 심리학", sub: "CLEAR·IMPACT 모델" },
 ];
 
 function buildCrossSell(currentId: string): string {
