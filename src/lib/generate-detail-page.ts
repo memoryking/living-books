@@ -290,6 +290,10 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", oneLiner: "CLEAR·IMPACT 모델" },
   { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", oneLiner: "시장조사→MVP→피벗" },
   { id: "micro-audience", emoji: "👥", title: "팔로워 1,000명 수익화", oneLiner: "100명 진짜 팬이면 충분" },
+  { id: "writing-formula", emoji: "✍️", title: "뇌에 박히는 글쓰기 공식", oneLiner: "호기심 갭+치알디니 6원칙" },
+  { id: "sns-growth", emoji: "📱", title: "0원 SNS 계정 키우기", oneLiner: "60일 성장 로드맵" },
+  { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", oneLiner: "UVP→수익화 90일 로드맵" },
+  { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", oneLiner: "구독·SaaS·마켓플레이스" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2360,6 +2364,380 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   17. 뇌에 박히는 글쓰기 공식
+   ═══════════════════════════════════════════ */
+
+function buildWritingFormula(): string {
+  return `<!-- ✍️ 뇌에 박히는 글쓰기 공식 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fef3c7,#fde68a,#fbbf24);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">✍️</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#78350f;">당신의 글이 읽히지 않는 건<br>재능이 아니라 공식의 문제입니다.</h2>
+    <p style="font-size:18px;color:#92400e;font-weight:600;margin:0 0 8px;">뇌에 박히는 글에는 과학이 있습니다.</p>
+    ${subtitle("5 Whys·호기심 갭·치알디니 6원칙 — 읽히고 팔리는 글을 쓰는 시스템")}
+    ${statGrid([
+      { num: "6", label: "가지 훅 공식", color: "#b45309" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#b45309" },
+      { num: "30일", label: "글쓰기 챌린지", color: "#b45309" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 경험, 있으시죠?")}
+    ${beforeAfter(
+      ["열심히 쓴 글인데 조회수 10", "좋은 내용인데 아무도 끝까지 안 읽음", "CTA를 넣어도 클릭이 안 됨"],
+      ["첫 문장에서 스크롤이 멈춤", "끝까지 읽고 댓글까지 달림", "글 하나가 매출로 이어짐"],
+      "글쓰기 전", "공식 적용 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#b45309;">치알디니 교수의 연구: 설득의 90%는 구조로 결정됩니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#78350f;color:#fff;")}">
+    <div style="font-size:13px;color:#fbbf24;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE WRITING FORMULA</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">읽히는 글의 5단계 공식</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);border-radius:12px;"><span style="color:#fbbf24;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">독자 분석</span></div>
+      <div style="padding:16px 20px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);border-radius:12px;"><span style="color:#fbbf24;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">훅 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);border-radius:12px;"><span style="color:#fbbf24;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">구조 잡기</span></div>
+      <div style="padding:16px 20px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);border-radius:12px;"><span style="color:#fbbf24;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">설득 장치</span></div>
+      <div style="padding:16px 20px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);border-radius:12px;"><span style="color:#fbbf24;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">실전 적용</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "독자를 꿰뚫는 기술: 5 Whys부터 공감 맵까지", true, "#b45309")}
+    ${tocItem("02", "뇌에 박히는 첫 문장: 호기심 갭과 6가지 훅 공식", true, "#b45309")}
+    ${tocItem("03", "멈출 수 없는 글의 비밀: 스토리텔링과 클리프행어", true, "#b45309")}
+    ${tocItem("04", "필사부터 스와이프 파일까지: 글쓰기 근육 만들기", false, "#b45309")}
+    ${tocItem("05", "설득하는 문장의 과학: 치알디니 6원칙 적용법", true, "#b45309")}
+    ${tocItem("06", "대화하듯 쓰는 기술: 1:1 대화 만드는 5가지 기법", false, "#b45309")}
+    ${tocItem("07", "팔리는 글의 구조: 문제→해결→증거→행동", true, "#b45309")}
+    ${tocItem("08", "플랫폼별 글쓰기 전략: 블로그·SNS·뉴스레터", false, "#b45309")}
+    ${tocItem("09", "글쓰기 루틴 시스템: 매일 쓰는 사람이 되는 법", false, "#b45309")}
+    ${tocItem("10", "30일 글쓰기 챌린지 로드맵", true, "#b45309")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 헤드라인 템플릿 30개 / 훅 공식 카드 / 스와이프 파일 체크리스트 / CTA 작성 가이드 / 30일 챌린지 캘린더</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["블로그·SNS 글을 쓰는데 반응이 없는 분", "상세페이지·광고 문구를 써야 하는 사업자", "뉴스레터·이메일 마케팅을 시작하려는 분", "글쓰기가 두려워 시작을 미루고 있는 분"], "✅", "#fef3c7")}
+    ${spacer(16)}
+    ${checkList(["문학적 글쓰기를 배우고 싶은 분", "이미 전문 카피라이터인 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("글쓰기를 전혀 못하는데 시작할 수 있나요?", "이 가이드는 재능이 아니라 공식을 다룹니다. 30일 챌린지로 누구나 시작할 수 있습니다.")}
+    ${faqItem("어떤 플랫폼 글쓰기에 적용되나요?", "블로그, SNS, 뉴스레터, 상세페이지, 이메일 등 모든 텍스트 기반 콘텐츠에 적용됩니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "카피라이팅 강의", price: "300,000원~", note: "일방적 강의" },
+      { what: "글쓰기 코칭 1회", price: "200,000원~", note: "1시간" },
+      { what: "마케팅 글쓰기 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 템플릿 30개 + 30일 챌린지 + 업데이트", "#b45309")}
+    ${proofBanner(["✍️ 헤드라인 템플릿 30개", "🎯 훅 공식 6가지", "📅 30일 챌린지", "🔄 계속 업데이트"], "#fef3c7", "#b45309")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("writing-formula", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("✍️", "재능이 아니라 공식입니다.", "뇌에 박히는 글, 30일이면 쓸 수 있습니다.", "읽히고 팔리는 글쓰기 시스템.", "#b45309")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   18. 돈 한푼 들이지 않고 SNS 계정 키우기
+   ═══════════════════════════════════════════ */
+
+function buildSnsGrowth(): string {
+  return `<!-- 📱 돈 한푼 들이지 않고 SNS 계정 키우기 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#ede9fe,#ddd6fe,#c4b5fd);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">📱</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#3b0764;">광고비 0원.<br>SNS만으로 사업을 키우는 시대.</h2>
+    <p style="font-size:18px;color:#6d28d9;font-weight:600;margin:0 0 8px;">팔로워 수가 아니라 참여율이 답입니다.</p>
+    ${subtitle("AIDA 프레임워크·해시태그 SEO·콘텐츠 캘린더 — 60일 무료 성장 전략")}
+    ${statGrid([
+      { num: "6", label: "대 플랫폼 완전 비교", color: "#6d28d9" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#6d28d9" },
+      { num: "60일", label: "성장 로드맵", color: "#6d28d9" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 고민, 하고 계시죠?")}
+    ${beforeAfter(
+      ["매일 올려도 팔로워가 안 늠", "광고 없이 노출이 안 됨", "어떤 콘텐츠를 올려야 할지 모름"],
+      ["주 3회 게시로 꾸준히 성장", "알고리즘이 밀어주는 콘텐츠 설계", "콘텐츠 캘린더로 고민 제로"],
+      "지금", "60일 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#6d28d9;">참여율 8%인 1,000명 계정이 참여율 1%인 10,000명 계정보다 수익이 높습니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#3b0764;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SNS GROWTH SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">0원 성장 5단계</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">플랫폼 선택</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">콘텐츠 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">소통 전략</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">분석·최적화</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">스케일업</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "0원 SNS 성장의 원리: 참여율 > 팔로워 수", true, "#6d28d9")}
+    ${tocItem("02", "나에게 맞는 플랫폼 찾기: 6대 SNS 완전 비교", true, "#6d28d9")}
+    ${tocItem("03", "첫 100명의 진짜 팔로워 만들기", true, "#6d28d9")}
+    ${tocItem("04", "AIDA로 만드는 중독성 콘텐츠", true, "#6d28d9")}
+    ${tocItem("05", "해시태그·SEO·알고리즘: 무료 노출 극대화", false, "#6d28d9")}
+    ${tocItem("06", "댓글·DM·스토리: 관계를 수익으로 바꾸는 소통", false, "#6d28d9")}
+    ${tocItem("07", "콘텐츠 캘린더 시스템: 주 3회로 매일 성장", false, "#6d28d9")}
+    ${tocItem("08", "협업과 크로스 프로모션: 팔로워 2배 전략", false, "#6d28d9")}
+    ${tocItem("09", "분석과 최적화: 숫자로 보는 계정 건강 상태", false, "#6d28d9")}
+    ${tocItem("10", "60일 SNS 성장 로드맵: 0→1,000 팔로워", true, "#6d28d9")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 플랫폼별 체크리스트 / 해시태그 리서치 템플릿 / 콘텐츠 캘린더 / 바이오 공식 / 60일 캘린더</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["SNS로 사업을 시작하고 싶지만 광고비가 없는 분", "팔로워가 정체되어 돌파구를 찾는 분", "어떤 플랫폼을 선택해야 할지 모르는 분", "콘텐츠 아이디어가 매번 고갈되는 분"], "✅", "#ede9fe")}
+    ${spacer(16)}
+    ${checkList(["유료 광고로 빠르게 성장하고 싶은 분", "이미 팔로워 1만 명 이상인 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("진짜 돈이 하나도 안 드나요?", "네. 이 가이드의 모든 전략은 유료 광고 없이 오가닉 성장에 집중합니다.")}
+    ${faqItem("어떤 플랫폼을 다루나요?", "인스타그램·유튜브·틱톡·스레드·링크드인·네이버 블로그까지 6대 플랫폼을 비교합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "SNS 마케팅 컨설팅", price: "300,000원~", note: "1시간" },
+      { what: "SNS 성장 온라인 강의", price: "199,000원~", note: "일방적 강의" },
+      { what: "SNS 마케팅 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 60일 로드맵 + 실행 키트 + 업데이트", "#6d28d9")}
+    ${proofBanner(["📱 6대 플랫폼 비교표", "📋 콘텐츠 캘린더 템플릿", "📅 60일 성장 로드맵", "🔄 계속 업데이트"], "#ede9fe", "#6d28d9")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("sns-growth", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("📱", "광고비 0원으로 시작하세요.", "60일이면 1,000명의 진짜 팔로워를 만들 수 있습니다.", "무료 SNS 성장 시스템.", "#6d28d9")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   19. 사업가를 위한 퍼스널 브랜딩 가이드
+   ═══════════════════════════════════════════ */
+
+function buildPersonalBranding(): string {
+  return `<!-- 🎤 사업가를 위한 퍼스널 브랜딩 가이드 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fce7f3,#fbcfe8,#f9a8d4);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🎤</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#831843;">사업이 안 되는 게 아닙니다.<br>당신이 안 보이는 겁니다.</h2>
+    <p style="font-size:18px;color:#be185d;font-weight:600;margin:0 0 8px;">당신이 곧 브랜드입니다.</p>
+    ${subtitle("UVP 발견부터 수익화까지 — 사업가를 위한 퍼스널 브랜딩 90일 로드맵")}
+    ${statGrid([
+      { num: "7", label: "단계 브랜드 구축 프로세스", color: "#be185d" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#be185d" },
+      { num: "90일", label: "브랜딩 로드맵", color: "#be185d" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 상태 아닌가요?")}
+    ${beforeAfter(
+      ["좋은 제품인데 아무도 모름", "전문성은 있는데 신뢰가 안 쌓임", "SNS에 뭘 올려야 할지 모름"],
+      ["이름만으로 신뢰가 생김", "콘텐츠가 영업사원 역할을 함", "브랜드가 고객을 데려옴"],
+      "브랜딩 전", "90일 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#be185d;">Gary Vaynerchuk: "퍼스널 브랜드는 21세기 최고의 안전장치다."</strong></p>
+  </section>
+
+  <section style="${sec("background:#831843;color:#fff;")}">
+    <div style="font-size:13px;color:#f9a8d4;font-weight:600;letter-spacing:2px;margin-bottom:24px;">PERSONAL BRAND SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">7단계 브랜드 구축</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">핵심가치</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">전문영역</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">타겟</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">채널</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">콘텐츠</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">6</span> <span style="color:rgba(255,255,255,.8);">포맷</span></div>
+      <div style="padding:14px 16px;background:rgba(249,168,212,.15);border:1px solid rgba(249,168,212,.3);border-radius:12px;"><span style="color:#f9a8d4;font-weight:700;">7</span> <span style="color:rgba(255,255,255,.8);">평가</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 퍼스널 브랜딩인가: 브랜드가 자산인 이유", true, "#be185d")}
+    ${tocItem("02", "나의 UVP 찾기: 고유 가치 제안 설계법", true, "#be185d")}
+    ${tocItem("03", "브랜드 아이덴티티: 시각·언어·스토리의 삼위일체", true, "#be185d")}
+    ${tocItem("04", "온라인 존재감 설계: 플랫폼 선택~콘텐츠 전략", false, "#be185d")}
+    ${tocItem("05", "신뢰를 쌓는 콘텐츠: 전문성 증명 5가지 유형", false, "#be185d")}
+    ${tocItem("06", "네트워킹의 기술: 관계를 비즈니스 자산으로", false, "#be185d")}
+    ${tocItem("07", "커뮤니티 빌딩: 팬 생태계 만들기", false, "#be185d")}
+    ${tocItem("08", "위기관리와 평판 보호: 브랜드를 지키는 매뉴얼", false, "#be185d")}
+    ${tocItem("09", "퍼스널 브랜드 수익화: 5가지 수익 모델", true, "#be185d")}
+    ${tocItem("10", "90일 퍼스널 브랜딩 로드맵", true, "#be185d")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: UVP 워크시트 / 브랜드 보이스 가이드 / 콘텐츠 캘린더 / 위기 대응 체크리스트 / 90일 로드맵</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["1인 사업을 하는데 자기 이름이 브랜드가 안 된 분", "전문성은 있는데 온라인에서 존재감이 없는 분", "SNS·블로그를 하는데 방향성이 불명확한 분", "네트워킹을 해도 비즈니스로 연결이 안 되는 분"], "✅", "#fce7f3")}
+    ${spacer(16)}
+    ${checkList(["대기업 브랜드 매니저(B2C 기업 브랜딩과는 다름)", "이미 퍼스널 브랜드로 수익화에 성공한 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("사업 초기인데 브랜딩을 시작해도 되나요?", "오히려 초기일수록 효과적입니다. 90일 로드맵을 따라가면 사업과 동시에 브랜드를 구축할 수 있습니다.")}
+    ${faqItem("내성적인데 퍼스널 브랜딩이 가능한가요?", "네. Brene Brown은 내성적이지만 세계적 브랜드를 만들었습니다. 글쓰기 중심 전략을 안내합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "브랜딩 컨설팅 1회", price: "500,000원~", note: "1시간" },
+      { what: "퍼스널 브랜딩 강의", price: "250,000원~", note: "일방적 강의" },
+      { what: "브랜딩 서적", price: "20,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 워크시트 5종 + 90일 로드맵 + 업데이트", "#be185d")}
+    ${proofBanner(["🎤 UVP 워크시트", "🎨 브랜드 아이덴티티 가이드", "📅 90일 로드맵", "🔄 계속 업데이트"], "#fce7f3", "#be185d")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("personal-branding", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("🎤", "당신이 곧 브랜드입니다.", "90일이면 이름이 신뢰가 됩니다.", "퍼스널 브랜딩 시스템.", "#be185d")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   20. 수익성을 극대화하는 비즈니스 모델 설계법
+   ═══════════════════════════════════════════ */
+
+function buildBusinessModel(): string {
+  return `<!-- 📊 수익성을 극대화하는 비즈니스 모델 설계법 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#6ee7b7);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">📊</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#064e3b;">좋은 아이디어로는 못 법니다.<br>좋은 모델로 법니다.</h2>
+    <p style="font-size:18px;color:#047857;font-weight:600;margin:0 0 8px;">수익 구조를 설계하는 것이 진짜 사업입니다.</p>
+    ${subtitle("구독·SaaS·마켓플레이스 — 돈을 버는 구조를 설계하는 완전 가이드")}
+    ${statGrid([
+      { num: "7", label: "가지 수익 모델 비교", color: "#047857" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#047857" },
+      { num: "90일", label: "모델 설계 로드맵", color: "#047857" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 실수, 하고 있지 않나요?")}
+    ${beforeAfter(
+      ["좋은 제품인데 수익 구조가 불분명", "가격을 감으로 정함", "성장해도 이익이 안 남음"],
+      ["7가지 수익 모델 중 최적 선택", "데이터 기반 가격 전략 수립", "CAC·LTV로 수익성 관리"],
+      "모델 없이", "모델 설계 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#047857;">Netflix: DVD 대여 → 구독 스트리밍 피벗으로 시가총액 200조원 달성.</strong></p>
+  </section>
+
+  <section style="${sec("background:#064e3b;color:#fff;")}">
+    <div style="font-size:13px;color:#6ee7b7;font-weight:600;letter-spacing:2px;margin-bottom:24px;">BUSINESS MODEL DESIGN</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">비즈니스 모델 설계 5단계</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);border-radius:12px;"><span style="color:#6ee7b7;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">수익 모델 선택</span></div>
+      <div style="padding:16px 20px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);border-radius:12px;"><span style="color:#6ee7b7;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">가치 제안</span></div>
+      <div style="padding:16px 20px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);border-radius:12px;"><span style="color:#6ee7b7;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">가격 전략</span></div>
+      <div style="padding:16px 20px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);border-radius:12px;"><span style="color:#6ee7b7;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">검증·최적화</span></div>
+      <div style="padding:16px 20px;background:rgba(110,231,183,.15);border:1px solid rgba(110,231,183,.3);border-radius:12px;"><span style="color:#6ee7b7;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">스케일업</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "비즈니스 모델이란: 돈을 버는 구조의 설계도", true, "#047857")}
+    ${tocItem("02", "7가지 수익 모델 비교: 구독·프리미엄·SaaS·마켓플레이스", true, "#047857")}
+    ${tocItem("03", "가치 제안 캔버스: 고객이 지갑을 여는 진짜 이유", true, "#047857")}
+    ${tocItem("04", "가격 전략의 과학: 최적 가격 찾는 5가지 방법", true, "#047857")}
+    ${tocItem("05", "린 운영과 비용 구조: 수익성 극대화 비용 관리", false, "#047857")}
+    ${tocItem("06", "MVP에서 스케일업까지: 검증 후 확장 전략", false, "#047857")}
+    ${tocItem("07", "피벗의 기술: 방향 전환으로 살아남은 기업들", false, "#047857")}
+    ${tocItem("08", "핵심 지표 대시보드: CAC·LTV·MRR 사업 건강 체크", true, "#047857")}
+    ${tocItem("09", "미래 비즈니스 모델: AI·구독·플랫폼 시대의 전략", false, "#047857")}
+    ${tocItem("10", "90일 비즈니스 모델 설계 로드맵", true, "#047857")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 비즈니스 모델 캔버스 / 가치제안 캔버스 / 가격전략 워크시트 / KPI 대시보드 / 90일 플래너</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["사업을 시작하는데 수익 구조가 불명확한 분", "매출은 있지만 이익이 안 남는 분", "구독 모델·SaaS로 전환을 고려하는 분", "투자 유치를 위해 비즈니스 모델을 정리해야 하는 분"], "✅", "#ecfdf5")}
+    ${spacer(16)}
+    ${checkList(["대기업 전략 기획 담당자(다른 스케일)", "이미 PMF를 달성한 시리즈B+ 스타트업"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("아직 사업 초기인데 비즈니스 모델이 필요한가요?", "초기일수록 중요합니다. 수익 구조 없이 시작하면 매출이 나도 이익이 남지 않습니다.")}
+    ${faqItem("어떤 산업에 적용할 수 있나요?", "온라인 비즈니스, 1인 사업, 스타트업, 소규모 서비스업 모두에 적용 가능합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "경영 컨설팅 1회", price: "500,000원~", note: "1시간" },
+      { what: "비즈니스 모델 온라인 강의", price: "250,000원~", note: "일방적 강의" },
+      { what: "경영 전략 서적", price: "22,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 캔버스 5종 + 90일 로드맵 + 업데이트", "#047857")}
+    ${proofBanner(["📊 7가지 수익 모델 비교", "💰 가격 전략 워크시트", "📅 90일 설계 로드맵", "🔄 계속 업데이트"], "#ecfdf5", "#047857")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("business-model", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("📊", "아이디어가 아니라 모델이 답입니다.", "수익 구조를 설계하면 사업이 달라집니다.", "90일 비즈니스 모델 설계 시스템.", "#047857")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2500,6 +2878,38 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "보라(#7c3aed)에서 딥퍼플(#4c1d95)로",
     symbol: "작은 원(팬)들이 중앙의 큰 하트에 연결된 네트워크 플랫 일러스트 (마이크로 커뮤니티)",
     mood: "연결, 따뜻함, 성장",
+  },
+  "writing-formula": {
+    title: "뇌에 박히는 글쓰기 공식",
+    subtitle: "읽히고 팔리는 글을 쓰는 과학적 시스템",
+    author: "김약사 · 유원소망약국",
+    gradient: "앰버(#f59e0b)에서 딥브라운(#78350f)으로",
+    symbol: "연필에서 빛나는 전구가 떠오르고 주위에 글자·느낌표·물결이 퍼져나가는 플랫 일러스트 (글의 임팩트)",
+    mood: "영감, 실행력, 명쾌함",
+  },
+  "sns-growth": {
+    title: "돈 한푼 들이지 않고 SNS 계정 키우기",
+    subtitle: "광고비 0원, 60일 성장 전략",
+    author: "김약사 · 유원소망약국",
+    gradient: "바이올렛(#6d28d9)에서 딥퍼플(#3b0764)로",
+    symbol: "스마트폰 화면에서 상승 그래프와 하트·댓글 아이콘이 솟아오르는 플랫 일러스트 (오가닉 성장)",
+    mood: "성장, 에너지, 연결",
+  },
+  "personal-branding": {
+    title: "사업가를 위한 퍼스널 브랜딩 가이드",
+    subtitle: "당신이 곧 브랜드입니다",
+    author: "김약사 · 유원소망약국",
+    gradient: "핑크(#be185d)에서 딥로즈(#831843)로",
+    symbol: "사람 실루엣 위에 빛나는 왕관과 마이크가 있고 주변에 하트·별이 도는 플랫 일러스트 (퍼스널 브랜드)",
+    mood: "자신감, 존재감, 성장",
+  },
+  "business-model": {
+    title: "수익성을 극대화하는 비즈니스 모델 설계법",
+    subtitle: "돈을 버는 구조를 설계하는 완전 가이드",
+    author: "김약사 · 유원소망약국",
+    gradient: "에메랄드(#047857)에서 딥그린(#064e3b)으로",
+    symbol: "톱니바퀴 안에 동전과 상승 그래프가 맞물려 도는 플랫 일러스트 (수익 구조의 메커니즘)",
+    mood: "체계, 성장, 정밀",
   },
 };
 
@@ -2678,6 +3088,38 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "마이크로 오디언스 수익화 시스템. 1,000원에 시작하세요.",
     tags: "#마이크로오디언스 #크리에이터수익화 #팔로워 #진짜팬 #수익화",
   },
+  "writing-formula": {
+    title: "뇌에 박히는 글쓰기 공식",
+    hook: "열심히 쓴 글인데 조회수 10? 문제는 재능이 아니라 공식입니다.",
+    stat: "10챕터 + 헤드라인 템플릿 30개 · 훅 공식 6가지 · 30일 글쓰기 챌린지",
+    quote: "설득의 90%는 구조로 결정됩니다. 공식을 알면 누구나 읽히는 글을 씁니다.",
+    cta: "뇌에 박히는 글쓰기 시스템. 1,000원에 시작하세요.",
+    tags: "#글쓰기 #카피라이팅 #콘텐츠 #설득 #마케팅글쓰기",
+  },
+  "sns-growth": {
+    title: "돈 한푼 들이지 않고 SNS 계정 키우기",
+    hook: "광고비 0원. 참여율 8%인 1,000명 계정이 참여율 1%인 10,000명보다 수익이 높습니다.",
+    stat: "10챕터 + 6대 플랫폼 비교 · 콘텐츠 캘린더 · 60일 성장 로드맵",
+    quote: "알고리즘이 좋아하는 건 광고비가 아니라 참여율입니다. 소통이 곧 성장입니다.",
+    cta: "광고비 0원 SNS 성장 시스템. 1,000원에 시작하세요.",
+    tags: "#SNS성장 #인스타그램 #무료마케팅 #알고리즘 #팔로워",
+  },
+  "personal-branding": {
+    title: "사업가를 위한 퍼스널 브랜딩 가이드",
+    hook: "사업이 안 되는 게 아닙니다. 당신이 안 보이는 겁니다.",
+    stat: "10챕터 + UVP 워크시트 · 7단계 브랜드 구축 · 90일 브랜딩 로드맵",
+    quote: "퍼스널 브랜드는 21세기 최고의 안전장치다. — Gary Vaynerchuk",
+    cta: "당신이 곧 브랜드입니다. 1,000원에 시작하세요.",
+    tags: "#퍼스널브랜딩 #브랜드 #사업가 #1인사업 #자기계발",
+  },
+  "business-model": {
+    title: "수익성을 극대화하는 비즈니스 모델 설계법",
+    hook: "좋은 아이디어로는 못 법니다. 좋은 모델로 법니다.",
+    stat: "10챕터 + 7가지 수익 모델 비교 · 가격전략 5가지 · 90일 설계 로드맵",
+    quote: "Netflix가 DVD에서 구독으로 피벗하지 않았다면 지금의 Netflix는 없습니다.",
+    cta: "수익 구조를 설계하세요. 1,000원에 시작하세요.",
+    tags: "#비즈니스모델 #수익구조 #스타트업 #SaaS #구독경제",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2741,6 +3183,10 @@ const BOOK_META = [
   { id: "money-psychology", title: "돈의 심리학", emoji: "💰", builder: buildMoneyPsychology },
   { id: "idea-validation", title: "사업 아이디어 검증법", emoji: "🔬", builder: buildIdeaValidation },
   { id: "micro-audience", title: "팔로워 1,000명 수익화", emoji: "👥", builder: buildMicroAudience },
+  { id: "writing-formula", title: "뇌에 박히는 글쓰기 공식", emoji: "✍️", builder: buildWritingFormula },
+  { id: "sns-growth", title: "0원 SNS 계정 키우기", emoji: "📱", builder: buildSnsGrowth },
+  { id: "personal-branding", title: "퍼스널 브랜딩 가이드", emoji: "🎤", builder: buildPersonalBranding },
+  { id: "business-model", title: "비즈니스 모델 설계법", emoji: "📊", builder: buildBusinessModel },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

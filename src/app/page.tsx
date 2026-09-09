@@ -178,6 +178,42 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "writing-formula",
+    emoji: "✍️",
+    title: "뇌에 박히는 글쓰기 공식",
+    subtitle: "5 Whys·호기심 갭·치알디니 6원칙 — 읽히고 팔리는 글을 쓰는 과학적 시스템",
+    tags: ["글쓰기", "카피라이팅", "설득", "콘텐츠"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
+  {
+    id: "sns-growth",
+    emoji: "📱",
+    title: "돈 한푼 들이지 않고 SNS 계정 키우기",
+    subtitle: "광고비 0원, 참여율과 알고리즘만으로 성장하는 60일 전략",
+    tags: ["SNS성장", "인스타그램", "무료마케팅", "알고리즘"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
+  {
+    id: "personal-branding",
+    emoji: "🎤",
+    title: "사업가를 위한 퍼스널 브랜딩 가이드",
+    subtitle: "당신이 곧 브랜드입니다 — UVP 발견부터 수익화까지 90일 로드맵",
+    tags: ["퍼스널브랜딩", "브랜드", "사업가", "자기계발"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
+  {
+    id: "business-model",
+    emoji: "📊",
+    title: "수익성을 극대화하는 비즈니스 모델 설계법",
+    subtitle: "구독·SaaS·마켓플레이스 — 돈을 버는 구조를 설계하는 완전 가이드",
+    tags: ["비즈니스모델", "수익구조", "스타트업", "린운영"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

@@ -106,6 +106,30 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "👥",
     subtitle: "100명의 진짜 팬이면 충분합니다",
   },
+  {
+    id: "writing-formula",
+    title: "뇌에 박히는 글쓰기 공식",
+    emoji: "✍️",
+    subtitle: "읽히고 팔리는 글을 쓰는 과학적 시스템",
+  },
+  {
+    id: "sns-growth",
+    title: "돈 한푼 들이지 않고 SNS 계정 키우기",
+    emoji: "📱",
+    subtitle: "광고비 0원, 60일 성장 전략",
+  },
+  {
+    id: "personal-branding",
+    title: "사업가를 위한 퍼스널 브랜딩 가이드",
+    emoji: "🎤",
+    subtitle: "UVP 발견부터 수익화까지 90일 로드맵",
+  },
+  {
+    id: "business-model",
+    title: "수익성을 극대화하는 비즈니스 모델 설계법",
+    emoji: "📊",
+    subtitle: "돈을 버는 구조를 설계하는 완전 가이드",
+  },
 ];
 
 interface Section {
@@ -155,6 +179,10 @@ const CROSS_SELL_BOOKS = [
   { id: "money-psychology", emoji: "💰", title: "돈의 심리학", sub: "CLEAR·IMPACT 모델" },
   { id: "idea-validation", emoji: "🔬", title: "사업 아이디어 검증법", sub: "시장조사→MVP→피벗" },
   { id: "micro-audience", emoji: "👥", title: "팔로워 1,000명 수익화", sub: "100명 진짜 팬이면 충분" },
+  { id: "writing-formula", emoji: "✍️", title: "뇌에 박히는 글쓰기 공식", sub: "호기심 갭+치알디니 6원칙" },
+  { id: "sns-growth", emoji: "📱", title: "0원 SNS 계정 키우기", sub: "60일 성장 로드맵" },
+  { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", sub: "UVP→수익화 90일 로드맵" },
+  { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", sub: "구독·SaaS·마켓플레이스" },
 ];
 
 function buildCrossSell(currentId: string): string {
