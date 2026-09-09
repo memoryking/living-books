@@ -286,6 +286,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "deep-focus", emoji: "🎯", title: "딥포커스, 초집중의 기술", oneLiner: "3분마다 방해받는 시대의 집중력" },
   { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", oneLiner: "브랜드 스토리로 팬을 만드는 법" },
   { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", oneLiner: "이탈 방지 + 추천 엔진" },
+  { id: "launch-storytelling", emoji: "🚀", title: "완판의 런칭 스토리텔링", oneLiner: "프리런칭→수익화 루프" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1935,6 +1936,110 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   13. 완판의 런칭 스토리텔링
+   ═══════════════════════════════════════════ */
+
+function buildLaunchStorytelling(): string {
+  return `<!-- 🚀 완판의 치트키, 런칭 스토리텔링의 비밀 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fff7ed,#fed7aa,#fdba74);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🚀</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#7c2d12;">아무리 좋은 제품이라도<br>런칭을 못 하면 소용없습니다</h2>
+    <p style="font-size:18px;color:#ea580c;font-weight:600;margin:0 0 8px;">스타트업 실패의 2번째 이유: 시장 필요성 부재</p>
+    ${subtitle("프리런칭부터 수익화 루프까지 — 제품 출시의 A to Z 실전 가이드")}
+    ${statGrid([
+      { num: "5단계", label: "런칭 서사 구조", color: "#ea580c" },
+      { num: "4통", label: "프리런칭 이메일 시퀀스", color: "#ea580c" },
+      { num: "D-Day", label: "48시간 실행 체크리스트", color: "#ea580c" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 실수, 하고 계시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🎯</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">엉뚱한 고객</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">모두에게 사랑받으려다<br>누구에게도 인상 못 남김</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📢</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">스토리 없는 런칭</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">기능만 나열하니<br>아무도 설레지 않음</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#ecfdf5;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📉</div>
+        <div style="font-size:16px;font-weight:700;color:#065f46;margin-bottom:8px;">한번 하고 끝</div>
+        <div style="font-size:14px;color:#064e3b;line-height:1.6;">런칭 후 수익화 루프<br>시스템이 없음</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#7c2d12;color:#fff;")}">
+    <div style="font-size:13px;color:#fdba74;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE LAUNCH SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">런칭은 이벤트가 아니라 시스템입니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(253,186,116,.15);border:1px solid rgba(253,186,116,.3);border-radius:12px;"><span style="color:#fdba74;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">진짜 고객 찾기</span></div>
+      <div style="padding:16px 20px;background:rgba(253,186,116,.15);border:1px solid rgba(253,186,116,.3);border-radius:12px;"><span style="color:#fdba74;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">스토리라인 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(253,186,116,.15);border:1px solid rgba(253,186,116,.3);border-radius:12px;"><span style="color:#fdba74;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">프리런칭 붐</span></div>
+      <div style="padding:16px 20px;background:rgba(253,186,116,.15);border:1px solid rgba(253,186,116,.3);border-radius:12px;"><span style="color:#fdba74;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">D-Day 실행</span></div>
+      <div style="padding:16px 20px;background:rgba(253,186,116,.15);border:1px solid rgba(253,186,116,.3);border-radius:12px;"><span style="color:#fdba74;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">수익화 루프</span></div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">반복할수록 강해지는 런칭 루프 — 매번 더 정교하게</p>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "내 상품을 구매할 '진짜 고객' 찾기", true, "#ea580c")}
+    ${tocItem("02", "스토리라인 설계도: 5단계 서사 구조", true, "#ea580c")}
+    ${tocItem("03", "브랜드 목소리 잡기: 보이스 트라이앵글", false, "#ea580c")}
+    ${tocItem("04", "프리런칭 붐 조성하기: 대기명단 + 티저 6가지", true, "#ea580c")}
+    ${tocItem("05", "이메일 시퀀스: 구독자를 예비 구매자로 바꾸는 4통", true, "#ea580c")}
+    ${tocItem("06", "런칭 컨트롤타워: D-Day 48시간 실행", true, "#ea580c")}
+    ${tocItem("07", "제한하기 전략과 실시간 최적화", false, "#ea580c")}
+    ${tocItem("08", "런칭 이후: 수익화 루프 시스템", true, "#ea580c")}
+    ${tocItem("09", "데이터로 진화하라: KPI + 코호트 분석", false, "#ea580c")}
+    ${tocItem("10", "런칭 루프: 반복할수록 강해지는 성장 엔진", false, "#ea580c")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 고객 레이더 워크시트 / 서사 템플릿 / 메시지 매트릭스 / D-Day 체크리스트 / ICE 스코어카드 / 연간 캘린더</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["제품은 만들었는데 어떻게 출시할지 모르는 분", "런칭했는데 반응이 없었던 경험이 있는 분", "프리런칭 전략을 체계적으로 배우고 싶은 분", "한번 런칭하고 끝이 아니라 반복 수익을 원하는 분"], "✅", "#fff7ed")}
+    ${spacer(16)}
+    ${checkList(["제품 없이 마케팅만으로 팔려는 분", "읽기만 하고 실행하지 않을 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("디지털 제품이 아닌 실물 제품에도 적용되나요?", "네. 핵심 프레임워크(고객 찾기, 서사 구조, 프리런칭, 수익화 루프)는 모든 제품 출시에 적용 가능합니다.")}
+    ${faqItem("혼자서도 할 수 있나요?", "네. 부록의 체크리스트와 템플릿을 따라하면 1인 사업자도 체계적인 런칭이 가능합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "런칭 컨설팅 1회", price: "500,000원~", note: "1시간" },
+      { what: "마케팅 온라인 강의", price: "199,000원~", note: "일방적 강의" },
+      { what: "마케팅 서적", price: "22,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 10종 + 런칭 루프 + 업데이트", "#ea580c")}
+    ${proofBanner(["🎯 4R 페르소나 프레임워크", "📧 4통 이메일 시퀀스", "🔥 D-Day 체크리스트", "🔄 런칭 루프 시스템"], "#fff7ed", "#ea580c")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("launch-storytelling", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("🚀", "런칭은 이벤트가 아니라", "반복 가능한 시스템입니다.", "프리런칭부터 수익화 루프까지, 완판의 비밀.", "#ea580c")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2043,6 +2148,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "에메랄드(#059669)에서 딥틸(#065f46)로",
     symbol: "두 손이 맞잡혀 있고 주변에 하트·별·반복 화살표가 도는 플랫 일러스트 (관계의 순환)",
     mood: "신뢰, 따뜻함, 지속성",
+  },
+  "launch-storytelling": {
+    title: "완판의 치트키, 런칭 스토리텔링의 비밀",
+    subtitle: "프리런칭부터 수익화 루프까지",
+    author: "김약사 · 유원소망약국",
+    gradient: "레드오렌지(#ea580c)에서 딥레드(#991b1b)로",
+    symbol: "로켓이 발사되면서 주변에 이메일·차트·메가폰 아이콘이 퍼져나가는 플랫 일러스트 (런칭의 폭발력)",
+    mood: "열정, 실행력, 폭발적 성장",
   },
 };
 
@@ -2189,6 +2302,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "한번 온 고객을 평생고객으로. 1,000원에 시작하세요.",
     tags: "#고객유지 #리텐션 #충성고객 #CRM #재구매",
   },
+  "launch-storytelling": {
+    title: "완판의 치트키, 런칭 스토리텔링의 비밀",
+    hook: "아무리 좋은 제품이라도 런칭을 못 하면 소용없습니다. 스타트업 실패의 2번째 이유는 '시장 필요성 부재'입니다.",
+    stat: "10챕터 + 실행 키트 · 5단계 서사 + 4통 이메일 + D-Day 체크리스트 · 런칭 루프",
+    quote: "성공적인 런칭은 이벤트가 아니라 반복 가능한 시스템입니다. 매번 더 강해집니다.",
+    cta: "프리런칭부터 수익화 루프까지. 1,000원에 시작하세요.",
+    tags: "#런칭 #제품출시 #프리런칭 #완판 #마케팅전략",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2248,6 +2369,7 @@ const BOOK_META = [
   { id: "deep-focus", title: "딥포커스, 초집중의 기술", emoji: "🎯", builder: buildDeepFocus },
   { id: "storytelling", title: "스토리텔링의 기술", emoji: "📖", builder: buildStorytelling },
   { id: "customer-retention", title: "평생고객 만들기", emoji: "🤝", builder: buildCustomerRetention },
+  { id: "launch-storytelling", title: "완판의 런칭 스토리텔링", emoji: "🚀", builder: buildLaunchStorytelling },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

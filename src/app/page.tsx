@@ -142,6 +142,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "launch-storytelling",
+    emoji: "🚀",
+    title: "완판의 치트키, 런칭 스토리텔링의 비밀",
+    subtitle: "프리런칭부터 수익화 루프까지 — 제품 출시의 A to Z 실전 가이드",
+    tags: ["런칭", "제품출시", "마케팅", "스토리텔링"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({
