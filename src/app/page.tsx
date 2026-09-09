@@ -124,6 +124,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "storytelling",
+    emoji: "📖",
+    title: "사람의 마음을 휘어잡는 스토리텔링의 기술",
+    subtitle: "브랜드 스토리로 팔로워를 팬으로, 고객을 전도사로 만드는 법",
+    tags: ["스토리텔링", "브랜딩", "마케팅", "퍼스널브랜드"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

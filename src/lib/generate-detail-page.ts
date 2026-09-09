@@ -284,6 +284,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "threads-marketing", emoji: "🧵", title: "0팔로워 스레드 마케팅", oneLiner: "28일 공략집 + 훅 템플릿 30개" },
   { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", oneLiner: "하루 15분 결정 관리 시스템" },
   { id: "deep-focus", emoji: "🎯", title: "딥포커스, 초집중의 기술", oneLiner: "3분마다 방해받는 시대의 집중력" },
+  { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", oneLiner: "브랜드 스토리로 팬을 만드는 법" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1711,6 +1712,113 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   11. 스토리텔링의 기술
+   ═══════════════════════════════════════════ */
+
+function buildStorytelling(): string {
+  return `<!-- 📖 사람의 마음을 휘어잡는 스토리텔링의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fffbeb,#fef3c7,#fde68a);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">📖</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#78350f;">왜 어떤 브랜드는 기억에 남고<br>어떤 브랜드는 사라질까요?</h2>
+    <p style="font-size:18px;color:#92400e;font-weight:600;margin:0 0 8px;">답은 스토리텔링에 있습니다.</p>
+    ${subtitle("데이터는 설득하지만, 이야기는 감동시킵니다 — 브랜드 스토리 마스터 가이드")}
+    ${statGrid([
+      { num: "7", label: "가지 스토리텔링 공식", color: "#d97706" },
+      { num: "12", label: "핵심 스토리 발굴 질문", color: "#d97706" },
+      { num: "3분", label: "오리진 스토리 템플릿", color: "#d97706" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 고민, 해보셨죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">👻</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">투명 인간</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">제품은 좋은데<br>아무도 기억 못 함</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fffbeb;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📊</div>
+        <div style="font-size:16px;font-weight:700;color:#92400e;margin-bottom:8px;">스펙 나열</div>
+        <div style="font-size:14px;color:#78350f;line-height:1.6;">기능만 말하니까<br>고객이 안 움직임</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#f0fdf4;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">💸</div>
+        <div style="font-size:16px;font-weight:700;color:#166534;margin-bottom:8px;">일회성 고객</div>
+        <div style="font-size:14px;color:#14532d;line-height:1.6;">진짜 팬이 아닌<br>할인 때만 오는 사람들</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#92400e;">사람들은 데이터를 잊지만, 이야기는 기억합니다.</strong> 스토리텔링이 브랜드의 생사를 가릅니다.</p>
+  </section>
+
+  <section style="${sec("background:#78350f;color:#fff;")}">
+    <div style="font-size:13px;color:#fde68a;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE POWER OF STORYTELLING</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">스토리텔링 공식 7가지</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">영웅의 여정</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">BAB</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">PAS</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">AIDA</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">Star-Chain-Hook</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">6</span> <span style="color:rgba(255,255,255,.8);">3막 구조</span></div>
+      <div style="padding:14px 20px;background:rgba(253,230,138,.15);border:1px solid rgba(253,230,138,.3);border-radius:12px;"><span style="color:#fde68a;font-weight:700;">7</span> <span style="color:rgba(255,255,255,.8);">비포-애프터-브릿지</span></div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">각 공식의 한국어 예시와 즉시 적용 가이드를 챕터 8에서 다룹니다</p>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "브랜드의 심장을 찾아라: 핵심 스토리 발굴", true, "#d97706")}
+    ${tocItem("02", "사람을 사로잡는 서사의 구조", false, "#d97706")}
+    ${tocItem("03", "오리진 스토리: 시작의 순간을 무기로", true, "#d97706")}
+    ${tocItem("04", "고객을 주인공으로 — 최고의 마케팅", true, "#d97706")}
+    ${tocItem("05", "플랫폼별 스토리텔링 전략", false, "#d97706")}
+    ${tocItem("06", "감정의 고리: 행동하게 만드는 비밀", true, "#d97706")}
+    ${tocItem("07", "진정성의 시대: 진짜가 되는 법", false, "#d97706")}
+    ${tocItem("08", "바로 쓰는 스토리텔링 공식 7가지", true, "#d97706")}
+    ${tocItem("09", "측정하고 진화하라", false, "#d97706")}
+    ${tocItem("10", "스토리로 행동을 이끌어라", false, "#d97706")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 핵심 스토리 발굴 워크시트 / 오리진 스토리 3분 템플릿 / 공식 치트시트 / 브랜드 스토리 바이블</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["제품은 좋은데 사람들이 기억 못 하는 사업자", "SNS에 올려도 반응이 없는 1인 브랜드", "고객 후기를 마케팅 자산으로 활용하고 싶은 분", "경쟁자와 확실히 차별화하고 싶은 분"], "✅", "#fffbeb")}
+    ${spacer(16)}
+    ${checkList(["스토리 없이 할인만으로 승부하고 싶은 분", "읽기만 하고 자기 이야기를 쓰지 않을 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("저는 평범한 사람인데 스토리가 있을까요?", "모든 사업의 시작에는 이유가 있습니다. 챕터 3의 오리진 스토리 워크숍으로 누구나 자기만의 이야기를 발굴할 수 있습니다.")}
+    ${faqItem("마케팅 경험이 없어도 가능한가요?", "7가지 공식에 빈칸만 채우면 됩니다. 템플릿과 예시가 모두 포함되어 있어 바로 적용 가능합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "브랜딩 컨설팅 1회", price: "200,000원~", note: "1시간" },
+      { what: "마케팅 온라인 강의", price: "99,000원~", note: "일방적 강의" },
+      { what: "브랜딩 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 공식 7가지 + 실행 키트 + 업데이트", "#d97706")}
+    ${proofBanner(["📖 스토리텔링 공식 7가지", "✍️ 오리진 스토리 템플릿", "📋 브랜드 스토리 바이블", "🔄 계속 업데이트"], "#fffbeb", "#92400e")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("storytelling", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("📖", "사람들은 데이터를 잊지만,", "이야기는 기억합니다.", "팔로워를 팬으로, 고객을 전도사로.", "#d97706")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -1803,6 +1911,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "인디고(#4f46e5)에서 딥인디고(#1e1b4b)로",
     symbol: "뇌 실루엣 안에 과녁이 있고 주변의 알림·소음 아이콘이 차단되는 플랫 일러스트 (집중의 방패)",
     mood: "집중, 명확, 고요",
+  },
+  "storytelling": {
+    title: "사람의 마음을 휘어잡는 스토리텔링의 기술",
+    subtitle: "브랜드 스토리로 팬을 만드는 법",
+    author: "김약사 · 유원소망약국",
+    gradient: "앰버(#f59e0b)에서 딥오렌지(#c2410c)로",
+    symbol: "펼쳐진 책에서 빛나는 하트와 말풍선이 퍼져나가는 플랫 일러스트 (이야기의 힘)",
+    mood: "따뜻함, 영감, 연결",
   },
 };
 
@@ -1933,6 +2049,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "3분마다 방해받는 시대, 집중력을 되찾으세요. 1,000원에 시작하세요.",
     tags: "#딥포커스 #집중력 #생산성 #포모도로 #딥워크",
   },
+  "storytelling": {
+    title: "사람의 마음을 휘어잡는 스토리텔링의 기술",
+    hook: "왜 어떤 브랜드는 기억에 남고 어떤 브랜드는 사라질까요? 답은 스토리텔링에 있습니다.",
+    stat: "10챕터 + 실행 키트 · 스토리텔링 공식 7가지 · 오리진 스토리 템플릿",
+    quote: "사람들은 데이터를 잊지만 이야기는 기억합니다. 진짜 스토리가 브랜드의 심장입니다.",
+    cta: "팔로워를 팬으로, 고객을 전도사로. 1,000원에 시작하세요.",
+    tags: "#스토리텔링 #브랜딩 #퍼스널브랜드 #마케팅 #콘텐츠",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1990,6 +2114,7 @@ const BOOK_META = [
   { id: "threads-marketing", title: "0팔로워 스레드 마케팅", emoji: "🧵", builder: buildThreadsMarketing },
   { id: "eisenhower-matrix", title: "아이젠하워 매트릭스", emoji: "⏱️", builder: buildEisenhowerMatrix },
   { id: "deep-focus", title: "딥포커스, 초집중의 기술", emoji: "🎯", builder: buildDeepFocus },
+  { id: "storytelling", title: "스토리텔링의 기술", emoji: "📖", builder: buildStorytelling },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
