@@ -283,6 +283,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "ai-sidejob", emoji: "🤖", title: "AI 부업 자동화 시스템", oneLiner: "하루 1시간, 수익 파이프라인 3개" },
   { id: "threads-marketing", emoji: "🧵", title: "0팔로워 스레드 마케팅", oneLiner: "28일 공략집 + 훅 템플릿 30개" },
   { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", oneLiner: "하루 15분 결정 관리 시스템" },
+  { id: "deep-focus", emoji: "🎯", title: "딥포커스, 초집중의 기술", oneLiner: "3분마다 방해받는 시대의 집중력" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1589,6 +1590,127 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   10. 딥포커스, 초집중의 기술
+   ═══════════════════════════════════════════ */
+
+function buildDeepFocus(): string {
+  return `<!-- 🎯 딥포커스, 초집중의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#eef2ff,#e0e7ff,#c7d2fe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🎯</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#1e1b4b;">하루 종일 일했는데<br>뭘 했는지 모르겠다고요?</h2>
+    <p style="font-size:18px;color:#4338ca;font-weight:600;margin:0 0 8px;">집중력은 재능이 아닙니다. 기술입니다.</p>
+    ${subtitle("3분마다 방해받는 시대 — 뇌과학 기반 집중력 시스템")}
+    ${statGrid([
+      { num: "3분", label: "마다 방해받는 직장인 평균", color: "#4f46e5" },
+      { num: "25분", label: "집중 복구에 걸리는 시간", color: "#4f46e5" },
+      { num: "90일", label: "딥포커스 챌린지 로드맵", color: "#4f46e5" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 패턴에 갇혀 있지 않나요?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📱</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">알림 반사</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">카톡이 울리면<br>반사적으로 확인</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🐹</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">쳇바퀴</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">8시간 바빴는데<br>성과는 0</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#eef2ff;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🧠</div>
+        <div style="font-size:16px;font-weight:700;color:#3730a3;margin-bottom:8px;">의지력 고갈</div>
+        <div style="font-size:14px;color:#312e81;line-height:1.6;">오후 2시면<br>뇌가 멍해짐</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;">플로리다주립대 연구: <strong style="color:#4f46e5;">알림을 무시해도 그것이 있다는 것만으로 성과가 떨어집니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#1e1b4b;color:#fff;")}">
+    <div style="font-size:13px;color:#a5b4fc;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SCIENCE OF FOCUS</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">집중력의 두 가지 시스템</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(99,102,241,.15);border:1px solid rgba(165,180,252,.3);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#a5b4fc;margin-bottom:8px;">하향식 주의</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:12px;">Top-Down · 의도적 집중</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.8;">"기획안을 완성하겠다"<br>→ 목표 지향 · 의식적 노력<br>→ <strong>에너지 소모 큼</strong></div>
+      </div>
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(239,68,68,.1);border:1px solid rgba(252,165,165,.3);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#fca5a5;margin-bottom:8px;">상향식 주의</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:12px;">Bottom-Up · 자극 반응형</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.8;">알림이 뜨면 확인해야 함<br>→ 자극 주도 · 무의식적<br>→ <strong>대부분이 여기에 갇힘</strong></div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">이 가이드는 상향식에서 하향식으로 전환하는 <strong style="color:#a5b4fc;">구체적인 기술</strong>을 알려드립니다</p>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "뇌는 어떻게 집중할 대상을 선택하는가", true, "#4f46e5")}
+    ${tocItem("02", "나의 의지력과 동기를 찾는 법", false, "#4f46e5")}
+    ${tocItem("03", "집중을 위한 환경 설계", true, "#4f46e5")}
+    ${tocItem("04", "디지털 시대의 집중력 생존법", false, "#4f46e5")}
+    ${tocItem("05", "시간은 당신이 통제하는 것이다", true, "#4f46e5")}
+    ${tocItem("06", "개구리를 먹어라 — 가장 어려운 일부터", true, "#4f46e5")}
+    ${tocItem("07", "휴식은 선택이 아니라 필수다", false, "#4f46e5")}
+    ${tocItem("08", "집중력의 연료: 수면과 식단", false, "#4f46e5")}
+    ${tocItem("09", "집중력을 습관으로 만들기", false, "#4f46e5")}
+    ${tocItem("10", "딥워크: 초집중이 만드는 기적의 결과", true, "#4f46e5")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 일일 집중 루틴 / 포모도로 기록 시트 / 개구리 먹기 플래너 / 디지털 미니멀리즘 체크리스트 / 90일 챌린지</div>
+  </section>
+
+  ${fullPreview(
+    "1",
+    "뇌는 어떻게 집중할 대상을 선택하는가",
+    ["두 가지 주의 시스템", "알림의 과학적 방해 효과", "의지력은 소모품이다", "한국 직장인의 집중력 현실", "오늘의 액션"],
+    `<p style="margin:0 0 16px;">카네기멜론 대학교 연구: 방해를 받은 후 <strong>다시 원래 업무에 집중하기까지 25분이 걸립니다.</strong> 3분마다 방해받는 직장인은 하루 종일 복구만 하고 있는 셈입니다.</p>
+      <p style="margin:0 0 16px;">플로리다주립대 연구: 알림을 <strong>무시해도</strong> 그것이 있다는 것만으로 성과가 떨어집니다. 전화든 문자든, 확인하지 않아도 뇌는 이미 주의를 빼앗겼습니다.</p>
+      <p style="margin:0;padding:16px;background:#eef2ff;border-radius:10px;font-weight:600;color:#4338ca;">💡 집중력을 잃는 건 쉽지만, 다시 되찾는 건 어렵습니다. 그래서 환경을 먼저 바꿔야 합니다. 알림이 존재하지 않는 환경을 만드는 것이 시작입니다.</p>`,
+    "#4f46e5",
+    "linear-gradient(160deg,#eef2ff,#e0e7ff)"
+  )}
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["3분마다 방해받는데 방법을 모르는 직장인", "멀티태스킹이 효율적이라고 믿었던 분", "중요한 프로젝트를 계속 미루는 분", "퇴근 후에도 일 생각이 머리에서 안 떠나는 분"], "✅", "#eef2ff")}
+    ${spacer(16)}
+    ${checkList(["읽기만 하고 환경을 바꾸지 않을 분", "마법 같은 즉시 효과를 기대하는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("포모도로 기법을 이미 알고 있는데 뭐가 다른가요?", "포모도로는 이 가이드의 일부일 뿐입니다. 뇌과학 기반 주의 시스템 이해, 환경 설계, 개구리 먹기, 디지털 미니멀리즘, 딥워크까지 통합된 시스템을 다룹니다.")}
+    ${faqItem("집중력이 선천적으로 약한데 가능한가요?", "집중력은 재능이 아니라 기술입니다. 환경을 바꾸고 올바른 기법을 쓰면 누구나 개선할 수 있습니다. 90일 챌린지로 습관화까지 안내합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "집중력 코칭 1:1", price: "120,000원~", note: "1회" },
+      { what: "생산성 온라인 강의", price: "89,000원~", note: "일방적 강의" },
+      { what: "자기계발 서적", price: "16,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 + 90일 챌린지 + 업데이트", "#4f46e5")}
+    ${proofBanner(["🧠 뇌과학 연구 기반", "🍅 포모도로+개구리+딥워크", "📋 90일 챌린지 로드맵", "🔄 계속 업데이트"], "#eef2ff", "#4f46e5")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("deep-focus", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("🎯", "3분마다 방해받는 시대,", "집중력을 되찾으세요.", "집중력은 재능이 아닙니다. 기술입니다.", "#4f46e5")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -1673,6 +1795,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "슬레이트(#334155)에서 다크네이비(#0f172a)로",
     symbol: "네 칸으로 나뉜 매트릭스 보드, 중앙에 시계 아이콘이 있는 미니멀 플랫 일러스트 (결정의 프레임워크)",
     mood: "전문적, 명확, 집중",
+  },
+  "deep-focus": {
+    title: "딥포커스, 초집중의 기술",
+    subtitle: "3분마다 방해받는 시대의 집중력 시스템",
+    author: "김약사 · 유원소망약국",
+    gradient: "인디고(#4f46e5)에서 딥인디고(#1e1b4b)로",
+    symbol: "뇌 실루엣 안에 과녁이 있고 주변의 알림·소음 아이콘이 차단되는 플랫 일러스트 (집중의 방패)",
+    mood: "집중, 명확, 고요",
   },
 };
 
@@ -1795,6 +1925,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "바쁜 것을 멈추고 효과적으로 사세요. 1,000원에 시작하세요.",
     tags: "#아이젠하워매트릭스 #시간관리 #생산성 #우선순위 #자기계발",
   },
+  "deep-focus": {
+    title: "딥포커스, 초집중의 기술",
+    hook: "평균 직장인은 3분마다 방해받고, 복구에 25분이 걸립니다. 집중력은 재능이 아니라 기술입니다.",
+    stat: "10챕터 + 실행 키트 부록 · 포모도로+개구리먹기+딥워크 · 90일 챌린지",
+    quote: "알림을 무시해도 그것이 있다는 것만으로 성과가 떨어집니다. 환경을 바꿔야 합니다.",
+    cta: "3분마다 방해받는 시대, 집중력을 되찾으세요. 1,000원에 시작하세요.",
+    tags: "#딥포커스 #집중력 #생산성 #포모도로 #딥워크",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1851,6 +1989,7 @@ const BOOK_META = [
   { id: "ai-sidejob", title: "AI 부업 자동화 시스템", emoji: "🤖", builder: buildAiSidejob },
   { id: "threads-marketing", title: "0팔로워 스레드 마케팅", emoji: "🧵", builder: buildThreadsMarketing },
   { id: "eisenhower-matrix", title: "아이젠하워 매트릭스", emoji: "⏱️", builder: buildEisenhowerMatrix },
+  { id: "deep-focus", title: "딥포커스, 초집중의 기술", emoji: "🎯", builder: buildDeepFocus },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

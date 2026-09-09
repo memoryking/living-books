@@ -115,6 +115,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "deep-focus",
+    emoji: "🎯",
+    title: "딥포커스, 초집중의 기술",
+    subtitle: "3분마다 방해받는 시대 — 집중력을 되찾는 과학적 시스템",
+    tags: ["집중력", "생산성", "딥워크", "습관"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({
