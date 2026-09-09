@@ -106,6 +106,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-08",
     version: 1,
   },
+  {
+    id: "eisenhower-matrix",
+    emoji: "⏱️",
+    title: "일잘러의 비밀무기, 아이젠하워 매트릭스",
+    subtitle: "바쁜 것을 멈추고 효과적으로 사는 법 — 하루 15분 결정 관리 시스템",
+    tags: ["생산성", "시간관리", "우선순위", "자기계발"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

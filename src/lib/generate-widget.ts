@@ -58,6 +58,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🧵",
     subtitle: "텍스트 한 줄로 성장하는 28일 공략집",
   },
+  {
+    id: "eisenhower-matrix",
+    title: "일잘러의 비밀무기, 아이젠하워 매트릭스",
+    emoji: "⏱️",
+    subtitle: "하루 15분 결정 관리 시스템",
+  },
 ];
 
 interface Section {
@@ -99,6 +105,7 @@ const CROSS_SELL_BOOKS = [
   { id: "love-skills", emoji: "💕", title: "밀당 없이 사랑받는 연애의 기술", sub: "애착·소통·관계 심리학 수업" },
   { id: "ai-sidejob", emoji: "🤖", title: "AI 부업 자동화 시스템", sub: "하루 1시간, 수익 파이프라인 3개" },
   { id: "threads-marketing", emoji: "🧵", title: "0팔로워 스레드 마케팅", sub: "28일 공략집 + 훅 템플릿 30개" },
+  { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", sub: "하루 15분 결정 관리 시스템" },
 ];
 
 function buildCrossSell(currentId: string): string {

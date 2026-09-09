@@ -282,6 +282,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "love-skills", emoji: "💕", title: "밀당 없이 사랑받는 연애의 기술", oneLiner: "애착·소통·관계 심리학 수업" },
   { id: "ai-sidejob", emoji: "🤖", title: "AI 부업 자동화 시스템", oneLiner: "하루 1시간, 수익 파이프라인 3개" },
   { id: "threads-marketing", emoji: "🧵", title: "0팔로워 스레드 마케팅", oneLiner: "28일 공략집 + 훅 템플릿 30개" },
+  { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", oneLiner: "하루 15분 결정 관리 시스템" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1459,6 +1460,135 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   9. 일잘러의 비밀무기, 아이젠하워 매트릭스
+   ═══════════════════════════════════════════ */
+
+function buildEisenhowerMatrix(): string {
+  return `<!-- ⏱️ 일잘러의 비밀무기, 아이젠하워 매트릭스 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#f8fafc,#e2e8f0,#cbd5e1);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">⏱️</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#0f172a;">하루 종일 바빴는데<br>뭘 했는지 기억이 안 나시죠?</h2>
+    <p style="font-size:18px;color:#334155;font-weight:600;margin:0 0 8px;">시간을 관리하는 게 아니라, 결정을 관리해야 합니다.</p>
+    ${subtitle("아이젠하워 대통령이 실제 사용한 검증된 프레임워크 — 하루 15분 시스템")}
+    ${statGrid([
+      { num: "15분", label: "아침 리추얼이면 충분", color: "#334155" },
+      { num: "4", label: "사분면으로 모든 업무 분류", color: "#334155" },
+      { num: "90일", label: "실행 계획 + 체크리스트", color: "#334155" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 함정에 빠져 있지 않나요?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔥</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">긴급성 중독</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">카톡이 울리면 즉시 확인<br>하루 종일 불 끄기</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🎭</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">바쁨의 배지</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">"엄청 바빠!"를<br>자랑처럼 말하기</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#f5f3ff;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🤹</div>
+        <div style="font-size:16px;font-weight:700;color:#5b21b6;margin-bottom:8px;">완벽주의 역설</div>
+        <div style="font-size:14px;color:#4c1d95;line-height:1.6;">모든 걸 잘하려다<br>하나도 못 함</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#0f172a;">바쁜 것과 생산적인 것은 전혀 다릅니다.</strong> 이건 게으름이 아니라 시스템의 문제입니다.</p>
+  </section>
+
+  <section style="${sec("background:#0f172a;color:#fff;")}">
+    <div style="font-size:13px;color:#94a3b8;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE 4 QUADRANTS</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">모든 업무는 4가지 중 하나입니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(239,68,68,.15);border-radius:16px;border:1px solid rgba(239,68,68,.3);">
+        <div style="font-size:24px;font-weight:800;color:#ef4444;">Q1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">소방서<br><small style="color:rgba(255,255,255,.5);">긴급+중요 → 즉시 처리</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(34,197,94,.15);border-radius:16px;border:1px solid rgba(34,197,94,.3);">
+        <div style="font-size:24px;font-weight:800;color:#22c55e;">Q2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">성공 존<br><small style="color:rgba(255,255,255,.5);">중요+비긴급 → 일정 보호</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(251,191,36,.15);border-radius:16px;border:1px solid rgba(251,191,36,.3);">
+        <div style="font-size:24px;font-weight:800;color:#fbbf24;">Q3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">속임수 존<br><small style="color:rgba(255,255,255,.5);">긴급+비중요 → 위임</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(148,163,184,.15);border-radius:16px;border:1px solid rgba(148,163,184,.3);">
+        <div style="font-size:24px;font-weight:800;color:#94a3b8;">Q4</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">시간 낭비 존<br><small style="color:rgba(255,255,255,.5);">비긴급+비중요 → 제거</small></div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">성공한 사람들은 시간의 65~80%를 <strong style="color:#22c55e;">Q2(성공 존)</strong>에서 보냅니다</p>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 똑똑한 사람들이 바쁜 일에 갇혀 있는가", false, "#334155")}
+    ${tocItem("02", "당신의 삶을 지배하는 네 가지 사분면", true, "#334155")}
+    ${tocItem("03", "하루 15분, 모든 것을 바꾸는 매트릭스 리추얼", true, "#334155")}
+    ${tocItem("04", "사분면 2를 위한 요새 만들기", true, "#334155")}
+    ${tocItem("05", "전략적 위임과 '노'라고 말하는 기술", true, "#334155")}
+    ${tocItem("06", "매트릭스를 극대화하는 보조 시스템", false, "#334155")}
+    ${tocItem("07", "주간 매트릭스 마스터 세션", false, "#334155")}
+    ${tocItem("08", "업무를 넘어 삶 전체에 적용하기", false, "#334155")}
+    ${tocItem("09", "무너지는 순간들과 복구 프로토콜", true, "#334155")}
+    ${tocItem("10", "90일 이후: 매트릭스 마스터의 삶", false, "#334155")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 매트릭스 실행 키트 (체크리스트, 리뷰 템플릿, 거절 스크립트, 90일 로드맵, FAQ)</div>
+  </section>
+
+  ${fullPreview(
+    "3",
+    "하루 15분, 모든 것을 바꾸는 매트릭스 리추얼",
+    ["왜 아침인가", "최적의 시간 설정", "5단계 매트릭스 리추얼", "주간 마스터 세션", "실생활 적용"],
+    `<p style="margin:0 0 16px;">의지력은 소모품이다. 아침에 가장 충만하고, 하루가 지나면서 고갈된다. <strong>결정 피로가 쌓이기 전에 가장 중요한 결정</strong> — 오늘 무엇에 집중할 것인가 — 을 내려야 한다.</p>
+      <p style="margin:0 0 16px;"><strong>1단계: 브레인 덤프 (3분)</strong> — 머릿속의 모든 할 일을 쏟아내라. 판단하지 마라.</p>
+      <p style="margin:0 0 16px;"><strong>2단계: 분류 (5분)</strong> — 각 항목에 "긴급한가?" "중요한가?" 두 질문. 직감을 믿어라.</p>
+      <p style="margin:0 0 16px;"><strong>3단계: 일정 (3분)</strong> — Q1과 Q2를 먼저 캘린더에 블록. Q2 시간을 금처럼 보호.</p>
+      <p style="margin:0;padding:16px;background:#f1f5f9;border-radius:10px;font-weight:600;color:#334155;">💡 이 시스템은 매일 2~3시간을 확보해줄 수 있다. 비밀은 더 열심히 일하는 게 아니라 무엇이 주의를 받을 자격이 있는지 더 나은 결정을 내리는 것이다.</p>`,
+    "#334155",
+    "linear-gradient(160deg,#f8fafc,#e2e8f0)"
+  )}
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["하루 종일 바빴는데 성과가 없는 직장인", "긴급한 일에만 반응하며 중요한 프로젝트를 미루는 분", "모든 부탁에 예스라고 하는 분", "멀티태스킹이 생산적이라고 믿었던 분"], "✅", "#f1f5f9")}
+    ${spacer(16)}
+    ${checkList(["읽기만 하고 15분 리추얼을 실행하지 않을 분", "마법 같은 즉시 효과를 기대하는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("생산성 앱을 많이 써봤는데 뭐가 다른가요?", "앱은 도구이고 매트릭스는 사고방식입니다. 어떤 앱을 쓰든 '무엇에 집중할 것인가'라는 결정이 먼저입니다. 매트릭스는 그 결정을 내리는 프레임워크입니다.")}
+    ${faqItem("직장 상사가 준 일을 거절할 수 있나요?", "챕터 5에서 한국 직장 문화에 맞는 '우아하게 거절하기' 스크립트 5가지를 구체적으로 다룹니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "생산성 코칭 1:1", price: "150,000원~", note: "1회" },
+      { what: "시간관리 온라인 강의", price: "89,000원~", note: "일방적 강의" },
+      { what: "자기계발 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 + 90일 로드맵 + 업데이트", "#334155")}
+    ${proofBanner(["⏱️ 하루 15분 시스템", "📋 90일 실행 로드맵", "🙅 거절 스크립트 5종", "🔄 계속 업데이트"], "#f1f5f9", "#334155")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("eisenhower-matrix", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("⏱️", "바쁜 것을 멈추고,", "효과적으로 사세요.", "하루 15분, 결정을 관리하는 시스템.", "#334155")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -1535,6 +1665,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "퍼플(#7c3aed)에서 딥퍼플(#4c1d95)로",
     symbol: "실 뭉치(스레드)에서 말풍선들이 연결되어 퍼져나가는 플랫 일러스트 (텍스트로 연결되는 커뮤니티)",
     mood: "트렌디, 활기, 성장",
+  },
+  "eisenhower-matrix": {
+    title: "일잘러의 비밀무기, 아이젠하워 매트릭스",
+    subtitle: "하루 15분 결정 관리 시스템",
+    author: "김약사 · 유원소망약국",
+    gradient: "슬레이트(#334155)에서 다크네이비(#0f172a)로",
+    symbol: "네 칸으로 나뉜 매트릭스 보드, 중앙에 시계 아이콘이 있는 미니멀 플랫 일러스트 (결정의 프레임워크)",
+    mood: "전문적, 명확, 집중",
   },
 };
 
@@ -1649,6 +1787,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "글 몇 줄로 시작하는 나만의 브랜드. 1,000원에 시작하세요.",
     tags: "#스레드 #스레드마케팅 #SNS부업 #텍스트마케팅 #0팔로워",
   },
+  "eisenhower-matrix": {
+    title: "일잘러의 비밀무기, 아이젠하워 매트릭스",
+    hook: "하루 종일 바빴는데 뭘 했는지 기억이 안 나시죠? 바쁜 것과 생산적인 것은 전혀 다릅니다.",
+    stat: "10챕터 + 실행 키트 부록 · 하루 15분 시스템 · 90일 로드맵",
+    quote: "시간을 관리하는 게 아니라, 결정을 관리해야 합니다. 두 질문이면 충분합니다.",
+    cta: "바쁜 것을 멈추고 효과적으로 사세요. 1,000원에 시작하세요.",
+    tags: "#아이젠하워매트릭스 #시간관리 #생산성 #우선순위 #자기계발",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -1704,6 +1850,7 @@ const BOOK_META = [
   { id: "love-skills", title: "밀당 없이 사랑받는 연애의 기술", emoji: "💕", builder: buildLoveSkills },
   { id: "ai-sidejob", title: "AI 부업 자동화 시스템", emoji: "🤖", builder: buildAiSidejob },
   { id: "threads-marketing", title: "0팔로워 스레드 마케팅", emoji: "🧵", builder: buildThreadsMarketing },
+  { id: "eisenhower-matrix", title: "아이젠하워 매트릭스", emoji: "⏱️", builder: buildEisenhowerMatrix },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
