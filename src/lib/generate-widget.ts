@@ -76,6 +76,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "📖",
     subtitle: "브랜드 스토리로 팬을 만드는 법",
   },
+  {
+    id: "customer-retention",
+    title: "한번 온 고객을 평생고객으로 만들기",
+    emoji: "🤝",
+    subtitle: "유지 전략 — 이탈 방지부터 추천 엔진까지",
+  },
 ];
 
 interface Section {
@@ -120,6 +126,7 @@ const CROSS_SELL_BOOKS = [
   { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", sub: "하루 15분 결정 관리 시스템" },
   { id: "deep-focus", emoji: "🎯", title: "딥포커스, 초집중의 기술", sub: "3분마다 방해받는 시대의 집중력" },
   { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", sub: "브랜드 스토리로 팬을 만드는 법" },
+  { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", sub: "이탈 방지 + 추천 엔진" },
 ];
 
 function buildCrossSell(currentId: string): string {

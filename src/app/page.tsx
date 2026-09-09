@@ -133,6 +133,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "customer-retention",
+    emoji: "🤝",
+    title: "한번 온 고객을 평생고객으로 만들기",
+    subtitle: "신규 확보보다 5배 저렴한 유지 전략 — 이탈 방지부터 추천 엔진까지",
+    tags: ["고객유지", "충성도", "리텐션", "CRM"],
+    lastUpdated: "2026-09-09",
+    version: 1,
+  },
 ];
 
 function BookCard({

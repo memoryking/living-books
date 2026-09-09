@@ -285,6 +285,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "eisenhower-matrix", emoji: "⏱️", title: "아이젠하워 매트릭스", oneLiner: "하루 15분 결정 관리 시스템" },
   { id: "deep-focus", emoji: "🎯", title: "딥포커스, 초집중의 기술", oneLiner: "3분마다 방해받는 시대의 집중력" },
   { id: "storytelling", emoji: "📖", title: "스토리텔링의 기술", oneLiner: "브랜드 스토리로 팬을 만드는 법" },
+  { id: "customer-retention", emoji: "🤝", title: "평생고객 만들기", oneLiner: "이탈 방지 + 추천 엔진" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -1819,6 +1820,121 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   12. 한번 온 고객을 평생고객으로 만들기
+   ═══════════════════════════════════════════ */
+
+function buildCustomerRetention(): string {
+  return `<!-- 🤝 한번 온 고객을 평생고객으로 만들기 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#a7f3d0);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🤝</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#065f46;">신규 고객 1명 확보 비용으로<br>기존 고객 5명을 지킬 수 있습니다</h2>
+    <p style="font-size:18px;color:#059669;font-weight:600;margin:0 0 8px;">그런데 왜 확보에만 집중하시나요?</p>
+    ${subtitle("고객 유지율 5%만 높여도 수익이 25~95% 증가합니다 — Bain & Company")}
+    ${statGrid([
+      { num: "5배", label: "신규 확보 vs 유지 비용 차이", color: "#059669" },
+      { num: "10배", label: "충성 고객의 생애 가치", color: "#059669" },
+      { num: "18개월", label: "실행 로드맵 포함", color: "#059669" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 상황, 겪어보셨죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🚪</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">조용한 이탈</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">열심히 서비스했는데<br>고객이 말없이 떠남</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">💸</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">확보 비용 폭등</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">광고비는 늘어나는데<br>재구매율은 제자리</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#ecfdf5;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📢</div>
+        <div style="font-size:16px;font-weight:700;color:#065f46;margin-bottom:8px;">추천 0건</div>
+        <div style="font-size:14px;color:#064e3b;line-height:1.6;">만족한다고 했는데<br>주변에 추천은 안 함</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#059669;">68%의 고객이 떠나는 이유: "이 회사가 나를 신경 쓰지 않는다고 느꼈기 때문"</strong> — Gartner</p>
+  </section>
+
+  <section style="${sec("background:#065f46;color:#fff;")}">
+    <div style="font-size:13px;color:#6ee7b7;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE PSYCHOLOGY OF LOYALTY</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">고객이 떠나지 않는 4가지 심리</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(110,231,183,.1);border-radius:16px;border:1px solid rgba(110,231,183,.2);">
+        <div style="font-size:24px;font-weight:800;color:#6ee7b7;">1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">인지적 편안함<br><small style="color:rgba(255,255,255,.5);">익숙함이 장벽을 만든다</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(110,231,183,.1);border-radius:16px;border:1px solid rgba(110,231,183,.2);">
+        <div style="font-size:24px;font-weight:800;color:#6ee7b7;">2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">정체성 통합<br><small style="color:rgba(255,255,255,.5);">브랜드가 나의 일부가 됨</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(110,231,183,.1);border-radius:16px;border:1px solid rgba(110,231,183,.2);">
+        <div style="font-size:24px;font-weight:800;color:#6ee7b7;">3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">손실 회피<br><small style="color:rgba(255,255,255,.5);">투자한 것을 잃기 싫음</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(110,231,183,.1);border-radius:16px;border:1px solid rgba(110,231,183,.2);">
+        <div style="font-size:24px;font-weight:800;color:#6ee7b7;">4</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">신뢰 구축<br><small style="color:rgba(255,255,255,.5);">긍정 경험이 쌓이면 탄력적</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "고객을 지키는 것이 중요한 이유: 유지의 경제학", true, "#059669")}
+    ${tocItem("02", "고객이 떠나지 않는 심리학: 충성도의 4가지 기둥", true, "#059669")}
+    ${tocItem("03", "단발성 구매를 반복 구매로: 로열티 프로그램 설계", true, "#059669")}
+    ${tocItem("04", "고객이 '나를 알아주는구나'라고 느끼게 만드는 법", false, "#059669")}
+    ${tocItem("05", "고객이 떠나기 전에 문제를 해결하라: 능동형 서비스", true, "#059669")}
+    ${tocItem("06", "고객을 팬으로, 팬을 전도사로: 커뮤니티 구축", false, "#059669")}
+    ${tocItem("07", "이탈의 경고 신호 7가지와 즉시 대응법", true, "#059669")}
+    ${tocItem("08", "충성 고객이 새 고객을 데려오는 추천 엔진", false, "#059669")}
+    ${tocItem("09", "모든 전략을 하나로: 18개월 실행 로드맵", false, "#059669")}
+    ${tocItem("10", "미래에 대비하는 고객 유지 전략", false, "#059669")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: CLV 계산 워크시트 / 로열티 설계 체크리스트 / 이탈 모니터링 템플릿 / 추천 엔진 설계 / 18개월 로드맵</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["고객은 오는데 재구매율이 낮은 사업자", "광고비가 계속 늘어나는데 매출 성장이 더딘 분", "고객 이탈 이유를 모르겠는 분", "충성 고객을 추천 엔진으로 활용하고 싶은 분"], "✅", "#ecfdf5")}
+    ${spacer(16)}
+    ${checkList(["신규 고객 확보만으로 충분하다고 생각하는 분", "고객 관계에 투자할 의지가 없는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("소규모 사업자도 로열티 프로그램을 만들 수 있나요?", "네. 챕터 3에서 1인 사업자도 바로 적용할 수 있는 간단한 포인트/스탬프 시스템부터 안내합니다. 카카오톡 채널만으로도 시작 가능합니다.")}
+    ${faqItem("고객 이탈을 어떻게 미리 알 수 있나요?", "챕터 7에서 이탈의 경고 신호 7가지와 각각의 즉시 대응 프로토콜을 구체적으로 다룹니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "CRM 컨설팅 1회", price: "300,000원~", note: "1시간" },
+      { what: "고객관리 온라인 강의", price: "149,000원~", note: "일방적 강의" },
+      { what: "마케팅 서적", price: "20,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 + 18개월 로드맵 + 업데이트", "#059669")}
+    ${proofBanner(["📊 Bain & Company 연구 기반", "🏪 스타벅스·아마존 사례", "📋 18개월 실행 로드맵", "🔄 계속 업데이트"], "#ecfdf5", "#059669")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("customer-retention", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("🤝", "한번 온 고객을", "평생고객으로 만드세요.", "유지율 5%만 높여도 수익이 25~95% 증가합니다.", "#059669")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -1919,6 +2035,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "앰버(#f59e0b)에서 딥오렌지(#c2410c)로",
     symbol: "펼쳐진 책에서 빛나는 하트와 말풍선이 퍼져나가는 플랫 일러스트 (이야기의 힘)",
     mood: "따뜻함, 영감, 연결",
+  },
+  "customer-retention": {
+    title: "한번 온 고객을 평생고객으로 만들기",
+    subtitle: "이탈 방지부터 추천 엔진까지",
+    author: "김약사 · 유원소망약국",
+    gradient: "에메랄드(#059669)에서 딥틸(#065f46)로",
+    symbol: "두 손이 맞잡혀 있고 주변에 하트·별·반복 화살표가 도는 플랫 일러스트 (관계의 순환)",
+    mood: "신뢰, 따뜻함, 지속성",
   },
 };
 
@@ -2057,6 +2181,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     cta: "팔로워를 팬으로, 고객을 전도사로. 1,000원에 시작하세요.",
     tags: "#스토리텔링 #브랜딩 #퍼스널브랜드 #마케팅 #콘텐츠",
   },
+  "customer-retention": {
+    title: "한번 온 고객을 평생고객으로 만들기",
+    hook: "신규 고객 1명 확보 비용으로 기존 고객 5명을 지킬 수 있습니다. 그런데 왜 확보에만 집중하시나요?",
+    stat: "10챕터 + 실행 키트 · 이탈 경고 7가지 + 추천 엔진 · 18개월 로드맵",
+    quote: "고객 유지율을 5%만 높여도 수익이 25~95% 증가합니다. — Bain & Company",
+    cta: "한번 온 고객을 평생고객으로. 1,000원에 시작하세요.",
+    tags: "#고객유지 #리텐션 #충성고객 #CRM #재구매",
+  },
 };
 
 function buildMarketingCopy(id: string): string {
@@ -2115,6 +2247,7 @@ const BOOK_META = [
   { id: "eisenhower-matrix", title: "아이젠하워 매트릭스", emoji: "⏱️", builder: buildEisenhowerMatrix },
   { id: "deep-focus", title: "딥포커스, 초집중의 기술", emoji: "🎯", builder: buildDeepFocus },
   { id: "storytelling", title: "스토리텔링의 기술", emoji: "📖", builder: buildStorytelling },
+  { id: "customer-retention", title: "평생고객 만들기", emoji: "🤝", builder: buildCustomerRetention },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
