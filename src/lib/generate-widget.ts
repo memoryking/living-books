@@ -361,7 +361,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   window.ebNav=function(id){
     var el=document.getElementById(id);
     if(!el)return;
-    var y=el.getBoundingClientRect().top+window.pageYOffset-100;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-160;
     window.scrollTo({top:y,behavior:'smooth'});
   };
 
