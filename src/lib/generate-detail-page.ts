@@ -910,7 +910,7 @@ ${mobileStyles}
     ${priceAnchor(
       [
         { what: "GLP-1 관련 해외 서적", price: "25,000원~", note: "영어·업데이트 없음" },
-        { what: "비만약 온라인 강의", price: "150,000원~", note: "일방적 강의" },
+        { what: "유튜브 영상 수십 개 찾아보기", price: "3~4시간", note: "광고·부정확 섞임" },
         { what: "Reddit·논문 직접 리서치", price: "수십 시간", note: "영어·정리 안 됨" },
       ],
       "1,000원",
