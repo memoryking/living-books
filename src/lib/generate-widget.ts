@@ -217,7 +217,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   const contentSections = sections
     .map(
       (s) => `
-      <div id="${s.id}" class="eb-section" style="scroll-margin-top:80px;padding-top:20px;">
+      <div id="${s.id}" class="eb-section" style="scroll-margin-top:120px;padding-top:20px;">
         ${s.html}
         <span class="eb-back" onclick="ebNav('eb-toc')">↑ 목차로</span>
       </div>`
@@ -361,7 +361,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   window.ebNav=function(id){
     var el=document.getElementById(id);
     if(!el)return;
-    var y=el.getBoundingClientRect().top+window.pageYOffset-80;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-120;
     window.scrollTo({top:y,behavior:'smooth'});
   };
 
