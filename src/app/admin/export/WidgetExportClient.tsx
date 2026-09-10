@@ -19,6 +19,8 @@ interface DetailData {
   detailSize: number;
   coverPrompt: string;
   marketingCopy: string;
+  thumbnailPrompt: string;
+  metaDesc: string;
 }
 
 function CopyButton({ text, label }: { text: string; label: string }) {
@@ -250,6 +252,14 @@ export default function WidgetExportClient({
                     label="마케팅문구 (SNS 5종)"
                     text={d.marketingCopy}
                   />
+                  <TextCard
+                    label="썸네일 프롬프트 (750x750)"
+                    text={d.thumbnailPrompt}
+                  />
+                  <TextCard
+                    label="메타 설명 (아임웹 상품)"
+                    text={d.metaDesc}
+                  />
                 </>
               )}
             </div>
@@ -276,6 +286,12 @@ export default function WidgetExportClient({
           <li>
             <strong>4. 마케팅문구:</strong> 인스타그램·스레드·블로그에
             홍보용으로 사용
+          </li>
+          <li>
+            <strong>5. 썸네일 프롬프트:</strong> 나노바나나 또는 ChatGPT에 복사해서 750x750 상품 썸네일 생성
+          </li>
+          <li>
+            <strong>6. 메타 설명:</strong> 아임웹 상품 정보의 요약 설명(Meta, 크리테오) 필드에 붙여넣기
           </li>
         </ol>
         <div className="mt-4 p-3 rounded-lg bg-blue-50 border border-blue-200 text-sm text-blue-800">

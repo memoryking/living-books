@@ -29,6 +29,8 @@ export default function ExportPage() {
         detailSize: d.detailSize,
         coverPrompt: d.coverPrompt,
         marketingCopy: d.marketingCopy,
+        thumbnailPrompt: d.thumbnailPrompt,
+        metaDesc: d.metaDesc,
       }))}
     />
   );
