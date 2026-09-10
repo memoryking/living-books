@@ -16,6 +16,7 @@ export interface TopItem {
   action: string; // 구체적 실천법
   mission: string; // 오늘의 미션
   isNew?: boolean; // 새로 교체된 항목 표시
+  version?: number; // 항목 교체 시 버전 증가 → 체크인 자동 리셋
 }
 
 export interface ContentSection {
@@ -326,7 +327,9 @@ function UpdateHistory({ logs }: { logs: UpdateLog[] }) {
 
 interface CheckinStats {
   stats: Record<number, { total: number; today: number }>;
+  statsByVersion: Record<string, { total: number; today: number }>;
   myChecks: Record<number, string>;
+  myCheckVersions: Record<number, number>;
   totalCheckins: number;
 }
 
@@ -341,14 +344,19 @@ function CheckinBanner({
 
   const todayTotal = Object.values(stats.stats).reduce((s, v) => s + v.today, 0);
 
-  // 항목별 통계를 실천 수 내림차순으로 정렬
+  // 항목별 통계를 실천 수 내림차순으로 정렬 (version 기반)
   const ranked = items
-    .map((item) => ({
-      number: item.number,
-      title: item.title,
-      total: stats.stats[item.number]?.total || 0,
-      today: stats.stats[item.number]?.today || 0,
-    }))
+    .map((item) => {
+      const vKey = `${item.number}_v${item.version || 1}`;
+      const vStats = stats.statsByVersion?.[vKey];
+      return {
+        number: item.number,
+        title: item.title,
+        total: vStats?.total || 0,
+        today: vStats?.today || 0,
+        isNew: item.isNew,
+      };
+    })
     .sort((a, b) => b.total - a.total);
 
   const maxTotal = ranked[0]?.total || 1;
@@ -386,6 +394,7 @@ function CheckinBanner({
               <div className="flex items-center justify-between mb-0.5">
                 <span className="text-xs text-gray-700 dark:text-gray-300 truncate max-w-[180px]">
                   {r.title}
+                  {r.isNew && <span className="ml-1 text-red-500 font-bold">NEW</span>}
                 </span>
                 <span className="text-xs text-gray-400 flex-shrink-0 ml-2">
                   {r.total}회{r.today > 0 ? ` (+${r.today})` : ""}
@@ -453,6 +462,7 @@ function TopItemCard({
         body: JSON.stringify({
           book_id: bookId,
           item_number: item.number,
+          item_version: item.version || 1,
           user_id: userId,
           airtable_user_id: airtableUserId,
         }),
@@ -709,8 +719,8 @@ export default function GuideBook({
                 bookId={bookId}
                 userId={userId}
                 airtableUserId={airtableUserId}
-                isChecked={!!checkinStats?.myChecks?.[item.number]}
-                checkCount={checkinStats?.stats?.[item.number]?.total || 0}
+                isChecked={!!checkinStats?.myChecks?.[item.number] && (checkinStats?.myCheckVersions?.[item.number] || 1) === (item.version || 1)}
+                checkCount={checkinStats?.statsByVersion?.[`${item.number}_v${item.version || 1}`]?.total || 0}
                 onChecked={() => setRefreshKey(k => k + 1)}
               />
             ))}

@@ -71,18 +71,31 @@ export async function GET(req: NextRequest) {
     const allData = await ncbRead(CHECKIN_TABLE, `book_id=${encodeURIComponent(bookId)}&limit=5000`);
     const records = extractRecords(allData);
 
-    // 항목별 통계 집계
+    // 항목별 통계 집계 (version별로 분리)
     const stats: Record<number, { total: number; today: number }> = {};
+    const statsByVersion: Record<string, { total: number; today: number }> = {};
     const myChecks: Record<number, string> = {};
+    const myCheckVersions: Record<number, number> = {};
 
     for (const r of records) {
       const num = Number(r.item_number);
+      const ver = Number(r.item_version) || 1;
       if (!num) continue;
+
+      // version별 통계
+      const vKey = `${num}_v${ver}`;
+      if (!statsByVersion[vKey]) statsByVersion[vKey] = { total: 0, today: 0 };
+      statsByVersion[vKey].total++;
+      if (String(r.checked_date) === today) statsByVersion[vKey].today++;
+
+      // 전체 통계 (하위호환)
       if (!stats[num]) stats[num] = { total: 0, today: 0 };
       stats[num].total++;
       if (String(r.checked_date) === today) stats[num].today++;
+
       if (userId && String(r.user_id) === userId && String(r.checked_date) === today) {
         myChecks[num] = String(r.checked_date);
+        myCheckVersions[num] = ver;
       }
     }
 
@@ -90,7 +103,9 @@ export async function GET(req: NextRequest) {
       book_id: bookId,
       today,
       stats,
+      statsByVersion,
       myChecks,
+      myCheckVersions,
       totalCheckins: records.length,
     });
   } catch (err) {
@@ -152,7 +167,7 @@ export async function DELETE(req: NextRequest) {
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { book_id, item_number, user_id, airtable_user_id } = body;
+    const { book_id, item_number, item_version, user_id, airtable_user_id } = body;
 
     if (!book_id || !item_number || !user_id) {
       return NextResponse.json({ error: "book_id, item_number, user_id 필수" }, { status: 400 });
@@ -175,6 +190,7 @@ export async function POST(req: NextRequest) {
     const result = await ncbCreate(CHECKIN_TABLE, {
       book_id,
       item_number: Number(item_number),
+      item_version: Number(item_version) || 1,
       user_id: String(user_id),
       checked_date: today,
       created_at: kstNow(),
