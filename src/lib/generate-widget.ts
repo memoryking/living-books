@@ -271,7 +271,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   .eb-header h1{font-size:1.6em;font-weight:800;margin:0 0 8px;color:#111}
   .eb-header p{color:#888;font-size:.95em;margin:0}
 
-  .eb-section{margin-bottom:48px;scroll-margin-top:60px}
+  .eb-section{margin-bottom:48px;scroll-margin-top:220px}
   .eb-viewer h1{font-size:1.45em;font-weight:700;margin:2em 0 .8em;color:#111;border-bottom:2px solid #e5e7eb;padding-bottom:.4em}
   .eb-viewer h2{font-size:1.25em;font-weight:700;margin:1.8em 0 .7em;color:#222}
   .eb-viewer h3{font-size:1.1em;font-weight:600;margin:1.5em 0 .5em;color:#333}
@@ -361,7 +361,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   window.ebNav=function(id){
     var el=document.getElementById(id);
     if(!el)return;
-    var y=el.getBoundingClientRect().top+window.pageYOffset-160;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-220;
     window.scrollTo({top:y,behavior:'smooth'});
   };
 
