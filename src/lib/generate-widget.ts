@@ -217,7 +217,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   const contentSections = sections
     .map(
       (s) => `
-      <div id="${s.id}" class="eb-section" style="scroll-margin-top:150px;padding-top:20px;">
+      <div id="${s.id}" class="eb-section" style="scroll-margin-top:150px;padding-top:56px;border-top:2px solid #e5e7eb;margin-top:24px;">
         ${s.html}
         <span class="eb-back" onclick="ebNav('eb-toc')">↑ 목차로</span>
       </div>`
