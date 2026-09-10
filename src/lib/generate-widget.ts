@@ -360,7 +360,9 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
   window.ebNav=function(id){
     var el=document.getElementById(id);
-    if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+    if(!el)return;
+    var y=el.getBoundingClientRect().top+window.pageYOffset-100;
+    window.scrollTo({top:y,behavior:'smooth'});
   };
 
   var lastScroll=0;
