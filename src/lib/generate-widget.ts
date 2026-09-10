@@ -243,6 +243,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   .eb-viewer.eb-dark th{background:#2a2a3e}
   .eb-viewer.eb-dark td,.eb-viewer.eb-dark th{border-color:#444}
   .eb-viewer.eb-dark tr:nth-child(even){background:#222}
+  .eb-viewer.eb-dark strong{color:#f9fafb}
   .eb-viewer.eb-dark code{background:#2a2a3e;color:#e0e0e0}
   .eb-viewer.eb-dark .eb-cross{background:#222;border-color:#333}
 
