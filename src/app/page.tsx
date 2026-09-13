@@ -214,6 +214,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-09",
     version: 1,
   },
+  {
+    id: "selling-invisible",
+    emoji: "💎",
+    title: "만져볼 수 없는 상품을 완판시키는 설득 시스템",
+    subtitle: "디지털 상품·온라인 강의·컨설팅 — 무형의 가치를 매출로 바꾸는 실전 가이드",
+    tags: ["무형상품", "설득", "판매심리학", "디지털판매"],
+    lastUpdated: "2026-09-13",
+    version: 1,
+  },
 ];
 
 function BookCard({

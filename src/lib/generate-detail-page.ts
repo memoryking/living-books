@@ -294,6 +294,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "sns-growth", emoji: "📱", title: "0원 SNS 계정 키우기", oneLiner: "60일 성장 로드맵" },
   { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", oneLiner: "UVP→수익화 90일 로드맵" },
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", oneLiner: "구독·SaaS·마켓플레이스" },
+  { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", oneLiner: "디지털상품·강의·컨설팅" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2738,6 +2739,99 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   21. 만져볼 수 없는 상품을 완판시키는 설득 시스템
+   ═══════════════════════════════════════════ */
+
+function buildSellingInvisible(): string {
+  return `<!-- 💎 만져볼 수 없는 상품을 완판시키는 설득 시스템 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#f5f3ff,#ede9fe,#ddd6fe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💎</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#3b0764;">좋은 상품인데 왜 안 팔릴까?<br>보이지 않기 때문입니다.</h2>
+    <p style="font-size:18px;color:#7c3aed;font-weight:600;margin:0 0 8px;">무형의 가치를 유형의 매출로 바꾸는 설득 시스템.</p>
+    ${subtitle("디지털 상품·온라인 강의·컨설팅·서비스 — 만져볼 수 없는 상품의 판매 공식")}
+    ${statGrid([
+      { num: "5", label: "가지 신뢰 설계 장치", color: "#7c3aed" },
+      { num: "10", label: "챕터 + 실행 키트", color: "#7c3aed" },
+      { num: "30일", label: "세일즈 개선 로드맵", color: "#7c3aed" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 경험, 있으시죠?")}
+    ${beforeAfter(
+      ["좋은 상품인데 설명이 안 됨", "가격 얘기하면 '비싸요' 반응", "무료 샘플만 받고 구매는 안 함"],
+      ["가치가 숫자로 보임", "'이 가격이면 싸네요' 반응", "판매 페이지 하나로 자동 전환"],
+      "지금", "설득 시스템 적용 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#7c3aed;">무형 상품 판매의 80%는 '보여주는 기술'로 결정됩니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#3b0764;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SELLING SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">무형 상품 판매 5단계</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">가치 번역</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">신뢰 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">가격 프레이밍</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">전환 설계</span></div>
+      <div style="padding:16px 20px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">평생 고객</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "무형 상품이 안 팔리는 진짜 이유: 보이지 않는 3가지 벽", true, "#7c3aed")}
+    ${tocItem("02", "가치를 '숫자'로 번역하는 기술: 추상→구체 5가지 공식", true, "#7c3aed")}
+    ${tocItem("03", "신뢰를 설계하는 법: 불안→확신 5가지 장치", true, "#7c3aed")}
+    ${tocItem("04", "가격 저항을 녹이는 프레이밍: '비싸요' 극복 4가지", true, "#7c3aed")}
+    ${tocItem("05", "판매 페이지의 황금 공식: Pain→공감→해결→증거→CTA", false, "#7c3aed")}
+    ${tocItem("06", "지금 사게 만드는 긴급성의 심리학", false, "#7c3aed")}
+    ${tocItem("07", "고객이 찾아오는 콘텐츠 세일즈: 구매 여정 4단계", false, "#7c3aed")}
+    ${tocItem("08", "경험을 무기로: Before-During-After 스토리텔링", false, "#7c3aed")}
+    ${tocItem("09", "맥락 세일즈: 상황·타이밍·메시지 일치 기술", false, "#7c3aed")}
+    ${tocItem("10", "한 번 산 고객을 평생 고객으로: LTV 극대화 전략", true, "#7c3aed")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 판매 페이지 체크리스트 / 가격 프레이밍 워크시트 / 신뢰 장치 점검표 / CTA 템플릿 10개 / 30일 로드맵</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["디지털 상품·전자책·온라인 강의를 판매하는 분", "컨설팅·코칭·서비스를 파는 1인 사업자", "크몽·클래스101·아임웹에서 판매 중인 분", "좋은 상품인데 판매 페이지 전환율이 낮은 분"], "✅", "#f5f3ff")}
+    ${spacer(16)}
+    ${checkList(["유형 상품(의류·식품 등) 판매자", "이미 전환율 10% 이상인 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("어떤 무형 상품에 적용되나요?", "전자책, 온라인 강의, 컨설팅, 코칭, SaaS, 템플릿, 디자인 서비스 등 만져볼 수 없는 모든 상품에 적용됩니다.")}
+    ${faqItem("판매 경험이 없어도 되나요?", "네. 판매 페이지 작성 공식부터 CTA 템플릿까지 바로 쓸 수 있는 도구가 포함되어 있습니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "세일즈 카피라이팅 강의", price: "300,000원~", note: "일방적 강의" },
+      { what: "판매 페이지 외주 제작", price: "500,000원~", note: "1회성" },
+      { what: "마케팅 컨설팅 1회", price: "200,000원~", note: "1시간" },
+    ], "1,000원", "10챕터 + CTA 템플릿 10개 + 30일 로드맵 + 업데이트", "#7c3aed")}
+    ${proofBanner(["💎 판매 페이지 황금 공식", "🛡️ 신뢰 장치 5가지", "📅 30일 개선 로드맵", "🔄 계속 업데이트"], "#f5f3ff", "#7c3aed")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("selling-invisible", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("💎", "좋은 상품이 안 팔리는 건", "보여주는 기술이 없기 때문입니다.", "무형 상품 판매 설득 시스템.", "#7c3aed")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -2910,6 +3004,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "에메랄드(#047857)에서 딥그린(#064e3b)으로",
     symbol: "톱니바퀴 안에 동전과 상승 그래프가 맞물려 도는 플랫 일러스트 (수익 구조의 메커니즘)",
     mood: "체계, 성장, 정밀",
+  },
+  "selling-invisible": {
+    title: "만져볼 수 없는 상품을 완판시키는 설득 시스템",
+    subtitle: "무형의 가치를 매출로 바꾸는 실전 가이드",
+    author: "김약사 · 유원소망약국",
+    gradient: "바이올렛(#7c3aed)에서 딥퍼플(#3b0764)로",
+    symbol: "투명한 다이아몬드가 빛을 발하며 주변에 가격표·별점·하트가 떠오르는 플랫 일러스트 (보이지 않는 가치의 가시화)",
+    mood: "신비, 설득, 전환",
   },
 };
 
@@ -3119,6 +3221,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "Netflix가 DVD에서 구독으로 피벗하지 않았다면 지금의 Netflix는 없습니다.",
     cta: "수익 구조를 설계하세요. 1,000원에 시작하세요.",
     tags: "#비즈니스모델 #수익구조 #스타트업 #SaaS #구독경제",
+  },
+  "selling-invisible": {
+    title: "만져볼 수 없는 상품을 완판시키는 설득 시스템",
+    hook: "좋은 상품인데 왜 안 팔릴까? 만져볼 수 없기 때문입니다. 보여주는 기술이 답입니다.",
+    stat: "10챕터 + 판매 페이지 공식 · 신뢰 장치 5가지 · CTA 템플릿 10개 · 30일 로드맵",
+    quote: "무형 상품 판매의 80%는 '보여주는 기술'로 결정됩니다. 상품이 아니라 설득을 설계하세요.",
+    cta: "무형 상품 판매 설득 시스템. 1,000원에 시작하세요.",
+    tags: "#무형상품 #디지털판매 #설득심리학 #판매페이지 #전환율",
   },
 };
 
@@ -3396,6 +3506,18 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `Netflix가 DVD 대여점에 머물렀다면? 좋은 아이디어와 좋은 비즈니스 모델은 완전히 다릅니다. 7가지 수익 모델 비교 + 가격 전략 5가지. 10챕터 + 비즈니스 모델 캔버스 + 90일 설계 로드맵 + 보너스 5개 · 프로필 링크에서 목차를 확인하세요. #비즈니스모델 #수익구조 #스타트업 #SaaS #구독경제`,
   },
+  "selling-invisible": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+깊은 보라-검정 배경, 중앙에 투명한 다이아몬드가 떠 있다.
+다이아몬드 내부에서 무지개빛 프리즘 광선이 사방으로 퍼짐.
+다이아몬드 주변에 가격표, 별 5개 리뷰, 결제 완료 아이콘이 떠돌며 빛남.
+"보이지 않는 것도 팔 수 있다" 느낌의 마법적 분위기.
+상단에 흰색 굵은 텍스트: "좋은 상품인데 왜 안 팔릴까?".
+하단에 골드: "보여주는 기술이 답입니다".
+시네마틱 조명, 다이아몬드 프리즘 + 보라 글로우 + 골드 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `좋은 상품인데 왜 안 팔릴까요? 만져볼 수 없기 때문입니다. 무형 상품 판매의 80%는 '보여주는 기술'로 결정됩니다. 10챕터 + 판매 페이지 황금 공식 + 신뢰 장치 5가지 + CTA 템플릿 10개 · 프로필 링크에서 목차를 확인하세요. #무형상품 #디지털판매 #설득심리학 #판매페이지 #전환율`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -3447,6 +3569,7 @@ const BOOK_META = [
   { id: "sns-growth", title: "0원 SNS 계정 키우기", emoji: "📱", builder: buildSnsGrowth },
   { id: "personal-branding", title: "퍼스널 브랜딩 가이드", emoji: "🎤", builder: buildPersonalBranding },
   { id: "business-model", title: "비즈니스 모델 설계법", emoji: "📊", builder: buildBusinessModel },
+  { id: "selling-invisible", title: "무형 상품 완판 설득법", emoji: "💎", builder: buildSellingInvisible },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

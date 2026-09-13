@@ -130,6 +130,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "📊",
     subtitle: "돈을 버는 구조를 설계하는 완전 가이드",
   },
+  {
+    id: "selling-invisible",
+    title: "만져볼 수 없는 상품을 완판시키는 설득 시스템",
+    emoji: "💎",
+    subtitle: "무형의 가치를 매출로 바꾸는 실전 가이드",
+  },
 ];
 
 interface Section {
@@ -183,6 +189,7 @@ const CROSS_SELL_BOOKS = [
   { id: "sns-growth", emoji: "📱", title: "0원 SNS 계정 키우기", sub: "60일 성장 로드맵" },
   { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", sub: "UVP→수익화 90일 로드맵" },
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", sub: "구독·SaaS·마켓플레이스" },
+  { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", sub: "디지털상품·강의·컨설팅" },
 ];
 
 function buildCrossSell(currentId: string): string {
