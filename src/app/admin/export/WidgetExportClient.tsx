@@ -92,10 +92,12 @@ function PreviewModal({
 function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
   const iframeCode = `<iframe id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
+<button id="eb-float-${w.id}" style="position:fixed;bottom:24px;right:24px;background:#2563eb;color:#fff;padding:10px 18px;border-radius:50px;cursor:pointer;font-size:14px;font-weight:600;box-shadow:0 2px 12px rgba(37,99,235,.35);z-index:9999;display:none;border:none;" onclick="var f=document.getElementById('eb-frame-${w.id}');if(f){var t=f.getBoundingClientRect().top+window.pageYOffset;window.scrollTo({top:t,behavior:'smooth'});}">📋 목차</button>
 <script>
 (function(){
   var f=document.getElementById('eb-frame-${w.id}');
-  // iframe 높이 자동 조절
+  var fb=document.getElementById('eb-float-${w.id}');
+  // iframe 높이 자동 조절 + 스크롤 중계
   window.addEventListener('message',function(e){
     if(!e.data)return;
     if(e.data.type==='eb-resize'&&f){
@@ -106,11 +108,17 @@ function WidgetCard({ w }: { w: WidgetData }) {
       window.scrollTo({top:iframeTop+e.data.offset-80,behavior:'smooth'});
     }
   });
-  // 부모 스크롤 정보를 iframe에 전달 (진행률, 플로팅 목차용)
+  // 부모 스크롤: 진행률 전달 + 플로팅 목차 표시
   window.addEventListener('scroll',function(){
-    if(!f||!f.contentWindow)return;
+    if(!f)return;
     var rect=f.getBoundingClientRect();
-    f.contentWindow.postMessage({type:'eb-parent-scroll',scrollY:window.pageYOffset,iframeTop:rect.top+window.pageYOffset,viewH:window.innerHeight},'*');
+    var iframeTop=rect.top+window.pageYOffset;
+    // 플로팅 목차 버튼: iframe 상단에서 400px 이상 스크롤하면 표시
+    if(fb){fb.style.display=(window.pageYOffset>iframeTop+400)?'block':'none';}
+    // iframe에 스크롤 정보 전달
+    if(f.contentWindow){
+      f.contentWindow.postMessage({type:'eb-parent-scroll',scrollY:window.pageYOffset,iframeTop:iframeTop,viewH:window.innerHeight},'*');
+    }
   });
 })();
 </script>`;
