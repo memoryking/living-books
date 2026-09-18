@@ -93,12 +93,26 @@ function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
   const iframeCode = `<iframe id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
 <script>
-window.addEventListener('message',function(e){
-  if(e.data&&e.data.type==='eb-resize'){
-    var f=document.getElementById('eb-frame-${w.id}');
-    if(f)f.style.height=e.data.height+'px';
-  }
-});
+(function(){
+  var f=document.getElementById('eb-frame-${w.id}');
+  // iframe 높이 자동 조절
+  window.addEventListener('message',function(e){
+    if(!e.data)return;
+    if(e.data.type==='eb-resize'&&f){
+      f.style.height=e.data.height+'px';
+    }
+    if(e.data.type==='eb-scroll'&&f){
+      var iframeTop=f.getBoundingClientRect().top+window.pageYOffset;
+      window.scrollTo({top:iframeTop+e.data.offset-80,behavior:'smooth'});
+    }
+  });
+  // 부모 스크롤 정보를 iframe에 전달 (진행률, 플로팅 목차용)
+  window.addEventListener('scroll',function(){
+    if(!f||!f.contentWindow)return;
+    var rect=f.getBoundingClientRect();
+    f.contentWindow.postMessage({type:'eb-parent-scroll',scrollY:window.pageYOffset,iframeTop:rect.top+window.pageYOffset,viewH:window.innerHeight},'*');
+  });
+})();
 </script>`;
 
   return (
