@@ -12,7 +12,14 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // /embed/* 페이지: 아임웹 도메인에서만 iframe 허용
+        // widget 정적 파일: 캐시 방지
+        source: "/widget/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+        ],
+      },
+      {
+        // /embed/* 페이지: 아임웹 도메인에서만 iframe 허용 + 캐시 방지
         source: "/embed/:path*",
         headers: [
           {
@@ -22,6 +29,10 @@ const nextConfig: NextConfig = {
           {
             key: "X-Frame-Options",
             value: "SAMEORIGIN",
+          },
+          {
+            key: "Cache-Control",
+            value: "no-cache, no-store, must-revalidate",
           },
         ],
       },
