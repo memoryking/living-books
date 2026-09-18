@@ -8,7 +8,7 @@
   var toc=document.getElementById('eb-toc');
   var progBar=document.getElementById('eb-prog-bar');
   var inIframe=window.top!==window.self;
-  var API='https://living-books-beta.vercel.app/api/chapter-like';
+  var API='/api/chapter-like';
 
   window.ebFont=function(s,btn){
     root.className=root.className.replace(/eb-(sm|md|lg)/g,'eb-'+s);
