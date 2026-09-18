@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 const NCB_BASE = process.env.NOCODEBACKEND_BASE_URL || "https://api.nocodebackend.com";
 const NCB_INSTANCE = "55910_pharma_health_db";
-const LIKE_TABLE = "ebook_checkins";
+const LIKE_TABLE = "ebook_chapter_likes";
 
 function ncbUrl(path: string, extra = "") {
   const sep = extra ? "&" : "";
@@ -37,10 +37,9 @@ export async function GET(req: NextRequest) {
     const data = await res.json();
     const records = extractRecords(data);
 
-    // 챕터별 카운트 집계 (book_id + type 필터)
+    // 챕터별 카운트 집계
     const counts: Record<number, number> = {};
     for (const r of records) {
-      if (String(r.type) !== "chapter_like") continue;
       if (bookId && String(r.book_id) !== bookId) continue;
       const ch = Number(r.chapter);
       counts[ch] = (counts[ch] || 0) + 1;
@@ -70,11 +69,7 @@ export async function POST(req: NextRequest) {
       headers: ncbHeaders(),
       body: JSON.stringify({
         book_id,
-        item_number: 0,
-        type: "chapter_like",
         chapter: Number(chapter),
-        user_id: "anonymous",
-        checked_date: kstNow.slice(0, 10),
         created_at: kstNow,
       }),
     });
