@@ -2,6 +2,9 @@ import { marked } from "marked";
 import fs from "fs";
 import path from "path";
 
+// ~ 가 취소선으로 렌더링되는 것 방지 (숫자~숫자 범위 표기용)
+marked.use({ extensions: [{ name: "del", level: "inline", start: () => -1, tokenizer: () => undefined }] });
+
 interface BookMeta {
   id: string;
   title: string;
