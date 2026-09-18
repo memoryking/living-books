@@ -295,3 +295,7 @@ export function generateAllWidgets(): { book: BookMeta; html: string }[] {
     return { book, html: buildWidgetHTML(book, sections) };
   });
 }
+
+export function getBookIds(): string[] {
+  return PREMIUM_BOOKS.map((b) => b.id);
+}

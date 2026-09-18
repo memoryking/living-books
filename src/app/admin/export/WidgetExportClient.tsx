@@ -91,6 +91,7 @@ function PreviewModal({
 /* ── 위젯 카드 (전자책 뷰어) ── */
 function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
+  const iframeCode = `<iframe src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;min-height:100vh;border:none;" allowfullscreen></iframe>`;
 
   return (
     <div className="p-5 rounded-xl border border-gray-200">
@@ -100,13 +101,17 @@ function WidgetCard({ w }: { w: WidgetData }) {
         </span>
       </div>
       <div className="flex flex-wrap gap-2">
-        <CopyButton text={w.html} label="📋 뷰어 코드 복사" />
+        <CopyButton text={iframeCode} label="🔗 iframe 코드 복사 (추천)" />
+        <CopyButton text={w.html} label="📋 뷰어 코드 복사 (직접)" />
         <button
           onClick={() => setShowCode(!showCode)}
           className="px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-500 text-sm"
         >
           {showCode ? "숨기기" : "코드 보기"}
         </button>
+      </div>
+      <div className="mt-2 p-3 rounded-lg bg-blue-50 border border-blue-200 text-xs text-blue-800">
+        <strong>iframe 추천:</strong> 아임웹 코드위젯에 iframe 코드를 붙여넣으면, 콘텐츠·CSS·JS 수정 시 자동 반영됩니다. 다시 붙여넣을 필요 없음.
       </div>
       {showCode && (
         <pre className="mt-3 p-3 rounded-lg bg-gray-900 text-gray-200 text-xs overflow-auto max-h-60">
