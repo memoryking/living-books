@@ -9,6 +9,7 @@ interface WidgetData {
   subtitle: string;
   html: string;
   charCount: number;
+  markdown: string;
 }
 
 interface DetailData {
@@ -131,6 +132,7 @@ function WidgetCard({ w }: { w: WidgetData }) {
         </span>
       </div>
       <div className="flex flex-wrap gap-2">
+        <CopyButton text={w.markdown} label="📝 전자책 내용 복사" />
         <CopyButton text={iframeCode} label="🔗 iframe 코드 복사 (추천)" />
         <CopyButton text={w.html} label="📋 뷰어 코드 복사 (직접)" />
         <button

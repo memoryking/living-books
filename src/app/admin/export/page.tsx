@@ -1,11 +1,26 @@
 import { generateAllWidgets } from "@/lib/generate-widget";
 import { generateAllDetails } from "@/lib/generate-detail-page";
 import WidgetExportClient from "./WidgetExportClient";
+import fs from "fs";
+import path from "path";
 
 export const metadata = {
   title: "위젯 내보내기 — 관리자",
   robots: "noindex",
 };
+
+function readBookMarkdown(bookId: string): string {
+  const contentDir = path.join(process.cwd(), "data", bookId, "content");
+  try {
+    const files = fs.readdirSync(contentDir).sort();
+    return files
+      .filter((f) => f.endsWith(".md"))
+      .map((f) => fs.readFileSync(path.join(contentDir, f), "utf-8"))
+      .join("\n\n---\n\n");
+  } catch {
+    return "";
+  }
+}
 
 export default function ExportPage() {
   const widgets = generateAllWidgets();
@@ -20,6 +35,7 @@ export default function ExportPage() {
         subtitle: w.book.subtitle,
         html: w.html,
         charCount: w.html.length,
+        markdown: readBookMarkdown(w.book.id),
       }))}
       details={details.map((d) => ({
         id: d.id,
