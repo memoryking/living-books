@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "frame-ancestors 'self' *.imweb.me *.imweb.co.kr imweb.me imweb.co.kr",
+            value: "frame-ancestors 'self' vipup.site *.vipup.site *.imweb.me *.imweb.co.kr imweb.me imweb.co.kr",
           },
           {
             key: "X-Frame-Options",
