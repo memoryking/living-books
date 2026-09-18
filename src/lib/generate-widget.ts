@@ -237,7 +237,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   const CDN = "https://living-books-beta.vercel.app/widget";
 
   return `<!-- ${escHtml(book.emoji)} ${escHtml(book.title)} — 아임웹 위젯용 -->
-<link rel="stylesheet" href="${CDN}/eb-style.css">
+<link rel="stylesheet" href="${CDN}/eb-style.css?v=${Date.now()}">
 
 <div id="eb-root" class="eb-viewer eb-md">
   <div class="eb-progress"><div id="eb-prog-bar" class="eb-progress-bar"></div></div>
@@ -268,7 +268,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
 
-<script src="${CDN}/eb-script.js"></script>`;
+<script src="${CDN}/eb-script.js?v=${Date.now()}"></script>`;
 }
 
 function escHtml(s: string): string {
