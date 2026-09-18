@@ -8,7 +8,6 @@
   var toc=document.getElementById('eb-toc');
   var progBar=document.getElementById('eb-prog-bar');
   var inIframe=window.top!==window.self;
-  var API='/api/chapter-like';
 
   window.ebFont=function(s,btn){
     root.className=root.className.replace(/eb-(sm|md|lg)/g,'eb-'+s);
@@ -27,8 +26,7 @@
     var el=document.getElementById(id);
     if(!el)return;
     if(inIframe){
-      var offsetTop=el.offsetTop;
-      window.parent.postMessage({type:'eb-scroll',offset:offsetTop},'*');
+      window.parent.postMessage({type:'eb-scroll',offset:el.offsetTop},'*');
     } else {
       var y=el.getBoundingClientRect().top+window.pageYOffset-150;
       window.scrollTo({top:y,behavior:'smooth'});
@@ -43,13 +41,10 @@
     if(localStorage.getItem(key))return;
     localStorage.setItem(key,'1');
     btn.classList.add('liked');
-    // 서버에 저장
-    fetch(API,{
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({book_id:bookId,chapter:ch})
-    }).catch(function(){});
-    // 카운트 업데이트
+    // 부모에게 API 호출 요청
+    if(inIframe){
+      window.parent.postMessage({type:'eb-like-post',book_id:bookId,chapter:ch},'*');
+    }
     var countEl=document.getElementById('eb-lc-'+ch);
     var cur=parseInt(countEl?countEl.textContent:'')||0;
     var next=cur+1;
@@ -57,12 +52,37 @@
     if(countEl){countEl.textContent=next+'명이 도움받았어요';}
   };
 
-  // 페이지 로드 시: localStorage에서 이미 좋아요한 챕터 표시 + 서버에서 카운트 로드
-  // 부모에서 리셋 요청 수신
+  // 부모에서 메시지 수신 (리셋, 카운트 데이터)
   window.addEventListener('message',function(e){
-    if(e.data&&e.data.type==='eb-reset-likes'){
+    if(!e.data)return;
+    if(e.data.type==='eb-reset-likes'){
       Object.keys(localStorage).filter(function(k){return k.startsWith('eb-liked-');}).forEach(function(k){localStorage.removeItem(k);});
       location.reload();
+    }
+    if(e.data.type==='eb-like-data'&&e.data.counts){
+      Object.keys(e.data.counts).forEach(function(ch){
+        var el=document.getElementById('eb-lc-'+ch);
+        if(el&&e.data.counts[ch]>0){
+          el.textContent=e.data.counts[ch]+'명이 도움받았어요';
+          var btn=root.querySelector('.eb-like-btn[data-chapter="'+ch+'"]');
+          if(btn&&btn.classList.contains('liked')){
+            btn.textContent='👍 감사합니다! · '+e.data.counts[ch]+'명';
+          }
+        }
+      });
+    }
+    if(e.data.type==='eb-parent-scroll'){
+      var scrollY=e.data.scrollY;
+      var iframeTop=e.data.iframeTop;
+      var contentH=document.documentElement.scrollHeight;
+      if(progBar&&contentH>0){
+        var progress=Math.min(100,Math.max(0,Math.round(((scrollY-iframeTop)/contentH)*100)));
+        progBar.style.width=progress+'%';
+      }
+      if(toc&&fb){
+        var tocBottom=toc.offsetTop+toc.offsetHeight;
+        fb.style.display=(scrollY-iframeTop)>tocBottom?'block':'none';
+      }
     }
   });
 
@@ -71,54 +91,23 @@
     var bookId='';
     btns.forEach(function(btn){
       var ch=btn.getAttribute('data-chapter');
-      bookId=btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+      var m=btn.getAttribute('onclick').match(/'([^']+)'/);
+      if(m)bookId=m[1];
       var key=getLikedKey(bookId,ch);
       if(localStorage.getItem(key)){
         btn.classList.add('liked');
         btn.textContent='👍 감사합니다!';
       }
     });
-    // 서버에서 카운트 로드
-    if(bookId){
-      fetch(API+'?book_id='+encodeURIComponent(bookId))
-        .then(function(r){return r.json();})
-        .then(function(data){
-          if(data.counts){
-            Object.keys(data.counts).forEach(function(ch){
-              var el=document.getElementById('eb-lc-'+ch);
-              if(el&&data.counts[ch]>0){
-                el.textContent=data.counts[ch]+'명이 도움받았어요';
-                // 이미 좋아요한 챕터의 버튼에도 카운트 반영
-                var btn=root.querySelector('.eb-like-btn[data-chapter="'+ch+'"]');
-                if(btn&&btn.classList.contains('liked')){
-                  btn.textContent='👍 감사합니다! · '+data.counts[ch]+'명';
-                }
-              }
-            });
-          }
-        }).catch(function(){});
+    // 부모에게 카운트 요청
+    if(bookId&&inIframe){
+      window.parent.postMessage({type:'eb-like-get',book_id:bookId},'*');
     }
   }
   initLikes();
 
-  /* ── 플로팅 목차 + 진행률 ── */
-  if(inIframe){
-    window.addEventListener('message',function(e){
-      if(e.data&&e.data.type==='eb-parent-scroll'){
-        var scrollY=e.data.scrollY;
-        var iframeTop=e.data.iframeTop;
-        var contentH=document.documentElement.scrollHeight;
-        if(progBar&&contentH>0){
-          var progress=Math.min(100,Math.max(0,Math.round(((scrollY-iframeTop)/contentH)*100)));
-          progBar.style.width=progress+'%';
-        }
-        if(toc&&fb){
-          var tocBottom=toc.offsetTop+toc.offsetHeight;
-          fb.style.display=(scrollY-iframeTop)>tocBottom?'block':'none';
-        }
-      }
-    });
-  } else {
+  /* ── 플로팅 목차 + 진행률 (비iframe) ── */
+  if(!inIframe){
     var lastScroll=0;
     function onScroll(){
       var now=Date.now();
