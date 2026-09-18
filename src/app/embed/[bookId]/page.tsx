@@ -21,6 +21,13 @@ export default async function EmbedPage({
   // iframe 보안 + 높이 자동 전송 스크립트
   const embedScript = `<script>
 (function(){
+  // URL에 ?reset 있으면 localStorage 초기화
+  if(location.search.indexOf('reset')!==-1){
+    Object.keys(localStorage).filter(function(k){return k.startsWith('eb-liked-');}).forEach(function(k){localStorage.removeItem(k);});
+    // reset 파라미터 제거 후 리로드
+    location.replace(location.pathname);
+    return;
+  }
   try {
     if (window.top === window.self) {
       document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#666;text-align:center;padding:20px;"><div><p style="font-size:48px;margin-bottom:16px;">🔒</p><p style="font-size:18px;font-weight:600;">이 페이지는 직접 접속할 수 없습니다.</p><p style="font-size:14px;margin-top:8px;color:#999;">구매 페이지를 통해 접속해주세요.</p></div></div>';
