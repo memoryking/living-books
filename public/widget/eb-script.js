@@ -53,7 +53,7 @@
     var countEl=document.getElementById('eb-lc-'+ch);
     var cur=parseInt(countEl?countEl.textContent:'')||0;
     var next=cur+1;
-    btn.textContent='👍 감사합니다!';
+    btn.textContent='👍 감사합니다! · '+next+'명';
     if(countEl){countEl.textContent=next+'명이 도움받았어요';}
   };
 
@@ -78,7 +78,14 @@
           if(data.counts){
             Object.keys(data.counts).forEach(function(ch){
               var el=document.getElementById('eb-lc-'+ch);
-              if(el&&data.counts[ch]>0){el.textContent=data.counts[ch]+'명이 도움받았어요';}
+              if(el&&data.counts[ch]>0){
+                el.textContent=data.counts[ch]+'명이 도움받았어요';
+                // 이미 좋아요한 챕터의 버튼에도 카운트 반영
+                var btn=root.querySelector('.eb-like-btn[data-chapter="'+ch+'"]');
+                if(btn&&btn.classList.contains('liked')){
+                  btn.textContent='👍 감사합니다! · '+data.counts[ch]+'명';
+                }
+              }
             });
           }
         }).catch(function(){});
