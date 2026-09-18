@@ -40,10 +40,9 @@
 
   window.ebLike=function(bookId,ch,btn){
     var key=getLikedKey(bookId,ch);
-    if(localStorage.getItem(key))return; // 이미 좋아요 함
+    if(localStorage.getItem(key))return;
     localStorage.setItem(key,'1');
     btn.classList.add('liked');
-    btn.textContent='👍 감사합니다!';
     // 서버에 저장
     fetch(API,{
       method:'POST',
@@ -52,10 +51,10 @@
     }).catch(function(){});
     // 카운트 업데이트
     var countEl=document.getElementById('eb-lc-'+ch);
-    if(countEl){
-      var cur=parseInt(countEl.textContent)||0;
-      countEl.textContent=(cur+1)+'명이 도움받았어요';
-    }
+    var cur=parseInt(countEl?countEl.textContent:'')||0;
+    var next=cur+1;
+    btn.textContent='👍 감사합니다!';
+    if(countEl){countEl.textContent=next+'명이 도움받았어요';}
   };
 
   // 페이지 로드 시: localStorage에서 이미 좋아요한 챕터 표시 + 서버에서 카운트 로드
