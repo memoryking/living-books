@@ -97,8 +97,7 @@ function WidgetCard({ w }: { w: WidgetData }) {
 (function(){
   var f=document.getElementById('eb-frame-${w.id}');
   var fb=document.getElementById('eb-float-${w.id}');
-  var LIKE_API='https://living-books-beta.vercel.app/api/chapter-like';
-  // iframe 높이, 스크롤, 좋아요 API 중계
+  // iframe 높이, 스크롤 중계
   window.addEventListener('message',function(e){
     if(!e.data)return;
     if(e.data.type==='eb-resize'&&f){
@@ -107,14 +106,6 @@ function WidgetCard({ w }: { w: WidgetData }) {
     if(e.data.type==='eb-scroll'&&f){
       var iframeTop=f.getBoundingClientRect().top+window.pageYOffset;
       window.scrollTo({top:iframeTop+e.data.offset-80,behavior:'smooth'});
-    }
-    if(e.data.type==='eb-like-post'){
-      fetch(LIKE_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({book_id:e.data.book_id,chapter:e.data.chapter})}).catch(function(){});
-    }
-    if(e.data.type==='eb-like-get'){
-      fetch(LIKE_API+'?book_id='+encodeURIComponent(e.data.book_id)).then(function(r){return r.json();}).then(function(data){
-        if(f.contentWindow){f.contentWindow.postMessage({type:'eb-like-data',counts:data.counts||{}},'*');}
-      }).catch(function(){});
     }
   });
   // 부모 스크롤: 진행률 전달 + 플로팅 목차 표시

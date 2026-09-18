@@ -228,13 +228,9 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   // Build content sections
   const contentSections = sections
     .map(
-      (s, i) => `
+      (s) => `
       <div id="${s.id}" class="eb-section" style="scroll-margin-top:150px;padding-top:56px;border-top:2px solid #e5e7eb;margin-top:24px;">
         ${s.html}
-        <div class="eb-like-wrap">
-          <button class="eb-like-btn" data-chapter="${i}" onclick="ebLike('${book.id}',${i},this)">👍 도움됐어요</button>
-          <span class="eb-like-count" id="eb-lc-${i}"></span>
-        </div>
         <span class="eb-back" onclick="ebNav('eb-toc')">↑ 목차로</span>
       </div>`
     )
