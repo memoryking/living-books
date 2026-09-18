@@ -2,8 +2,10 @@ import { marked } from "marked";
 import fs from "fs";
 import path from "path";
 
-// ~ 가 취소선으로 렌더링되는 것 방지 (숫자~숫자 범위 표기용)
-marked.use({ extensions: [{ name: "del", level: "inline", start: () => -1, tokenizer: () => undefined }] });
+// ~ 가 취소선으로 렌더링되는 것 방지
+function escapeTildes(md: string): string {
+  return md.replace(/~/g, "&#126;");
+}
 
 interface BookMeta {
   id: string;
@@ -164,7 +166,7 @@ function readBookSections(bookId: string): Section[] {
     const titleMatch = md.match(/^#\s+(.+)/m);
     const title = titleMatch ? titleMatch[1] : file.replace(".md", "");
     const sectionId = "eb-s" + sections.length;
-    const html = marked.parse(md, { async: false }) as string;
+    const html = marked.parse(escapeTildes(md), { async: false }) as string;
     sections.push({ id: sectionId, title, html });
   }
 
