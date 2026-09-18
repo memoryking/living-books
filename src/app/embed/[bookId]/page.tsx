@@ -1,9 +1,7 @@
-import { generateWidget, getBookIds } from "@/lib/generate-widget";
+import { generateWidget } from "@/lib/generate-widget";
 import { notFound } from "next/navigation";
 
-export function generateStaticParams() {
-  return getBookIds().map((id) => ({ bookId: id }));
-}
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   robots: "noindex, nofollow",
@@ -17,6 +15,8 @@ export default async function EmbedPage({
   const { bookId } = await params;
   const html = generateWidget(bookId);
   if (!html) notFound();
+
+  const now = Date.now();
 
   // iframe 보안 + 높이 자동 전송 스크립트
   const embedScript = `<script>
@@ -37,6 +37,11 @@ export default async function EmbedPage({
 })();
 </script>`;
 
+  // 실시간 타임스탬프로 캐시 완전 방지
+  const htmlWithFreshUrls = html
+    .replace(/eb-style\.css\?v=\d+/, `eb-style.css?v=${now}`)
+    .replace(/eb-script\.js\?v=\d+/, `eb-script.js?v=${now}`);
+
   return (
     <html lang="ko">
       <head>
@@ -46,7 +51,7 @@ export default async function EmbedPage({
       </head>
       <body
         style={{ margin: 0, padding: 0, background: "#fff" }}
-        dangerouslySetInnerHTML={{ __html: embedScript + html }}
+        dangerouslySetInnerHTML={{ __html: embedScript + htmlWithFreshUrls }}
       />
     </html>
   );
