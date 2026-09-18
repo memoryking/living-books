@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
 
     const kstNow = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 19).replace("T", " ");
 
-    await fetch(ncbUrl(`/create/${LIKE_TABLE}`), {
+    const createRes = await fetch(ncbUrl(`/create/${LIKE_TABLE}`), {
       method: "POST",
       headers: ncbHeaders(),
       body: JSON.stringify({
@@ -73,8 +73,9 @@ export async function POST(req: NextRequest) {
         created_at: kstNow,
       }),
     });
+    const createData = await createRes.json();
 
-    return NextResponse.json({ success: true, book_id, chapter: Number(chapter) });
+    return NextResponse.json({ success: true, book_id, chapter: Number(chapter), _ncb: createData });
   } catch (err) {
     return NextResponse.json({ error: String(err) }, { status: 500 });
   }
