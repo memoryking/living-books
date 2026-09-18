@@ -105,7 +105,7 @@ export default function StorytellingLanding() {
           사람들은 스펙을 기억하지 않습니다. 이야기를 기억합니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

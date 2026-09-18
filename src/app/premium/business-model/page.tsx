@@ -105,7 +105,7 @@ export default function BusinessModelLanding() {
           수익 구조를 설계하는 것이 진짜 사업입니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

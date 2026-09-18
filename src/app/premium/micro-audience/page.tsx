@@ -105,7 +105,7 @@ export default function MicroAudienceLanding() {
           10만 팔로워가 필요하다는 건 거짓말입니다
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

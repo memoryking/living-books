@@ -114,7 +114,7 @@ export default function ThreadsMarketingLanding() {
           28일 로드맵 · 훅 템플릿 30개 · 글감 60개 · 수익화 5갈래 포함
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

@@ -105,7 +105,7 @@ export default function CustomerRetentionLanding() {
           신규 고객 1명 확보 비용으로 기존 고객 5명을 지킬 수 있습니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

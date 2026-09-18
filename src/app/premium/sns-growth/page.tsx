@@ -105,7 +105,7 @@ export default function SnsGrowthLanding() {
           팔로워 수가 아니라 참여율이 답입니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

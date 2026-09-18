@@ -105,7 +105,7 @@ export default function MoneyPsychologyLanding() {
           같은 실력인데 왜 어떤 창업가만 돈 걱정 없이 성장할까요?
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

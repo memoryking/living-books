@@ -105,7 +105,7 @@ export default function DeepFocusLanding() {
           집중력은 재능이 아닙니다. 기술입니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

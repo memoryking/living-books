@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "김약사가 알려주는 동물의약품 | 살아있는 정보책",
-  description: "유원소망약국 김약사가 알려드리는 반려동물 의약품 가이드. 동물약국 이용법부터 절대 먹이면 안 되는 사람약까지.",
+  title: "비법연구소가 알려주는 동물의약품 | 살아있는 정보책",
+  description: "비법연구소가 알려드리는 반려동물 의약품 가이드. 동물약국 이용법부터 절대 먹이면 안 되는 사람약까지.",
 };
 
 function Section({ id, title, children }: { id: string; title: string; children: React.ReactNode }) {
@@ -28,7 +28,7 @@ function QA({ q, children }: { q: string; children: React.ReactNode }) {
 function Tip({ children }: { children: React.ReactNode }) {
   return (
     <div className="my-4 p-4 rounded-lg bg-amber-50 dark:bg-amber-950 border-l-4 border-amber-400 text-sm">
-      <span className="font-semibold">김약사 TIP</span> {children}
+      <span className="font-semibold">비법연구소 TIP</span> {children}
     </div>
   );
 }
@@ -72,7 +72,7 @@ function DrugCard({
 }
 
 const toc = [
-  { id: "intro", label: "안녕하세요, 김약사입니다" },
+  { id: "intro", label: "안녕하세요, 비법연구소입니다" },
   { id: "pharmacy", label: "동물약국, 이렇게 이용하세요" },
   { id: "otc", label: "처방전 없이 살 수 있는 동물약" },
   { id: "heartworm", label: "심장사상충 예방약 완전 정복" },
@@ -97,7 +97,7 @@ export default function PetMedicinePage() {
         <div className="flex items-center gap-3 mb-4">
           <span className="text-5xl">🐾</span>
           <div>
-            <h1 className="text-3xl font-bold">김약사가 알려주는 동물의약품</h1>
+            <h1 className="text-3xl font-bold">비법연구소가 알려주는 동물의약품</h1>
             <p className="text-gray-500 dark:text-gray-400 mt-1">
               우리 아이 약, 약국에서도 살 수 있어요
             </p>
@@ -127,10 +127,10 @@ export default function PetMedicinePage() {
       </nav>
 
       {/* 1. 인사 */}
-      <Section id="intro" title="1. 안녕하세요, 김약사입니다">
+      <Section id="intro" title="1. 안녕하세요, 비법연구소입니다">
         <div className="p-5 rounded-xl bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
           <p className="leading-relaxed">
-            안녕하세요, <strong>유원소망약국</strong>의 김약사입니다.
+            안녕하세요, <strong>비법연구소</strong>의 비법연구소입니다.
             요즘 약국에 반려동물 약 관련 문의가 정말 많아졌어요.
           </p>
           <p className="mt-3 leading-relaxed">
@@ -676,7 +676,7 @@ export default function PetMedicinePage() {
         <div className="mt-8 p-4 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800 text-sm">
           <p className="font-semibold mb-2">안내 말씀</p>
           <p className="text-gray-600 dark:text-gray-400">
-            이 정보책은 유원소망약국 김약사가 일반적인 반려동물 건강 정보 제공 목적으로 작성했습니다.
+            이 정보책은 비법연구소가 일반적인 반려동물 건강 정보 제공 목적으로 작성했습니다.
             동물의약품의 선택과 용량은 반려동물의 종, 체중, 건강 상태에 따라 달라지므로,
             구체적인 사항은 수의사 또는 동물약국 약사와 상담하시기 바랍니다.
             반려동물이 아플 때는 사람약을 먹이지 마시고, 반드시 동물병원에 먼저 연락해주세요.
@@ -688,10 +688,10 @@ export default function PetMedicinePage() {
       <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
         <p className="text-sm text-gray-400">
           이 정보책은 계속 업데이트됩니다.<br />
-          커뮤니티에서 새로운 질문이나 유용한 정보가 나오면 김약사가 검증 후 반영합니다.
+          커뮤니티에서 새로운 질문이나 유용한 정보가 나오면 비법연구소가 검증 후 반영합니다.
         </p>
         <p className="text-sm text-gray-500 mt-2 font-medium">
-          유원소망약국 김약사 드림
+          비법연구소 드림
         </p>
         <Link
           href="/"

@@ -105,7 +105,7 @@ export default function SellingInvisibleLanding() {
           무형 상품 판매의 80%는 &apos;보여주는 기술&apos;로 결정됩니다
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

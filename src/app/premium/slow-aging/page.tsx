@@ -114,7 +114,7 @@ export default function SlowAgingLanding() {
           노화 속도를 되돌리는 28일 실전 프로그램
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 
@@ -342,7 +342,7 @@ export default function SlowAgingLanding() {
       {/* Trust */}
       <SectionTitle>왜 이 가이드를 신뢰할 수 있나요?</SectionTitle>
       <div className="space-y-1 mb-16 p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
-        <TrustItem icon="&#128104;&#8205;&#9877;&#65039;" text="현직 약사 저자 — 유원소망약국 김약사, 약물과 영양의 교차점을 아는 전문가" />
+        <TrustItem icon="&#128104;&#8205;&#9877;&#65039;" text="현직 약사 저자 — 비법연구소, 약물과 영양의 교차점을 아는 전문가" />
         <TrustItem icon="&#128209;" text="최신 건강 과학 기반 — 저속노화 연구의 핵심 근거를 실전에 맞게 번역" />
         <TrustItem icon="&#128260;" text="계속 업데이트 — 새로운 연구 결과와 독자 피드백을 반영해 내용이 살아있음" />
         <TrustItem icon="&#128737;" text="실패 복구 프로토콜 포함 — 무너지는 순간을 전제로 설계된 책, 죄책감 없이 재시작 가능" />

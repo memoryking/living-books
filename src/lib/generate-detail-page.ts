@@ -160,7 +160,7 @@ function ctaBlock(emoji: string, headline1: string, headline2: string, subtext: 
     </div>
     <div style="display:inline-block;padding:16px 48px;background:#fff;color:${accent};font-size:18px;font-weight:700;border-radius:999px;box-shadow:0 4px 16px rgba(0,0,0,.15);">지금 시작하기</div>
     ${spacer(16)}
-    <div style="font-size:13px;color:rgba(255,255,255,.5);">1개월 열람 · 계속 업데이트 · 유원소망약국 김약사</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.5);">1개월 열람 · 계속 업데이트 · 비법연구소</div>
   </section>`;
 }
 
@@ -2848,7 +2848,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "diet-secrets": {
     title: "다이어트 서바이벌 시스템",
     subtitle: "1,673명의 실패와 성공에서 뽑아낸 생존 가이드",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "그린(#16a34a)에서 짙은 에메랄드(#064e3b)로",
     symbol: "체중계 위에 올라선 사람 실루엣, 주위로 채소·운동화·시계 아이콘이 도는 플랫 일러스트",
     mood: "청량, 생기, 실행력",
@@ -2856,7 +2856,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "endocrine-disruptors": {
     title: "생활 속 환경호르몬과 질병",
     subtitle: "BPA Free의 함정부터 PFAS, 미세플라스틱까지",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "틸(#0d9488)에서 짙은 다크틸(#134e4a)로",
     symbol: "깨진 플라스틱 용기에서 경고 기호가 떠오르는 플랫 일러스트, 주위에 분자 구조·돋보기 아이콘",
     mood: "과학적, 신뢰, 경각심",
@@ -2864,7 +2864,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "declutter-clean": {
     title: "정리와 청소의 기술",
     subtitle: "서랍 하나부터 시작하는 살아있는 가이드",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "앰버(#d97706)에서 짙은 브라운(#78350f)으로",
     symbol: "깔끔하게 정리된 서랍장, 위에 타이머 아이콘이 떠 있는 미니멀 플랫 일러스트",
     mood: "깔끔, 따뜻함, 실행력",
@@ -2872,7 +2872,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "glp1-guide": {
     title: "약사가 알려주는 GLP-1 비만약 완전 가이드",
     subtitle: "오젬픽·위고비·마운자로 — 실제 경험 + 최신 연구 기반",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "딥블루(#2563eb)에서 짙은 네이비(#1e3a5f)로",
     symbol: "주사기(펜형)와 체중계, 주위에 분자 구조·그래프 아이콘이 도는 의료 플랫 일러스트",
     mood: "전문적, 신뢰, 안심",
@@ -2880,7 +2880,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "slow-aging": {
     title: "몸이 젊어지는 4주 저속노화 리셋",
     subtitle: "식단·혈당·운동·수면, 28일 실전 프로그램",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "밝은 민트(#a7f3d0)에서 딥그린(#14532d)으로",
     symbol: "모래시계 안에서 초록 새싹이 자라나는 모습의 플랫 일러스트 (노화 시간을 되돌리는 상징)",
     mood: "청량, 생기, 실행력",
@@ -2888,7 +2888,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "love-skills": {
     title: "밀당 없이 사랑받는 연애의 기술",
     subtitle: "애착·소통·관계 심리학 수업",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "로즈핑크(#db2777)에서 웜톤 살구색(#fda4af)으로",
     symbol: "두 개의 원이 부드럽게 겹쳐지고 겹친 부분에 작은 하트가 있는 플랫 일러스트 (건강한 관계의 상징)",
     mood: "따뜻함, 공감, 포근함",
@@ -2896,7 +2896,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "ai-sidejob": {
     title: "하루 1시간, AI 부업 자동화 시스템",
     subtitle: "수익 파이프라인 3개를 만드는 실전 가이드",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "딥블루(#2563eb)에서 짙은 네이비(#1e3a5f)로",
     symbol: "노트북 화면에서 3개의 빛나는 파이프라인이 뻗어 나와 동전·그래프·문서로 연결되는 플랫 일러스트",
     mood: "테크, 미래적, 실행력",
@@ -2904,7 +2904,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "threads-marketing": {
     title: "0팔로워로 시작하는 스레드 마케팅",
     subtitle: "텍스트 한 줄로 성장하는 28일 공략집",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "퍼플(#7c3aed)에서 딥퍼플(#4c1d95)로",
     symbol: "실 뭉치(스레드)에서 말풍선들이 연결되어 퍼져나가는 플랫 일러스트 (텍스트로 연결되는 커뮤니티)",
     mood: "트렌디, 활기, 성장",
@@ -2912,7 +2912,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "eisenhower-matrix": {
     title: "일잘러의 비밀무기, 아이젠하워 매트릭스",
     subtitle: "하루 15분 결정 관리 시스템",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "슬레이트(#334155)에서 다크네이비(#0f172a)로",
     symbol: "네 칸으로 나뉜 매트릭스 보드, 중앙에 시계 아이콘이 있는 미니멀 플랫 일러스트 (결정의 프레임워크)",
     mood: "전문적, 명확, 집중",
@@ -2920,7 +2920,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "deep-focus": {
     title: "딥포커스, 초집중의 기술",
     subtitle: "3분마다 방해받는 시대의 집중력 시스템",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "인디고(#4f46e5)에서 딥인디고(#1e1b4b)로",
     symbol: "뇌 실루엣 안에 과녁이 있고 주변의 알림·소음 아이콘이 차단되는 플랫 일러스트 (집중의 방패)",
     mood: "집중, 명확, 고요",
@@ -2928,7 +2928,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "storytelling": {
     title: "사람의 마음을 휘어잡는 스토리텔링의 기술",
     subtitle: "브랜드 스토리로 팬을 만드는 법",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "앰버(#f59e0b)에서 딥오렌지(#c2410c)로",
     symbol: "펼쳐진 책에서 빛나는 하트와 말풍선이 퍼져나가는 플랫 일러스트 (이야기의 힘)",
     mood: "따뜻함, 영감, 연결",
@@ -2936,7 +2936,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "customer-retention": {
     title: "한번 온 고객을 평생고객으로 만들기",
     subtitle: "이탈 방지부터 추천 엔진까지",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "에메랄드(#059669)에서 딥틸(#065f46)로",
     symbol: "두 손이 맞잡혀 있고 주변에 하트·별·반복 화살표가 도는 플랫 일러스트 (관계의 순환)",
     mood: "신뢰, 따뜻함, 지속성",
@@ -2944,7 +2944,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "launch-storytelling": {
     title: "완판의 치트키, 런칭 스토리텔링의 비밀",
     subtitle: "프리런칭부터 수익화 루프까지",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "레드오렌지(#ea580c)에서 딥레드(#991b1b)로",
     symbol: "로켓이 발사되면서 주변에 이메일·차트·메가폰 아이콘이 퍼져나가는 플랫 일러스트 (런칭의 폭발력)",
     mood: "열정, 실행력, 폭발적 성장",
@@ -2952,7 +2952,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "money-psychology": {
     title: "사업 성패를 좌우하는 돈의 심리학",
     subtitle: "감정에 흔들리지 않는 재정 판단력",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "골드(#ca8a04)에서 딥브라운(#78350f)으로",
     symbol: "뇌와 동전이 연결된 저울, 한쪽에 감정 아이콘 다른 쪽에 차트 아이콘이 있는 플랫 일러스트 (감정과 이성의 균형)",
     mood: "지혜, 균형, 통찰",
@@ -2960,7 +2960,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "idea-validation": {
     title: "망하지 않는 사업 아이디어 검증법",
     subtitle: "시장 조사부터 MVP·피벗까지",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "시안(#0891b2)에서 딥시안(#164e63)으로",
     symbol: "현미경 렌즈 안에 체크마크와 그래프가 보이는 플랫 일러스트 (아이디어 검증의 과학)",
     mood: "정밀, 실험, 확신",
@@ -2968,7 +2968,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "micro-audience": {
     title: "팔로워 1,000명으로 평생 먹고 사는 법",
     subtitle: "100명의 진짜 팬이면 충분합니다",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "보라(#7c3aed)에서 딥퍼플(#4c1d95)로",
     symbol: "작은 원(팬)들이 중앙의 큰 하트에 연결된 네트워크 플랫 일러스트 (마이크로 커뮤니티)",
     mood: "연결, 따뜻함, 성장",
@@ -2976,7 +2976,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "writing-formula": {
     title: "뇌에 박히는 글쓰기 공식",
     subtitle: "읽히고 팔리는 글을 쓰는 과학적 시스템",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "앰버(#f59e0b)에서 딥브라운(#78350f)으로",
     symbol: "연필에서 빛나는 전구가 떠오르고 주위에 글자·느낌표·물결이 퍼져나가는 플랫 일러스트 (글의 임팩트)",
     mood: "영감, 실행력, 명쾌함",
@@ -2984,7 +2984,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "sns-growth": {
     title: "돈 한푼 들이지 않고 SNS 계정 키우기",
     subtitle: "광고비 0원, 60일 성장 전략",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "바이올렛(#6d28d9)에서 딥퍼플(#3b0764)로",
     symbol: "스마트폰 화면에서 상승 그래프와 하트·댓글 아이콘이 솟아오르는 플랫 일러스트 (오가닉 성장)",
     mood: "성장, 에너지, 연결",
@@ -2992,7 +2992,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "personal-branding": {
     title: "사업가를 위한 퍼스널 브랜딩 가이드",
     subtitle: "당신이 곧 브랜드입니다",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "핑크(#be185d)에서 딥로즈(#831843)로",
     symbol: "사람 실루엣 위에 빛나는 왕관과 마이크가 있고 주변에 하트·별이 도는 플랫 일러스트 (퍼스널 브랜드)",
     mood: "자신감, 존재감, 성장",
@@ -3000,7 +3000,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "business-model": {
     title: "수익성을 극대화하는 비즈니스 모델 설계법",
     subtitle: "돈을 버는 구조를 설계하는 완전 가이드",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "에메랄드(#047857)에서 딥그린(#064e3b)으로",
     symbol: "톱니바퀴 안에 동전과 상승 그래프가 맞물려 도는 플랫 일러스트 (수익 구조의 메커니즘)",
     mood: "체계, 성장, 정밀",
@@ -3008,7 +3008,7 @@ const COVER_INFO: Record<string, CoverInfo> = {
   "selling-invisible": {
     title: "만져볼 수 없는 상품을 완판시키는 설득 시스템",
     subtitle: "무형의 가치를 매출로 바꾸는 실전 가이드",
-    author: "김약사 · 유원소망약국",
+    author: "비법연구소",
     gradient: "바이올렛(#7c3aed)에서 딥퍼플(#3b0764)로",
     symbol: "투명한 다이아몬드가 빛을 발하며 주변에 가격표·별점·하트가 떠오르는 플랫 일러스트 (보이지 않는 가치의 가시화)",
     mood: "신비, 설득, 전환",

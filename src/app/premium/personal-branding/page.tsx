@@ -105,7 +105,7 @@ export default function PersonalBrandingLanding() {
           당신이 곧 브랜드입니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

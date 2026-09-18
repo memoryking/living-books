@@ -114,7 +114,7 @@ export default function AiSidejobLanding() {
           AI 프롬프트 15개, 30일 실행 캘린더, 체크리스트 12개 포함
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

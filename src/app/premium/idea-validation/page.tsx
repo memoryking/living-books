@@ -105,7 +105,7 @@ export default function IdeaValidationLanding() {
           스타트업 실패의 42%는 &apos;시장이 원하지 않는 것을 만들었기 때문&apos;
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

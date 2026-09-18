@@ -105,7 +105,7 @@ export default function WritingFormulaLanding() {
           뇌에 박히는 글쓰기 공식
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

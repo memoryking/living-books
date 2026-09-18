@@ -123,7 +123,7 @@ const sections: ContentSection[] = [
         <p>&quot;약사님, 오젬픽이요... 맞아도 되는 건가요?&quot;</p>
         <p>요즘 약국에서 가장 많이 듣는 질문입니다. 유튜브에서는 연예인이 20kg을 뺐다고 하고, 뉴스에서는 부작용이 위험하다고 하고, 온라인 커뮤니티에서는 &quot;인생이 바뀌었다&quot;는 글과 &quot;응급실에 갔다&quot;는 글이 나란히 올라옵니다.</p>
         <p><strong>정보는 넘쳐나는데, 정리된 답은 없습니다.</strong></p>
-        <p>저는 유원소망약국의 김약사입니다. GLP-1 비만약에 관해서는, 약을 다루는 것보다 <strong>사람들의 불안을 다루는 일</strong>이 더 많아졌습니다.</p>
+        <p>저는 비법연구소의 비법연구소입니다. GLP-1 비만약에 관해서는, 약을 다루는 것보다 <strong>사람들의 불안을 다루는 일</strong>이 더 많아졌습니다.</p>
         <blockquote className="border-l-4 border-blue-400 pl-4 my-4 italic text-gray-600 dark:text-gray-400">
           &quot;부작용이 무서워서 시작을 못 하겠어요.&quot;<br />
           &quot;끊으면 다 돌아온다면서요? 그럼 평생 맞아야 해요?&quot;<br />

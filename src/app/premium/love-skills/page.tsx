@@ -114,7 +114,7 @@ export default function LoveSkillsLanding() {
           대화 스크립트 15개, 마음이 깊어지는 질문 30개 포함
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

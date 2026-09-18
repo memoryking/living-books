@@ -340,7 +340,7 @@ export default function GLP1GuideLanding() {
       {/* Trust */}
       <SectionTitle>왜 이 가이드를 신뢰할 수 있나요?</SectionTitle>
       <div className="space-y-1 mb-16 p-6 rounded-2xl bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700">
-        <TrustItem icon="&#128104;&#8205;&#9877;&#65039;" text="현직 약사가 작성 — 유원소망약국 김약사, 약물 전문가의 관점" />
+        <TrustItem icon="&#128104;&#8205;&#9877;&#65039;" text="현직 약사가 작성 — 비법연구소, 약물 전문가의 관점" />
         <TrustItem icon="&#128202;" text="41만 명의 실제 경험 분석 — Reddit AI 분석 연구 + 직접 수집한 사용자 경험" />
         <TrustItem icon="&#128209;" text="최신 의학 연구 기반 — BMJ, NEJM, Harvard, Oxford 연구 교차 검증" />
         <TrustItem icon="&#127472;&#127479;" text="한국 상황 반영 — 국내 처방 현황, 오남용우려약 지정, 건강보험 정보" />

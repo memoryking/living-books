@@ -5,7 +5,7 @@ const healthBooks = [
     id: "home-medicine",
     emoji: "💊",
     title: "가정에서 꼭 필요한 상비약과 사용법",
-    subtitle: "유원소망약국 김약사가 친절하게 알려드립니다",
+    subtitle: "비법연구소가 친절하게 알려드립니다",
     tags: ["건강", "상비약", "응급처치"],
     lastUpdated: "2026-08-05",
     version: 2,
@@ -13,7 +13,7 @@ const healthBooks = [
   {
     id: "pet-medicine",
     emoji: "🐾",
-    title: "김약사가 알려주는 동물의약품",
+    title: "비법연구소가 알려주는 동물의약품",
     subtitle: "우리 아이 약, 약국에서도 살 수 있어요",
     tags: ["반려동물", "동물의약품", "강아지", "고양이"],
     lastUpdated: "2026-08-05",
@@ -275,7 +275,7 @@ export default function Home() {
       <header className="text-center mb-16">
         <h1 className="text-4xl font-bold mb-4">살아있는 정보책</h1>
         <p className="text-gray-500 dark:text-gray-400 mb-2">
-          유원소망약국 김약사
+          비법연구소
         </p>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           교과서적인 딱딱한 정보가 아닌,
@@ -286,12 +286,12 @@ export default function Home() {
         </p>
       </header>
 
-      {/* 김약사가 알려주는 건강정보 */}
+      {/* 비법연구소가 알려주는 건강정보 */}
       <section className="mb-16">
         <div className="flex items-center gap-3 mb-6 border-b pb-3">
           <span className="text-2xl">💊</span>
           <h2 className="text-2xl font-semibold">
-            김약사가 알려주는 건강정보
+            비법연구소가 알려주는 건강정보
           </h2>
         </div>
         <div className="grid gap-6">

@@ -114,7 +114,7 @@ export default function EisenhowerMatrixLanding() {
           하루 15분 결정 관리 시스템
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 

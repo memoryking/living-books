@@ -105,7 +105,7 @@ export default function LaunchStorytellingLanding() {
           아무리 좋은 제품이라도 런칭을 못 하면 소용없습니다.
         </p>
         <p className="text-sm text-gray-400">
-          김약사 · 유원소망약국
+          비법연구소
         </p>
       </header>
 
