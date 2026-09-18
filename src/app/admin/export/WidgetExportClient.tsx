@@ -91,7 +91,15 @@ function PreviewModal({
 /* ── 위젯 카드 (전자책 뷰어) ── */
 function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
-  const iframeCode = `<iframe src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;min-height:100vh;border:none;" allowfullscreen></iframe>`;
+  const iframeCode = `<iframe id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
+<script>
+window.addEventListener('message',function(e){
+  if(e.data&&e.data.type==='eb-resize'){
+    var f=document.getElementById('eb-frame-${w.id}');
+    if(f)f.style.height=e.data.height+'px';
+  }
+});
+</script>`;
 
   return (
     <div className="p-5 rounded-xl border border-gray-200">
