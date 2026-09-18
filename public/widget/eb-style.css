@@ -32,7 +32,7 @@
 .eb-viewer.eb-dark .eb-progress{background:#333}
 
 /* Control Bar */
-.eb-bar{position:sticky;top:3px;background:#fff;border-bottom:1px solid #eee;padding:10px 0;z-index:100;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.eb-bar{position:sticky;top:3px;background:#fff;border-bottom:1px solid #eee;padding:6px 0;z-index:100;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .eb-bar button{padding:7px 18px;border:1px solid #d1d5db;background:#fff;border-radius:24px;cursor:pointer;font-size:14px;font-weight:600;color:#555;transition:all .2s}
 .eb-bar button:hover{border-color:#2563eb;color:#2563eb}
 .eb-bar button.active{background:#2563eb;color:#fff;border-color:#2563eb}
@@ -42,7 +42,7 @@
 .eb-float:hover{background:#1d4ed8}
 
 /* TOC */
-.eb-toc{background:#f8f9fa;padding:16px 20px;border-radius:12px;margin:8px 0 20px;border:1px solid #e5e7eb}
+.eb-toc{background:#f8f9fa;padding:16px 20px;border-radius:12px;margin:6px 0 16px;border:1px solid #e5e7eb}
 .eb-toc h2{margin:0 0 12px;font-size:1.1em;font-weight:700}
 .eb-toc ol{padding-left:20px;margin:0}
 .eb-toc li{margin:6px 0}
@@ -50,10 +50,10 @@
 .eb-toc a:hover{text-decoration:underline}
 
 /* Header */
-.eb-header{text-align:center;padding:4px 0 2px}
-.eb-header .eb-emoji{font-size:36px;display:block;margin-bottom:0}
-.eb-header h1{font-size:1.5em;font-weight:800;margin:0 0 2px;color:#111}
-.eb-header p{color:#888;font-size:.9em;margin:0 0 4px}
+.eb-header{text-align:center;padding:0;margin:0}
+.eb-header .eb-emoji{font-size:32px;display:block;margin:0;padding:0;line-height:1.2}
+.eb-header h1{font-size:1.4em;font-weight:800;margin:2px 0 0;padding:0;color:#111;line-height:1.3}
+.eb-header p{color:#888;font-size:.9em;margin:2px 0 0;padding:0;line-height:1.4}
 
 /* Sections */
 .eb-section{margin-bottom:48px}
