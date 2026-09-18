@@ -42,7 +42,7 @@
 .eb-float:hover{background:#1d4ed8}
 
 /* TOC */
-.eb-toc{background:#f8f9fa;padding:20px 24px;border-radius:12px;margin:24px 0 32px;border:1px solid #e5e7eb}
+.eb-toc{background:#f8f9fa;padding:20px 24px;border-radius:12px;margin:12px 0 24px;border:1px solid #e5e7eb}
 .eb-toc h2{margin:0 0 12px;font-size:1.1em;font-weight:700}
 .eb-toc ol{padding-left:20px;margin:0}
 .eb-toc li{margin:6px 0}
@@ -50,9 +50,9 @@
 .eb-toc a:hover{text-decoration:underline}
 
 /* Header */
-.eb-header{text-align:center;padding:32px 0 8px}
-.eb-header .eb-emoji{font-size:48px;display:block;margin-bottom:12px}
-.eb-header h1{font-size:1.6em;font-weight:800;margin:0 0 8px;color:#111}
+.eb-header{text-align:center;padding:12px 0 4px}
+.eb-header .eb-emoji{font-size:40px;display:block;margin-bottom:4px}
+.eb-header h1{font-size:1.6em;font-weight:800;margin:0 0 4px;color:#111}
 .eb-header p{color:#888;font-size:.95em;margin:0}
 
 /* Sections */
