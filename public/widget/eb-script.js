@@ -58,6 +58,14 @@
   };
 
   // 페이지 로드 시: localStorage에서 이미 좋아요한 챕터 표시 + 서버에서 카운트 로드
+  // 부모에서 리셋 요청 수신
+  window.addEventListener('message',function(e){
+    if(e.data&&e.data.type==='eb-reset-likes'){
+      Object.keys(localStorage).filter(function(k){return k.startsWith('eb-liked-');}).forEach(function(k){localStorage.removeItem(k);});
+      location.reload();
+    }
+  });
+
   function initLikes(){
     var btns=root.querySelectorAll('.eb-like-btn');
     var bookId='';
