@@ -29,21 +29,23 @@ export async function GET(req: NextRequest) {
   const bookId = req.nextUrl.searchParams.get("book_id") || "";
 
   try {
-    const res = await fetch(ncbUrl(`/read/${LIKE_TABLE}`, `book_id=${encodeURIComponent(bookId)}&limit=5000`), {
+    // 전체 레코드 읽기 후 필터링 (nocodebackend 호환)
+    const res = await fetch(ncbUrl(`/read/${LIKE_TABLE}`, `limit=5000`), {
       method: "GET",
       headers: ncbHeaders(),
     });
     const data = await res.json();
     const records = extractRecords(data);
 
-    // 챕터별 카운트 집계
+    // 챕터별 카운트 집계 (book_id 필터)
     const counts: Record<number, number> = {};
     for (const r of records) {
+      if (bookId && String(r.book_id) !== bookId) continue;
       const ch = Number(r.chapter);
       counts[ch] = (counts[ch] || 0) + 1;
     }
 
-    return NextResponse.json({ book_id: bookId, counts });
+    return NextResponse.json({ book_id: bookId, counts, _total: records.length });
   } catch (err) {
     return NextResponse.json({ book_id: bookId, counts: {}, _error: String(err) });
   }
