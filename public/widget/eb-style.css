@@ -42,8 +42,8 @@
 .eb-float:hover{background:#1d4ed8}
 
 /* TOC */
-.eb-toc{background:#f8f9fa;padding:12px 20px 16px;border-radius:12px;margin:6px 0 16px;border:1px solid #e5e7eb}
-.eb-toc h2{margin:0 0 12px;font-size:1.1em;font-weight:700}
+.eb-toc{background:#f8f9fa;padding:8px 20px 16px;border-radius:12px;margin:6px 0 16px;border:1px solid #e5e7eb}
+.eb-toc h2{margin:0 0 8px;font-size:1.1em;font-weight:700}
 .eb-toc ol{padding-left:20px;margin:0}
 .eb-toc li{margin:6px 0}
 .eb-toc a{color:#2563eb;text-decoration:none}
