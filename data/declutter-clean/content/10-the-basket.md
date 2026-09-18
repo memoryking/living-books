@@ -1,4 +1,4 @@
-# Chapter 7: The Basket
+# Chapter 10: The Basket
 
 ## 돌아다니면서 정리하는 ADHD 친화 시스템
 
