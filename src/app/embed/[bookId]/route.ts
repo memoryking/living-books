@@ -1,8 +1,6 @@
 import { generateWidget } from "@/lib/generate-widget";
 import { NextRequest, NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
-
 export async function GET(
   _req: NextRequest,
   { params }: { params: Promise<{ bookId: string }> }
@@ -14,7 +12,6 @@ export async function GET(
     return new NextResponse("Not Found", { status: 404 });
   }
 
-  const now = Date.now();
   const CDN = "https://living-books-beta.vercel.app/widget";
 
   // HTML에서 기존 <link>와 <script> 태그 제거 (직접 삽입)
@@ -29,7 +26,7 @@ export async function GET(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>살아있는 정보책</title>
-  <link rel="stylesheet" href="${CDN}/eb-style.css?v=${now}">
+  <link rel="stylesheet" href="${CDN}/eb-style.css?v=3">
 </head>
 <body style="margin:0;padding:0;background:#fff;">
 <script>
@@ -48,16 +45,21 @@ ${contentHtml}
 // 높이 자동 전송
 (function(){
   try { if(window.top===window.self) return; } catch(e){}
+  var _resizeTimer;
   function sendHeight(){
     var h=document.documentElement.scrollHeight;
     window.parent.postMessage({type:'eb-resize',height:h},'*');
   }
-  new ResizeObserver(sendHeight).observe(document.body);
+  function debouncedSendHeight(){
+    clearTimeout(_resizeTimer);
+    _resizeTimer=setTimeout(sendHeight,100);
+  }
+  new ResizeObserver(debouncedSendHeight).observe(document.body);
   window.addEventListener('load',sendHeight);
   sendHeight();
 })();
 </script>
-<script src="${CDN}/eb-script.js?v=${now}"></script>
+<script src="${CDN}/eb-script.js?v=3"></script>
 </body>
 </html>`;
 
@@ -66,7 +68,7 @@ ${contentHtml}
       "Content-Type": "text/html; charset=utf-8",
       "Content-Security-Policy": "frame-ancestors vipup.site *.vipup.site",
       "X-Frame-Options": "SAMEORIGIN",
-      "Cache-Control": "no-cache, no-store, must-revalidate",
+      "Cache-Control": "public, max-age=300, s-maxage=3600",
     },
   });
 }

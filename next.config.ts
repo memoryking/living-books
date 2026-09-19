@@ -12,10 +12,10 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        // widget 정적 파일: 캐시 방지
+        // widget 정적 파일: 1시간 브라우저 캐시, 1일 CDN 캐시
         source: "/widget/:path*",
         headers: [
-          { key: "Cache-Control", value: "no-cache, no-store, must-revalidate" },
+          { key: "Cache-Control", value: "public, max-age=3600, s-maxage=86400" },
         ],
       },
       {

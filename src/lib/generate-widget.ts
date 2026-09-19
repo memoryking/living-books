@@ -229,7 +229,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   const contentSections = sections
     .map(
       (s) => `
-      <div id="${s.id}" class="eb-section" style="scroll-margin-top:150px;padding-top:56px;border-top:2px solid #e5e7eb;margin-top:24px;">
+      <div id="${s.id}" class="eb-section">
         ${s.html}
         <span class="eb-back" onclick="ebNav('eb-toc')">↑ 목차로</span>
       </div>`
@@ -239,7 +239,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   const CDN = "https://living-books-beta.vercel.app/widget";
 
   return `<!-- ${escHtml(book.emoji)} ${escHtml(book.title)} — 아임웹 위젯용 -->
-<link rel="stylesheet" href="${CDN}/eb-style.css?v=${Date.now()}">
+<link rel="stylesheet" href="${CDN}/eb-style.css?v=3">
 
 <div id="eb-root" class="eb-viewer eb-md">
   <div class="eb-progress"><div id="eb-prog-bar" class="eb-progress-bar"></div></div>
@@ -291,7 +291,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
 
-<script src="${CDN}/eb-script.js?v=${Date.now()}"></script>`;
+<script src="${CDN}/eb-script.js?v=3"></script>`;
 }
 
 function escHtml(s: string): string {

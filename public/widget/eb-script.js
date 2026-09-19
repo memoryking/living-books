@@ -3,7 +3,6 @@
    수정하면 모든 전자책에 자동 반영됩니다.
    ═══════════════════════════════════════════ */
 (function(){
-  console.log('[EB] script loaded, eb-root:', !!document.getElementById('eb-root'), 'eb-content:', !!document.getElementById('eb-content'));
   var root=document.getElementById('eb-root');
   var fb=document.getElementById('eb-float-toc');
   var toc=document.getElementById('eb-toc');
@@ -72,7 +71,6 @@
      ═══════════════════════════════════════════ */
 
   window.ebToggleMode=function(){
-    console.log('[EB] toggle mode called, current:', isPageMode?'page':'scroll');
     if(isPageMode){
       exitPageMode();
     } else {
@@ -82,7 +80,6 @@
   };
 
   function enterPageMode(){
-    console.log('[EB] entering page mode');
     isPageMode=true;
     root.classList.add('eb-page-mode');
     if(!modeBtn)modeBtn=document.getElementById('eb-mode-btn');
@@ -110,7 +107,6 @@
     setTimeout(function(){
       ebRecalcPages();
       updatePageDisplay();
-      console.log('[EB] pages:', totalPages, 'pageWidth:', pageWidth, 'contentHeight:', contentHeight);
     },200);
   }
 
@@ -128,6 +124,8 @@
     if(pageBarEl)pageBarEl.style.display='none';
     root.style.height='';
     if(content){
+      content.classList.remove('eb-animating');
+      content.style.willChange='';
       content.style.columnWidth='';
       content.style.height='';
       content.style.transform='';
@@ -178,17 +176,21 @@
     content.style.height=contentHeight+'px';
 
     /* Wait for layout reflow, then measure */
+    content.style.willChange='transform';
     requestAnimationFrame(function(){
       var scrollW=content.scrollWidth;
       totalPages=Math.max(1,Math.round(scrollW/pageWidth));
       if(currentPage>=totalPages)currentPage=totalPages-1;
       updatePageDisplay();
+      /* Remove will-change after layout settles */
+      setTimeout(function(){if(content)content.style.willChange='';},400);
     });
   }
 
   function updatePageDisplay(){
     if(!content)return;
     var offset=-currentPage*pageWidth;
+    content.classList.add('eb-animating');
     content.style.transform='translateX('+offset+'px)';
     if(pageInfo)pageInfo.textContent=(currentPage+1)+' / '+totalPages;
     /* Update progress bar */
@@ -196,11 +198,18 @@
       var pct=Math.round(((currentPage+1)/totalPages)*100);
       progBar.style.width=pct+'%';
     }
+    /* Remove animating class after transition ends */
+    function onEnd(){
+      content.classList.remove('eb-animating');
+      content.removeEventListener('transitionend',onEnd);
+    }
+    content.addEventListener('transitionend',onEnd);
+    /* Fallback in case transitionend doesn't fire */
+    setTimeout(function(){content.classList.remove('eb-animating');},400);
   }
 
   window.ebNextPage=function(){
     if(!isPageMode)return;
-    console.log('[EB] nextPage: '+currentPage+' → '+(currentPage+1)+' / '+totalPages);
     if(currentPage<totalPages-1){
       currentPage++;
       updatePageDisplay();
@@ -234,15 +243,14 @@
   /* Navigate to the page containing a specific element */
   function ebNavToElementPage(el){
     if(!content||!isPageMode)return;
-    /* Temporarily remove transform to measure true offset */
-    content.style.transition='none';
+    /* Temporarily remove animating class to measure true offset without transition */
+    content.classList.remove('eb-animating');
     content.style.transform='translateX(0px)';
     /* Force reflow */
     void content.offsetWidth;
     var elLeft=el.offsetLeft;
     var targetPage=Math.floor(elLeft/pageWidth);
     currentPage=Math.max(0,Math.min(targetPage,totalPages-1));
-    content.style.transition='';
     updatePageDisplay();
   }
 
@@ -265,9 +273,8 @@
     var dy=Math.abs(e.touches[0].clientY-touchStartY);
     if(dx>dy&&dx>10){
       touchMoved=true;
-      e.preventDefault();
     }
-  },{passive:false});
+  },{passive:true});
 
   document.addEventListener('touchend',function(e){
     if(!isPageMode)return;
@@ -332,7 +339,6 @@
     window.addEventListener('message',function(e){
       if(e.data&&e.data.type==='eb-viewport-height'){
         parentViewportHeight=e.data.height;
-        console.log('[EB] received viewport height:', parentViewportHeight);
         if(isPageMode){ebRecalcPages();updatePageDisplay();}
       }
       if(e.data&&e.data.type==='eb-parent-scroll'){
