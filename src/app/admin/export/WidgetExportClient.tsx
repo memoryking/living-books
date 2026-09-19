@@ -112,11 +112,13 @@ function WidgetCard({ w }: { w: WidgetData }) {
       if(e.data.enabled){
         f.style.height=window.innerHeight+'px';
         f.scrollIntoView({behavior:'smooth'});
+        document.body.style.overflow='hidden';
         setTimeout(function(){
           if(f.contentWindow){f.contentWindow.postMessage({type:'eb-viewport-height',height:window.innerHeight},'*');}
         },100);
       } else {
         f.style.height='auto';
+        document.body.style.overflow='';
       }
     }
   });
