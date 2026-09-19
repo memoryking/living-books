@@ -187,6 +187,7 @@
 
   window.ebNextPage=function(){
     if(!isPageMode)return;
+    console.log('[EB] nextPage: '+currentPage+' → '+(currentPage+1)+' / '+totalPages);
     if(currentPage<totalPages-1){
       currentPage++;
       updatePageDisplay();
@@ -257,19 +258,17 @@
   },{passive:true});
 
   /* ── 페이지 모드: 클릭으로 넘기기 ── */
-  if(content){
-    content.addEventListener('click',function(e){
-      if(!isPageMode)return;
-      /* Ignore clicks on links, buttons, inputs */
-      var tag=e.target.tagName.toLowerCase();
-      if(tag==='a'||tag==='button'||tag==='input'||tag==='select'||tag==='textarea')return;
-      if(e.target.closest('a')||e.target.closest('button'))return;
-      var x=e.clientX;
-      var w=window.innerWidth;
-      if(x>w/2){ebNextPage();}
-      else{ebPrevPage();}
-    });
-  }
+  document.addEventListener('click',function(e){
+    if(!isPageMode)return;
+    var tag=e.target.tagName.toLowerCase();
+    if(tag==='a'||tag==='button'||tag==='input'||tag==='select'||tag==='textarea')return;
+    if(e.target.closest&&(e.target.closest('a')||e.target.closest('button')||e.target.closest('.eb-bar')||e.target.closest('.eb-page-nav')))return;
+    var x=e.clientX;
+    var w=window.innerWidth;
+    console.log('[EB] click at x:'+x+' w:'+w+' → '+(x>w/2?'NEXT':'PREV'));
+    if(x>w/2){ebNextPage();}
+    else{ebPrevPage();}
+  });
 
   /* ── 페이지 모드: 키보드 (← →) ── */
   document.addEventListener('keydown',function(e){
