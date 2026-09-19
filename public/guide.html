@@ -342,13 +342,53 @@
 
     <h3 style="color:#dc2626;">⚠️ 스크롤 모드로 돌아가는 방법 (꼭 기억하세요!)</h3>
     <div class="warn" style="border:2px solid #f59e0b;padding:20px;border-radius:12px;">
-      <p style="font-size:1.1em;font-weight:700;margin:0 0 12px;color:#92400e;">페이지 모드에서 스크롤 모드로 돌아가려면:</p>
-      <ol style="margin:0;padding-left:20px;line-height:2;">
-        <li><strong>화면 맨 위쪽</strong> (상단 끝 부분)을 <strong>클릭(터치)</strong> 합니다</li>
-        <li>숨겨져 있던 <strong>컨트롤 바가 3초간 나타납니다</strong></li>
-        <li>나타난 컨트롤 바에서 <span class="btn-preview">📜</span> 버튼을 클릭하면 <strong>스크롤 모드로 돌아갑니다</strong></li>
-      </ol>
-      <p style="margin:12px 0 0;font-size:0.9em;color:#78350f;">💡 컨트롤 바가 3초 안에 사라지면, 다시 화면 맨 위쪽을 터치하면 됩니다.</p>
+      <p style="font-size:1.1em;font-weight:700;margin:0 0 16px;color:#92400e;">페이지 모드에서 스크롤 모드로 돌아가려면:</p>
+
+      <!-- Step 1: 시각적 안내 -->
+      <div style="background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid #e5e7eb;">
+        <p style="margin:0 0 8px;font-weight:700;color:#92400e;">1단계: 상단 빈 영역을 터치하세요</p>
+        <div style="position:relative;background:#f8f9fa;border-radius:8px;border:1px solid #d1d5db;overflow:hidden;">
+          <!-- 가상 화면 -->
+          <div style="background:linear-gradient(90deg,#2563eb,#7c3aed);height:3px;"></div>
+          <div style="height:40px;background:#f0f0f0;display:flex;align-items:center;justify-content:center;position:relative;">
+            <span style="font-size:12px;color:#ccc;">컨트롤 바 (숨겨진 상태)</span>
+            <!-- 화살표 -->
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);animation:pulse 1.5s infinite;">
+              <div style="background:#dc2626;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:16px;white-space:nowrap;">👆 여기를 터치!</div>
+            </div>
+          </div>
+          <div style="padding:20px;background:#fff;text-align:center;color:#bbb;font-size:13px;border-top:1px solid #e5e7eb;">
+            (전자책 내용 영역)
+          </div>
+        </div>
+        <style>@keyframes pulse{0%,100%{opacity:1;transform:translate(-50%,-50%) scale(1);}50%{opacity:.7;transform:translate(-50%,-50%) scale(1.05);}}</style>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="background:#fff;border-radius:12px;padding:16px;margin-bottom:16px;border:1px solid #e5e7eb;">
+        <p style="margin:0 0 8px;font-weight:700;color:#92400e;">2단계: 컨트롤 바가 나타납니다 (3초간)</p>
+        <div style="background:#f8f9fa;border-radius:8px;border:1px solid #d1d5db;overflow:hidden;">
+          <div style="background:linear-gradient(90deg,#2563eb,#7c3aed);height:3px;"></div>
+          <div style="padding:6px;background:#fff;display:flex;align-items:center;justify-content:center;gap:6px;border-bottom:1px solid #eee;">
+            <span style="border:1px solid #d1d5db;padding:3px 10px;border-radius:14px;font-size:11px;color:#888;">가-</span>
+            <span style="background:#2563eb;color:#fff;padding:3px 10px;border-radius:14px;font-size:11px;">가</span>
+            <span style="border:1px solid #d1d5db;padding:3px 10px;border-radius:14px;font-size:11px;color:#888;">가+</span>
+            <span style="border:1px solid #d1d5db;padding:3px 10px;border-radius:14px;font-size:11px;">🌙</span>
+            <span style="border:2px solid #dc2626;background:#fff3f3;padding:3px 10px;border-radius:14px;font-size:11px;position:relative;">📜
+              <span style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#dc2626;color:#fff;font-size:9px;padding:2px 6px;border-radius:8px;white-space:nowrap;">이것을 클릭!</span>
+            </span>
+          </div>
+          <div style="padding:16px;background:#fff;text-align:center;color:#bbb;font-size:13px;">(전자책 내용 영역)</div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="background:#f0fdf4;border-radius:12px;padding:16px;border:1px solid #bbf7d0;">
+        <p style="margin:0 0 4px;font-weight:700;color:#166534;">3단계: 스크롤 모드로 돌아왔습니다! ✅</p>
+        <p style="margin:0;font-size:0.9em;color:#15803d;">위아래로 자유롭게 스크롤하며 읽을 수 있습니다.</p>
+      </div>
+
+      <p style="margin:16px 0 0;font-size:0.9em;color:#78350f;">💡 컨트롤 바가 3초 안에 사라졌다면, 다시 상단 빈 영역을 터치하면 다시 나타납니다.</p>
     </div>
 
     <div style="margin:16px 0;padding:16px;background:#f0fdf4;border-radius:10px;border:1px solid #bbf7d0;">
