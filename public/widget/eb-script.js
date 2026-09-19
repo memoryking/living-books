@@ -162,15 +162,13 @@
     var progEl=root.querySelector('.eb-progress');
     var barH=bar?bar.offsetHeight:0;
     var progH=progEl?progEl.offsetHeight:0;
+    var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
+    contentHeight=viewH-barH-progH-120;
+    if(contentHeight<200)contentHeight=200;
+
     pageWidth=root.offsetWidth;
     if(pageWidth<100)pageWidth=window.innerWidth;
 
-    /* flex:1이 결정한 높이를 column height로 사용 */
-    contentHeight=content.offsetHeight;
-    if(contentHeight<100){
-      var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
-      contentHeight=viewH-barH-progH-60;
-    }
     content.style.columnWidth=pageWidth+'px';
     content.style.height=contentHeight+'px';
 
