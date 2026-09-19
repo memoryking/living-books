@@ -110,8 +110,11 @@ function WidgetCard({ w }: { w: WidgetData }) {
     }
     if(e.data.type==='eb-page-mode'&&f){
       if(e.data.enabled){
-        f.style.height='100vh';
+        f.style.height=window.innerHeight+'px';
         f.scrollIntoView({behavior:'smooth'});
+        setTimeout(function(){
+          if(f.contentWindow){f.contentWindow.postMessage({type:'eb-viewport-height',height:window.innerHeight},'*');}
+        },100);
       } else {
         f.style.height='auto';
       }

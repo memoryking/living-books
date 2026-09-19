@@ -20,6 +20,7 @@
   var totalPages=1;
   var pageWidth=0;
   var contentHeight=0;
+  var parentViewportHeight=0;
 
   /* ═══════════════════════════════════════════
      공통 기능: 글꼴, 다크모드, 목차 네비게이션
@@ -145,7 +146,7 @@
     var barH=bar?bar.offsetHeight:0;
     var progH=progEl?progEl.offsetHeight:0;
     var navH=pageNav?pageNav.offsetHeight:48;
-    var viewH=window.innerHeight;
+    var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
     contentHeight=viewH-barH-progH-navH;
     if(contentHeight<200)contentHeight=200;
 
@@ -286,6 +287,11 @@
 
   if(inIframe){
     window.addEventListener('message',function(e){
+      if(e.data&&e.data.type==='eb-viewport-height'){
+        parentViewportHeight=e.data.height;
+        console.log('[EB] received viewport height:', parentViewportHeight);
+        if(isPageMode){ebRecalcPages();updatePageDisplay();}
+      }
       if(e.data&&e.data.type==='eb-parent-scroll'){
         if(isPageMode)return; /* page mode handles its own progress */
         var scrollY=e.data.scrollY;
