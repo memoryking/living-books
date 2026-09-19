@@ -162,18 +162,17 @@
     var progEl=root.querySelector('.eb-progress');
     var barH=bar?bar.offsetHeight:0;
     var progH=progEl?progEl.offsetHeight:0;
-    /* content의 실제 높이를 flex 레이아웃이 결정한 후 사용 */
     pageWidth=root.offsetWidth;
     if(pageWidth<100)pageWidth=window.innerWidth;
 
-    /* Apply column layout — height는 flex:1이 자동 결정 */
-    content.style.columnWidth=pageWidth+'px';
+    /* flex:1이 결정한 높이를 column height로 사용 */
     contentHeight=content.offsetHeight;
-    if(contentHeight<200){
+    if(contentHeight<100){
       var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
-      contentHeight=viewH-barH-progH-100;
-      content.style.height=contentHeight+'px';
+      contentHeight=viewH-barH-progH-60;
     }
+    content.style.columnWidth=pageWidth+'px';
+    content.style.height=contentHeight+'px';
 
     /* Wait for layout reflow, then measure */
     requestAnimationFrame(function(){

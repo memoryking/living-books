@@ -106,7 +106,6 @@
   will-change:transform;
   padding:0;
   flex:1;
-  overflow:hidden;
 }
 .eb-viewer.eb-page-mode .eb-content .eb-section{
   padding-left:24px;padding-right:24px;
