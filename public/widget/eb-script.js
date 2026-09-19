@@ -163,7 +163,7 @@
     var barH=bar?bar.offsetHeight:0;
     var progH=progEl?progEl.offsetHeight:0;
     var pageBar=document.getElementById('eb-page-bar');
-    var navH=(pageBar?pageBar.offsetHeight:40)+16; /* 하단 바 + 여유 */
+    var navH=(pageBar?pageBar.offsetHeight:40)+60; /* 하단 바 + 충분한 여유 */
     var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
     contentHeight=viewH-barH-progH-navH;
     if(contentHeight<200)contentHeight=200;
