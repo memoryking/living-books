@@ -26,7 +26,7 @@ export async function GET(
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <title>살아있는 정보책</title>
-  <link rel="stylesheet" href="${CDN}/eb-style.css?v=3">
+  <link rel="stylesheet" href="${CDN}/eb-style.css?v=4">
 </head>
 <body style="margin:0;padding:0;background:#fff;">
 <script>
@@ -59,7 +59,7 @@ ${contentHtml}
   sendHeight();
 })();
 </script>
-<script src="${CDN}/eb-script.js?v=3"></script>
+<script src="${CDN}/eb-script.js?v=4"></script>
 </body>
 </html>`;
 
