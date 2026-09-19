@@ -95,11 +95,10 @@
    Page Mode (책 넘기기 모드)
    ═══════════════════════════════════════════ */
 
-/* Page mode: content container becomes multi-column, paginated via translateX */
+/* Page mode: parent clips overflow, content slides via translateX */
 .eb-viewer.eb-page-mode{padding-bottom:0;overflow:hidden}
 .eb-viewer.eb-page-mode .eb-content{
   column-gap:0;
-  overflow:hidden;
   transition:transform .35s ease;
   will-change:transform;
 }
