@@ -269,27 +269,27 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
   ${buildCrossSell(book.id)}
   </div>
+
+  <button id="eb-arrow-l" class="eb-arrow eb-arrow-l" onclick="ebPrevPage()">‹</button>
+  <button id="eb-arrow-r" class="eb-arrow eb-arrow-r" onclick="ebNextPage()">›</button>
+
+  <div id="eb-page-bar" class="eb-page-bar">
+    <span id="eb-page-info">1 / 1</span>
+    <button onclick="ebShowToc()">📋 목차</button>
+  </div>
+
+  <div id="eb-toc-overlay" class="eb-toc-overlay">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <h2 style="margin:0;font-size:1.2em;font-weight:700;">📋 목차</h2>
+      <button onclick="ebHideToc()" style="border:none;background:none;font-size:24px;cursor:pointer;color:#666;">✕</button>
+    </div>
+    <ol style="padding-left:20px;">
+      ${tocItems}
+    </ol>
+  </div>
 </div>
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
-
-<button id="eb-arrow-l" class="eb-arrow eb-arrow-l" onclick="ebPrevPage()">‹</button>
-<button id="eb-arrow-r" class="eb-arrow eb-arrow-r" onclick="ebNextPage()">›</button>
-
-<div id="eb-page-bar" class="eb-page-bar">
-  <span id="eb-page-info">1 / 1</span>
-  <button onclick="ebShowToc()">📋 목차</button>
-</div>
-
-<div id="eb-toc-overlay" class="eb-toc-overlay">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-    <h2 style="margin:0;font-size:1.2em;font-weight:700;">📋 목차</h2>
-    <button onclick="ebHideToc()" style="border:none;background:none;font-size:24px;cursor:pointer;color:#666;">✕</button>
-  </div>
-  <ol style="padding-left:20px;">
-    ${tocItems}
-  </ol>
-</div>
 
 <script src="${CDN}/eb-script.js?v=${Date.now()}"></script>`;
 }
