@@ -196,19 +196,6 @@
     color: #4b5563;
   }
 
-  /* 관리자 섹션 */
-  .admin-badge {
-    display: inline-block;
-    background: #fef3c7;
-    color: #92400e;
-    font-size: 0.75em;
-    font-weight: 700;
-    padding: 2px 10px;
-    border-radius: 12px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
   /* 강조 박스 */
   .tip {
     background: #eff6ff;
@@ -413,113 +400,7 @@
   </section>
 
   <!-- ============================== -->
-  <!-- 7. 간격(여백) 조절 가이드 (관리자용) -->
-  <!-- ============================== -->
-  <section>
-    <h2>
-      <span class="sec-icon">⚙️</span> 간격 조절 가이드
-      <span class="admin-badge">관리자용</span>
-    </h2>
-    <p>CSS 파일 <code>public/widget/eb-style.css</code>를 수정하면 <strong>모든 전자책에 자동으로 반영</strong>됩니다. 각 요소의 간격을 조절하는 방법을 정리했습니다.</p>
-
-    <h3>조절 가능한 간격 목록</h3>
-
-    <div class="table-wrap">
-    <table>
-      <thead>
-        <tr>
-          <th>CSS 선택자</th>
-          <th>속성</th>
-          <th>현재 값</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.eb-header</code></td>
-          <td>padding</td>
-          <td><code>16px 0 12px</code></td>
-          <td>상단 아이콘~제목 영역의 위아래 간격</td>
-        </tr>
-        <tr>
-          <td><code>.eb-header .eb-emoji</code></td>
-          <td>margin-bottom</td>
-          <td><code>8px</code></td>
-          <td>이모지와 제목 사이 간격</td>
-        </tr>
-        <tr>
-          <td><code>.eb-header h1</code></td>
-          <td>margin-bottom</td>
-          <td><code>4px</code></td>
-          <td>제목과 부제 사이 간격</td>
-        </tr>
-        <tr>
-          <td><code>.eb-toc</code></td>
-          <td>margin</td>
-          <td><code>6px 0 16px</code></td>
-          <td>부제와 목차 사이 간격</td>
-        </tr>
-        <tr>
-          <td><code>.eb-toc</code></td>
-          <td>padding</td>
-          <td><code>8px 20px 16px</code></td>
-          <td>목차 내부 여백</td>
-        </tr>
-        <tr>
-          <td><code>.eb-section</code></td>
-          <td>padding-top</td>
-          <td><code>56px</code></td>
-          <td>챕터 상단 여백 (인라인 스타일)</td>
-        </tr>
-        <tr>
-          <td><code>.eb-section</code></td>
-          <td>scroll-margin-top</td>
-          <td><code>150px</code></td>
-          <td>스크롤 이동 시 상단 여유 공간 (인라인 스타일)</td>
-        </tr>
-        <tr>
-          <td><code>.eb-bar</code></td>
-          <td>padding</td>
-          <td><code>6px 0</code></td>
-          <td>컨트롤 바 내부 여백</td>
-        </tr>
-        <tr>
-          <td><code>.eb-viewer</code></td>
-          <td>line-height</td>
-          <td><code>1.85</code></td>
-          <td>줄 간격 (글줄 사이 높이)</td>
-        </tr>
-        <tr>
-          <td><code>.eb-viewer p</code></td>
-          <td>margin</td>
-          <td><code>0.7em 0</code></td>
-          <td>문단과 문단 사이 간격</td>
-        </tr>
-        <tr>
-          <td><code>.eb-viewer h2</code></td>
-          <td>margin</td>
-          <td><code>1.8em 0 0.7em</code></td>
-          <td>소제목 위아래 간격</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-    <h3>수정 방법</h3>
-    <ol>
-      <li><code>public/widget/eb-style.css</code> 파일에서 원하는 값을 수정합니다.</li>
-      <li>변경 사항을 <code>git push</code> 합니다.</li>
-      <li>Vercel이 자동으로 배포합니다.</li>
-      <li>모든 전자책에 즉시 반영됩니다.</li>
-    </ol>
-
-    <div class="warn">
-      <strong>주의:</strong> 인라인 스타일(HTML에 직접 쓴 것, 예: <code>style="padding-top:56px"</code>)은 CSS 파일보다 우선 적용됩니다. 인라인 스타일이 있는 항목은 CSS만 바꾸면 적용되지 않으니, HTML도 함께 수정해야 합니다.
-    </div>
-  </section>
-
-  <!-- ============================== -->
-  <!-- 8. FAQ -->
+  <!-- 7. FAQ -->
   <!-- ============================== -->
   <section>
     <h2><span class="sec-icon">❓</span> 자주 묻는 질문 (FAQ)</h2>
