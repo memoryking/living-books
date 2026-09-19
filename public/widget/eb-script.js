@@ -55,6 +55,7 @@
     var el=document.getElementById(id);
     if(!el)return;
     if(isPageMode){
+      ebHideToc();
       ebNavToElementPage(el);
     } else {
       if(inIframe){
@@ -93,10 +94,13 @@
     if(modeBtn)modeBtn.textContent='📜';
     if(pageNav)pageNav.style.display='flex';
     if(fb)fb.style.display='none';
-    /* Tell parent to fix iframe to viewport height */
+    /* Tell parent to snap iframe to viewport */
     if(inIframe){
       window.parent.postMessage({type:'eb-page-mode',enabled:true},'*');
     }
+    /* Hide TOC overlay */
+    var overlay=document.getElementById('eb-toc-overlay');
+    if(overlay)overlay.classList.remove('show');
     currentPage=0;
     /* Prevent body scroll in page mode */
     document.body.style.overflow='hidden';
@@ -156,7 +160,8 @@
     contentHeight=viewH-barH-progH-navH;
     if(contentHeight<200)contentHeight=200;
 
-    /* Determine page width */
+    /* Determine page width (account for column-gap) */
+    var colGap=40;
     pageWidth=content.offsetWidth;
     if(pageWidth<100)pageWidth=window.innerWidth;
 
@@ -167,7 +172,8 @@
     /* Wait for layout reflow, then measure */
     requestAnimationFrame(function(){
       var scrollW=content.scrollWidth;
-      totalPages=Math.max(1,Math.round(scrollW/pageWidth));
+      var step=pageWidth+colGap;
+      totalPages=Math.max(1,Math.round(scrollW/step));
       if(currentPage>=totalPages)currentPage=totalPages-1;
       updatePageDisplay();
     });
@@ -175,7 +181,8 @@
 
   function updatePageDisplay(){
     if(!content)return;
-    var offset=-currentPage*pageWidth;
+    var step=pageWidth+40;
+    var offset=-currentPage*step;
     content.style.transform='translateX('+offset+'px)';
     if(pageInfo)pageInfo.textContent=(currentPage+1)+' / '+totalPages;
     /* Update progress bar */
@@ -208,6 +215,16 @@
     updatePageDisplay();
   };
 
+  /* TOC overlay */
+  window.ebShowToc=function(){
+    var overlay=document.getElementById('eb-toc-overlay');
+    if(overlay)overlay.classList.add('show');
+  };
+  window.ebHideToc=function(){
+    var overlay=document.getElementById('eb-toc-overlay');
+    if(overlay)overlay.classList.remove('show');
+  };
+
   /* Navigate to the page containing a specific element */
   function ebNavToElementPage(el){
     if(!content||!isPageMode)return;
@@ -217,7 +234,8 @@
     /* Force reflow */
     void content.offsetWidth;
     var elLeft=el.offsetLeft;
-    var targetPage=Math.floor(elLeft/pageWidth);
+    var step=pageWidth+40;
+    var targetPage=Math.floor(elLeft/step);
     currentPage=Math.max(0,Math.min(targetPage,totalPages-1));
     content.style.transition='';
     updatePageDisplay();
