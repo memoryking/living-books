@@ -273,11 +273,12 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
 
-<div id="eb-page-nav" class="eb-page-nav" style="display:none;">
-  <button onclick="ebPrevPage()">‹</button>
+<button id="eb-arrow-l" class="eb-arrow eb-arrow-l" onclick="ebPrevPage()">‹</button>
+<button id="eb-arrow-r" class="eb-arrow eb-arrow-r" onclick="ebNextPage()">›</button>
+
+<div id="eb-page-bar" class="eb-page-bar">
   <span id="eb-page-info">1 / 1</span>
-  <button onclick="ebNextPage()">›</button>
-  <button class="eb-page-toc-btn" onclick="ebShowToc()">📋 목차</button>
+  <button onclick="ebShowToc()">📋 목차</button>
 </div>
 
 <div id="eb-toc-overlay" class="eb-toc-overlay">

@@ -85,14 +85,16 @@
     console.log('[EB] entering page mode');
     isPageMode=true;
     root.classList.add('eb-page-mode');
-    /* Re-query elements in case they weren't found at init */
-    if(!pageNav)pageNav=document.getElementById('eb-page-nav');
-    if(!pageInfo)pageInfo=document.getElementById('eb-page-info');
     if(!modeBtn)modeBtn=document.getElementById('eb-mode-btn');
     if(!content)content=document.getElementById('eb-content');
-    console.log('[EB] pageNav:', !!pageNav, 'content:', !!content);
+    if(!pageInfo)pageInfo=document.getElementById('eb-page-info');
+    var arrowL=document.getElementById('eb-arrow-l');
+    var arrowR=document.getElementById('eb-arrow-r');
+    var pageBar=document.getElementById('eb-page-bar');
     if(modeBtn)modeBtn.textContent='📜';
-    if(pageNav)pageNav.style.display='flex';
+    if(arrowL)arrowL.style.display='flex';
+    if(arrowR)arrowR.style.display='flex';
+    if(pageBar)pageBar.style.display='flex';
     if(fb)fb.style.display='none';
     /* Tell parent to snap iframe to viewport */
     if(inIframe){
@@ -118,7 +120,12 @@
     isPageMode=false;
     root.classList.remove('eb-page-mode');
     if(modeBtn)modeBtn.textContent='📖';
-    if(pageNav)pageNav.style.display='none';
+    var arrowL=document.getElementById('eb-arrow-l');
+    var arrowR=document.getElementById('eb-arrow-r');
+    var pageBar=document.getElementById('eb-page-bar');
+    if(arrowL)arrowL.style.display='none';
+    if(arrowR)arrowR.style.display='none';
+    if(pageBar)pageBar.style.display='none';
     if(content){
       content.style.columnWidth='';
       content.style.height='';
