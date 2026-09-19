@@ -1,5 +1,6 @@
 import { generateWidget } from "@/lib/generate-widget";
 import { notFound } from "next/navigation";
+import Script from "next/script";
 
 export const dynamic = "force-dynamic";
 
@@ -17,9 +18,15 @@ export default async function EmbedPage({
   if (!html) notFound();
 
   const now = Date.now();
+  const CDN = "https://living-books-beta.vercel.app/widget";
 
-  // iframe 보안 + 높이 자동 전송 스크립트
-  const embedScript = `<script>
+  // HTML에서 <script> 태그 제거 (Script 컴포넌트로 별도 로드)
+  const htmlWithoutScripts = html
+    .replace(/<script[^>]*>[\s\S]*?<\/script>/gi, "")
+    .replace(/eb-style\.css\?v=\d+/, `eb-style.css?v=${now}`);
+
+  // iframe 보안 + 높이 전송 인라인 스크립트
+  const guardCode = `
 (function(){
   try {
     if (window.top === window.self) {
@@ -35,12 +42,7 @@ export default async function EmbedPage({
   window.addEventListener('load',sendHeight);
   sendHeight();
 })();
-</script>`;
-
-  // 실시간 타임스탬프로 캐시 완전 방지
-  const htmlWithFreshUrls = html
-    .replace(/eb-style\.css\?v=\d+/, `eb-style.css?v=${now}`)
-    .replace(/eb-script\.js\?v=\d+/, `eb-script.js?v=${now}`);
+`;
 
   return (
     <html lang="ko">
@@ -48,11 +50,14 @@ export default async function EmbedPage({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>살아있는 정보책</title>
+        <link rel="stylesheet" href={`${CDN}/eb-style.css?v=${now}`} />
       </head>
       <body
         style={{ margin: 0, padding: 0, background: "#fff" }}
-        dangerouslySetInnerHTML={{ __html: embedScript + htmlWithFreshUrls }}
+        dangerouslySetInnerHTML={{ __html: htmlWithoutScripts }}
       />
+      <Script id="eb-guard" strategy="beforeInteractive">{guardCode}</Script>
+      <Script src={`${CDN}/eb-script.js?v=${now}`} strategy="afterInteractive" />
     </html>
   );
 }
