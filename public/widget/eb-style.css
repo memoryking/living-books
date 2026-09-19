@@ -97,7 +97,10 @@
 
 /* Page mode: parent clips overflow, content slides via translateX */
 .eb-viewer.eb-page-mode{padding:0!important;overflow:hidden;position:relative}
-.eb-viewer.eb-page-mode .eb-bar{padding:6px 16px}
+.eb-viewer.eb-page-mode .eb-bar{padding:6px 16px;opacity:0;transition:opacity .3s;pointer-events:none}
+.eb-viewer.eb-page-mode .eb-bar.show{opacity:1;pointer-events:auto}
+.eb-viewer.eb-page-mode .eb-progress{opacity:0;transition:opacity .3s}
+.eb-viewer.eb-page-mode .eb-progress.show{opacity:1}
 .eb-viewer.eb-page-mode .eb-header{display:none}
 .eb-viewer.eb-page-mode .eb-toc{display:none}
 .eb-viewer.eb-page-mode .eb-content{

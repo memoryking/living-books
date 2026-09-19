@@ -281,14 +281,29 @@
   },{passive:true});
 
   /* ── 페이지 모드: 클릭으로 넘기기 ── */
+  var barTimer=null;
+  function showBar(){
+    var bar=root.querySelector('.eb-bar');
+    var prog=root.querySelector('.eb-progress');
+    if(bar){bar.classList.add('show');}
+    if(prog){prog.classList.add('show');}
+    clearTimeout(barTimer);
+    barTimer=setTimeout(function(){
+      if(bar)bar.classList.remove('show');
+      if(prog)prog.classList.remove('show');
+    },3000);
+  }
+
   document.addEventListener('click',function(e){
     if(!isPageMode)return;
     var tag=e.target.tagName.toLowerCase();
     if(tag==='a'||tag==='button'||tag==='input'||tag==='select'||tag==='textarea')return;
-    if(e.target.closest&&(e.target.closest('a')||e.target.closest('button')||e.target.closest('.eb-bar')||e.target.closest('.eb-page-nav')))return;
+    if(e.target.closest&&(e.target.closest('a')||e.target.closest('button')||e.target.closest('.eb-bar')||e.target.closest('.eb-page-bar')))return;
+    var y=e.clientY;
+    /* 상단 60px 클릭 → 컨트롤 바 토글 */
+    if(y<60){showBar();return;}
     var x=e.clientX;
     var w=window.innerWidth;
-    console.log('[EB] click at x:'+x+' w:'+w+' → '+(x>w/2?'NEXT':'PREV'));
     if(x>w/2){ebNextPage();}
     else{ebPrevPage();}
   });
