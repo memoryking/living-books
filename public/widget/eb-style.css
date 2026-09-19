@@ -110,6 +110,11 @@
   padding-left:24px;padding-right:24px;
   break-inside:avoid-column;
 }
+.eb-viewer.eb-page-mode .eb-content blockquote,
+.eb-viewer.eb-page-mode .eb-content ul,
+.eb-viewer.eb-page-mode .eb-content ol{
+  break-inside:avoid;
+}
 .eb-viewer.eb-page-mode .eb-content img{
   max-height:60vh;
   object-fit:contain;
