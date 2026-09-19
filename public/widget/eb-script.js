@@ -187,9 +187,12 @@
     });
   }
 
+  var _animTimer=null;
   function updatePageDisplay(){
     if(!content)return;
     var offset=-currentPage*pageWidth;
+    /* 이전 타이머 정리 */
+    if(_animTimer){clearTimeout(_animTimer);_animTimer=null;}
     content.classList.add('eb-animating');
     content.style.transform='translateX('+offset+'px)';
     if(pageInfo)pageInfo.textContent=(currentPage+1)+' / '+totalPages;
@@ -198,14 +201,11 @@
       var pct=Math.round(((currentPage+1)/totalPages)*100);
       progBar.style.width=pct+'%';
     }
-    /* Remove animating class after transition ends */
-    function onEnd(){
+    /* 단일 타이머로 정리 (리스너 누적 방지) */
+    _animTimer=setTimeout(function(){
       content.classList.remove('eb-animating');
-      content.removeEventListener('transitionend',onEnd);
-    }
-    content.addEventListener('transitionend',onEnd);
-    /* Fallback in case transitionend doesn't fire */
-    setTimeout(function(){content.classList.remove('eb-animating');},400);
+      _animTimer=null;
+    },380);
   }
 
   window.ebNextPage=function(){
