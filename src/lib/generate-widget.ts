@@ -248,6 +248,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
     <button data-size="md" class="active" onclick="ebFont('md',this)">가</button>
     <button data-size="lg" onclick="ebFont('lg',this)">가+</button>
     <button id="eb-dark-btn" onclick="ebDark()" style="margin-left:8px">🌙</button>
+    <button id="eb-mode-btn" onclick="ebToggleMode()" style="margin-left:8px">📖</button>
   </div>
 
   <div class="eb-header">
@@ -263,12 +264,20 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
     </ol>
   </div>
 
+  <div id="eb-content" class="eb-content">
   ${contentSections}
 
   ${buildCrossSell(book.id)}
+  </div>
 </div>
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
+
+<div id="eb-page-nav" class="eb-page-nav" style="display:none;">
+  <button onclick="ebPrevPage()">‹</button>
+  <span id="eb-page-info">1 / 1</span>
+  <button onclick="ebNextPage()">›</button>
+</div>
 
 <script src="${CDN}/eb-script.js?v=${Date.now()}"></script>`;
 }

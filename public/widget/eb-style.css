@@ -91,10 +91,91 @@
 .eb-cross-item .eb-ci-sub{font-size:12px;color:#6b7280;margin-top:2px}
 .eb-cross-item .eb-ci-price{margin-left:auto;font-size:13px;font-weight:700;color:#2563eb;flex-shrink:0}
 
+/* ═══════════════════════════════════════════
+   Page Mode (책 넘기기 모드)
+   ═══════════════════════════════════════════ */
+
+/* Page mode: content container becomes multi-column, paginated via translateX */
+.eb-viewer.eb-page-mode{padding-bottom:0;overflow:hidden}
+.eb-viewer.eb-page-mode .eb-content{
+  column-gap:0;
+  overflow:hidden;
+  transition:transform .35s ease;
+  will-change:transform;
+}
+.eb-viewer.eb-page-mode .eb-content .eb-section{
+  break-inside:avoid-column;
+}
+.eb-viewer.eb-page-mode .eb-content img{
+  max-height:60vh;
+  object-fit:contain;
+}
+.eb-viewer.eb-page-mode .eb-content table{
+  display:table;
+  break-inside:avoid;
+}
+
+/* Hide scroll-based elements in page mode */
+.eb-viewer.eb-page-mode .eb-back{display:none}
+
+/* Page navigation bar */
+.eb-page-nav{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  padding:8px 0 12px;
+  background:rgba(255,255,255,.95);
+  border-top:1px solid #e5e7eb;
+  z-index:200;
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+}
+.eb-page-nav button{
+  width:40px;height:40px;
+  border:1px solid #d1d5db;
+  background:#fff;
+  border-radius:50%;
+  cursor:pointer;
+  font-size:20px;
+  font-weight:700;
+  color:#555;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;
+}
+.eb-page-nav button:hover{border-color:#2563eb;color:#2563eb}
+.eb-page-nav span{
+  font-size:14px;
+  font-weight:600;
+  color:#555;
+  min-width:60px;
+  text-align:center;
+}
+
+/* Dark mode page nav (class toggled via JS) */
+.eb-page-nav.eb-dark-nav{
+  background:rgba(26,26,46,.95);
+  border-color:#333;
+}
+.eb-page-nav.eb-dark-nav button{
+  background:#2a2a3e;color:#ccc;border-color:#444;
+}
+.eb-page-nav.eb-dark-nav span{
+  color:#ccc;
+}
+
+/* Mode toggle button */
+#eb-mode-btn{font-size:16px}
+
 /* Mobile */
 @media(max-width:640px){
   .eb-viewer{padding:0 12px 80px}
+  .eb-viewer.eb-page-mode{padding:0 12px 0}
   .eb-float{bottom:16px;right:16px;padding:9px 15px;font-size:13px}
   .eb-viewer table{font-size:.8em}
   .eb-toc{padding:16px 18px}
+  .eb-page-nav button{width:36px;height:36px;font-size:18px}
+  .eb-page-nav span{font-size:13px}
 }
