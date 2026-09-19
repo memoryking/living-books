@@ -70,6 +70,7 @@
      ═══════════════════════════════════════════ */
 
   window.ebToggleMode=function(){
+    console.log('[EB] toggle mode called, current:', isPageMode?'page':'scroll');
     if(isPageMode){
       exitPageMode();
     } else {
@@ -79,21 +80,25 @@
   };
 
   function enterPageMode(){
+    console.log('[EB] entering page mode');
     isPageMode=true;
     root.classList.add('eb-page-mode');
     if(modeBtn)modeBtn.textContent='📜';
     if(pageNav)pageNav.style.display='flex';
     if(fb)fb.style.display='none';
-    /* Tell parent to lock scroll if in iframe */
+    /* Tell parent to fix iframe to viewport height */
     if(inIframe){
-      window.parent.postMessage({type:'eb-lock-scroll',lock:true},'*');
+      window.parent.postMessage({type:'eb-page-mode',enabled:true},'*');
     }
     currentPage=0;
-    ebRecalcPages();
-    updatePageDisplay();
     /* Prevent body scroll in page mode */
     document.body.style.overflow='hidden';
     document.documentElement.style.overflow='hidden';
+    setTimeout(function(){
+      ebRecalcPages();
+      updatePageDisplay();
+      console.log('[EB] pages:', totalPages, 'pageWidth:', pageWidth, 'contentHeight:', contentHeight);
+    },200);
   }
 
   function exitPageMode(){
@@ -111,8 +116,10 @@
     document.body.style.overflow='';
     document.documentElement.style.overflow='';
     if(inIframe){
-      window.parent.postMessage({type:'eb-lock-scroll',lock:false},'*');
-      window.parent.postMessage({type:'eb-resize',height:document.documentElement.scrollHeight},'*');
+      window.parent.postMessage({type:'eb-page-mode',enabled:false},'*');
+      setTimeout(function(){
+        window.parent.postMessage({type:'eb-resize',height:document.documentElement.scrollHeight},'*');
+      },100);
     }
     /* Restore approximate scroll position */
     var totalH=document.documentElement.scrollHeight-window.innerHeight;

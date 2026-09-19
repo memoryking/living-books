@@ -108,6 +108,14 @@ function WidgetCard({ w }: { w: WidgetData }) {
       var iframeTop=f.getBoundingClientRect().top+window.pageYOffset;
       window.scrollTo({top:iframeTop+e.data.offset-80,behavior:'smooth'});
     }
+    if(e.data.type==='eb-page-mode'&&f){
+      if(e.data.enabled){
+        f.style.height='100vh';
+        f.scrollIntoView({behavior:'smooth'});
+      } else {
+        f.style.height='auto';
+      }
+    }
   });
   // 부모 스크롤: 진행률 전달 + 플로팅 목차 표시
   window.addEventListener('scroll',function(){
