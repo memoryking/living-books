@@ -84,6 +84,12 @@
     console.log('[EB] entering page mode');
     isPageMode=true;
     root.classList.add('eb-page-mode');
+    /* Re-query elements in case they weren't found at init */
+    if(!pageNav)pageNav=document.getElementById('eb-page-nav');
+    if(!pageInfo)pageInfo=document.getElementById('eb-page-info');
+    if(!modeBtn)modeBtn=document.getElementById('eb-mode-btn');
+    if(!content)content=document.getElementById('eb-content');
+    console.log('[EB] pageNav:', !!pageNav, 'content:', !!content);
     if(modeBtn)modeBtn.textContent='📜';
     if(pageNav)pageNav.style.display='flex';
     if(fb)fb.style.display='none';
