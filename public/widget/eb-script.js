@@ -167,9 +167,8 @@
     contentHeight=viewH-barH-progH-navH;
     if(contentHeight<200)contentHeight=200;
 
-    /* Determine page width (account for column-gap) */
-    var colGap=40;
-    pageWidth=content.offsetWidth;
+    /* Determine page width */
+    pageWidth=root.offsetWidth;
     if(pageWidth<100)pageWidth=window.innerWidth;
 
     /* Apply column layout */
@@ -179,8 +178,7 @@
     /* Wait for layout reflow, then measure */
     requestAnimationFrame(function(){
       var scrollW=content.scrollWidth;
-      var step=pageWidth+colGap;
-      totalPages=Math.max(1,Math.round(scrollW/step));
+      totalPages=Math.max(1,Math.round(scrollW/pageWidth));
       if(currentPage>=totalPages)currentPage=totalPages-1;
       updatePageDisplay();
     });
@@ -188,8 +186,7 @@
 
   function updatePageDisplay(){
     if(!content)return;
-    var step=pageWidth+40;
-    var offset=-currentPage*step;
+    var offset=-currentPage*pageWidth;
     content.style.transform='translateX('+offset+'px)';
     if(pageInfo)pageInfo.textContent=(currentPage+1)+' / '+totalPages;
     /* Update progress bar */
@@ -241,8 +238,7 @@
     /* Force reflow */
     void content.offsetWidth;
     var elLeft=el.offsetLeft;
-    var step=pageWidth+40;
-    var targetPage=Math.floor(elLeft/step);
+    var targetPage=Math.floor(elLeft/pageWidth);
     currentPage=Math.max(0,Math.min(targetPage,totalPages-1));
     content.style.transition='';
     updatePageDisplay();
