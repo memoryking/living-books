@@ -122,10 +122,11 @@
     if(modeBtn)modeBtn.textContent='📖';
     var arrowL=document.getElementById('eb-arrow-l');
     var arrowR=document.getElementById('eb-arrow-r');
-    var pageBar=document.getElementById('eb-page-bar');
+    var pageBarEl=document.getElementById('eb-page-bar');
     if(arrowL)arrowL.style.display='none';
     if(arrowR)arrowR.style.display='none';
-    if(pageBar)pageBar.style.display='none';
+    if(pageBarEl)pageBarEl.style.display='none';
+    root.style.height='';
     if(content){
       content.style.columnWidth='';
       content.style.height='';
@@ -163,7 +164,11 @@
     var barH=bar?bar.offsetHeight:0;
     var progH=progEl?progEl.offsetHeight:0;
     var viewH=(inIframe&&parentViewportHeight>0)?parentViewportHeight:window.innerHeight;
-    contentHeight=viewH-barH-progH-120;
+    /* root 높이를 뷰포트에 고정 */
+    root.style.height=viewH+'px';
+    var pageBarEl=document.getElementById('eb-page-bar');
+    var pageBarH=pageBarEl?pageBarEl.offsetHeight:36;
+    contentHeight=viewH-barH-progH-pageBarH-8;
     if(contentHeight<200)contentHeight=200;
 
     pageWidth=root.offsetWidth;
