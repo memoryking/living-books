@@ -3,6 +3,7 @@
    수정하면 모든 전자책에 자동 반영됩니다.
    ═══════════════════════════════════════════ */
 (function(){
+  console.log('[EB] script loaded, eb-root:', !!document.getElementById('eb-root'), 'eb-content:', !!document.getElementById('eb-content'));
   var root=document.getElementById('eb-root');
   var fb=document.getElementById('eb-float-toc');
   var toc=document.getElementById('eb-toc');
