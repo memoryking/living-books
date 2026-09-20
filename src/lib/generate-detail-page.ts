@@ -297,6 +297,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", oneLiner: "디지털상품·강의·컨설팅" },
   { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", oneLiner: "약물·식단·혈당·합병증" },
   { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", oneLiner: "리더십·인내·유혹·귀환" },
+  { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", oneLiner: "5대 약물·DASH·합병증" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -3148,6 +3149,163 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   24. 혈압 완전 가이드
+   ═══════════════════════════════════════════ */
+
+function buildHypertensionGuide(): string {
+  return `<!-- 🫀 약사가 알려주는 혈압에 대한 모든 것 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fef2f2,#fecaca,#fca5a5);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🫀</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#7f1d1d;letter-spacing:-0.5px;">혈압약 한번 먹으면<br>평생 먹어야 한다면서요?<br>약사가 답해드립니다.</h2>
+    ${subtitle("5대 혈압약 완전 비교 · DASH 식단 · 합병증 예방 · 90일 혈압 관리 로드맵")}
+    ${statGrid([
+      { num: "5대 약물", label: "혈압약 계열 완전 비교", color: "#dc2626" },
+      { num: "DASH", label: "혈압 낮추는 식단 전략", color: "#dc2626" },
+      { num: "90일", label: "혈압 관리 로드맵", color: "#dc2626" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 혈압 진단 후 혼란 -->
+  <section style="${sec("background:#fff5f5;")}">
+    ${bigTitle("혈압약 처방받고,", "이런 생각 하셨죠?")}
+    ${subtitle("고혈압 환자 1,200만 명의 공통된 걱정입니다")}
+    ${redditQuote("의사가 혈압약을 처방했는데 한번 시작하면 평생 먹어야 한다고 해서 너무 무서웠어요. 진짜 끊을 수 없는 건가요?", "hypertension")}
+    ${redditQuote("인터넷에서 혈압약 부작용을 검색했다가 겁이 나서 처방받은 약을 먹지 않았어요. 3개월 후 응급실에 갔습니다.", "bloodpressure")}
+    ${redditQuote("DASH 식단을 시작하고 나트륨을 줄였더니 3개월 만에 약을 한 알 줄일 수 있었어요. 식단이 이렇게 중요한 줄 몰랐어요.", "hypertension")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("진단 직후와 90일 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "혈압약 부작용이 무서워서 약을 안 먹음",
+        "짜게 먹으면 안 된다는데 뭘 먹어야 할지 모름",
+        "혈압을 집에서 재는데 매번 달라 혼란스러움",
+        "합병증이 두렵지만 뭘 해야 할지 모름",
+      ],
+      [
+        "5대 약물 원리를 알고 의사와 자신 있게 대화",
+        "DASH 식단으로 나트륨을 줄이는 구체적 방법 실천",
+        "올바른 측정법으로 정확한 가정혈압 기록 습관화",
+        "합병증 예방 체크리스트로 정기 검진 실천 중",
+      ],
+      "진단 직후 (지금)",
+      "90일 후",
+      "#fef2f2",
+      "#f0fdf4"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("각 챕터는 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "혈압의 기초 — 수축기·이완기 숫자의 의미와 혈압 분류 기준", false, "#dc2626")}
+    ${tocItem("02", "원인과 위험인자 — 본태성·이차성 고혈압, 유전·나이·생활습관 영향", false, "#dc2626")}
+    ${tocItem("03", "혈압 측정의 기술 — 팔뚝형 vs 손목형, 정확한 측정법 7단계", true, "#dc2626")}
+    ${tocItem("04", "약물 완전 가이드 — ARB·ACE·CCB·이뇨제·베타차단제 5대 계열 비교", true, "#dc2626")}
+    ${tocItem("05", "DASH 식단 — 나트륨 줄이기 + 혈압 낮추는 식단 전략", true, "#dc2626")}
+    ${tocItem("06", "운동과 혈압 — 유산소·근력 운동 처방과 안전 가이드", false, "#dc2626")}
+    ${tocItem("07", "스트레스·수면·체중 — 생활습관이 혈압을 바꾼다", false, "#dc2626")}
+    ${tocItem("08", "합병증 — 뇌졸중·심근경색·신부전 예방과 경고 증상", true, "#dc2626")}
+    ${tocItem("09", "특수 상황 — 임신·당뇨·고령자·저항성 고혈압 관리", false, "#dc2626")}
+    ${tocItem("10", "90일 혈압 관리 로드맵 — 지금 당장 시작하는 단계별 계획", true, "#dc2626")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 혈압 기록표 / 5대 혈압약 비교 카드 / 나트륨 함량표 / 응급 상황 대처 카드 / DASH 식단 1주 플래너</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "4",
+    "고혈압 약물 완전 가이드 — 5대 계열 비교",
+    [
+      "ARB: 한국에서 가장 많이 처방되는 이유",
+      "ACE 억제제: 마른기침 부작용의 진실",
+      "CCB: 한국인 식습관에 잘 맞는 약",
+      "이뇨제·베타차단제의 역할과 주의사항",
+      "복합제: 왜 약을 2~3가지 함께 먹는가",
+    ],
+    `<p style="margin:0 0 16px;">고혈압 약물의 1차 선택지는 <strong>ARB, ACE 억제제, CCB, 이뇨제</strong> — 이 네 가지입니다. 약의 이름은 어렵지만 원리는 단순합니다.</p>
+      <p style="margin:0 0 16px;">ARB와 ACE 억제제는 혈관을 수축시키는 안지오텐신의 작용을 차단합니다. CCB는 혈관 근육세포로 칼슘이 들어가는 것을 막아 혈관을 이완시킵니다. 이뇨제는 나트륨과 수분을 배출하여 혈액량을 줄입니다.</p>
+      <p style="margin:0 0 16px;padding:16px;background:#fef2f2;border-radius:10px;font-weight:600;color:#dc2626;">💊 혈압약 한 가지로 목표 혈압에 도달하는 환자는 약 30~50%입니다. 나머지는 2~3가지를 병용해야 합니다. 약이 늘어났다고 상태가 나빠진 것이 아닙니다.</p>
+      <p style="margin:0;">약의 원리를 알면 부작용이 왜 생기는지, 왜 이 약을 처방받았는지 이해할 수 있습니다. <strong>이해하면 두렵지 않습니다.</strong></p>`,
+    "#dc2626",
+    "linear-gradient(160deg,#fef2f2,#fff5f5)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "처음 고혈압 진단을 받고 막막한 분",
+        "혈압약을 먹고 있지만 내가 먹는 약이 뭔지 모르는 분",
+        "부모님이 고혈압인데 곁에서 돕고 싶은 분",
+        "약 없이 생활습관으로 혈압을 관리하고 싶은 분",
+      ],
+      "✅",
+      "#fef2f2"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "전문적인 의료 진단을 대체하고 싶은 분 (이 책은 의료 행위가 아닙니다)",
+        "읽기만 하고 생활습관은 바꾸지 않을 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("혈압약은 정말 평생 먹어야 하나요?", "생활습관 개선으로 약을 줄이거나 중단한 사례가 있습니다. 다만 의사와 상의 없이 무단으로 끊는 것은 매우 위험합니다. 이 가이드에서 올바른 접근 방법을 설명합니다.")}
+    ${faqItem("혈압 목표치는 얼마인가요?", "일반적으로 130/80 미만이 목표이지만, 나이·합병증 여부에 따라 달라집니다. 90일 로드맵에서 단계별 목표 설정법을 안내합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새로운 연구·가이드라인이 나오면 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "고혈압 교육 프로그램 (병원)", price: "50,000원~", note: "1회 수업" },
+        { what: "고혈압 전문 서적", price: "18,000원~", note: "업데이트 없음" },
+        { what: "유튜브 검색 3시간", price: "무료", note: "정보 파편화·신뢰도 불명" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 5개 · 계속 업데이트 · 약사 검증",
+      "#dc2626"
+    )}
+    ${proofBanner(
+      ["🫀 약사가 직접 정리", "📊 Reddit 실제 경험", "🔄 계속 업데이트", "📱 모바일 최적화"],
+      "#fef2f2",
+      "#dc2626"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("hypertension-guide", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🫀", "혈압 관리 시스템을", "지금 시작하세요.", "5대 약물 비교부터 90일 로드맵까지 — 약사가 정리한 완전 가이드", "#dc2626")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -3344,6 +3502,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "네이비(#1e3a5f)에서 딥인디고(#0f172a)로",
     symbol: "거친 바다 위 항해하는 배와 별자리가 빛나는 플랫 일러스트",
     mood: "모험, 지혜, 귀환",
+  },
+  "hypertension-guide": {
+    title: "약사가 알려주는 혈압에 대한 모든 것",
+    subtitle: "5대 혈압약 비교·DASH 식단·합병증 예방·90일 관리 로드맵",
+    author: "유원소망약국 약사",
+    gradient: "레드(#dc2626)에서 딥레드(#7f1d1d)로",
+    symbol: "심장과 혈압계가 나란히 놓여 있고 주변에 약·채소·운동화 아이콘이 도는 플랫 일러스트",
+    mood: "안심, 건강, 실행력",
   },
 };
 
@@ -3577,6 +3743,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "귀를 막지 않고 돛대에 묶는 것이 진짜 지혜입니다. 자신이 약하다는 것을 아는 것이 가장 강한 전략입니다.",
     cta: "3,000년의 지혜로 인생을 항해하세요. 1,000원에 시작합니다.",
     tags: "#인문학 #고전 #오디세이아 #리더십 #자기계발",
+  },
+  "hypertension-guide": {
+    title: "약사가 알려주는 혈압에 대한 모든 것",
+    hook: "혈압약 한번 먹으면 평생 먹어야 한다면서요? 그 말이 맞는지, 약사가 답해드립니다.",
+    stat: "10챕터 + 5대 약물 비교 · DASH 식단 · 90일 혈압 관리 로드맵 · 부록 5개",
+    quote: "고혈압은 '소리 없는 살인자'입니다. 증상이 없다고 괜찮은 게 아닙니다. 관리하면 합병증은 예방할 수 있습니다. — 약사의 조언",
+    cta: "혈압 관리 시스템, 1,000원에 시작하세요.",
+    tags: "#고혈압 #혈압관리 #혈압약 #DASH식단 #약사",
   },
 };
 
@@ -3889,6 +4063,18 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `3,000년 전 오디세우스가 저지른 10가지 실수가 당신의 인생 실수와 같습니다. 세이렌의 유혹, 키클롭스의 분노, 이타카로의 귀환 — 고전을 현대 삶의 언어로 풀어낸 인생 항해 가이드. 10에피소드 + 30일 플래너 + 보너스 5개 · 프로필 링크에서 목차를 확인하세요. #인문학 #오디세이아 #고전 #리더십 #자기계발`,
   },
+  "hypertension-guide": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 크림슨-레드 그라데이션 배경(#dc2626 → #7f1d1d), 중앙에 심장과 혈압계가 나란히 배치되어 빛을 발함.
+혈압계 화면에 "120/80" 숫자가 녹색으로 빛나고 (정상 혈압 달성 상징).
+심장 주변으로 약 캡슐·채소·운동화 아이콘이 원형으로 배치되어 빛남.
+배경에서 레드-크림슨 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "1,200만 명".
+중앙 하단에 굵은 흰색 글씨: "혈압은 관리할 수 있습니다".
+시네마틱 조명, 크림슨 레드 + 딥레드 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `혈압약 한번 먹으면 평생 먹어야 하나요? 약사가 답해드립니다. ARB·ACE·CCB·이뇨제·베타차단제 5대 계열 완전 비교, DASH 식단, 합병증 예방, 90일 혈압 관리 로드맵. 10챕터 + 혈압 기록표 + 약물 비교 카드 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #고혈압 #혈압관리 #혈압약 #DASH식단 #약사`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -3943,6 +4129,7 @@ const BOOK_META = [
   { id: "selling-invisible", title: "무형 상품 완판 설득법", emoji: "💎", builder: buildSellingInvisible },
   { id: "diabetes-guide", title: "당뇨 완전 가이드", emoji: "🩸", builder: buildDiabetesGuide },
   { id: "odyssey-life", title: "오디세이아 인생 항해술", emoji: "⚓", builder: buildOdysseyLife },
+  { id: "hypertension-guide", title: "혈압 완전 가이드", emoji: "🫀", builder: buildHypertensionGuide },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

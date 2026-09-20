@@ -241,6 +241,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-20",
     version: 1,
   },
+  {
+    id: "hypertension-guide",
+    emoji: "🫀",
+    title: "약사가 알려주는 혈압에 대한 모든 것",
+    subtitle: "측정법부터 5대 약물·DASH 식단·합병증 예방까지 — 고혈압 완전 가이드",
+    tags: ["혈압", "고혈압", "DASH식단", "ARB"],
+    lastUpdated: "2026-09-20",
+    version: 1,
+  },
 ];
 
 function BookCard({
