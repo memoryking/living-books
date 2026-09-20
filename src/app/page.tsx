@@ -232,6 +232,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-20",
     version: 1,
   },
+  {
+    id: "odyssey-life",
+    emoji: "⚓",
+    title: "오디세이아, 3,000년 전 영웅이 알려주는 인생 항해술",
+    subtitle: "호메로스의 서사시에서 배우는 리더십·인내·유혹·귀환의 심리학",
+    tags: ["오디세이아", "리더십", "인문학", "자기계발"],
+    lastUpdated: "2026-09-20",
+    version: 1,
+  },
 ];
 
 function BookCard({

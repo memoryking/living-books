@@ -296,6 +296,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", oneLiner: "구독·SaaS·마켓플레이스" },
   { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", oneLiner: "디지털상품·강의·컨설팅" },
   { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", oneLiner: "약물·식단·혈당·합병증" },
+  { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", oneLiner: "리더십·인내·유혹·귀환" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2990,6 +2991,163 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   23. 오디세이아 인생 항해술
+   ═══════════════════════════════════════════ */
+
+function buildOdysseyLife(): string {
+  return `<!-- ⚓ 오디세이아 인생 항해술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#1e3a5f,#0f172a);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">⚓</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#fff;letter-spacing:-0.5px;">3,000년 전 영웅의 항해가<br>당신의 인생 지도입니다.</h2>
+    ${subtitle("오디세우스의 10가지 시련 — 현대인의 10가지 인생 과제로 풀어낸 지혜 가이드")}
+    ${statGrid([
+      { num: "10", label: "에피소드 · 현대적 적용", color: "#60a5fa" },
+      { num: "3,000", label: "년의 지혜, 오늘의 언어로", color: "#60a5fa" },
+      { num: "30일", label: "인생 항해 플래너 수록", color: "#60a5fa" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감 -->
+  <section style="${sec("background:#f8fafc;")}">
+    ${bigTitle("인생의 방향을 잃고", "표류하고 있지는 않으신가요?")}
+    ${subtitle("3,000년 전 오디세우스도 똑같은 고민을 했습니다")}
+    ${redditQuote("열심히 살고 있는데 뭔가 방향을 잃은 것 같아요. 목적지가 없이 그냥 바쁜 느낌. 어디로 가야 할지 모르겠어요.", "selfimprovement")}
+    ${redditQuote("리더십 책을 많이 읽었는데 다 뜬구름 잡는 이야기 같아요. 실제 압박 상황에서 어떻게 결단해야 하는지 배우고 싶어요.", "Leadership")}
+    ${redditQuote("고전이 좋다고 하는데 막상 펼치면 너무 어렵고 지루해서 포기해요. 현실에 어떻게 적용하는지 누가 쉽게 설명해줬으면.", "books")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("읽기 전과 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "목적 없이 바쁜 일상 — 표류 상태",
+        "유혹 앞에서 매번 무너지는 의지",
+        "리더십 이론은 알지만 현장에서 막막",
+        "고전은 어렵다는 편견으로 포기",
+      ],
+      [
+        "귀환할 목적지를 설정 — 나만의 이타카",
+        "세이렌의 유혹을 다루는 실전 전략",
+        "오디세우스의 결단에서 배우는 리더십",
+        "10개 에피소드로 익히는 고전의 실용 지혜",
+      ],
+      "지금 (표류 중)",
+      "이 가이드 이후",
+      "#eff6ff",
+      "#f0f9ff"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#f8fafc;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("10개 에피소드는 각각 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "이타카를 기억하라 — 목적 없이 열심히 사는 함정", true, "#1e3a5f")}
+    ${tocItem("02", "키클롭스의 동굴 — 분노를 지연시키는 리더의 기술", false, "#1e3a5f")}
+    ${tocItem("03", "세이렌의 유혹 — 내가 약하다는 걸 아는 용기", true, "#1e3a5f")}
+    ${tocItem("04", "카립디스와 스킬라 — 두 악 중 하나를 고르는 결단", true, "#1e3a5f")}
+    ${tocItem("05", "키르케의 섬 — 편안함이 나를 잠재우는 시간", false, "#1e3a5f")}
+    ${tocItem("06", "하데스로의 하강 — 두려움을 통과해야 지혜가 온다", true, "#1e3a5f")}
+    ${tocItem("07", "포세이돈의 분노 — 내가 통제할 수 없는 것들과 살기", false, "#1e3a5f")}
+    ${tocItem("08", "페넬로페의 인내 — 기다림을 전략으로 만드는 법", false, "#1e3a5f")}
+    ${tocItem("09", "텔레마코스의 성장 — 리더는 어떻게 다음 세대를 키우나", false, "#1e3a5f")}
+    ${tocItem("10", "귀환의 완성 — 집에 돌아온다는 것의 진짜 의미", true, "#1e3a5f")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 보너스: 30일 인생 항해 플래너 / 나만의 이타카 워크시트 / 유혹 방어 전략 5가지 / 리더십 결단 프레임워크 / 오디세이아 핵심 구절 50선</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "3",
+    "세이렌의 유혹 — 내가 약하다는 걸 아는 용기",
+    [
+      "세이렌이란 무엇인가 — 현대적 재해석",
+      "오디세우스는 왜 귀를 막지 않았나",
+      "자기인식 + 사전 설계 전략",
+      "나의 세이렌을 찾는 법",
+      "실천 과제: 유혹 방어 계획",
+    ],
+    `<p style="margin:0 0 16px;">세이렌의 노래를 들으면 선원들은 바다로 뛰어들어 죽었습니다. 오디세우스는 이 사실을 알고 있었습니다. 그래서 어떻게 했을까요?</p>
+      <p style="margin:0 0 16px;">그는 귀를 막지 않았습니다. 오히려 <strong>자신을 돛대에 묶어달라고 명령했습니다.</strong> 세이렌의 노래를 직접 들으면서도, 바다로 뛰어들 수 없게 미리 구조를 만들었습니다.</p>
+      <p style="margin:0 0 16px;padding:16px;background:#eff6ff;border-radius:10px;font-weight:600;color:#1e3a5f;">💡 "나는 유혹에 넘어가지 않을 것"이라는 의지보다, "유혹에 넘어갈 수 없는 구조"가 더 강합니다.</p>
+      <p style="margin:0;">현대의 세이렌은 스마트폰, SNS, 즉각적 보상입니다. 오디세우스의 전략은 오늘날 행동경제학의 '사전 약속(precommitment)' 개념과 정확히 일치합니다. <strong>자신이 약하다는 것을 인정하는 것이 가장 강한 전략입니다.</strong></p>`,
+    "#1e3a5f",
+    "linear-gradient(160deg,#eff6ff,#f8fafc)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "인생의 방향을 잃고 표류 중인 분",
+        "리더십을 실전에서 배우고 싶은 분",
+        "고전을 실용적으로 읽고 싶은 분",
+        "유혹과 결단의 순간에 나침반이 필요한 분",
+      ],
+      "✅",
+      "#eff6ff"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "고전 문학 학문적 분석을 원하는 분 (이 책은 실용서입니다)",
+        "읽기만 하고 실천하지 않을 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f8fafc;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("오디세이아를 미리 읽어야 하나요?", "아닙니다. 각 에피소드의 내용을 쉽게 요약해드리고, 바로 현대적 적용으로 넘어갑니다. 고전 지식이 없어도 됩니다.")}
+    ${faqItem("어떤 순서로 읽는 게 좋나요?", "처음부터 순서대로 읽으시면 오디세우스의 귀환 서사를 따라가며 메시지가 누적됩니다. 하지만 관심 있는 챕터부터 읽어도 됩니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "인문학 강의 1회", price: "50,000원~", note: "일방적 강의" },
+        { what: "고전 해설서", price: "16,000원~", note: "업데이트 없음" },
+        { what: "리더십 코칭 1시간", price: "100,000원~", note: "1회성" },
+      ],
+      "1,000원",
+      "10챕터 + 보너스 5개 · 30일 플래너 · 계속 업데이트",
+      "#1e3a5f"
+    )}
+    ${proofBanner(
+      ["⚓ 3,000년 검증된 지혜", "📖 실용적 현대 적용", "🔄 계속 업데이트", "📱 모바일 최적화"],
+      "#eff6ff",
+      "#1e3a5f"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f8fafc;")}">
+    ${crossSell("odyssey-life", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("⚓", "당신의 이타카를 향한", "항해를 시작하세요.", "3,000년의 지혜로 오늘의 인생을 항해하는 가이드", "#1e3a5f")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -3178,6 +3336,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "레드(#e11d48)에서 딥로즈(#881337)로",
     symbol: "혈당 측정기와 건강한 음식(사과, 채소)이 하트 모양으로 배치된 플랫 일러스트",
     mood: "안심, 희망, 실행력",
+  },
+  "odyssey-life": {
+    title: "오디세이아 인생 항해술",
+    subtitle: "3,000년 전 영웅의 지혜로 항해하는 현대인의 인생 가이드",
+    author: "비법연구소",
+    gradient: "네이비(#1e3a5f)에서 딥인디고(#0f172a)로",
+    symbol: "거친 바다 위 항해하는 배와 별자리가 빛나는 플랫 일러스트",
+    mood: "모험, 지혜, 귀환",
   },
 };
 
@@ -3403,6 +3569,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "약이 무섭다고 안 먹으면 합병증이 옵니다. 원리를 알면 두렵지 않습니다. — 약사의 조언",
     cta: "당뇨 관리 시스템, 1,000원에 시작하세요.",
     tags: "#당뇨 #당뇨관리 #혈당관리 #당뇨식단 #A1C",
+  },
+  "odyssey-life": {
+    title: "오디세이아 인생 항해술",
+    hook: "3,000년 전 영웅이 저지른 10가지 실수 — 당신의 인생 실수와 똑같습니다. 오디세우스가 이미 답을 알고 있습니다.",
+    stat: "10에피소드 + 30일 인생 항해 플래너 · 고전의 현대적 적용 · 보너스 5개",
+    quote: "귀를 막지 않고 돛대에 묶는 것이 진짜 지혜입니다. 자신이 약하다는 것을 아는 것이 가장 강한 전략입니다.",
+    cta: "3,000년의 지혜로 인생을 항해하세요. 1,000원에 시작합니다.",
+    tags: "#인문학 #고전 #오디세이아 #리더십 #자기계발",
   },
 };
 
@@ -3704,6 +3878,17 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `당뇨 진단 후 뭘 해야 할지 모르겠다면 여기서 시작하세요. 메트포르민부터 인슐린까지 약물 원리, 혈당 스파이크를 막는 식사 전략, 90일 A1C 개선 로드맵. 10챕터 + 합병증 체크리스트 + 혈당일지 템플릿 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #당뇨 #당뇨관리 #혈당관리 #A1C #약사`,
   },
+  "odyssey-life": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+깊은 네이비-인디고 그라데이션 배경(#1e3a5f → #0f172a), 중앙에 고대 범선이 거친 파도 위를 항해하는 장면.
+배경 하늘에 별자리(오리온자리)가 빛나고, 수평선 너머로 현대 도시 스카이라인이 희미하게 보임 — 고대와 현대의 연결.
+배의 돛에서 황금빛 빛줄기가 퍼져나오며 파도를 밝힘.
+상단에 흰색 굵은 텍스트: "3,000년의 지혜".
+하단에 골드(#facc15): "당신의 항해를 시작하세요".
+시네마틱 조명, 딥 네이비 + 별빛 + 골드 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `3,000년 전 오디세우스가 저지른 10가지 실수가 당신의 인생 실수와 같습니다. 세이렌의 유혹, 키클롭스의 분노, 이타카로의 귀환 — 고전을 현대 삶의 언어로 풀어낸 인생 항해 가이드. 10에피소드 + 30일 플래너 + 보너스 5개 · 프로필 링크에서 목차를 확인하세요. #인문학 #오디세이아 #고전 #리더십 #자기계발`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -3757,6 +3942,7 @@ const BOOK_META = [
   { id: "business-model", title: "비즈니스 모델 설계법", emoji: "📊", builder: buildBusinessModel },
   { id: "selling-invisible", title: "무형 상품 완판 설득법", emoji: "💎", builder: buildSellingInvisible },
   { id: "diabetes-guide", title: "당뇨 완전 가이드", emoji: "🩸", builder: buildDiabetesGuide },
+  { id: "odyssey-life", title: "오디세이아 인생 항해술", emoji: "⚓", builder: buildOdysseyLife },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

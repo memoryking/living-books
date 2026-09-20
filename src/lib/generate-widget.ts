@@ -147,6 +147,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🩸",
     subtitle: "진단부터 약물·식단·생활습관까지",
   },
+  {
+    id: "odyssey-life",
+    title: "오디세이아, 3,000년 전 영웅이 알려주는 인생 항해술",
+    emoji: "⚓",
+    subtitle: "리더십·인내·유혹·귀환의 심리학",
+  },
 ];
 
 interface Section {
@@ -202,6 +208,7 @@ const CROSS_SELL_BOOKS = [
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", sub: "구독·SaaS·마켓플레이스" },
   { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", sub: "디지털상품·강의·컨설팅" },
   { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", sub: "약물·식단·혈당·합병증" },
+  { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", sub: "리더십·인내·유혹·귀환" },
 ];
 
 function buildCrossSell(currentId: string): string {
