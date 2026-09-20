@@ -250,6 +250,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-20",
     version: 1,
   },
+  {
+    id: "cholesterol-guide",
+    emoji: "🧬",
+    title: "약사가 알려주는 고지혈증에 대한 모든 것",
+    subtitle: "스타틴부터 식이요법·운동·합병증까지 — 콜레스테롤 완전 가이드",
+    tags: ["고지혈증", "콜레스테롤", "스타틴", "LDL"],
+    lastUpdated: "2026-09-20",
+    version: 1,
+  },
 ];
 
 function BookCard({

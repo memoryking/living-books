@@ -159,6 +159,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🫀",
     subtitle: "5대 약물·DASH 식단·합병증 예방",
   },
+  {
+    id: "cholesterol-guide",
+    title: "약사가 알려주는 고지혈증에 대한 모든 것",
+    emoji: "🧬",
+    subtitle: "스타틴·식이요법·콜레스테롤 관리",
+  },
 ];
 
 interface Section {
@@ -216,6 +222,7 @@ const CROSS_SELL_BOOKS = [
   { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", sub: "약물·식단·혈당·합병증" },
   { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", sub: "리더십·인내·유혹·귀환" },
   { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", sub: "5대 약물·DASH·합병증" },
+  { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", sub: "스타틴·식이요법·LDL" },
 ];
 
 function buildCrossSell(currentId: string): string {

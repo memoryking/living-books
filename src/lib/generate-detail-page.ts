@@ -298,6 +298,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", oneLiner: "약물·식단·혈당·합병증" },
   { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", oneLiner: "리더십·인내·유혹·귀환" },
   { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", oneLiner: "5대 약물·DASH·합병증" },
+  { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", oneLiner: "스타틴·식이요법·LDL" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -3305,6 +3306,159 @@ ${mobileStyles}
 </div>`;
 }
 
+function buildCholesterolGuide(): string {
+  return `<!-- 🧬 고지혈증 완전 가이드 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fffbeb,#fde68a,#fbbf24);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🧬</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#78350f;letter-spacing:-0.5px;">콜레스테롤 약 평생<br>먹어야 하나요?<br>약사가 답해드립니다.</h2>
+    ${subtitle("스타틴 6종 완전 비교 · 콜레스테롤 낮추는 식이요법 · 90일 관리 로드맵")}
+    ${statGrid([
+      { num: "스타틴 비교", label: "6종 스타틴 완전 비교", color: "#d97706" },
+      { num: "식이요법", label: "LDL 10~15% 낮추는 식단", color: "#d97706" },
+      { num: "90일", label: "콜레스테롤 관리 로드맵", color: "#d97706" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 콜레스테롤 진단 후 혼란 -->
+  <section style="${sec("background:#fffbeb;")}">
+    ${bigTitle("콜레스테롤 약 처방받고,", "이런 생각 하셨죠?")}
+    ${subtitle("성인 40% 이상이 이상지질혈증 — 그런데 제대로 아는 사람은 30%뿐입니다")}
+    ${redditQuote("콜레스테롤 약을 처방받았는데 간이 망가진다는 글을 봤어요. 무서워서 안 먹고 있습니다.", "cholesterol")}
+    ${redditQuote("계란을 먹으면 안 된다는 사람과 괜찮다는 사람이 있어서 뭘 믿어야 할지 모르겠어요.", "nutrition")}
+    ${redditQuote("스타틴 먹으면서 식단도 바꿨더니 3개월 만에 LDL이 130에서 85로 떨어졌어요. 진작 시작할 걸.", "cholesterol")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("진단 직후와 90일 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "스타틴 부작용이 무서워서 약을 안 먹음",
+        "LDL, HDL, 중성지방 숫자가 뭔지 모름",
+        "계란을 먹어야 하는지 말아야 하는지 혼란",
+        "합병증이 두렵지만 뭘 해야 할지 모름",
+      ],
+      [
+        "스타틴 6종의 원리를 알고 의사와 자신 있게 대화",
+        "검사 결과지를 직접 읽고 위험 등급을 판단",
+        "포화지방이 진짜 범인임을 알고 식단을 구체적으로 개선",
+        "합병증 예방 체크리스트로 정기 검진 실천 중",
+      ],
+      "진단 직후 (지금)",
+      "90일 후",
+      "#fffbeb",
+      "#f0fdf4"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("각 챕터는 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "콜레스테롤의 진실 — LDL·HDL·중성지방의 역할과 계란 논쟁의 결론", false, "#d97706")}
+    ${tocItem("02", "검사 결과 읽는 법 — 4가지 핵심 수치 해석과 위험 등급별 LDL 목표", true, "#d97706")}
+    ${tocItem("03", "스타틴 완전 가이드 — 6종 스타틴 비교, 부작용 팩트 체크, 복용 시간", true, "#d97706")}
+    ${tocItem("04", "스타틴 외 약물 — 에제티미브·PCSK9·피브레이트·오메가3 처방약", false, "#d97706")}
+    ${tocItem("05", "콜레스테롤 낮추는 식단 — 포화지방 줄이기, 수용성 식이섬유, 한국식 적용", true, "#d97706")}
+    ${tocItem("06", "운동과 콜레스테롤 — HDL 올리고 중성지방 낮추는 운동 처방", false, "#d97706")}
+    ${tocItem("07", "체중·음주·스트레스 — 내장지방, 금연, 대사증후군과 콜레스테롤", false, "#d97706")}
+    ${tocItem("08", "합병증 — 동맥경화·심근경색·뇌졸중의 진행 과정과 예방", true, "#d97706")}
+    ${tocItem("09", "특수 상황 — 가족성 고콜레스테롤혈증·당뇨·신장병·임신·고령자", false, "#d97706")}
+    ${tocItem("10", "90일 콜레스테롤 관리 로드맵 — 주차별 실행 계획과 재검사 전략", true, "#d97706")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 지질 검사 기록표 / 스타틴 비교 카드 / 식이섬유 식품표 / 오메가3 식품표 / 포화지방 함량표 / 연간 검사 체크리스트</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "3",
+    "스타틴 완전 가이드 — 6종 스타틴 비교",
+    [
+      "스타틴이 왜 가장 중요한 약인가",
+      "한국에서 사용되는 주요 스타틴 6종 비교",
+      "부작용: 근육통·간수치·당뇨 위험의 진실",
+      "그레이프프루트 주의 — 어떤 스타틴이 해당되나",
+      "복용 시간: 아침 vs 저녁, 제네릭 vs 오리지널",
+    ],
+    `<p style="margin:0 0 16px;">스타틴은 간에서 콜레스테롤을 만드는 효소 <strong>HMG-CoA 환원효소</strong>를 억제합니다. 간에서 콜레스테롤 생산이 줄어들면, LDL 수용체가 더 많이 만들어져 혈중 LDL을 잡아당깁니다.</p>
+      <p style="margin:0 0 16px;">한국에서 가장 많이 처방되는 스타틴은 <strong>로수바스타틴(크레스토)</strong>과 <strong>아토르바스타틴(리피토)</strong>입니다. 로수바스타틴 5~10mg, 아토르바스타틴 10~20mg이 가장 흔한 처방입니다.</p>
+      <p style="margin:0 0 16px;padding:16px;background:#fffbeb;border-radius:10px;font-weight:600;color:#d97706;">💊 부작용 중 근육통을 호소하는 사람의 상당수가 노시보 효과(부작용을 기대하면 실제로 느끼는 현상)라는 연구 결과가 있습니다. 심각한 부작용은 극히 드뭅니다.</p>
+      <p style="margin:0;">약의 원리를 알면 부작용이 왜 생기는지 이해할 수 있습니다. <strong>이해하면 두렵지 않습니다.</strong></p>`,
+    "#d97706",
+    "linear-gradient(160deg,#fffbeb,#fef3c7)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "콜레스테롤이 높다는 진단을 처음 받고 막막한 분",
+        "스타틴을 먹고 있지만 내가 먹는 약이 뭔지 모르는 분",
+        "부모님이 고지혈증인데 곁에서 돕고 싶은 분",
+        "식이요법으로 콜레스테롤을 관리하고 싶은 분",
+      ],
+      "✅",
+      "#fffbeb"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "전문적인 의료 진단을 대체하고 싶은 분 (이 책은 의료 행위가 아닙니다)",
+        "읽기만 하고 생활습관은 바꾸지 않을 분",
+      ],
+      "🚫",
+      "#fffbeb"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("콜레스테롤 약은 정말 평생 먹어야 하나요?", "생활습관 개선으로 약을 줄이거나 중단한 사례가 있습니다. 다만 의사와 상의 없이 무단으로 끊는 것은 LDL이 반동으로 올라가 매우 위험합니다. 이 가이드에서 올바른 접근 방법을 설명합니다.")}
+    ${faqItem("계란을 먹어도 되나요?", "건강한 성인은 하루 1~2개 괜찮습니다. 진짜 범인은 계란이 아니라 포화지방(삼겹살, 버터, 크림)입니다. 1장에서 자세히 설명합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새로운 연구·가이드라인이 나오면 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "이상지질혈증 교육 프로그램 (병원)", price: "50,000원~", note: "1회 수업" },
+        { what: "고지혈증 전문 서적", price: "18,000원~", note: "업데이트 없음" },
+        { what: "유튜브 검색 3시간", price: "무료", note: "정보 파편화·신뢰도 불명" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 6개 · 계속 업데이트 · 약사 검증",
+      "#d97706"
+    )}
+    ${proofBanner(
+      ["🧬 약사가 직접 정리", "📊 Reddit 실제 경험", "🔄 계속 업데이트", "📱 모바일 최적화"],
+      "#fffbeb",
+      "#d97706"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("cholesterol-guide", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🧬", "콜레스테롤 관리 시스템을", "지금 시작하세요.", "스타틴 비교부터 90일 로드맵까지 — 약사가 정리한 완전 가이드", "#d97706")}
+
+</div>`;
+}
+
 /* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
@@ -3510,6 +3664,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "레드(#dc2626)에서 딥레드(#7f1d1d)로",
     symbol: "심장과 혈압계가 나란히 놓여 있고 주변에 약·채소·운동화 아이콘이 도는 플랫 일러스트",
     mood: "안심, 건강, 실행력",
+  },
+  "cholesterol-guide": {
+    title: "약사가 알려주는 고지혈증에 대한 모든 것",
+    subtitle: "스타틴 비교·콜레스테롤 식이요법·합병증 예방·90일 관리 로드맵",
+    author: "유원소망약국 약사",
+    gradient: "앰버(#d97706)에서 딥앰버(#78350f)로",
+    symbol: "혈관 단면과 콜레스테롤 분자가 나란히 놓여 있고 주변에 약·채소·운동화 아이콘이 도는 플랫 일러스트",
+    mood: "이해, 관리, 건강",
   },
 };
 
@@ -3751,6 +3913,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "고혈압은 '소리 없는 살인자'입니다. 증상이 없다고 괜찮은 게 아닙니다. 관리하면 합병증은 예방할 수 있습니다. — 약사의 조언",
     cta: "혈압 관리 시스템, 1,000원에 시작하세요.",
     tags: "#고혈압 #혈압관리 #혈압약 #DASH식단 #약사",
+  },
+  "cholesterol-guide": {
+    title: "약사가 알려주는 고지혈증에 대한 모든 것",
+    hook: "콜레스테롤 약 평생 먹어야 하나요? 스타틴이 간을 망친다는데 진짜인가요? 약사가 답해드립니다.",
+    stat: "10챕터 + 스타틴 6종 비교 · 식이요법 · 90일 콜레스테롤 관리 로드맵 · 부록 6개",
+    quote: "콜레스테롤은 '침묵의 살인자'입니다. 증상이 없다고 괜찮은 게 아닙니다. 관리하면 합병증은 예방할 수 있습니다. — 약사의 조언",
+    cta: "콜레스테롤 관리 시스템, 1,000원에 시작하세요.",
+    tags: "#고지혈증 #콜레스테롤 #스타틴 #LDL #약사",
   },
 };
 
@@ -4075,6 +4245,18 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `혈압약 한번 먹으면 평생 먹어야 하나요? 약사가 답해드립니다. ARB·ACE·CCB·이뇨제·베타차단제 5대 계열 완전 비교, DASH 식단, 합병증 예방, 90일 혈압 관리 로드맵. 10챕터 + 혈압 기록표 + 약물 비교 카드 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #고혈압 #혈압관리 #혈압약 #DASH식단 #약사`,
   },
+  "cholesterol-guide": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 앰버-딥앰버 그라데이션 배경(#d97706 → #78350f), 중앙에 혈관 단면과 콜레스테롤 분자가 배치되어 빛을 발함.
+혈관 단면에서 LDL 입자가 줄어들고 HDL 입자가 청소하는 장면.
+주변으로 약 캡슐·견과류·올리브오일·운동화 아이콘이 원형으로 배치되어 빛남.
+배경에서 앰버-골드 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "성인 40%".
+중앙 하단에 굵은 흰색 글씨: "콜레스테롤은 관리할 수 있습니다".
+시네마틱 조명, 앰버 + 딥앰버 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `콜레스테롤 약 평생 먹어야 하나요? 약사가 답해드립니다. 스타틴 6종 완전 비교, 포화지방 줄이는 식이요법, 동맥경화·심근경색 예방, 90일 콜레스테롤 관리 로드맵. 10챕터 + 지질 검사 기록표 + 스타틴 비교 카드 + 부록 6개 · 프로필 링크에서 목차를 확인하세요. #고지혈증 #콜레스테롤 #스타틴 #LDL #약사`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -4130,6 +4312,7 @@ const BOOK_META = [
   { id: "diabetes-guide", title: "당뇨 완전 가이드", emoji: "🩸", builder: buildDiabetesGuide },
   { id: "odyssey-life", title: "오디세이아 인생 항해술", emoji: "⚓", builder: buildOdysseyLife },
   { id: "hypertension-guide", title: "혈압 완전 가이드", emoji: "🫀", builder: buildHypertensionGuide },
+  { id: "cholesterol-guide", title: "고지혈증 완전 가이드", emoji: "🧬", builder: buildCholesterolGuide },
 ];
 
 export function generateAllDetails(): DetailOutput[] {
