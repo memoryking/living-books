@@ -1,5 +1,6 @@
 # 4장: 쌍화탕과 한방 상비약
 
+
 ![ch4-herbal](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch4-herbal.png)
 
 ## 한방 상비약, 과학적으로 이해하기

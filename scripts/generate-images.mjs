@@ -38,52 +38,52 @@ const IMAGE_PROMPTS = {
   "otc-medicine-guide": [
     {
       id: "ch1-pain-fever",
-      prompt: "Clean flat illustration of common Korean pain relief medicines: a box of Tylenol (acetaminophen), Brufen (ibuprofen), and children's fever syrup, arranged neatly on a white surface with a thermometer. Soft pastel colors, medical illustration style, no text, no brand logos, warm and approachable feel. 750x500px aspect ratio.",
+      prompt: "Photorealistic product photography of common pain relief medicines on a clean white marble surface: several white and red pill boxes, a digital thermometer showing 38.5°C, a glass of water, and a small medicine cup with liquid. Soft natural window light from the left, shallow depth of field, warm tone. No visible brand names or text. Professional commercial photography style.",
       chapter: "01",
     },
     {
       id: "ch2-cold-medicine",
-      prompt: "Flat illustration showing various cold medicine packages arranged in a grid: pills, capsules, syrup bottle, and nasal spray. A tissue box and a warm cup of tea nearby. Soft blue and green color palette, clean medical illustration style, no text, no real brand logos. 750x500px.",
+      prompt: "Photorealistic still life of cold and flu medicines arranged on a wooden bedside table: various pill blister packs, a brown syrup bottle with measuring cup, nasal spray, a box of tissues, and a steaming cup of honey lemon tea. Cozy bedroom atmosphere with soft warm lighting. No visible brand names. Professional lifestyle photography.",
       chapter: "02",
     },
     {
       id: "ch3-stomach",
-      prompt: "Friendly flat illustration of digestive medicines: antacid liquid bottle, digestive enzyme tablets, and a stomach silhouette showing comfort. Soft mint green background, clean lines, medical illustration style. No text, no brand logos. 750x500px.",
+      prompt: "Photorealistic top-down view of digestive medicines on a clean kitchen counter: white antacid liquid bottle, blister packs of tablets, a small glass of water, and fresh mint leaves as a natural element. Bright, clean, airy feel with natural daylight. No brand names visible. Commercial product photography style.",
       chapter: "03",
     },
     {
       id: "ch4-herbal",
-      prompt: "Warm flat illustration of traditional Korean herbal medicines: a cup of Ssanghwatang (dark herbal drink), dried herbs (ginseng, jujube, angelica root), and traditional medicine packets. Earth tones and warm brown palette, cozy feel. No text. 750x500px.",
+      prompt: "Photorealistic scene of traditional Korean herbal medicine: a ceramic cup filled with dark brown Ssanghwatang herbal drink, dried ginseng roots, red jujube dates, cinnamon sticks, and angelica root arranged on a traditional Korean wooden tray (소반). Warm, moody lighting with steam rising from the cup. Rustic Korean aesthetic. No text.",
       chapter: "04",
     },
     {
       id: "ch5-skin-wound",
-      prompt: "Clean flat illustration of wound care supplies: antibiotic ointment tube, wound healing cream, bandages of various sizes, antiseptic solution bottle, and cotton swabs, neatly arranged. Soft white and light blue background, medical style. No text. 750x500px.",
+      prompt: "Photorealistic flat lay of wound care supplies on a white surface: antibiotic ointment tubes, adhesive bandages of various sizes, a roll of medical gauze, antiseptic solution bottle, cotton balls, medical scissors, and tweezers. Clean, organized, clinical feel with bright even lighting. No brand names. Medical product photography.",
       chapter: "05",
     },
     {
       id: "ch6-allergy",
-      prompt: "Flat illustration showing allergy and hay fever concept: antihistamine pill packet, nasal spray, eye drops, surrounded by floating pollen particles and flower petals. Soft purple and pink palette, clean medical style. No text. 750x500px.",
+      prompt: "Photorealistic scene of allergy season: antihistamine pill packets and nasal spray bottle on a windowsill, with cherry blossom petals floating in through an open window. Soft spring sunlight, slightly hazy atmosphere suggesting pollen. Beautiful but conveys allergy concept. No brand names. Lifestyle photography.",
       chapter: "06",
     },
     {
       id: "ch7-gut-health",
-      prompt: "Friendly flat illustration of gut health: probiotic capsules, a smiling intestine icon, fiber-rich foods (yogurt, banana, whole grain), and a glass of water. Soft green and cream palette, warm and approachable. No text. 750x500px.",
+      prompt: "Photorealistic arrangement of gut health products and foods: probiotic supplement capsules spilling from a bottle, a bowl of Greek yogurt with granola, a ripe banana, a glass of kefir, and whole grain bread. Bright kitchen setting with natural light and a white background. Fresh and healthy feel. No brand names. Food and health photography.",
       chapter: "07",
     },
     {
       id: "ch8-eye-ear-mouth",
-      prompt: "Clean flat illustration of eye, ear and mouth care products: artificial tear drops, eye drop bottle, mouthwash bottle, oral ulcer patch, arranged with icons of an eye, ear and mouth. Soft teal palette, medical style. No text. 750x500px.",
+      prompt: "Photorealistic close-up of eye and oral care products on a bathroom shelf: artificial tear eye drop bottles, a small mouthwash bottle, oral care gel tube, and cotton pads. Clean white bathroom tiles in the background, soft diffused lighting. Hygienic and clinical atmosphere. No brand names. Product photography.",
       chapter: "08",
     },
     {
       id: "ch9-supplements",
-      prompt: "Bright flat illustration of vitamins and supplements: vitamin D capsule, omega-3 fish oil, multivitamin bottle, magnesium tablets, deworming pill, and a small measuring cup. Arranged on a sunny yellow background, clean and organized. No text. 750x500px.",
+      prompt: "Photorealistic overhead shot of daily vitamin and supplement routine: various colorful capsules and tablets arranged in a weekly pill organizer, omega-3 fish oil softgels, vitamin D drops, a glass of water, and a small notebook for tracking. Morning sunlight streaming across a wooden table. Healthy lifestyle feel. No brand names.",
       chapter: "09",
     },
     {
       id: "ch10-storage",
-      prompt: "Flat illustration of a well-organized home medicine cabinet: shelves with labeled sections for different medicine types, a first aid kit, a thermometer, and a locked child-safety latch. Warm, safe feeling with soft green and white colors. No text. 750x500px.",
+      prompt: "Photorealistic image of a well-organized home medicine cabinet mounted on a bathroom wall, door open showing neatly arranged shelves: medicines sorted by category with small labels, a first aid kit on the top shelf, a digital thermometer, and a child-safety lock visible. Warm, safe, family home atmosphere. Clean and trustworthy feel. No brand names.",
       chapter: "10",
     },
   ],

@@ -1,5 +1,6 @@
 # 2장: 감기약 완전 분석
 
+
 ![ch2-cold-medicine](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch2-cold-medicine.png)
 
 ## 감기약의 불편한 진실부터 알고 시작합시다

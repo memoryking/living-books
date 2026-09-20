@@ -1,5 +1,6 @@
 # 10장: 상비약 보관, 폐기, 응급 대처
 
+
 ![ch10-storage](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch10-storage.png)
 
 ## 약을 사는 것만큼 보관하는 것도 중요합니다

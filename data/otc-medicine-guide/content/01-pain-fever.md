@@ -1,5 +1,6 @@
 # 1장: 해열진통제의 모든 것
 
+
 ![ch1-pain-fever](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch1-pain-fever.png)
 
 ## 해열진통제를 이해하는 것이 상비약의 시작입니다

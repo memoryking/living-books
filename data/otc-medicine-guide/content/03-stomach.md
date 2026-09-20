@@ -1,5 +1,6 @@
 # 3장: 위장약과 소화제
 
+
 ![ch3-stomach](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch3-stomach.png)
 
 ## 속이 불편할 때, 무작정 소화제를 찾지 마세요

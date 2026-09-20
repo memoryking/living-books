@@ -1,5 +1,6 @@
 # 6장: 알레르기와 비염약
 
+
 ![ch6-allergy](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch6-allergy.png)
 
 ## 알레르기, 왜 점점 많아지는 걸까요?

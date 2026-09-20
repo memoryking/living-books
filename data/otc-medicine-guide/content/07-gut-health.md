@@ -1,5 +1,6 @@
 # 7장: 변비, 설사, 장 건강
 
+
 ![ch7-gut-health](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch7-gut-health.png)
 
 ## 장 건강이 전신 건강의 열쇠입니다

@@ -1,5 +1,6 @@
 # 5장: 상처, 화상, 피부 약
 
+
 ![ch5-skin-wound](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch5-skin-wound.png)
 
 ## 상처 치료의 패러다임이 바뀌었습니다
