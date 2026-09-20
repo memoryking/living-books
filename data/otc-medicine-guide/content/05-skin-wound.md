@@ -1,5 +1,7 @@
 # 5장: 상처, 화상, 피부 약
 
+![ch5-skin-wound](https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/otc-medicine-guide/ch5-skin-wound.png)
+
 ## 상처 치료의 패러다임이 바뀌었습니다
 
 어릴 때 우리는 상처가 나면 빨간약(머큐로크롬)을 바르고, 딱지가 앉으면 잘 낫고 있다고 배웠습니다. 하지만 현대 상처 치료의 원칙은 완전히 달라졌습니다.
