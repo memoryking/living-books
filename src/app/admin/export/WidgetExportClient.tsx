@@ -271,12 +271,16 @@ export default function WidgetExportClient({
             className="mb-10 p-6 rounded-2xl border border-gray-200 hover:border-blue-300 transition-all"
           >
             {/* 헤더 */}
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
               <span className="text-4xl">{w.emoji}</span>
               <div>
                 <h2 className="text-xl font-bold">{w.title}</h2>
                 <p className="text-gray-500 text-sm">{w.subtitle}</p>
               </div>
+            </div>
+            <div className="mb-6 flex items-center gap-2">
+              <code className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600 font-mono">{w.id}</code>
+              <CopyButton text={`/premium/${w.id}`} label="📎 경로 복사" />
             </div>
 
             {/* 4개 탭 */}
