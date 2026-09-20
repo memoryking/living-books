@@ -268,6 +268,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-20",
     version: 1,
   },
+  {
+    id: "speaking-skills",
+    emoji: "🎙️",
+    title: "말 잘하는 사람들의 비밀",
+    subtitle: "첫 문장부터 달라지는 대화·설득·스피치의 심리학",
+    tags: ["말하기", "대화법", "설득", "스피치"],
+    lastUpdated: "2026-09-21",
+    version: 1,
+  },
 ];
 
 function BookCard({

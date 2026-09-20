@@ -1,0 +1,1329 @@
+/**
+ * Detail page builder functions — Group 1 (builders 1–9)
+ * Auto-split from generate-detail-page.ts
+ */
+import {
+  mobileStyles,
+  sec,
+  statGrid,
+  redditQuote,
+  beforeAfter,
+  checkList,
+  tocItem,
+  faqItem,
+  bigTitle,
+  subtitle,
+  label,
+  spacer,
+  priceBadge,
+  urgencyBanner,
+  ctaBlock,
+  fullPreview,
+  priceAnchor,
+  proofBanner,
+  crossSell,
+  ALL_BOOKS_FOR_CROSSSELL,
+} from "./generate-detail-page";
+
+/* ═══════════════════════════════════════════
+   1. 다이어트 서바이벌 시스템
+   ═══════════════════════════════════════════ */
+
+export function buildDietSecrets(): string {
+  return `<!-- 🏋️ 다이어트 서바이벌 시스템 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#a7f3d0);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🏋️</div>
+    ${bigTitle("다이어트는 의지력이 아닙니다.", "시스템입니다.")}
+    ${subtitle("1,673명의 실패와 성공 데이터에서 뽑아낸 — 요요 없이 진짜 빠지는 법")}
+    ${statGrid([
+      { num: "1,673", label: "명의 실전 경험 분석", color: "#059669" },
+      { num: "10", label: "개 챕터 + 보너스 5개", color: "#059669" },
+      { num: "1,000", label: "원 · 1개월 열람", color: "#059669" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 실패 경험 -->
+  <section style="${sec("background:#fff7ed;")}">
+    ${bigTitle("수십 번 시도했는데", "3주 차에 항상 무너지죠?")}
+    ${subtitle("혹시 이런 경험, 있지 않으세요?")}
+    ${redditQuote("첫 2주는 항상 잘 돼. 체중계도 반응하고, 의지도 있고. 그런데 3주 차부터 폭식이 시작되고, 한 달이면 원래 체중 + 2kg이야. 이걸 10년째 반복 중.", "loseit")}
+    ${redditQuote("다이어트의 진짜 적은 음식이 아니야. 퇴근 후 지친 상태에서 냉장고 앞에 서는 그 순간이야.", "fitness")}
+    ${redditQuote("요요는 의지력 문제가 아니에요. 뇌가 '기근이다!'라고 판단해서 식욕 호르몬을 폭발시키는 거예요. 과학입니다.", "nutrition")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("읽기 전과 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "극단적 칼로리 제한 → 3주 폭식 → 요요",
+        "의지력에 의존 → 자기 비난의 악순환",
+        "유행 다이어트를 전전긍긍",
+        "감정적 식사를 의지로 참으려 함",
+      ],
+      [
+        "300~500kcal 적자 → 느리지만 지속 가능",
+        "환경 설계 → 의지력이 필요 없는 시스템",
+        "CICO 원리 이해 → 어떤 방법이든 적용",
+        "감정 인식 → '왜 먹는지' 파악 후 대처",
+      ],
+      "지금까지의 다이어트",
+      "이 가이드 이후",
+      "#fef2f2",
+      "#f0fdf4"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("각 챕터는 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "다이어트의 진짜 적은 음식이 아니다", false, "#059669")}
+    ${tocItem("02", "CICO — 유일한 법칙, 하지만 함정이 있다", false, "#059669")}
+    ${tocItem("03", "환경을 바꾸면 의지력이 필요 없다", true, "#059669")}
+    ${tocItem("04", "감정적 식사 — '왜 먹는지'가 더 중요하다", true, "#059669")}
+    ${tocItem("05", "3주 벽 — 모든 다이어트가 무너지는 그 시점", true, "#059669")}
+    ${tocItem("06", "Fail Fast — 한 끼 실수를 30초에 리셋", false, "#059669")}
+    ${tocItem("07", "즐기면서 빠지는 식단의 현실적 규칙", false, "#059669")}
+    ${tocItem("08", "아침 산책이 인생을 바꾼다", false, "#059669")}
+    ${tocItem("09", "체중계 숫자에 휘둘리지 마라", false, "#059669")}
+    ${tocItem("10", "유지 모드 — 감량보다 중요한 것", true, "#059669")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 3주 돌파 전략 / 감정적 식사 탈출 / 회식 서바이벌 / 냉장고 리셋 / 유지 모드 체크리스트</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "3",
+    "환경을 바꾸면 의지력이 필요 없다",
+    [
+      '"냉장고를 바꾸면 몸이 바뀐다"',
+      "행동경제학이 알려주는 비밀: 기본값을 바꿔라",
+      "환경 설계 전략 6가지",
+      "환경 vs 의지력: 최종 비교",
+      "실천 과제",
+    ],
+    `<p style="margin:0 0 16px;">노벨경제학상을 받은 행동경제학자 리처드 탈러는 이런 사실을 발견했습니다:</p>
+      <p style="margin:0 0 16px;font-weight:700;font-size:17px;color:#111;">사람들은 "기본 선택지(default)"를 거의 항상 고른다.</p>
+      <p style="margin:0 0 16px;">구내식당 실험에서, 과일을 눈높이에 놓고 디저트를 구석에 놓자 과일 소비가 <strong>25% 증가</strong>했습니다. 메뉴가 바뀐 것이 아닙니다. <strong>위치만 바뀌었습니다.</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#f0fdf4;border-radius:10px;font-weight:600;color:#059669;">💡 의지력으로 행동을 바꾸려 하지 말고, 환경을 바꿔서 행동이 자동으로 바뀌게 하라.</p>
+      <p style="margin:0;">코넬 대학교 연구: 접시 크기를 12인치에서 10인치로 줄이면, 같은 양의 음식이 <strong>22% 더 많아 보입니다.</strong> 작은 접시에 가득 담으면, 적게 먹으면서도 "충분히 먹었다"는 만족감을 느낍니다.</p>`,
+    "#059669",
+    "linear-gradient(160deg,#f0fdf4,#ecfdf5)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "수십 번 다이어트를 시도했지만 3주를 못 넘긴 분",
+        "요요를 반복하며 '나는 의지가 약하다'고 자책하는 분",
+        "먹는 즐거움은 포기하고 싶지 않은 분",
+        "과학적 원리를 이해하고 자기만의 시스템을 만들고 싶은 분",
+      ],
+      "✅",
+      "#f0fdf4"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "마법의 다이어트 약을 찾는 분 (그런 건 없습니다)",
+        "읽기만 하고 실천하지 않을 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("극단적 칼로리 제한 없이 정말 빠질 수 있나요?", "네. 300~500kcal 적자면 한 달 2~3kg, 1년이면 24~36kg입니다. 극단적 제한은 뇌의 생존 반응을 깨워 오히려 역효과입니다.")}
+    ${faqItem("3주 차에 무너지는 이유가 뭔가요?", "초기 동기 소멸 + 수분 빠진 후 진짜 지방 감량 속도만 남아 정체감 상승. 습관 형성 66일 중 가장 힘든 중간 지점입니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "영양사 1:1 상담", price: "50,000원~", note: "1회" },
+        { what: "다이어트 전문 서적", price: "18,000원~", note: "업데이트 없음" },
+        { what: "온라인 다이어트 강의", price: "99,000원~", note: "일방적 강의" },
+      ],
+      "1,000원",
+      "1개월 열람 · 계속 업데이트",
+      "#059669"
+    )}
+    ${proofBanner(
+      ["📊 Reddit 1,673명 분석", "🔄 계속 업데이트", "💊 약사가 검증", "📱 모바일 최적화"],
+      "#f0fdf4",
+      "#059669"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("diet-secrets", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🏋️", '"이번이 마지막 다이어트"가', "진짜가 되는 시스템", "계속 업데이트되는 살아있는 가이드", "#059669")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   2. 생활 속 환경호르몬과 질병
+   ═══════════════════════════════════════════ */
+
+export function buildEndocrineDisruptors(): string {
+  return `<!-- 🧪 생활 속 환경호르몬과 질병 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#f0fdfa,#ccfbf1,#99f6e4);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🧪</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#134e4a;letter-spacing:-0.5px;">"BPA Free"라고 쓰여 있으면<br>안전한 거 아닌가요?</h2>
+    ${subtitle("아닙니다. BPS, BPF가 대신 들어갑니다. — 이 가이드가 진짜를 알려드립니다.")}
+    ${statGrid([
+      { num: "80%", label: "노출 감소 — 주방만 바꿔도", color: "#0d9488" },
+      { num: "20", label: "개 피해야 할 성분 정리", color: "#0d9488" },
+      { num: "10+5", label: "챕터 + 보너스 체크리스트", color: "#0d9488" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 문제 인식: 충격 팩트 -->
+  <section style="${sec("background:#1a1a2e;color:#fff;")}">
+    <div style="font-size:13px;color:#5eead4;font-weight:600;letter-spacing:2px;margin-bottom:24px;">FACTS YOU NEED TO KNOW</div>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px 0;">
+      <div style="flex:1 1 240px;max-width:260px;padding:32px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(94,234,212,.2);border-radius:16px;">
+        <div style="font-size:32px;font-weight:800;color:#5eead4;margin-bottom:8px;">93%</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;">미국인의 소변에서<br>BPA가 검출됩니다</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;">— CDC NHANES</div>
+      </div>
+      <div style="flex:1 1 240px;max-width:260px;padding:32px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(94,234,212,.2);border-radius:16px;">
+        <div style="font-size:32px;font-weight:800;color:#5eead4;margin-bottom:8px;">영원히</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;">PFAS는 분해되지 않아<br>"영원한 화학물질"이라 불립니다</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;">— EPA</div>
+      </div>
+      <div style="flex:1 1 240px;max-width:260px;padding:32px 24px;background:rgba(255,255,255,.05);border:1px solid rgba(94,234,212,.2);border-radius:16px;">
+        <div style="font-size:32px;font-weight:800;color:#5eead4;margin-bottom:8px;">5g</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;">매주 신용카드 1장 분량의<br>미세플라스틱을 섭취합니다</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:8px;">— WWF 연구</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:rgba(255,255,255,.6);margin-top:24px;">하지만 공포에 빠질 필요는 없습니다. <strong style="color:#5eead4;">할 수 있는 것부터</strong> 바꾸면 됩니다.</p>
+  </section>
+
+  <!-- 공감 -->
+  <section style="${sec("background:#fff7ed;")}">
+    ${bigTitle("이런 혼란,", "느끼고 계시죠?")}
+    ${redditQuote("BPA Free 텀블러를 샀는데, 나중에 보니 BPS가 들어있대. 그게 더 나쁠 수 있다고? 뭘 믿어야 하는 거야.", "science")}
+    ${redditQuote("아이 젖병, 장난감, 카시트... 전부 걱정인데 하나하나 찾아볼 시간이 없어. 누가 정리 좀 해줬으면.", "Parenting")}
+    ${redditQuote("유기농만 사면 되는 줄 알았는데 PFAS는 유기농 농장 토양에도 있다고? 도대체 어디서부터 시작해야 해?", "environment")}
+  </section>
+
+  <!-- 해결: 핵심 원칙 -->
+  <section style="${sec("background:linear-gradient(160deg,#f0fdfa,#fff);")}">
+    <div style="max-width:560px;margin:0 auto;padding:40px;background:#fff;border-radius:20px;border:2px solid #99f6e4;box-shadow:0 4px 24px rgba(13,148,136,.08);">
+      <div style="font-size:48px;margin-bottom:16px;">💡</div>
+      <h2 style="font-size:28px;font-weight:800;color:#134e4a;margin:0 0 16px;">이 가이드의 핵심 원칙</h2>
+      <p style="font-size:20px;font-weight:700;color:#0d9488;margin:0 0 12px;">20%만 바꿔도 80% 노출이 줄어듭니다</p>
+      <p style="font-size:15px;color:#6b7280;line-height:1.7;margin:0;">모든 것을 바꿀 필요 없습니다.<br>주방 → 세면도구 → 아이 용품 순서로,<br>예산에 맞게, 할 수 있는 것부터.</p>
+    </div>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "환경호르몬이란 무엇인가 — 과학적 정의와 작동 원리", false, "#0d9488")}
+    ${tocItem("02", "BPA/BPS/프탈레이트 — 'BPA Free'의 함정", true, "#0d9488")}
+    ${tocItem("03", "PFAS — 영원한 화학물질의 실체", true, "#0d9488")}
+    ${tocItem("04", "미세플라스틱 — 이미 당신 안에 있다", false, "#0d9488")}
+    ${tocItem("05", "주방 — 가장 쉽게 바꿀 수 있는 곳", true, "#0d9488")}
+    ${tocItem("06", "화장품·세면도구 — '향료'가 위험한 이유", false, "#0d9488")}
+    ${tocItem("07", "아이와 임산부 — 가장 취약한 그룹", true, "#0d9488")}
+    ${tocItem("08", "식품과 물 — 먹고 마시는 것의 진실", false, "#0d9488")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 주방 교체 가이드 / 성분표 해독기 / 아이 안전 체크리스트 / 세면도구 교체 / 가정 리셋</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    "주방 — 가장 쉽게 바꿀 수 있는 곳",
+    [
+      "왜 주방부터인가",
+      "1단계: 플라스틱 용기 → 유리/스테인리스",
+      "2단계: 논스틱 팬 → 스테인리스/주철/세라믹",
+      "3단계: 랩 → 밀랍랩 또는 실리콘 뚜껑",
+      "4단계: 정수기 — 수돗물의 진실",
+    ],
+    `<p style="margin:0 0 16px;">프탈레이트의 체내 반감기는 약 12시간입니다. BPA도 6시간 정도입니다. <strong>노출원을 차단하면 며칠 안에 체내 농도가 크게 감소합니다.</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#fef2f2;border-radius:10px;font-weight:700;color:#991b1b;">🚨 가장 위험한 행동: 플라스틱 용기에 음식을 넣고 전자레인지 돌리기</p>
+      <p style="margin:0 0 16px;">이것 하나만 멈추세요. 이것이 이 책 전체에서 <strong>가장 중요한 실천 사항</strong>일 수 있습니다.</p>
+      <p style="margin:0 0 16px;">2023년 네브래스카 대학 연구에 따르면, 전자레인지에 3분간 가열한 플라스틱 용기에서 <strong>수십억 개의 나노플라스틱</strong>이 방출되었습니다.</p>
+      <p style="margin:0;padding:16px;background:#f0fdfa;border-radius:10px;color:#0d9488;">💡 그리고 한 가지 더: 생수 속 미세플라스틱은 수돗물의 <strong>2배 이상</strong>입니다 (2018년 SUNY 연구). 안전하려고 선택한 것이 오히려 더 위험했던 셈입니다.</p>`,
+    "#0d9488",
+    "linear-gradient(160deg,#f0fdfa,#ecfdf5)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(
+      [
+        "환경호르몬 정보를 봤지만 무엇이 과장인지 구분 못 하는 분",
+        "아이를 키우며 용품 선택이 불안한 부모",
+        "유기농·안전 제품을 사고 싶지만 예산이 한정된 분",
+        "과학적 근거 기반으로 실천법을 정리하고 싶은 분",
+      ],
+      "✅",
+      "#f0fdfa"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("BPA Free 제품이 정말 안전한가요?", "아닙니다. BPS, BPF 등 대체물질이 사용되며 일부는 BPA만큼 위험합니다. 가이드에서 대안을 구체적으로 알려드립니다.")}
+    ${faqItem("예산이 적다면 뭘 먼저 바꿔야 하나요?", "주방 플라스틱 용기 → 스테인리스/유리로 교체가 1순위입니다. 가장 적은 비용으로 가장 큰 노출 감소 효과를 봅니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새 연구가 나오면 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "환경 컨설팅 업체", price: "200,000원~", note: "가정용" },
+        { what: "환경호르몬 관련 서적", price: "20,000원~", note: "업데이트 없음" },
+        { what: "성분 분석 앱 구독", price: "5,000원/월", note: "성분만 확인" },
+      ],
+      "1,000원",
+      "실천 가이드 + 체크리스트 5개 + 업데이트",
+      "#0d9488"
+    )}
+    ${proofBanner(
+      ["🔬 NIH/EPA 교차 검증", "📋 체크리스트 5종", "💊 약사가 검증", "🔄 새 연구 반영 업데이트"],
+      "#f0fdfa",
+      "#0d9488"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("endocrine-disruptors", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🧪", "불안하지 않아도 됩니다.", "할 수 있는 것부터 바꾸세요.", "3가지만 바꾸면 80%가 해결됩니다.", "#0d9488")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   3. 정리와 청소의 기술
+   ═══════════════════════════════════════════ */
+
+export function buildDeclutterClean(): string {
+  return `<!-- 🧹 정리와 청소의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fffbeb,#fef3c7,#fde68a);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🧹</div>
+    ${bigTitle("서랍 하나.", "5분 타이머.")}
+    <p style="font-size:20px;color:#92400e;font-weight:600;margin:0 0 8px;">이것만으로 시작됩니다.</p>
+    ${subtitle("정리는 의지력이 아닙니다. 시스템입니다. — Reddit 수백 명의 실전 경험 기반")}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 3단계 감정 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 감정들,", "익숙하시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">😰</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">압도감</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">집 전체를 보면<br>아무것도 못 하겠다</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔄</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">무한 반복</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">주말 폭풍 청소 →<br>3일 만에 원점</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">💔</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">감정적 짐</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">물건에 감정이 담겨서<br>차마 못 버린다</div>
+      </div>
+    </div>
+    ${redditQuote("ADHD 있는 사람으로서 말할게. 정리는 'clean your room' 같은 큰 명령이 문제야. '서랍 하나만 해'가 정답이야. 5분이면 돼.", "ADHD")}
+  </section>
+
+  <!-- 핵심 시스템 -->
+  <section style="${sec("background:#78350f;color:#fff;")}">
+    <div style="font-size:13px;color:#fde68a;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SYSTEM</div>
+    <h2 style="font-size:clamp(28px,5vw,44px);font-weight:800;color:#fff;margin:0 0 16px;">깨끗한 집을 유지하는 사람들의 비밀</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,.7);margin:0 0 32px;line-height:1.7;">그들은 '대청소'를 하지 않습니다.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:260px;padding:24px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(253,230,138,.2);">
+        <div style="font-size:28px;font-weight:800;color:#fde68a;">규칙 1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">모든 물건에 자리를 정한다<br><small style="color:rgba(255,255,255,.5);">"내려놓지 말고 치워라"</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:260px;padding:24px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(253,230,138,.2);">
+        <div style="font-size:28px;font-weight:800;color:#fde68a;">규칙 2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">매일 5~10분만 한다<br><small style="color:rgba(255,255,255,.5);">타이머를 켜고 시작</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:260px;padding:24px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(253,230,138,.2);">
+        <div style="font-size:28px;font-weight:800;color:#fde68a;">규칙 3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">매일 밤 주방만 리셋한다<br><small style="color:rgba(255,255,255,.5);">아침이 달라진다</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fffbeb;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 정리가 안 되는가 — 뇌과학적 이유", false, "#d97706")}
+    ${tocItem("02", "서랍 하나부터 — 시작의 기술", true, "#d97706")}
+    ${tocItem("03", "'내려놓지 말고 치워라' — 원터치 규칙", false, "#d97706")}
+    ${tocItem("04", "5분 타이머의 마법", true, "#d97706")}
+    ${tocItem("05", "매일 밤 주방 리셋", true, "#d97706")}
+    ${tocItem("06", "감정적 짐 내려놓기 — 못 버리는 것들", false, "#d97706")}
+    ${tocItem("07", "The Basket — ADHD 친화적 시스템", true, "#d97706")}
+    ${tocItem("08", "방별·시간별 루틴 설계", false, "#d97706")}
+    ${tocItem("09", "가족/동거인과 함께하는 법", false, "#d97706")}
+    ${tocItem("10", "정리는 끝나지 않는다 — 그래서 시스템이다", false, "#d97706")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 30일 챌린지 / 주방 완전 리셋 / 옷장 정리 / ADHD·우울증 특별 가이드 / 가족 참여 전략</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "4",
+    "5분 타이머의 마법",
+    [
+      "압도감을 이기는 가장 쉬운 무기",
+      "왜 5분인가",
+      "5분 타이머 실전 가이드",
+      "ADHD와 5분 타이머",
+      "우울증과 5분 타이머",
+    ],
+    `<p style="margin:0 0 16px;">정리에서 가장 어려운 것은 <strong>"시작하는 것"</strong>입니다. 일단 시작하면, 관성이 생깁니다.</p>
+      <p style="margin:0 0 16px;">심리학에서 이것을 <strong>"제이가르닉 효과(Zeigarnik Effect)"</strong>라고 합니다. 시작한 일은 끝내고 싶어지는 심리입니다. 5분 타이머는 시작의 장벽을 극도로 낮춰서 관성을 만들어줍니다.</p>
+      <p style="margin:0 0 16px;">이것이 5분 타이머의 진짜 비밀입니다. "5분만 하자"고 시작하면, 대부분의 사람들은 <strong>15~20분을 하게 됩니다.</strong> 일단 시작하면 "여기까지만 더 하자"가 반복되기 때문입니다.</p>
+      <p style="margin:0 0 16px;">수학적으로, 매일 5분씩 정리하면 한 달에 <strong>150분(2시간 30분)</strong>입니다. 일주일에 한 번 "제대로" 해야지 하면서 결국 안 하면 <strong>0분</strong>입니다.</p>
+      <p style="margin:0;padding:16px;background:#fffbeb;border-radius:10px;font-weight:700;font-size:17px;color:#92400e;">💡 불완벽한 5분이 완벽한 0분보다 백 배 낫습니다.</p>`,
+    "#d97706",
+    "linear-gradient(160deg,#fffbeb,#fef3c7)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "시작할 수 없어 얼어붙는 분 (ADHD/우울증 포함)",
+        "주말 대청소를 반복하지만 유지가 안 되는 분",
+        "가족이 안 도와줘서 혼자 전쟁하는 분",
+        "미니멀리즘이 아닌, 현실적인 정리법을 원하는 분",
+      ],
+      "✅",
+      "#fffbeb"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("서랍 하나부터 시작하면 집 전체가 정말 바뀌나요?", "네. 작은 성공이 동기를 만들고, 동기가 다음 행동을 만듭니다. Reddit에서 가장 많이 추천된 방법이 바로 이것입니다.")}
+    ${faqItem("ADHD가 있어도 따라할 수 있나요?", "이 가이드는 ADHD를 전제로 설계되었습니다. 'The Basket' 시스템, 5분 타이머 등 ADHD 친화적 방법만 모았습니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "정리 컨설턴트 방문", price: "150,000원~", note: "1회" },
+        { what: "정리 관련 서적", price: "16,000원~", note: "업데이트 없음" },
+        { what: "정리 온라인 클래스", price: "49,000원~", note: "일방적 강의" },
+      ],
+      "1,000원",
+      "ADHD 가이드 포함 · 계속 업데이트",
+      "#d97706"
+    )}
+    ${proofBanner(
+      ["🧹 Reddit 실전 경험", "🧠 ADHD 맞춤 설계", "👨‍👩‍👧 가족 참여 전략", "🔄 계속 업데이트"],
+      "#fffbeb",
+      "#92400e"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("declutter-clean", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🧹", "서랍 하나, 5분 타이머.", "오늘부터 시스템이 대신 해줍니다.", "계속 업데이트되는 살아있는 가이드", "#d97706")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   4. GLP-1 비만약 완전 가이드
+   ═══════════════════════════════════════════ */
+
+export function buildGlp1Guide(): string {
+  return `<!-- 💊 GLP-1 비만약 완전 가이드 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#eff6ff,#dbeafe,#bfdbfe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💊</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#1e3a5f;letter-spacing:-0.5px;">오젬픽, 위고비, 마운자로<br>약사가 정리해드립니다</h2>
+    ${subtitle("41만 명의 실제 복용 경험 + BMJ·NEJM·Harvard 최신 연구 기반")}
+    ${statGrid([
+      { num: "41만+", label: "명의 Reddit 경험 분석", color: "#2563eb" },
+      { num: "10+5", label: "챕터 + 보너스 가이드", color: "#2563eb" },
+      { num: "약사", label: "가 직접 쓴 전문 가이드", color: "#2563eb" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 불안 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle('"이 약, 맞아도 될까요?"')}
+    <p style="font-size:17px;color:#6b7280;margin:0 0 32px;line-height:1.7;">요즘 약국에서 가장 많이 듣는 질문입니다.<br>유튜브에선 20kg 뺐다 하고, 뉴스에선 부작용이 위험하다 하고.<br><strong style="color:#1e3a5f;">정보는 넘치는데, 정리된 답은 없습니다.</strong></p>
+    ${redditQuote("진료실에서 3분 만에 처방받고, 약국에서 30초 만에 약 받고, 집에 와서 혼자 주사기 들고 고민해. '이게 정말 맞는 건가?' 물어볼 곳이 없어.", "Ozempic")}
+    ${redditQuote("Food noise가 사라졌어. 다음 끼니를 항상 생각했는데, 이제는 먹으라고 알림을 설정해야 해. 인생이 바뀌었어.", "tirzepatide")}
+    ${redditQuote("끊은 지 3개월, 17kg 중 12kg가 돌아왔어. 습관을 안 만들고 약만 믿은 게 실수였어.", "loseit")}
+  </section>
+
+  <!-- 약물 비교 하이라이트 -->
+  <section style="${sec("background:#1e3a5f;color:#fff;")}">
+    <div style="font-size:13px;color:#93c5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">DRUG COMPARISON</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">오젬픽 vs 마운자로, 뭐가 다른가요?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px 0;">
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(255,255,255,.06);border:1px solid rgba(147,197,253,.3);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#93c5fd;margin-bottom:16px;">세마글루타이드</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:16px;">오젬픽 · 위고비</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.8;">
+          GLP-1 단일 수용체<br>
+          평균 체중 감소 15~17%<br>
+          Food noise 감소 효과<br>
+          주 1회 피하주사
+        </div>
+      </div>
+      <div style="flex:1 1 280px;max-width:380px;padding:32px 28px;background:rgba(147,197,253,.1);border:2px solid rgba(147,197,253,.4);border-radius:16px;text-align:left;">
+        <div style="font-size:24px;font-weight:800;color:#93c5fd;margin-bottom:4px;">티르제파타이드</div>
+        <div style="font-size:13px;color:#fde68a;margin-bottom:16px;">마운자로 · 젭바운드 — 41만 명 분석 결과 우위</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);line-height:1.8;">
+          GLP-1 + GIP 이중 수용체<br>
+          평균 체중 감소 22~26%<br>
+          Food noise 억제 더 강력<br>
+          주 1회 피하주사
+        </div>
+      </div>
+    </div>
+    <p style="font-size:13px;color:rgba(255,255,255,.4);margin-top:16px;">이 비교는 챕터 2에서 더 자세히 다룹니다</p>
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("읽기 전과 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "부작용이 무서워서 시작을 못 함",
+        "3분 진료로 궁금증 해소 불가",
+        "근손실 위험을 모른 채 감량만 진행",
+        "약 중단 후 체중 전부 반등",
+      ],
+      [
+        "부작용별 대처법을 미리 숙지",
+        "약사가 정리한 완전 가이드 보유",
+        "단백질 1.2~1.5g/kg + 근력운동 병행",
+        "12주 유지 로드맵으로 체계적 전환",
+      ],
+      "가이드 없이",
+      "이 가이드와 함께",
+      "#fef2f2",
+      "#eff6ff"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "GLP-1이 뭔가요? — 약사가 쉽게 설명하는 원리", false, "#2563eb")}
+    ${tocItem("02", "오젬픽 vs 마운자로 — 41만 명 분석 비교", true, "#2563eb")}
+    ${tocItem("03", "시작하기 전에 — 필수 검사·약물 상호작용", false, "#2563eb")}
+    ${tocItem("04", "부작용 완전 정복 — 증상별 대처법", true, "#2563eb")}
+    ${tocItem("05", "Food Noise의 소멸 — 뇌가 바뀌는 경험", true, "#2563eb")}
+    ${tocItem("06", "근손실을 막아라 — 단백질·운동 전략", true, "#2563eb")}
+    ${tocItem("07", "위장 관리 — GERD, IBS 대처법", false, "#2563eb")}
+    ${tocItem("08", "비용과 접근성 — 한국에서의 현실", false, "#2563eb")}
+    ${tocItem("09", "끊을 것인가, 유지할 것인가 — 3가지 전략", true, "#2563eb")}
+    ${tocItem("10", "약 너머의 삶 — 5가지 습관 만들기", false, "#2563eb")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 보너스 5개: 부작용 119 매뉴얼 / 식단 가이드 / 약물 비교표 / 약물 상호작용 체크 / 중단 후 12주 로드맵</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    '"Food Noise"의 소멸 — 뇌가 바뀌는 경험',
+    [
+      '"그냥... 멈췄어요"',
+      "Food Noise는 어떤 느낌인가?",
+      "과학적으로 무슨 일이 일어나는가",
+      "알코올 갈망도 줄어든다?",
+      "약을 끊으면 food noise는 돌아오나?",
+    ],
+    `<p style="margin:0 0 16px;font-style:italic;color:#6b7280;">"아침을 먹으면서 점심에 뭘 먹을지 생각했어요. 점심을 먹으면서 저녁에 뭘 먹을지 생각했어요. 매 순간이 다음 식사를 향한 카운트다운이었어요."</p>
+      <p style="margin:0 0 16px;font-style:italic;color:#6b7280;">"회의 중에도 머릿속에서는 '냉장고에 치즈케이크가 있었지...'가 재생되고 있었어요. 집중할 수가 없었어요."</p>
+      <div style="margin:16px 0;padding:20px;background:#eff6ff;border-radius:12px;border-left:4px solid #2563eb;">
+        <p style="margin:0 0 8px;font-size:13px;color:#2563eb;font-weight:600;">Reddit 사용자 Salty_beach:</p>
+        <p style="margin:0;font-style:italic;font-size:14px;line-height:1.8;color:#374151;">"ADHD가 있어서 제 뇌는 탄수화물이나 단것에서 오는 도파민 히트를 사랑했어요. TV를 보다가 무의식적으로 부엌에 가서 시리얼 한 줌을 입에 넣고 있었어요. 일어난 것도, 시리얼을 꺼낸 것도 기억이 안 나요. <strong>자기 뇌와 싸워서 이길 수 있는 사람이 있나요?</strong> 이 약을 먹고 나서 음식은 더 이상 제 관심사가 아니에요."</p>
+      </div>
+      <p style="margin:0;font-style:italic;text-align:center;font-size:17px;font-weight:600;color:#1e3a5f;">"먹어. 지금. 항상. — 이렇게 떠들던 머릿속 목소리가 꺼진 것이 정말 놀라워요."</p>`,
+    "#2563eb",
+    "linear-gradient(160deg,#eff6ff,#dbeafe)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(
+      [
+        "GLP-1에 관심 있지만 정보 혼란으로 결정 못 하는 분",
+        "이미 복용 중인데 부작용·용량·식단이 불안한 분",
+        "한국에서 처방 방법·비용·보험 정보가 궁금한 분",
+        "약 중단 후 체중 유지 전략이 필요한 분",
+      ],
+      "✅",
+      "#eff6ff"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("오젬픽과 마운자로 중 어떤 것이 맞나요?", "챕터 2에서 41만 명 분석 데이터를 기반으로 상세 비교합니다. 일반적으로 티르제파타이드(마운자로)가 더 강력하지만, 개인 상황에 따라 다릅니다.")}
+    ${faqItem("근육이 빠진다는데 어떻게 막나요?", "체중 감소분의 25~40%가 근육일 수 있습니다. 단백질 1.2~1.5g/kg, 주 3회 근력운동이 핵심입니다. 챕터 6에서 구체적 식단·운동 프로토콜을 다룹니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새 연구·약물 정보가 나오면 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "유튜브 영상 수십 개 찾아보기", price: "3~4시간", note: "광고·부정확 섞임" },
+        { what: "주변 지인 경험담 모으기", price: "사람마다 다름", note: "체질·용량 다 다름" },
+        { what: "네이버 카페·블로그 검색", price: "2~3시간", note: "후기 산재·검증 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 보너스 5개 + 계속 업데이트",
+      "#2563eb"
+    )}
+    ${proofBanner(
+      ["👨‍⚕️ 현직 약사 저자", "📊 41만 명 분석", "📚 BMJ·NEJM 검증", "🔄 새 약물 정보 업데이트"],
+      "#eff6ff",
+      "#2563eb"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("glp1-guide", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("💊", "30분짜리 약사 상담을", "한 권에 담았습니다.", "지금 결정을 도와드립니다.", "#2563eb")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   5. 몸이 젊어지는 4주 저속노화 리셋
+   ═══════════════════════════════════════════ */
+
+export function buildSlowAging(): string {
+  return `<!-- 🌿 몸이 젊어지는 4주 저속노화 리셋 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#d1fae5,#a7f3d0);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🌿</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#14532d;letter-spacing:-0.5px;">저속노화 영상 100개 봤는데<br>렌틸콩은 아직 냉장고에?</h2>
+    <p style="font-size:20px;color:#166534;font-weight:600;margin:0 0 8px;">이 책은 응원하지 않습니다. 시킵니다.</p>
+    ${subtitle("식단·혈당·운동·수면, 4주 28일 실전 프로그램 — 매일 O/X만 체크하세요")}
+    ${statGrid([
+      { num: "4주", label: "28일 실전 프로그램", color: "#059669" },
+      { num: "10+1", label: "챕터 + 실행 키트 부록", color: "#059669" },
+      { num: "70%", label: "합격선 — 무너져도 OK", color: "#059669" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 가속노화 신호 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 신호들,", "익숙하시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">😴</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">식후 졸음</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">점심만 먹으면<br>쏟아지는 잠</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🪞</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">거울 속 변화</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">1년 새 부쩍<br>달라진 얼굴</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔋</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">오후 무기력</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">안 개운한 아침,<br>계단 앞 엘리베이터</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;">이것들은 나이 탓이 아닙니다. <strong style="color:#059669;">가속노화 신호</strong>이고, 되돌릴 수 있습니다.</p>
+  </section>
+
+  <!-- 핵심 시스템 -->
+  <section style="${sec("background:#14532d;color:#fff;")}">
+    <div style="font-size:13px;color:#86efac;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE 4-WEEK SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">매주 하나씩, 4가지만 바꿉니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">1주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">식탁 리셋<br><small style="color:rgba(255,255,255,.5);">밥솥 기본값 교체</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">2주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">혈당 안정<br><small style="color:rgba(255,255,255,.5);">거꾸로 먹기+식후 걷기</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">3주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">움직임 리셋<br><small style="color:rgba(255,255,255,.5);">거실 근력 주 2회</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(134,239,172,.2);">
+        <div style="font-size:28px;font-weight:800;color:#86efac;">4주차</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">수면 리셋<br><small style="color:rgba(255,255,255,.5);">취침 전 90분 활주로</small></div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:24px;">판단은 책이 하고, 당신은 O/X만 체크하면 됩니다</p>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("00", "들어가며: 이 책은 응원하지 않습니다, 시킵니다", false, "#059669")}
+    ${tocItem("01", "당신은 지금도 늙고 있다: 가속노화 자가진단", false, "#059669")}
+    ${tocItem("02", "저속노화의 과학: 노화 속도를 정하는 5개의 스위치", false, "#059669")}
+    ${tocItem("03", "시작 전 준비: 측정하고, 비우고, 채워라", false, "#059669")}
+    ${tocItem("04", "1주차 — 식탁 리셋: 저속노화 식단의 뼈대", true, "#059669")}
+    ${tocItem("05", "2주차 — 혈당 안정: 혈당 스파이크를 잡는 기술", true, "#059669")}
+    ${tocItem("06", "3주차 — 움직임 리셋: 근육은 노후 연금이다", true, "#059669")}
+    ${tocItem("07", "4주차 — 수면·회복 리셋: 자는 동안 젊어져라", true, "#059669")}
+    ${tocItem("08", "보이지 않는 액셀: 스트레스와 뇌의 저속노화", false, "#059669")}
+    ${tocItem("09", "트러블슈팅: 무너지는 7가지 순간과 복구 프로토콜", true, "#059669")}
+    ${tocItem("10", "28일 이후: 평생 가는 저속노화 시스템", false, "#059669")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 4주 식단표 / 28일 로드맵 / 주간 체크리스트 / 외식 생존 가이드 / 15분 레시피 7선</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "9",
+    "트러블슈팅: 무너지는 7가지 순간과 복구 프로토콜",
+    [
+      "무너짐은 변수인가, 상수인가",
+      "상황 1: 회식과 외식이 연달아 잡혔다",
+      "상황 2: 야식 욕구가 폭발했다",
+      "상황 3: 여행·명절·휴가로 리듬이 깨졌다",
+      "상황 4: 2주째, 체중이 꿈쩍도 하지 않는다",
+      "상황 5: 운동할 시간이 도저히 안 나온다",
+      "상황 6: 가족이 협조하지 않는다",
+      "상황 7: 다 귀찮고 의욕이 사라졌다",
+    ],
+    `<p style="margin:0 0 16px;">4주짜리 습관 프로그램을 시작한 사람 중 끝까지 한 번도 안 무너지는 사람은 없습니다. <strong>무너짐은 변수가 아니라 상수입니다.</strong></p>
+      <p style="margin:0 0 16px;">그렇다면 성패를 가르는 것은 무너지느냐가 아니라, <strong>무너진 뒤 몇 시간 만에 복귀하느냐</strong>입니다.</p>
+      <p style="margin:0 0 16px;">실패자는 한 번의 일탈을 "다 망했다"로 해석해 폭주하고, 성공자는 같은 일탈을 <strong>"다음 끼니에 복구"</strong>로 처리합니다. 심리학에서는 전자를 <em>"에라 모르겠다 효과(what-the-hell effect)"</em>라고 부릅니다.</p>
+      <p style="margin:0;padding:16px;background:#f0fdf4;border-radius:10px;font-weight:600;color:#059669;">💡 그래서 이 챕터는 사과문이 아니라 정비 매뉴얼입니다. 사고가 난 뒤에 매뉴얼을 찾는 정비사는 없습니다.</p>`,
+    "#059669",
+    "linear-gradient(160deg,#f0fdf4,#ecfdf5)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(
+      [
+        "저속노화 정보는 많이 봤지만 실행으로 옮기지 못한 분",
+        "식후 졸음, 오후 무기력이 일상이 된 30~50대",
+        "헬스장 없이 집과 일상 안에서 시작하고 싶은 분",
+        "다이어트가 아니라 '천천히 늙는 몸'을 원하는 분",
+      ],
+      "✅",
+      "#f0fdf4"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "읽기만 하고 실행하지 않을 분",
+        "4주 만에 극적인 체중 감량을 원하는 분",
+        "질환 치료 목적의 의학 정보를 찾는 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("운동 완전 초보도 가능한가요?", "네. 모든 운동은 맨몸·거실 기준이며, 50대 이상을 위한 강도 조절 안내도 포함되어 있습니다.")}
+    ${faqItem("식단이 어렵거나 비싸지 않나요?", "대형마트 1회 장보기로 시작할 수 있고, 모든 레시피는 15분 이내 조리 기준입니다. 외식/편의점 대응 가이드도 들어 있습니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "저속노화 온라인 강의", price: "89,000원~", note: "일방적 강의" },
+        { what: "건강 코칭 1:1 상담", price: "100,000원~", note: "1회" },
+        { what: "저속노화 관련 서적", price: "18,000원~", note: "업데이트 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 실행 키트 + 계속 업데이트",
+      "#059669"
+    )}
+    ${proofBanner(
+      ["💊 현직 약사 저자", "📋 28일 로드맵 포함", "🍽️ 15분 레시피 7선", "🔄 계속 업데이트"],
+      "#f0fdf4",
+      "#059669"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("slow-aging", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🌿", "오늘 저녁 식탁부터,", "늙는 속도가 달라집니다.", "매일 O/X만 체크하세요. 판단은 책이 합니다.", "#059669")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   6. 하루 1시간, AI 부업 자동화 시스템
+   ═══════════════════════════════════════════ */
+
+export function buildAiSidejob(): string {
+  return `<!-- 🤖 하루 1시간, AI 부업 자동화 시스템 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#eff6ff,#dbeafe,#bfdbfe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🤖</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#1e3a5f;">부업 영상 100개 봤는데<br>아직 시작을 못 하셨나요?</h2>
+    <p style="font-size:18px;color:#1d4ed8;font-weight:600;margin:0 0 8px;">부족한 건 정보가 아니라 '순서'입니다.</p>
+    ${subtitle("퇴근 후 1시간, 블로그→숏폼→디지털상품 — AI가 대신하는 파이프라인")}
+    ${statGrid([
+      { num: "1시간", label: "하루 투자 시간", color: "#2563eb" },
+      { num: "15", label: "복사해 쓰는 AI 프롬프트", color: "#2563eb" },
+      { num: "3", label: "수익 파이프라인", color: "#2563eb" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 루프에 갇혀 있지 않나요?")}
+    ${redditQuote("블로그 3번 만들었고, 3번 다 글 5개에서 멈췄어. 문제는 소재 고갈이야. AI로 해결할 수 있다는 걸 너무 늦게 알았어.", "sidehustle")}
+    ${redditQuote("유튜브 편집이 무서워서 시작도 못 했는데, 텍스트 오버레이 쇼츠는 30분이면 3개 만들 수 있더라.", "passive_income")}
+  </section>
+  <section style="${sec("background:#1e3a5f;color:#fff;")}">
+    <div style="font-size:13px;color:#93c5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">하루 1시간, 3개의 파이프라인</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">블로그 자동화<br><small style="color:rgba(255,255,255,.5);">검색이 일하게 하라</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">숏폼 자동화<br><small style="color:rgba(255,255,255,.5);">얼굴 없이 조회수</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:24px 20px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(147,197,253,.2);">
+        <div style="font-size:28px;font-weight:800;color:#93c5fd;">3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">디지털 상품<br><small style="color:rgba(255,255,255,.5);">단가를 끌어올리는 엔진</small></div>
+      </div>
+    </div>
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 지금, AI 부업인가", false, "#2563eb")}
+    ${tocItem("02", "시작 전 준비: 도구, 계정, 마인드셋", false, "#2563eb")}
+    ${tocItem("03", "1단계: 팔리는 주제를 데이터로 찾는 법", true, "#2563eb")}
+    ${tocItem("04", "2단계: 블로그 자동화 — 검색이 일하게 하라", false, "#2563eb")}
+    ${tocItem("05", "3단계: 숏폼 자동화 — 얼굴 없이 조회수 만들기", true, "#2563eb")}
+    ${tocItem("06", "4단계: 디지털 상품 — 단가를 끌어올리는 엔진", false, "#2563eb")}
+    ${tocItem("07", "막히는 지점 해결: 실패 패턴 7가지와 처방전", true, "#2563eb")}
+    ${tocItem("08", "시스템 유지와 확장: 30일 실행 캘린더", false, "#2563eb")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 바로 복사해 쓰는 AI 프롬프트 15선 ⭐</div>
+  </section>
+  ${fullPreview(
+    "5",
+    "3단계: 숏폼 자동화 — 얼굴 없이 조회수 만들기",
+    ["얼굴·목소리 없이 가능한 3가지 포맷", "블로그 글 1개 = 쇼츠 3개", "잘 터지는 쇼츠 대본의 공통 구조", "해시태그·제목 전략", "30개까지는 같은 포맷"],
+    `<p style="margin:0 0 16px;">직장인 부업의 최대 걸림돌인 '신상 노출'은 포맷 선택으로 해결합니다.</p>
+      <p style="margin:0 0 16px;"><strong>1. 텍스트 오버레이형</strong> — 배경 영상(무료 스톡) 위에 자막이 흐르는 형식. 정보성 주제에 최적이며 제작이 가장 빠릅니다.</p>
+      <p style="margin:0 0 16px;"><strong>2. AI 보이스 내레이션형</strong> — 대본을 AI 음성이 읽어 줍니다. VREW, 캡컷 내장 기능으로 자연스러운 한국어 음성을 쓸 수 있습니다.</p>
+      <p style="margin:0 0 16px;"><strong>3. 슬라이드 카드형</strong> — 캔바로 만든 카드 이미지 5~7장을 넘기는 형식. 릴스와 스레드에 동시 활용됩니다.</p>
+      <p style="margin:0;padding:16px;background:#eff6ff;border-radius:10px;font-weight:600;color:#1d4ed8;">💡 이미 발행한 블로그 글을 AI에게 주면 60초 쇼츠 대본 3개로 쪼개줍니다. 소재를 새로 찾지 않습니다.</p>`,
+    "#2563eb",
+    "linear-gradient(160deg,#eff6ff,#dbeafe)"
+  )}
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["부업 정보만 모으다 6개월이 지난 직장인", "얼굴·실명 없이 온라인 수익을 만들고 싶은 분", "AI 프롬프트부터 막히는 분", "블로그·유튜브를 시작했다가 소재 고갈로 멈춘 분"], "✅", "#eff6ff")}
+    ${spacer(16)}
+    ${checkList(["한 달 안에 수백만 원 비법을 찾는 분", "읽기만 하고 실행하지 않을 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("완전 초보도 따라 할 수 있나요?", "네. 계정 개설부터 분 단위로 안내합니다. 프롬프트 15개를 복사해 붙여넣기만 하면 됩니다.")}
+    ${faqItem("수익이 보장되나요?", "아니요. 이 책이 제공하는 건 검증된 '구조와 순서'이며, 결과는 주제 선택과 실행에 따라 달라집니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "부업 온라인 강의", price: "99,000원~", note: "일방적 강의" },
+      { what: "부업 코칭 1:1", price: "200,000원~", note: "1회" },
+      { what: "AI 부업 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "8챕터 + 프롬프트 15개 + 계속 업데이트", "#2563eb")}
+    ${proofBanner(["🤖 AI 프롬프트 15개", "📅 30일 실행 캘린더", "📋 체크리스트 12개", "🔄 계속 업데이트"], "#eff6ff", "#2563eb")}
+  </section>
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("ai-sidejob", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+  ${ctaBlock("🤖", "부업 영상 100개 대신,", "실행 매뉴얼 1권으로 시작하세요.", "하루 1시간, AI가 대신하는 파이프라인.", "#2563eb")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   7. 0팔로워로 시작하는 스레드 마케팅
+   ═══════════════════════════════════════════ */
+
+export function buildThreadsMarketing(): string {
+  return `<!-- 🧵 0팔로워로 시작하는 스레드 마케팅 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#f5f3ff,#ede9fe,#ddd6fe);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🧵</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#4c1d95;">유튜브는 늦은 것 같고,<br>인스타는 사진 감각이 없고?</h2>
+    <p style="font-size:18px;color:#6d28d9;font-weight:600;margin:0 0 8px;">글 몇 줄로 시작할 수 있는 판이 열려 있어요.</p>
+    ${subtitle("0팔로워부터 수익화까지 — 스레드 28일 공략집")}
+    ${statGrid([
+      { num: "30", label: "첫 줄 훅 템플릿", color: "#7c3aed" },
+      { num: "60", label: "글감 아이디어", color: "#7c3aed" },
+      { num: "28일", label: "데일리 미션 로드맵", color: "#7c3aed" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+  <section style="${sec("background:#4c1d95;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">WHY THREADS, WHY NOW</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">스레드, 지금이 골든타임입니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:24px 0;">
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">1.4억</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">글로벌 DAU<br><small style="color:rgba(255,255,255,.4);">X 추월 보도</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">543만</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">국내 MAU<br><small style="color:rgba(255,255,255,.4);">전년 대비 2배</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:240px;padding:28px 20px;background:rgba(255,255,255,.06);border-radius:16px;border:1px solid rgba(196,181,253,.2);">
+        <div style="font-size:32px;font-weight:800;color:#c4b5fd;">텍스트</div>
+        <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:8px;">사진·영상 없이<br><small style="color:rgba(255,255,255,.4);">글 몇 줄로 시작</small></div>
+      </div>
+    </div>
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분들이 고민하시죠")}
+    ${redditQuote("솔직히 스레드를 우습게 봤어. 그런데 사진 없이 글 몇 줄로 모르는 사람들이 반응하고 팔로우하는 경험을 하면서 생각이 바뀌었어.", "socialmedia")}
+    ${redditQuote("문제는 제대로 된 공략집이 없다는 거야. 0팔로워가 첫 4주에 뭘 해야 하는지 순서대로 알려 주는 자료가 없더라.", "marketing")}
+  </section>
+  <section style="${sec("background:#f5f3ff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 지금 스레드인가: 텍스트 SNS의 골든타임", false, "#7c3aed")}
+    ${tocItem("02", "알고리즘이 보는 것들: 한 편의 글이 겪는 24시간", true, "#7c3aed")}
+    ${tocItem("03", "계정 세팅: 시작 3일 안에 끝내는 기초 공사", false, "#7c3aed")}
+    ${tocItem("04", "글쓰기 공식: 멈추게 하고, 대답하게 하라", true, "#7c3aed")}
+    ${tocItem("05", "콘텐츠 시스템: 글감이 마르지 않는 공장", false, "#7c3aed")}
+    ${tocItem("06", "팔로워 참여 전략: 혼자 크는 계정은 없다", true, "#7c3aed")}
+    ${tocItem("07", "플랫폼 연계: 스레드를 허브로 만드는 법", false, "#7c3aed")}
+    ${tocItem("08", "수익화: 돈이 들어오는 5갈래 길", true, "#7c3aed")}
+    ${tocItem("09", "트러블슈팅: 막히는 순간들의 해결책", false, "#7c3aed")}
+    ${tocItem("10", "28일 이후: 90일 로드맵과 브랜드로 가는 길", false, "#7c3aed")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 훅 템플릿 30 / 발행 캘린더 / 글감 60 / 체크리스트 / 용어 사전</div>
+  </section>
+  ${fullPreview(
+    "4",
+    "글쓰기 공식: 멈추게 하고, 대답하게 하라",
+    ["스레드 글의 해부학", "첫 줄 공식 6가지", "몸통 구성법", "마지막 줄: 참여 유도", "실전 첨삭 사례"],
+    `<p style="margin:0 0 16px;">첫 줄의 사명은 단 하나, <strong>엄지를 멈추는 것</strong>이에요. 검증된 공식 6개:</p>
+      <p style="margin:0 0 8px;"><strong>1. 숫자 선언형</strong> — "월급 250만 원에서 매달 100만 원을 저축하게 된 방법 3가지"</p>
+      <p style="margin:0 0 8px;"><strong>2. 의외성/반전형</strong> — "저는 새벽 기상을 포기하고 나서 더 부지런해졌어요"</p>
+      <p style="margin:0 0 8px;"><strong>3. 실패 고백형</strong> — "스마트스토어로 3개월간 매출 0원이었던 이유"</p>
+      <p style="margin:0 0 8px;"><strong>4. 질문 직격형</strong> — "혹시 적금 만기 되면 그 돈 어디에 두세요?"</p>
+      <p style="margin:0 0 8px;"><strong>5. 손해 회피형</strong> — "이거 모르고 연말정산 하면 몇십만 원 날립니다"</p>
+      <p style="margin:0 0 16px;"><strong>6. 경험 티저형</strong> — "어제 퇴사 통보하고 왔습니다"</p>
+      <p style="margin:0;padding:16px;background:#f5f3ff;border-radius:10px;font-weight:600;color:#6d28d9;">💡 부록에 이 6가지를 변주한 템플릿 30개를 담아 뒀어요. 막힐 때마다 꺼내 쓰세요.</p>`,
+    "#7c3aed",
+    "linear-gradient(160deg,#f5f3ff,#ede9fe)"
+  )}
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천해요")}
+    ${checkList(["SNS 부업을 시작하고 싶지만 얼굴 공개가 부담스러운 분", "팔로워 0명에서 무엇부터 할지 순서를 알고 싶은 분", "글 쓰는 건 괜찮은데 뭘 언제 올릴지 막막한 분", "내 전자책·서비스·브랜드로 수익을 만들고 싶은 분"], "✅", "#f5f3ff")}
+    ${spacer(16)}
+    ${checkList(["1주일 만에 만 팔로워를 약속받고 싶은 분", "글 쓰는 걸 전혀 하고 싶지 않은 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("팔로워 0명인데 의미가 있나요?", "이 책이 바로 0팔로워를 위한 28일 로드맵입니다. 1일차 세팅부터 28일차 결산까지 순서대로 따라가면 됩니다.")}
+    ${faqItem("글쓰기에 자신이 없는데요?", "공식이 있습니다. 첫 줄 훅 템플릿 30개 + 글감 60개를 부록으로 드려요. 복사해서 변주하면 됩니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "SNS 마케팅 강의", price: "149,000원~", note: "일방적 강의" },
+      { what: "마케팅 컨설팅 1회", price: "150,000원~", note: "1시간" },
+      { what: "SNS 관련 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 훅 30개 + 글감 60개 + 업데이트", "#7c3aed")}
+    ${proofBanner(["📝 훅 템플릿 30개", "💡 글감 60개", "📅 28일 캘린더", "🔄 계속 업데이트"], "#f5f3ff", "#7c3aed")}
+  </section>
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("threads-marketing", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+  ${ctaBlock("🧵", "글 몇 줄로 시작하는", "나만의 브랜드, 오늘부터.", "0팔로워도 괜찮아요. 28일이면 달라집니다.", "#7c3aed")}
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   8. 밀당 없이 사랑받는 연애의 기술
+   ═══════════════════════════════════════════ */
+
+export function buildLoveSkills(): string {
+  return `<!-- 💕 밀당 없이 사랑받는 연애의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fdf2f8,#fce7f3,#fbcfe8);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💕</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#831843;letter-spacing:-0.5px;">새벽 두 시,<br>메시지를 썼다 지웠다 하시나요?</h2>
+    <p style="font-size:18px;color:#9d174d;font-weight:600;margin:0 0 8px;">그 패턴에는 이름과 이유가 있고, 바꾸는 방법도 있습니다.</p>
+    ${subtitle("밀당이 아닌 진정성으로 — 애착·소통·관계 심리학 수업")}
+    ${statGrid([
+      { num: "10+1", label: "챕터 + 관계 도구함 부록", color: "#db2777" },
+      { num: "15", label: "상황별 대화 스크립트", color: "#db2777" },
+      { num: "30", label: "마음이 깊어지는 질문", color: "#db2777" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 불안 패턴 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 감정들,", "익숙하시죠?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fdf2f8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">📱</div>
+        <div style="font-size:16px;font-weight:700;color:#9d174d;margin-bottom:8px;">답장 불안</div>
+        <div style="font-size:14px;color:#831843;line-height:1.6;">답장이 한 시간만 늦어도<br>마음이 바닥까지 내려감</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔄</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">반복 패턴</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">연애할 때마다<br>비슷한 지점에서 무너짐</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fefce8;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🤐</div>
+        <div style="font-size:16px;font-weight:700;color:#854d0e;margin-bottom:8px;">소통 어려움</div>
+        <div style="font-size:14px;color:#713f12;line-height:1.6;">서운함을 말 못 하고<br>쌓아 두다 터뜨림</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;">이것은 성격 문제가 아닙니다. <strong style="color:#db2777;">사랑을 다르게 배운 것</strong>뿐이고, 바꿀 수 있습니다.</p>
+  </section>
+
+  <!-- 밀당의 진실 -->
+  <section style="${sec("background:#831843;color:#fff;")}">
+    <div style="font-size:13px;color:#f9a8d4;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE TRUTH ABOUT PUSH-PULL</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">밀당이 만드는 건<br>사랑이 아니라 불안입니다</h2>
+    <div style="max-width:560px;margin:0 auto;padding:28px;background:rgba(255,255,255,.08);border-radius:16px;border:1px solid rgba(249,168,212,.3);text-align:left;">
+      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.8;margin:0 0 16px;">밀당은 <strong>불확실성을 제조하는 기술</strong>이에요. 보상이 예측 불가능하게 주어질 때 집착이 강해지는 건 잘 알려진 심리 현상이죠.</p>
+      <p style="font-size:15px;color:rgba(255,255,255,.85);line-height:1.8;margin:0 0 16px;">밀당이 만들어 낸 그 마음의 정체가 뭘까요? <strong style="color:#f9a8d4;">사랑이 아니라 불안이에요.</strong></p>
+      <p style="font-size:15px;color:rgba(255,255,255,.6);line-height:1.8;margin:0;">불안 위에 지어진 관계는 두 가지 길로 가요. 상대가 떠나거나, 경보 상태가 기본값이 되거나. 어느 쪽이든, 원하던 사랑은 아니에요.</p>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">이 책은 밀당 대신 <strong style="color:#f9a8d4;">진정성의 기술</strong>을 알려드립니다</p>
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("00", "들어가며: 사랑이 어려운 건 당신 탓이 아니에요", false, "#db2777")}
+    ${tocItem("01", "반복되는 패턴: 왜 늘 비슷한 지점에서 무너질까", false, "#db2777")}
+    ${tocItem("02", "애착 유형: 내 연애의 설계도 읽기", true, "#db2777")}
+    ${tocItem("03", "자존감이라는 그릇: 사랑받을 준비에 대하여", false, "#db2777")}
+    ${tocItem("04", "시작의 심리학: 호감은 기술이 아니라 조건에서 자란다", false, "#db2777")}
+    ${tocItem("05", "밀당의 진실: 불안을 파는 게임을 그만두면 생기는 일", true, "#db2777")}
+    ${tocItem("06", "대화의 기술: 마음은 저절로 통하지 않는다", true, "#db2777")}
+    ${tocItem("07", "싸움의 기술: 갈등은 관계의 끝이 아니라 문법이다", true, "#db2777")}
+    ${tocItem("08", "경계선의 기술: 둘이면서 각자로 사는 법", false, "#db2777")}
+    ${tocItem("09", "흔들리는 순간들: 관계의 응급실", true, "#db2777")}
+    ${tocItem("10", "오래가는 사랑: 유지가 아니라 가꾸기", false, "#db2777")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 대화 스크립트 15개 / 월간 관계 점검표 / 마음이 깊어지는 질문 30 / 감정 단어 사전</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "5",
+    "밀당의 진실: 불안을 파는 게임을 그만두면 생기는 일",
+    [
+      "밀당은 왜 통하는 것처럼 보이는가",
+      "불확실성과 간헐적 강화",
+      "밀당이 만들어 내는 감정의 정체",
+      "진정성의 기술: 밀당을 대체하는 것",
+      "밀당 없이 관계를 시작하는 법",
+    ],
+    `<p style="margin:0 0 16px;">심리학적으로 보면 밀당은 <strong>불확실성을 제조하는 기술</strong>이에요. 보상이 예측 불가능하게 주어질 때 집착이 강해지는 것은 잘 알려진 심리 현상이죠. 답장이 올 듯 말 듯한 상대에게 자꾸 마음이 쓰이는 건 그래서예요.</p>
+      <p style="margin:0 0 16px;">인정할 건 인정할게요. 밀당은 상대의 주의를 붙잡는 데 종종 성공해요. 문제는 그다음이에요. 밀당이 만들어 낸 그 마음의 정체가 뭘까요? <strong>사랑일까요?</strong></p>
+      <p style="margin:0 0 16px;padding:16px;background:#fdf2f8;border-radius:10px;font-weight:700;color:#9d174d;">아니요. 그건 불안이에요. 밀당은 상대의 애착 시스템에 경보를 울려서, 불안을 사랑으로 착각하게 만드는 기술이에요.</p>
+      <p style="margin:0;">그리고 불안 위에 지어진 관계는 두 가지 길로 가요. 경보에 지친 상대가 떠나거나, 경보 상태가 관계의 기본값이 되거나. 어느 쪽이든, 우리가 원하던 사랑의 모습은 아니에요.</p>`,
+    "#db2777",
+    "linear-gradient(160deg,#fdf2f8,#fce7f3)"
+  )}
+
+  <!-- 추천 + FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천해요")}
+    ${checkList(
+      [
+        "연애할 때마다 비슷한 지점에서 무너지는 패턴을 반복하는 분",
+        "상대의 답장 속도에 하루의 기분이 좌우되는 분",
+        "서운함을 말하는 법을 몰라 쌓아 두다 터뜨리는 분",
+        "지금의 관계를 더 단단하게 가꾸고 싶은 커플",
+      ],
+      "✅",
+      "#fdf2f8"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "상대를 '넘어오게 만드는' 공략법을 찾는 분",
+        "읽기만 하고 대화 연습은 하지 않을 분",
+        "심리 치료를 대신할 자료를 찾는 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("모태솔로도 볼 수 있나요?", "네. 앞 절반이 관계 시작 전 준비(패턴·자존감·시작의 기술)이고, 대화·갈등 기술은 우정과 가족 관계에도 그대로 쓰여요.")}
+    ${faqItem("연애 중인데 도움이 되나요?", "후반부(대화·싸움·경계선·권태기·오래가는 습관)가 연애 중인 분들을 위한 파트예요. 커플이 함께 읽기에도 좋아요.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 내용은 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "커플 심리상담 1회", price: "100,000원~", note: "1시간" },
+        { what: "연애·심리 서적", price: "16,000원~", note: "업데이트 없음" },
+        { what: "관계 코칭 프로그램", price: "200,000원~", note: "4주" },
+      ],
+      "1,000원",
+      "10챕터 + 대화 스크립트 15개 + 질문 30개 + 업데이트",
+      "#db2777"
+    )}
+    ${proofBanner(
+      ["💬 대화 스크립트 15개", "❤️ 질문 30개", "📋 월간 점검표", "🔄 계속 업데이트"],
+      "#fdf2f8",
+      "#db2777"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("love-skills", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("💕", "새벽 두 시의 불안 대신,", "오늘 저녁의 다정한 한마디부터.", "밀당 대신 진정성의 기술을 배우세요.", "#db2777")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   9. 일잘러의 비밀무기, 아이젠하워 매트릭스
+   ═══════════════════════════════════════════ */
+
+export function buildEisenhowerMatrix(): string {
+  return `<!-- ⏱️ 일잘러의 비밀무기, 아이젠하워 매트릭스 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#f8fafc,#e2e8f0,#cbd5e1);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">⏱️</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#0f172a;">하루 종일 바빴는데<br>뭘 했는지 기억이 안 나시죠?</h2>
+    <p style="font-size:18px;color:#334155;font-weight:600;margin:0 0 8px;">시간을 관리하는 게 아니라, 결정을 관리해야 합니다.</p>
+    ${subtitle("아이젠하워 대통령이 실제 사용한 검증된 프레임워크 — 하루 15분 시스템")}
+    ${statGrid([
+      { num: "15분", label: "아침 리추얼이면 충분", color: "#334155" },
+      { num: "4", label: "사분면으로 모든 업무 분류", color: "#334155" },
+      { num: "90일", label: "실행 계획 + 체크리스트", color: "#334155" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 함정에 빠져 있지 않나요?")}
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin:32px 0;">
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fef2f2;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🔥</div>
+        <div style="font-size:16px;font-weight:700;color:#991b1b;margin-bottom:8px;">긴급성 중독</div>
+        <div style="font-size:14px;color:#7f1d1d;line-height:1.6;">카톡이 울리면 즉시 확인<br>하루 종일 불 끄기</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#fff7ed;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🎭</div>
+        <div style="font-size:16px;font-weight:700;color:#9a3412;margin-bottom:8px;">바쁨의 배지</div>
+        <div style="font-size:14px;color:#7c2d12;line-height:1.6;">"엄청 바빠!"를<br>자랑처럼 말하기</div>
+      </div>
+      <div style="flex:1 1 220px;max-width:260px;padding:28px 24px;background:#f5f3ff;border-radius:16px;text-align:center;">
+        <div style="font-size:36px;margin-bottom:12px;">🤹</div>
+        <div style="font-size:16px;font-weight:700;color:#5b21b6;margin-bottom:8px;">완벽주의 역설</div>
+        <div style="font-size:14px;color:#4c1d95;line-height:1.6;">모든 걸 잘하려다<br>하나도 못 함</div>
+      </div>
+    </div>
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#0f172a;">바쁜 것과 생산적인 것은 전혀 다릅니다.</strong> 이건 게으름이 아니라 시스템의 문제입니다.</p>
+  </section>
+
+  <section style="${sec("background:#0f172a;color:#fff;")}">
+    <div style="font-size:13px;color:#94a3b8;font-weight:600;letter-spacing:2px;margin-bottom:24px;">THE 4 QUADRANTS</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">모든 업무는 4가지 중 하나입니다</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;">
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(239,68,68,.15);border-radius:16px;border:1px solid rgba(239,68,68,.3);">
+        <div style="font-size:24px;font-weight:800;color:#ef4444;">Q1</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">소방서<br><small style="color:rgba(255,255,255,.5);">긴급+중요 → 즉시 처리</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(34,197,94,.15);border-radius:16px;border:1px solid rgba(34,197,94,.3);">
+        <div style="font-size:24px;font-weight:800;color:#22c55e;">Q2</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">성공 존<br><small style="color:rgba(255,255,255,.5);">중요+비긴급 → 일정 보호</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(251,191,36,.15);border-radius:16px;border:1px solid rgba(251,191,36,.3);">
+        <div style="font-size:24px;font-weight:800;color:#fbbf24;">Q3</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">속임수 존<br><small style="color:rgba(255,255,255,.5);">긴급+비중요 → 위임</small></div>
+      </div>
+      <div style="flex:1 1 200px;max-width:200px;padding:24px 20px;background:rgba(148,163,184,.15);border-radius:16px;border:1px solid rgba(148,163,184,.3);">
+        <div style="font-size:24px;font-weight:800;color:#94a3b8;">Q4</div>
+        <div style="font-size:15px;color:rgba(255,255,255,.8);margin-top:8px;">시간 낭비 존<br><small style="color:rgba(255,255,255,.5);">비긴급+비중요 → 제거</small></div>
+      </div>
+    </div>
+    <p style="font-size:14px;color:rgba(255,255,255,.5);margin-top:20px;">성공한 사람들은 시간의 65~80%를 <strong style="color:#22c55e;">Q2(성공 존)</strong>에서 보냅니다</p>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 똑똑한 사람들이 바쁜 일에 갇혀 있는가", false, "#334155")}
+    ${tocItem("02", "당신의 삶을 지배하는 네 가지 사분면", true, "#334155")}
+    ${tocItem("03", "하루 15분, 모든 것을 바꾸는 매트릭스 리추얼", true, "#334155")}
+    ${tocItem("04", "사분면 2를 위한 요새 만들기", true, "#334155")}
+    ${tocItem("05", "전략적 위임과 '노'라고 말하는 기술", true, "#334155")}
+    ${tocItem("06", "매트릭스를 극대화하는 보조 시스템", false, "#334155")}
+    ${tocItem("07", "주간 매트릭스 마스터 세션", false, "#334155")}
+    ${tocItem("08", "업무를 넘어 삶 전체에 적용하기", false, "#334155")}
+    ${tocItem("09", "무너지는 순간들과 복구 프로토콜", true, "#334155")}
+    ${tocItem("10", "90일 이후: 매트릭스 마스터의 삶", false, "#334155")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 매트릭스 실행 키트 (체크리스트, 리뷰 템플릿, 거절 스크립트, 90일 로드맵, FAQ)</div>
+  </section>
+
+  ${fullPreview(
+    "3",
+    "하루 15분, 모든 것을 바꾸는 매트릭스 리추얼",
+    ["왜 아침인가", "최적의 시간 설정", "5단계 매트릭스 리추얼", "주간 마스터 세션", "실생활 적용"],
+    `<p style="margin:0 0 16px;">의지력은 소모품이다. 아침에 가장 충만하고, 하루가 지나면서 고갈된다. <strong>결정 피로가 쌓이기 전에 가장 중요한 결정</strong> — 오늘 무엇에 집중할 것인가 — 을 내려야 한다.</p>
+      <p style="margin:0 0 16px;"><strong>1단계: 브레인 덤프 (3분)</strong> — 머릿속의 모든 할 일을 쏟아내라. 판단하지 마라.</p>
+      <p style="margin:0 0 16px;"><strong>2단계: 분류 (5분)</strong> — 각 항목에 "긴급한가?" "중요한가?" 두 질문. 직감을 믿어라.</p>
+      <p style="margin:0 0 16px;"><strong>3단계: 일정 (3분)</strong> — Q1과 Q2를 먼저 캘린더에 블록. Q2 시간을 금처럼 보호.</p>
+      <p style="margin:0;padding:16px;background:#f1f5f9;border-radius:10px;font-weight:600;color:#334155;">💡 이 시스템은 매일 2~3시간을 확보해줄 수 있다. 비밀은 더 열심히 일하는 게 아니라 무엇이 주의를 받을 자격이 있는지 더 나은 결정을 내리는 것이다.</p>`,
+    "#334155",
+    "linear-gradient(160deg,#f8fafc,#e2e8f0)"
+  )}
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["하루 종일 바빴는데 성과가 없는 직장인", "긴급한 일에만 반응하며 중요한 프로젝트를 미루는 분", "모든 부탁에 예스라고 하는 분", "멀티태스킹이 생산적이라고 믿었던 분"], "✅", "#f1f5f9")}
+    ${spacer(16)}
+    ${checkList(["읽기만 하고 15분 리추얼을 실행하지 않을 분", "마법 같은 즉시 효과를 기대하는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("생산성 앱을 많이 써봤는데 뭐가 다른가요?", "앱은 도구이고 매트릭스는 사고방식입니다. 어떤 앱을 쓰든 '무엇에 집중할 것인가'라는 결정이 먼저입니다. 매트릭스는 그 결정을 내리는 프레임워크입니다.")}
+    ${faqItem("직장 상사가 준 일을 거절할 수 있나요?", "챕터 5에서 한국 직장 문화에 맞는 '우아하게 거절하기' 스크립트 5가지를 구체적으로 다룹니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor([
+      { what: "생산성 코칭 1:1", price: "150,000원~", note: "1회" },
+      { what: "시간관리 온라인 강의", price: "89,000원~", note: "일방적 강의" },
+      { what: "자기계발 서적", price: "18,000원~", note: "업데이트 없음" },
+    ], "1,000원", "10챕터 + 실행 키트 + 90일 로드맵 + 업데이트", "#334155")}
+    ${proofBanner(["⏱️ 하루 15분 시스템", "📋 90일 실행 로드맵", "🙅 거절 스크립트 5종", "🔄 계속 업데이트"], "#f1f5f9", "#334155")}
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("eisenhower-matrix", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  ${ctaBlock("⏱️", "바쁜 것을 멈추고,", "효과적으로 사세요.", "하루 15분, 결정을 관리하는 시스템.", "#334155")}
+</div>`;
+}

@@ -171,6 +171,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "💊",
     subtitle: "타이레놀·감기약·소화제·연고·구충제",
   },
+  {
+    id: "speaking-skills",
+    title: "말 잘하는 사람들의 비밀",
+    emoji: "🎙️",
+    subtitle: "대화·설득·스피치의 심리학",
+  },
 ];
 
 interface Section {
@@ -230,6 +236,7 @@ const CROSS_SELL_BOOKS = [
   { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", sub: "5대 약물·DASH·합병증" },
   { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", sub: "스타틴·식이요법·LDL" },
   { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", sub: "타이레놀·감기약·소화제" },
+  { id: "speaking-skills", emoji: "🎙️", title: "말 잘하는 사람들의 비밀", sub: "대화·설득·스피치" },
 ];
 
 function buildCrossSell(currentId: string): string {
