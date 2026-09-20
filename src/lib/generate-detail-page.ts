@@ -295,6 +295,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", oneLiner: "UVP→수익화 90일 로드맵" },
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", oneLiner: "구독·SaaS·마켓플레이스" },
   { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", oneLiner: "디지털상품·강의·컨설팅" },
+  { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", oneLiner: "약물·식단·혈당·합병증" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -2832,6 +2833,163 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   22. 당뇨 완전 가이드
+   ═══════════════════════════════════════════ */
+
+function buildDiabetesGuide(): string {
+  return `<!-- 🩸 약사가 알려주는 당뇨에 대한 모든 것 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#fff1f2,#ffe4e6,#fecdd3);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🩸</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#881337;letter-spacing:-0.5px;">당뇨 진단을 받고<br>뭘 해야 할지 모르겠다면,<br>여기서 시작하세요.</h2>
+    ${subtitle("진단부터 약물·식단·생활습관까지 — 당뇨인이 알아야 할 완전 가이드")}
+    ${statGrid([
+      { num: "10", label: "챕터 완전 구성", color: "#e11d48" },
+      { num: "Reddit", label: "실제 당뇨인 경험 분석", color: "#e11d48" },
+      { num: "90일", label: "A1C 개선 로드맵", color: "#e11d48" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감: 진단 직후의 혼란 -->
+  <section style="${sec("background:#fff7f7;")}">
+    ${bigTitle("진단 직후, 이런 감정이었나요?")}
+    ${subtitle("당뇨 커뮤니티 실제 목소리를 담았습니다")}
+    ${redditQuote("의사가 '당뇨입니다'라고 했을 때 머리가 하얘졌어요. 뭘 먹어야 하는지, 약은 언제 먹는지, 운동은 어떻게 해야 하는지 아무것도 몰랐어요.", "diabetes")}
+    ${redditQuote("유튜브를 뒤지고 블로그를 찾아봤는데 정보가 너무 많고 서로 다른 말을 해서 뭘 믿어야 할지 모르겠어요. 약사한테 물어보고 싶었어요.", "diabetes_t2")}
+    ${redditQuote("A1C가 9.2였는데 90일 후에 6.8로 떨어졌어요. 극단적인 식단이 아니었어요. 뭘 바꿔야 하는지 알았을 뿐이에요.", "diabetes")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("진단 직후와 90일 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "진단 후 공포 — 평생 합병증이 올까봐",
+        "먹고 싶은 것도 못 먹는다는 절망",
+        "약이 점점 늘어날 것 같은 두려움",
+        "혈당 숫자에 매일 울고 웃고",
+      ],
+      [
+        "A1C 정상 범위 — 90일 로드맵으로",
+        "혈당을 올리지 않는 식사 전략 완성",
+        "약물의 원리를 알고 의사와 대화 가능",
+        "혈당 변동 패턴을 읽고 주도적으로 관리",
+      ],
+      "진단 직후 (지금)",
+      "90일 후",
+      "#fef2f2",
+      "#f0fdf4"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("각 챕터는 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "당뇨란 무엇인가 — 1형·2형·전당뇨의 차이와 진단 기준", false, "#e11d48")}
+    ${tocItem("02", "혈당 지표 완전 정복 — A1C·공복혈당·식후혈당 읽는 법", true, "#e11d48")}
+    ${tocItem("03", "당뇨약 완전 가이드 — 메트포르민부터 인슐린까지 원리와 부작용", true, "#e11d48")}
+    ${tocItem("04", "식단의 과학 — 혈당 스파이크를 막는 실전 식사 전략", true, "#e11d48")}
+    ${tocItem("05", "혈당을 낮추는 운동 — 유산소·근력 운동 타이밍과 방법", false, "#e11d48")}
+    ${tocItem("06", "합병증 예방 — 눈·신장·발·신경 손상 조기 발견 체크리스트", true, "#e11d48")}
+    ${tocItem("07", "스트레스·수면과 혈당 — 생활습관이 A1C를 바꾼다", false, "#e11d48")}
+    ${tocItem("08", "혈당 측정기 & CGM — 데이터로 관리하는 방법", false, "#e11d48")}
+    ${tocItem("09", "외식·술·여행 — 일상 속 혈당 관리 실전 매뉴얼", false, "#e11d48")}
+    ${tocItem("10", "90일 A1C 개선 로드맵 — 지금 당장 시작하는 단계별 계획", true, "#e11d48")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 혈당일지 템플릿 / 당뇨약 부작용 대응법 / 합병증 검사 일정표 / 저혈당 응급 프로토콜 / 가족에게 알려주는 당뇨 Q&A</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "3",
+    "당뇨약 완전 가이드 — 메트포르민부터 인슐린까지",
+    [
+      "메트포르민: 왜 가장 먼저 처방받는가",
+      "SGLT-2 억제제·GLP-1 작용제의 혁신",
+      "인슐린이 필요한 시점과 종류",
+      "약 부작용 — 언제 의사에게 말해야 하는가",
+      "약을 줄이는 것이 가능한가",
+    ],
+    `<p style="margin:0 0 16px;">당뇨 진단 후 가장 흔히 처방받는 약은 <strong>메트포르민</strong>입니다. 그런데 왜 하필 이 약일까요?</p>
+      <p style="margin:0 0 16px;">메트포르민은 간에서 포도당이 지나치게 많이 만들어지는 것을 억제합니다. 혈당을 '직접' 내리는 약이 아니라, 간이 혈당을 올리는 행위를 줄이는 약입니다. 덕분에 저혈당 위험이 낮고, 50년 이상 안전성이 검증되었습니다.</p>
+      <p style="margin:0 0 16px;padding:16px;background:#fff1f2;border-radius:10px;font-weight:600;color:#e11d48;">💊 처음 메트포르민을 먹으면 속이 불편할 수 있습니다. 식사 중에 먹거나, 서방형(XR) 제형으로 바꾸면 대부분 해결됩니다. 4주가 지나도 불편하다면 반드시 약사나 의사와 상담하세요.</p>
+      <p style="margin:0;">최근에는 SGLT-2 억제제(포시가, 자디앙)와 GLP-1 작용제(오젬픽, 트룰리시티)가 심장·신장 보호 효과까지 있다는 연구가 나오면서 처방 패턴이 빠르게 바뀌고 있습니다. 약이 바뀌었다고 당황하지 마세요. <strong>약의 원리를 알면 의사와 더 잘 대화할 수 있습니다.</strong></p>`,
+    "#e11d48",
+    "linear-gradient(160deg,#fff1f2,#fff7f7)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "최근 당뇨 진단을 받고 뭘 해야 할지 모르는 분",
+        "당뇨인 가족을 곁에서 돕고 싶은 보호자",
+        "당뇨약 부작용이 걱정되어 약사에게 물어보고 싶은 분",
+        "A1C를 낮추고 합병증 없이 오래 살고 싶은 분",
+      ],
+      "✅",
+      "#fff1f2"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "전문적인 의료 진단을 대체하고 싶은 분 (이 책은 의료 행위가 아닙니다)",
+        "읽기만 하고 생활습관은 바꾸지 않을 분",
+      ],
+      "🚫",
+      "#fef2f2"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("당뇨약을 먹으면 평생 먹어야 하나요?", "2형 당뇨는 생활습관 개선으로 약을 줄이거나 중단한 사례가 있습니다. 다만 무단으로 끊는 것은 위험합니다. 이 가이드에서 올바른 접근 방법을 설명합니다.")}
+    ${faqItem("A1C 목표치는 얼마인가요?", "일반적으로 7.0% 미만이 목표이지만, 나이·합병증 여부에 따라 개인화됩니다. 90일 로드맵에서 단계별 목표 설정법을 안내합니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새로운 연구·가이드라인이 나오면 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "당뇨 교육 프로그램 (병원)", price: "100,000원~", note: "1회 수업" },
+        { what: "당뇨 전문 서적", price: "18,000원~", note: "업데이트 없음" },
+        { what: "유튜브 검색 3시간", price: "무료", note: "정보 파편화·신뢰도 불명" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 5개 · 계속 업데이트 · 약사 검증",
+      "#e11d48"
+    )}
+    ${proofBanner(
+      ["🩸 약사가 직접 정리", "📊 Reddit 실제 경험", "🔄 계속 업데이트", "📱 모바일 최적화"],
+      "#fff1f2",
+      "#e11d48"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("diabetes-guide", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🩸", "당뇨 관리 시스템을", "지금 시작하세요.", "진단부터 90일 로드맵까지 — 약사가 정리한 완전 가이드", "#e11d48")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -3012,6 +3170,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "바이올렛(#7c3aed)에서 딥퍼플(#3b0764)로",
     symbol: "투명한 다이아몬드가 빛을 발하며 주변에 가격표·별점·하트가 떠오르는 플랫 일러스트 (보이지 않는 가치의 가시화)",
     mood: "신비, 설득, 전환",
+  },
+  "diabetes-guide": {
+    title: "약사가 알려주는 당뇨에 대한 모든 것",
+    subtitle: "진단부터 약물·식단·생활습관까지 — 당뇨인이 알아야 할 완전 가이드",
+    author: "비법연구소",
+    gradient: "레드(#e11d48)에서 딥로즈(#881337)로",
+    symbol: "혈당 측정기와 건강한 음식(사과, 채소)이 하트 모양으로 배치된 플랫 일러스트",
+    mood: "안심, 희망, 실행력",
   },
 };
 
@@ -3229,6 +3395,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "무형 상품 판매의 80%는 '보여주는 기술'로 결정됩니다. 상품이 아니라 설득을 설계하세요.",
     cta: "무형 상품 판매 설득 시스템. 1,000원에 시작하세요.",
     tags: "#무형상품 #디지털판매 #설득심리학 #판매페이지 #전환율",
+  },
+  "diabetes-guide": {
+    title: "약사가 알려주는 당뇨에 대한 모든 것",
+    hook: "당뇨 진단을 받고 유튜브를 뒤졌는데 정보가 너무 많고 서로 다른 말을 해서 뭘 믿어야 할지 모르겠죠? 약사가 정리해드립니다.",
+    stat: "10챕터 + 90일 A1C 개선 로드맵 · Reddit 실제 경험 · 부록 5개",
+    quote: "약이 무섭다고 안 먹으면 합병증이 옵니다. 원리를 알면 두렵지 않습니다. — 약사의 조언",
+    cta: "당뇨 관리 시스템, 1,000원에 시작하세요.",
+    tags: "#당뇨 #당뇨관리 #혈당관리 #당뇨식단 #A1C",
   },
 };
 
@@ -3518,6 +3692,18 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `좋은 상품인데 왜 안 팔릴까요? 만져볼 수 없기 때문입니다. 무형 상품 판매의 80%는 '보여주는 기술'로 결정됩니다. 10챕터 + 판매 페이지 황금 공식 + 신뢰 장치 5가지 + CTA 템플릿 10개 · 프로필 링크에서 목차를 확인하세요. #무형상품 #디지털판매 #설득심리학 #판매페이지 #전환율`,
   },
+  "diabetes-guide": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 크림슨-로즈 그라데이션 배경, 중앙에 혈당 측정기가 빛을 발하며 떠 있음.
+측정기 화면에 "6.5%" 숫자가 녹색으로 빛나고 (목표 A1C 달성 상징).
+측정기 주변으로 사과·브로콜리·당근 아이콘이 하트 모양으로 배치되어 빛남.
+배경에서 레드-로즈 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "A1C".
+중앙 하단에 굵은 흰색 글씨: "90일 안에 바꿀 수 있습니다".
+시네마틱 조명, 크림슨 레드 + 로즈 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `당뇨 진단 후 뭘 해야 할지 모르겠다면 여기서 시작하세요. 메트포르민부터 인슐린까지 약물 원리, 혈당 스파이크를 막는 식사 전략, 90일 A1C 개선 로드맵. 10챕터 + 합병증 체크리스트 + 혈당일지 템플릿 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #당뇨 #당뇨관리 #혈당관리 #A1C #약사`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -3570,6 +3756,7 @@ const BOOK_META = [
   { id: "personal-branding", title: "퍼스널 브랜딩 가이드", emoji: "🎤", builder: buildPersonalBranding },
   { id: "business-model", title: "비즈니스 모델 설계법", emoji: "📊", builder: buildBusinessModel },
   { id: "selling-invisible", title: "무형 상품 완판 설득법", emoji: "💎", builder: buildSellingInvisible },
+  { id: "diabetes-guide", title: "당뇨 완전 가이드", emoji: "🩸", builder: buildDiabetesGuide },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

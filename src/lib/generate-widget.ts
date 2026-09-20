@@ -141,6 +141,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "💎",
     subtitle: "무형의 가치를 매출로 바꾸는 실전 가이드",
   },
+  {
+    id: "diabetes-guide",
+    title: "약사가 알려주는 당뇨에 대한 모든 것",
+    emoji: "🩸",
+    subtitle: "진단부터 약물·식단·생활습관까지",
+  },
 ];
 
 interface Section {
@@ -195,6 +201,7 @@ const CROSS_SELL_BOOKS = [
   { id: "personal-branding", emoji: "🎤", title: "퍼스널 브랜딩 가이드", sub: "UVP→수익화 90일 로드맵" },
   { id: "business-model", emoji: "📊", title: "비즈니스 모델 설계법", sub: "구독·SaaS·마켓플레이스" },
   { id: "selling-invisible", emoji: "💎", title: "무형 상품 완판 설득법", sub: "디지털상품·강의·컨설팅" },
+  { id: "diabetes-guide", emoji: "🩸", title: "당뇨 완전 가이드", sub: "약물·식단·혈당·합병증" },
 ];
 
 function buildCrossSell(currentId: string): string {

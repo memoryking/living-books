@@ -223,6 +223,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-13",
     version: 1,
   },
+  {
+    id: "diabetes-guide",
+    emoji: "🩸",
+    title: "약사가 알려주는 당뇨에 대한 모든 것",
+    subtitle: "진단부터 약물·식단·생활습관까지 — 당뇨인이 알아야 할 완전 가이드",
+    tags: ["당뇨", "혈당관리", "메트포르민", "GLP-1"],
+    lastUpdated: "2026-09-20",
+    version: 1,
+  },
 ];
 
 function BookCard({
