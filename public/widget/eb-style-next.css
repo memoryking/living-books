@@ -1,0 +1,189 @@
+/* ═══════════════════════════════════════════
+   살아있는 정보책 — 전자책 뷰어 공통 CSS
+   수정하면 모든 전자책에 자동 반영됩니다.
+   ═══════════════════════════════════════════ */
+
+.eb-viewer{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.85;color:#333;max-width:780px;margin:0 auto;padding:0 16px 80px;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;transition:background .3s,color .3s}
+.eb-viewer.eb-sm{font-size:15px}
+.eb-viewer.eb-md{font-size:17px}
+.eb-viewer.eb-lg{font-size:20px}
+
+/* Dark Mode */
+.eb-viewer.eb-dark{background:#1a1a2e;color:#e0e0e0}
+.eb-viewer.eb-dark .eb-bar{background:#1a1a2e;border-color:#333}
+.eb-viewer.eb-dark .eb-bar button{background:#2a2a3e;color:#ccc;border-color:#444}
+.eb-viewer.eb-dark .eb-bar button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+.eb-viewer.eb-dark .eb-toc{background:#222;border-color:#333}
+.eb-viewer.eb-dark .eb-toc a{color:#60a5fa}
+.eb-viewer.eb-dark .eb-section{color:#d1d5db}
+.eb-viewer.eb-dark h1,.eb-viewer.eb-dark h2,.eb-viewer.eb-dark h3{color:#f3f4f6}
+.eb-viewer.eb-dark blockquote{background:#222;border-color:#3b82f6;color:#93c5fd}
+.eb-viewer.eb-dark th{background:#2a2a3e}
+.eb-viewer.eb-dark td,.eb-viewer.eb-dark th{border-color:#444}
+.eb-viewer.eb-dark tr:nth-child(even){background:#222}
+.eb-viewer.eb-dark strong{color:#f9fafb}
+.eb-viewer.eb-dark pre{background:#2a2a3e}
+.eb-viewer.eb-dark code{background:#2a2a3e;color:#e0e0e0}
+.eb-viewer.eb-dark .eb-cross{background:#222;border-color:#333}
+
+/* Progress Bar */
+.eb-progress{position:sticky;top:0;z-index:110;height:3px;background:#e5e7eb}
+.eb-progress-bar{height:100%;background:linear-gradient(90deg,#2563eb,#7c3aed);width:0%;transition:width .15s}
+.eb-viewer.eb-dark .eb-progress{background:#333}
+
+/* Control Bar */
+.eb-bar{position:sticky;top:3px;background:#fff;border-bottom:1px solid #eee;padding:6px 0;z-index:100;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.eb-bar button{padding:7px 18px;border:1px solid #d1d5db;background:#fff;border-radius:24px;cursor:pointer;font-size:14px;font-weight:600;color:#555;transition:color .2s,border-color .2s,background .2s}
+.eb-bar button:hover{border-color:#2563eb;color:#2563eb}
+.eb-bar button.active{background:#2563eb;color:#fff;border-color:#2563eb}
+
+/* Floating TOC Button */
+.eb-float{position:fixed;bottom:24px;right:24px;background:#2563eb;color:#fff;padding:10px 18px;border-radius:50px;cursor:pointer;font-size:14px;font-weight:600;box-shadow:0 2px 12px rgba(37,99,235,.35);z-index:200;display:none;transition:opacity .2s;border:none}
+.eb-float:hover{background:#1d4ed8}
+
+/* TOC */
+.eb-toc{background:#f8f9fa;padding:8px 20px 16px;border-radius:12px;margin:6px 0 16px;border:1px solid #e5e7eb}
+.eb-toc h2{margin:0 0 8px;font-size:1.1em;font-weight:700}
+.eb-toc ol{padding-left:20px;margin:0}
+.eb-toc li{margin:6px 0}
+.eb-toc a{color:#2563eb;text-decoration:none}
+.eb-toc a:hover{text-decoration:underline}
+
+/* Header */
+.eb-header{text-align:center;padding:16px 0 12px;margin:0}
+.eb-header .eb-emoji{font-size:36px;display:block;margin:0 auto 8px;text-align:center;line-height:1}
+.eb-header h1{font-size:1.4em;font-weight:800;margin:0 0 4px;padding:0;color:#111;line-height:1.3}
+.eb-header p{color:#888;font-size:.9em;margin:0;padding:0;line-height:1.4}
+
+/* Sections */
+.eb-section{margin-bottom:48px;scroll-margin-top:150px;padding-top:56px;border-top:2px solid #e5e7eb;margin-top:24px}
+.eb-viewer h1{font-size:1.45em;font-weight:700;margin:2em 0 .8em;color:#111;border-bottom:2px solid #e5e7eb;padding-bottom:.4em}
+.eb-viewer h2{font-size:1.25em;font-weight:700;margin:1.8em 0 .7em;color:#222}
+.eb-viewer h3{font-size:1.1em;font-weight:600;margin:1.5em 0 .5em;color:#333}
+.eb-viewer h4{font-size:1em;font-weight:600;margin:1.2em 0 .4em;color:#444}
+.eb-viewer p{margin:.7em 0}
+.eb-viewer blockquote{border-left:3px solid #2563eb;padding:12px 16px;margin:1em 0;background:#eff6ff;border-radius:0 8px 8px 0;color:#1e40af}
+.eb-viewer blockquote em{font-style:italic;color:#3b82f6}
+.eb-viewer ul,.eb-viewer ol{padding-left:24px;margin:.8em 0}
+.eb-viewer li{margin:.35em 0}
+.eb-viewer table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.9em;overflow-x:auto;display:block}
+.eb-viewer th,.eb-viewer td{border:1px solid #d1d5db;padding:8px 12px;text-align:left}
+.eb-viewer th{background:#f3f4f6;font-weight:600}
+.eb-viewer tr:nth-child(even){background:#fafafa}
+.eb-viewer hr{border:none;border-top:1px solid #e5e7eb;margin:2em 0}
+.eb-viewer strong{font-weight:700;color:#111}
+.eb-viewer pre{font-size:inherit;white-space:pre-wrap;word-break:break-word;background:#f3f4f6;padding:16px;border-radius:8px;margin:1em 0;overflow-x:auto}
+.eb-viewer pre code{font-size:inherit;background:none;padding:0}
+.eb-viewer code{background:#f3f4f6;padding:2px 6px;border-radius:4px;font-size:.9em}
+.eb-viewer img{max-width:100%;height:auto;border-radius:8px}
+.eb-viewer input[type="checkbox"]{margin-right:6px}
+
+/* Back to TOC */
+.eb-back{display:inline-block;margin:8px 0;color:#2563eb;font-size:14px;cursor:pointer;font-weight:500}
+.eb-back:hover{text-decoration:underline}
+
+/* Cross-sell */
+.eb-cross{margin:48px 0 0;padding:32px 24px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;text-align:center}
+.eb-cross h3{font-size:14px;font-weight:600;color:#9ca3af;margin:0 0 16px}
+.eb-cross-item{display:flex;align-items:center;gap:14px;padding:14px 16px;margin:8px 0;background:#fff;border-radius:10px;border:1px solid #f3f4f6;text-align:left;cursor:default}
+.eb-cross-item .eb-ci-emoji{font-size:28px;flex-shrink:0}
+.eb-cross-item .eb-ci-title{font-size:14px;font-weight:700;color:#111}
+.eb-cross-item .eb-ci-sub{font-size:12px;color:#6b7280;margin-top:2px}
+.eb-cross-item .eb-ci-price{margin-left:auto;font-size:13px;font-weight:700;color:#2563eb;flex-shrink:0}
+
+/* ═══════════════════════════════════════════
+   Page Mode (책 넘기기 모드)
+   ═══════════════════════════════════════════ */
+
+/* Page mode: parent clips overflow, content slides via translateX */
+.eb-viewer.eb-page-mode{padding:0!important;overflow:hidden;position:relative}
+.eb-viewer.eb-page-mode .eb-bar{padding:6px 16px;opacity:0;transition:opacity .3s;pointer-events:none}
+.eb-viewer.eb-page-mode .eb-bar.show{opacity:1;pointer-events:auto}
+.eb-viewer.eb-page-mode .eb-progress{opacity:0;transition:opacity .3s}
+.eb-viewer.eb-page-mode .eb-progress.show{opacity:1}
+.eb-viewer.eb-page-mode .eb-header{display:none}
+.eb-viewer.eb-page-mode .eb-toc{display:none}
+.eb-viewer.eb-page-mode .eb-content{
+  column-gap:0;
+  padding:0;
+  touch-action:none;
+}
+.eb-viewer.eb-page-mode .eb-content.eb-animating{
+  transition:transform .35s ease;
+  will-change:transform;
+}
+.eb-viewer.eb-page-mode .eb-content .eb-section{
+  padding-left:24px;padding-right:24px;
+  break-inside:avoid-column;
+}
+.eb-viewer.eb-page-mode .eb-content blockquote,
+.eb-viewer.eb-page-mode .eb-content ul,
+.eb-viewer.eb-page-mode .eb-content ol{
+  break-inside:avoid;
+}
+.eb-viewer.eb-page-mode .eb-content img{
+  max-height:60vh;
+  object-fit:contain;
+}
+.eb-viewer.eb-page-mode .eb-content table{
+  display:table;
+  break-inside:avoid;
+}
+
+/* Hide scroll-based elements in page mode */
+.eb-viewer.eb-page-mode .eb-back{display:none}
+
+/* Page side arrows (양쪽 화살표) */
+.eb-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:36px;height:72px;border:none;
+  background:rgba(0,0,0,.06);cursor:pointer;
+  font-size:22px;font-weight:700;color:#888;
+  display:none;align-items:center;justify-content:center;
+  z-index:250;transition:color .2s,background .2s;border-radius:6px;
+}
+.eb-arrow:hover{background:rgba(0,0,0,.12);color:#333}
+.eb-arrow-l{left:2px}.eb-arrow-r{right:2px}
+.eb-viewer.eb-dark .eb-arrow{background:rgba(255,255,255,.06);color:#666}
+.eb-viewer.eb-dark .eb-arrow:hover{background:rgba(255,255,255,.12);color:#ccc}
+
+/* Page bottom bar (페이지 번호 + 목차) */
+.eb-page-bar{
+  position:absolute;bottom:0;left:0;right:0;
+  display:none;align-items:center;justify-content:center;gap:16px;
+  padding:6px 0 8px;
+  background:rgba(255,255,255,.92);border-top:1px solid #e5e7eb;
+  z-index:250;
+}
+.eb-page-bar span{font-size:13px;font-weight:600;color:#888}
+.eb-page-bar button{border:1px solid #d1d5db;background:#fff;padding:4px 14px;border-radius:16px;font-size:12px;font-weight:600;color:#666;cursor:pointer}
+.eb-page-bar button:hover{border-color:#2563eb;color:#2563eb}
+.eb-viewer.eb-dark .eb-page-bar{background:rgba(26,26,46,.92);border-color:#333}
+.eb-viewer.eb-dark .eb-page-bar span{color:#999}
+.eb-viewer.eb-dark .eb-page-bar button{background:#2a2a3e;border-color:#444;color:#aaa}
+
+/* TOC overlay */
+.eb-toc-overlay{
+  position:absolute;top:0;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.98);z-index:300;
+  overflow-y:auto;padding:24px 20px;display:none;
+}
+.eb-toc-overlay.show{display:block}
+.eb-viewer.eb-dark .eb-toc-overlay{background:rgba(26,26,46,.98)}
+
+/* Hide old page-nav */
+.eb-page-nav{display:none!important}
+
+/* Mode toggle button */
+#eb-mode-btn{font-size:16px}
+
+/* Mobile */
+@media(max-width:640px){
+  .eb-viewer{padding:0 12px 80px}
+  .eb-viewer.eb-page-mode{padding:0 12px 0}
+  .eb-float{bottom:16px;right:16px;padding:9px 15px;font-size:13px}
+  .eb-viewer table{font-size:.8em}
+  .eb-toc{padding:16px 18px}
+  .eb-page-nav button{width:36px;height:36px;font-size:18px}
+  .eb-page-nav span{font-size:13px}
+}
