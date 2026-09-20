@@ -165,6 +165,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🧬",
     subtitle: "스타틴·식이요법·콜레스테롤 관리",
   },
+  {
+    id: "otc-medicine-guide",
+    title: "집에서 알아야 할 상비약 완전 가이드",
+    emoji: "💊",
+    subtitle: "타이레놀·감기약·소화제·연고·구충제",
+  },
 ];
 
 interface Section {
@@ -223,6 +229,7 @@ const CROSS_SELL_BOOKS = [
   { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", sub: "리더십·인내·유혹·귀환" },
   { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", sub: "5대 약물·DASH·합병증" },
   { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", sub: "스타틴·식이요법·LDL" },
+  { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", sub: "타이레놀·감기약·소화제" },
 ];
 
 function buildCrossSell(currentId: string): string {

@@ -299,6 +299,7 @@ const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "odyssey-life", emoji: "⚓", title: "오디세이아 인생 항해술", oneLiner: "리더십·인내·유혹·귀환" },
   { id: "hypertension-guide", emoji: "🫀", title: "혈압 완전 가이드", oneLiner: "5대 약물·DASH·합병증" },
   { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", oneLiner: "스타틴·식이요법·LDL" },
+  { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", oneLiner: "타이레놀·감기약·소화제" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -3460,6 +3461,163 @@ ${mobileStyles}
 }
 
 /* ═══════════════════════════════════════════
+   26. 상비약 완전 가이드
+   ═══════════════════════════════════════════ */
+
+function buildOtcMedicineGuide(): string {
+  return `<!-- 💊 상비약 완전 가이드 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+
+  <!-- Hero -->
+  <section style="${sec("background:linear-gradient(160deg,#ecfdf5,#a7f3d0,#059669);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">💊</div>
+    ${bigTitle("타이레놀 몇 알 먹어야 하나요?", "약사가 답해드립니다.")}
+    ${subtitle("해열제·감기약·소화제·상처약·알레르기약·영양제 — 가정 상비약 완전 가이드")}
+    ${statGrid([
+      { num: "50+", label: "약품 분석", color: "#059669" },
+      { num: "한국 브랜드", label: "실제 구입 가능한 약만", color: "#059669" },
+      { num: "증상별", label: "가이드 수록", color: "#059669" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <!-- 공감 -->
+  <section style="${sec("background:#ecfdf5;")}">
+    ${bigTitle("약 앞에서 이런 적 있으시죠?")}
+    ${subtitle("약국에서 가장 많이 받는 질문들 — 정해진 답이 있지만, 제때 얻기 어려운 것들")}
+    ${redditQuote("타이레놀 먹고 술 마셔도 되나요? 간이 망가진다는데...", "pharmacy")}
+    ${redditQuote("감기약 두 종류를 같이 먹어도 되나요? 성분이 겹치는지 어떻게 확인하죠?", "health")}
+    ${redditQuote("아이 열이 39도인데 응급실 가야 하나요? 해열제 교차 복용은 어떻게 하는 건가요?", "parenting")}
+  </section>
+
+  <!-- Before → After -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이 가이드를 읽기 전과 후,", "이렇게 달라집니다")}
+    ${beforeAfter(
+      [
+        "타이레놀과 감기약을 동시에 먹어 간독성 위험",
+        "후시딘과 마데카솔 중 아무거나 바름",
+        "아이 해열제 용량을 나이로 대충 맞춤",
+        "소화제를 매 식사마다 습관적으로 복용",
+      ],
+      [
+        "성분 겹침을 확인하고 안전하게 약을 선택",
+        "상황에 따라 항생제/재생 연고를 구분",
+        "체중 기준으로 정확한 용량을 계산",
+        "속쓰림과 소화불량에 다른 약을 적용",
+      ],
+      "읽기 전 (지금)",
+      "읽은 후",
+      "#fef2f2",
+      "#f0fdf4"
+    )}
+  </section>
+
+  <!-- 목차 -->
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${subtitle("각 챕터는 독립적으로 읽을 수 있습니다")}
+    ${tocItem("01", "해열진통제의 모든 것 — 타이레놀 vs 부루펜, 어린이 체중별 용량, 교차 복용법", true, "#059669")}
+    ${tocItem("02", "감기약 완전 분석 — 판콜·판피린·화이투벤 성분 비교, 겹침 위험", true, "#059669")}
+    ${tocItem("03", "위장약과 소화제 — 겔포스·게비스콘·PPI 비교, 속쓰림 vs 소화불량", true, "#059669")}
+    ${tocItem("04", "쌍화탕과 한방 상비약 — 쌍화탕·우황청심환·정로환, 한약 양약 상호작용", false, "#059669")}
+    ${tocItem("05", "상처/화상/피부 약 — 후시딘 vs 마데카솔 vs 베판텐, 습윤 드레싱", true, "#059669")}
+    ${tocItem("06", "알레르기/비염약 — 지르텍·클라리틴·알레그라 비교, 비염 스프레이 주의", false, "#059669")}
+    ${tocItem("07", "변비/설사/장 건강 — 둘코락스·마그밀, 유산균 진짜 효과, 설사 수분 보충", false, "#059669")}
+    ${tocItem("08", "눈/귀/입 약 — 인공눈물 선택, 구내염(오라메디 vs 알보칠), 가글", false, "#059669")}
+    ${tocItem("09", "구충제/비타민/영양제 — 비타민D·오메가3·철분제, 정직한 효과 평가", true, "#059669")}
+    ${tocItem("10", "보관/폐기/응급 대처 — 상비약 체크리스트, 유효기간, 119 기준", true, "#059669")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 상비약 체크리스트 / 해열제 체중별 용량표 / 약물 상호작용 위험표 / 증상별 추천 약품표 / 어린이 약 용량표 / 응급 전화번호 카드</div>
+  </section>
+
+  <!-- 미리보기 -->
+  ${fullPreview(
+    "1",
+    "해열진통제의 모든 것",
+    [
+      "아세트아미노펜 vs NSAIDs 비교",
+      "한국에서 구입할 수 있는 제품 총정리",
+      "어린이 체중별 용량 계산표",
+      "해열제 교차 복용법",
+      "39도 응급실 기준",
+    ],
+    `<p style="margin:0 0 16px;">해열진통제는 크게 두 계열로 나뉩니다. <strong>아세트아미노펜(타이레놀)</strong>은 간에서 대사되며 소염 효과는 없지만 공복 복용이 가능합니다. <strong>NSAIDs(부루펜)</strong>는 소염 효과가 있지만 위장 부작용이 있으므로 식후에 복용해야 합니다.</p>
+      <p style="margin:0 0 16px;">어린이 해열제는 <strong>나이가 아니라 체중</strong>으로 계산합니다. 같은 5살이라도 체중이 다르면 용량이 다릅니다.</p>
+      <p style="margin:0 0 16px;padding:16px;background:#ecfdf5;border-radius:10px;font-weight:600;color:#059669;">⚠️ 핵심 경고: 타이레놀을 복용하는 날에는 술을 마시지 마세요. 많은 감기약에도 아세트아미노펜이 들어 있어 이중 복용 위험이 있습니다.</p>
+      <p style="margin:0;">약의 원리를 알면 안전하게 쓸 수 있습니다. <strong>제대로 알고 쓰면 고마운 존재입니다.</strong></p>`,
+    "#059669",
+    "linear-gradient(160deg,#ecfdf5,#d1fae5)"
+  )}
+
+  <!-- 추천 대상 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 분이라면,", "이 가이드가 답입니다")}
+    ${checkList(
+      [
+        "약 앞에서 뭘 사야 할지 항상 고민되는 분",
+        "어린 자녀가 있어 해열제 용량이 걱정되는 부모",
+        "부모님 약 관리를 돕고 싶은 분",
+        "약의 원리를 알고 안전하게 사용하고 싶은 분",
+      ],
+      "✅",
+      "#ecfdf5"
+    )}
+    ${spacer(16)}
+    ${checkList(
+      [
+        "전문적인 의료 진단을 대체하고 싶은 분 (이 책은 의료 행위가 아닙니다)",
+        "처방전이 필요한 전문의약품 정보를 원하시는 분",
+      ],
+      "🚫",
+      "#ecfdf5"
+    )}
+  </section>
+
+  <!-- FAQ -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("타이레놀과 감기약을 같이 먹어도 되나요?", "대부분의 종합감기약에는 아세트아미노펜이 이미 들어 있습니다. 타이레놀을 추가로 먹으면 이중 복용이 됩니다. 1장에서 성분 겹침 확인 방법을 자세히 설명합니다.")}
+    ${faqItem("후시딘과 마데카솔, 어떤 걸 발라야 하나요?", "감염 위험이 있는 상처는 후시딘(항생제), 깨끗한 상처에 흉터를 예방하려면 마데카솔(재생)입니다. 5장에서 상황별 선택 가이드를 확인하세요.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 새로운 정보가 나오면 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "약국 30분 상담", price: "무료이지만", note: "대기 시간, 짧은 설명" },
+        { what: "건강 정보 서적", price: "18,000원~", note: "외국 약 기준, 업데이트 없음" },
+        { what: "유튜브 검색 3시간", price: "무료", note: "정보 파편화·광고·과장" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 6개 · 한국 약품 기준 · 약사 검증 · 계속 업데이트",
+      "#059669"
+    )}
+    ${proofBanner(
+      ["💊 약사가 직접 정리", "🇰🇷 한국 약품 기준", "🔄 계속 업데이트", "📱 모바일 최적화"],
+      "#ecfdf5",
+      "#059669"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("otc-medicine-guide", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("💊", "가정 상비약 가이드를", "지금 시작하세요.", "해열제부터 영양제까지 — 약사가 정리한 50+ 약품 완전 가이드", "#059669")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
    표지 프롬프트 / 마케팅문구 (기존 유지)
    ═══════════════════════════════════════════ */
 
@@ -3672,6 +3830,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "앰버(#d97706)에서 딥앰버(#78350f)로",
     symbol: "혈관 단면과 콜레스테롤 분자가 나란히 놓여 있고 주변에 약·채소·운동화 아이콘이 도는 플랫 일러스트",
     mood: "이해, 관리, 건강",
+  },
+  "otc-medicine-guide": {
+    title: "약사가 알려주는 상비약 완전 가이드",
+    subtitle: "해열제·감기약·소화제·상처약·알레르기약·영양제 — 50+ 약품 분석",
+    author: "유원소망약국 약사",
+    gradient: "에메랄드(#059669)에서 딥그린(#064e3b)로",
+    symbol: "약 상자에서 다양한 약품이 정리된 플랫 일러스트",
+    mood: "안심, 신뢰, 실용",
   },
 };
 
@@ -3921,6 +4087,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "콜레스테롤은 '침묵의 살인자'입니다. 증상이 없다고 괜찮은 게 아닙니다. 관리하면 합병증은 예방할 수 있습니다. — 약사의 조언",
     cta: "콜레스테롤 관리 시스템, 1,000원에 시작하세요.",
     tags: "#고지혈증 #콜레스테롤 #스타틴 #LDL #약사",
+  },
+  "otc-medicine-guide": {
+    title: "약사가 알려주는 상비약 완전 가이드",
+    hook: "타이레놀 몇 알 먹어야 하나요? 감기약 겹쳐 먹으면 안 되나요? 약사가 답해드립니다.",
+    stat: "10챕터 + 50+ 약품 분석 · 한국 브랜드 기준 · 증상별 가이드 · 부록 6개",
+    quote: "약은 올바르게 쓰면 고마운 존재이지만, 잘못 쓰면 독이 됩니다. 알고 쓰면 안전합니다. — 약사의 조언",
+    cta: "가정 상비약 가이드, 1,000원에 시작하세요.",
+    tags: "#상비약 #타이레놀 #감기약 #소화제 #약사",
   },
 };
 
@@ -4257,6 +4431,17 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `콜레스테롤 약 평생 먹어야 하나요? 약사가 답해드립니다. 스타틴 6종 완전 비교, 포화지방 줄이는 식이요법, 동맥경화·심근경색 예방, 90일 콜레스테롤 관리 로드맵. 10챕터 + 지질 검사 기록표 + 스타틴 비교 카드 + 부록 6개 · 프로필 링크에서 목차를 확인하세요. #고지혈증 #콜레스테롤 #스타틴 #LDL #약사`,
   },
+  "otc-medicine-guide": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 에메랄드-딥그린 그라데이션 배경(#059669 → #064e3b), 중앙에 열린 약 상자가 빛을 발하며 떠 있음.
+약 상자에서 정제·캡슐·시럽·연고·반창고 아이콘이 정리된 모습으로 배열되어 빛남.
+배경에서 에메랄드-민트 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "50+ 약품".
+중앙 하단에 굵은 흰색 글씨: "알고 쓰면 안전합니다".
+시네마틱 조명, 에메랄드 + 딥그린 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `타이레놀 몇 알 먹어야 하나요? 감기약 겹쳐 먹으면 안 되나요? 약사가 답해드립니다. 해열제·감기약·소화제·상처약·알레르기약·영양제 50+ 약품 분석. 10챕터 + 상비약 체크리스트 + 체중별 용량표 + 부록 6개 · 프로필 링크에서 목차를 확인하세요. #상비약 #타이레놀 #감기약 #소화제 #약사`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -4313,6 +4498,7 @@ const BOOK_META = [
   { id: "odyssey-life", title: "오디세이아 인생 항해술", emoji: "⚓", builder: buildOdysseyLife },
   { id: "hypertension-guide", title: "혈압 완전 가이드", emoji: "🫀", builder: buildHypertensionGuide },
   { id: "cholesterol-guide", title: "고지혈증 완전 가이드", emoji: "🧬", builder: buildCholesterolGuide },
+  { id: "otc-medicine-guide", title: "상비약 완전 가이드", emoji: "💊", builder: buildOtcMedicineGuide },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

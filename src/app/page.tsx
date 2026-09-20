@@ -259,6 +259,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-20",
     version: 1,
   },
+  {
+    id: "otc-medicine-guide",
+    emoji: "💊",
+    title: "집에서 알아야 할 상비약 완전 가이드",
+    subtitle: "타이레놀·감기약·소화제·연고·구충제까지 — 약사가 하나하나 알려주는 가정 약품 백과",
+    tags: ["상비약", "타이레놀", "감기약", "소화제"],
+    lastUpdated: "2026-09-20",
+    version: 1,
+  },
 ];
 
 function BookCard({
