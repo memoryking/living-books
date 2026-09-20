@@ -16,8 +16,8 @@ export async function GET(
   const isPreview = req.nextUrl.searchParams.get("preview") === "1";
 
   // preview 모드: -next 파일 사용, 일반: 현재 파일 사용
-  const cssFile = isPreview ? "eb-style-next.css" : "eb-style.css?v=4";
-  const jsFile = isPreview ? "eb-script-next.js" : "eb-script.js?v=4";
+  const cssFile = isPreview ? "eb-style-next.css" : "eb-style.css?v=5";
+  const jsFile = isPreview ? "eb-script-next.js" : "eb-script.js?v=5";
 
   // HTML에서 기존 <link>와 <script> 태그 제거 (직접 삽입)
   const contentHtml = widgetHtml
