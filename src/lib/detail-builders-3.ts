@@ -1371,3 +1371,112 @@ ${mobileStyles}
 
 </div>`;
 }
+
+/* ═══════════════════════════════════════════
+   29. 거절 잘하는 사람들의 비밀
+   ═══════════════════════════════════════════ */
+
+export function buildSayingNo(): string {
+  return `<!-- 🛡️ 거절 잘하는 사람들의 비밀 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#ede9fe,#c4b5fd,#7c3aed);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🛡️</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#3b0764;">"괜찮아, 내가 할게"<br>그 말, 진심이었나요?</h2>
+    <p style="font-size:18px;color:#5b21b6;font-weight:600;margin:0 0 8px;">거절은 관계를 끊는 것이 아니라 나를 지키는 것입니다.</p>
+    ${subtitle("관계를 지키면서 나를 지키는 거절의 기술 — 상황별 스크립트 + 30일 연습 플랜")}
+    ${statGrid([
+      { num: "20개", label: "거절 스크립트", color: "#7c3aed" },
+      { num: "경계", label: "설정 워크시트", color: "#7c3aed" },
+      { num: "30일", label: "거절 연습 플랜", color: "#7c3aed" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 상태 아닌가요?")}
+    ${beforeAfter(
+      ["부탁 받으면 자동으로 '네'가 나옴", "거절 후 죄책감에 잠을 못 이룸", "남의 일을 떠안다가 내 일을 못 끝냄"],
+      ["상황에 맞는 거절 스크립트로 대응", "죄책감 없이 경계를 지키는 마인드셋", "내 시간과 에너지를 보호하며 관계도 유지"],
+      "거절 전", "30일 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#7c3aed;">모든 것에 "네"라고 말하는 사람의 "네"는 아무 가치가 없습니다. 진심으로 "네"라고 말하려면, "아니오"를 말할 수 있어야 합니다.</strong></p>
+  </section>
+
+  <section style="${sec("background:#3b0764;color:#fff;")}">
+    <div style="font-size:13px;color:#c4b5fd;font-weight:600;letter-spacing:2px;margin-bottom:24px;">SAYING NO SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">거절의 3원칙</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <div style="padding:14px 16px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">명확하게</span></div>
+      <div style="padding:14px 16px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">부드럽게</span></div>
+      <div style="padding:14px 16px;background:rgba(196,181,253,.15);border:1px solid rgba(196,181,253,.3);border-radius:12px;"><span style="color:#c4b5fd;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">일관되게</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${redditQuote("거절 못해서 남의 일까지 다 떠안았는데, 정작 고맙다는 말도 못 듣고 번아웃만 왔다. '죄송하지만 어렵습니다' 한 마디가 이렇게 인생을 바꿀 줄 몰랐다.", "korea")}
+    ${redditQuote("착한 사람 콤플렉스에서 벗어나는 데 30년 걸렸다. 거절은 이기적인 게 아니라 나를 존중하는 것이다.", "selfimprovement")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "왜 '아니오'가 이렇게 어려울까: 착한 아이 콤플렉스", true, "#7c3aed")}
+    ${tocItem("02", "거절의 3원칙: 명확·부드럽·일관", true, "#7c3aed")}
+    ${tocItem("03", "직장 거절: 상사·동료·회식·카톡 업무", true, "#7c3aed")}
+    ${tocItem("04", "인간관계 거절: 친구·돈·보험·모임", true, "#7c3aed")}
+    ${tocItem("05", "가족 거절: 부모님·시댁·형제·자녀", false, "#7c3aed")}
+    ${tocItem("06", "소비자 거절: 업셀링·텔레마케터·해지방어", false, "#7c3aed")}
+    ${tocItem("07", "디지털 거절: 카톡·단톡방·SNS·이메일", false, "#7c3aed")}
+    ${tocItem("08", "거절 후 관계 관리: No 이후가 더 중요하다", false, "#7c3aed")}
+    ${tocItem("09", "경계 세우기: 거절의 근본 해결", true, "#7c3aed")}
+    ${tocItem("10", "30일 거절 연습 플랜", true, "#7c3aed")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 거절 스크립트 20개 / 거절 연습 일지 / 경계 설정 워크시트 / 30일 플래너 / 거절 판단 가이드</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["부탁을 받으면 자동으로 '네'가 나오는 분", "거절한 뒤 죄책감에 시달리는 분", "착하다는 소리는 듣지만 정작 행복하지 않은 분", "상사·시부모님·친구 앞에서 내 의견을 못 말하는 분", "카톡 읽고 답 안 하면 불안한 분"], "✅", "#f5f3ff")}
+    ${spacer(16)}
+    ${checkList(["이미 거절을 잘하는 분", "모든 관계를 끊고 싶은 분 (이 책은 관계를 지키는 거절입니다)"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("거절하면 관계가 끝나지 않나요?", "건강한 관계는 거절 한 번으로 끝나지 않습니다. 오히려 적절한 거절은 신뢰를 높입니다. '이 사람이 좋다고 하면 진심이다'라는 믿음을 줍니다.")}
+    ${faqItem("한국 문화에서도 거절이 가능한가요?", "네. 이 책은 한국의 눈치·정·체면·위계 문화에 맞는 거절법을 다룹니다. '죄송하지만 어렵습니다'처럼 존중하면서 거절하는 방법입니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "심리 상담 1회", price: "100,000원~", note: "1회성, 범용 조언" },
+        { what: "자기주장 훈련 프로그램", price: "300,000원~", note: "시간·장소 제약" },
+        { what: "자기계발 서적", price: "18,000원~", note: "업데이트 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 5개 · 거절 스크립트 20개 · 경계 워크시트 · 30일 플랜 · 업데이트",
+      "#7c3aed"
+    )}
+    ${proofBanner(
+      ["🛡️ 상황별 스크립트 20개", "🧠 착한 아이 콤플렉스 해소", "📋 30일 실전 플랜", "🔄 계속 업데이트"],
+      "#f5f3ff",
+      "#7c3aed"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("saying-no", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🛡️", "거절은 기술입니다.", "나를 지키는 기술을 배우세요.", "거절 스크립트 20개 · 경계 설정 · 관계 관리 · 30일 플랜", "#7c3aed")}
+
+</div>`;
+}

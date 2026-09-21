@@ -43,6 +43,7 @@ import {
   buildOtcMedicineGuide,
   buildSpeakingSkills,
   buildNegotiationSkills,
+  buildSayingNo,
 } from "./detail-builders-3";
 
 
@@ -307,6 +308,7 @@ const BOOK_CATEGORIES: Record<string, string> = {
   "love-skills": "관계·소통",
   "speaking-skills": "관계·소통",
   "negotiation-skills": "관계·소통",
+  "saying-no": "관계·소통",
   "ai-sidejob": "비즈니스·부업",
   "threads-marketing": "비즈니스·부업",
   "sns-growth": "비즈니스·부업",
@@ -403,6 +405,7 @@ export const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", oneLiner: "타이레놀·감기약·소화제" },
   { id: "speaking-skills", emoji: "🎙️", title: "말 잘하는 사람들의 비밀", oneLiner: "대화·설득·스피치" },
   { id: "negotiation-skills", emoji: "🤝", title: "협상의 기술", oneLiner: "연봉·계약·일상 협상" },
+  { id: "saying-no", emoji: "🛡️", title: "거절 잘하는 사람들의 비밀", oneLiner: "관계 지키며 나를 지키기" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -642,6 +645,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "오렌지(#ea580c)에서 딥오렌지(#9a3412)로",
     symbol: "악수하는 두 손 위에 저울이 균형을 이루고 주위에 체크마크·동전·계약서 아이콘이 도는 플랫 일러스트",
     mood: "자신감, 전략, 윈윈",
+  },
+  "saying-no": {
+    title: "거절 잘하는 사람들의 비밀",
+    subtitle: "관계를 지키면서 나를 지키는 거절의 기술",
+    author: "비법연구소",
+    gradient: "보라(#7c3aed)에서 딥퍼플(#4c1d95)로",
+    symbol: "방패와 하트가 겹쳐진 플랫 일러스트, 방패가 부정적 요청을 막고 하트가 관계를 지키는 상징",
+    mood: "자기보호, 따뜻함, 단호함",
   },
 };
 
@@ -915,6 +926,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "인생에서 원하는 것을 얻지 못하는 이유는 단 하나, 요청하지 않았기 때문이다.",
     cta: "협상 업그레이드 시스템, 1,000원에 시작하세요.",
     tags: "#협상 #연봉협상 #BATNA #비즈니스 #커뮤니케이션",
+  },
+  "saying-no": {
+    title: "거절 잘하는 사람들의 비밀",
+    hook: "'괜찮아, 내가 할게.' 그 말이 진심인 적이 몇 번이나 되시나요? 거절 못하는 건 성격이 아니라 학습된 행동입니다.",
+    stat: "10챕터 + 거절 스크립트 20개 · 경계 설정 워크시트 · 30일 거절 연습 플랜 · 부록 5개",
+    quote: "모든 것에 '네'라고 말하는 사람의 '네'는 아무 가치가 없습니다. 진심으로 '네'를 말하려면 '아니오'를 말할 수 있어야 합니다.",
+    cta: "관계를 지키면서 나를 지키는 거절의 기술, 1,000원에 시작하세요.",
+    tags: "#거절 #자기보호 #경계 #인간관계 #착한아이콤플렉스",
   },
 };
 
@@ -1284,6 +1303,17 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `기업의 84%는 연봉 협상을 기대하는데, 62%의 직장인은 한 번도 안 합니다. BATNA 전략·앵커링·FBI 라벨링·미러링·연봉 스크립트 3종·한국 문화 협상법·30일 플랜. 10챕터 + 준비 체크리스트 + BATNA 워크시트 + 이메일 템플릿 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #협상 #연봉협상 #BATNA #비즈니스 #커뮤니케이션`,
   },
+  "saying-no": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 보라-딥퍼플 그라데이션 배경(#7c3aed → #4c1d95), 중앙에 방패와 하트가 겹쳐진 형태가 빛을 발하며 떠 있음.
+방패 표면에서 부정적 요청(말풍선)이 튕겨나가고, 하트에서 따뜻한 보라빛 에너지가 퍼져나옴.
+배경에서 보라-라벤더 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "20개".
+중앙 하단에 굵은 흰색 글씨: "거절 스크립트로 나를 지키세요".
+시네마틱 조명, 보라 + 딥퍼플 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `'괜찮아, 내가 할게' — 그 말이 진심인 적이 몇 번이나 되시나요? 거절 못하는 건 성격이 아니라 학습된 행동입니다. 직장·친구·가족·소비 상황별 거절 스크립트 20개 + 경계 설정 워크시트 + 30일 거절 연습 플랜. 10챕터 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #거절 #자기보호 #경계 #인간관계 #착한아이콤플렉스`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -1343,6 +1373,7 @@ const BOOK_META = [
   { id: "otc-medicine-guide", title: "상비약 완전 가이드", emoji: "💊", builder: buildOtcMedicineGuide },
   { id: "speaking-skills", title: "말 잘하는 사람들의 비밀", emoji: "🎙️", builder: buildSpeakingSkills },
   { id: "negotiation-skills", title: "협상의 기술", emoji: "🤝", builder: buildNegotiationSkills },
+  { id: "saying-no", title: "거절 잘하는 사람들의 비밀", emoji: "🛡️", builder: buildSayingNo },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

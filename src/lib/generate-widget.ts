@@ -183,6 +183,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🤝",
     subtitle: "연봉·계약·일상 실전 협상",
   },
+  {
+    id: "saying-no",
+    title: "거절 잘하는 사람들의 비밀",
+    emoji: "🛡️",
+    subtitle: "관계를 지키면서 나를 지키는 법",
+  },
 ];
 
 interface Section {
@@ -244,13 +250,14 @@ const CROSS_SELL_BOOKS = [
   { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", sub: "타이레놀·감기약·소화제" },
   { id: "speaking-skills", emoji: "🎙️", title: "말 잘하는 사람들의 비밀", sub: "대화·설득·스피치" },
   { id: "negotiation-skills", emoji: "🤝", title: "협상의 기술", sub: "연봉·계약·일상 협상" },
+  { id: "saying-no", emoji: "🛡️", title: "거절 잘하는 사람들의 비밀", sub: "관계 지키며 나를 지키기" },
 ];
 
 const WIDGET_CATEGORIES: Record<string, string> = {
   "diet-secrets": "건강·생활", "endocrine-disruptors": "건강·생활", "declutter-clean": "건강·생활",
   "glp1-guide": "건강·생활", "slow-aging": "건강·생활", "diabetes-guide": "건강·생활",
   "hypertension-guide": "건강·생활", "cholesterol-guide": "건강·생활", "otc-medicine-guide": "건강·생활",
-  "love-skills": "관계·소통", "speaking-skills": "관계·소통", "negotiation-skills": "관계·소통",
+  "love-skills": "관계·소통", "speaking-skills": "관계·소통", "negotiation-skills": "관계·소통", "saying-no": "관계·소통",
   "ai-sidejob": "비즈니스·부업", "threads-marketing": "비즈니스·부업", "sns-growth": "비즈니스·부업",
   "micro-audience": "비즈니스·부업", "selling-invisible": "비즈니스·부업", "storytelling": "비즈니스·부업",
   "customer-retention": "비즈니스·부업", "launch-storytelling": "비즈니스·부업", "business-model": "비즈니스·부업",

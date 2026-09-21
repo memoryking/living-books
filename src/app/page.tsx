@@ -286,6 +286,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-21",
     version: 1,
   },
+  {
+    id: "saying-no",
+    emoji: "🛡️",
+    title: "거절 잘하는 사람들의 비밀",
+    subtitle: "미안하지 않아도 되는 거절의 기술 — 관계를 지키면서 나를 지키는 법",
+    tags: ["거절", "경계설정", "인간관계", "자기보호"],
+    lastUpdated: "2026-09-22",
+    version: 1,
+  },
 ];
 
 function BookCard({
