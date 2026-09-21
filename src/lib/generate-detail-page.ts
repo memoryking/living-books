@@ -293,27 +293,85 @@ ${items
 </div>`;
 }
 
-/** 크로스셀 섹션 */
+/** 카테고리 매핑 */
+const BOOK_CATEGORIES: Record<string, string> = {
+  "diet-secrets": "건강·생활",
+  "endocrine-disruptors": "건강·생활",
+  "declutter-clean": "건강·생활",
+  "glp1-guide": "건강·생활",
+  "slow-aging": "건강·생활",
+  "diabetes-guide": "건강·생활",
+  "hypertension-guide": "건강·생활",
+  "cholesterol-guide": "건강·생활",
+  "otc-medicine-guide": "건강·생활",
+  "love-skills": "관계·소통",
+  "speaking-skills": "관계·소통",
+  "negotiation-skills": "관계·소통",
+  "ai-sidejob": "비즈니스·부업",
+  "threads-marketing": "비즈니스·부업",
+  "sns-growth": "비즈니스·부업",
+  "micro-audience": "비즈니스·부업",
+  "selling-invisible": "비즈니스·부업",
+  "storytelling": "비즈니스·부업",
+  "customer-retention": "비즈니스·부업",
+  "launch-storytelling": "비즈니스·부업",
+  "business-model": "비즈니스·부업",
+  "writing-formula": "자기계발·생산성",
+  "eisenhower-matrix": "자기계발·생산성",
+  "deep-focus": "자기계발·생산성",
+  "money-psychology": "자기계발·생산성",
+  "idea-validation": "자기계발·생산성",
+  "personal-branding": "자기계발·생산성",
+  "odyssey-life": "인문학",
+};
+
+/** 크로스셀 섹션 (카테고리별 그룹) */
 export function crossSell(
   currentId: string,
   books: { id: string; emoji: string; title: string; oneLiner: string }[]
 ): string {
   const others = books.filter((b) => b.id !== currentId);
-  return `<div style="max-width:600px;margin:32px auto;">
-  <p style="font-size:14px;font-weight:600;color:#9ca3af;margin-bottom:16px;text-align:center;">이 가이드를 읽은 분들이 함께 본 책</p>
-${others
+  const currentCat = BOOK_CATEGORIES[currentId] || "";
+
+  // 같은 카테고리 먼저, 나머지는 카테고리별 그룹
+  const sameCat = others.filter((b) => BOOK_CATEGORIES[b.id] === currentCat);
+  const otherCats: Record<string, typeof others> = {};
+  for (const b of others) {
+    const cat = BOOK_CATEGORIES[b.id] || "기타";
+    if (cat === currentCat) continue;
+    if (!otherCats[cat]) otherCats[cat] = [];
+    otherCats[cat].push(b);
+  }
+
+  function renderGroup(title: string, items: typeof others): string {
+    return `<div style="margin-bottom:20px;">
+    <p style="font-size:12px;font-weight:700;color:#6b7280;margin:0 0 8px;letter-spacing:1px;">${esc(title)}</p>
+${items
   .map(
-    (b) => `<div style="display:flex;align-items:center;gap:16px;padding:16px 20px;margin:8px 0;background:#fff;border-radius:12px;border:1px solid #f3f4f6;">
-    <span style="font-size:32px;flex-shrink:0;">${b.emoji}</span>
-    <div style="text-align:left;">
-      <div style="font-size:15px;font-weight:700;color:#111827;">${esc(b.title)}</div>
-      <div style="font-size:13px;color:#6b7280;margin-top:2px;">${esc(b.oneLiner)}</div>
-    </div>
-    <span style="margin-left:auto;font-size:14px;font-weight:700;color:#2563eb;flex-shrink:0;">1,000원</span>
-  </div>`
+    (b) => `<div style="display:flex;align-items:center;gap:14px;padding:12px 16px;margin:6px 0;background:#fff;border-radius:10px;border:1px solid #f3f4f6;">
+      <span style="font-size:28px;flex-shrink:0;">${b.emoji}</span>
+      <div style="text-align:left;min-width:0;">
+        <div style="font-size:14px;font-weight:700;color:#111827;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${esc(b.title)}</div>
+        <div style="font-size:12px;color:#6b7280;margin-top:1px;">${esc(b.oneLiner)}</div>
+      </div>
+      <span style="margin-left:auto;font-size:13px;font-weight:700;color:#2563eb;flex-shrink:0;">1,000원</span>
+    </div>`
   )
   .join("\n")}
-</div>`;
+  </div>`;
+  }
+
+  let html = `<div style="max-width:600px;margin:32px auto;">
+  <p style="font-size:15px;font-weight:700;color:#374151;margin-bottom:20px;text-align:center;">📚 이런 책도 함께 읽어보세요</p>`;
+
+  if (sameCat.length > 0) {
+    html += renderGroup(`같은 주제 — ${currentCat}`, sameCat);
+  }
+  for (const [cat, items] of Object.entries(otherCats)) {
+    html += renderGroup(cat, items);
+  }
+  html += `</div>`;
+  return html;
 }
 
 export const ALL_BOOKS_FOR_CROSSSELL = [

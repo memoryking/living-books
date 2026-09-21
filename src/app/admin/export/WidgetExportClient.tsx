@@ -280,7 +280,7 @@ export default function WidgetExportClient({
             </div>
             <div className="mb-6 flex items-center gap-2">
               <code className="px-2 py-1 bg-gray-100 rounded text-xs text-gray-600 font-mono">{w.id}</code>
-              <CopyButton text={`/premium/${w.id}`} label="📎 경로 복사" />
+              <CopyButton text={w.id} label="📎 ID 복사" />
             </div>
 
             {/* 4개 탭 */}

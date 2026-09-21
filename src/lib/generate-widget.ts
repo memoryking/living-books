@@ -246,23 +246,50 @@ const CROSS_SELL_BOOKS = [
   { id: "negotiation-skills", emoji: "🤝", title: "협상의 기술", sub: "연봉·계약·일상 협상" },
 ];
 
+const WIDGET_CATEGORIES: Record<string, string> = {
+  "diet-secrets": "건강·생활", "endocrine-disruptors": "건강·생활", "declutter-clean": "건강·생활",
+  "glp1-guide": "건강·생활", "slow-aging": "건강·생활", "diabetes-guide": "건강·생활",
+  "hypertension-guide": "건강·생활", "cholesterol-guide": "건강·생활", "otc-medicine-guide": "건강·생활",
+  "love-skills": "관계·소통", "speaking-skills": "관계·소통", "negotiation-skills": "관계·소통",
+  "ai-sidejob": "비즈니스·부업", "threads-marketing": "비즈니스·부업", "sns-growth": "비즈니스·부업",
+  "micro-audience": "비즈니스·부업", "selling-invisible": "비즈니스·부업", "storytelling": "비즈니스·부업",
+  "customer-retention": "비즈니스·부업", "launch-storytelling": "비즈니스·부업", "business-model": "비즈니스·부업",
+  "writing-formula": "자기계발·생산성", "eisenhower-matrix": "자기계발·생산성", "deep-focus": "자기계발·생산성",
+  "money-psychology": "자기계발·생산성", "idea-validation": "자기계발·생산성", "personal-branding": "자기계발·생산성",
+  "odyssey-life": "인문학",
+};
+
 function buildCrossSell(currentId: string): string {
   const others = CROSS_SELL_BOOKS.filter((b) => b.id !== currentId);
-  return `<div class="eb-cross">
-    <h3>이 가이드를 읽은 분들이 함께 본 책</h3>
-    ${others
-      .map(
-        (b) => `<div class="eb-cross-item">
-      <span class="eb-ci-emoji">${b.emoji}</span>
-      <div>
-        <div class="eb-ci-title">${escHtml(b.title)}</div>
-        <div class="eb-ci-sub">${escHtml(b.sub)}</div>
-      </div>
-      <span class="eb-ci-price">1,000원</span>
-    </div>`
-      )
-      .join("\n")}
-  </div>`;
+  const currentCat = WIDGET_CATEGORIES[currentId] || "";
+  const sameCat = others.filter((b) => WIDGET_CATEGORIES[b.id] === currentCat);
+  const otherCats: Record<string, typeof others> = {};
+  for (const b of others) {
+    const cat = WIDGET_CATEGORIES[b.id] || "기타";
+    if (cat === currentCat) continue;
+    if (!otherCats[cat]) otherCats[cat] = [];
+    otherCats[cat].push(b);
+  }
+
+  function renderGroup(title: string, items: typeof others): string {
+    return `<div style="margin-bottom:16px;">
+      <div style="font-size:11px;font-weight:700;color:#9ca3af;margin-bottom:6px;letter-spacing:1px;">${escHtml(title)}</div>
+      ${items.map((b) => `<div class="eb-cross-item">
+        <span class="eb-ci-emoji">${b.emoji}</span>
+        <div>
+          <div class="eb-ci-title">${escHtml(b.title)}</div>
+          <div class="eb-ci-sub">${escHtml(b.sub)}</div>
+        </div>
+        <span class="eb-ci-price">1,000원</span>
+      </div>`).join("\n")}
+    </div>`;
+  }
+
+  let html = `<div class="eb-cross"><h3>📚 이런 책도 함께 읽어보세요</h3>`;
+  if (sameCat.length > 0) html += renderGroup(`같은 주제 — ${currentCat}`, sameCat);
+  for (const [cat, items] of Object.entries(otherCats)) html += renderGroup(cat, items);
+  html += `</div>`;
+  return html;
 }
 
 function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
