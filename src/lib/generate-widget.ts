@@ -177,6 +177,12 @@ export const PREMIUM_BOOKS: BookMeta[] = [
     emoji: "🎙️",
     subtitle: "대화·설득·스피치의 심리학",
   },
+  {
+    id: "negotiation-skills",
+    title: "원하는 것을 얻는 협상의 기술",
+    emoji: "🤝",
+    subtitle: "연봉·계약·일상 실전 협상",
+  },
 ];
 
 interface Section {
@@ -237,6 +243,7 @@ const CROSS_SELL_BOOKS = [
   { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", sub: "스타틴·식이요법·LDL" },
   { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", sub: "타이레놀·감기약·소화제" },
   { id: "speaking-skills", emoji: "🎙️", title: "말 잘하는 사람들의 비밀", sub: "대화·설득·스피치" },
+  { id: "negotiation-skills", emoji: "🤝", title: "협상의 기술", sub: "연봉·계약·일상 협상" },
 ];
 
 function buildCrossSell(currentId: string): string {

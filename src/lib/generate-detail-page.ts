@@ -5,7 +5,7 @@
  * 빌더 함수들은 파일 크기 제한으로 별도 파일로 분리:
  *   detail-builders-1.ts — 1~9번 (diet-secrets ~ eisenhower-matrix)
  *   detail-builders-2.ts — 10~18번 (deep-focus ~ sns-growth)
- *   detail-builders-3.ts — 19~27번 (personal-branding ~ speaking-skills)
+ *   detail-builders-3.ts — 19~28번 (personal-branding ~ negotiation-skills)
  */
 
 import {
@@ -42,6 +42,7 @@ import {
   buildCholesterolGuide,
   buildOtcMedicineGuide,
   buildSpeakingSkills,
+  buildNegotiationSkills,
 } from "./detail-builders-3";
 
 
@@ -343,6 +344,7 @@ export const ALL_BOOKS_FOR_CROSSSELL = [
   { id: "cholesterol-guide", emoji: "🧬", title: "고지혈증 완전 가이드", oneLiner: "스타틴·식이요법·LDL" },
   { id: "otc-medicine-guide", emoji: "💊", title: "상비약 완전 가이드", oneLiner: "타이레놀·감기약·소화제" },
   { id: "speaking-skills", emoji: "🎙️", title: "말 잘하는 사람들의 비밀", oneLiner: "대화·설득·스피치" },
+  { id: "negotiation-skills", emoji: "🤝", title: "협상의 기술", oneLiner: "연봉·계약·일상 협상" },
 ];
 
 /* ═══════════════════════════════════════════
@@ -574,6 +576,14 @@ const COVER_INFO: Record<string, CoverInfo> = {
     gradient: "틸(#0891b2)에서 딥틸(#164e63)로",
     symbol: "마이크와 말풍선이 연결되어 빛나는 플랫 일러스트, 주위에 사람·하트·체크마크 아이콘",
     mood: "자신감, 소통, 성장",
+  },
+  "negotiation-skills": {
+    title: "협상의 기술",
+    subtitle: "BATNA 전략부터 연봉 스크립트까지 — 한국 문화에 맞는 실전 협상 시스템",
+    author: "비법연구소",
+    gradient: "오렌지(#ea580c)에서 딥오렌지(#9a3412)로",
+    symbol: "악수하는 두 손 위에 저울이 균형을 이루고 주위에 체크마크·동전·계약서 아이콘이 도는 플랫 일러스트",
+    mood: "자신감, 전략, 윈윈",
   },
 };
 
@@ -839,6 +849,14 @@ const MARKETING: Record<string, MarketingInfo> = {
     quote: "좋은 말하기는 할 말이 많아서가 아니라, 핵심을 골라서 순서대로 전달하는 것이다.",
     cta: "말하기 업그레이드 시스템, 1,000원에 시작하세요.",
     tags: "#말하기 #소통 #PREP #설득 #스피치",
+  },
+  "negotiation-skills": {
+    title: "협상의 기술",
+    hook: "기업의 84%는 연봉 협상을 기대하고 있습니다. 그런데 한국 직장인의 62%는 한 번도 해본 적이 없습니다.",
+    stat: "10챕터 + BATNA 전략 · 연봉 스크립트 3종 · 30일 업그레이드 플랜 · 부록 5개",
+    quote: "인생에서 원하는 것을 얻지 못하는 이유는 단 하나, 요청하지 않았기 때문이다.",
+    cta: "협상 업그레이드 시스템, 1,000원에 시작하세요.",
+    tags: "#협상 #연봉협상 #BATNA #비즈니스 #커뮤니케이션",
   },
 };
 
@@ -1197,6 +1215,17 @@ const PRODUCT_INFO: Record<string, { prompt: string; metaDesc: string }> = {
 실제 사람 없음, 브랜드 로고 없음.`,
     metaDesc: `회의에서 한마디도 못하고 나오시나요? 말 못하는 게 아닙니다, 순서를 모르는 겁니다. PREP 법칙·설득 심리학·경청 5단계·I-Message·30일 업그레이드 플랜. 10챕터 + PREP 템플릿 + STAR 보고 템플릿 + 30일 플래너 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #말하기 #소통 #PREP #설득 #스피치`,
   },
+  "negotiation-skills": {
+    prompt: `정사각형 1:1 비율, 750x750px 프리미엄 디지털 일러스트.
+짙은 오렌지-딥오렌지 그라데이션 배경(#ea580c → #9a3412), 중앙에 악수하는 두 손이 빛을 발하며 떠 있음.
+악수 위에 균형 잡힌 저울이 황금빛으로 빛나고, 주변으로 동전·계약서·체크마크 아이콘이 원형으로 배치되어 빛남.
+배경에서 오렌지-앰버 톤 에너지 파동이 퍼져나옴.
+상단에 거대한 흰색 텍스트: "84%".
+중앙 하단에 굵은 흰색 글씨: "기업은 협상을 기대하고 있습니다".
+시네마틱 조명, 오렌지 + 딥오렌지 글로우 + 흰색 악센트.
+실제 사람 없음, 브랜드 로고 없음.`,
+    metaDesc: `기업의 84%는 연봉 협상을 기대하는데, 62%의 직장인은 한 번도 안 합니다. BATNA 전략·앵커링·FBI 라벨링·미러링·연봉 스크립트 3종·한국 문화 협상법·30일 플랜. 10챕터 + 준비 체크리스트 + BATNA 워크시트 + 이메일 템플릿 + 부록 5개 · 프로필 링크에서 목차를 확인하세요. #협상 #연봉협상 #BATNA #비즈니스 #커뮤니케이션`,
+  },
 };
 
 function buildThumbnailPrompt(id: string): string {
@@ -1255,6 +1284,7 @@ const BOOK_META = [
   { id: "cholesterol-guide", title: "고지혈증 완전 가이드", emoji: "🧬", builder: buildCholesterolGuide },
   { id: "otc-medicine-guide", title: "상비약 완전 가이드", emoji: "💊", builder: buildOtcMedicineGuide },
   { id: "speaking-skills", title: "말 잘하는 사람들의 비밀", emoji: "🎙️", builder: buildSpeakingSkills },
+  { id: "negotiation-skills", title: "협상의 기술", emoji: "🤝", builder: buildNegotiationSkills },
 ];
 
 export function generateAllDetails(): DetailOutput[] {

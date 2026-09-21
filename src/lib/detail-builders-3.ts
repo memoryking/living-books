@@ -1,5 +1,5 @@
 /**
- * Detail page builder functions — Group 3 (builders 19–27)
+ * Detail page builder functions — Group 3 (builders 19–28)
  * Auto-split from generate-detail-page.ts
  */
 import {
@@ -1256,6 +1256,118 @@ ${mobileStyles}
 
   <!-- CTA -->
   ${ctaBlock("🎙️", "말하기는 기술입니다.", "기술은 배울 수 있습니다.", "PREP 법칙 · 설득 심리학 · 경청 · 갈등 해결 · 30일 플랜", "#0891b2")}
+
+</div>`;
+}
+
+/* ═══════════════════════════════════════════
+   28. 협상의 기술
+   ═══════════════════════════════════════════ */
+
+export function buildNegotiationSkills(): string {
+  return `<!-- 🤝 협상의 기술 — 아임웹 상세페이지 -->
+<div class="dp-wrap" style="max-width:860px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
+${mobileStyles}
+  <section style="${sec("background:linear-gradient(160deg,#fed7aa,#fb923c,#ea580c);")}">
+    ${label("LIVING GUIDE · 살아있는 정보책")}
+    <div style="font-size:64px;margin-bottom:16px;">🤝</div>
+    <h2 style="margin:0 0 16px;font-size:clamp(28px,5vw,44px);font-weight:800;line-height:1.3;color:#7c2d12;">원하는 것을 얻지 못하는 이유는<br>요청하지 않았기 때문입니다.</h2>
+    <p style="font-size:18px;color:#9a3412;font-weight:600;margin:0 0 8px;">협상은 싸움이 아니라 문제 해결입니다.</p>
+    ${subtitle("BATNA 전략부터 연봉 스크립트까지 — 한국 문화에 맞는 실전 협상 시스템")}
+    ${statGrid([
+      { num: "BATNA", label: "전략 프레임워크", color: "#ea580c" },
+      { num: "3종", label: "연봉 스크립트", color: "#ea580c" },
+      { num: "30일", label: "업그레이드 플랜", color: "#ea580c" },
+    ])}
+    ${priceBadge("3,900원", "1,000원", "출시 특가")}
+    ${urgencyBanner()}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이런 상태 아닌가요?")}
+    ${beforeAfter(
+      ["연봉 협상 한 번 못 하고 3년째 같은 급여", "'안 돼요' 들으면 그 자리에서 포기", "갑을 관계에서 불리한 조건 그대로 수용"],
+      ["BATNA 준비하고 여유 있게 연봉 협상", "'No'를 협상 시작으로 활용하는 기법", "을의 협상 카드로 합리적 조건 확보"],
+      "협상 전", "30일 후",
+      "#fef2f2", "#f0fdf4"
+    )}
+    <p style="font-size:15px;color:#6b7280;margin-top:16px;"><strong style="color:#ea580c;">잭 캔필드: "인생에서 원하는 것을 얻지 못하는 이유는 단 하나, 요청하지 않았기 때문이다."</strong></p>
+  </section>
+
+  <section style="${sec("background:#7c2d12;color:#fff;")}">
+    <div style="font-size:13px;color:#fb923c;font-weight:600;letter-spacing:2px;margin-bottom:24px;">NEGOTIATION SYSTEM</div>
+    <h2 style="font-size:clamp(24px,4vw,36px);font-weight:800;color:#fff;margin:0 0 24px;">핵심 협상 기술</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">1</span> <span style="color:rgba(255,255,255,.8);">BATNA</span></div>
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">2</span> <span style="color:rgba(255,255,255,.8);">앵커링</span></div>
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">3</span> <span style="color:rgba(255,255,255,.8);">라벨링</span></div>
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">4</span> <span style="color:rgba(255,255,255,.8);">미러링</span></div>
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">5</span> <span style="color:rgba(255,255,255,.8);">침묵</span></div>
+      <div style="padding:14px 16px;background:rgba(251,146,60,.15);border:1px solid rgba(251,146,60,.3);border-radius:12px;"><span style="color:#fb923c;font-weight:700;">6</span> <span style="color:rgba(255,255,255,.8);">열린 질문</span></div>
+    </div>
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${redditQuote("연봉 협상 안 해서 3년 동안 500만 원 차이 벌어짐. 동기가 알려줘서 올해 처음 해봤는데 15% 올랐어요. 왜 진작 안 했을까.", "korea")}
+    ${redditQuote("협상은 말재주가 아니라 준비라는 거 이번에 체감. BATNA 하나 만들어뒀더니 여유가 생기더라.", "negotiation")}
+  </section>
+
+  <section style="${sec("background:#fff;")}">
+    ${label("TABLE OF CONTENTS")}
+    ${bigTitle("무엇을 알게 되나요?")}
+    ${tocItem("01", "마인드셋 전환: 협상은 싸움이 아니라 문제 해결", true, "#ea580c")}
+    ${tocItem("02", "준비가 90%: BATNA·ZOPA·5분 루틴", true, "#ea580c")}
+    ${tocItem("03", "앵커링: 누가 먼저 숫자를 말할 것인가", true, "#ea580c")}
+    ${tocItem("04", "No를 다루는 기술: 라벨링·미러링·침묵", true, "#ea580c")}
+    ${tocItem("05", "연봉 협상 완전 공략: 스크립트 3종", true, "#ea580c")}
+    ${tocItem("06", "비즈니스 협상: 계약·거래·파트너십", false, "#ea580c")}
+    ${tocItem("07", "일상의 협상: 가족·친구·서비스", false, "#ea580c")}
+    ${tocItem("08", "한국 문화와 협상: 위계·체면·눈치 활용", false, "#ea580c")}
+    ${tocItem("09", "디지털 시대 협상: 이메일·화상·AI", false, "#ea580c")}
+    ${tocItem("10", "30일 협상 업그레이드 플랜", true, "#ea580c")}
+    ${spacer(16)}
+    <div style="font-size:13px;color:#9ca3af;">+ 부록: 준비 체크리스트 3종 / 연봉 스크립트 3종 / BATNA 워크시트 / 이메일 템플릿 3종 / 30일 플래너</div>
+  </section>
+
+  <section style="${sec("background:#f9fafb;")}">
+    ${bigTitle("이런 분께 추천합니다")}
+    ${checkList(["연봉 협상을 한 번도 해본 적 없는 직장인", "클라이언트에게 '비싸요' 들으면 바로 할인하는 프리랜서", "갑을 관계에서 불리한 조건을 수용하는 소상공인", "가족과 대화하면 감정만 상하고 합의가 안 되는 분", "이메일·카톡으로 협상할 때 오해가 자주 생기는 분"], "✅", "#fff7ed")}
+    ${spacer(16)}
+    ${checkList(["이미 전문 협상가인 분 (변호사, M&A 전문가 등)", "이론만 원하고 실천할 의지가 없는 분"], "🚫", "#fef2f2")}
+    ${spacer(40)}
+    ${bigTitle("자주 묻는 질문")}
+    ${faqItem("말재주가 없어도 협상을 잘할 수 있나요?", "네. 협상은 말재주가 아니라 준비의 기술입니다. BATNA, 앵커링, 라벨링 — 모두 배울 수 있는 기술이고, 30일 플랜을 따라하면 체화됩니다.")}
+    ${faqItem("한국 직장에서 연봉 협상하면 찍히지 않나요?", "기업의 84%가 연봉 협상을 기대합니다. 이 책에서 다루는 한국적 화법 패턴(8장)을 활용하면 존중하면서도 원하는 것을 얻을 수 있습니다.")}
+    ${faqItem("이 가이드는 어떤 형식인가요?", "웹에서 읽는 디지털 가이드입니다. 결제 후 1개월간 열람 가능하며, 계속 업데이트됩니다.")}
+  </section>
+
+  <!-- 가격 앵커링 -->
+  <section style="${sec("background:#fff;")}">
+    ${bigTitle("이 가이드의 가치")}
+    ${priceAnchor(
+      [
+        { what: "협상 전문 컨설팅 1회", price: "500,000원~", note: "1회성, 범용 조언" },
+        { what: "비즈니스 협상 온라인 강의", price: "150,000원~", note: "일방적 강의" },
+        { what: "자기계발 서적", price: "18,000원~", note: "업데이트 없음" },
+      ],
+      "1,000원",
+      "10챕터 + 부록 5종 · 30일 플랜 · 연봉 스크립트 3종 · BATNA 워크시트 · 업데이트",
+      "#ea580c"
+    )}
+    ${proofBanner(
+      ["🤝 BATNA·앵커링 전략", "🎯 FBI 라벨링·미러링", "📋 30일 실전 플랜", "🔄 계속 업데이트"],
+      "#fff7ed",
+      "#ea580c"
+    )}
+  </section>
+
+  <!-- 크로스셀 -->
+  <section style="${sec("background:#f9fafb;")}">
+    ${crossSell("negotiation-skills", ALL_BOOKS_FOR_CROSSSELL)}
+  </section>
+
+  <!-- CTA -->
+  ${ctaBlock("🤝", "협상은 기술입니다.", "기술은 배울 수 있습니다.", "BATNA · 앵커링 · 라벨링 · 연봉 스크립트 · 30일 플랜", "#ea580c")}
 
 </div>`;
 }

@@ -277,6 +277,15 @@ const premiumBooks = [
     lastUpdated: "2026-09-21",
     version: 1,
   },
+  {
+    id: "negotiation-skills",
+    emoji: "🤝",
+    title: "원하는 것을 얻는 협상의 기술",
+    subtitle: "연봉·계약·일상까지 — 상대의 Yes를 이끌어내는 실전 협상 심리학",
+    tags: ["협상", "연봉협상", "비즈니스", "심리학"],
+    lastUpdated: "2026-09-21",
+    version: 1,
+  },
 ];
 
 function BookCard({
