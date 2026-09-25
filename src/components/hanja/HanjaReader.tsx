@@ -82,6 +82,7 @@ export default function HanjaReader() {
     return true;
   }).sort((a,b) => list === 'bookmarks' ? study.bookmarks.indexOf(a.id)-study.bookmarks.indexOf(b.id) : a.id-b.id);
   const filtered = filterEntries(chapter, scope);
+  const needsList = tab === 'read' && scope === 'all';
   const nextDue = Math.min(...Object.values(study.records).map(r => r.due).filter(t => t > now));
   const filteredIndex = filtered.findIndex(e => e.id === selected);
 
@@ -98,14 +99,14 @@ export default function HanjaReader() {
     setShowAnswer(false); setMemoOpen(false); setTab(practice ? 'read' : 'recall'); grading.current = false; setNotice('');
   };
   const grade = (remembered: boolean) => {
-    if (!session || !showAnswer || grading.current || session.index >= session.ids.length) return;
+    if (needsList || !session || !showAnswer || grading.current || session.index >= session.ids.length) return;
     grading.current = true;
     const id = session.ids[session.index]; const time = Date.now();
     setStudy(prev => ({ ...prev, records: { ...prev.records, [id]: gradeRecord(prev.records[id], remembered, time, session.practice) } }));
     setSession(prev => prev ? { ...prev, index: prev.index + 1, good: prev.good + (remembered ? 1 : 0), missed: remembered ? prev.missed : [...prev.missed, id] } : prev);
     setShowAnswer(false); setMemoOpen(false); setNow(time);
   };
-  const reveal = () => { grading.current = false; setShowAnswer(true); };
+  const reveal = () => { if (needsList) return; grading.current = false; setShowAnswer(true); };
   const startToday = () => start(due.sort((a,b)=>study.records[a.id].due-study.records[b.id].due).slice(0,10).map(e=>e.id), false, true);
   const newIds = entries.filter(e=>!study.records[e.id]).slice(0,5).map(e=>e.id);
   const learnNext = () => {
@@ -133,7 +134,7 @@ export default function HanjaReader() {
     <a className={styles.skipLink} href="#hanja-main">학습 본문으로 건너뛰기</a>
     <header className={styles.readerHeader}>
       <nav className={styles.tabs} aria-label="학습 메뉴">
-        {([['read', '01', '골라 학습'], ['recall', '02', '오늘 학습'], ['compare', '03', '헷갈림 비교'], ['guide', '04', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); if(id==='read' && filtered.length) start(filtered.map(e=>e.id),false,true,true); }}><span>{number}</span>{label}</button>)}
+        {([['read', '01', '선택 학습'], ['recall', '02', '오늘 학습'], ['compare', '03', '헷갈림 비교'], ['guide', '04', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); if(id==='read' && filtered.length) start(filtered.map(e=>e.id),false,true,true); }}><span>{number}</span>{label}</button>)}
       </nav>
     </header>
     {storageError && <p role="alert" className={styles.alert}>{storageError}</p>}
@@ -147,7 +148,7 @@ export default function HanjaReader() {
           <CharacterPicker key={chapter+scope} entries={filtered} records={study.records} value={quiz && filtered.some(e=>e.id===quiz.id)?quiz.id:filteredIndex>=0?selected:0} now={now} onChange={go}/>
         </div>
         <div className={styles.practiceLinks}><button onClick={()=>{setReverse(false);setSession(null);setShowAnswer(false);}} aria-pressed={!reverse}>한자 → 뜻과 음</button><button onClick={()=>{setReverse(true);setSession(null);setShowAnswer(false);}} aria-pressed={reverse}>뜻과 음 → 쓰기</button><button disabled={!filtered.length} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>범위 처음부터</button></div>
-        {!session && <div className={styles.studyHome}><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></div>}
+        {!session && <div className={styles.studyHome}>{needsList ? <p role="status">학습 목록을 선택해 주세요.</p> : <><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></>}</div>}
       </> : !session && <>
         <div className={styles.studyHome}>
           <h3>오늘 예정된 복습</h3><p>지금 복습할 글자 {due.length}개</p>
@@ -161,8 +162,8 @@ export default function HanjaReader() {
       {session && quiz && <article className={styles.quizCard} key={`${session.index}-${quiz.id}`}>
         <div className={styles.cardBar}><span>{session.learning ? '그림으로 배우기' : '가리고 확인'} · {session.index + 1} / {session.ids.length} · {session.reverse ? '뜻에서 한자 떠올리기' : '한자에서 훈음 떠올리기'}</span><button className={styles.textButton} onClick={() => { setSession(null); setShowAnswer(false); }}>복습 나가기</button></div>
         <div className={styles.quizQuestion}>{session.reverse ? <h3>{quiz.reading}</h3> : <><div className={`${styles.bigHanja} ${quiz.kind === 'component' ? styles.compound : ''}`} lang="ko">{quiz.char}</div>{[2,56].includes(quiz.id) && <small>{quiz.id === 56 ? '신체 관련 글자에 쓰이는 부수' : '하늘의 자연물'}</small>}{quiz.kind === 'component' && <small>독립 한자가 아닌 구성 학습 항목</small>}</>}<p>{session.reverse ? '이 뜻의 글자를 떠올려 직접 써 보세요.' : '뜻과 음을 소리 내어 말해 보세요.'}</p></div>
-        {session.reverse && !session.learning && <WritingPad answer={showAnswer ? quiz.char : ''}/>}
-        {!showAnswer && !session.learning ? <div className={styles.quizActions}><button className={styles.primary} onClick={reveal}>정답 보기</button><small>먼저 떠올려 보세요. 몰라도 괜찮아요.</small></div> : <div className={styles.quizAnswer}>
+        {session.reverse && !session.learning && !needsList && <WritingPad answer={showAnswer ? quiz.char : ''}/>}
+        {needsList ? <div className={styles.quizActions}><p role="status">학습 목록을 선택해 주세요.</p><small>책갈피 · 다시 볼 항목 · 통과한 항목 · 새 항목</small></div> : !showAnswer && !session.learning ? <div className={styles.quizActions}><button className={styles.primary} onClick={reveal}>정답 보기</button><small>먼저 떠올려 보세요. 몰라도 괜찮아요.</small></div> : <div className={styles.quizAnswer}>
           <div className={styles.answerPair}><HanjaImage entry={quiz} className={styles.answerImage}/><div><span className={styles.answerHanja} lang="ko">{quiz.char}</span><h3>{quiz.reading}</h3></div></div>
           <div className={styles.practiceLinks}><button onClick={()=>toggleBookmark(quiz.id)} aria-pressed={study.bookmarks.includes(quiz.id)}>{study.bookmarks.includes(quiz.id)?'★ 책갈피 해제':'☆ 책갈피'}</button><button onClick={()=>setMemoOpen(!memoOpen)}>{memoOpen?'설명 보기':'메모'}</button></div>
           {memoOpen ? <textarea className={styles.quizMemo} aria-label="개인 메모" value={study.notes[quiz.id]||''} maxLength={2000} onChange={e=>{const value=e.target.value;setStudy(prev=>({...prev,notes:{...prev.notes,[quiz.id]:value}}));}}/> : <TextPages text={[quiz.memory,...quiz.examples,quiz.note].filter(Boolean).join('\n\n')}/>}

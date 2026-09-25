@@ -18,7 +18,7 @@ for(const [route,needle] of pages){
     assert.ok(!html.includes('type="search"'));
     assert.ok(!html.includes('훈음·연상 듣기'));
     assert.ok(!html.includes('책 소개 ↗'));
-    assert.ok(html.includes('오늘 복습 시작') && html.includes('새 글자 배우기') && html.includes('골라 학습') && html.includes('focusApp'));
+    assert.ok(html.includes('오늘 복습 시작') && html.includes('새 글자 배우기') && html.includes('선택 학습') && html.includes('focusApp'));
   }
   if(route==='/premium/hanja-memory/read/full') {assert.ok(!html.includes('꼭 알아야 할 10가지'));assert.ok(!html.includes('전체 목록으로'));assert.ok(html.includes('페이지형'));assert.ok(html.includes('목차로 가기'));}
   console.log('PASS',route,response.status);

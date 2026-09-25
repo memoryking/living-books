@@ -14,7 +14,7 @@ try {
   const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const wait=async expression=>{for(let i=0;i<100;i++){if(await ev(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error(expression);};
   const shot=async name=>{
-    const selectors={today:'[class*=studyHome] > *','new-lesson':'[class*=answerPair], [class*=textPages] > p',choose:'[class*=quickSelect], [class*=characterMenu]',answer:'[class*=gradeButtons]',writing:'[class*=padWrap]','writing-answer':'[class*=padWrap]',backup:'[class*=guideProse] > h3:first-child, [class*=guideProse] > p:first-of-type, [class*=guideProse] > [class*=buttonRow]'};
+    const selectors={'select-list':'[class*=quizActions]',today:'[class*=studyHome] > *','new-lesson':'[class*=answerPair], [class*=textPages] > p',choose:'[class*=quickSelect], [class*=characterMenu]',answer:'[class*=gradeButtons]',writing:'[class*=padWrap]','writing-answer':'[class*=padWrap]',backup:'[class*=guideProse] > h3:first-child, [class*=guideProse] > p:first-of-type, [class*=guideProse] > [class*=buttonRow]'};
     const clip=await ev('(()=>{const rs=[...document.querySelectorAll('+JSON.stringify(selectors[name])+')].map(e=>e.getBoundingClientRect());const x=Math.max(0,Math.min(...rs.map(r=>r.left))-6),y=Math.max(0,Math.min(...rs.map(r=>r.top))-6);return {x:x+scrollX,y:y+scrollY,width:Math.min(innerWidth,Math.max(...rs.map(r=>r.right))+6)-x,height:Math.min(innerHeight,Math.max(...rs.map(r=>r.bottom))+6)-y,scale:1}})()');
     assert.ok(clip.width>0 && clip.height>0);
     const r=await send('Page.captureScreenshot',{format:'png',clip,captureBeyondViewport:true});await fs.writeFile(path.join(dir,name+'.png'),Buffer.from(r.data,'base64'));
@@ -29,7 +29,7 @@ try {
   await send('Page.reload');await new Promise(r=>setTimeout(r,1500));
   await shot('today');
   await press('새 글자 배우기');await shot('new-lesson');
-  await press('골라 학습');
+  await press('선택 학습');await shot('select-list');
   await ev('(()=>{const e=document.querySelectorAll("select")[1];e.value="bookmarks";e.dispatchEvent(new Event("change",{bubbles:true}))})()');
   await new Promise(r=>setTimeout(r,700));
   await ev('document.querySelector("summary[aria-label]").click()');await shot('choose');
@@ -47,5 +47,5 @@ try {
   await press('학습 안내');
   await ev('Array.from(document.querySelectorAll("h3")).find(e=>e.textContent==="학습 기록 관리").scrollIntoView()');
   await new Promise(r=>setTimeout(r,400));await shot('backup');
-  assert.deepEqual(errors,[]);console.log('Captured 7 demonstration screenshots, 390 × 844 viewport, 2x resolution.');
+  assert.deepEqual(errors,[]);console.log('Captured 8 demonstration screenshots, 390 × 844 viewport, 2x resolution.');
 } finally {ws?.close();chrome.kill();}

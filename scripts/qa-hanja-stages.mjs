@@ -23,7 +23,7 @@ try {
     await ev('localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify({version:1,lastId:1,records:Object.fromEntries([1,2,3,4,5,6].map((id,stage)=>[id,{stage,due:stage===0||stage===5?Date.now()-1000:Date.now()+86400000,last:1,attempts:1,misses:stage?0:1,needsReview:stage===0}])),bookmarks:[1,2,3,4,5,6],notes:{}}))');
     await send('Page.reload');await new Promise(r=>setTimeout(r,500));
     assert.ok(await ev('document.body.innerText.includes("지금 복습할 글자 2개")'));
-    await press('골라 학습');await choose(1,'passed');
+    await press('선택 학습');await choose(1,'passed');
     assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(e=>Number(e.dataset.characterId))'),[2,3,4,5,6]);
     await choose(1,'review');assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(e=>Number(e.dataset.characterId))'),[1]);
     await choose(1,'bookmarks');await ev('document.querySelector("summary[aria-label]").click()');

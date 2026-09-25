@@ -24,7 +24,12 @@ try {
     await wait('document.body.innerText.includes("새 글자 배우기")');
     await ev('localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify({version:1,lastId:1,records:{42:{stage:2,due:Date.now()+259200000,last:1,attempts:2,misses:0,needsReview:false}},bookmarks:[42,1,2],notes:{}}))');
     await send('Page.reload');await wait('document.body.innerText.includes("새 글자 배우기")');
-    await press('골라 학습');await choose(1,'bookmarks');
+    await press('선택 학습');
+    const assertBlocked=async()=>assert.ok(await ev('document.body.innerText.includes("학습 목록을 선택해 주세요") && ![...document.querySelectorAll("button")].some(b=>b.textContent.includes("정답 보기") || b.textContent.includes("맞혔어요"))'));
+    await assertBlocked();await choose(2,'42');await assertBlocked();
+    await press('뜻과 음 → 쓰기');await assertBlocked();
+    await press('범위 처음부터');await assertBlocked();
+    await press('한자 → 뜻과 음');await choose(1,'bookmarks');
     assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(o=>o.dataset.characterId)'),['42','1','2']);
     assert.ok(await ev('!document.querySelector("[class*=characterOptions]").textContent.includes("말 마")'));
     const due=await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due');
@@ -33,7 +38,8 @@ try {
     await press('정답 보기');
     await shot('practice-answer-'+width);
     assert.ok(await ev('document.documentElement.scrollHeight<=innerHeight+2 && [...document.querySelectorAll("[class*=quizCard]")].every(e=>e.scrollHeight<=e.clientHeight+2)'), 'answer overflow');
-    await press('맞혔어요');
+    await choose(1,'all');await assertBlocked();
+    await choose(1,'bookmarks');await press('정답 보기');await press('맞혔어요');
     assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due'),due);
     await choose(2,'2');await press('정답 보기');await press('다시 연습');
     assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[2].needsReview'),true);
