@@ -21,7 +21,7 @@ try {
   const base=process.env.HANJA_QA_BASE||'http://127.0.0.1:3100';
   const seed=async expression=>{
     await ev('localStorage.removeItem("living-books-hanja-memory-v1-preferences");localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify('+expression+'))');
-    await send('Page.reload');await wait('document.body.innerText.includes("지금 학습 가능한 한자")');await pause(600);
+    await send('Page.reload');await wait('document.body.innerText.includes("지금 복습")');await pause(600);
   };
   const activeToday=()=>ev('[...document.querySelectorAll("nav button")].find(b=>b.textContent.includes("오늘 학습")).getAttribute("aria-pressed")==="true"');
   for(const [width,height] of [[1280,800],[390,844],[320,568],[844,390]]){
@@ -37,8 +37,10 @@ try {
       const r=await send('Page.captureScreenshot',{format:'png',clip});await fs.writeFile('artifacts/hanja-guide-screens/today-complete.png',Buffer.from(r.data,'base64'));
     }
     // Today's date is insufficient: wait for the exact timestamp without reloading.
+    await press('오늘 학습으로');await shot('today-waiting-'+width);
+    assert.ok(await ev('document.documentElement.scrollHeight<=innerHeight+2 && document.documentElement.scrollWidth<=innerWidth+2'));
     await seed('{version:1,lastId:1,records:{1:{stage:1,due:Date.now()+3500,last:1,attempts:1,misses:0,needsReview:false}},bookmarks:[],notes:{}}');
-    assert.ok(await ev('[...document.querySelectorAll("button")].find(b=>b.textContent.includes("지금 학습 시작")).disabled'));
+    assert.ok(await ev('[...document.querySelectorAll("button")].every(b=>!b.textContent.includes("지금 학습 시작"))'));
     await wait('[...document.querySelectorAll("button")].some(b=>b.textContent.includes("지금 학습 시작")&&!b.disabled)');
     await press('지금 학습 시작');await press('정답 보기');await press('맞혔어요');assert.ok(await activeToday());
     assert.ok(await ev('document.body.innerText.includes("지금 복습할 한자가 없습니다")'));

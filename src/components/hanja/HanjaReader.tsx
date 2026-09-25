@@ -206,13 +206,18 @@ export default function HanjaReader() {
         <div className={styles.practiceLinks}><button onClick={()=>{setReverse(false);setSession(null);setShowAnswer(false);}} aria-pressed={!reverse}>한자 → 뜻과 음</button><button onClick={()=>{setReverse(true);setSession(null);setShowAnswer(false);}} aria-pressed={reverse}>뜻과 음 → 쓰기</button><button disabled={!filtered.length} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>범위 처음부터</button></div>
         {!needsList && !session && <div className={styles.studyHome}>{needsList ? <p role="status">학습 목록을 선택해 주세요.</p> : <><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></>}</div>}
       </> : !session && <>
-        <div className={styles.studyHome}>
-          <h3>지금 학습 가능한 한자</h3><p>{due.length ? `지금 복습할 글자 ${due.length}개` : '지금 복습할 한자가 없습니다.'}</p>
-          <button className={styles.primary} disabled={!ready || !due.length} onClick={handleStartToday}>지금 학습 시작 · {Math.min(due.length,10)}개</button>
-          <small>{due.length ? '오래 기다린 글자부터 최대 10개씩' : Number.isFinite(nextDue) ? '다음 복습: '+formatDate(nextDue) : '아래에서 새 글자 학습을 시작하세요.'}</small>
-          {laterToday>0 && <small>오늘 남은 예정 {laterToday}개 · 아직 복습 시각 전입니다.</small>}
-          <button className={styles.secondary} disabled={!ready || !newIds.length} onClick={()=>start(newIds,true,true)}>새 글자 배우기 · {newIds.length}개</button>
-          <small>새 글자는 그림으로 배운 다음 가리고 확인합니다.</small>
+        <div className={styles.dailyHome}>
+          <section className={styles.dailyCard} aria-label="지금 복습">
+            <span className={styles.dailyLabel}>배운 한자 다시 확인하기</span><h3>지금 복습</h3>
+            <p className={styles.dailyStatus}>{due.length ? <><strong>{due.length}개</strong>를 지금 복습할 수 있어요.</> : '지금 복습할 한자가 없습니다.'}</p>
+            {due.length>0 && <><button className={styles.primary} disabled={!ready} onClick={handleStartToday}>지금 학습 시작 · {Math.min(due.length,10)}개</button><small>복습 시간이 지난 한자부터 최대 10개씩</small></>}
+            <div className={styles.upcomingReview}><span>다음 복습</span>{Number.isFinite(nextDue) ? <><strong>{formatDate(nextDue)}</strong><small>{laterToday>0 ? `오늘 대기 중 ${laterToday}개 · 아직 복습 시각 전이에요.` : '예정 시각이 되면 시작 버튼이 나타나요.'}</small></> : <small>아직 예정된 복습이 없어요.</small>}</div>
+          </section>
+          <section className={styles.dailyCard} aria-label="새 글자 학습">
+            <span className={styles.dailyLabel}>처음 보는 한자 익히기</span><h3>새 글자 학습</h3>
+            <p>{newIds.length ? due.length ? '새 한자를 그림으로 익혀 보세요.' : '복습을 기다리는 동안 새 글자를 배워 보세요.' : '모든 한자의 첫 학습을 마쳤어요.'}</p>
+            {newIds.length>0 && <><button className={due.length ? styles.secondary : styles.primary} disabled={!ready} onClick={()=>start(newIds,true,true)}>새 글자 배우기 · {newIds.length}개</button><small>그림으로 익힌 뒤, 가리고 확인해요.</small></>}
+          </section>
         </div>
         <div className={styles.direction}><button aria-pressed={!reverse} onClick={()=>setReverse(false)}>한자 → 뜻과 음</button><button aria-pressed={reverse} onClick={()=>setReverse(true)}>뜻과 음 → 쓰기</button></div>
       </>}
