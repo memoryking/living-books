@@ -85,6 +85,18 @@ export default function HanjaReader() {
   }, [study, ready]);
 
   const due = entries.filter(e => study.records[e.id] && study.records[e.id].due <= now);
+  useEffect(() => {
+    if (!ready) return;
+    const refresh = () => setNow(Date.now());
+    const clock = Date.now();
+    const next = Math.min(...Object.values(study.records).map(r=>r.due).filter(t=>t>clock));
+    const timer = window.setTimeout(refresh, Math.min(2_147_483_647, Number.isFinite(next) ? next-clock+20 : 86_400_000));
+    window.addEventListener('focus', refresh);
+    document.addEventListener('visibilitychange', refresh);
+    return () => { clearTimeout(timer); window.removeEventListener('focus',refresh); document.removeEventListener('visibilitychange',refresh); };
+  }, [ready, study.records, now]);
+  const endOfToday = new Date(now); endOfToday.setHours(24,0,0,0);
+  const laterToday = Object.values(study.records).filter(r=>r.due>now && r.due<endOfToday.getTime()).length;
   const filterEntries = (c: number, list: Scope) => entries.filter(e => {
     if (c && e.chapter !== c) return false;
     const r = study.records[e.id];
@@ -122,7 +134,13 @@ export default function HanjaReader() {
     setShowAnswer(false); setMemoOpen(false); setNow(time);
   };
   const reveal = () => { if (needsList) return; grading.current = false; setShowAnswer(true); };
-  const startToday = () => start(due.sort((a,b)=>study.records[a.id].due-study.records[b.id].due).slice(0,10).map(e=>e.id), false, true);
+  const handleStartToday = () => {
+    // eslint-disable-next-line react-hooks/purity -- click handler rechecks wall-clock eligibility; never invoked during render
+    const clock = Date.now(); setNow(clock);
+    const ids = entries.filter(e=>study.records[e.id]?.due<=clock).sort((a,b)=>study.records[a.id].due-study.records[b.id].due).slice(0,10).map(e=>e.id);
+    if (!ids.length) { setNotice('아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.'); return; }
+    start(ids,false,true);
+  };
   const newIds = entries.filter(e=>!study.records[e.id]).slice(0,5).map(e=>e.id);
   const learnNext = () => {
     setMetaPrepared(false); setMetaResult(null);
@@ -189,9 +207,10 @@ export default function HanjaReader() {
         {!needsList && !session && <div className={styles.studyHome}>{needsList ? <p role="status">학습 목록을 선택해 주세요.</p> : <><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></>}</div>}
       </> : !session && <>
         <div className={styles.studyHome}>
-          <h3>오늘 예정된 복습</h3><p>지금 복습할 글자 {due.length}개</p>
-          <button className={styles.primary} disabled={!ready || !due.length} onClick={startToday}>오늘 복습 시작 · {Math.min(due.length,10)}개</button>
+          <h3>지금 가능한 복습</h3><p>{due.length ? `지금 복습할 글자 ${due.length}개` : '지금 복습할 한자가 없습니다.'}</p>
+          <button className={styles.primary} disabled={!ready || !due.length} onClick={handleStartToday}>오늘 복습 시작 · {Math.min(due.length,10)}개</button>
           <small>{due.length ? '오래 기다린 글자부터 최대 10개씩' : Number.isFinite(nextDue) ? '다음 복습: '+formatDate(nextDue) : '아래에서 새 글자 학습을 시작하세요.'}</small>
+          {laterToday>0 && <small>오늘 남은 예정 {laterToday}개 · 아직 복습 시각 전입니다.</small>}
           <button className={styles.secondary} disabled={!ready || !newIds.length} onClick={()=>start(newIds,true,true)}>새 글자 배우기 · {newIds.length}개</button>
           <small>새 글자는 그림으로 배운 다음 가리고 확인합니다.</small>
         </div>
@@ -209,7 +228,12 @@ export default function HanjaReader() {
           <p className={styles.muted}>답을 본 뒤 알았다면 다시 연습을 선택하세요. 손글씨는 직접 정답과 비교합니다.</p>
         </div>}
       </article>}
-      {!needsList && session && !quiz && <div className={styles.sessionSummary}><span className={styles.finishMark}>✓</span><h3>이번 학습을 마쳤어요.</h3><p>기억남 <strong>{session.good}</strong> · 다시 보기 <strong>{session.missed.length}</strong></p><p className={styles.muted}>학습 결과이며 완전 암기를 뜻하지는 않습니다.</p>{session.missed.length > 0 && <div className={styles.missedList}>{session.missed.map(id => <button key={id} onClick={() => { go(id); setTab('read'); }}>{entries[id - 1].char} · {entries[id - 1].reading}</button>)}</div>}<div className={styles.buttonRow}>{session.missed.length > 0 && <button className={styles.primary} onClick={() => start(session.missed,false,true,true)}>헷갈린 글자만 한 번 더</button>}<button className={styles.secondary} onClick={() => setSession(null)}>{tab==='read'?'범위 선택으로':'오늘 학습으로'}</button></div></div>}
+      {!needsList && session && !quiz && <div className={styles.sessionSummary}><span className={styles.finishMark}>✓</span><h3>이번 학습을 마쳤어요.</h3><p>기억남 <strong>{session.good}</strong> · 다시 보기 <strong>{session.missed.length}</strong></p><p className={styles.muted}>학습 결과이며 완전 암기를 뜻하지는 않습니다.</p>{tab === 'read' && session.missed.length > 0 && <div className={styles.missedList}>{session.missed.map(id => <button key={id} onClick={() => { go(id); setTab('read'); }}>{entries[id - 1].char} · {entries[id - 1].reading}</button>)}</div>}<div className={styles.buttonRow}>{tab === 'read' && session.missed.length > 0 && <button className={styles.primary} onClick={() => start(session.missed,false,true,true)}>헷갈린 글자만 한 번 더</button>}<button className={styles.secondary} onClick={() => setSession(null)}>{tab==='read'?'범위 선택으로':'오늘 학습으로'}</button></div></div>}
+      {tab==='recall' && session && !quiz && <div className={styles.completionDue}>
+        {due.length ? <><p>지금 복습할 한자 {due.length}개가 남아 있습니다.</p><button className={styles.primary} onClick={handleStartToday}>오늘 복습 시작 · {Math.min(due.length,10)}개</button></> : <><p>아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.</p>{Number.isFinite(nextDue) && <p>다음 복습: {formatDate(nextDue)}</p>}</>}
+        {session.missed.length>0 && <small>틀린 한자는 평가한 시각부터 10분 뒤에 다시 나옵니다.</small>}
+        {laterToday>0 && <small>오늘 남은 예정 {laterToday}개 · 정확한 복습 시각이 되면 시작할 수 있습니다.</small>}
+      </div>}
     </section>}
 
     {tab === 'compare' && <section className={styles.compareSection}><p className={styles.eyebrow}>NOTICE THE DIFFERENCE</p><h2>차이 하나가, 기억을 가릅니다.</h2><p className={styles.lead}>비슷한 글자를 함께 보고 다른 획 하나를 말하세요. 설명을 읽은 뒤에는 비교 질문의 답도 가려 보세요.</p><div className={styles.comparisonGrid}>{comparisons.map(c => <article key={c.title} className={styles.comparison}><h3>{c.title}</h3><div className={styles.compareChars}>{c.ids.map(id => <button key={id} onClick={() => { go(id); setTab('read'); }}><span lang="ko">{entries[id - 1].char}</span><small>{entries[id - 1].reading}</small></button>)}</div><p>{c.cue}</p><details><summary>{c.question}</summary><p>{c.answer}</p></details></article>)}</div></section>}

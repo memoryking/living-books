@@ -48,14 +48,6 @@
     "height": 60
   },
   {
-    "id": "today",
-    "section": 2,
-    "title": "오늘 복습과 새 글자 학습 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/today.png",
-    "width": 680,
-    "height": 602
-  },
-  {
     "id": "new-lesson",
     "section": 1,
     "title": "새 글자의 그림과 암기법 배우기",
@@ -86,5 +78,21 @@
     "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-12-26-899Z/meta-question.png",
     "width": 368,
     "height": 121
+  },
+  {
+    "id": "today-complete",
+    "section": 5,
+    "title": "오늘 학습 완료 후 다음 복습 시각 안내",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-54-25-564Z/today-complete.png",
+    "width": 370,
+    "height": 162
+  },
+  {
+    "id": "today",
+    "section": 2,
+    "title": "오늘 복습과 새 글자 학습 선택",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-54-25-564Z/today.png",
+    "width": 680,
+    "height": 602
   }
 ]
