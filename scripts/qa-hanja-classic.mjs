@@ -1,0 +1,114 @@
+import {spawn} from 'node:child_process';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+const dir=path.resolve('artifacts/hanja-qa');await fs.mkdir(dir,{recursive:true});
+const chrome=spawn('C:/Program Files/Google/Chrome/Application/chrome.exe',['--headless=new','--disable-gpu','--no-first-run','--remote-debugging-port=9339','--user-data-dir='+path.join(dir,'browser-profile-classic'),'about:blank'],{windowsHide:true,stdio:'ignore'});
+let ws;
+try {
+  let targets;for(let i=0;i<40;i++){try{targets=await(await fetch('http://127.0.0.1:9339/json')).json();break;}catch{await new Promise(r=>setTimeout(r,250));}}
+  ws=new WebSocket(targets.find(t=>t.type==='page').webSocketDebuggerUrl);await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j;});
+  let seq=0;const pending=new Map(),errors=[];
+  ws.onmessage=({data})=>{const m=JSON.parse(data);if(m.id){const p=pending.get(m.id);pending.delete(m.id);if(p)m.error?p.j(m.error):p.r(m.result);}if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);};
+  const send=(method,params={})=>new Promise((r,j)=>{const id=++seq;pending.set(id,{r,j});ws.send(JSON.stringify({id,method,params}));});
+  const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+  const wait=async expression=>{for(let i=0;i<100;i++){if(await ev(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error(expression);};
+  const shot=async name=>{const r=await send('Page.captureScreenshot',{format:'png'});await fs.writeFile(path.join(dir,name+'.png'),Buffer.from(r.data,'base64'));};
+  await send('Runtime.enable');await send('Page.enable');
+  for(const width of [1280,826,390]) {
+    await send('Emulation.setDeviceMetricsOverride',{width,height:900,deviceScaleFactor:1,mobile:width<500});
+    await send('Page.navigate',{url:'http://127.0.0.1:3100/premium/hanja-memory/read/full'});
+    await wait('document.readyState==="complete" && typeof ebToggleMode==="function"');
+    await ev('localStorage.setItem("eb-mode","scroll");if(document.getElementById("eb-root").classList.contains("eb-page-mode"))ebToggleMode()');
+    assert.equal(await ev('document.body.innerText.includes("전체 목록으로")'),false);
+    assert.equal(await ev('document.querySelectorAll("#eb-content [role=img]").length'),453);
+    assert.equal(await ev('getComputedStyle(document.getElementById("eb-float-toc")).display!=="none"'),true);
+    assert.equal(await ev('document.documentElement.scrollWidth<=innerWidth'),true);
+    await shot('classic-scroll-'+width);
+    const checkMobileBar=async()=>{
+      if(width<=640) assert.equal(await ev('new Set(Array.from(document.querySelectorAll(".eb-bar button"),b=>Math.round(b.getBoundingClientRect().top))).size'),1);
+      await ev('document.activeElement.blur();document.body.click()');
+      await wait('getComputedStyle(document.querySelector(".eb-bar")).opacity==="0"');
+      const entry=await ev('document.querySelector(".eb-unit-active")?.dataset.entryId');
+      await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width/2,y:180}]});
+      await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+      await new Promise(r=>setTimeout(r,400));
+      assert.equal(await ev('getComputedStyle(document.querySelector(".eb-bar")).opacity'), '0', 'Body tap must not reveal toolbar');
+      await ev('document.querySelector(".eb-unit-active summary")?.click()');
+      assert.equal(await ev('document.querySelector(".eb-bar").classList.contains("eb-bar-hidden")'),true);
+      await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:width/2,y:8}]});
+      await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+      await wait('getComputedStyle(document.querySelector(".eb-bar")).opacity==="1"');
+      assert.equal(await ev('document.querySelector(".eb-unit-active")?.dataset.entryId'),entry);
+    };
+    await checkMobileBar();
+    await ev('document.getElementById("eb-mode-btn").click()');
+    await wait('document.getElementById("eb-root").classList.contains("eb-page-mode") && parseInt(document.getElementById("eb-page-info").textContent.split("/")[1])>1');
+    await ev('document.getElementById("eb-arrow-r").click()');
+    await wait('document.getElementById("eb-page-info").textContent.trim().startsWith("2 /")');
+    await new Promise(r=>setTimeout(r,600));
+    await shot('classic-page-'+width);
+    assert.equal(await ev('document.querySelectorAll(".eb-unit-entry").length'),453);
+    assert.equal(await ev('document.querySelectorAll(".eb-unit-review").length'),29);
+    await ev('ebNav("eb-entry-048");ebNextPage()');
+    const reviewPage=await ev('document.getElementById("eb-page-info").textContent');
+    await ev('document.querySelector(".eb-unit-active summary").click()');
+    await wait('document.querySelector(".eb-unit-active details").open');
+    assert.equal(await ev('document.querySelectorAll(".eb-unit-active details li").length'),16);
+    assert.equal(await ev('document.getElementById("eb-page-info").textContent'),reviewPage);
+    assert.ok(await ev('(()=>{const u=document.querySelector(".eb-unit-active"),li=u.querySelector("li");return li.getBoundingClientRect().top<u.getBoundingClientRect().bottom && li.getBoundingClientRect().left>=u.getBoundingClientRect().left})()'));
+    await shot('chapter-answers-top-'+width);
+    await ev('document.querySelector(".eb-unit-active").scrollTop=1e6');
+    assert.ok(await ev('(()=>{const u=document.querySelector(".eb-unit-active"),li=u.querySelector("li:last-child");return li.getBoundingClientRect().bottom<=u.getBoundingClientRect().bottom})()'));
+    await shot('chapter-answers-bottom-'+width);
+    if(width===390){
+      for(const id of [38,42,121,331,332]){
+        await ev(`ebNav('eb-entry-${String(id).padStart(3,'0')}')`);
+        await shot('corrected-image-'+id);
+        assert.equal(await ev(`document.querySelector('.eb-unit-active [role=img]').dataset.imageId`),String(id));
+      }
+    }
+    await ev('ebNav("eb-entry-001")');
+    await wait('document.querySelector(".eb-unit-active").dataset.entryId==="001"');
+    assert.equal(await ev('document.querySelectorAll(".eb-unit-active h2").length'),1);
+    const before=await ev('document.querySelector(".eb-unit-active").scrollHeight');
+    await ev('document.querySelector(".eb-unit-active summary").click()');
+    await wait('document.querySelector(".eb-unit-active details").open');
+    assert.equal(await ev('document.querySelector(".eb-unit-active").dataset.entryId'),'001');
+    assert.ok(await ev('document.querySelector(".eb-unit-active").scrollHeight')>=before);
+    await ev('document.querySelector(`[data-size="lg"]`).click()');
+    assert.equal(await ev('document.querySelector(".eb-unit-active").dataset.entryId'),'001');
+    assert.equal(await ev('document.querySelector(".eb-unit-active details").open'),true);
+    assert.equal(await ev('getComputedStyle(document.querySelector(".eb-unit-active")).overflowY'),'auto');
+    await ev('document.querySelector(".eb-unit-active h2").click()');
+    assert.equal(await ev('document.querySelector(".eb-unit-active").dataset.entryId'),'001');
+    await shot('classic-entry-'+width);
+    await ev('document.querySelector(".eb-unit-active").scrollTop=10000');
+    assert.ok(await ev('document.querySelector(".eb-unit-active").scrollTop')>0);
+    await shot('classic-entry-expanded-'+width);
+    await ev('ebNextPage()');
+    assert.equal(await ev('document.querySelector(".eb-unit-active").dataset.entryId'),'002');
+    assert.equal(await ev('document.querySelector(".eb-unit-active").scrollTop'),0);
+    await checkMobileBar();
+    await shot('classic-mobile-controls-'+width);
+    await ev('document.getElementById("eb-float-toc").click()');
+    await wait('document.getElementById("eb-toc-overlay").classList.contains("show")');
+    await ev('document.getElementById("eb-toc-overlay").scrollTop=1e7');
+    const bounds=await ev('(()=>{const o=document.getElementById("eb-toc-overlay"),last=o.querySelector("li:last-child");return {height:o.clientHeight,viewport:innerHeight,gap:o.getBoundingClientRect().bottom-last.getBoundingClientRect().bottom,top:o.scrollTop,max:o.scrollHeight-o.clientHeight,body:scrollY}})()');
+    assert.ok(bounds.height<=bounds.viewport+1);
+    assert.ok(bounds.gap>=0 && bounds.gap<=48,JSON.stringify(bounds));
+    assert.ok(Math.abs(bounds.top-bounds.max)<2);
+    await send('Input.dispatchMouseEvent',{type:'mouseWheel',x:width/2,y:600,deltaX:0,deltaY:1500});
+    await new Promise(r=>setTimeout(r,200));
+    assert.equal(await ev('window.scrollY'),bounds.body);
+    assert.ok(Math.abs(await ev('document.getElementById("eb-toc-overlay").scrollTop')-bounds.top)<2);
+    await shot('classic-toc-end-'+width);
+    await ev('ebHideToc();document.getElementById("eb-mode-btn").click()');
+    await wait('!document.getElementById("eb-root").classList.contains("eb-page-mode")');
+    await ev('window.scrollTo(0,2500)');await new Promise(r=>setTimeout(r,200));
+    await ev('document.getElementById("eb-float-toc").click()');
+    await wait('Math.abs(document.getElementById("eb-toc").getBoundingClientRect().top-150)<10');
+    console.log('PASS',width,'scroll, page next, TOC overlay, return to scroll, floating TOC');
+  }
+  assert.deepEqual(errors,[]);
+} finally {ws?.close();chrome.kill();}

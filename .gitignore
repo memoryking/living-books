@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+/artifacts/
+/outputs/
+/artifacts/hanja-qa/browser-profile/
+/artifacts/hanja-qa/browser-profile-classic/
 
 # next.js
 /.next/
@@ -37,6 +41,7 @@ yarn-error.log*
 .vercel
 
 # typescript
+artifacts/hanja-image-bounds/browser-profile/
 *.tsbuildinfo
 next-env.d.ts
 

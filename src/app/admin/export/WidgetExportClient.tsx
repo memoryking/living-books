@@ -90,6 +90,21 @@ function PreviewModal({
 }
 
 /* ── 위젯 카드 (전자책 뷰어) ── */
+function HanjaStudyCard() {
+  const url = 'https://living-books-beta.vercel.app/premium/hanja-memory/read';
+  const code = `<iframe src="${url}" title="그림으로 기억하는 한자 453 — 그림 학습형" style="display:block;width:100%;height:90vh;height:90dvh;min-height:480px;border:0;" allow="clipboard-write"></iframe>`;
+  return <section className="p-5 rounded-xl border border-emerald-300 bg-emerald-50/40" aria-label="한자 그림 학습형 내보내기">
+    <h3 className="font-bold text-lg mb-2">① 그림 학습형</h3>
+    <p className="text-sm text-gray-600 mb-4">한 글자씩 그림으로 공부하는 화면입니다. 검색·답 가리기·쓰기 연습·복습 기록을 제공합니다.</p>
+    <div className="flex flex-wrap gap-2">
+      <CopyButton text={code} label="🔗 그림 학습형 iframe 코드 복사" />
+      <CopyButton text={url} label="학습 화면 주소 복사" />
+      <a href="/premium/hanja-memory/read" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm bg-white">그림 학습형 미리보기 ↗</a>
+    </div>
+    <p className="mt-3 text-xs text-gray-600">모바일에서도 같은 학습 화면을 사용하며, 삽입된 화면 안에서 스크롤합니다. 학습 기록은 사용 중인 브라우저에 저장됩니다.</p>
+  </section>;
+}
+
 function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
   const iframeCode = `<iframe id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
@@ -139,12 +154,14 @@ function WidgetCard({ w }: { w: WidgetData }) {
 
   return (
     <div className="p-5 rounded-xl border border-gray-200">
+      {w.id === 'hanja-memory' && <><h3 className="font-bold text-lg mb-2">② 기존 전자책형</h3><p className="text-sm text-gray-600 mb-4">목차와 전체 본문을 바로 보여줍니다. 스크롤·페이지 넘김 방식이며 ‘꼭 알아야 할 10가지’는 표시하지 않습니다.</p></>}
       <div className="flex items-center justify-between mb-3">
         <span className="text-sm font-medium text-gray-500">
           전자책 뷰어 위젯 · {(w.charCount / 1024).toFixed(1)}KB
         </span>
       </div>
       <div className="flex flex-wrap gap-2">
+        {w.id === 'hanja-memory' && <a href="/premium/hanja-memory/read/full" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm">기존 전자책형 미리보기 ↗</a>}
         <CopyButton text={w.markdown} label="📝 전자책 내용 복사" />
         <CopyButton text={iframeCode} label="🔗 iframe 코드 복사 (추천)" />
         <CopyButton text={w.html} label="📋 뷰어 코드 복사 (직접)" />
@@ -285,6 +302,7 @@ export default function WidgetExportClient({
 
             {/* 4개 탭 */}
             <div className="space-y-4">
+              {w.id === 'hanja-memory' && <HanjaStudyCard />}
               <WidgetCard w={w} />
 
               {d && (

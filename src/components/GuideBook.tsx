@@ -40,6 +40,7 @@ export interface GuideBookProps {
   sections: ContentSection[];
   updateLogs: UpdateLog[];
   currentVersion: number;
+  contentOnly?: boolean;
 }
 
 /* ─────────────────────────────────────────────
@@ -619,8 +620,9 @@ export default function GuideBook({
   sections,
   updateLogs,
   currentVersion,
+  contentOnly = false,
 }: GuideBookProps) {
-  const [activeTab, setActiveTab] = useState<"top10" | "content">("top10");
+  const [activeTab, setActiveTab] = useState<"top10" | "content">(contentOnly ? "content" : "top10");
   const [isEmbed, setIsEmbed] = useState(false);
   const [userId, setUserId] = useState("");
   const [airtableUserId, setAirtableUserId] = useState("");
@@ -636,11 +638,12 @@ export default function GuideBook({
 
   // 체크인 통계 로드
   useEffect(() => {
+    if (contentOnly) return;
     fetch(`/api/checkin?book_id=${bookId}${userId ? `&user_id=${userId}` : ""}`)
       .then(r => r.json())
       .then(data => { if (!data.error) setCheckinStats(data); })
       .catch(() => {});
-  }, [bookId, userId, refreshKey]);
+  }, [bookId, userId, refreshKey, contentOnly]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -670,7 +673,7 @@ export default function GuideBook({
       </header>
 
       {/* Tab Switcher */}
-      <div className="flex border-b border-gray-200 dark:border-gray-700 mb-8">
+      {!contentOnly && <div className="flex border-b border-gray-200 dark:border-gray-700 mb-8">
         <button
           onClick={() => setActiveTab("top10")}
           className={`flex-1 py-3 text-center font-semibold transition-all border-b-2 ${
@@ -691,7 +694,7 @@ export default function GuideBook({
         >
           📖 전체 내용
         </button>
-      </div>
+      </div>}
 
       {/* ─── Top 10 Tab ─── */}
       {activeTab === "top10" && (

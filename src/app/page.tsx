@@ -35,6 +35,15 @@ const generalBooks = [
 
 const premiumBooks = [
   {
+    id: "hanja-memory",
+    emoji: "字",
+    title: "그림으로 기억하는 한자 453",
+    subtitle: "453개 기억 장면 · 906개 활용 예시 · 꺼내 보는 복습",
+    tags: ["한자", "그림암기", "반복학습"],
+    lastUpdated: "2026-09-23",
+    version: 1,
+  },
+  {
     id: "diet-secrets",
     emoji: "🏋️",
     title: "다이어트 서바이벌 시스템",

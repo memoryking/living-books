@@ -17,12 +17,12 @@ export async function GET(
 
   // preview 모드: -next 파일 사용, 일반: 현재 파일 사용
   const cssFile = isPreview ? "eb-style-next.css" : "eb-style.css?v=5";
-  const jsFile = isPreview ? "eb-script-next.js" : "eb-script.js?v=5";
+  const jsFile = bookId === 'hanja-memory' ? 'hanja-reader.js?v=5' : isPreview ? "eb-script-next.js" : "eb-script.js?v=5";
 
   // HTML에서 기존 <link>와 <script> 태그 제거 (직접 삽입)
   const contentHtml = widgetHtml
     .replace(/<link[^>]*eb-style\.css[^>]*>/gi, "")
-    .replace(/<script[^>]*eb-script\.js[^>]*><\/script>/gi, "");
+    .replace(/<script[^>]*(?:eb-script|hanja-reader)\.js[^>]*><\/script>/gi, "");
 
   const previewBanner = isPreview
     ? `<div style="position:fixed;top:0;left:0;right:0;background:#f59e0b;color:#78350f;text-align:center;padding:4px;font-size:12px;font-weight:700;z-index:9999;">⚠️ 미리보기 모드 — 사용자에게는 보이지 않습니다</div>`
@@ -57,6 +57,7 @@ ${contentHtml}
   try { if(window.top===window.self) return; } catch(e){}
   var _resizeTimer;
   function sendHeight(){
+    if (${bookId === 'hanja-memory'} && document.getElementById('eb-root')?.classList.contains('eb-page-mode')) return;
     var h=document.documentElement.scrollHeight;
     window.parent.postMessage({type:'eb-resize',height:h},'*');
   }

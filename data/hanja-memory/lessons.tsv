@@ -1,0 +1,453 @@
+1|황금빛 태양|日의 네모 안 가로선을 햇살 한 줄로 연결하자. 해가 한 번 뜨고 지면 하루, 날 일!|日記(일기): 하루(日)의 일을 기록(記)한 글.|休日(휴일): 쉬는(休) 날(日).|a huge golden sun with molten radiant rays
+2|은빛 초승달|길쭉한 月을 휜 달의 창으로 보자. 안의 두 획은 달빛 두 줄, 달 월!|月光(월광): 달(月)의 빛(光).|滿月(만월): 가득 찬(滿) 둥근 달(月).|a silver crescent moon with luminous craters
+3|노을빛 초승달|月보다 안쪽 획이 하나 적은 夕. 해가 저물어 빛 한 줄만 남은 저녁으로 연결하자.|夕陽(석양): 저녁(夕)의 해(陽).|秋夕(추석): 가을(秋) 저녁(夕), 음력 팔월 보름 명절.|an orange half moon glowing with sunset colors
+4|빛을 뿜는 별|辰의 아래로 뻗는 획을 별빛 꼬리로 상상하자. 별 진, 별빛이 진하게 반짝!|星辰(성진): 별 성(星)과 별 진(辰), 여러 별을 이르는 말.|日月星辰(일월성신): 해·달·별. 이 말의 辰은 관용적으로 신으로 읽는다.|a brilliant sapphire star with long radiant tails
+5|기운이 솟는 사람|氣 위쪽의 흐르는 획을 몸에서 솟는 기운으로 보자. 깊이 숨 쉬자 기운 기!|氣力(기력): 활동하는 기운(氣)과 힘(力).|空氣(공기): 비어 보이는 공간(空)을 채운 기체(氣).|an energetic athlete radiating turquoise vapor
+6|휘몰아치는 회오리|風의 바깥 획을 휘감는 바람으로, 안쪽을 빙빙 도는 바람의 눈으로 기억하자.|強風(강풍): 강한(強) 바람(風).|風車(풍차): 바람(風)의 힘으로 돌아가는 바퀴 장치(車).|a giant swirling white and turquoise whirlwind
+7|굵은 빗방울|雨 안의 네 점에 주목하자. 구름 아래 빗방울이 뚝뚝 떨어진다, 비 우!|雨傘(우산): 비(雨)를 막는 우산(傘).|降雨(강우): 비(雨)가 내림(降).|a compact dark cloud pouring oversized blue raindrops
+8|세 봉우리 산|山의 세로획 셋을 산봉우리 셋에 연결하자. 가운데 봉우리가 가장 높다, 메 산!|登山(등산): 산(山)에 오름(登).|火山(화산): 불(火)과 관련된 분출 활동을 하는 산(山).|a dramatic emerald mountain with three sharp peaks
+9|깊게 팬 골짜기|谷 위쪽은 양옆 비탈, 아래 口는 골짜기 입구라고 상상하자. 산 사이 움푹한 골!|溪谷(계곡): 시내(溪)가 흐르는 골짜기(谷).|山谷(산곡): 산(山) 사이 골짜기(谷).|a deep narrow jade canyon cut into a miniature rock
+10|둥근 풀 언덕|阜의 층진 윗부분을 언덕의 턱으로 보자. 산처럼 뾰족하지 않은 둥근 언덕 부!|丘阜(구부): 언덕 구(丘)와 언덕 부(阜), 언덕을 뜻하는 문어.|曲阜(곡부): 중국의 지명. 阜의 음 부를 확인한다.|a rounded lush green hill with terraced sides
+11|언덕 옆 계단|글자 왼쪽의 阝는 阜가 줄어든 모양. 왼쪽 언덕을 올라가고, 오른쪽 阝는 고을과 구별하자.|階段(계단): 階의 왼쪽 阝가 언덕 부수. 높낮이를 잇는 계단.|陸地(육지): 陸의 왼쪽 阝가 땅과 관련된 뜻을 돕는다.|a steep green hillside shaped like two rounded steps
+12|거친 회색 바위|石 위쪽을 바위 비탈, 아래 口를 툭 떨어진 돌덩이로 연결하자. 쿵, 돌 석!|石塔(석탑): 돌(石)로 만든 탑(塔).|寶石(보석): 보배로운(寶) 돌(石).|a massive rough gray boulder with moss and facets
+13|촉촉한 흙더미|土의 아래 긴 획은 땅, 위 十은 흙에서 솟은 싹으로 상상하자. 밑이 넓은 흙 토!|土地(토지): 흙(土)으로 된 땅(地).|粘土(점토): 끈끈한(粘) 성질의 흙(土).|a rich brown mound of soil with crisp granules
+14|번쩍이는 금속 덩어리|金의 지붕 아래 반짝이는 두 점을 금속의 광택으로 잡자. 금도 쇠도 금속, 쇠 금!|金屬(금속): 금(金)과 같은 성질의 물질 무리(屬).|黃金(황금): 누런(黃) 금(金).|a huge polished golden metal nugget
+15|빛나는 초록 옥구슬|王에 점 하나가 붙으면 玉. 왕의 옷에 달린 옥구슬 한 알이라고 연결하자.|玉石(옥석): 옥(玉)과 돌(石), 좋은 것과 나쁜 것의 비유.|玉器(옥기): 옥(玉)으로 만든 그릇이나 기물(器).|a translucent emerald jade bead with a bright highlight
+16|성벽 안 고을|邑의 口를 고을의 테두리, 아래를 그 안의 사람으로 상상하자. 사람이 모여 사는 고을 읍!|邑內(읍내): 읍(邑)의 안(內), 중심 시가지.|邑長(읍장): 읍(邑)의 행정을 맡는 우두머리(長).|a tiny walled Korean town sculpted as one miniature
+17|바둑판 마을|里 위의 칸을 집터, 아래 획을 마을 땅으로 보자. 같은 땅에 모여 사는 마을 리!|洞里(동리): 동네(洞)와 마을(里).|里長(이장): 마을(里)의 일을 맡는 대표(長).|a compact warm terracotta village on a square base
+18|네 칸 밭|田을 십자 길로 나눈 네 칸 밭에 연결하자. 네모 안 십자, 밭 전!|田園(전원): 밭(田)과 동산(園), 농촌의 풍경.|水田(수전): 물(水)을 대어 농사짓는 논(田).|a square green farm plot divided into four neat fields
+19|반짝이는 소금밭|鹵 안의 작은 표시들을 하얀 소금 결정으로 상상하자. 밭에서 소금이 반짝, 소금밭 로!|鹵田(노전): 소금기 있는 밭. 일상에서는 염전이라는 말을 더 많이 쓴다.|鹽田(염전): 鹽 안에 鹵 모양이 보인다. 소금을 얻는 밭.|a rectangular salt pan sparkling with white crystals
+20|튀어 오르는 물기둥|水의 가운데는 물줄기, 양옆은 튀는 물방울로 보자. 사방으로 촤악, 물 수!|水道(수도): 물(水)이 지나가는 길(道), 물 공급 시설.|生水(생수): 마실 수 있도록 공급하는 물(水). 生은 날것·그대로의 의미를 보탠다.|a crystal clear water splash rising in a tall curve
+21|세 방울 물|氵는 水가 왼쪽에서 바뀐 부수. 세 방울이면 삼수변, 물과 관련된 뜻의 단서를 찾자.|海水(해수): 海의 氵를 찾자. 바다(海)의 물(水).|河川(하천): 河의 氵를 찾자. 강(河)과 내(川).|three oversized bright blue water droplets in a vertical arc
+22|세 줄기 시냇물|川의 세로획 셋을 나란히 흐르는 물길로 읽자. 고이지 않고 흐르는 내 천!|河川(하천): 강(河)과 내(川), 흐르는 물길.|山川(산천): 산(山)과 내(川), 자연의 지형.|three parallel ribbons of clear flowing blue water
+23|투명한 얼음|氷은 水 옆에 점 하나. 물에 찬 기운 한 점이 닿아 꽁꽁 얼었다고 상상하자.|氷水(빙수): 얼음(氷)과 물(水), 잘게 간 얼음으로 만든 음식.|氷山(빙산): 산(山)처럼 거대한 얼음(氷).|a giant transparent ice cube with frosty blue cracks
+24|두 조각 얼음|冫는 점 두 개, 氵는 점 세 개. 물 세 방울이 얼어 두 덩이가 되었다고 구별하자.|冷水(냉수): 冷의 冫가 차가움의 단서. 차가운 물.|凍結(동결): 凍의 冫를 찾자. 얼어 굳음.|two sharp pale blue ice shards stacked diagonally
+25|솟구치는 불꽃|火의 가운데는 큰 불길, 양옆 점은 작은 불꽃으로 연결하자. 화르르, 불 화!|火災(화재): 불(火)로 인한 재앙(災).|火力(화력): 불(火)이 내는 힘(力).|a towering vivid orange flame with ruby red tips
+26|톡 튀는 불똥|丶는 한 점을 쓰는 모양이다. 톡 튄 빨간 불똥 하나로 형태를 기억하고 기본 훈은 점 주로 익히자.|主人(주인): 主의 맨 위 점 丶를 관찰한다. 주인이라는 뜻이 불똥에서 나오지는 않는다.|丸藥(환약): 丸의 점 丶를 관찰한다. 둥근 알약을 뜻한다.|a single brilliant red glowing ember
+27|풀잎 머리띠|艹는 글자 머리에 놓이는 풀 부수. 글자 위에 초록 풀잎 머리띠를 씌워 보자.|草原(초원): 草의 艹가 풀과 관련된 뜻을 돕는다. 풀밭.|花草(화초): 花와 草의 머리에 艹가 보인다. 꽃과 풀.|a vivid green grass tuft shaped like a horizontal crown
+28|쌍으로 솟은 풀|艸의 두 덩이를 풀 두 포기로 보자. 위에 붙으면 艹로 줄어드는 풀 초!|草木(초목): 草에 艸의 변형 艹가 쓰인다. 풀과 나무.|本草(본초): 草의 풀 부수를 찾자. 약재가 되는 식물 등을 이르는 말.|two lush green grass clumps joined at the roots
+29|날개 펼친 새|鳥 아래의 점들을 새 발자국에 연결하자. 긴 꼬리까지 갖춘 새 조!|鳥類(조류): 새(鳥)의 무리(類).|白鳥(백조): 흰(白) 새(鳥), 고니류를 이르는 말.|a graceful white bird with enormous outstretched wings
+30|굽은 목의 새|乙의 굽은 획을 새의 목으로 상상하자. 새 을은 전통 훈음이며 실제 단어에서는 둘째 천간·순서도 나타낸다.|甲乙(갑을): 첫째 갑(甲)과 둘째 을(乙), 순서나 당사자를 구별한다.|乙種(을종): 을(乙)로 구분한 종류(種). 새의 종류라는 뜻은 아니다.|a tiny yellow bird with a dramatically curved neck
+31|짧은 꼬리 새|隹의 촘촘한 획을 접힌 깃털로 보자. 鳥의 긴 꼬리와 대비해 짧은 꼬리 새 추!|集會(집회): 集에서 隹와 木 모양을 찾는다. 모이는 모임.|雌雄(자웅): 雌와 雄에 隹가 들어 있다. 암컷과 수컷.|a plump teal short tailed bird with layered feathers
+32|한 쌍의 깃|羽의 두 칸을 펼친 날개 한 쌍으로 보자. 안의 짧은 획은 잔깃, 깃 우!|羽毛(우모): 깃(羽)과 털(毛), 새의 깃털.|羽化(우화): 곤충이 날개를 갖춘 성충으로 변함(化).|two silky white feathered wings spread symmetrically
+33|힘차게 나는 새|飛의 뻗는 획을 바람을 가르는 날갯짓에 연결하자. 새 자체가 아니라 나는 행동, 날 비!|飛行(비행): 날아서(飛) 감(行).|飛躍(비약): 날아(飛) 뛰어오름(躍), 큰 발전.|a cobalt bird soaring upward with dramatically swept wings
+34|화려한 긴꼬리 꿩|翟의 위 羽와 아래 隹를 눈에 담자. 화려한 깃을 가진 새, 꿩 적으로 연결하자.|翟衣(적의): 꿩(翟) 무늬를 놓은 전통 예복(衣).|濯足(탁족): 濯 안에 翟이 있다. 발을 씻는다는 뜻이며 翟은 소리 계열 학습의 단서다.|a gorgeous pheasant with long iridescent golden tail feathers
+35|다리 긴 황새|雚 아래 隹를 찾고 위쪽을 커다란 눈으로 상상하자. 긴 다리로 우뚝 선 황새 관!|觀察(관찰): 觀의 왼쪽에 雚이 있다. 자세히 살펴봄.|歡迎(환영): 歡의 왼쪽에 雚이 있다. 기쁘게 맞이함. 황새라는 뜻으로 풀지 않는다.|a tall white stork with an exaggerated red beak
+36|귀를 쫑긋한 개|大 옆에 점 하나를 더하면 犬. 사람 모양 大에 꼬리 점을 붙인 개로 기억하자.|愛犬(애견): 사랑하는(愛) 개(犬).|猛犬(맹견): 사나운(猛) 개(犬).|an excited golden dog with oversized perked ears
+37|옆으로 선 개|犭는 犬이 왼쪽에서 줄어든 부수. 굽은 등을 가진 동물이 글자 옆에 붙었다고 기억하자.|獨立(독립): 獨의 왼쪽 犭를 찾자. 단어 뜻은 홀로 섬이다.|狂犬(광견): 狂의 犭를 찾자. 미친 개를 뜻한다.|a golden dog in a narrow upright side profile
+38|통통한 돼지|豕 아래로 뻗는 획을 배 아래 다리와 꼬리로 보자. 배가 볼록한 돼지 시!|豕突(시돌): 돼지(豕)처럼 갑자기 내달림(突), 문어 표현.|家庭(가정): 家 안에 豕가 있다. 집·가정을 뜻하는 글자의 구성 찾기.|a very plump pink pig with a curly tail
+39|납작한 돼지 코|彐의 납작한 테두리를 돼지 코의 옆모습으로 연결하자. 돼지머리 계라는 부수 이름을 기억한다.|歸家(귀가): 歸의 윗부분에서 彐 모양을 찾는다. 집으로 돌아감.|雪景(설경): 雪 아래 彐 모양을 찾는다. 눈 풍경이며 돼지 뜻은 없다.|a close up pink pig snout with exaggerated nostrils
+40|뾰족한 고슴도치 머리|彑의 꺾이는 바깥선을 고슴도치의 뾰족한 얼굴로 상상하자. 彐와 모양을 비교한다.|彙集(휘집): 彙에서 彑 모양을 찾는다. 모아서 묶음.|緣分(연분): 緣 오른쪽 위의 彑 모양을 관찰한다. 인연이라는 뜻이다.|a cute hedgehog head with enormous crisp brown spines
+41|굵은 뿔의 소|牛 위쪽 짧은 획은 뿔, 아래 곧은 획은 얼굴로 연결하자. 우직한 소 우!|牛乳(우유): 소(牛)의 젖(乳).|韓牛(한우): 한국(韓)의 소(牛).|a sturdy brown ox with huge curved horns
+42|갈기 날리는 말|馬 아래 네 점을 질주하는 네 발로 기억하자. 다그닥, 말 마!|馬車(마차): 말(馬)이 끄는 수레(車).|乘馬(승마): 말(馬)에 올라탐(乘).|a muscular white horse with a dramatically flowing mane
+43|꼬불뿔 양|羊 맨 위 두 획을 뿔로, 가운데를 길쭉한 얼굴로 보자. 복슬복슬 양 양!|羊毛(양모): 양(羊)의 털(毛).|山羊(산양): 산(山)에 사는 양(羊) 계열 동물.|a fluffy white sheep with large curled horns
+44|나뭇가지뿔 사슴|鹿 위의 넓은 부분은 뿔, 아래는 다리라고 상상하자. 가지처럼 갈라진 뿔의 사슴 록!|鹿角(녹각): 사슴(鹿)의 뿔(角).|鹿茸(녹용): 사슴(鹿)의 아직 단단해지지 않은 어린 뿔(茸).|a graceful golden deer with enormous branching antlers
+45|수염 긴 쥐|鼠 아래의 길쭉한 획을 꼬리, 짧은 표시를 발로 보자. 수염이 쑥, 쥐 서!|鼠藥(서약): 쥐(鼠)를 없애는 약(藥). 맹세인 誓約과 구별.|鼠害(서해): 쥐(鼠) 때문에 생기는 피해(害). 바다 西海와 구별.|a tiny gray mouse with oversized whiskers and curled tail
+46|꼬리 긴 원숭이|禺 아래 굽은 선을 길게 말린 꼬리로 연결하자. 우우 소리 내는 원숭이 우!|寓話(우화): 寓에 禺가 있다. 다른 이야기로 뜻을 전하는 이야기.|偶然(우연): 偶에 禺가 있다. 뜻밖에 일어남. 원숭이 뜻으로 풀이하지 않는다.|a playful brown monkey with an enormous curled tail
+47|위풍당당 해태|豸의 굽은 몸을 웅크린 해태에 연결하자. 전통 훈 해태 치를 기억하되 해태는 상상 속 동물이다.|獬豸(해치): 해태를 가리키는 이름. 豸의 음은 여기서 치.|豹紋(표문): 豹의 왼쪽 豸를 찾는다. 표범의 무늬를 뜻한다.|a majestic turquoise mythical haetae with a curled mane
+48|비늘 번쩍이는 용|龍의 복잡한 획을 구불구불한 몸과 비늘로 보자. 힘차게 솟는 용 용!|龍王(용왕): 용(龍)의 왕(王).|恐龍(공룡): 무서운(恐) 용(龍)이라는 이름의 멸종 동물 무리.|a magnificent emerald dragon with gleaming scales
+49|귀가 긴 토끼|卯의 두 세로 덩이를 토끼 귀 한 쌍에 연결하자. 지지 卯가 상징하는 동물은 토끼!|卯年(묘년): 지지 卯에 해당하는 해(年), 토끼해.|卯時(묘시): 卯로 표시한 시간(時), 전통 시각으로 오전 5~7시.|a white rabbit with comically enormous upright ears
+50|줄무늬 호랑이|虎 위의 갈고리 같은 부분을 호랑이 머리, 아래를 웅크린 다리로 보자. 범 호!|猛虎(맹호): 사나운(猛) 호랑이(虎).|虎皮(호피): 호랑이(虎)의 가죽(皮), 또는 그 무늬.|a powerful orange tiger with striking black stripes
+51|둥근 돼지 인형|亥 아래로 벌어진 획을 돼지의 뒷다리로 연결하자. 열두 지지의 마지막, 돼지 해!|亥年(해년): 지지 亥에 해당하는 해(年), 돼지해.|亥時(해시): 亥로 표시한 시간(時), 전통 시각으로 오후 9~11시.|a round pink pig sitting with its rear legs apart
+52|새가 가득한 나무|喿의 口 셋을 짹짹대는 입 셋, 木을 나뭇가지로 보자. 나무 위 새떼로울 조!|喧噪(훤조): 噪에 喿가 들어 있다. 시끄럽게 떠드는 일, 문어 표현.|操作(조작): 操에 喿가 들어 있다. 기계 등을 다루는 일로 뜻은 별도 학습한다.|a tiny tree packed with chirping bright yellow birds
+53|선명한 발자국|禸의 안쪽 굽은 선을 동물이 남긴 발자국으로 연결하자. 바닥에 꾹, 발자국 유!|禹(하우씨 우): 아래에서 禸 모양을 찾는 구성 예시. 고대 인명이다.|禽類(금류): 禽 아래 禸 모양을 찾는다. 날짐승의 무리라는 뜻이다.|a deep glossy animal paw print in brown clay
+54|분명히 갈라진 자국|釆는 米 위에 삐침이 하나 더 있다. 서로 다른 갈래를 나누어 알아보는 분별할 변!|釋放(석방): 釋 왼쪽에 釆가 있다. 구속에서 풀어 놓음. 구성 예시다.|番號(번호): 番 위에 釆가 들어 있다. 순서를 나타내는 표지.|a fan of distinct colored channels carved into one stone
+55|두툼한 고깃살|肉의 테두리 안을 꽉 채운 두 덩이를 두툼한 살결로 보자. 고기 육!|肉類(육류): 고기(肉)의 종류(類).|筋肉(근육): 힘줄(筋)과 살(肉), 몸을 움직이는 조직.|a thick pink cut of meat with clear marbling
+56|몸속 붉은 근육|이 月은 달이 아니라 肉의 부수형. 몸 관련 글자 옆에서는 붉은 살덩이를 떠올리자.|肝臟(간장): 肝·臟의 月은 고기 부수. 몸의 장기인 간.|腹部(복부): 腹의 月은 몸과 관련된 뜻을 돕는다. 배 부분.|a sculpted red muscle bundle with clear fibers
+57|새하얀 뼈|骨 위쪽은 뼈마디, 아래는 살을 붙이는 자리로 상상하자. 단단한 뼈 골!|骨折(골절): 뼈(骨)가 부러짐(折).|骨格(골격): 뼈(骨)가 이루는 틀(格).|a giant smooth ivory bone with enlarged rounded joints
+58|뾰족한 뿔|角 맨 위의 뾰족한 획을 뿔끝으로 보자. 아래의 층은 뿔의 결, 뿔 각!|角質(각질): 뿔(角)처럼 단단해진 성질(質)의 조직.|三角(삼각): 모서리·각(角)이 셋(三). 뿔에서 뾰족한 각으로 뜻을 연결한다.|a huge curved ivory horn with deep ridges
+59|부드럽게 접힌 가죽|皮의 펼쳐지는 획을 벗겨 펼친 가죽의 가장자리로 연결하자. 피부의 피!|皮膚(피부): 몸의 겉을 덮는 가죽(皮)과 살갗(膚).|皮革(피혁): 가죽(皮)과 가공한 가죽(革).|a folded chestnut leather sheet with detailed pores
+60|유연한 가죽 끈|韋의 가운데를 감싸는 획에 주목하자. 손질해서 부드럽게 휘는 가죽, 다룸가죽 위!|韋編(위편): 책을 엮는 가죽(韋) 끈(編). 고전에서 쓰는 말.|韋編三絶(위편삼절): 책의 가죽끈이 세 번 끊어질 만큼 되풀이해 읽음.|a supple caramel leather strap curled into a loop
+61|팽팽한 가죽판|革은 가로세로로 팽팽히 펼친 가죽판으로 기억하자. 부드럽게 휘는 韋와 대비한다.|皮革(피혁): 가죽(皮)과 다룬 가죽(革).|改革(개혁): 고쳐(改) 새롭게 바꿈(革). 革은 바꾸다는 뜻도 가진다.|a taut dark brown leather hide with crisp edges
+62|은빛 물고기|魚 위는 머리, 가운데 田은 비늘, 아래 점은 꼬리 움직임으로 연결하자.|魚類(어류): 물고기(魚)의 무리(類).|鮮魚(선어): 신선한(鮮) 물고기(魚).|a large silver fish with shimmering individual scales
+63|무지갯빛 조개|貝 위의 칸은 조개껍데기 결, 아래 두 획은 벌어진 틈으로 보자. 조개 패!|貝類(패류): 조개(貝)의 종류(類).|貝殼(패각): 조개(貝)의 껍데기(殼).|an iridescent seashell opened slightly to show pearly texture
+64|꿈틀대는 벌레|䖝은 익숙한 虫과 함께 모양을 비교한다. 굽은 아랫획을 벌레 꼬리로 연결하자.|昆蟲(곤충): 蟲은 虫을 거듭 쓴 형태. 벌레 종류를 가리킨다.|害蟲(해충): 해(害)를 끼치는 벌레(蟲). 䖝의 이체 관계로 연결한다.|a bright green caterpillar with exaggerated rounded segments
+65|잎을 먹는 애벌레|蜀 아래 虫을 찾자. 큰 머리로 잎을 갉는 애벌레를 떠올리되 특정 현대 종으로 단정하지 않는다.|蜀漢(촉한): 중국의 옛 나라 이름. 蜀은 여기서 지명·나라 이름이다.|燭光(촉광): 燭 안에 蜀이 있다. 촛불의 빛이며 蜀은 소리 단서다.|a plump emerald caterpillar with an oversized head
+66|볼이 부푼 맹꽁이|맹꽁이는 黽으로 학습한다. 복잡한 글자 안에 납작한 몸과 둥근 눈을 숨겨 놓았다고 상상하자.|黽(맹꽁이 맹): 독립 글자 예시. 현대 일상 한자어가 드물다.|繩索(승삭): 繩 오른쪽에서 黽 계열 모양을 찾는다. 밧줄이라는 뜻이다.|a round olive frog with hugely inflated cheeks
+67|등껍질 큰 거북|龜의 빽빽한 획은 단단한 등껍질 무늬로 보자. 느리지만 잊히지 않는 거북 귀!|龜船(귀선): 거북(龜) 모양의 배(船), 거북선.|龜裂(균열): 거북 등 무늬처럼 갈라짐. 이 단어의 龜는 균으로 읽는다.|a jade green turtle with an enormous patterned shell
+68|아주 작은 씨앗|小의 가운데를 작은 씨앗, 양옆 점을 작은 크기 표시로 상상하자. 클 大와 대비!|小型(소형): 작은(小) 형태(型).|大小(대소): 큼(大)과 작음(小).|a tiny glossy golden seed centered in vast white space
+69|껍질 뚫는 새싹|生의 세로획이 땅을 뚫고 솟는다고 상상하자. 생명이 새로 나는 날 생!|生命(생명): 살아 있음(生)과 목숨(命).|出生(출생): 세상에 나와(出) 태어남(生).|a vivid green sprout bursting from a split seed
+70|고개 숙인 벼|禾는 木 머리의 삐침이 단서. 알찬 벼 이삭이 무거워 고개를 숙였다고 연결하자.|禾穀(화곡): 벼(禾)를 비롯한 곡식(穀). 문어·농업 표현.|秋收(추수): 秋의 禾를 찾는다. 가을에 곡식을 거둠.|a golden rice stalk bending under enormous ripe grains
+71|가지런한 이삭|가지런할 제는 齊로 학습한다. 높이가 딱 맞춰진 이삭처럼 줄을 맞춘 모습을 기억하자.|整齊(정제): 정돈하여(整) 가지런하게 함(齊).|一齊(일제): 한결같이(一) 가지런히(齊), 모두 한꺼번에.|perfectly aligned golden grain stalks with level tops
+72|새하얀 쌀알|米의 사방 획을 흩어진 쌀알로 보자. 벼 禾에서 껍질을 벗기면 쌀 米!|白米(백미): 흰(白) 쌀(米).|玄米(현미): 겉껍질만 벗겨 빛이 어두운(玄) 쌀(米).|a glossy mound of oversized pearly white rice grains
+73|수염 긴 보리|麥의 촘촘한 윗획을 보리의 긴 수염에 연결하자. 벼보다 수염이 빳빳한 보리 맥!|麥酒(맥주): 보리(麥)를 원료로 빚은 술(酒).|小麥(소맥): 밀을 가리키는 한자어. 麥은 보리·밀 계열을 나타낸다.|a golden barley ear with extremely long fine awns
+74|동글동글 콩|豆의 네모를 콩이 담긴 그릇으로 연결하자. 콩 두는 뜻 연상이며 글자 유래 설명과 구별한다.|豆腐(두부): 콩(豆)으로 만드는 식품.|大豆(대두): 큰(大) 콩(豆), 메주콩.|a plump pale yellow soybean with smooth skin
+75|노란 기장 알곡|黍를 잘게 쏟아지는 노란 알곡으로 기억하자. 쌀보다 동글고 작은 기장 서!|黍米(서미): 기장(黍)의 알곡(米). 일상 사용은 드문 말.|黃黍(황서): 누런(黃) 기장(黍). 곡물 이름의 뜻을 확인한다.|a golden millet head with thousands of tiny round grains
+76|넘치는 곡식 계량통|斗의 꺾인 획을 곡식을 퍼 담는 통과 손잡이로 보자. 부피를 재는 말 두!|北斗(북두): 북쪽(北)의 국자 모양 별자리(斗).|斗量(두량): 말(斗)로 곡식 등의 양을 헤아림(量). 문어 표현.|a wooden grain measure overflowing with golden rice
+77|크게 먹는 사람|食 위 지붕 아래를 크게 벌린 입처럼 상상하자. 먹을 때는 식, 먹을 식!|食事(식사): 먹는(食) 일(事).|食品(식품): 먹는(食) 물품(品).|a joyful character taking an enormous bite
+78|길쭉한 부추|韭 아래 긴 획은 밭, 그 위 나란한 획은 길쭉한 잎이라고 연결하자. 부추 구!|韭菜(구채): 부추(韭)라는 채소(菜). 한국 일상에서는 부추라고 한다.|韭葉(구엽): 부추(韭)의 잎(葉). 뜻을 확인하는 드문 표현.|a dense upright bunch of long flat dark green chives
+79|길고 시원한 오이|瓜 아래로 늘어진 획을 덩굴에 매달린 오이로 보자. 오이 과, 덩굴 열매!|木瓜(모과): 나무(木)에 열리는 과실(瓜). 관용 독음 모과.|西瓜(서과): 수박을 이르는 한자어. 瓜는 오이뿐 아니라 박과 열매도 가리킨다.|an enormous crisp green cucumber with textured skin
+80|질긴 삼 줄기|麻 아래 나무처럼 선 두 덩이를 줄기 묶음으로 연결하자. 껍질에서 섬유를 얻는 삼 마!|麻布(마포): 삼(麻) 섬유로 짠 천(布).|亞麻(아마): 섬유와 씨를 이용하는 식물의 이름. 麻는 섬유 식물과 연결된다.|a tall bundle of hemp stalks with visible pale fibers
+81|뿌리 펼친 나무|木의 세로획은 줄기, 위는 가지, 아래는 뿌리로 연결하자. 목재의 목!|木材(목재): 나무(木)로 된 재료(材).|樹木(수목): 나무 수(樹)와 나무 목(木), 나무들을 이르는 말.|a magnificent oak tree with exposed spreading roots
+82|가문의 문장|氏의 아래 굽은 획을 오래 이어진 가문의 끈으로 상상하자. 이름 앞에 붙는 성씨 씨!|氏族(씨족): 같은 성씨(氏)와 혈통의 무리(族).|姓氏(성씨): 성(姓)과 씨(氏), 가문을 나타내는 이름.|an ornate golden family crest with flowing ribbon
+83|맨 밑 받침|氐는 氏 밑에 획 하나가 더 있다. 가문의 가장 밑바탕을 받친다고 기억하자.|低下(저하): 低에 氐가 있다. 아래로 낮아짐, 소리 저를 연결한다.|底面(저면): 底 안에 氐가 있다. 물체의 밑면.|a heavy dark blue pedestal with a broad bottom ledge
+84|쭉 뻗은 대나무|竹의 두 줄기를 나란한 대나무 두 대로 보자. 마디마다 쭉쭉, 대 죽!|竹林(죽림): 대나무(竹)가 모인 숲(林).|竹筍(죽순): 대나무(竹)의 어린 싹(筍).|two tall emerald bamboo stems with exaggerated joints
+85|세로로 쪼갠 널|爿은 널빤지를 세운 옆모습으로 연결하자. 반대쪽 片과 나란히 비교하면 더 잘 남는다.|牆壁(장벽): 牆 왼쪽에 爿이 있다. 벽을 뜻하는 말.|狀態(상태): 狀 왼쪽에 爿이 있다. 사물의 모습이나 형편.|a tall split wooden plank showing rough inner grain
+86|떼어 낸 나무 조각|片을 한쪽이 떨어져 나간 나무판으로 보자. 전체에서 떼어 낸 한 조각, 조각 편!|片紙(편지): 한 조각(片)의 종이(紙)에 쓴 소식.|破片(파편): 깨진(破) 조각(片).|a single broken wooden fragment with splintered edges
+87|두 발로 선 사람|人의 두 획을 벌린 두 다리로 연결하자. 두 발로 서 있는 사람 인!|人間(인간): 사람(人)이 사는 사이(間), 사람을 이르는 말.|人口(인구): 사람(人)의 입(口)을 세듯 센 사람 수.|a confident human figure standing with legs apart
+88|반듯이 선 두 다리|儿는 글자 아래에서 받치는 사람의 두 다리로 기억하자. 人과 달리 아랫부분에 붙는 인발!|兄弟(형제): 兄 아래 儿를 찾는다. 형과 아우.|元氣(원기): 元 아래 儿를 찾는다. 본래의 기운이라는 뜻이다.|a pair of sturdy human legs standing upright
+89|팔 벌린 거인|大는 人에 가로획을 더한 모양. 사람이 팔까지 활짝 벌리면 훨씬 크다, 큰 대!|大學(대학): 큰(大) 배움(學)을 하는 교육 기관.|巨大(거대): 클 거(巨)와 큰 대(大), 매우 큼.|a gigantic cheerful person with arms stretched wide
+90|한쪽 다리로 균형|尢의 휘어진 아랫획을 균형 잡는 다리로 연결하자. 전통 훈은 그대로 알되 사람을 놀리는 장면으로 만들지 않는다.|尢部(왕부): 부수 사전에서 尢로 분류한 부분.|就業(취업): 就 오른쪽 아래의 尢 모양을 찾는다. 직업을 얻음.|a dignified athlete calmly balancing on one leg
+91|베개 앞에서 망설이는 사람|冘의 아래 두 갈래를 이쪽저쪽 망설이는 발로 보자. 원문의 베개 연상은 枕과 연결하고, 기본 훈은 머뭇거릴 음으로 익힌다.|枕具(침구): 枕 오른쪽 冘를 찾는다. 베개 등 잠자리에 쓰는 도구.|沈沒(침몰): 沈의 오른쪽에 冘가 있다. 물속에 가라앉음.|an enormous soft lavender pillow with deep folds
+92|나를 감싼 몸|己의 굽은 획을 몸을 스스로 감싼 모습으로 보자. 자기의 기, 몸 기!|自己(자기): 스스로(自)인 나(己).|克己(극기): 자기(己)를 이겨냄(克).|a person hugging their own torso with a warm smile
+93|반쪽 병부|卩의 꺾인 모양을 맞춰 확인하는 반쪽 표로 상상하자. 명령을 증명하는 병부 절!|印章(인장): 印의 오른쪽 卩를 찾는다. 도장을 뜻한다.|卽時(즉시): 卽의 오른쪽 卩를 찾는다. 곧바로 그때라는 뜻이다.|a half bronze command tally with deep carved grooves
+94|고개 숙인 신하|臣의 긴 테두리 안을 옆으로 본 눈으로 연결하자. 임금을 살피며 일하는 신하 신!|大臣(대신): 높은(大) 직위의 신하(臣).|忠臣(충신): 충성스러운(忠) 신하(臣).|a dignified historical court official bowing in blue robes
+95|갓 쓴 선비|士는 위 가로획이 아래보다 길다. 넓은 갓을 쓴 선비, 土는 아래 땅이 더 길다!|博士(박사): 넓게 아는(博) 학자(士), 학위 이름.|紳士(신사): 교양과 예의를 갖춘 사람(士).|a scholarly figure wearing a very wide black traditional hat
+96|든든한 아버지|父의 교차하는 획을 힘든 일을 맡아 든 두 팔로 연결하자. 아비 부!|父母(부모): 아버지(父)와 어머니(母).|祖父(조부): 할아버지. 父가 윗세대 남성 가족을 나타낸다.|a warm father with broad protective shoulders
+97|손으로 막는 사람|毋의 가운데를 가로막는 획에 주목하자. 하려는 행동을 딱 막는다, 하지 말 무!|毋忘(무망): 잊지(忘) 말라(毋). 문어 표현.|毋論(무론): 논하지(論) 말라(毋), 따질 것 없다는 뜻의 문어.|a firm character holding up a huge stop palm
+98|팔 벌린 아이|子의 위는 큰 머리, 가로획은 작은 팔로 상상하자. 아들 자, 아이의 자!|子女(자녀): 아들(子)과 딸(女).|子孫(자손): 자식(子)과 손자(孫), 후손.|a happy child with a large head and outstretched arms
+99|당당한 여성|女의 교차하는 획을 모은 손으로 연결하자. 전통 훈의 계집은 옛말이며 현대 설명은 여성으로 읽는다.|女子(여자): 여성(女)을 가리키는 말.|男女(남녀): 남성(男)과 여성(女).|a confident woman in a flowing coral outfit
+100|백발의 어르신|老 위의 여러 획은 세월, 아래는 굽은 걸음으로 상상하자. 오래 살아 늙을 로!|老人(노인): 나이가 많은(老) 사람(人).|老化(노화): 나이가 들며(老) 변함(化).|a smiling elder with magnificent white hair
+101|어르신의 상반신|耂는 老의 윗부분이 부수로 남은 모양. 백발 어르신의 상반신으로 연결하자.|孝道(효도): 孝 위의 耂를 찾는다. 부모를 공경하는 도리.|考慮(고려): 考 위의 耂를 찾는다. 깊이 생각함.|the upper body of a wise elder with white hair
+102|이마 짚은 환자|疒의 바깥 모양을 기대어 쉬는 자리로 보자. 몸이 아픈 사람 옆에 붙는 병질 엄!|疾病(질병): 疾과 病에 疒가 있다. 몸의 병.|痛症(통증): 痛과 症에 疒가 있다. 아픈 증상.|a pale person resting with a cool blue cloth on forehead
+103|앙상한 뼈 조각|歺의 아래 조각을 살이 남지 않은 뼈로 연결하자. 무서운 장면 대신 마른 표본으로 기억한다.|歺部(알부): 歺 모양을 분류하는 부수 학습 표현.|殘存(잔존): 殘의 歹와 歺의 관계를 비교한다. 일부가 남아 있음.|a dry ivory bone fragment with hollow texture
+104|마른 뼈 부수|歹는 죽음·손상 관련 글자의 왼쪽에서 찾는다. 歺와 함께 뼈가 남은 모습으로 연결하자.|死亡(사망): 死에 歹가 있다. 죽음을 뜻한다.|殘骸(잔해): 殘의 歹를 찾는다. 부서진 뒤 남은 부분.|a brittle pale bone shard with a clean non graphic crack
+105|고요한 빈 수의|尸의 꺾인 선을 누운 몸의 윤곽으로 상상하자. 주검 시는 고요한 수의로 비폭력적으로 기억한다.|屍身(시신): 屍 안에 尸가 있다. 죽은 사람의 몸.|尸位素餐(시위소찬): 자리에만 있고 할 일을 하지 않음을 비유하는 고전 표현.|an empty folded white burial robe peacefully arranged
+106|둥실 뜬 귀신|鬼의 큰 윗부분을 얼굴, 아래 굽은 부분을 떠다니는 꼬리로 보자. 귀신 귀!|鬼神(귀신): 귀신(鬼)과 신령(神).|鬼怪(귀괴): 귀신(鬼)처럼 이상하고 괴이함(怪), 문어 표현.|a friendly translucent lavender ghost with a curling tail
+107|길게 뻗은 몸|身의 길쭉한 테두리를 옆에서 본 몸통으로 연결하자. 머리부터 다리까지 몸 신!|身體(신체): 몸(身)과 몸체(體).|全身(전신): 온(全) 몸(身).|a full length human body stretching gracefully
+108|머리가 큰 인물|頁 위의 넓은 부분을 크게 확대한 머리로 보자. 책 페이지라는 현대 용법과 머리 혈을 함께 구별한다.|頭痛(두통): 頭 오른쪽 頁를 찾는다. 머리가 아픔.|顔面(안면): 顔 오른쪽 頁를 찾는다. 얼굴.|a friendly human bust with an exaggerated oversized head
+109|맨 앞의 머리|首 위의 두 획은 머리카락, 아래 自는 얼굴로 상상하자. 맨 앞을 이끄는 머리 수!|首席(수석): 맨 앞(首)의 자리(席), 가장 높은 성적·지위.|首都(수도): 나라의 중심(首)이 되는 도시(都).|a gleaming human head held high facing forward
+110|머리 위 꼭지|亠는 점과 가로획이 글자 머리에 놓이는 부수. 머리 위 작은 모자로 연결하자.|交通(교통): 交 위의 亠를 찾는다. 오가고 통함.|亡失(망실): 亡 위의 亠를 찾는다. 잃어버림.|a tiny black cap with an oversized round top button
+111|풍성한 머리숱|㐱의 위는 사람, 아래 彡은 털로 보자. 머리숱이 폭발하듯 많은 숱많을 진!|診察(진찰): 診 오른쪽에 㐱가 있다. 환자의 상태를 살핌.|珍珠(진주): 珍 오른쪽에 㐱가 있다. 보석의 한 종류이며 소리 진을 연결한다.|a person with a huge fluffy cloud of dark hair
+112|또렷한 얼굴|面의 큰 테두리 안을 두 눈과 코가 자리한 얼굴로 상상하자. 정면의 면!|正面(정면): 바로(正) 마주 보는 면(面).|面談(면담): 얼굴(面)을 마주하고 이야기함(談).|a bright expressive face with extremely clear features
+113|활짝 웃는 얼굴|容을 넓은 집 안에 미소가 들어찬 장면으로 연결하자. 얼굴 모습과 담는다는 뜻을 함께 기억한다.|容貌(용모): 얼굴(容)의 생김새(貌).|內容(내용): 안(內)에 담긴(容) 것.|a warmly smiling face with round welcoming cheeks
+114|반짝이는 큰 눈|目의 긴 네모 안 두 획을 눈꺼풀과 눈동자의 구획으로 보자. 눈 목!|目標(목표): 눈(目)으로 겨누는 표지(標), 이루려는 대상.|注目(주목): 눈(目)을 한곳에 쏟음(注).|a huge blue human eye with crisp sparkling iris
+115|멈춰 선 발|艮의 아래로 꺾이는 획을 딱 멈춘 발에 연결하자. 더 가지 않고 그칠 간!|限界(한계): 限 오른쪽 艮을 찾는다. 넘기 어려운 경계.|根本(근본): 根 오른쪽 艮을 찾는다. 뿌리와 바탕. 艮의 뜻을 그대로 합치지 않는다.|a firmly planted boot stopping with a sharp skid
+116|눈을 크게 뜬 사람|見은 目 아래에 다리가 붙은 모습. 눈 달린 사람이 직접 보러 간다, 볼 견!|見學(견학): 보고(見) 배움(學).|發見(발견): 드러내어(發) 찾아봄(見), 새로 알아냄.|a person with exaggerated wide eyes looking attentively
+117|꼼꼼히 살피는 감독|監 아래 皿을 내려다보는 사람을 상상하자. 그냥 보는 見보다 살피고 감독하는 볼 감!|監督(감독): 살피고(監) 독려함(督).|監視(감시): 주의 깊게 살펴봄(監視).|an attentive inspector leaning forward with a focused gaze
+118|빛나는 안내 표지|示의 위 가로획 아래로 빛이 갈라져 보인다고 상상하자. 눈앞에 드러내 보일 시!|表示(표시): 표지(表)로 보임(示).|示範(시범): 본보기(範)를 보임(示).|a luminous golden display pedestal emitting clear rays
+119|자신을 가리키는 사람|自는 目 위에 짧은 획이 더 있다. 자기 코를 톡 가리키며 나 스스로, 스스로 자!|自身(자신): 스스로(自)의 몸(身), 자기.|自由(자유): 스스로(自)에서 말미암음(由), 얽매이지 않음.|a smiling person pointing clearly at their own nose
+120|우뚝한 코|鼻 맨 위 自를 코끝으로 보자. 얼굴 한가운데서 숨을 들이쉬는 코 비!|鼻音(비음): 코(鼻)를 통해 울리는 소리(音).|鼻炎(비염): 코(鼻)에 생기는 염증(炎).|an oversized realistic nose with clear rounded nostrils
+121|소리를 모으는 귀|耳의 긴 바깥선을 귓바퀴, 안쪽 획을 귀의 굴곡으로 연결하자. 귀 이!|耳目(이목): 귀(耳)와 눈(目), 사람들의 관심.|耳鳴(이명): 귀(耳)에서 소리가 울림(鳴).|a large detailed human ear with curved pink folds
+122|활짝 열린 입|口는 입을 정면에서 본 네모 틀로 기억하자. 작은 입 구, 큰 울타리 囗와 구별!|入口(입구): 들어가는(入) 입구(口).|人口(인구): 사람(人)의 입(口)을 세듯 센 인원.|a wide open mouth with vivid coral lips
+123|한쪽으로 기운 입|咼의 비뚤어진 공간을 한쪽으로 돌아간 입으로 연결하자. 표정을 크게 과장해 기억한다.|災禍(재화): 禍 안에 咼가 있다. 재앙을 뜻하며 財貨와 구별한다.|過程(과정): 過 안에 咼가 있다. 일이 지나가는 단계.|a cartoon face with an exaggerated sideways crooked mouth
+124|위가 열린 큰 입|凵은 口의 윗획이 열린 모양. 뚜껑 열린 입처럼 아 하고 벌릴 감!|凶兆(흉조): 凶에서 凵 모양을 찾는다. 좋지 않은 징조.|凹凸(요철): 凹의 열린 듯한 윤곽을 비교한다. 오목함과 볼록함의 모양 학습이다.|a cartoon face opening its mouth enormously upward
+125|크게 하품하는 사람|欠의 아래를 늘어진 몸, 위를 젖힌 머리로 연결하자. 하아암, 하품 흠!|欠席(결석): 자리에 빠짐. 이 단어에서 欠은 결로 읽고 모자라다는 뜻이다.|欠缺(흠결): 부족하거나 빠진 부분. 欠의 부족하다는 뜻을 연결한다.|a sleepy person yawning with an enormous open mouth
+126|텅 빈 자리|无의 휘어진 아랫획을 싹 비어 버린 자리로 연결하자. 無와 같은 계열의 없을 무!|无心(무심): 無心의 이체 표기. 마음에 특별한 생각이 없음.|无名(무명): 無名의 이체 표기. 이름이 없음. 일상 표기는 無를 쓴다.|an empty white plinth with a faint hollow outline
+127|쭉 내민 혀|舌 아래 口에서 위쪽으로 혀를 쭉 내민다고 상상하자. 혀 설!|舌戰(설전): 혀(舌)로 하는 싸움(戰), 말다툼.|毒舌(독설): 독(毒)처럼 날카로운 말(舌).|an enormous playful pink tongue extended forward
+128|말하는 입|言 아래 口 위에 말소리가 층층 쌓인다고 상상하자. 입에서 나온 말씀 언!|言語(언어): 말(言)과 이야기(語), 의사소통 체계.|發言(발언): 말(言)을 밖으로 냄(發).|a speaking mouth with large clean golden sound waves
+129|한마디 말풍선|曰은 日보다 가로로 넓게 보자. 입 안에서 한마디가 나오는 가로 왈!|子曰(자왈): 선생님(子)이 말씀하시기를(曰). 고전 인용의 시작.|或曰(혹왈): 어떤 이(或)가 말하기를(曰). 고전 문장 표현.|a wide rounded speech bubble with a single horizontal mark
+130|울리는 소리|音은 立 아래 日. 똑바로 선 사람이 목소리를 울린다고 연결하자. 소리 음!|音樂(음악): 소리(音)로 즐거움(樂)을 만드는 예술.|發音(발음): 소리(音)를 냄(發).|a vibrating cobalt tuning fork with concentric sound waves
+131|꿀이 흐르는 입|甘 안의 짧은 획을 입에 걸린 달콤한 한 방울로 상상하자. 달 감!|甘味(감미): 단(甘) 맛(味).|甘言(감언): 듣기 좋게 꾸민 달콤한(甘) 말(言).|a glossy golden honey drop stretching into a sweet curve
+132|가지런한 치아|齒 아래 빽빽한 작은 획을 줄지어 선 이로 연결하자. 입 안 가득 이 치!|齒科(치과): 이(齒)를 다루는 진료 분야(科).|乳齒(유치): 젖먹이 때 나는 이(齒).|a perfect row of oversized pearly white teeth
+133|큼직한 어금니|牙의 꺾인 획이 맞물리는 어금니라고 상상하자. 씹는 힘이 큰 어금니 아!|象牙(상아): 코끼리(象)의 길게 자란 이(牙).|齒牙(치아): 이 치(齒)와 어금니 아(牙), 이를 통틀어 이르는 말.|a giant white molar tooth with deep chewing grooves
+134|따뜻하게 뛰는 마음|心의 구부러진 획과 점을 두근대는 심장의 움직임으로 연결하자. 마음 심!|安心(안심): 마음(心)이 편안함(安).|心理(심리): 마음(心)의 이치와 작용(理).|a warm glowing ruby heart with a soft pulsing halo
+135|옆으로 선 마음|忄는 心이 왼쪽에서 세로로 줄어든 부수. 글자 옆에 마음이 두근거린다!|感情(감정): 情의 忄를 찾는다. 느끼는 마음.|快樂(쾌락): 快의 忄를 찾는다. 즐거운 감정.|a slim upright ruby heart with two small side glows
+136|활짝 편 손|手의 여러 획을 손가락, 아래 굽은 획을 손목으로 보자. 손 수!|手足(수족): 손(手)과 발(足).|拍手(박수): 손(手)을 마주 침(拍).|a huge open palm with five clearly separated fingers
+137|옆으로 붙은 손|扌는 手의 왼쪽 부수형. 손으로 하는 행동을 보면 글자 왼쪽부터 살피자.|技術(기술): 技의 扌를 찾는다. 일을 해내는 방법과 솜씨.|持參(지참): 持의 扌를 찾는다. 손에 지니고 참여함.|a narrow upright hand reaching to grasp
+138|또 쌓은 층|且의 가로획을 층층 쌓인 접시로 상상하자. 하나 더, 또 차!|且置(차치): 우선(且) 놓아둠(置). 보통 차치하다로 쓴다.|祖先(조선): 祖 오른쪽 且를 찾는다. 앞선 조상이라는 뜻, 소리·구성 비교다.|a neat stack of ivory plates with one extra plate
+139|거듭 쌓인 층|曾의 여러 층을 다시 또 쌓아 올린 층으로 보자. 한 번 더를 거듭, 거듭 증!|曾祖父(증조부): 할아버지보다 한 대 더 위의 조상.|曾孫(증손): 손자보다 한 대 아래의 자손.|a tall layered golden tower built in repeated tiers
+140|또 내미는 손|又의 교차한 모양을 다시 내미는 손으로 상상하자. 한 번 더, 또 우!|又況(우황): 또(又) 하물며(況), 문어 표현.|又一(우일): 또(又) 하나(一), 고전 문장에서 쓰는 조합. 독립적인 일상 단어는 아니다.|a hand repeatedly reaching forward with subtle motion arcs
+141|펼친 왼손|屮의 세 갈래를 펼친 왼손 손가락으로 연결하자. 풀 초라는 훈도 있어 문맥에 따라 구별한다.|屮部(초부): 부수 이름에서는 풀 초로 읽는다. 왼손 좌와 다른 훈음.|艸木(초목): 艸는 屮 두 개의 모양이다. 풀과 나무, 구성 비교 예시.|an open left hand clearly facing the viewer
+142|손가락 한 마디|寸 안의 작은 점을 손목의 한 지점으로 상상하자. 짧은 길이 한 마디, 마디 촌!|寸數(촌수): 친족 사이의 멀고 가까운 정도를 세는 수.|寸刻(촌각): 한 마디처럼 짧은 시간(刻).|a close up finger with one enlarged knuckle joint
+143|번쩍이는 손톱|爪의 아래로 뻗은 획을 날카로운 손톱으로 보자. 爫로 위에 붙기도 한다.|爪牙(조아): 손톱·발톱(爪)과 어금니(牙), 힘을 쓰는 수단의 비유.|採集(채집): 採 안의 爫를 찾는다. 손으로 캐어 모음.|a close up hand with gleaming curved fingernails
+144|맞잡은 두 손|廾의 양쪽을 두 손, 가운데를 맞닿은 자리로 상상하자. 함께 맞잡을 공!|戒律(계율): 戒 안의 廾를 찾는다. 지켜야 할 규칙.|弄談(농담): 弄 아래 廾를 찾는다. 장난으로 하는 말.|two hands firmly clasped together in a compact gesture
+145|위로 받드는 두 손|같은 廾를 이번에는 아래에서 받치는 두 손으로 보자. 맞잡기에서 받들기로 장면을 바꾼다.|開放(개방): 開 안의 廾 모양을 찾는다. 열어 놓음.|弊害(폐해): 弊 아래 廾를 찾는다. 나쁜 영향이나 해로운 일.|two open hands held upward in a supporting gesture
+146|마주 선 결투 자세|鬪의 양옆을 맞선 두 사람으로 연결하자. 상처 없이 겨루는 장면으로 싸울 투!|鬪爭(투쟁): 싸우고(鬪) 다툼(爭).|戰鬪(전투): 전쟁에서 맞서 싸움(戰鬪).|two padded sport fighters facing off without injury
+147|자물쇠 일기장|厶의 닫힌 작은 공간을 나만의 비밀칸으로 상상하자. 남에게 보이지 않는 사사로울 사!|私生活(사생활): 私의 厶를 찾는다. 개인의 생활.|公私(공사): 公과 私에 厶 모양이 보인다. 공적인 일과 사적인 일의 대비.|a private burgundy leather diary with a huge gold lock
+148|둥글게 안는 팔|勹의 감싸는 곡선을 팔로 보자. 바깥에서 포옥 안는 안을 포, 쌀 포와 연결!|包含(포함): 包 바깥의 勹를 찾는다. 안에 넣어 함께 지님.|包裝(포장): 包의 勹를 찾는다. 물건을 싸서 꾸밈.|a pair of arms curved into a deep protective hug
+149|먹 묻은 붓|聿의 세로획을 붓대, 가로획을 붓을 잡은 손으로 상상하자. 붓 율!|筆記(필기): 筆 아래 聿을 찾는다. 붓·펜으로 기록함.|法律(법률): 律 오른쪽 聿을 찾는다. 법과 규정, 뜻은 별도 학습.|a giant calligraphy brush with glossy black ink bristles
+150|굳게 받친 지지대|支의 아래 又를 받치는 손으로 보자. 위쪽을 무너지지 않게 지탱할 지!|支持(지지): 지탱하고(支) 붙듦(持), 찬성하여 도움.|支柱(지주): 받치는(支) 기둥(柱).|a sturdy red support beam holding firmly upright
+151|내려치는 손|攵의 교차하는 획을 도구를 든 손의 움직임으로 상상하자. 탁 치는 칠 복!|敎育(교육): 敎 오른쪽 攵를 찾는다. 가르치고 기름.|改革(개혁): 改 오른쪽 攵를 찾는다. 고쳐 새롭게 바꿈.|a hand swinging a padded mallet with bold motion
+152|쿵 울리는 북|鼓 왼쪽은 북통, 오른쪽은 치는 동작으로 연결하자. 둥둥, 북 고!|鼓膜(고막): 북(鼓)의 막(膜)처럼 진동하는 귀의 얇은 막.|鼓舞(고무): 북(鼓)을 치고 춤(舞)추듯 힘을 북돋움.|a huge red traditional drum with a taut golden rim
+153|손끝까지 닿는 물결|隶의 아래로 퍼지는 획을 손끝에서 뻗어 닿는 물결로 상상하자. 미칠 이!|隷書(예서): 隷 안에 隶 계열 형태가 있다. 한자 서체의 하나.|逮捕(체포): 逮 안에 隶가 있다. 붙잡음. 독음은 체로 달라진다.|a reaching hand with turquoise ripples spreading from fingertips
+154|튼튼한 발|足 위의 口는 무릎, 아래는 땅을 딛는 발로 연결하자. 발 족!|不足(부족): 넉넉함(足)이 아님(不). 足은 충분하다는 뜻도 있다.|足跡(족적): 발(足)의 자취(跡).|a large human foot firmly planted with clear toes
+155|앞으로 뻗은 발|疋 아래로 뻗는 획을 발끝으로 보자. 足의 네모가 없는 발 소를 비교한다.|疏通(소통): 疏 왼쪽의 疋 계열 모양을 찾는다. 막힘없이 통함.|疑心(의심): 疑 오른쪽 아래의 疋 모양을 찾는다. 믿지 못하는 마음.|a long bare foot stretched forward with pointed toes
+156|딱 멈춘 발걸음|止의 끝에서 발걸음을 딱 멈춘다고 상상하자. 더 가지 않는 그칠 지!|停止(정지): 멈추어(停) 그침(止).|禁止(금지): 못 하게 막아(禁) 그치게 함(止).|a red shoe stopping abruptly on a white surface
+157|바깥으로 벌린 발|癶의 양쪽 벌어진 획을 두 발끝으로 보자. 걸음을 떼기 직전의 걸을 발!|登山(등산): 登 위의 癶를 찾는다. 산에 오름.|發展(발전): 發 위의 癶를 찾는다. 더 나아가 펼쳐짐.|two feet angled outward ready to take a step
+158|엇갈린 발|舛의 왼쪽과 오른쪽을 반대로 향한 발로 상상하자. 방향이 어긋나는 어그러질 천!|舛誤(천오): 어긋나고(舛) 잘못됨(誤), 문어 표현.|舞踊(무용): 舞 아래 舛를 찾는다. 춤을 춤.|two colorful shoes pointing in opposite directions
+159|데굴데굴 구르는 사람|夗의 굽은 부분을 누워 몸을 말고 구르는 모습으로 연결하자. 누워 뒹굴 원!|怨望(원망): 怨 위의 夗를 찾는다. 못마땅하여 탓하는 마음.|碗(사발 완): 오른쪽에 夗가 들어 있다. 둥근 그릇을 뜻하는 구성 예시.|a playful person curled up rolling on their side
+160|십자로 난 길|行의 양쪽 획을 사람이 오가는 길 양쪽으로 상상하자. 여기저기 다닐 행!|旅行(여행): 다른 곳을 찾아 다님(行).|行動(행동): 움직여(動) 일을 해 나감(行).|a miniature clean crossroad with golden walking footprints
+161|조심스러운 작은 걸음|彳은 行의 왼쪽 절반. 긴 길을 한꺼번에 가지 않고 작은 걸음부터 척척!|徐行(서행): 徐의 彳를 찾는다. 천천히 감.|往復(왕복): 往과 復의 彳를 찾는다. 갔다가 돌아옴.|a person taking a very tiny careful step
+162|척척 걷는 사람|같은 彳을 걸을 척으로 다시 기억하자. 작은 걸음이 모이면 걷는 행동이 된다.|徒步(도보): 徒의 彳를 찾는다. 걸어서 이동함.|待機(대기): 待의 彳를 찾는다. 때를 기다림, 부수만으로 전체 뜻을 단정하지 않는다.|a person walking with a clear forward stride
+163|느긋한 산책|辶의 길게 뻗은 받침을 산책길로 보자. 다른 글자를 아래에서 받치며 쉬엄쉬엄 갈 착!|道路(도로): 道의 辶를 찾는다. 사람이 다니는 길.|進行(진행): 進의 辶를 찾는다. 앞으로 나아감.|a relaxed traveler strolling with flowing blue clothes
+164|아주 느린 걸음|夊의 늘어지는 획을 느릿한 발걸음으로 연결하자. 빨리 달리는 走와 반대 장면!|夏季(하계): 夏 아래 夊 모양을 찾는다. 여름철.|愛情(애정): 愛 아래 夊 모양을 찾는다. 사랑하는 마음.|a relaxed person moving with an exaggerated slow step
+165|뒤따라오는 걸음|夂의 접힌 부분을 뒤따라오는 발로 상상하자. 뒤져올은 남보다 뒤에 온다는 옛 표현이다.|冬季(동계): 冬 위의 夂 모양을 찾는다. 겨울철.|各自(각자): 各 위의 夂 모양을 찾는다. 각각 자기 자신.|a small traveler looking ahead while following a faint path
+166|쭉 뻗은 큰 걸음|廴의 길게 늘어진 받침을 큰 보폭으로 보자. 辶와 달리 위의 점이 없는 길게 걸을 인!|延長(연장): 延의 廴를 찾는다. 길게 늘임.|建設(건설): 建의 廴를 찾는다. 세우고 만듦.|a person taking an impossibly long elegant stride
+167|전력질주 선수|走의 아래 뻗은 획을 달리는 다리로 연결하자. 땅을 차고 주우욱, 달릴 주!|走行(주행): 달려(走) 감(行).|競走(경주): 겨루며(競) 달림(走).|a sprinter running at full speed with flying sweat
+168|목표에 닿은 발|至 아래 土를 도착한 땅으로 보자. 마침내 그곳에 이르렀다, 이를 지!|至今(지금): 이제(今)에 이르기(至)까지, 바로 현재.|至近(지근): 매우(至) 가까움(近). 至는 극도의 정도도 나타낸다.|a golden foot landing precisely on a glowing target
+169|보송한 털 뭉치|毛의 짧은 가로획을 겹친 털, 끝의 굽은 선을 긴 털로 연결하자. 털 모!|毛髮(모발): 털(毛)과 머리털(髮).|羊毛(양모): 양(羊)의 털(毛).|a luxurious soft white tuft of fur
+170|세 가닥 털|彡의 삐침 셋을 빛나는 털 세 가닥으로 보자. 셋 삼과 소리를 묶어 털 삼!|形態(형태): 形 오른쪽 彡을 찾는다. 생김새.|彩色(채색): 彩 오른쪽 彡을 찾는다. 색을 칠함.|three flowing silky golden hair strands
+171|끝없이 긴 머리|髟의 長과 彡을 눈으로 묶자. 긴 것과 털이 함께 있으니 긴머리 표!|頭髮(두발): 髮 위에 髟가 있다. 머리카락.|鬚髥(수염): 鬚와 髥 위에 髟가 있다. 입 주변의 긴 털.|a magnificent cascade of extremely long black hair
+172|이어지는 말 리본|而의 여러 세로획을 이어지는 말의 줄로 상상하자. 그리고·그러나처럼 말을 이어 주는 이!|而立(이립): 서른 살을 이르는 고전 표현. 三十而立에서 而가 말을 잇는다.|而後(이후): 그러한 뒤에. 뒤 후(後) 앞에서 而가 문장을 연결한다.|a flowing golden ribbon joining two speech bubble shapes
+173|펄럭이는 옷|衣의 위는 옷깃, 아래 벌어진 획은 옷자락으로 보자. 입는 옷 의!|衣服(의복): 옷 의(衣)와 옷 복(服), 입는 옷.|衣類(의류): 옷(衣)의 종류(類).|a vivid blue robe with dramatically flowing fabric
+174|옆으로 접은 옷|衤는 衣가 왼쪽에서 줄어든 모양. 점이 있는 옷 부수와 扌를 구별하자.|被服(피복): 被의 衤를 찾는다. 몸에 입는 옷.|袖口(수구): 袖의 衤를 찾는다. 소매의 입구.|a neatly folded blue garment standing in side profile
+175|바닥까지 긴 옷|袁 아래 衣 계열의 벌어진 자락을 보자. 바닥까지 길게 드리운 옷길 원!|袁氏(원씨): 袁을 성으로 쓰는 가문. 여기서는 성씨다.|公園(공원): 園 안의 袁을 찾는다. 공개된 쉼터이며 袁은 소리 단서다.|a regal crimson robe with an extremely long trailing hem
+176|황금 실타래|絲는 실 모양 糸가 나란히 둘. 가느다란 실이 꼬이고 풀리는 황금 실타래로 기억하자.|鐵絲(철사): 쇠(鐵)로 만든 실(絲) 모양 선.|絲織物(사직물): 실(絲)로 짠(織) 물건(物).|a golden silk spool with endlessly flowing fine threads
+177|작은 실 매듭|幺의 가늘게 꼬인 획을 아주 작은 실 매듭으로 연결하자. 작을 요!|幼兒(유아): 幼의 幺를 찾는다. 어린아이.|幽深(유심): 幽 안의 幺를 찾는다. 깊숙하고 그윽함.|a tiny delicate golden thread knot
+178|촘촘한 바느질|黹의 잔획들을 천을 오가는 바늘땀으로 보자. 치밀하게 한 땀씩, 바느질 치!|黹部(치부): 黹로 분류한 부수 항목. 독립 단어는 드물다.|黼黻(보불): 黼·黻에 黹가 있다. 예복에 놓는 무늬를 이르는 고전어.|a vivid red fabric swatch covered in exquisite gold stitches
+179|길게 늘어진 수건|巾 위는 걸린 부분, 아래 세로획은 늘어진 천으로 보자. 수건 건!|手巾(수건): 손(手)에 쓰는 천(巾).|頭巾(두건): 머리(頭)를 덮는 천(巾).|a plush white towel hanging with deep soft folds
+180|폭 덮은 천|冖는 위에서 덮는 모양. 宀처럼 점이 없고, 천이 양쪽으로 내려온 덮을 멱!|冠帽(관모): 冠 맨 위 冖를 찾는다. 머리에 쓰는 관과 모자.|軍隊(군대): 軍 맨 위 冖를 찾는다. 군사 집단.|a smooth blue cloth draped as a broad canopy
+181|김 나는 밥|食을 이번에는 음식 자체로 보자. 먹는 행동도 식, 먹는 밥도 식으로 연결한다.|食堂(식당): 밥(食)을 먹는 집(堂).|食費(식비): 먹는 것(食)에 드는 비용(費).|a single generous mound of steaming pearly rice
+182|넓은 그릇|皿의 넓은 테두리와 안쪽 세로획을 그릇의 벽으로 보자. 음식 담는 그릇 명!|器皿(기명): 여러 그릇(器皿)을 이르는 문어.|盛況(성황): 盛 아래 皿을 찾는다. 성대한 상황, 그릇 뜻으로 직역하지 않는다.|a wide ivory ceramic dish with fluted inner walls
+183|붉은 한 방울|血은 皿 위에 짧은 획 하나. 그릇 위 붉은 피 한 방울로 비폭력적으로 기억하자.|血液(혈액): 피(血)라는 액체(液).|血管(혈관): 피(血)가 흐르는 관(管).|a single luminous ruby red blood drop without injury
+184|넓게 덮는 덮개|덮을 아의 글자는 襾. 네모난 덮개가 아래 공간을 넉넉히 가린다고 연결하자.|覆蓋(복개): 覆 위의 襾 계열 覀를 찾는다. 덮어서 가림.|要點(요점): 要 위의 覀 모양을 관찰한다. 중요한 점이라는 뜻이다.|a broad cream ceramic cover arching over empty space
+185|둥근 질항아리|缶을 입이 좁고 배가 둥근 항아리로 상상하자. 장군은 군인이 아니라 액체를 담는 옹기의 이름이다.|缶部(부부): 부수 缶의 분류 이름. 음이 부인 것을 확인한다.|缺席(결석): 缺 왼쪽 缶을 찾는다. 참석하지 않음.|a round brown earthenware storage vessel with a narrow mouth
+186|향기 피는 향|香 위 禾를 향기로운 곡식, 아래 日을 따뜻함으로 연결하자. 코끝에 퍼지는 향기 향!|香氣(향기): 향긋한(香) 기운(氣).|香水(향수): 향기(香)를 담은 물(水).|a golden incense cone releasing elegant visible scented curls
+187|붉은 벼슬 닭|酉는 지지에서 닭을 나타낸다. 닭 그림으로 유를 기억하되 술 관련 글자에서도 많이 만난다.|酉年(유년): 酉에 해당하는 해, 닭해.|酒類(주류): 酒 오른쪽 酉를 찾는다. 술의 종류.|a proud rooster with an enormous bright red comb
+188|세 다리 청동솥|鼎의 윗부분을 솥 몸통, 아래를 굵은 다리로 보자. 묵직하게 버티는 솥 정!|鼎立(정립): 솥(鼎)의 다리처럼 셋이 마주 섬(立).|鼎談(정담): 세 사람이 솥발처럼 함께 이야기함(談).|a majestic bronze tripod cauldron with ornate handles
+189|배불뚝이 세 다리 솥|鬲의 아래 주머니 모양을 속이 빈 솥다리로 연결하자. 鼎보다 배가 불룩한 솥 력!|鬲部(력부): 鬲로 분류한 부수 항목.|隔離(격리): 隔 오른쪽 鬲을 찾는다. 다른 것과 떼어 놓음.|an ancient terracotta tripod pot with three swollen hollow legs
+190|손으로 빚은 질그릇|䍃 아래 缶을 찾자. 거친 흙을 빚어 만든 둥근 질그릇 요!|搖動(요동): 搖 오른쪽 䍃를 찾는다. 흔들려 움직임.|遙遠(요원): 遙 안의 䍃를 찾는다. 아득히 멂.|a handmade reddish clay pot with visible finger textures
+191|속이 팬 절구|臼의 안쪽 빈자리를 깊게 팬 절구통으로 보자. 가운데를 비워 곡식을 찧는 절구 구!|臼齒(구치): 절구(臼)처럼 으깨는 이(齒), 어금니.|脫臼(탈구): 관절이 제자리에서 빠짐. 절구 같은 관절 홈을 연결한다.|a massive gray stone mortar with a deep central hollow
+192|향기로운 제사 술|鬯의 잔점들을 향기로운 술의 방울로 상상하자. 울창주는 의례에 쓰던 향기로운 술이다.|鬯酒(창주): 향기로운 제사용 술(鬯酒), 고전어.|鬱鬯(울창): 향초를 섞은 제사용 술, 드문 옛말.|an amber ritual wine vessel emitting fragrant golden vapor
+193|밝게 드러낸 표지|앞서 배운 示를 다시 꺼내 보자. 가리지 않고 앞에 펼쳐 보인다는 뜻부터 말한다.|提示(제시): 들어(提) 보임(示).|暗示(암시): 직접 드러내지 않고 넌지시 보임(示).|a glowing golden signboard held clearly toward the viewer
+194|지붕 있는 집|宀의 맨 위 점은 지붕 꼭지, 아래는 양쪽 처마로 보자. 집 면!|家庭(가정): 家 맨 위 宀를 찾는다. 가족이 생활하는 집.|安全(안전): 安 맨 위 宀를 찾는다. 위험 없이 편안함.|a miniature warm house with a huge protective roof
+195|한 짝 방문|戶는 한쪽으로 여는 외짝 문처럼 기억하자. 두 짝 門과 비교하면 집 호가 선명해진다.|戶口(호구): 집(戶)과 사람 수(口), 호적상의 가족 단위.|戶主(호주): 집안(戶)의 주인(主)을 뜻하던 말.|a single wooden door panel opened inward
+196|바위 그늘 동굴|厂의 가로획을 바위 천장, 삐침을 절벽으로 보자. 아래가 열린 굴바위 엄!|原野(원야): 原 바깥 厂를 찾는다. 넓고 평평한 들.|厚薄(후박): 厚의 厂를 찾는다. 두꺼움과 얇음.|an overhanging gray cliff forming a deep sheltered cave
+197|벽 있는 집|广는 厂 위에 점이 더 있다. 지붕 꼭지를 찍어 집을 만든다고 연결하자. 집 엄!|店鋪(점포): 店의 广를 찾는다. 물건을 파는 가게.|庭園(정원): 庭의 广를 찾는다. 집 주변 뜰.|a small traditional house with one open side and a roof peak
+198|깊숙한 구멍|穴의 宀 아래 八을 벌어진 입구로 상상하자. 위는 덮이고 아래는 뚫린 구멍 혈!|洞穴(동혈): 동굴(洞)처럼 뚫린 구멍(穴).|墓穴(묘혈): 무덤(墓)을 만들려고 판 구덩이(穴).|a deep round tunnel opening in a compact earthy mound
+199|윤기 나는 기와|瓦의 굽은 획을 지붕 위 곡선 기와로 보자. 비가 미끄러지는 기와 와!|瓦家(와가): 기와(瓦)를 얹은 집(家).|瓦礫(와력): 깨진 기와(瓦)와 자갈(礫), 무너진 잔해.|a glossy dark gray curved roof tile
+200|활짝 열린 대문|門은 양쪽에 문짝이 하나씩. 외짝 戶와 달리 두 짝이 마주 선 문 문!|大門(대문): 큰(大) 문(門).|門戶(문호): 드나드는 문(門戶), 교류의 통로를 비유하기도 한다.|a grand double wooden gate opened symmetrically
+201|옆이 열린 상자|匚는 오른쪽이 열린 상자 옆모습으로 연결하자. 뚜껑이 삐져나오는 匸와 비교!|匣子(갑자): 匣 바깥 匚를 찾는다. 작은 상자를 뜻하는 드문 말.|匠人(장인): 匠 바깥 匚를 찾는다. 숙련된 기술자.|a golden rectangular box with its right side open
+202|숨기는 덮개 상자|감출 혜는 匸. 匚보다 위 획이 옆으로 나와 덮어 감춘다고 연결한다. 慧와는 다른 글자다.|隱匿(은닉): 匿 바깥 匸를 찾는다. 드러나지 않게 숨김.|區分(구분): 區 바깥 匸를 찾는다. 나누어 구별함.|a secret burgundy box with an overhanging lid
+203|사방을 두른 울타리|둘러쌀 위는 囗. 입 口보다 크게 써 안에 다른 글자를 둘러 넣는다.|國家(국가): 國 바깥 囗를 찾는다. 나라.|公園(공원): 園 바깥 囗를 찾는다. 공공의 동산.|a tall square green hedge enclosing a white empty center
+204|빙 둘러싼 테두리|韋를 감아 두른 띠로 상상하자. 에우는 뜻의 실제 단어는 圍에서 분명히 확인한다.|包圍(포위): 圍 안의 韋를 찾는다. 싸서 둘러쌈.|周圍(주위): 圍 안의 韋를 찾는다. 둘레. 韋와 圍를 구별한다.|a broad golden leather band wrapped in a complete circle
+205|먼 곳의 문틀|冂의 넓게 벌어진 아래를 먼 곳까지 열린 틀로 보자. 冖보다 양옆이 길다, 멀 경!|同一(동일): 同 바깥 冂를 찾는다. 서로 같음.|再會(재회): 再에서 冂 모양을 찾는다. 다시 만남.|a tall blue open frame receding toward a distant glow
+206|반듯한 공구|工의 위아래 획을 수평 맞춘 공구로 보자. 반듯하게 만드는 장인 공!|工場(공장): 물건을 만드는(工) 장소(場).|工事(공사): 만들고 고치는(工) 일(事).|a polished bronze I shaped carpentry tool
+207|관통하는 꼬챙이|丨는 곧게 내려가는 세로획 하나. 위에서 아래로 쭉 뚫는 곤!|中間(중간): 中의 가운데 丨가 네모를 관통한다. 가운데 사이.|串(꿸 관): 丨가 두 네모를 꿰는 모양을 비교한다. 구성 학습 예시.|a long gleaming steel rod piercing a clean central opening
+208|끝이 굽은 갈고리|亅의 아래 꺾인 끝을 갈고리로 보자. 곧은 丨에 걸리는 끝이 생기면 갈고리 궐!|了得(요득): 了의 갈고리 모양을 관찰한다. 깨달아 앎, 문어 표현.|事實(사실): 事 아래 亅 모양을 찾는다. 실제 일.|a huge curved polished silver hook
+209|움푹한 숟가락|匕의 짧은 획을 숟가락 머리, 아래를 손잡이로 연결하자. 숟가락 비!|匕首(비수): 짧고 날카로운 칼의 이름. 匕는 비수의 뜻도 있다.|比率(비율): 比의 匕 모양 둘을 관찰한다. 두 양의 비, 구성 예시다.|a deep golden spoon with an exaggerated long handle
+210|날 선 칼|刀의 바깥 굽은 선을 칼등, 안쪽 삐침을 칼날로 보자. 칼 도!|刀劍(도검): 칼 도(刀)와 칼 검(劍).|剃刀(체도): 털을 깎는(剃) 칼(刀), 면도칼의 한자어.|a single polished steel blade with a dark handle
+211|묵직한 도끼|斤의 위쪽을 도끼날, 아래 긴 획을 자루로 연결하자. 도끼 근!|斧斤(부근): 도끼 부(斧)와 도끼 근(斤), 도끼를 이르는 문어.|近距離(근거리): 近 안에 斤을 찾는다. 가까운 거리, 斤은 소리 단서다.|a heavy silver axe with a thick wooden handle
+212|불끈 힘주는 팔|力의 굽은 선을 힘주는 팔뚝으로 보자. 능력의 력, 힘 력!|能力(능력): 할 수 있는(能) 힘(力).|努力(노력): 힘써(努) 힘(力)을 들임.|a muscular arm flexing an enormous bicep
+213|반듯한 네모|方은 네모난 방향 표지로 연결하자. 동서남북 어느 쪽인지 정하는 모 방!|方向(방향): 어떤 쪽(方)을 향함(向).|正方形(정방형): 네 모가 반듯한(正方) 모양(形), 정사각형.|a perfectly square cobalt block with crisp corners
+214|흙을 가르는 쟁기|耒의 아래 갈라진 획을 흙을 파는 날로 상상하자. 밭을 가는 쟁기 뢰!|耒耜(뇌사): 쟁기류 농기구를 가리키는 고전어.|耕作(경작): 耕 왼쪽 耒를 찾는다. 논밭을 갈아 농사함.|an ancient wooden plow with an exaggerated sharp tip
+215|촘촘한 그물|罒의 안쪽 세로획을 그물코로 보자. 글자 위에 얹힌 납작한 그물 망!|羅列(나열): 羅 위 罒를 찾는다. 줄지어 벌임.|罪惡(죄악): 罪 위 罒를 찾는다. 죄와 악, 그물 뜻으로 직역하지 않는다.|a taut rectangular fishing net with fine dark mesh
+216|겹친 점괘 막대|爻의 두 교차를 포개진 점괘 표시로 상상하자. 두 번 교차하는 점괘 효!|爻辭(효사): 주역의 효(爻)를 풀이한 글(辭).|六爻(육효): 괘를 이루는 여섯(六) 효(爻).|two pairs of bronze divination sticks crossing in layers
+217|갈라진 점 자국|卜의 세로획에서 옆으로 갈라진 짧은 획을 보자. 금이 간 자국으로 점 복을 연결한다.|占卜(점복): 점칠 점(占)과 점 복(卜), 점을 침.|卜術(복술): 점(卜)을 치는 방법(術).|a pale divination bone with one bold branching crack
+218|점을 말하는 입|占은 卜 아래 口. 점 자국을 보고 입으로 말한다고 연결하자. 점칠 점!|占卜(점복): 점을 쳐 길흉을 살핌.|占星術(점성술): 별(星)로 점(占)을 치는 방법(術).|a thoughtful diviner announcing a result with one raised hand
+219|잡아 쓰는 도구|用의 세로줄을 도구 손잡이로 보자. 바라만 보지 말고 손에 잡아 쓸 용!|使用(사용): 부려서(使) 씀(用).|用途(용도): 쓰는(用) 길·목적(途).|a hand actively using a bright blue practical tool
+220|구멍 많은 피리|龠의 口들을 피리 구멍으로 연결하자. 숨을 불어 맑게 울리는 피리 약!|龠部(약부): 龠를 부수로 묶은 분류.|籥(피리 약): 竹 아래 龠를 찾는다. 피리를 뜻하는 관련 글자 예시.|an ornate golden flute with many clear finger holes
+221|단단한 갑옷|甲의 네모를 몸통 갑옷, 아래 획을 몸 아래로 드리운 부분으로 보자. 갑옷 갑!|甲冑(갑주): 갑옷(甲)과 투구(冑).|裝甲(장갑): 갑옷처럼 단단하게 싸서 갖춤(裝甲).|a polished silver breastplate with dramatic ridges
+222|곧은 창끝|矛의 길게 내려가는 획을 창대, 위를 뾰족한 창끝으로 연결하자. 창 모!|矛盾(모순): 창(矛)과 방패(盾), 서로 맞지 않는 주장.|長矛(장모): 긴(長) 창(矛). 장모님 丈母와 구별.|a long straight spear with an enormous pointed steel head
+223|옆날 달린 창|戈의 옆으로 뻗은 획을 가로날로 보자. 찌르는 矛와 달리 옆날이 있는 창 과!|干戈(간과): 방패(干)와 창(戈), 전쟁의 비유.|兵戈(병과): 병기(兵)와 창(戈), 싸움을 이르는 문어.|an ancient bronze polearm with a prominent side blade
+224|묵직한 몽둥이|殳 위를 몽둥이, 아래 又를 쥔 손으로 상상하자. 몽둥이 수!|投球(투구): 投 오른쪽 殳를 찾는다. 공을 던짐.|設置(설치): 設 오른쪽 殳를 찾는다. 마련하여 둠.|a thick wooden club with a rounded heavy end
+225|튼튼한 방패|干의 가로획을 방패 가로대, 세로획을 손잡이로 보자. 공격을 막는 방패 간!|干戈(간과): 방패(干)와 창(戈), 전쟁.|干涉(간섭): 남의 일에 관여함. 干의 관여하다는 확장 뜻을 익힌다.|a broad bronze shield with a bold central support
+226|크게 휜 활|弓의 두 번 굽은 선을 탄력 있는 활대로 보자. 구부렸다 놓으면 팽, 활 궁!|弓道(궁도): 활(弓)을 쏘는 길·기술(道).|洋弓(양궁): 서양식(洋) 활(弓) 경기.|an elegant deeply curved red bow with a taut string
+227|안으로 들어가는 사람|入은 人과 만나는 위치가 다르다. 위에서 안쪽으로 모여 들어가는 길로 기억하자.|入口(입구): 들어가는(入) 문(口).|入學(입학): 학교의 배움(學)에 들어감(入).|a person stepping into a bright open doorway
+228|곧게 날아가는 화살|矢의 위는 화살촉, 아래는 갈라진 깃으로 보자. 곧장 날아가는 화살 시!|弓矢(궁시): 활(弓)과 화살(矢).|矢石(시석): 화살(矢)과 돌(石), 옛 전투의 투사물.|a vivid red arrow with an oversized sharp tip
+229|끈 달린 화살|弋의 긴 선을 화살, 옆 점을 매단 끈의 매듭으로 연결하자. 줄 달린 주살 익!|弋獵(익렵): 주살(弋)로 사냥함(獵), 고전어.|式樣(식양): 式 안의 弋 모양을 찾는다. 격식과 모양이라는 뜻.|a golden arrow with a long curling tether cord
+230|불맛 고추|辛의 가운데 획을 혀를 톡 찌르는 맛으로 연결하자. 입이 화끈, 매울 신!|辛辣(신랄): 매울 신(辛)과 매울 랄(辣), 매우 날카로움.|辛苦(신고): 맵고(辛) 씀(苦), 고생의 비유. 신고하다 申告와 구별.|a giant glossy scarlet chili pepper with fiery glow
+231|바퀴 큰 수레|車의 가운데는 짐칸, 위아래 획은 바퀴축으로 상상하자. 수레 차!|自動車(자동차): 스스로(自) 움직이는(動) 수레(車).|車輪(차륜): 수레(車)의 바퀴(輪).|a wooden cart with enormous polished wheels
+232|둥실 뜬 배|舟의 긴 테두리를 배 몸통, 안의 점을 안쪽 자리로 보자. 물에 뜨는 배 주!|舟艇(주정): 작은 배를 통틀어 이르는 말.|漁舟(어주): 물고기를 잡는(漁) 배(舟), 문어 표현.|a curved wooden boat with a deep empty interior
+233|팔꿈치 받침|几의 위 가로획은 기대는 판, 아래 두 획은 다리로 보자. 몸을 기대는 안석 궤!|几案(궤안): 기대는 안석(几)과 책상(案), 문어 표현.|凡例(범례): 凡 바깥 几 모양을 찾는다. 책의 일러두기.|a low polished wooden armrest table with two curved legs
+234|한 줄 빛|一은 가로획 하나. 한 번만 쓱 그어 하나, 한 일!|一日(일일): 하루, 하나(一)의 날(日).|統一(통일): 묶어서(統) 하나(一)로 만듦.|a single brilliant horizontal golden beam
+235|두 줄 빛|二는 가로획 둘. 一에 한 줄을 더하면 두 이!|二重(이중): 두(二) 겹(重).|二分(이분): 둘(二)로 나눔(分).|two parallel bright blue horizontal beams
+236|세 겹 표시|參의 위쪽 반복 모양을 셋으로 연결하자. 숫자 삼의 갖은자로 쓰이고 참여할 참으로도 읽는다.|參(삼): 숫자 三을 고쳐 쓰기 어렵게 적는 갖은자 표기.|參加(참가): 참여할 참(參)으로 읽는다. 석 삼과 독음·용도를 구별.|three distinct golden beads arranged vertically
+237|다섯 손가락|五의 교차점을 활짝 편 다섯 손가락과 연결하자. 손 하나를 펴고 다섯 오!|五感(오감): 다섯(五) 감각(感).|五色(오색): 다섯(五) 빛깔(色), 여러 빛깔을 뜻하기도 한다.|an open palm displaying exactly five fingers
+238|여덟 갈래 꽃|八의 벌어진 두 획을 활짝 열리는 시작으로 보자. 꽃잎 여덟 개를 세며 여덟 팔!|八方(팔방): 여덟(八) 방향(方), 사방팔방.|八角(팔각): 여덟(八) 모서리·각(角).|a symmetrical flower with exactly eight golden petals
+239|열 칸 막대|十의 십자에 열이라는 수를 붙여 말하자. 일부터 열까지 세고 마지막 십자!|十年(십년): 열(十) 해(年).|十中八九(십중팔구): 열 가운데 여덟이나 아홉, 거의 대부분.|a clean golden counting rod with exactly ten blue segments
+240|한 덩이 더하기|加의 力과 口를 보며 힘을 더해 목소리도 키운다고 상상하자. 더할 가!|追加(추가): 뒤따라(追) 더함(加).|增加(증가): 늘려(增) 더함(加).|a hand adding one bright gold block to a compact stack
+241|칸 나눈 정리함|區 안의 口 셋을 구분된 칸으로 보자. 영역을 칸칸 나눌 구!|區分(구분): 영역을 나누어 구별함(區分).|區域(구역): 경계를 나누어 정한 범위(區域).|a jewel toned organizer divided into three distinct compartments
+242|둘로 자른 덩어리|分은 八 아래 刀. 칼로 잘라 양쪽으로 벌려 나눈다고 연결하자. 나눌 분!|分離(분리): 나누어(分) 떨어뜨림(離).|分類(분류): 종류(類)에 따라 나눔(分).|a single golden sphere cleanly split into two pieces
+243|딱 맞춰 합친 구|合의 위쪽 두 획이 아래 口 위로 모인다. 따로 있던 것이 하나로 합!|合作(합작): 힘을 합쳐(合) 만듦(作).|集合(집합): 모여(集) 합침(合).|two colored halves joining into one perfect sphere
+244|정확히 반쪽|半의 가운데 선을 반 가르는 칼금으로 보자. 똑같이 둘로 나눈 한쪽, 절반 반!|半月(반월): 반(半)만 보이는 달(月).|半分(반분): 반(半)으로 나눔(分).|a perfect half orange sphere with a clear flat cut surface
+245|힘차게 삐친 붓획|丿은 왼쪽 아래로 내리는 삐침 하나. 곧은 丨와 방향을 비교하자, 삐침 별!|千年(천년): 千 맨 위의 丿 모양을 관찰한다. 천 해라는 뜻.|九(아홉 구): 첫 삐침 모양을 관찰한다. 丿의 형태를 찾는 구성 연습.|a dramatic glossy black diagonal brushstroke tapering downward
+246|무지개 빛깔|色을 여러 색이 한데 담긴 색깔 주머니로 상상하자. 여기서 빛은 밝기가 아니라 빛깔!|色彩(색채): 빛깔(色)과 색채(彩).|顔色(안색): 얼굴(顔)의 빛깔(色).|a glossy sphere swirling with vivid rainbow colors
+247|새하얀 구슬|白의 네모를 하얀 구슬, 위 삐침을 반사광으로 보자. 日 위에 빛 한 줄, 흰 백!|白色(백색): 흰(白) 빛깔(色).|白紙(백지): 흰(白) 종이(紙), 아무것도 적지 않은 종이.|a luminous pure white porcelain orb with soft gray outline
+248|새까만 숯|黑 아래 네 점을 검게 그을린 숯가루로 연결하자. 하얀 白의 반대, 검을 흑!|黑色(흑색): 검은(黑) 빛깔(色).|黑板(흑판): 검은(黑) 판(板), 칠판.|a deeply black charcoal block with velvety rough texture
+249|깊고 검푸른 구슬|玄의 꼬인 아랫부분을 깊이를 알 수 없는 검은 실로 상상하자. 아득하고 검을 현!|玄米(현미): 빛이 어두운(玄) 쌀(米), 덜 깎은 쌀.|玄妙(현묘): 깊고 오묘함(玄妙). 玄은 깊고 신비하다는 뜻도 가진다.|a deep midnight blue gem with mysterious inner depth
+250|두 겹 검은 매듭|玆 안의 玄 둘을 겹쳐 보자. 검은 빛이 두 겹으로 짙어진 검을 자!|玆(이에 자): 같은 글자의 다른 훈음. 문어에서 이에·이것이라는 뜻으로도 쓴다.|玆山魚譜(자산어보): 옛 어류 연구서의 제목. 玆의 음 자를 확인한다.|two tightly intertwined glossy black knots
+251|새빨간 덩어리|赤 아래로 퍼지는 획을 붉게 달아오른 빛으로 연결하자. 붉을 적!|赤色(적색): 붉은(赤) 빛깔(色).|赤字(적자): 붉은(赤) 글자(字), 지출이 수입보다 많은 상태.|a brilliant crimson pigment block with intense red glow
+252|주홍빛 구슬|朱를 붉은 빛이 밴 나무라고 상상하자. 赤보다 주홍색을 떠올려 붉을 주!|朱色(주색): 주홍빛(朱)의 색(色). 술과 여색 酒色과 구별.|朱墨(주묵): 붉은(朱) 먹(墨), 붉은 잉크.|a polished vermilion bead with a brilliant orange red glow
+253|황금빛 노랑|黃의 넓게 퍼진 획을 누렇게 익은 들판으로 보자. 황금의 황, 누를 황!|黃色(황색): 누런(黃) 빛깔(色).|黃土(황토): 누런(黃) 흙(土).|a vivid yellow ochre mound sparkling in warm light
+254|푸른 잎구슬|靑을 싱싱한 잎이 비치는 구슬로 연결하자. 푸르다는 파랑·초록의 범위를 함께 가진다.|靑年(청년): 푸릇한(靑) 나이(年), 젊은 사람.|靑空(청공): 푸른(靑) 하늘(空), 문어 표현.|a luminous blue green jade orb with a fresh leaf texture
+255|수평선 위 해|旦은 日 아래 一. 해가 지평선 위에 떠올랐다, 아침 단!|元旦(원단): 한 해 첫(元) 아침(旦), 새해 첫날.|一旦(일단): 한(一) 아침(旦), 잠시·우선이라는 뜻으로 확장.|a golden sun emerging just above a thin horizon disk
+256|힘차게 돋는 해|倝의 日을 중심으로 위로 솟는 빛을 상상하자. 새날의 기운이 솟는 해돋을 간!|幹線(간선): 幹의 왼쪽에 倝 계열 모양이 있다. 중심 줄기가 되는 노선.|乾燥(건조): 乾의 왼쪽을 비교한다. 말라 물기가 없음, 독음은 건.|an intense golden sunrise bursting upward in long rays
+257|동쪽의 해|東의 木 가운데 日을 찾자. 나무 사이로 아침 해가 드는 쪽, 동녘 동으로 연결한다.|東西(동서): 동쪽(東)과 서쪽(西).|東海(동해): 동쪽(東)의 바다(海).|a golden sun glowing through the center of a small tree
+258|등 돌린 두 사람|北의 양쪽을 등을 맞댄 사람으로 상상하자. 차가운 북쪽 바람에 등을 돌린 북녘 북!|南北(남북): 남쪽(南)과 북쪽(北).|北極(북극): 지구 북쪽(北)의 끝(極).|two fully clothed figures standing back to back in blue coats
+259|따뜻한 남쪽 표지|丙은 셋째 천간이며 전통 배속에서 남쪽과 연결된다. 따뜻한 붉은 방향 표지로 기억하자.|丙午(병오): 천간 丙과 지지 午를 합친 육십갑자 이름.|丙種(병종): 丙으로 구분한 종류. 甲·乙 다음 순서로 익힌다.|a warm red compass marker pointing toward the viewer
+260|고르는 손|柬 가운데 빽빽한 부분에서 좋은 것만 가린다고 상상하자. 가릴 간!|書柬(서간): 편지(書柬), 글을 적어 보내는 것.|揀擇(간택): 揀 안에 柬이 있다. 가려서 선택함.|a hand carefully selecting one perfect golden seed
+261|길게 퍼진 햇빛|昜 위 日 아래로 햇살이 길게 뻗는다. 陽에서 왼쪽 阝를 뺀 모양, 빛날 양!|太陽(태양): 陽 오른쪽 昜을 찾는다. 해.|陽光(양광): 陽의 昜을 찾는다. 햇빛.|a radiant sun sending three long golden beams downward
+262|환한 등불|熒의 위아래 火를 찾자. 작은 등에서도 불빛이 환하게 번지는 등불 형!|熒光(형광): 반짝이는 빛을 뜻하는 드문 문어. 현대 형광은 보통 螢光으로 쓴다.|熒惑(형혹): 옛 천문에서 화성을 부르던 이름.|a brilliant golden lamp with a vivid orange flame
+263|두 겹 불꽃|炎은 火 위에 火. 불에 불이 더해져 화르르 커진 불꽃 염!|炎症(염증): 불꽃(炎)처럼 열·붉어짐 등이 나타나는 반응.|火炎(화염): 불(火)의 불꽃(炎).|two vivid orange flames rising one above the other
+264|푸르게 떠다니는 불|粦 아래 舛의 엇갈린 모양을 흔들리는 불빛으로 연결하자. 전설 속 도깨비불 린!|燐光(인광): 燐 오른쪽 粦를 찾는다. 빛을 받은 뒤에도 남는 발광 현상.|鱗片(인편): 鱗 오른쪽 粦를 찾는다. 비늘 조각, 소리 린을 연결한다.|a floating eerie turquoise flame with soft curling wisps
+265|사방으로 퍼지는 빛|奐 아래 大가 사방으로 펼쳐진다. 환하게 넓게 퍼져 빛날 환!|煥然(환연): 煥 오른쪽 奐을 찾는다. 빛나고 뚜렷한 모양.|渙散(환산): 渙 오른쪽 奐을 찾는다. 흩어짐, 換算과 구별.|a brilliant white gold burst expanding in all directions
+266|어둠 밝히는 광채|尞의 가운데 日을 중심으로 온몸이 밝아지는 장면을 잡자. 밝을 료!|僚友(요우): 僚 오른쪽 尞를 찾는다. 함께 일하는 벗.|療養(요양): 療 안의 尞를 찾는다. 치료하며 몸을 보살핌, 소리 료를 연결한다.|a tall lantern radiating intense warm white light
+267|웅장한 수도 궁궐|京의 높은 지붕 아래 口를 큰 건물로 보자. 나라의 중심 서울 경!|京城(경성): 수도(京)의 성(城), 옛 서울 이름.|上京(상경): 서울(京)로 올라감(上).|a magnificent miniature royal capital palace
+268|우뚝 솟은 탑|高 위의 지붕부터 아래 문까지 층층 높이 쌓였다고 보자. 높을 고!|高度(고도): 높은(高) 정도(度).|高層(고층): 높은(高) 층(層).|an impossibly tall elegant blue tower
+269|높다란 나무|喬의 위로 솟은 부분을 하늘을 찌르는 나무 꼭대기로 연결하자. 높을 교!|喬木(교목): 높이 자라는(喬) 나무(木).|橋梁(교량): 橋 오른쪽 喬를 찾는다. 다리라는 뜻.|an extraordinarily tall tree with a tiny canopy far above
+270|기대보다 더 높은 손|尙 위의 작은 획을 더 올리는 손으로 상상하자. 예상과 달리 오히려 더, 오히려 상!|尙今(상금): 아직까지(尙) 지금(今), 문어 표현.|崇尙(숭상): 높여(崇) 받들고 존중함(尙). 尙의 높이다라는 뜻.|a surprised person raising a hand even higher than expected
+271|턱을 들고 올려봄|卬의 양쪽을 아래 사람과 높은 자리로 상상하자. 위로 오를 앙!|仰望(앙망): 仰 오른쪽 卬을 찾는다. 우러러봄.|抑揚(억양): 抑의 오른쪽 모양을 卬과 비교한다. 소리의 높낮이.|a person tilting their chin high and looking upward
+272|쭉 올라간 목|亢의 윗획을 머리, 아래를 높이 든 목으로 보자. 올라갈 항!|亢進(항진): 정도나 기능이 높아짐(亢進).|高亢(고항): 소리나 기상이 높고(高) 우렁참(亢), 문어 표현.|a proud figure stretching their neck dramatically upward
+273|능선 있는 언덕|岡 안의 山을 찾자. 넓은 테두리 안에 산등성이가 이어지는 언덕 강!|岡陵(강릉): 언덕(岡)과 구릉(陵). 지명 江陵과 구별.|花崗岩(화강암): 崗 안에 岡이 있다. 암석 이름에서 소리 강을 확인한다.|a rounded rocky hill with a pronounced long ridge
+274|집안의 중심 마루|宗은 宀 아래 示. 집의 가장 중요한 중심 자리를 마루로 연결하자. 마루 종!|宗家(종가): 한 가문의 중심(宗)이 되는 집(家).|宗敎(종교): 중심으로 받드는 가르침(敎), 신앙 체계.|a raised wooden central hall with a glowing ceremonial center
+275|목표를 향한 마음|旨를 한 방향으로 모인 빛으로 상상하자. 말이나 글의 핵심 의도, 뜻 지!|趣旨(취지): 어떤 일의 방향과 뜻(旨).|要旨(요지): 중요한(要) 뜻(旨).|a golden arrow of light pointing toward one clear goal
+276|마음속 말|意는 音 아래 心. 마음속에서 울리는 말이 나의 뜻이라고 연결하자. 뜻 의!|意味(의미): 뜻(意)의 내용과 맛(味).|決意(결의): 뜻(意)을 굳게 정함(決).|a ruby heart containing a small glowing speech bubble
+277|고개 갸웃하는 사람|疑의 복잡한 갈림길을 보고 고개를 갸웃한다고 상상하자. 정말일까, 의심할 의!|疑問(의문): 의심하여(疑) 묻는 것(問).|疑心(의심): 믿지 못하고 의심하는(疑) 마음(心).|a puzzled person with an exaggerated tilted head
+278|정의로운 판단|義 위 羊과 아래 我를 눈에 묶자. 내 이익보다 바른 쪽을 택한다고 연결한다.|正義(정의): 바르고(正) 옳은(義) 도리.|義務(의무): 옳게 마땅히 해야 할(義) 일(務).|a dignified person holding perfectly balanced golden scales
+279|정답에 고개 끄덕|是 위 日이 환하게 보인다. 밝게 확인하고 맞다고 고개를 끄덕이는 옳을 시!|是非(시비): 옳음(是)과 그름(非).|是認(시인): 옳다고(是) 인정함(認).|a confident person nodding with a bright green check symbol
+280|허락하는 엄지|可의 口를 말하는 입, 굽은 획을 승인 표시로 연결하자. 그래도 좋다, 옳을 가!|可能(가능): 해도 될(可) 능력(能), 할 수 있음.|許可(허가): 허락하여(許) 좋다고 함(可).|a giant friendly hand giving a confident thumbs up
+281|반듯한 수직선|正의 곧은 세로획을 기준선으로 보자. 비뚤어짐 없이 똑바른 바를 정!|正直(정직): 바르고(正) 곧음(直).|正答(정답): 바른(正) 답(答).|a perfectly upright golden plumb line with a centered weight
+282|진짜 보석|眞을 속까지 빛나는 진짜 보석으로 연결하자. 꾸민 가짜가 아닌 참 진!|眞實(진실): 참되고(眞) 실제임(實).|眞心(진심): 거짓 없는 참(眞) 마음(心).|a flawless transparent diamond with a brilliant inner sparkle
+283|딱 가로막은 끈|弗의 두 세로획을 묶어 가로막은 끈으로 상상하자. 그렇지 않다, 아닐 불!|弗許(불허): 허락하지(許) 않음(弗), 문어 표기.|弗能(불능): 할 수(能) 없음(弗), 고전 문장 표현. 일상에서는 不能을 쓴다.|two upright posts blocked by a firm purple ribbon
+284|고개 젓는 사람|不의 가로획을 멈춤선으로 보자. 아니다 하고 고개를 가로젓는 아닐 불·부!|不安(불안): 편안하지(安) 않음(不).|不足(부족): 충분하지(足) 않음(不). 이 단어에서는 부로 읽는다.|a firm person shaking their head no with crossed hands
+285|아직 덜 익은 열매|未는 아래 가로획이 위보다 길다. 아직 다 자라지 않은 가지로 연결하자. 아직 미!|未來(미래): 아직(未) 오지(來) 않은 때.|未完成(미완성): 아직(未) 다 이루지(完成) 못함.|an unripe green fruit with a small unfinished blush
+286|엇갈린 두 빗|非의 양쪽 짧은 획은 서로 등 돌린 빗처럼 보자. 서로 맞지 않아 아닌 비!|非常(비상): 늘 하던(常) 상태가 아님(非).|非公式(비공식): 공식(公式)이 아님(非).|two red comb shaped panels facing away from each other
+287|손 모은 여성|女를 다시 보며 훈음부터 말하자. 앞의 계집 녀와 같은 글자이며 현대 표현은 여자 녀다.|女性(여성): 여자(女)의 성(性).|少女(소녀): 어린(少) 여자(女).|a dignified woman with hands gently joined at the waist
+288|매일 같은 동작|每의 되풀이되는 가로획을 매일 찍는 출석표로 상상하자. 매번 똑같이, 매양 매!|每日(매일): 매(每) 날(日), 날마다.|每番(매번): 매(每) 차례(番), 번번이.|a circular daily calendar with repeating golden marks
+289|일찍 꺾인 꽃봉오리|夭는 大 위쪽이 기울어진 모양. 피기 전에 고개 숙인 꽃으로 일찍 죽을 요를 조용히 기억한다.|夭折(요절): 젊은 나이에 일찍(夭) 생이 꺾임(折).|夭逝(요서): 젊어서 일찍(夭) 세상을 떠남(逝), 문어 표현.|a single unopened flower bud drooping gently without damage
+290|오래 빛나는 생명|壽의 여러 층을 오래 쌓인 삶의 시간으로 연결하자. 길고 귀한 목숨 수!|長壽(장수): 긴(長) 목숨(壽), 오래 삶.|壽命(수명): 목숨 수(壽)와 목숨 명(命), 살아 있는 기간.|a magnificent ancient green tree with a thick living trunk
+291|거울처럼 닮은 얼굴|肖 위 작은 획과 아래 月을 얼굴 특징으로 상상하자. 똑같이 닮은 초!|肖像(초상): 사람을 닮게(肖) 그린 모습(像).|不肖(불초): 닮지(肖) 못함(不), 부모에 못 미친다는 겸손한 표현.|two nearly identical friendly faces mirrored side by side
+292|각자 다른 자리|各의 위 발걸음이 아래 口라는 자기 자리로 간다고 상상하자. 각각 각!|各自(각자): 각각(各) 자기(自).|各國(각국): 각각의(各) 나라(國).|three distinct colorful figures each on their own small base
+293|함께 드는 손|共 아래 두 획을 나란한 두 손으로 보자. 혼자가 아니라 함께 공!|共同(공동): 함께(共) 같이(同) 함.|共有(공유): 함께(共) 가지고 있음(有).|several hands lifting one large golden sphere together
+294|서로 바라보는 눈|相은 木과 目. 나무를 눈으로 마주 본다고 연결하자. 서로 상!|相互(상호): 서로(相) 서로(互).|相談(상담): 서로(相) 이야기함(談).|two friendly faces looking directly at each other
+295|나란히 모은 묶음|幷의 나란한 두 덩이를 한 줄에 모아 세운다고 상상하자. 합쳐 아우를 병!|合幷(합병): 합하여(合) 아우름(幷). 흔히 合倂도 쓴다.|幷行(병행): 나란히 함께(幷) 행함(行). 並行 표기도 쓴다.|two bundles brought together into one aligned bundle
+296|두 일을 한 손에|兼의 촘촘한 가운데를 한 손으로 두 역할을 잡은 모습으로 보자. 함께 맡아 겸할 겸!|兼業(겸업): 일(業)을 둘 이상 함께 함(兼).|兼任(겸임): 직무(任)를 함께 맡음(兼).|one confident person holding two distinct work tools
+297|똑같이 나눈 저울|公의 위 八을 나눔, 아래 厶를 사적인 몫으로 연결하자. 한쪽에 치우치지 않는 공평할 공!|公平(공평): 공정하고(公) 고름(平).|公共(공공): 여러 사람과 함께(共) 관련되는 공적인 것(公).|a perfectly balanced golden scale with equal pans
+298|똑같은 한 쌍|同의 큰 틀 안에 같은 모양이 들어 있다고 상상하자. 둘을 겹쳐도 같은 동!|同一(동일): 같아서(同) 하나(一)와 같음.|同感(동감): 같은(同) 느낌(感).|two identical glossy blue cubes perfectly aligned
+299|정성껏 심는 손|埶의 아래와 왼쪽 흙 부분을 보고 작은 싹을 손으로 심는 장면을 만들자. 심을 예!|園藝(원예): 藝 안에 埶가 있다. 정원·식물을 가꾸는 기술.|藝術(예술): 藝의 埶를 찾는다. 아름다움을 표현하는 기술, 음 예를 연결한다.|a careful hand planting a vivid green seedling
+300|가지 끝 열매|果 아래 木과 위 田을 나무에 달린 커다란 열매로 연결하자. 열매 과!|果實(과실): 나무에 맺힌 열매(果實).|結果(결과): 맺힌(結) 열매(果), 일이 끝나 얻은 것.|a huge glossy red fruit attached to a short leafy stem
+301|산의 가는 부추|韱 아래 韭를 찾자. 가는 부추 잎이 산바람에 흔들리는 산부추 섬!|纖維(섬유): 纖 오른쪽 韱을 찾는다. 가늘고 긴 실 모양 물질.|懺悔(참회): 懺 오른쪽 韱을 찾는다. 잘못을 뉘우침, 소리는 참으로 달라진다.|a delicate wild chive tuft with very slender dark green blades
+302|가시 돋친 가지|朿의 네모처럼 돌출된 부분을 줄기에서 돋는 가시로 보자. 가시나무 자!|刺傷(자상): 刺 왼쪽 朿를 찾는다. 찔려 생긴 상처.|棘皮(극피): 棘에 朿 둘이 보인다. 가시 같은 피부, 구성 학습.|a thorny brown branch covered in oversized sharp thorns
+303|넓게 펼친 잎|枼 아래 木 위에 잎이 펼쳐진다고 상상하자. 葉의 艹 아래에도 숨어 있는 잎 엽!|葉綠素(엽록소): 葉 안에 枼이 있다. 잎의 녹색 색소.|蝶類(접류): 蝶 오른쪽 枼을 찾는다. 나비류를 뜻하는 분류 표현.|a large emerald leaf with sharply detailed branching veins
+304|줄기 끝 풀잎|乇의 위로 삐친 획을 줄기 끝 잎으로 보자. 작지만 선명한 풀잎 탁!|宅地(택지): 宅 아래 乇를 찾는다. 집을 지을 땅.|託付(탁부): 託 오른쪽 乇를 찾는다. 부탁하여 맡김, 문어 표현.|a single bright green grass blade curling from a tiny stem
+305|밖으로 솟는 새싹|出을 아래 틀에서 위로 솟아 나오는 모습으로 상상하자. 안에서 밖으로 날 출!|出口(출구): 나가는(出) 문(口).|出發(출발): 밖으로 나서(出) 시작함(發).|a vivid sprout springing out through an open square frame
+306|열매 꼭지|啇의 위 좁은 부분을 꼭지, 아래를 열매의 몸으로 연결하자. 꼭지 적!|適合(적합): 適 안의 啇을 찾는다. 알맞게 들어맞음.|滴水(적수): 滴 오른쪽 啇을 찾는다. 떨어지는 물방울.|a glossy orange fruit with an exaggerated thick green stalk
+307|우뚝 선 줄기|줄기 정은 𡈼을 함께 보자. 가운데 곧은 줄기가 아래 땅에서 위로 쭉 솟았다고 연결한다.|朝廷(조정): 廷 안의 𡈼 계열 모양을 찾는다. 임금이 정무를 보는 곳.|呈示(정시): 呈의 아래 모양을 비교한다. 드러내 보임, 뜻을 줄기로 직역하지 않는다.|a strong upright green plant stem with a broad base
+308|잎이 빽빽한 줄기|丰의 세 가로획을 촘촘히 난 잎으로 보자. 빈틈없이 우거질 봉!|豐盛(풍성): 豐과 丰의 형태를 비교한다. 넉넉하고 많음.|邦國(방국): 邦 왼쪽의 丰 계열 모양을 찾는다. 나라라는 문어 표현.|a dense leafy green stalk with three lush tiers
+309|손으로 따는 열매|采는 爫 아래 木. 손이 나무로 내려와 열매를 딴다고 연결하자. 캘 채!|採取(채취): 採 안에 采가 있다. 캐거나 따서 얻음.|風采(풍채): 사람의 겉모습과 멋. 采는 모습·빛깔 뜻도 가진다.|a hand plucking one ripe golden fruit from a short branch
+310|꽉 얽힌 끈|丩의 꺾이는 선을 서로 걸려 얽힌 끈으로 보자. 풀리지 않게 얽힐 구!|糾明(규명): 糾 오른쪽 丩를 찾는다. 사실을 자세히 밝혀냄.|糾合(규합): 糾의 丩를 찾는다. 사람이나 힘을 모음.|a tight knot of intertwined blue and red cord
+311|도끼로 벤 나무|斬의 車와 斤을 보며 큰 수레 재료를 도끼로 벤다고 상상하자. 벨 참!|斬新(참신): 새롭게(新) 확 바뀐 듯 신선함. 斬의 단호함을 연결한다.|斬斷(참단): 베어(斬) 끊음(斷), 문어 표현.|an axe making one clean cut through a wooden log
+312|아름다운 글|文의 교차한 획을 정성스럽게 새긴 문양으로 연결하자. 글과 문장을 뜻하는 글월 문!|文章(문장): 글(文)의 짜임(章).|文化(문화): 사람이 만들어 온 생활과 정신의 양식. 文은 문명·배움과 연결된다.|an elegant cream scroll covered in abstract ink strokes
+313|돌돌 만 책|卷 아래의 굽은 부분을 말아 놓은 두루마리로 보자. 옛 책 한 권, 책 권!|卷冊(권책): 책(卷冊)을 이르는 문어.|上卷(상권): 여러 권으로 된 책에서 앞(上) 권(卷).|a richly textured parchment scroll rolled at both ends
+314|엮어 묶은 책|冊의 세로줄을 나무쪽, 가로줄을 엮은 끈으로 보자. 여러 쪽을 묶은 책 책!|冊子(책자): 묶어 만든 책(冊).|書冊(서책): 글(書)을 담은 책(冊).|an ancient bound bamboo book with visible linking cords
+315|양옆으로 펼친 천|尃 아래 寸을 손으로 연결하자. 접힌 것을 손으로 쭉 펼 부!|敷設(부설): 敷 안에 尃 계열 모양이 있다. 넓게 펴서 설치함.|搏手(박수): 搏 오른쪽 尃를 찾는다. 손을 마주 치는 일.|a pair of hands spreading a broad blue cloth open
+316|쭉 펴는 몸|申은 가운데 세로획이 네모를 위아래로 뚫는다. 답답한 틀 밖으로 쭉 펼 신!|申請(신청): 뜻을 펴서(申) 청함(請).|申告(신고): 사실을 말하여(申) 알림(告).|a fully clothed person stretching arms straight upward
+317|빌려주는 손|叚의 오른쪽 又를 물건을 잠시 건네는 손으로 상상하자. 돌려받을 것을 빌릴 가!|假借(가차): 假 안의 叚를 찾는다. 빌려 씀.|休暇(휴가): 暇 오른쪽 叚를 찾는다. 일을 쉬는 시간, 소리 가를 연결한다.|a hand temporarily lending a small golden book
+318|입을 감싼 글귀|句는 勹가 口를 감싼 모양. 입으로 말할 한 덩이를 감싸 묶은 글귀 구!|文句(문구): 글(文)의 구절(句).|句節(구절): 문장의 한 마디(句節).|a compact curled parchment strip containing abstract ink marks
+319|처음 짓는 틀|乍의 가로획을 새로 얹는 건물의 틀로 상상하자. 지을 작은 作과 연결해 기억한다.|製作(제작): 作 오른쪽 乍를 찾는다. 만들어 냄.|乍見(사견): 잠깐 또는 갑자기 봄, 고전 문장 표현. 이때는 사로 읽는다.|a carpenter raising the first bright wooden frame
+320|칼끝으로 새긴 무늬|彔의 아래 갈라진 획을 새겨 나가는 자국으로 상상하자. 깊게 남기는 새길 록!|記錄(기록): 錄 오른쪽의 彔 계열 모양을 찾는다. 적어 남김.|綠色(녹색): 綠 오른쪽의 彔 계열 모양을 찾는다. 푸른 빛깔이며 뜻을 새김으로 풀지 않는다.|a wooden tablet with deep freshly carved golden grooves
+321|금속에 새긴 무늬|戠의 戈를 새기는 날로 상상하자. 音 옆에 날을 대어 무늬를 남기는 새길 시!|知識(지식): 識 오른쪽 戠을 찾는다. 알고 있는 내용.|組織(조직): 織 오른쪽 戠을 찾는다. 짜서 만든 체계, 소리 식을 연결한다.|a bronze plate with sharply engraved decorative grooves
+322|잘못을 짚는 손|責 아래 貝를 잘못 써 버린 돈으로 상상하자. 책임을 물으며 꾸짖을 책!|責任(책임): 맡은(任) 일에 대해 져야 할 의무(責).|叱責(질책): 소리쳐(叱) 꾸짖음(責).|a stern but calm adult pointing firmly at a mistake
+323|구석까지 닦는 손|育과 攵를 합쳐 적은 구성 표기다. 구석까지 철저하게 닦는 손으로 徹의 철을 연결한다.|徹底(철저): 徹 오른쪽에 育·攵가 있다. 밑바닥까지 꿰뚫듯 빈틈없음.|貫徹(관철): 끝까지 꿰뚫어 뜻을 이룸. 徹의 구성 부분을 복습한다.|a careful hand polishing every corner of a golden pot
+324|크게 자란 새싹|甫의 곧은 중심줄기를 크게 자란 싹으로 상상하자. 클 보라는 원문 훈을 소리 단서로 연결한다.|杜甫(두보): 중국 시인의 이름. 甫의 음 보를 확인한다.|補充(보충): 補 오른쪽 甫를 찾는다. 모자란 것을 채움.|an enormous vigorous green sprout with a thick central stalk
+325|크게 부푼 보물|賁 아래 貝를 큰 보물로 상상하자. 클 분과 꾸밀 비라는 여러 훈음을 구별한다.|賁門(분문): 위의 입구 부분을 이르는 용어. 이때 음은 분.|虎賁(호분): 호랑이처럼 용맹한 군사를 이르는 고전어. 賁은 분으로 읽는다.|a magnificent oversized golden treasure ornament
+326|몇 알 안 되는 씨앗|少는 小 아래 삐침 하나가 더 있다. 작은 무리에서 하나가 빠져 적어졌다고 기억하자.|少數(소수): 적은(少) 수(數).|減少(감소): 줄어서(減) 적어짐(少).|a very sparse cluster of three tiny golden seeds
+327|엄청나게 큰 상자|巨의 큰 테두리를 거대한 상자로 보자. 사람 키보다 훨씬 큰 클 거!|巨大(거대): 클 거(巨)와 큰 대(大), 매우 큼.|巨人(거인): 거대한(巨) 사람(人).|an enormous monumental blue chest with exaggerated proportions
+328|끝없이 긴 리본|長의 아래 긴 획을 늘어지는 리본으로 상상하자. 끝이 멀리 있는 긴 장!|長期(장기): 긴(長) 기간(期).|成長(성장): 자라서(長) 이루어짐(成).|an extremely long flowing golden ribbon curling gracefully
+329|길게 뚫린 통로|甬의 用처럼 생긴 아래를 긴 통로로 보자. 용처럼 길게 이어지는 길 용!|甬道(용도): 벽 사이 또는 지붕 아래 이어진 통로(道), 건축 용어.|通路(통로): 通 안의 甬을 찾는다. 지나갈 수 있는 길.|a long smooth teal tunnel with an open far end
+330|묵직한 추|重의 가로획들이 층층 쌓여 무게가 늘어난다고 상상하자. 무거울 중!|重量(중량): 무거운(重) 정도·양(量).|重要(중요): 무겁게(重) 여길 만큼 긴요함(要).|a huge dark iron weight pressing firmly downward
+331|납작한 빵|扁을 위아래로 꾹 눌러 넓어진 틀로 보자. 얇고 넓적할 편!|扁平(편평): 넓적하고(扁) 평평함(平).|扁桃(편도): 扁은 납작하다는 뜻. 편도라는 신체 명칭에서 음 편을 확인한다.|a very wide thin golden flatbread
+332|명령 내리는 군주|辟의 복잡한 윗부분을 임금의 관으로 상상하자. 임금 벽은 여러 뜻 가운데 하나다.|君辟(군벽): 임금 군(君)과 임금 벽(辟), 군주를 뜻하는 고전어.|開闢(개벽): 闢 안에 辟이 있다. 세상이 처음 열림, 소리 벽을 연결한다.|a dignified historical ruler with a large ceremonial crown
+333|빙 둘러 도는 띠|周의 바깥 테두리를 한 바퀴 도는 길로 보자. 빠짐없이 둘레 전체, 두루 주!|周圍(주위): 두루(周) 둘러싼(圍) 곳.|一周(일주): 한(一) 바퀴를 돎(周).|a continuous golden ring circling a simple white center
+334|옛 오나라 깃발|吳를 붉은 깃발을 든 옛 나라 표지로 연결하자. 나라 이름 오!|吳越(오월): 오(吳)나라와 월(越)나라.|吳氏(오씨): 吳를 성으로 쓰는 가문.|a red ancient kingdom banner on an ornate pole
+335|어진 옛 임금|堯의 층진 윗부분을 높은 단으로 상상하자. 전설 속 어진 임금 요를 높은 자리와 연결한다.|堯舜(요순): 옛 임금 요(堯)와 순(舜).|堯帝(요제): 임금(帝) 요(堯)를 가리키는 말.|a gentle ancient king seated with a simple golden crown
+336|기준을 긋는 칼|則의 貝와 刂를 보며 값을 정확히 나누는 기준선을 상상하자. 지켜야 할 법칙 칙!|規則(규칙): 기준(規)이 되는 법칙(則).|原則(원칙): 근본(原)이 되는 법칙(則).|a precise ruler drawing one straight golden boundary line
+337|거세게 부는 폭풍|暴의 아래로 튀는 획을 통제할 수 없이 터지는 힘으로 보자. 사나울 폭!|暴風(폭풍): 사나운(暴) 바람(風).|暴力(폭력): 거칠고 사나운(暴) 힘(力).|a fierce compact dark storm swirling with dramatic wind
+338|겹겹이 쌓인 금속판|戔은 戈가 위아래로 겹친 모양이다. 겹겹이 쌓이는 금속판으로 쌓일 전을 기억하고, 원문의 도적 연상은 정답 훈으로 외우지 않는다.|殘存(잔존): 殘 오른쪽 戔을 찾는다. 남아 있음.|金錢(금전): 錢 오른쪽 戔을 찾는다. 돈, 소리 전을 연결한다.|two ornate bronze blade shaped plates stacked one above another
+339|경계 넘는 발|侵 왼쪽 亻를 경계를 넘는 사람으로 보자. 허락 없이 넘어드는 침범할 침!|侵入(침입): 침범하여(侵) 들어감(入).|侵害(침해): 권리나 영역을 침범하여(侵) 해침(害).|a boot stepping across a bold red boundary
+340|나라를 이끄는 임금|君 아래 口를 명령하는 입으로 연결하자. 백성을 이끄는 임금 군!|君主(군주): 나라의 주인(主)인 임금(君).|君臣(군신): 임금(君)과 신하(臣).|a dignified king speaking calmly in a royal blue robe
+341|열쇠 가진 주인|主는 王 위에 점 하나. 왕관 위 보석처럼 주인을 표시한 점이라고 기억하자.|主人(주인): 주인이 되는(主) 사람(人).|主役(주역): 중심(主)이 되는 역할(役).|a confident host holding an oversized golden key
+342|왕관 쓴 왕|王의 세 가로획을 모두 잇는 세로획에 주목하자. 나라를 하나로 잇는 임금 왕!|王國(왕국): 왕(王)이 다스리는 나라(國).|女王(여왕): 여자(女)인 왕(王).|a magnificent golden royal crown with ruby jewels
+343|관복 입은 관리|官의 宀 아래를 관청의 여러 자리로 보자. 공적인 일을 맡는 벼슬 관!|官廳(관청): 관리(官)가 일하는 기관(廳).|官職(관직): 벼슬(官)의 직책(職).|a formal official in a crisp dark green court uniform
+344|단단하게 쥔 손|臤의 臣 옆 又를 꽉 움켜쥔 손으로 상상하자. 흔들리지 않게 굳을 간!|堅固(견고): 堅 위 臤을 찾는다. 굳고 튼튼함.|賢明(현명): 賢 위 臤을 찾는다. 어질고 밝음, 소리는 현으로 달라진다.|a strong hand gripping a hard gray stone tightly
+345|퉤 내뱉는 입|咅의 立 아래 口를 보고 입에서 퉤 하고 내뱉는 동작으로 연결하자. 침뱉을 투!|部門(부문): 部 왼쪽 咅를 찾는다. 나누어진 분야.|倍數(배수): 倍 오른쪽 咅를 찾는다. 어떤 수를 여러 번 합한 수.|a cartoon face blowing one harmless blue droplet outward
+346|질서 있는 군대|軍 안의 車를 군대의 수레로 상상하자. 지휘 아래 움직이는 군사 군!|軍隊(군대): 군사(軍)의 무리(隊).|陸軍(육군): 땅(陸)에서 활동하는 군대(軍).|a disciplined small formation of uniformed soldiers without weapons
+347|한 명의 병사|卒의 가운데 人 모양을 줄 맞춰 선 병사로 보자. 군사 졸!|兵卒(병졸): 병사(兵)와 군졸(卒), 군사.|卒業(졸업): 학업(業)을 마침(卒). 卒은 마치다는 뜻도 있다.|a single upright soldier in a neat blue uniform
+348|놀라운 손재주|才의 삐친 획을 재빠른 손놀림으로 보자. 작은 획으로도 솜씨를 보이는 재주 재!|才能(재능): 재주(才)와 능력(能).|天才(천재): 타고난(天) 뛰어난 재주(才)를 가진 사람.|a skilled juggler balancing glowing colored spheres
+349|한 일에 집중한 장인|專 아래 寸을 한 작업에 집중한 손으로 연결하자. 오로지 한 분야에 몰두하는 전!|專門(전문): 오로지(專) 맡아 깊이 아는 분야(門).|專念(전념): 한곳에만(專) 마음(念)을 씀.|a focused craft expert working carefully on one tiny object
+350|지시하는 손|令의 윗부분을 말하는 입, 아래를 명령을 받는 자리로 상상하자. 하게 만드는 령!|命令(명령): 시켜(命) 하게 하는 말(令).|指令(지령): 지시하는(指) 명령(令).|a clear authoritative hand pointing toward a task
+351|튼튼한 장정|丁의 위 가로획은 어깨, 아래는 곧은 몸으로 보자. 힘 있게 서 있는 장정 정!|壯丁(장정): 튼튼한(壯) 성인 남자(丁).|丁寧(정녕): 틀림없이·진심으로. 丁의 다른 용법을 확인한다.|a sturdy adult standing straight with broad shoulders
+352|공손히 인사하는 사람|巽 위의 두 굽은 부분을 고개 숙인 모습으로 상상하자. 공손할 손을 익히고, 뽑는 뜻은 選에서 따로 확인한다.|選拔(선발): 選 안의 巽을 찾는다. 골라 뽑음.|巽方(손방): 팔괘 巽에 해당하는 방향, 남동쪽. 여기서 巽은 괘 이름이다.|a polite fully clothed person bowing respectfully with joined hands
+353|줄 맞춘 사람 수|員 위 口를 한 사람의 자리, 아래 貝를 명부로 상상하자. 사람 수를 세는 인원 원!|人員(인원): 사람(人)의 수·구성원(員).|會員(회원): 모임(會)에 속한 사람(員).|a neat row of small blue human figures being counted
+354|단호히 정한 길|夬의 열린 윗부분을 갈라진 선택지로 보자. 망설임을 끊고 정할 쾌!|決定(결정): 決 오른쪽 夬를 찾는다. 확실하게 정함.|快感(쾌감): 快 오른쪽 夬를 찾는다. 기분 좋은 느낌.|a decisive hand choosing one bold golden direction
+355|맨 위의 한 사람|元 위의 두 획을 첫 자리, 아래 儿를 사람으로 보자. 시작과 으뜸 원!|元首(원수): 나라의 으뜸(元) 우두머리(首).|元祖(원조): 맨 처음(元)의 조상·시작(祖).|a golden numberless first place podium with one proud figure
+356|한 단계 아래 은메달|亞의 가운데 들어간 부분을 첫 자리 바로 아래로 보자. 으뜸 元 다음 버금 아!|亞流(아류): 본래 것을 따르는 둘째(亞) 흐름(流), 모방한 것.|亞聖(아성): 성인(聖)에 버금가는(亞) 사람을 이르는 말.|a large polished silver medal with a simple ribbon
+357|다음 차례 발|次의 欠을 앞사람 다음에 한숨 돌리는 사람으로 상상하자. 차례와 버금을 잇는 차!|次例(차례): 순서에 따른 자리나 번.|次善(차선): 최선 다음(次)으로 좋은(善) 것.|a patient person standing just behind one empty leading footprint
+358|나란히 견주는 막대|比의 두 비슷한 덩이를 나란히 놓고 길이를 비교하자. 견줄 비!|比較(비교): 서로 견주어(比) 살핌(較).|比例(비례): 두 양의 비(比)가 일정한 관계.|two polished measuring rods placed side by side
+359|여럿 모인 사람|庶 아래 네 점을 집 아래 모인 많은 사람으로 보자. 하나가 아닌 여러 서!|庶民(서민): 많은(庶) 일반 백성(民).|庶務(서무): 여러(庶) 가지 일반 사무(務).|a friendly crowd of many small colorful people
+360|모두 모은 한 덩이|咸의 안쪽 口를 빠짐없이 모은 하나의 공간으로 상상하자. 남김없이 다 함!|咸集(함집): 모두(咸) 모임(集), 문어 표현.|咸有(함유): 모두(咸) 있음(有), 고전 표현. 含有와 뜻·글자를 구별.|all colorful marbles gathered into one compact complete cluster
+361|한마음으로 다 함께|僉의 윗덮개 아래 나란한 입과 사람을 보자. 누구 하나 빠짐없이 다 첨!|僉位(첨위): 여러(僉) 분(位)을 높여 이르는 옛말.|檢査(검사): 檢 오른쪽 僉을 찾는다. 자세히 살펴봄.|a complete group of smiling figures standing under one broad arch
+362|갈라지는 물줄기|巠 위의 꺾인 선들을 흐르는 물갈래로 상상하자. 물줄기 경!|經路(경로): 經 오른쪽 巠을 찾는다. 거쳐 가는 길.|輕量(경량): 輕 오른쪽 巠을 찾는다. 가벼운 무게, 소리 경을 연결한다.|three slender turquoise water channels branching downward
+363|네모난 우물|井의 가로세로 틀을 위에서 본 우물 테두리로 보자. 가운데로 물을 긷는 우물 정!|井水(정수): 우물(井)의 물(水). 정수기 淨水와 구별.|天井(천정): 하늘(天)을 향한 우물(井)처럼 위를 막은 면, 천장이라는 말과 연결.|a square stone well with brilliantly clear blue water
+364|고요한 절|寺의 土와 寸을 보며 땅 위 절에서 두 손을 모은다고 상상하자. 절 사!|寺刹(사찰): 불교의 절(寺刹).|寺院(사원): 절(寺) 건물·기관(院).|a serene miniature Buddhist temple with curved green roofs
+365|산 사이 골짜기|앞의 谷를 다시 떠올리자. 양옆 산 사이 빈 곳, 골 곡과 계곡 곡은 같은 뜻이다.|峽谷(협곡): 좁고 깊은(峽) 골짜기(谷).|幽谷(유곡): 깊고 그윽한(幽) 골짜기(谷), 문어 표현.|a deep purple canyon with a narrow winding blue stream
+366|산속의 늪|㕣 위 八을 벌어진 산비탈, 아래 口를 물 고인 자리로 상상하자. 산속늪 연!|沿岸(연안): 沿 오른쪽의 㕣 계열 모양을 찾는다. 물가를 따른 기슭.|鉛筆(연필): 鉛 오른쪽의 㕣 계열 모양을 찾는다. 필기도구, 소리 연을 연결한다.|a deep moss green mountain marsh in a compact rocky basin
+367|자신을 가리키는 황제|朕의 통용 훈음은 나 짐. 황제가 자신을 가리켜 짐이라 말하는 장면으로 정확한 독음을 익힌다.|朕(짐): 황제가 자신을 가리키던 일인칭 대명사.|兆朕(조짐): 일이 생길 기미. 현대에는 보통 한글 조짐으로 적는다.|a dignified emperor pointing at his own chest in golden robes
+368|빙글 도는 길|回는 큰 네모 안 작은 네모. 가운데를 한 바퀴 돌아 원래 자리로, 돌 회!|回轉(회전): 돌고(回) 구름(轉).|回復(회복): 돌아와(回) 다시 되찾음(復).|a thick turquoise circular arrow returning to its starting point
+369|차례를 생각하는 사람|侖 아래 冊을 차례대로 정리할 자료로 보자. 차례를 곰곰 생각하는 생각할 륜! 둥근 바퀴 뜻은 輪에서 확인한다.|車輪(차륜): 輪 오른쪽 侖을 찾는다. 수레바퀴.|理論(이론): 論 오른쪽 侖을 찾는다. 이치에 따른 설명 체계, 음 론을 비교한다.|a thoughtful person carefully arranging a neat set of golden booklets
+370|눈이 동그래진 사람|睘 위의 눈 모양을 크게 뜬 눈으로 상상하자. 놀라서 볼 경! 원문의 둥근 옥 그림은 環의 뜻과 연결하는 보조 연상이다.|循環(순환): 環 오른쪽 睘을 찾는다. 차례로 돌아 되풀이함.|還元(환원): 還 안의 睘을 찾는다. 본래 상태로 돌아감.|a surprised friendly person with enormously round open eyes
+371|똑바른 줄|直의 가운데 세로줄을 굽지 않은 기준선으로 보자. 눈으로 보아도 곧을 직!|直線(직선): 곧은(直) 선(線).|正直(정직): 바르고(正) 곧음(直).|a perfectly straight vertical blue rod
+372|변신하는 나비|化의 좌우 다른 모습을 변하기 전과 뒤로 연결하자. 한 모습에서 다른 모습이 될 화!|變化(변화): 달라져(變) 다른 것이 됨(化).|消化(소화): 음식이 분해되어(消) 다른 상태로 바뀜(化).|a butterfly emerging vividly from a single chrysalis
+373|마지막 조각 완성|成의 마지막 획이 들어가 완성된다고 상상하자. 끝까지 해내어 이룰 성!|完成(완성): 완전히(完) 이룸(成).|成功(성공): 공(功)을 이룸(成), 목표를 달성함.|a hand fitting the final golden piece into a completed puzzle
+374|사라진 자리|莫 가운데 日이 풀 사이로 가려져 보이지 않는다고 상상하자. 없고 말리는 뜻의 막!|莫大(막대): 크기(大)를 견줄 것이 없음(莫), 매우 큼.|莫論(막론): 따져 말하지(論) 않음(莫).|a fading golden object leaving an empty white space
+375|딱 멈추라는 손|勿의 삐침들을 감싸 막는 바깥획을 보자. 행동을 하지 말라는 말 물!|勿論(물론): 논할(論) 것도 없음(勿), 말할 필요 없이 당연함.|勿忘(물망): 잊지(忘) 말라(勿), 문어 표현.|a firm open hand blocking forward movement
+376|길게 끌리는 천|曼 아래 又를 긴 천을 끄는 손으로 상상하자. 길게 늘여 끌 만!|曼舞(만무): 부드럽고 길게 이어지는 춤(舞), 문어 표현.|慢性(만성): 慢 오른쪽 曼을 찾는다. 오래 지속되는 성질.|a person drawing out an extremely long flowing purple cloth
+377|무너진 빈 성|亡의 열린 아래를 무너져 비어 버린 자리로 보자. 있던 것이 사라져 망할 망!|滅亡(멸망): 없어져(滅) 망함(亡).|死亡(사망): 죽어(死) 생명이 사라짐(亡).|a tiny abandoned gray castle dissolving into soft dust
+378|손으로 가져오는 것|取는 耳와 又. 오른쪽 손 又가 내 쪽으로 끌어와 갖는다고 상상하자. 가질 취!|取得(취득): 취하여(取) 얻음(得).|採取(채취): 캐어(採) 가짐(取).|a hand firmly taking a bright golden object toward itself
+379|자리를 잡은 진|屯의 굽은 끝을 땅에 고정한 말뚝으로 연결하자. 한곳에 모여 진칠 둔!|駐屯(주둔): 머물러(駐) 진을 침(屯).|屯田(둔전): 군대 주둔지(屯)에서 경작하던 밭(田).|a compact military camp of neat blue tents without weapons
+380|틈으로 엿보는 눈|睪 위의 罒를 가느다란 눈으로 상상하자. 조심스레 엿볼 역!|飜譯(번역): 譯 오른쪽 睪을 찾는다. 다른 언어로 옮김.|選擇(선택): 擇 오른쪽 睪을 찾는다. 골라 뽑음, 음 택을 비교한다.|a curious eye peeking through a narrow harmless opening
+381|먼저 생긴 금|兆의 벌어진 획을 미리 나타난 갈라짐으로 보자. 일이 일어나기 전 신호, 조짐 조!|徵兆(징조): 미리 나타나는 표지(徵)와 조짐(兆).|前兆(전조): 앞서(前) 나타나는 조짐(兆).|a smooth white egg with one tiny glowing crack
+382|마침내 도착한 사람|竟 아래 儿가 긴 길 끝에 서 있다고 상상하자. 끝내 해낸 마침내 경!|畢竟(필경): 끝내(畢) 마침내(竟), 결국.|竟日(경일): 날(日)이 다하도록(竟), 온종일이라는 문어.|a relieved runner finally reaching a golden finish arch
+383|확 붙잡은 손|蒦의 隹 아래 又를 보자. 달아나기 전에 손으로 확 잡는 붙잡을 확!|獲得(획득): 獲 오른쪽 蒦를 찾는다. 잡아서 얻음.|保護(보호): 護 오른쪽 蒦를 찾는다. 지켜 돌봄, 독음 호도 비교한다.|a large hand securely catching a soft blue ball
+384|포근하게 싼 보자기|包의 바깥 勹가 안쪽을 감싼다. 속을 포옥 싸는 쌀 포!|包裝(포장): 싸서(包) 꾸밈(裝).|包容(포용): 감싸(包) 받아들임(容).|a neatly wrapped golden cloth bundle with a large knot
+385|해진 천|敝의 가운데 잔획을 천에 생긴 구멍으로 상상하자. 오래 써 닳아 해질 폐!|疲敝(피폐): 지치고(疲) 쇠약해짐(敝).|敝衣(폐의): 해진(敝) 옷(衣), 문어 표현.|a worn blue fabric swatch with clearly frayed edges
+386|양쪽에서 당기는 끈|爭의 위아래를 서로 당기는 손으로 연결하자. 내 것이라며 다툴 쟁!|競爭(경쟁): 겨루고(競) 다툼(爭).|論爭(논쟁): 논의하며(論) 다툼(爭).|two hands pulling opposite ends of one red rope
+387|깊은 함정|臽의 아래 臼를 푹 팬 구덩이로 보자. 발을 헛디딜 듯 깊은 함정 함!|陷沒(함몰): 陷 오른쪽 臽를 찾는다. 움푹 꺼져 빠짐.|陷穽(함정): 陷의 臽를 찾는다. 빠뜨리기 위한 구덩이.|a deep square empty pit cut into a small earthy base
+388|빠져나온 사람|免 아래 굽은 획을 묶인 곳에서 쏙 빠진 다리로 보자. 벗어날 면!|免除(면제): 의무 등을 벗겨(免) 없앰(除).|免許(면허): 특정 행위를 할 수 있도록 제한을 풀어 허락함.|a relieved person stepping out of a loose open loop
+389|가득 찬 곡식 창고|倉의 지붕 아래 여러 칸에 곡식이 쌓인다고 상상하자. 물건을 두는 곳집 창!|倉庫(창고): 물건을 넣어 두는 곳집(倉庫).|穀倉(곡창): 곡식(穀)을 저장하는 창고(倉).|a miniature wooden granary filled with golden grain
+390|엇갈려 쌓은 나무|冓의 가로세로 획을 서로 맞물린 나무틀로 보자. 튼튼하게 쌓을 구!|構造(구조): 構 오른쪽 冓를 찾는다. 짜서 만든 체계.|購入(구입): 購 오른쪽 冓를 찾는다. 사서 들임, 소리 구를 연결한다.|a sturdy stack of interlocking golden wooden beams
+391|넉넉한 밥그릇|盧 아래 皿을 그릇으로 잡자. 원문의 밥그릇 로는 그릇 그림으로 연결하되 파생 글자의 뜻은 따로 익힌다.|爐火(노화): 爐 오른쪽 盧를 찾는다. 화로의 불. 老化와 구별.|蘆葦(노위): 蘆 안의 盧를 찾는다. 갈대를 이르는 말.|a large dark ceramic rice bowl with a broad round rim
+392|반쪽 나무판|爿을 다시 보자. 긴 나무를 반으로 쪼개 세운 조각이다. 앞의 조각 널 장과 같은 글자!|牀具(상구): 牀의 爿을 찾는다. 침대와 잠자리 기구, 문어.|牆壁(장벽): 牆의 爿을 찾는다. 담과 벽.|a single tall half plank with exposed golden wood grain
+393|부채처럼 펼친 빗자루|帚의 윗부분은 손잡이, 아래 巾은 펼쳐진 빗자루 끝으로 상상하자. 빗자루 추!|掃除(소제): 掃 오른쪽 帚를 찾는다. 쓸어 치움.|敝帚千金(폐추천금): 낡은(敝) 빗자루(帚)도 자기 것이면 귀하게 여김을 비유한다.|a huge straw broom with a broad fan shaped bristle head
+394|가리키는 그 자리|攸의 사람과 오른쪽 손을 연결해 손이 가리키는 자리로 기억하자. 바 유의 바는 곳·것을 뜻한다.|攸關(유관): 관계되는 바(攸關), 문어 표현.|悠久(유구): 悠 위 攸를 찾는다. 아주 오래고 김.|a person clearly pointing toward one small blue spot
+395|어찌 된 일일까|曷의 복잡한 안쪽을 보며 어찌 된 모양인지 고개를 기울여 보자. 어찌 갈!|曷故(갈고): 무슨(曷) 까닭(故)인가, 고전 문장 표현.|渴症(갈증): 渴 오른쪽 曷을 찾는다. 목이 마른 증상, 소리 갈을 연결한다.|a puzzled face with raised eyebrows and an open questioning palm
+396|그것을 가리키는 손|其의 아래 벌어진 두 획을 받치는 손으로 상상하자. 이미 말한 바로 그, 그 기!|其間(기간): 그(其) 사이(間). 기간을 뜻하는 期間과 표기를 구별.|其他(기타): 그(其) 밖의 다른(他) 것.|a hand pointing calmly at a distant blue object
+397|바로 이것|也의 길게 휜 끝을 가까운 것을 콕 짚는 손가락으로 연결하자. 원문 이것 이와 문장 끝 야를 구별한다.|也(야): 한문 문장 끝에서 단정하는 어조사로 쓰이는 대표 독음.|他人(타인): 他 오른쪽 也를 찾는다. 다른 사람, 구성 예시다.|a finger pointing directly at one object immediately in front
+398|아주 작은 낌새|幾의 가는 실 같은 위쪽을 미세하게 움직이는 신호로 보자. 무슨 일이 생길 기미 기!|幾微(기미): 아주 작은(微) 낌새(幾).|幾何(기하): 얼마(幾)인가(何), 수학 분야 이름으로도 쓰인다.|a tiny golden spark just appearing at the tip of a thread
+399|이미 끝난 접시|旣의 왼쪽을 비운 접시, 오른쪽을 돌아선 사람으로 상상하자. 벌써 끝난 이미 기!|旣存(기존): 이미(旣) 존재함(存).|旣成(기성): 이미(旣) 이루어짐(成).|a spotless empty plate after a meal with a satisfied expression motif
+400|되돌리는 손|反의 아래 又가 방향을 뒤집는 손이라고 상상하자. 원래 쪽으로 돌이킬 반!|反對(반대): 맞선(對) 쪽으로 돌림(反), 찬성하지 않음.|反省(반성): 자신을 되돌아(反) 살핌(省).|a hand turning a broad red arrow back in the opposite direction
+401|돌아오는 발걸음|复 아래 발 모양을 다시 돌아오는 걸음으로 보자. 復의 오른쪽에도 있는 돌아올 복!|復歸(복귀): 復 안의 复를 찾는다. 본래 자리로 돌아감.|反復(반복): 復의 复를 찾는다. 돌이켜 되풀이함.|a traveler coming back along a curved blue path
+402|홀로 선 한 개|單의 복잡한 모양에도 정답은 하나다. 여러 개 사이에서 홀로 남은 하나, 홑 단!|單獨(단독): 하나(單)로 홀로(獨) 있음.|單純(단순): 복잡하지 않고 하나로 간단함.|one solitary golden sphere centered in empty white space
+403|손 내밀어 사귀기|交 아래의 교차하는 획을 서로 만나는 팔로 연결하자. 관계를 맺어 사귈 교!|交友(교우): 벗(友)을 사귐(交).|交流(교류): 서로 오가며(流) 사귐(交).|two friendly people meeting in a warm handshake
+404|단단한 약속 매듭|契의 아래 大를 두 사람이 크게 합의한 모습으로 상상하자. 약속을 맺을 계!|契約(계약): 약속(約)을 맺음(契).|契機(계기): 일이 이어지게 하는 연결(契)의 기회(機).|a strong golden knot tying two ribbon ends securely
+405|포개진 천|婁의 층층이 겹친 윗부분을 포갠 천으로 보자. 겹겹이 포갤 루!|樓閣(누각): 樓 오른쪽 婁를 찾는다. 층이 있는 높은 건물.|數量(수량): 數 왼쪽 婁를 찾는다. 개수와 양, 독음 수는 따로 익힌다.|a tall neat stack of folded purple cloth layers
+406|말을 전하는 구름|云의 위 두 획을 떠다니는 말소리, 아래를 입에서 나온 숨으로 상상하자. 이를 운!|云云(운운): 이렇게 저렇게 말함(云), 뒤의 내용을 줄여 이르는 말.|人云亦云(인운역운): 남이 말하면 자신도 따라 말함, 주견 없이 동조함.|a soft white cloud shaped like a speaking breath curl
+407|품 안의 추억|褱의 바깥 衣 계열 모양을 품으로 보자. 소중한 추억을 가슴에 품어 그리워할 회!|懷念(회념): 懷 오른쪽 褱를 찾는다. 마음에 두고 그리워함.|懷抱(회포): 懷의 褱를 찾는다. 마음속에 품은 생각.|a person holding a cherished portrait close to their heart
+408|옛 신분의 사람|奴는 옛 사회의 종이라는 신분을 가리킨다. 女와 又를 형태 단서로만 보고 성별의 가치 판단과 연결하지 않는다.|奴婢(노비): 옛 신분제의 종(奴婢).|奴隷(노예): 자유를 빼앗기고 지배받던 사람. 역사 용어로 익힌다.|a dignified historical worker in plain brown clothes
+409|아래로 낮춘 자리|卑의 아래로 길게 내려가는 획을 낮은 자리로 연결하자. 사람의 가치를 낮추는 뜻으로 일반화하지 않는다.|卑下(비하): 낮게(卑) 내려(下) 평가함.|卑屈(비굴): 기개 없이 낮추고(卑) 굽힘(屈).|a very low blue pedestal close to the ground
+410|줄지어 벌인 막대|列 오른쪽 刂를 줄을 딱 맞추는 기준으로 보자. 하나씩 벌여 세울 렬!|列車(열차): 줄지어(列) 이어진 차량(車).|陳列(진열): 늘어놓고(陳) 벌여 세움(列).|a precise orderly row of golden upright rods
+411|가볍게 가는 발|夋 아래 발 모양을 발걸음으로 연결하자. 준준 앞으로 가는 갈 준!|俊秀(준수): 俊 오른쪽 夋을 찾는다. 재주·모습이 뛰어남.|竣工(준공): 竣 오른쪽 夋을 찾는다. 공사를 마침, 소리 준을 연결한다.|a lively person stepping lightly forward in blue shoes
+412|멀어지는 발걸음|去 아래 厶가 몸에서 떨어져 멀어진다고 상상하자. 지금 자리에서 떠나갈 거!|過去(과거): 지나(過) 가 버린(去) 때.|除去(제거): 덜어(除) 없애 버림(去).|a traveler walking away leaving clear receding footprints
+413|내가 건네는 손|予의 굽은 끝을 내 쪽에서 건네는 손으로 상상하자. 나 여와 줄 여를 한 장면에 묶는다.|予奪(여탈): 주고(予) 빼앗음(奪). 권한의 행사에 쓰이는 문어 표현.|生殺予奪(생살여탈): 살리고 죽이고 주고 빼앗는 권한이라는 고전 표현. 予는 주다라는 뜻이다.|a person extending their own hand to give a golden token
+414|나를 가리키는 손|余의 人 같은 윗부분을 내 머리로 보자. 가슴을 가리키며 바로 나, 나 여!|余等(여등): 나(余)와 같은 사람들(等), 우리를 뜻하는 문어 표현.|余輩(여배): 나(余)와 나의 무리(輩), 우리라는 문어 표현.|a friendly person pointing at their own chest with both thumbs
+415|멀리 부르는 입|召는 刀 아래 口. 입에서 똑 떨어지는 목소리가 멀리 닿는다고 상상하자. 부를 소!|召集(소집): 불러(召) 모음(集).|召喚(소환): 불러서(召喚) 오게 함.|a person cupping hands around their mouth to call out
+416|또렷하게 알리는 말|告 아래 口에서 위로 소식이 전해진다고 상상하자. 분명하게 고할 고!|報告(보고): 소식을 전해(報) 알림(告).|廣告(광고): 널리(廣) 알림(告).|a confident announcer speaking with clear broad sound waves
+417|아래로 드리운 가지|垂의 여러 가로획을 아래로 축 처진 가지로 연결하자. 밑으로 드리울 수!|垂直(수직): 늘어뜨린(垂) 줄처럼 곧음(直).|懸垂(현수): 매달려(懸) 아래로 늘어짐(垂), 운동 이름.|long willow branches drooping gracefully downward
+418|북쪽 검푸른 표지|壬은 아홉째 천간 임. 전통 배속의 북쪽·물 이미지를 검푸른 표지로 연결한다. 줄기 정과 구별!|壬辰(임진): 천간 壬과 지지 辰으로 이루어진 육십갑자 이름.|壬申(임신): 천간 壬과 지지 申의 결합. 아이를 배는 妊娠과 구별.|a deep blue compass marker pointing upward toward north
+419|안에 있는 원인|因은 囗 안에 大. 큰 결과의 씨앗이 안에 있다고 상상하자. 무엇 때문에 인할 인!|原因(원인): 근본(原)이 되는 까닭(因).|因果(인과): 원인(因)과 결과(果).|a large transparent sphere containing a bright central seed
+420|맡은 일을 살피는 사람|司의 테두리 안 口를 지시를 듣고 처리하는 자리로 보자. 담당하여 맡을 사!|司會(사회): 모임(會)의 진행을 맡음(司).|司令(사령): 명령(令)을 맡아 지휘함(司).|an attentive coordinator managing a neat blue work board
+421|서로 바꿔 선 사람|代의 亻를 다른 사람 대신 들어온 사람으로 보자. 자리를 바꾸어 대신할 대!|代理(대리): 대신하여(代) 처리함(理).|交代(교대): 서로 바꾸어(交) 대신함(代).|two friendly figures exchanging their places with curved arrows
+422|끝까지 닿는 손|及의 길게 뻗은 획을 손끝으로 보자. 멀리 있는 곳까지 손이 미칠 급!|普及(보급): 널리(普) 미침(及).|言及(언급): 말(言)이 어떤 일에 미침(及), 그 일을 말함.|a long outstretched arm whose fingertip just reaches a gold dot
+423|말을 이어 전함|詹 아래 言을 찾아 입에서 말이 이어진다고 연결하자. 여기서 이를 첨은 말한다는 뜻이다.|詹詹(첨첨): 말을 많이 하는 모양을 이르는 고전 표현.|瞻望(첨망): 瞻 오른쪽 詹을 찾는다. 바라봄, 소리 첨을 연결한다.|a lively storyteller speaking with flowing golden sound curls
+424|친근한 아저씨|叔 오른쪽 又를 반갑게 내미는 손으로 상상하자. 아버지의 형제, 아재비 숙!|叔父(숙부): 아버지의 아우, 작은아버지.|叔母(숙모): 숙부의 아내를 이르는 친족어.|a friendly middle aged uncle waving warmly
+425|반드시 찍는 표시|必의 획이 心을 단단히 꿰뚫는다고 상상하자. 마음먹으면 반드시 필!|必須(필수): 반드시(必) 있어야 함(須).|必要(필요): 반드시(必) 요구됨(要).|a bold golden check mark firmly stamped into a blue seal
+426|팔랑이는 쪽지|票의 아래 示를 보여 주는 표지로 보자. 손에 들고 보여 주는 쪽지 표!|投票(투표): 표(票)를 던져(投) 의사를 표시함.|票決(표결): 표(票)로 결정함(決).|a single crisp cream ticket fluttering with a red seal
+427|돋보는 어르신|叟의 통용 훈은 늙은이 수. 물건을 찾는 어르신으로 원문 연상을 살리고, 찾다는 搜에서 확인한다.|老叟(노수): 나이 든(老) 노인(叟), 문어 표현.|搜索(수색): 搜 안의 叟를 찾는다. 이리저리 뒤져 찾음.|a wise elderly person carefully searching with a magnifying glass
+428|아래에서 도와주는 팔|襄 아래의 옷자락을 위로 밀어 돕는 손으로 상상하자. 일을 이루도록 도울 양!|襄助(양조): 도와(襄) 줌(助), 문어. 술 빚는 釀造와 구별.|襄贊(양찬): 일을 도와(襄) 이룸(贊), 문어 표현.|a helpful pair of hands lifting a heavy golden block
+429|힘껏 당기는 손|爰의 위 爫와 아래 又를 양쪽 손으로 보자. 위아래 손이 끈을 당길 원!|救援(구원): 援 오른쪽 爰를 찾는다. 구해 도와줌.|應援(응원): 援의 爰를 찾는다. 힘을 보태 격려함.|two hands pulling a thick golden rope inward
+430|기뻐 웃는 입|台의 아래 口를 활짝 웃는 입으로 연결하자. 기쁠 이와 별개의 독음 대를 함께 구별한다.|怡悅(이열): 怡 오른쪽 台를 찾는다. 마음이 기쁘고 즐거움.|怡然(이연): 怡의 台를 찾는다. 기쁘고 편안한 모양.|a delighted face with a broad relaxed smile
+431|환하게 웃는 사람|兌의 위 두 획을 웃는 눈, 가운데 口를 웃는 입으로 보자. 기쁠 태!|兌換(태환): 바꾸어(換) 줌(兌), 지폐를 금 등으로 교환하는 일.|悅樂(열락): 悅 오른쪽 兌 계열 모양을 찾는다. 기뻐하고 즐거워함.|an exuberant smiling face with crescent shaped happy eyes
+432|마음이 바쁜 사람|悤 아래 心이 쉴 새 없이 뛴다고 상상하자. 생각과 발걸음이 바쁜 바쁠 총!|悤忙(총망): 매우 바쁨(悤忙), 문어 표현.|聰明(총명): 聰 오른쪽 悤를 찾는다. 듣고 이해하는 힘이 밝음.|a busy fully clothed person hurrying with lively motion streaks
+433|잘 익은 술|酋의 酉 위에 향기가 올라오는 두 획을 보자. 술이 익어 향이 피어나는 술익을 추!|酋長(추장): 무리의 우두머리(長), 酋는 우두머리라는 뜻으로 쓰인다.|尊敬(존경): 尊 위에 酋가 있다. 높여 공경함, 구성 예시.|a sealed amber wine jar emitting two fragrant golden curls
+434|작은 국자 잔|勺의 바깥 굽은 선은 국자, 안 점은 담긴 한 방울로 보자. 한 잔 분량의 잔 작!|酌酒(작주): 酌 안의 勺을 찾는다. 술(酒)을 따름(酌), 문어 표현.|酌量(작량): 酌 오른쪽 勺을 찾는다. 사정을 헤아림, 소리 작을 연결한다.|a small golden ladle cup holding one clear droplet
+435|손에서 건네기|付의 亻 옆 寸을 물건을 건네는 손으로 연결하자. 상대에게 줄 부!|交付(교부): 건네어(交) 줌(付).|付與(부여): 맡기거나 더해(付) 줌(與).|one open hand giving a small blue parcel to another
+436|꽉 찬 항아리|畐의 위 좁은 입과 아래 큰 몸통을 보자. 속이 빈틈없이 가득 찰 복!|幸福(행복): 福 오른쪽 畐을 찾는다. 복되고 만족스러운 상태.|富裕(부유): 富 안의 畐을 찾는다. 재물이 넉넉함, 음 부를 비교한다.|a broad golden jar filled completely to its brim
+437|고개 끄덕여 대답하는 사람|兪를 보고 네 하고 고개를 끄덕이는 모습을 떠올리자. 기본 훈은 대답할 유. 통나무배는 옛 자형 설명과 연결한 원문 연상이다.|愉快(유쾌): 愉 오른쪽 兪를 찾는다. 즐겁고 상쾌함.|兪氏(유씨): 兪를 성으로 쓰는 가문. 음 유를 확인한다.|a cheerful person clearly nodding yes in reply with a raised open hand
+438|모두에 통하는 테두리|凡의 几 안 점 하나를 어느 경우에나 들어가는 공통점으로 상상하자. 대체로 모두, 무릇 범!|凡人(범인): 두루 볼 수 있는 보통 사람(人). 범죄자 犯人과 구별.|平凡(평범): 특별히 두드러지지 않고 일반적임.|a simple blue circular frame enclosing one universal golden dot
+439|시작점에서 난 줄기|由의 가운데 획이 네모에서 위로 나온다. 이곳에서 비롯되었다, 말미암을 유!|理由(이유): 이치(理)상 말미암은 까닭(由).|由來(유래): 비롯되어(由) 옴(來).|a golden path emerging from one clear central starting point
+440|따뜻한 선의|良의 첫 점을 따뜻한 마음 한 방울로 상상하자. 선하고 좋은 어질 량!|善良(선량): 착하고(善) 어짊(良).|優良(우량): 뛰어나고(優) 좋음(良).|a kind person offering a warm open hand
+441|어떤 일을 하는 사람|者의 아래 日을 그 일을 하는 사람의 이름표로 상상하자. 배우는 사람은 학자, 사람 자!|學者(학자): 배우고 연구하는(學) 사람(者).|讀者(독자): 읽는(讀) 사람(者).|a thoughtful fully clothed person holding a clear blank name badge
+442|똑바로 선 사람|立 위는 머리, 가운데는 몸, 아래 긴 획은 땅으로 보자. 땅 위에 똑바로 설 립!|獨立(독립): 홀로(獨) 섬(立).|建立(건립): 세워(建) 일으킴(立).|a confident person standing perfectly upright on a flat base
+443|밭 사이 경계|畺의 田 둘과 가로 경계선을 보자. 이 밭과 저 밭을 나누는 지경 강!|疆土(강토): 疆 안의 畺를 찾는다. 경계(疆) 안의 땅(土), 영토.|新疆(신강): 疆의 畺를 찾는다. 중국 지명에서 음 강을 확인한다.|two square green fields divided by thick clear golden boundaries
+444|질척한 진흙|堇의 아래 土를 진흙 바닥으로 상상하자. 발이 쑥 들어갈 듯한 진흙 근!|勤勉(근면): 勤 왼쪽 堇을 찾는다. 부지런히 힘씀.|謹愼(근신): 謹 오른쪽 堇을 찾는다. 말과 행동을 조심함, 소리 근을 연결한다.|a thick glossy brown clay mound with deep soft impressions
+445|곧게 든 옥홀|圭의 土 둘을 층진 옥판으로 보자. 옛 의례에서 손에 든 홀, 홀 규!|圭角(규각): 옥홀(圭)의 모서리(角), 두드러진 성격의 비유.|圭表(규표): 해의 그림자로 시간을 재던 기구. 圭의 옥판·기준판 이미지를 연결한다.|a long flat ceremonial jade tablet held upright
+446|돌돌 말린 꼬리|巴 아래 굽은 끝을 동물의 말린 꼬리로 상상하자. 꼬리 파!|尾巴(미파): 꼬리를 가리키는 한문 표현. 현대 한국어에서는 드물다.|把握(파악): 把 오른쪽 巴를 찾는다. 붙잡아 앎, 소리 파를 연결한다.|a thick golden animal tail curled into a tight spiral
+447|오래된 석판|古는 十 아래 口. 오래전부터 입에서 입으로 전해 온 이야기로 연결하자. 예 고!|古代(고대): 옛(古) 시대(代).|古典(고전): 옛(古) 전범이 되는 책·작품(典).|an ancient weathered stone tablet with rounded worn edges
+448|빛바랜 옛날|昔 아래 日을 옛날의 해로 보자. 지나간 날이 겹겹이 쌓인 옛 석!|昔日(석일): 옛(昔) 날(日).|今昔(금석): 지금(今)과 옛날(昔). 금과 돌 金石과 구별.|a warm faded sepia sun disk with antique texture
+449|바로 지금의 시계|今의 위 덮개 아래 현재 한순간이 담겼다고 상상하자. 이미 지난 昔과 달리 이제 금!|今日(금일): 지금(今)의 날(日), 오늘.|只今(지금): 바로 이 순간. 今이 현재를 나타낸다.|a vivid golden clock focused on the present instant without numerals
+450|열흘을 묶은 달력|旬의 勹 안에 日이 있다. 날들을 열흘씩 묶어 감싼다고 연결하자. 열흘 순!|上旬(상순): 한 달의 앞(上) 열흘(旬).|中旬(중순): 한 달 가운데(中) 열흘(旬).|a compact calendar strip with exactly ten golden day cells
+451|한가운데 관통선|中은 口의 중심을 丨가 관통한다. 어느 쪽에도 치우치지 않은 가운데 중!|中心(중심): 한가운데(中)의 핵심(心).|中間(중간): 가운데(中)의 사이(間).|a straight golden rod passing exactly through a blue square center
+452|정중앙의 사람|央 가운데 大 같은 사람이 가운데 자리를 차지한다고 상상하자. 중앙의 앙!|中央(중앙): 가운데 중(中)과 가운데 앙(央).|央求(앙구): 간절히 구함(求), 央의 청하다는 뜻을 쓰는 문어.|one golden person standing precisely at the center of a round platform
+453|양옆에 꼭 낀 사람|夾은 大 양옆에 작은 人이 붙은 모양. 가운데 사람이 양쪽 사이에 꼭 끼었다, 낄 협!|挾攻(협공): 挾 안의 夾를 찾는다. 양쪽에서 공격함.|夾雜(협잡): 서로 섞여(雜) 끼어듦(夾), 일상에서는 속임수의 뜻도 쓴다.|a smiling central figure squeezed gently between two large soft blue cushions

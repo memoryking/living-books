@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "content:sync": "node scripts/build-hanja.mjs",
+    "predev": "npm run content:sync",
+    "prebuild": "npm run content:sync",
+    "test:memory-sync": "node scripts/test-hanja-sync.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

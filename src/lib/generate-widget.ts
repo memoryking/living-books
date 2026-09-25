@@ -15,6 +15,7 @@ interface BookMeta {
 }
 
 export const PREMIUM_BOOKS: BookMeta[] = [
+  { id: "hanja-memory", title: "그림으로 기억하는 한자 453", emoji: "字", subtitle: "453개 기억 장면 · 906개 활용 예시 · 29개 단원" },
   {
     id: "diet-secrets",
     title: "다이어트 서바이벌 시스템",
@@ -214,7 +215,10 @@ function readBookSections(bookId: string): Section[] {
     const titleMatch = md.match(/^#\s+(.+)/m);
     const title = titleMatch ? titleMatch[1] : file.replace(".md", "");
     const sectionId = "eb-s" + sections.length;
-    const html = marked.parse(escapeTildes(md), { async: false }) as string;
+    let html = marked.parse(escapeTildes(md), { async: false }) as string;
+    if (bookId === "hanja-memory") {
+      html = html.replaceAll('/hanja-memory/', 'https://living-books-beta.vercel.app/hanja-memory/');
+    }
     sections.push({ id: sectionId, title, html });
   }
 
@@ -350,7 +354,7 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
   <div id="eb-content" class="eb-content">
   ${contentSections}
 
-  ${buildCrossSell(book.id)}
+  ${book.id === 'hanja-memory' ? '' : buildCrossSell(book.id)}
   </div>
 
   <button id="eb-arrow-l" class="eb-arrow eb-arrow-l" onclick="ebPrevPage()">‹</button>
@@ -374,7 +378,23 @@ function buildWidgetHTML(book: BookMeta, sections: Section[]): string {
 
 <button id="eb-float-toc" class="eb-float" onclick="ebNav('eb-toc')">📋 목차</button>
 
-<script src="${CDN}/eb-script.js?v=5"></script>`;
+<script src="${CDN}/${book.id === 'hanja-memory' ? 'hanja-reader.js?v=5' : 'eb-script.js?v=5'}"></script>
+${book.id === 'hanja-memory' ? `<style>
+#eb-float-toc{display:block!important;min-height:44px}
+body:has(.eb-page-mode) #eb-float-toc{bottom:70px}
+#eb-content [role="img"]{break-inside:avoid;width:min(100%,360px,55vh)!important}
+.eb-viewer.eb-page-mode .eb-bar{opacity:1;pointer-events:auto}
+#eb-content img{max-width:100%;height:auto;max-height:55vh;object-fit:contain}
+#eb-content details{border:1px solid #dce3d8;padding:12px;border-radius:8px;margin:16px 0}
+#eb-content summary{cursor:pointer;font-weight:600}
+</style><script>
+(function(){
+  var root=document.getElementById('eb-root'),mode=document.getElementById('eb-mode-btn'),toc=document.getElementById('eb-float-toc');
+  function update(){var paging=root.classList.contains('eb-page-mode');mode.textContent=paging?'📜 스크롤형':'📖 페이지형';mode.setAttribute('aria-label',paging?'스크롤형으로 전환':'페이지형으로 전환');}
+  update();new MutationObserver(update).observe(root,{attributes:true,attributeFilter:['class']});
+  toc.textContent='📋 목차로 가기';toc.onclick=function(){if(root.classList.contains('eb-page-mode'))ebShowToc();else ebNav('eb-toc');};
+})();
+</script>` : ''}`;
 }
 
 function escHtml(s: string): string {
