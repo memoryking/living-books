@@ -18,7 +18,7 @@ for(const p of new Set(book.entries.map(e=>e.image))) {
   const m=await sharp('public'+p).metadata(); assert.equal(m.width,m.height);
 }
 const source=ts.transpileModule(fs.readFileSync('src/lib/hanja-study.ts','utf8'),{compilerOptions:{module:ts.ModuleKind.ESNext}}).outputText;
-const {gradeRecord,parseStudy,EMPTY_STUDY,shuffled,planStudy}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
+const {gradeRecord,parseStudy,EMPTY_STUDY,shuffled,planStudy,isPassed,reviewStage}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 const now=1000000;
 assert.deepEqual(planStudy([1,2,3,4,5,6],{},now),{ids:[1,2,3,4,5],learning:true});
 const scheduled={1:{due:now+1},2:{due:now},3:{due:now-1}};
@@ -26,6 +26,13 @@ assert.deepEqual(planStudy([1,2,3,4],scheduled,now),{ids:[3,2],learning:false});
 assert.deepEqual(planStudy([1],scheduled,now),{ids:[],learning:true});
 assert.equal(planStudy(Array.from({length:20},(_,i)=>i+1),Object.fromEntries(Array.from({length:20},(_,i)=>[i+1,{due:now}])),now).ids.length,10);
 const first=gradeRecord(undefined,true,now);
+assert.equal(isPassed(undefined),false);
+assert.equal(isPassed(first),true);
+assert.equal(isPassed(gradeRecord(first,false,now)),false);
+const retry=gradeRecord(gradeRecord(first,false,now),true,now+1,true);
+assert.equal(isPassed(retry),true);assert.equal(reviewStage(retry).label,'10분');
+assert.deepEqual([0,1,2,3,4,5].map(stage=>reviewStage({...first,stage}).label),['10분','1일','3일','7일','14일','30일']);
+assert.equal(reviewStage(undefined).label,'새 항목');
 const kept=gradeRecord({...first,stage:2,due:now-1},true,now,true);
 assert.equal(kept.due,now-1);assert.equal(kept.stage,2);
 assert.equal(gradeRecord(first,true,now,true).due,first.due);

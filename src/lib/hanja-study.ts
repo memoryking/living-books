@@ -15,6 +15,20 @@ export interface StudyState {
 }
 export const EMPTY_STUDY: StudyState = { version: 1, lastId: 1, records: {}, bookmarks: [], notes: {} };
 export const INTERVAL_DAYS = [1, 3, 7, 14, 30] as const;
+export const REVIEW_STAGES = [
+  { label: '10분', background: '#b91c1c', color: '#ffffff' },
+  { label: '1일', background: '#92265b', color: '#ffffff' },
+  { label: '3일', background: '#f9a34a', color: '#492500' },
+  { label: '7일', background: '#fde580', color: '#463800' },
+  { label: '14일', background: '#d4ed99', color: '#2c4912' },
+  { label: '30일', background: '#afe0bd', color: '#164b2d' },
+] as const;
+export function reviewStage(record: StudyRecord | undefined) {
+  return record ? REVIEW_STAGES[record.stage] : { label: '새 항목', background: '#f1f3f4', color: '#40504a' };
+}
+export function isPassed(record: StudyRecord | undefined) {
+  return !!record && record.attempts > 0 && !record.needsReview;
+}
 // Keep due reviews ahead of new material; a finite batch always has an end.
 export function planStudy(ids: number[], records: StudyState['records'], now: number) {
   const due = ids.filter(id => records[id] && records[id].due <= now)

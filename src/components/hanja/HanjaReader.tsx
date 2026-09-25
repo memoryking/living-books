@@ -3,17 +3,18 @@
 import { useEffect, useRef, useState, type ChangeEvent } from 'react';
 import Link from 'next/link';
 import { hanjaBook } from '@/lib/hanja-book';
-import { EMPTY_STUDY, gradeRecord, parseStudy, shuffled, type StudyState } from '@/lib/hanja-study';
+import { EMPTY_STUDY, gradeRecord, parseStudy, shuffled, isPassed, type StudyState } from '@/lib/hanja-study';
 import HanjaImage from './HanjaImage';
 import WritingPad from './WritingPad';
 import TextPages from './TextPages';
 import StudyGuide from './StudyGuide';
+import CharacterPicker from './CharacterPicker';
 import styles from './hanja.module.css';
 
 const STORAGE_KEY = 'living-books-hanja-memory-v1';
 const { entries, chapters, comparisons } = hanjaBook;
 type Tab = 'read' | 'recall' | 'compare' | 'guide';
-type Scope = 'all' | 'bookmarks' | 'review' | 'due' | 'new';
+type Scope = 'all' | 'bookmarks' | 'review' | 'passed' | 'new';
 type Session = { ids: number[]; index: number; good: number; missed: number[]; learning: boolean; reverse: boolean; practice: boolean };
 const formatDate = (time: number) => new Date(time).toLocaleString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
@@ -76,7 +77,7 @@ export default function HanjaReader() {
     const r = study.records[e.id];
     if (list === 'bookmarks' && !study.bookmarks.includes(e.id)) return false;
     if (list === 'review' && !r?.needsReview) return false;
-    if (list === 'due' && !(r && r.due <= now)) return false;
+    if (list === 'passed' && !isPassed(r)) return false;
     if (list === 'new' && r) return false;
     return true;
   }).sort((a,b) => list === 'bookmarks' ? study.bookmarks.indexOf(a.id)-study.bookmarks.indexOf(b.id) : a.id-b.id);
@@ -142,8 +143,8 @@ export default function HanjaReader() {
       {tab === 'read' ? <>
         <div className={styles.quickSelect}>
           <label>단원<select value={chapter} onChange={e=>changeRange(Number(e.target.value),scope)}><option value={0}>전체 단원</option>{chapters.map(c=><option key={c.id} value={c.id}>{c.id}. {c.title}</option>)}</select></label>
-          <label>학습 목록<select value={scope} onChange={e=>changeRange(chapter,e.target.value as Scope)}><option value="all">전체 항목</option><option value="bookmarks">책갈피 · 담은 순</option><option value="review">다시 볼 항목</option><option value="due">복습할 항목</option><option value="new">새 항목</option></select></label>
-          <label>글자 선택<select aria-label="글자 선택" value={quiz && filtered.some(e=>e.id===quiz.id)?quiz.id:filteredIndex>=0?selected:''} onChange={e=>go(Number(e.target.value))}><option value="" disabled>{filtered.length?'직접 선택':'해당 항목 없음'}</option>{filtered.map(e=><option key={e.id} value={e.id}>{String(e.id).padStart(3,'0')} · {e.char}</option>)}</select></label>
+          <label>학습 목록<select value={scope} onChange={e=>changeRange(chapter,e.target.value as Scope)}><option value="all">전체 항목</option><option value="bookmarks">책갈피 · 담은 순</option><option value="review">다시 볼 항목</option><option value="passed">통과한 항목</option><option value="new">새 항목</option></select></label>
+          <CharacterPicker key={chapter+scope} entries={filtered} records={study.records} value={quiz && filtered.some(e=>e.id===quiz.id)?quiz.id:filteredIndex>=0?selected:0} now={now} onChange={go}/>
         </div>
         <div className={styles.practiceLinks}><button onClick={()=>{setReverse(false);setSession(null);setShowAnswer(false);}} aria-pressed={!reverse}>한자 → 뜻과 음</button><button onClick={()=>{setReverse(true);setSession(null);setShowAnswer(false);}} aria-pressed={reverse}>뜻과 음 → 쓰기</button><button disabled={!filtered.length} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>범위 처음부터</button></div>
         {!session && <div className={styles.studyHome}><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></div>}

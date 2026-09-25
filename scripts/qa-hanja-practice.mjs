@@ -16,7 +16,7 @@ try {
   const shot=async name=>{const r=await send('Page.captureScreenshot',{format:'png'});await fs.writeFile(path.join(dir,name+'.png'),Buffer.from(r.data,'base64'));};
   await send('Runtime.enable');await send('Page.enable');
   const press=async label=>{await ev('Array.from(document.querySelectorAll("button")).find(b=>b.textContent.includes('+JSON.stringify(label)+')).click()');await new Promise(r=>setTimeout(r,100));};
-  const choose=async (index,value)=>{await ev('(()=>{const e=document.querySelectorAll("select")['+index+'];e.value='+JSON.stringify(value)+';e.dispatchEvent(new Event("change",{bubbles:true}))})()');await new Promise(r=>setTimeout(r,100));};
+  const choose=async (index,value)=>{if(index===2){await ev('document.querySelector("summary[aria-label]").click()');await ev('Array.from(document.querySelectorAll("[data-character-id]")).find(b=>b.dataset.characterId==='+JSON.stringify(value)+').click()');await new Promise(r=>setTimeout(r,100));return;}await ev('(()=>{const e=document.querySelectorAll("select")['+index+'];e.value='+JSON.stringify(value)+';e.dispatchEvent(new Event("change",{bubbles:true}))})()');await new Promise(r=>setTimeout(r,100));};
   for(const [width,height] of [[1280,800],[390,844],[320,568],[844,390]]) {
     await send('Page.navigate',{url:'about:blank'});
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
@@ -25,8 +25,8 @@ try {
     await ev('localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify({version:1,lastId:1,records:{42:{stage:2,due:Date.now()+259200000,last:1,attempts:2,misses:0,needsReview:false}},bookmarks:[42,1,2],notes:{}}))');
     await send('Page.reload');await wait('document.body.innerText.includes("새 글자 배우기")');
     await press('골라 학습');await choose(1,'bookmarks');
-    assert.deepEqual(await ev('[...document.querySelectorAll("select")[2].options].filter(o=>o.value).map(o=>o.value)'),['42','1','2']);
-    assert.ok(await ev('!document.querySelectorAll("select")[2].textContent.includes("말 마")'));
+    assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(o=>o.dataset.characterId)'),['42','1','2']);
+    assert.ok(await ev('!document.querySelector("[class*=characterOptions]").textContent.includes("말 마")'));
     const due=await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due');
     await press('정답 보기');await press('맞혔어요');
     assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due'),due);

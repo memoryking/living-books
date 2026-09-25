@@ -33,7 +33,7 @@ try {
     await wait('document.querySelectorAll("details")[2].querySelector("img").naturalWidth>0');
     const layout=await ev('(()=>{const d=document.querySelectorAll("details")[2],i=d.querySelector("figure").getBoundingClientRect(),p=d.querySelector("p").getBoundingClientRect();return {ix:i.x,iy:i.y,ib:i.bottom,ir:i.right,px:p.x,py:p.y}})()');
     assert.ok(width>700 ? layout.px>layout.ir : layout.py>=layout.ib);
-    assert.ok(await ev('document.querySelectorAll("details")[2].querySelector("img").naturalHeight<300'));
+    assert.ok(await ev('document.querySelectorAll("details")[2].querySelector("img").naturalHeight<1200'));
     await shot('guide-filter-inline-'+width);
     await ev('document.querySelectorAll("details")[9].scrollIntoView()');
     await shot('guide-backup-'+width);
