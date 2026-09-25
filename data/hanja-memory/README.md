@@ -141,3 +141,4 @@ Windows의 Chrome으로 확인하려면 실행 중인 서버에 대해 `node scr
 - 최신 확인 배포: `dpl_4UVnTSTotF47P2MuLEUb3AVWwfBh`. 운영 주소: https://living-books-beta.vercel.app. 이 ID는 당시 검증 기록이며 다음 배포 때 갱신합니다.
 - 다운로드 HTML도 재생성했습니다. 이미 내려받은 사본은 다시 내려받아야 변경 사항이 반영됩니다.
 메타 준비·일시정지 dialog는 position:fixed/inset:0/margin:auto로 화면 가로·세로 중앙에 고정합니다. HANJA_DIALOG_ONLY=1로 네 화면 크기에서 두 창의 중심 좌표를 검사합니다. 창 내부 부분 캡처는 변경이 없어 재사용합니다.
+메타 타이머 표시: 숫자 카운트다운은 제거하고 progress 막대만 줄어듭니다. 남은 시간이 1000ms 이하일 때 빨간색(#dc2626)으로 바뀝니다. 일시정지 창에도 남은 숫자를 표시하지 않습니다. HANJA_TIMER_ONLY=1 검사로 숫자 숨김·색 전환·시간 초과 평가를 확인합니다.

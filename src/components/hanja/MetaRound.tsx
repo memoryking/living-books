@@ -58,14 +58,13 @@ export default function MetaRound({ reading, seconds, prepared, onPrepared, onRe
   };
   return <>
     {phase === 'running' ? <>{children}<div className={styles.metaActions}>
-      <div className={styles.metaTimer} role="timer" aria-label="남은 시간">{(remaining / 1000).toFixed(1)}초</div>
-      <progress max={seconds * 1000} value={remaining} aria-label="남은 시간 비율"/>
+      <progress className={remaining <= 1000 ? styles.metaUrgent : undefined} max={seconds * 1000} value={remaining} aria-label="남은 시간"/>
       <div className={styles.metaChoices}>{choices.map(choice => <button key={choice} onClick={() => finish(performance.now() >= deadline.current ? 'timeout' : choice === answer ? 'correct' : 'wrong')}>{choice}</button>)}</div>
       <small>훈음의 첫 글자를 선택하세요.</small>
     </div></> : <div className={styles.listPrompt}><p>학습 준비</p></div>}
     {phase !== 'running' && <dialog ref={dialog} className={styles.metaDialog} aria-labelledby="meta-ready-title" onCancel={e => e.preventDefault()}>
       <h2 id="meta-ready-title">{phase === 'ready' ? '메타 학습 준비' : '학습 일시정지'}</h2>
-      <p>{phase === 'ready' ? `한 글자당 ${seconds}초 · 훈음의 첫 글자 고르기` : `남은 시간 ${(remaining / 1000).toFixed(1)}초`}</p>
+      <p>{phase === 'ready' ? `한 글자당 ${seconds}초 · 훈음의 첫 글자 고르기` : '계속하기를 누르면 남은 시간부터 이어집니다.'}</p>
       <p>선택 또는 시간 초과 시 자동으로 평가·저장합니다.</p>
       <button autoFocus className={styles.primary} onClick={begin}>{phase === 'ready' ? '시작' : '계속하기'}</button>
     </dialog>}

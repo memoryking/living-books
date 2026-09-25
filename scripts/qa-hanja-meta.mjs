@@ -37,6 +37,19 @@ try {
     await send('Page.reload');await wait('document.querySelector("select[aria-label]")?.value==="3"');await pause(200);
     await press('선택 학습');await pickList('bookmarks');await wait('!!document.querySelector("dialog[open]")');
     await centered();
+    if(process.env.HANJA_TIMER_ONLY){
+      await exact('시작');
+      assert.ok(await ev('!document.querySelector("[class*=metaTimer]") && !document.querySelector("[class*=metaActions]").textContent.includes("초")'));
+      assert.equal(await ev('getComputedStyle(document.querySelector("progress")).accentColor'),'rgb(36, 92, 73)');
+      await wait('!!document.querySelector("progress[class*=metaUrgent]")');
+      assert.ok(await ev('document.querySelector("progress").value<=1000'));
+      assert.equal(await ev('getComputedStyle(document.querySelector("progress")).accentColor'),'rgb(220, 38, 38)');
+      await pause(100);
+      await shot('meta-timer-red-'+width);
+      if(width===390)await guideShot('meta-question','[class*=metaActions]');
+      await wait('document.body.innerText.includes("시간 초과 · 저장 완료")');
+      assert.equal((await records())[42].needsReview,true);continue;
+    }
     if(process.env.HANJA_DIALOG_ONLY){await shot('meta-ready-centered-'+width);await exact('시작');await ev('window.dispatchEvent(new Event("blur"))');await wait('!!document.querySelector("dialog[open]")');await centered();continue;}
     assert.ok(await ev('!document.querySelector("[class*=bigHanja]")'));
     if(width===390)await guideShot('meta-ready','dialog');
@@ -76,7 +89,7 @@ try {
     await exact('시작');await exact('달');assert.equal((await records())[2].stage,1);
     console.log('PASS meta',width,height);
   }
-  if(process.env.HANJA_DIALOG_ONLY){assert.deepEqual(errors,[]);console.log('PASS: ready and paused dialogs centered at all four viewport sizes.');}
+  if(process.env.HANJA_DIALOG_ONLY || process.env.HANJA_TIMER_ONLY){assert.deepEqual(errors,[]);console.log('PASS: targeted dialog/timer checks at all four viewport sizes.');}
   else {
   await press('자율 학습');assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1-preferences")).mode'),'free');
   await press('메타 학습');await ev('(()=>{const e=document.querySelector("select[aria-label]");e.value="7";e.dispatchEvent(new Event("change",{bubbles:true}))})()');await pause(100);

@@ -40,14 +40,6 @@
     "height": 276
   },
   {
-    "id": "meta-question",
-    "section": 4,
-    "title": "남은 시간과 훈음 첫 글자 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/meta-question.png",
-    "width": 368,
-    "height": 160
-  },
-  {
     "id": "meta-answer",
     "section": 4,
     "title": "자동 평가 저장 후 다음 문제로",
@@ -86,5 +78,13 @@
     "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/answer.png",
     "width": 696,
     "height": 144
+  },
+  {
+    "id": "meta-question",
+    "section": 4,
+    "title": "남은 시간과 훈음 첫 글자 선택",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-12-26-899Z/meta-question.png",
+    "width": 368,
+    "height": 121
   }
 ]
