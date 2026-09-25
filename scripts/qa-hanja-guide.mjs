@@ -23,11 +23,18 @@ try {
     await ev('Array.from(document.querySelectorAll("button")).find(b=>b.textContent.includes("학습 안내")).click()');
     await wait('document.querySelectorAll("details").length===10');
     assert.equal(await ev('document.querySelectorAll("details[open]").length'),1);
-    assert.equal(await ev('Array.from(document.querySelectorAll("details a")).filter(a=>a.href.includes("/guide/")).length'),7);
+    assert.equal(await ev('document.querySelectorAll("details img").length'),11);
+    assert.equal(await ev('document.querySelectorAll("details a").length'),0);
     await ev('document.querySelectorAll("details").forEach(e=>e.open=true)');
     assert.ok(await ev('document.documentElement.scrollWidth<=innerWidth+1'));
     assert.ok(await ev('document.body.innerText.includes("35개가 되지는") && document.body.innerText.includes("두 기기의 기록을 합치는 기능이 아닙니다")'));
     await shot('guide-expanded-'+width);
+    await ev('document.querySelectorAll("details")[2].scrollIntoView()');
+    await wait('document.querySelectorAll("details")[2].querySelector("img").naturalWidth>0');
+    const layout=await ev('(()=>{const d=document.querySelectorAll("details")[2],i=d.querySelector("figure").getBoundingClientRect(),p=d.querySelector("p").getBoundingClientRect();return {ix:i.x,iy:i.y,ib:i.bottom,ir:i.right,px:p.x,py:p.y}})()');
+    assert.ok(width>700 ? layout.px>layout.ir : layout.py>=layout.ib);
+    assert.ok(await ev('document.querySelectorAll("details")[2].querySelector("img").naturalHeight<300'));
+    await shot('guide-filter-inline-'+width);
     await ev('document.querySelectorAll("details")[9].scrollIntoView()');
     await shot('guide-backup-'+width);
   }

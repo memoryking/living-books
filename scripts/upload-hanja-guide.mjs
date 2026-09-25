@@ -15,6 +15,6 @@ for(const [id,section,title] of shots){
   await client.send(new PutObjectCommand({Bucket:env.R2_BUCKET || 'livingbooks-media',Key:key,Body:body,ContentType:'image/png',CacheControl:'public, max-age=31536000, immutable'}));
   const url=base+'/'+key;const check=await fetch(url,{method:'HEAD'});
   if(!check.ok || !check.headers.get('content-type')?.includes('image/png'))throw Error('Public image unavailable: '+id);
-  manifest.push({id,section,title,url,width:780,height:1688});console.log('Uploaded and verified:',id);
+  manifest.push({id,section,title,url,width:body.readUInt32BE(16),height:body.readUInt32BE(20)});console.log('Uploaded and verified:',id);
 }
 await fs.writeFile('data/hanja-memory/guide-screens.json',JSON.stringify(manifest,null,2)+'\n');

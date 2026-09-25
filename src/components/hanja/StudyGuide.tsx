@@ -78,15 +78,23 @@ const sections = [
 ];
 
 export default function StudyGuide() {
+  const sectionImages = [['new-lesson'],['today'],['choose'],['answer'],['today'],['choose'],['writing','writing-answer'],['new-lesson'],['answer'],['backup']];
   return <div className={styles.detailedGuide}>
     <p>처음이라면 1번부터 읽어 보세요. 궁금한 제목을 누르면 자세한 설명이 펼쳐집니다. 학습 화면과 달리 이 안내는 아래로 스크롤하며 읽습니다.</p>
-    <p>‘화면 보기’를 누르면 실제 앱을 캡처한 이미지를 새 탭에서 크게 볼 수 있습니다. 화면의 날짜·학습 개수·책갈피·손글씨는 설명용 예시이며 내 학습 기록이 아닙니다.</p>
+    <p>설명에 필요한 화면 부분을 함께 보여드립니다. 화면의 날짜·학습 개수·책갈피·손글씨는 설명용 예시이며 내 학습 기록이 아닙니다.</p>
     {sections.map((section,index)=><details key={section.title} open={index===0}>
       <summary>{section.title}</summary>
-      {screenshots.some(shot=>shot.section===index+1) && <ul className={styles.guideScreens} aria-label="사용 화면 예시">
-        {screenshots.filter(shot=>shot.section===index+1).map(shot=><li key={shot.id}><a href={shot.url} target="_blank" rel="noopener noreferrer">화면 보기: {shot.title} ↗</a></li>)}
-      </ul>}
-      {section.paragraphs.map((text,i)=><p key={i}>{text}</p>)}
+      <div className={styles.guideIllustrated}>
+        <div className={styles.guideFigures}>
+          {sectionImages[index].map(id=>screenshots.find(shot=>shot.id===id)).filter(shot=>!!shot).map(shot=><figure key={shot.id}>
+            {/* Native img keeps these public R2 screenshots directly accessible without an optimization proxy. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={shot.url} alt={shot.title} width={shot.width} height={shot.height} loading="lazy"/>
+            <figcaption>{shot.title}</figcaption>
+          </figure>)}
+        </div>
+        <div className={styles.guideExplanation}>{section.paragraphs.map((text,i)=><p key={i}>{text}</p>)}</div>
+      </div>
     </details>)}
   </div>;
 }

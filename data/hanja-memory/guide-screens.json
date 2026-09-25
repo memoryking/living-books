@@ -3,56 +3,56 @@
     "id": "today",
     "section": 2,
     "title": "오늘 복습과 새 글자 학습 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/today.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/today.png",
+    "width": 680,
+    "height": 602
   },
   {
     "id": "new-lesson",
     "section": 1,
     "title": "새 글자의 그림과 암기법 배우기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/new-lesson.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/new-lesson.png",
+    "width": 696,
+    "height": 572
   },
   {
     "id": "choose",
     "section": 3,
     "title": "책갈피 범위를 골라 정답 없이 시험하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/choose.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/choose.png",
+    "width": 764,
+    "height": 130
   },
   {
     "id": "answer",
     "section": 4,
     "title": "정답 확인과 두 가지 자기평가",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/answer.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/answer.png",
+    "width": 696,
+    "height": 144
   },
   {
     "id": "writing",
     "section": 7,
     "title": "뜻과 음을 보고 직접 쓰기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/writing.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/writing.png",
+    "width": 324,
+    "height": 384
   },
   {
     "id": "writing-answer",
     "section": 7,
     "title": "내 글씨 뒤에 정답을 겹쳐 비교하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/writing-answer.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/writing-answer.png",
+    "width": 224,
+    "height": 274
   },
   {
     "id": "backup",
     "section": 10,
     "title": "학습 기록 내보내기와 가져오기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-11-12-342Z/backup.png",
-    "width": 780,
-    "height": 1688
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/backup.png",
+    "width": 740,
+    "height": 386
   }
 ]
