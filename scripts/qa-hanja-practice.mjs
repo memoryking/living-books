@@ -17,7 +17,7 @@ try {
   await send('Runtime.enable');await send('Page.enable');
   const press=async label=>{await ev('Array.from(document.querySelectorAll("button")).find(b=>b.textContent.includes('+JSON.stringify(label)+')).click()');await new Promise(r=>setTimeout(r,100));};
   const choose=async (index,value)=>{if(index===2){await ev('document.querySelector("summary[aria-label]").click()');await ev('Array.from(document.querySelectorAll("[data-character-id]")).find(b=>b.dataset.characterId==='+JSON.stringify(value)+').click()');await new Promise(r=>setTimeout(r,100));return;}await ev('(()=>{const e=document.querySelectorAll("select")['+index+'];e.value='+JSON.stringify(value)+';e.dispatchEvent(new Event("change",{bubbles:true}))})()');await new Promise(r=>setTimeout(r,100));};
-  for(const [width,height] of [[1280,800],[390,844],[320,568],[844,390]]) {
+  for(const [width,height] of [[1920,1080],[1366,768],[1280,800],[768,1024],[1024,768],[390,844],[320,568],[844,390]]) {
     await send('Page.navigate',{url:'about:blank'});
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});
     await send('Page.navigate',{url:'http://127.0.0.1:3100/premium/hanja-memory/read'});
@@ -28,7 +28,12 @@ try {
     assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(o=>o.dataset.characterId)'),['42','1','2']);
     assert.ok(await ev('!document.querySelector("[class*=characterOptions]").textContent.includes("말 마")'));
     const due=await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due');
-    await press('정답 보기');await press('맞혔어요');
+    await shot('practice-question-'+width);
+    if(width>=1100)assert.ok(await ev('parseFloat(getComputedStyle(document.querySelector("[class*=bigHanja]")).fontSize)>=180'));
+    await press('정답 보기');
+    await shot('practice-answer-'+width);
+    assert.ok(await ev('document.documentElement.scrollHeight<=innerHeight+2 && [...document.querySelectorAll("[class*=quizCard]")].every(e=>e.scrollHeight<=e.clientHeight+2)'), 'answer overflow');
+    await press('맞혔어요');
     assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[42].due'),due);
     await choose(2,'2');await press('정답 보기');await press('다시 연습');
     assert.equal(await ev('JSON.parse(localStorage.getItem("living-books-hanja-memory-v1")).records[2].needsReview'),true);
