@@ -26,7 +26,8 @@ try {
     await send('Page.reload');await wait('document.body.innerText.includes("새 글자 배우기")');
     await press('선택 학습');
     const assertBlocked=async()=>assert.ok(await ev('document.body.innerText.includes("학습 목록을 선택해 주세요") && ![...document.querySelectorAll("button")].some(b=>b.textContent.includes("정답 보기") || b.textContent.includes("맞혔어요"))'));
-    await assertBlocked();await choose(2,'42');await assertBlocked();
+    await assertBlocked();assert.ok(await ev('!document.querySelector("[class*=bigHanja],[class*=quizCard],[data-character-id]")'));
+    await choose(0,'1');await assertBlocked();await choose(0,'0');
     await press('뜻과 음 → 쓰기');await assertBlocked();
     await press('범위 처음부터');await assertBlocked();
     await press('한자 → 뜻과 음');await choose(1,'bookmarks');
