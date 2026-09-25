@@ -79,7 +79,7 @@ try {
     // Restore a due one-day record and verify today's review advances to three days.
     await ev('(()=>{const s=JSON.parse(localStorage.getItem("living-books-hanja-memory-v1"));s.records[1]={stage:1,due:Date.now()-1000,last:1,attempts:1,misses:0,needsReview:false};localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify(s))})()');
     await send('Page.reload');await wait('document.querySelector("select[aria-label]")?.value==="3"');await pause(200);
-    await press('오늘 복습 시작');await exact('시작');await exact('날');
+    await press('지금 학습 시작');await exact('시작');await exact('날');
     r=await records();assert.equal(r[1].stage,2);assert.ok(Math.abs(r[1].due-Date.now()-259200000)<3000);
     await press('오늘 학습');await press('뜻과 음 → 쓰기');assert.ok(await ev('!document.querySelector("[class*=modeControls]")'));
     await press('선택 학습');await pickList('bookmarks');assert.ok(await ev('!!document.querySelector("canvas") && !document.querySelector("dialog")'));

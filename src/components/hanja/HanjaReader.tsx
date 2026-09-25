@@ -207,8 +207,8 @@ export default function HanjaReader() {
         {!needsList && !session && <div className={styles.studyHome}>{needsList ? <p role="status">학습 목록을 선택해 주세요.</p> : <><p>{filtered.length ? '선택한 범위를 순서대로 확인합니다.' : '이 범위에는 글자가 없습니다.'}</p><button disabled={!filtered.length} className={styles.primary} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>선택 범위 시작 · {filtered.length}개</button><small>맞히면 기존 일정 유지 · 모르면 10분 뒤 다시 연습</small></>}</div>}
       </> : !session && <>
         <div className={styles.studyHome}>
-          <h3>지금 가능한 복습</h3><p>{due.length ? `지금 복습할 글자 ${due.length}개` : '지금 복습할 한자가 없습니다.'}</p>
-          <button className={styles.primary} disabled={!ready || !due.length} onClick={handleStartToday}>오늘 복습 시작 · {Math.min(due.length,10)}개</button>
+          <h3>지금 학습 가능한 한자</h3><p>{due.length ? `지금 복습할 글자 ${due.length}개` : '지금 복습할 한자가 없습니다.'}</p>
+          <button className={styles.primary} disabled={!ready || !due.length} onClick={handleStartToday}>지금 학습 시작 · {Math.min(due.length,10)}개</button>
           <small>{due.length ? '오래 기다린 글자부터 최대 10개씩' : Number.isFinite(nextDue) ? '다음 복습: '+formatDate(nextDue) : '아래에서 새 글자 학습을 시작하세요.'}</small>
           {laterToday>0 && <small>오늘 남은 예정 {laterToday}개 · 아직 복습 시각 전입니다.</small>}
           <button className={styles.secondary} disabled={!ready || !newIds.length} onClick={()=>start(newIds,true,true)}>새 글자 배우기 · {newIds.length}개</button>
@@ -230,7 +230,7 @@ export default function HanjaReader() {
       </article>}
       {!needsList && session && !quiz && <div className={styles.sessionSummary}><span className={styles.finishMark}>✓</span><h3>이번 학습을 마쳤어요.</h3><p>기억남 <strong>{session.good}</strong> · 다시 보기 <strong>{session.missed.length}</strong></p><p className={styles.muted}>학습 결과이며 완전 암기를 뜻하지는 않습니다.</p>{tab === 'read' && session.missed.length > 0 && <div className={styles.missedList}>{session.missed.map(id => <button key={id} onClick={() => { go(id); setTab('read'); }}>{entries[id - 1].char} · {entries[id - 1].reading}</button>)}</div>}<div className={styles.buttonRow}>{tab === 'read' && session.missed.length > 0 && <button className={styles.primary} onClick={() => start(session.missed,false,true,true)}>헷갈린 글자만 한 번 더</button>}<button className={styles.secondary} onClick={() => setSession(null)}>{tab==='read'?'범위 선택으로':'오늘 학습으로'}</button></div></div>}
       {tab==='recall' && session && !quiz && <div className={styles.completionDue}>
-        {due.length ? <><p>지금 복습할 한자 {due.length}개가 남아 있습니다.</p><button className={styles.primary} onClick={handleStartToday}>오늘 복습 시작 · {Math.min(due.length,10)}개</button></> : <><p>아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.</p>{Number.isFinite(nextDue) && <p>다음 복습: {formatDate(nextDue)}</p>}</>}
+        {due.length ? <><p>지금 복습할 한자 {due.length}개가 남아 있습니다.</p><button className={styles.primary} onClick={handleStartToday}>지금 학습 시작 · {Math.min(due.length,10)}개</button></> : <><p>아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.</p>{Number.isFinite(nextDue) && <p>다음 복습: {formatDate(nextDue)}</p>}</>}
         {session.missed.length>0 && <small>틀린 한자는 평가한 시각부터 10분 뒤에 다시 나옵니다.</small>}
         {laterToday>0 && <small>오늘 남은 예정 {laterToday}개 · 정확한 복습 시각이 되면 시작할 수 있습니다.</small>}
       </div>}

@@ -58,7 +58,7 @@ try {
     await shot('practice-writing-'+width);
     const bounds=await ev('({h:innerHeight,doc:document.documentElement.scrollHeight,panels:[...document.querySelectorAll("[class*=quizCard],[class*=quizAnswer],[class*=recallSection]")].map(e=>({name:e.className,h:e.clientHeight,s:e.scrollHeight}))})');
     console.log(JSON.stringify(bounds));assert.ok(bounds.doc<=height+2 && bounds.panels.every(e=>e.s<=e.h+2));
-    await press('오늘 학습');assert.ok(await ev('document.body.innerText.includes("오늘 복습 시작")'));
+    await press('오늘 학습');assert.ok(await ev('document.body.innerText.includes("지금 학습 시작")'));
     await press('새 글자 배우기');assert.ok(await ev('document.body.innerText.includes("그림으로 배우기")'));
   }
   assert.deepEqual(errors,[]);
