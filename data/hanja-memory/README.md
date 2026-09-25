@@ -140,3 +140,4 @@ Windows의 Chrome으로 확인하려면 실행 중인 서버에 대해 `node scr
 - `node scripts/verify-hanja-deployment.mjs`: 운영 관리자·소개·학습·전체 본문·iframe 및 이미지 31개(표지 1개와 묶음 30개)의 정상 응답을 확인했습니다.
 - 최신 확인 배포: `dpl_4UVnTSTotF47P2MuLEUb3AVWwfBh`. 운영 주소: https://living-books-beta.vercel.app. 이 ID는 당시 검증 기록이며 다음 배포 때 갱신합니다.
 - 다운로드 HTML도 재생성했습니다. 이미 내려받은 사본은 다시 내려받아야 변경 사항이 반영됩니다.
+메타 준비·일시정지 dialog는 position:fixed/inset:0/margin:auto로 화면 가로·세로 중앙에 고정합니다. HANJA_DIALOG_ONLY=1로 네 화면 크기에서 두 창의 중심 좌표를 검사합니다. 창 내부 부분 캡처는 변경이 없어 재사용합니다.
