@@ -23,7 +23,7 @@ try {
     await ev('Array.from(document.querySelectorAll("button")).find(b=>b.textContent.includes("학습 안내")).click()');
     await wait('document.querySelectorAll("details").length===10');
     assert.equal(await ev('document.querySelectorAll("details[open]").length'),1);
-    assert.equal(await ev('document.querySelectorAll("details img").length'),12);
+    assert.equal(await ev('document.querySelectorAll("details img").length'),15);
     assert.equal(await ev('document.querySelectorAll("details a").length'),0);
     await ev('document.querySelectorAll("details").forEach(e=>e.open=true)');
     assert.ok(await ev('document.documentElement.scrollWidth<=innerWidth+1'));

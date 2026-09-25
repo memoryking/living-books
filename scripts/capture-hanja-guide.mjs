@@ -24,6 +24,7 @@ try {
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:2,mobile:true});
   await send('Page.navigate',{url:(process.env.HANJA_QA_BASE || 'https://living-books-beta.vercel.app')+'/premium/hanja-memory/read'});
   await wait('document.body.innerText.includes("새 글자 배우기")');
+  await ev('localStorage.removeItem("living-books-hanja-memory-v1-preferences")');
   // Dedicated demonstration profile only: never capture personal notes or real progress.
   await ev('localStorage.setItem("living-books-hanja-memory-v1",JSON.stringify({version:1,lastId:1,records:Object.fromEntries([42,1,2,3,4,5].map((id,stage)=>[id,{stage,due:stage?Date.now()+stage*86400000:Date.now()-600000,last:1,attempts:1,misses:stage?0:1,needsReview:stage===0}])),bookmarks:[42,1,2,3,4,5],notes:{}}))');
   await send('Page.reload');await new Promise(r=>setTimeout(r,1500));
