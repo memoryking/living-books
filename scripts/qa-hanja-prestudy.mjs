@@ -44,11 +44,11 @@ try {
     assert.ok(await ev('document.body.innerText.includes("미리 복습 시작 · 1개") && !document.querySelector("[class*=quizCard]")'));
     await press('미리 복습 시작');await fits();await press('정답 보기');await fits();await press('맞혔어요');assert.deepEqual(await records(),original);
     await pick('bookmarks');assert.ok(await ev('document.body.innerText.includes("미리 복습 시작 · 2개")'));
-    await ev('document.querySelector("[class*=directChoice]>summary").click();document.querySelector("summary[aria-label]").click()');
+    await ev('document.querySelector("[class*=directChoice]>summary").click()');
     assert.deepEqual(await ev('[...document.querySelectorAll("[data-character-id]")].map(e=>+e.dataset.characterId)'),[42,1]);
-    assert.ok(await ev('!document.querySelector("[class*=characterOptions]").textContent.includes("말 마")'));
+    assert.ok(await ev('!document.querySelector("[class*=checklistItems]").textContent.includes("말 마")'));
     await ev('[...document.querySelectorAll("[data-character-id]")].find(e=>e.dataset.characterId==="42").click();document.querySelector("[class*=directChoice]").removeAttribute("open")');await pause(100);
-    assert.ok(await ev('document.querySelector("[class*=bigHanja]").textContent==="馬"'));
+    assert.ok(await ev('!document.querySelector("[class*=quizCard]")'));await press('미리 복습 시작');assert.ok(await ev('document.querySelector("[class*=bigHanja]").textContent==="馬"'));await press('범위 다시 선택');await ev('document.querySelector("[class*=directChoice]>summary").click()');await press('체크 해제');await press('선택 완료');await press('미리 복습 시작');
     await press('범위 다시 선택');await press('미리 복습 시작');await fits();await shot('prestudy-question-'+width);
     if(width>=1100)assert.ok(await ev('parseFloat(getComputedStyle(document.querySelector("[class*=bigHanja]")).fontSize)>=180'));
     await press('정답 보기');await fits();await shot('prestudy-answer-'+width);await press('다시 확인');
@@ -60,7 +60,7 @@ try {
     await press('틀린 한자 다시 확인');await press('정답 보기');await press('맞혔어요');
     assert.ok(await ev('document.body.innerText.includes("선택한 2개를 이번 연습에서 모두 맞혔어요") && ![...document.querySelectorAll("button")].some(b=>b.textContent.includes("틀린 한자 다시 확인"))'));
     assert.deepEqual(await records(),original,'repeated misses and subsequent pass preserve records');
-    await press('범위 선택으로');await press('뜻과 음 → 쓰기');await press('미리 복습 시작');
+    await press('여기서 마치기');await press('뜻과 음 → 쓰기');await press('미리 복습 시작');
     assert.ok(await ev('!!document.querySelector("canvas") && !document.querySelector("dialog")'));
     const box=await ev('(()=>{const r=document.querySelector("canvas").getBoundingClientRect();return {x:r.x+r.width*.3,y:r.y+r.height*.3}})()');
     await send('Input.dispatchMouseEvent',{type:'mousePressed',...box,button:'left',clickCount:1});

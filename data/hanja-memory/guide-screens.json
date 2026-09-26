@@ -40,14 +40,6 @@
     "height": 1186
   },
   {
-    "id": "practice-complete",
-    "section": 6,
-    "title": "미리 복습에서 틀린 한자만 바로 다시 확인",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/practice-complete.png",
-    "width": 370,
-    "height": 385
-  },
-  {
     "id": "today-complete",
     "section": 5,
     "title": "오늘 학습 완료 후 다음 복습 시각 안내",
@@ -80,10 +72,26 @@
     "height": 60
   },
   {
+    "id": "answer",
+    "section": 4,
+    "title": "정답 확인과 두 가지 자기평가",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/answer.png",
+    "width": 696,
+    "height": 144
+  },
+  {
+    "id": "practice-complete",
+    "section": 6,
+    "title": "미리 복습에서 틀린 한자만 바로 다시 확인",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/practice-complete.png",
+    "width": 370,
+    "height": 485
+  },
+  {
     "id": "select-list",
     "section": 3,
     "title": "배운 한자의 범위를 고르고 미리 복습 시작",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/select-list.png",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/select-list.png",
     "width": 680,
     "height": 476
   },
@@ -91,16 +99,8 @@
     "id": "choose",
     "section": 3,
     "title": "책갈피 범위를 골라 정답 없이 시험하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/choose.png",
-    "width": 764,
-    "height": 1056
-  },
-  {
-    "id": "answer",
-    "section": 4,
-    "title": "정답 확인과 두 가지 자기평가",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/answer.png",
-    "width": 696,
-    "height": 144
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/choose.png",
+    "width": 756,
+    "height": 914
   }
 ]

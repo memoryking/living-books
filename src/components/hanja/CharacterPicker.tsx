@@ -1,32 +1,18 @@
 'use client';
-import {useEffect,useRef} from 'react';
-import {REVIEW_STAGES,reviewStage,type StudyRecord} from '@/lib/hanja-study';
+import {reviewStage,type StudyRecord} from '@/lib/hanja-study';
 import styles from './hanja.module.css';
 
-export default function CharacterPicker({entries,records,value,now,onChange}:{entries:{id:number;char:string}[];records:Record<number,StudyRecord>;value:number;now:number;onChange:(id:number)=>void}) {
-  const root=useRef<HTMLDetailsElement>(null);
-  const selected=entries.find(e=>e.id===value);
-  const stage=reviewStage(selected?records[selected.id]:undefined);
-  useEffect(()=>{
-    const close=(event:PointerEvent)=>{if(event.target instanceof Node && !root.current?.contains(event.target))root.current?.removeAttribute('open');};
-    document.addEventListener('pointerdown',close);return()=>document.removeEventListener('pointerdown',close);
-  },[]);
-  return <div className={styles.characterField}><span>글자 선택</span>
-    <details className={styles.characterPicker} ref={root} onKeyDown={e=>{if(e.key==='Escape'){root.current?.removeAttribute('open');root.current?.querySelector('summary')?.focus();}}}>
-      <summary aria-label="글자 선택" style={{background:stage.background,color:stage.color}}>
-        <span>{selected?String(selected.id).padStart(3,'0')+' · '+selected.char:entries.length?'직접 선택':'해당 항목 없음'}</span>
-        {selected&&<small>{stage.label}{records[selected.id] && records[selected.id].due<=now?' · 시간 됨':''}</small>}
-      </summary>
-      <div className={styles.characterMenu} aria-label="복습 단계별 글자 목록">
-        <p>색은 남은 시간이 아닌 복습 단계입니다.</p>
-        <div className={styles.stageLegend}>{REVIEW_STAGES.map(s=><span key={s.label} style={{background:s.background,color:s.color}}>{s.label}</span>)}</div>
-        <div className={styles.characterOptions}>
-          {!entries.length&&<p>선택한 범위에 글자가 없습니다.</p>}
-          {entries.map(e=>{const r=records[e.id],s=reviewStage(r);return <button key={e.id} type="button" data-character-id={e.id} aria-current={e.id===value?'true':undefined} style={{background:s.background,color:s.color}} onClick={()=>{onChange(e.id);root.current?.removeAttribute('open');root.current?.querySelector('summary')?.focus();}}>
-            <strong>{String(e.id).padStart(3,'0')} · {e.char}</strong><span>{s.label}{r&&r.due<=now?' · 복습 시간 됨':''}</span>
-          </button>;})}
-        </div>
-      </div>
-    </details>
+export default function CharacterPicker({entries,records,checked,now,onChange,onClose}:{entries:{id:number;char:string}[];records:Record<number,StudyRecord>;checked:number[];now:number;onChange:(ids:number[])=>void;onClose:()=>void}) {
+  return <div className={styles.checklist} aria-label="복습할 한자 선택">
+    <p role="status">{checked.length ? `${checked.length}개 선택 · 선택한 한자만 학습` : `선택 안 함 · 현재 범위 전체 ${entries.length}개 학습`}</p>
+    <small>훈음은 숨겨져 있어요. 색은 원래 복습 단계입니다.</small>
+    <div className={styles.checklistTools}><button type="button" disabled={!entries.length} onClick={()=>onChange(entries.map(e=>e.id))}>모두 체크</button><button type="button" disabled={!checked.length} onClick={()=>onChange([])}>체크 해제</button><button type="button" onClick={onClose}>선택 완료</button></div>
+    <div className={styles.checklistItems}>
+      {!entries.length && <p>이 범위에는 학습한 한자가 없어요.</p>}
+      {entries.map(e=>{const r=records[e.id],s=reviewStage(r);return <label key={e.id} style={{background:s.background,color:s.color}}>
+        <input type="checkbox" data-character-id={e.id} checked={checked.includes(e.id)} onChange={event=>onChange(event.target.checked?[...checked,e.id]:checked.filter(id=>id!==e.id))}/>
+        <strong>{String(e.id).padStart(3,'0')} · {e.char}</strong><span>{s.label}{r&&r.due<=now?' · 시간 됨':''}</span>
+      </label>;})}
+    </div>
   </div>;
 }

@@ -14,7 +14,7 @@ try {
   const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const wait=async expression=>{for(let i=0;i<100;i++){if(await ev(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error(expression);};
   const shot=async name=>{
-    const selectors={'select-list':'[class*=studyHome] > *',today:'[class*=dailyHome] > *','new-lesson':'[class*=answerPair], [class*=textPages] > p',choose:'[class*=quickSelect], [class*=characterMenu]',answer:'[class*=gradeButtons]',writing:'[class*=padWrap]','writing-answer':'[class*=padWrap]',backup:'[class*=guideProse] > h3:first-child, [class*=guideProse] > p:first-of-type, [class*=guideProse] > [class*=buttonRow]'};
+    const selectors={'select-list':'[class*=studyHome] > *',today:'[class*=dailyHome] > *','new-lesson':'[class*=answerPair], [class*=textPages] > p',choose:'[class*=checklist]',answer:'[class*=gradeButtons]',writing:'[class*=padWrap]','writing-answer':'[class*=padWrap]',backup:'[class*=guideProse] > h3:first-child, [class*=guideProse] > p:first-of-type, [class*=guideProse] > [class*=buttonRow]'};
     const clip=await ev('(()=>{const rs=[...document.querySelectorAll('+JSON.stringify(selectors[name])+')].map(e=>e.getBoundingClientRect());const x=Math.max(0,Math.min(...rs.map(r=>r.left))-6),y=Math.max(0,Math.min(...rs.map(r=>r.top))-6);return {x:x+scrollX,y:y+scrollY,width:Math.min(innerWidth,Math.max(...rs.map(r=>r.right))+6)-x,height:Math.min(innerHeight,Math.max(...rs.map(r=>r.bottom))+6)-y,scale:1}})()');
     assert.ok(clip.width>0 && clip.height>0);
     const r=await send('Page.captureScreenshot',{format:'png',clip,captureBeyondViewport:true});await fs.writeFile(path.join(dir,name+'.png'),Buffer.from(r.data,'base64'));
@@ -33,8 +33,8 @@ try {
   await press('미리 복습');await shot('select-list');
   await ev('(()=>{const e=document.querySelectorAll("select")[0];e.value="bookmarks";e.dispatchEvent(new Event("change",{bubbles:true}))})()');
   await new Promise(r=>setTimeout(r,700));
-  await ev('document.querySelector("[class*=directChoice]>summary").click();document.querySelector("summary[aria-label]").click()');await shot('choose');
-  await ev('document.querySelector("summary[aria-label]").click()');
+  await ev('document.querySelector("[class*=directChoice]>summary").click()');await shot('choose');
+
   await ev('document.querySelector("[class*=directChoice]").removeAttribute("open")');await press('미리 복습 시작');await press('정답 보기');await shot('answer');
   await press('뜻과 음 → 쓰기');await press('미리 복습 시작');
   const box=await ev('(()=>{const r=document.querySelector("canvas").getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height}})()');

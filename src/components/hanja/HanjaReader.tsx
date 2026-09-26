@@ -16,7 +16,7 @@ const STORAGE_KEY = 'living-books-hanja-memory-v1';
 const { entries, chapters, comparisons } = hanjaBook;
 type Tab = 'read' | 'recall' | 'compare' | 'guide';
 type Scope = 'all' | 'chapter' | 'bookmarks';
-type Session = { ids: number[]; index: number; good: number; missed: number[]; learning: boolean; reverse: boolean; practice: boolean; total: number };
+type Session = { ids: number[]; index: number; good: number; missed: number[]; learning: boolean; reverse: boolean; practice: boolean; total: number; remaining: number[]; batchTotal: number };
 const formatDate = (time: number) => new Date(time).toLocaleString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 
 export default function HanjaReader() {
@@ -25,7 +25,7 @@ export default function HanjaReader() {
   const [ready, setReady] = useState(false);
   const [notice, setNotice] = useState('');
   const [storageError, setStorageError] = useState('');
-  const [selected, setSelected] = useState(1);
+  const [checked, setChecked] = useState<number[]>([]);
   const [chapter, setChapter] = useState(0);
   const [scope, setScope] = useState<Scope>('all');
   const [memoOpen, setMemoOpen] = useState(false);
@@ -62,14 +62,14 @@ export default function HanjaReader() {
     const followHash = () => {
       const linkedId = Number(window.location.hash.replace('#item-', ''));
       if (Number.isInteger(linkedId) && linkedId >= 1 && linkedId <= entries.length) {
-        setSelected(linkedId); setTab('read'); setShowAnswer(false);
+        setChecked([linkedId]); setTab('read'); setShowAnswer(false);
         setMetaPrepared(false); setMetaResult(null); grading.current = false;
         setSessionKey(key=>key+1);
         let linkedStudy = initial;
         try { linkedStudy = parseStudy(JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null')) || initial; } catch { /* Use restored state if storage is unavailable. */ }
         setReverse(false); setScope('all');
         if (linkedStudy.records[linkedId]?.attempts) {
-          setSession({ids:[linkedId],index:0,good:0,total:1,missed:[],learning:false,reverse:false,practice:true});
+          setSession({ids:[linkedId],index:0,good:0,total:1,remaining:[],batchTotal:1,missed:[],learning:false,reverse:false,practice:true});
         } else {
           setSession(null); setTab('recall');
           setNotice('아직 배우지 않은 한자입니다. 오늘 학습의 새 글자 배우기로 시작하세요.');
@@ -77,7 +77,7 @@ export default function HanjaReader() {
         setStudy(prev => ({ ...prev, lastId: linkedId }));
       }
     };
-    setSelected(initial.lastId); followHash();
+    followHash();
     window.addEventListener('hashchange', followHash);
     setStorageError(message); setNow(Date.now()); setReady(true);
     const id = window.setInterval(() => setNow(Date.now()), 30_000);
@@ -115,19 +115,20 @@ export default function HanjaReader() {
   }).sort((a,b) => list === 'bookmarks' ? study.bookmarks.indexOf(a.id)-study.bookmarks.indexOf(b.id) : a.id-b.id);
   const filtered = filterEntries(chapter, scope);
   const nextDue = Math.min(...Object.values(study.records).map(r => r.due).filter(t => t > now));
-  const filteredIndex = filtered.findIndex(e => e.id === selected);
+  const visibleChecked = checked.filter(id=>filtered.some(e=>e.id===id));
+  const practiceIds = filtered.filter(e=>!visibleChecked.length || visibleChecked.includes(e.id)).map(e=>e.id);
 
-  const go = (id: number) => { if (!study.records[id]?.attempts) { setTab('recall'); setSession(null); setNotice('아직 배우지 않은 한자입니다. 오늘 학습의 새 글자 배우기로 시작하세요.'); return; } setSelected(id); setStudy(prev=>({...prev,lastId:id})); start([id], false, true, true); };
+  const go = (id: number) => { if (!study.records[id]?.attempts) { setTab('recall'); setSession(null); setNotice('아직 배우지 않은 한자입니다. 오늘 학습의 새 글자 배우기로 시작하세요.'); return; } setChecked([id]); setStudy(prev=>({...prev,lastId:id})); start([id], false, true, true); };
   const changeRange = (c: number, list: Scope) => {
-    setChapter(c); setScope(list); const ids = filterEntries(c,list).map(e=>e.id);
-    setSelected(ids[0] || 0); setSession(null); setShowAnswer(false);
+    setChapter(c); setScope(list);
+    setChecked([]); setSession(null); setShowAnswer(false);
     directChoiceRef.current?.removeAttribute('open');
   };
   const toggleBookmark = (id: number) => setStudy(prev => ({ ...prev, bookmarks: prev.bookmarks.includes(id) ? prev.bookmarks.filter(n => n !== id) : [...prev.bookmarks, id] }));
-  const start = (ids: number[], learning = false, ordered = false, practice = false, progress?: { total: number; good: number }) => {
+  const start = (ids: number[], learning = false, ordered = false, practice = false, progress?: { total: number; good: number; remaining?: number[]; batchTotal?: number }) => {
     if (!ids.length) { setNotice('선택한 범위에 학습한 한자가 없습니다. 오늘 학습에서 새 글자를 먼저 배워 보세요.'); return; }
     directChoiceRef.current?.removeAttribute('open');
-    setSession({ ids: (ordered ? ids : shuffled(ids)).slice(0, practice ? ids.length : 10), index: 0, good: progress?.good ?? 0, total: progress?.total ?? ids.length, missed: [], learning, reverse, practice });
+    setSession({ ids: (ordered ? ids : shuffled(ids)).slice(0, 10), index: 0, good: progress?.good ?? 0, total: progress?.total ?? ids.length, remaining: practice ? progress?.remaining ?? ids.slice(10) : [], batchTotal: progress?.batchTotal ?? Math.min(10,ids.length), missed: [], learning, reverse, practice });
     setMetaPrepared(false); setMetaResult(null);
     setSessionKey(key=>key+1);
     setShowAnswer(false); setMemoOpen(false); setTab(practice ? 'read' : 'recall'); grading.current = false; setNotice('');
@@ -142,6 +143,7 @@ export default function HanjaReader() {
   };
   const reveal = () => { grading.current = false; setShowAnswer(true); };
   const handleStartToday = () => {
+    // eslint-disable-next-line react-hooks/purity -- click handler rechecks eligibility, never called during render
     const clock = Date.now(); setNow(clock);
     const ids = entries.filter(e=>study.records[e.id]?.due<=clock).sort((a,b)=>study.records[a.id].due-study.records[b.id].due).slice(0,10).map(e=>e.id);
     if (!ids.length) { setNotice('아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.'); return; }
@@ -207,10 +209,10 @@ export default function HanjaReader() {
         <div className={styles.quickSelect}>
           <label>복습 범위<select value={scope} onChange={e=>changeRange(chapter,e.target.value as Scope)}><option value="all">학습한 한자 전체</option><option value="chapter">단원 선택</option><option value="bookmarks">책갈피 · 담은 순</option></select></label>
           {scope === 'chapter' && <label>단원<select value={chapter} onChange={e=>changeRange(Number(e.target.value),scope)}><option value={0}>전체 단원</option>{chapters.map(c=><option key={c.id} value={c.id}>{c.id}. {c.title}</option>)}</select></label>}
-          <details ref={directChoiceRef} className={styles.directChoice}><summary>한자 직접 고르기</summary><CharacterPicker key={chapter+scope} entries={filtered} records={study.records} value={quiz && filtered.some(e=>e.id===quiz.id)?quiz.id:filteredIndex>=0?selected:0} now={now} onChange={go}/></details>
+          <details ref={directChoiceRef} className={styles.directChoice} onKeyDown={e=>{if(e.key==='Escape'){e.currentTarget.open=false;e.currentTarget.querySelector('summary')?.focus();}}}><summary>한자 직접 고르기{visibleChecked.length>0 ? ' · '+visibleChecked.length+'개' : ''}</summary><CharacterPicker entries={filtered} records={study.records} checked={visibleChecked} now={now} onChange={ids=>{setChecked(ids);setSession(null);setShowAnswer(false);}} onClose={()=>{directChoiceRef.current?.removeAttribute('open');directChoiceRef.current?.querySelector('summary')?.focus();}}/></details>
         </div>
         <div className={styles.practiceLinks}><button onClick={()=>{setReverse(false);setSession(null);setShowAnswer(false);}} aria-pressed={!reverse}>한자 → 뜻과 음</button><button onClick={()=>{setReverse(true);setSession(null);setShowAnswer(false);}} aria-pressed={reverse}>뜻과 음 → 쓰기</button>{session && <button onClick={()=>setSession(null)}>범위 다시 선택</button>}</div>
-        {!session && <div className={styles.studyHome}><h3>예정일 전에, 미리 복습</h3><p>{filtered.length ? '이미 배운 한자를 원하는 만큼 확인하세요.' : '이 범위에는 학습한 한자가 없어요.'}</p>{filtered.length ? <button className={styles.primary} disabled={!ready} onClick={()=>start(filtered.map(e=>e.id),false,true,true)}>미리 복습 시작 · {filtered.length}개</button> : <button className={styles.primary} onClick={()=>setTab('recall')}>오늘 학습에서 새 글자 배우기</button>}<small>맞아도 틀려도 기존 복습 일정은 그대로예요.</small><small>틀린 한자는 기다리지 않고 바로 다시 확인해요.</small></div>}
+        {!session && <div className={styles.studyHome}><h3>예정일 전에, 미리 복습</h3><p>{filtered.length ? visibleChecked.length ? '체크한 '+practiceIds.length+'개를 10개씩 학습해요.' : '선택 안 함 · 현재 범위 전체 '+practiceIds.length+'개를 10개씩 학습해요.' : '이 범위에는 학습한 한자가 없어요.'}</p>{filtered.length ? <button className={styles.primary} disabled={!ready} onClick={()=>start(practiceIds,false,true,true)}>미리 복습 시작 · {Math.min(10,practiceIds.length)}개</button> : <button className={styles.primary} onClick={()=>setTab('recall')}>오늘 학습에서 새 글자 배우기</button>}<small>맞아도 틀려도 기존 복습 일정은 그대로예요.</small><small>틀린 한자는 기다리지 않고 바로 다시 확인해요.</small></div>}
       </> : !session && <>
         <div className={styles.dailyHome}>
           <section className={styles.dailyCard} aria-label="지금 복습">
@@ -239,7 +241,7 @@ export default function HanjaReader() {
           <p className={styles.muted}>답을 본 뒤 알았다면 {session.practice ? '다시 확인' : '다시 연습'}을 선택하세요. 손글씨는 직접 정답과 비교합니다.</p>
         </div>}
       </article>}
-      {session && !quiz && <div className={styles.sessionSummary}><span className={styles.finishMark}>✓</span><h3>{session.practice ? session.missed.length ? '다시 확인할 한자가 있어요.' : '선택한 '+session.total+'개를 이번 연습에서 모두 맞혔어요.' : '이번 학습을 마쳤어요.'}</h3><p>이번에 맞힘 <strong>{session.good}</strong> · 다시 확인 <strong>{session.missed.length}</strong></p><p className={styles.muted}>{session.practice ? '원래 복습 일정과 학습 기록은 바뀌지 않았어요. 연습 결과는 이 화면에서만 유지됩니다.' : '학습 결과이며 완전 암기를 뜻하지는 않습니다.'}</p>{session.practice && session.missed.length > 0 && <div className={styles.missedList}>{session.missed.map(id => <span key={id}>{entries[id - 1].char} · {entries[id - 1].reading}</span>)}</div>}<div className={styles.buttonRow}>{session.practice && session.missed.length > 0 && <button className={styles.primary} onClick={() => start(session.missed,false,true,true,{total:session.total,good:session.good})}>틀린 한자 다시 확인 · {session.missed.length}개</button>}<button className={styles.secondary} onClick={() => setSession(null)}>{session.practice?'범위 선택으로':'오늘 학습으로'}</button></div></div>}
+      {session && !quiz && <div className={styles.sessionSummary}><span className={styles.finishMark}>✓</span><h3>{session.practice ? session.missed.length ? '이번 묶음의 틀린 한자를 다시 확인해요.' : session.remaining.length ? '이번 '+session.batchTotal+'개를 모두 맞혔어요.' : '선택한 '+session.total+'개를 이번 연습에서 모두 맞혔어요.' : '이번 학습을 마쳤어요.'}</h3><p>{session.practice ? '전체 누적 맞힘' : '이번에 맞힘'} <strong>{session.good}</strong> · 다시 확인 <strong>{session.missed.length}</strong></p><p className={styles.muted}>{session.practice ? '원래 복습 일정과 학습 기록은 바뀌지 않았어요. 연습 결과는 이 화면에서만 유지됩니다.' : '학습 결과이며 완전 암기를 뜻하지는 않습니다.'}</p>{session.practice && <p>전체 {session.total}개 중 {session.total-session.remaining.length}개 확인 · 아직 확인할 한자 {session.remaining.length}개</p>}{session.practice && session.missed.length > 0 && <div className={styles.missedList}>{session.missed.map(id => <span key={id}>{entries[id - 1].char} · {entries[id - 1].reading}</span>)}</div>}<div className={styles.buttonRow}>{session.practice && session.missed.length > 0 && <button className={styles.primary} onClick={() => start(session.missed,false,true,true,{total:session.total,good:session.good,remaining:session.remaining,batchTotal:session.batchTotal})}>틀린 한자 다시 확인 · {session.missed.length}개</button>}{session.practice && !session.missed.length && session.remaining.length>0 && <button className={styles.primary} onClick={()=>start(session.remaining,false,true,true,{total:session.total,good:session.good})}>다음 {Math.min(10,session.remaining.length)}개 학습</button>}<button className={styles.secondary} onClick={() => setSession(null)}>{session.practice?'여기서 마치기':'오늘 학습으로'}</button></div></div>}
       {tab==='recall' && session && !quiz && <div className={styles.completionDue}>
         {due.length ? <><p>지금 복습할 한자 {due.length}개가 남아 있습니다.</p><button className={styles.primary} onClick={handleStartToday}>지금 학습 시작 · {Math.min(due.length,10)}개</button></> : <><p>아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.</p>{Number.isFinite(nextDue) && <p>다음 복습: {formatDate(nextDue)}</p>}</>}
         {session.missed.length>0 && <small>틀린 한자는 평가한 시각부터 10분 뒤에 다시 나옵니다.</small>}
@@ -253,7 +255,7 @@ export default function HanjaReader() {
       <StudyGuide/>
       <div className={styles.guideProse}>
       <h3>학습 기록 관리</h3><p>기록은 이 브라우저에 저장됩니다. 다른 기기로 자동 동기화되지 않습니다. 기록 파일에는 책갈피와 개인 메모도 포함됩니다.</p><div className={styles.buttonRow}><button disabled={!ready} className={styles.primary} onClick={exportStudy}>학습 기록 내보내기</button><button disabled={!ready} className={styles.secondary} onClick={() => importInput.current?.click()}>기록 파일 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={readImport}/></div>
-      {pendingImport && <div className={styles.importConfirm} role="region" aria-label="기록 가져오기 확인"><p>파일에 공부 기록 {Object.keys(pendingImport.records).length}개, 책갈피 {pendingImport.bookmarks.length}개가 있습니다. 현재 기록을 이 파일로 바꿉니다.</p><div className={styles.buttonRow}><button className={styles.primary} onClick={() => { setStudy(pendingImport); setSelected(pendingImport.lastId); setSession(null); setPendingImport(null); setNotice('학습 기록을 가져왔습니다.'); }}>이 기록으로 바꾸기</button><button className={styles.secondary} onClick={() => setPendingImport(null)}>취소</button></div></div>}
+      {pendingImport && <div className={styles.importConfirm} role="region" aria-label="기록 가져오기 확인"><p>파일에 공부 기록 {Object.keys(pendingImport.records).length}개, 책갈피 {pendingImport.bookmarks.length}개가 있습니다. 현재 기록을 이 파일로 바꿉니다.</p><div className={styles.buttonRow}><button className={styles.primary} onClick={() => { setStudy(pendingImport); setChecked([]); setSession(null); setPendingImport(null); setNotice('학습 기록을 가져왔습니다.'); }}>이 기록으로 바꾸기</button><button className={styles.secondary} onClick={() => setPendingImport(null)}>취소</button></div></div>}
       <h3>공부 방법 참고</h3><p>꺼내 보기와 간격을 둔 연습을 참고해 구성했습니다. 이 책의 이미지나 일정이 모든 글자에 대해 별도 실험으로 검증되었다는 뜻은 아닙니다.</p><ul><li><a href="https://www.retrievalpractice.org/spacing" target="_blank" rel="noreferrer">Retrieval Practice · 간격을 둔 연습</a></li><li><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noreferrer">Roediger·Karpicke · Test-Enhanced Learning</a></li></ul><p><Link href="/premium/hanja-memory/read/full">서문·29개 단원·복습 안내·비교표·교정표 전체 읽기 →</Link></p></div>
     </section>}
     </main>
