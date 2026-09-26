@@ -64,3 +64,17 @@
 @media(max-width:700px) and (min-height:650px){
   .focusApp .quizCard:not(:has(>.padWrap)) .quizQuestion{flex:1;display:flex;flex-direction:column;justify-content:center}.focusApp .quizQuestion .bigHanja{font-size:clamp(110px,18dvh,155px)}.focusApp .quizCard:has(.quizAnswer) .quizQuestion{display:none}.focusApp .answerPair{grid-template-columns:130px minmax(0,1fr)}.focusApp .answerImage{width:min(130px,calc(150px*var(--image-ratio)))}.focusApp .answerPair .answerHanja{font-size:50px}.focusApp .answerPair h3{font-size:22px}.focusApp .quizAnswer>.textPages{font-size:16px;line-height:1.65}
 }
+
+/* Pre-study keeps scheduling outside the practice flow. */
+@media(min-width:721px) and (max-height:500px){
+  .focusApp .quizCard:not(:has(>.padWrap)):not(:has(.quizAnswer)){display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto minmax(0,1fr)}
+  .focusApp .quizCard:not(:has(>.padWrap)):not(:has(.quizAnswer))>.cardBar{grid-column:1/-1}
+  .focusApp .quizCard:not(:has(>.padWrap)):not(:has(.quizAnswer))>.quizQuestion{display:flex;flex-direction:column;justify-content:center;min-height:0;padding:2px}
+  .focusApp .quizCard:not(:has(>.padWrap)):not(:has(.quizAnswer)) .bigHanja{font-size:64px;line-height:1.1}
+  .focusApp .quizCard:not(:has(>.padWrap)):not(:has(.quizAnswer))>.quizActions,.focusApp .quizCard>.metaActions{justify-content:center;gap:4px;padding:4px}
+  .focusApp .quizCard:has(.listPrompt){display:flex!important}
+}
+.focusApp .quickSelect{grid-template-columns:repeat(auto-fit,minmax(140px,1fr));align-items:end}
+.focusApp .quickSelect:has(>label:nth-child(2)){grid-template-columns:1fr 1fr minmax(78px,.8fr)}
+.directChoice{position:relative;min-width:0;font-size:13px}.directChoice>summary{cursor:pointer;padding:10px;border:1px solid var(--line);border-radius:8px;background:white;list-style:none;text-align:center}.directChoice[open]>.characterField{position:absolute;right:0;top:100%;width:min(340px,85vw);z-index:30;background:var(--paper);padding:8px;border:1px solid var(--line);border-radius:8px}.directChoice .characterMenu{max-height:50dvh;overflow-y:auto}.focusApp .studyHome small{display:block}.focusApp .sessionSummary{overflow-y:auto;min-height:0}.missedList>span{padding:6px 10px;background:#f1f5ec;border-radius:8px;font-size:14px}
+@media(max-height:600px){.focusApp .studyHome{padding:12px}.focusApp .studyHome h3{font-size:20px;margin:6px}.focusApp .studyHome p{margin:6px}.focusApp .studyHome small{font-size:11px;margin:4px}.focusApp .studyHome button{padding:8px;font-size:14px}}

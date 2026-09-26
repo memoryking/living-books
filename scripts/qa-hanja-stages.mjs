@@ -1,3 +1,4 @@
+// Historical selection-study UI. Current pre-study regression: qa-hanja-prestudy.mjs.
 import {spawn} from 'node:child_process';
 import fs from 'node:fs/promises';
 import path from 'node:path';

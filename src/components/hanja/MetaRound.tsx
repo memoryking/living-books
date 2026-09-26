@@ -8,8 +8,8 @@ import styles from './hanja.module.css';
 export type MetaResult = 'correct' | 'wrong' | 'timeout';
 const first = (text: string) => Array.from(text.trim())[0];
 
-export default function MetaRound({ reading, seconds, prepared, onPrepared, onResult, children }: {
-  reading: string; seconds: number; prepared: boolean; onPrepared: () => void;
+export default function MetaRound({ practice = false, reading, seconds, prepared, onPrepared, onResult, children }: {
+  practice?: boolean; reading: string; seconds: number; prepared: boolean; onPrepared: () => void;
   onResult: (result: MetaResult) => void; children: ReactNode;
 }) {
   const answer = first(reading);
@@ -65,7 +65,7 @@ export default function MetaRound({ reading, seconds, prepared, onPrepared, onRe
     {phase !== 'running' && <dialog ref={dialog} className={styles.metaDialog} aria-labelledby="meta-ready-title" onCancel={e => e.preventDefault()}>
       <h2 id="meta-ready-title">{phase === 'ready' ? '메타 학습 준비' : '학습 일시정지'}</h2>
       <p>{phase === 'ready' ? `한 글자당 ${seconds}초 · 훈음의 첫 글자 고르기` : '계속하기를 누르면 남은 시간부터 이어집니다.'}</p>
-      <p>선택 또는 시간 초과 시 자동으로 평가·저장합니다.</p>
+      <p>{practice ? '이번 연습만 평가합니다. 원래 복습 일정은 바뀌지 않아요.' : '선택 또는 시간 초과 시 자동으로 평가·저장합니다.'}</p>
       <button autoFocus className={styles.primary} onClick={begin}>{phase === 'ready' ? '시작' : '계속하기'}</button>
     </dialog>}
   </>;

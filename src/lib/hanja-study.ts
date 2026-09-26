@@ -36,11 +36,11 @@ export function planStudy(ids: number[], records: StudyState['records'], now: nu
   if (due.length) return { ids: due.slice(0, 10), learning: false };
   return { ids: ids.filter(id => !records[id]).slice(0, 5), learning: true };
 }
-export function gradeRecord(previous: StudyRecord | undefined, remembered: boolean, now: number, practice = false): StudyRecord {
+// Scheduled study only. Pre-study keeps results in its session and never calls this.
+export function gradeRecord(previous: StudyRecord | undefined, remembered: boolean, now: number): StudyRecord {
   const attempts = (previous?.attempts ?? 0) + 1;
   const misses = (previous?.misses ?? 0) + (remembered ? 0 : 1);
   if (!remembered) return { stage: 0, due: now + 10 * 60_000, last: now, attempts, misses, needsReview: true };
-  if (practice && previous) return { ...previous, last: now, attempts, misses, needsReview: false };
   // An early retry can restore confidence, but cannot jump the spacing ladder.
   const eligible = !previous || now >= previous.due;
   const stage = eligible ? Math.min((previous?.stage ?? 0) + 1, INTERVAL_DAYS.length) : previous.stage;

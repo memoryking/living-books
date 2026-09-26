@@ -24,30 +24,6 @@
     "height": 386
   },
   {
-    "id": "select-list",
-    "section": 3,
-    "title": "전체 항목에서는 학습 목록을 먼저 선택하세요",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T12-13-07-023Z/select-list.png",
-    "width": 508,
-    "height": 94
-  },
-  {
-    "id": "meta-ready",
-    "section": 4,
-    "title": "메타 학습 준비와 시작",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/meta-ready.png",
-    "width": 352,
-    "height": 276
-  },
-  {
-    "id": "meta-answer",
-    "section": 4,
-    "title": "자동 평가 저장 후 다음 문제로",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/meta-answer.png",
-    "width": 336,
-    "height": 60
-  },
-  {
     "id": "new-lesson",
     "section": 1,
     "title": "새 글자의 그림과 암기법 배우기",
@@ -56,43 +32,75 @@
     "height": 738
   },
   {
-    "id": "choose",
-    "section": 3,
-    "title": "책갈피 범위를 골라 정답 없이 시험하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/choose.png",
-    "width": 764,
-    "height": 932
-  },
-  {
-    "id": "answer",
-    "section": 4,
-    "title": "정답 확인과 두 가지 자기평가",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/answer.png",
-    "width": 696,
-    "height": 144
-  },
-  {
-    "id": "meta-question",
-    "section": 4,
-    "title": "남은 시간과 훈음 첫 글자 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-12-26-899Z/meta-question.png",
-    "width": 368,
-    "height": 121
-  },
-  {
-    "id": "today-complete",
-    "section": 5,
-    "title": "오늘 학습 완료 후 다음 복습 시각 안내",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T15-54-25-564Z/today-complete.png",
-    "width": 370,
-    "height": 162
-  },
-  {
     "id": "today",
     "section": 2,
     "title": "오늘 복습과 새 글자 학습 선택",
     "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T22-00-53-306Z/today.png",
     "width": 764,
     "height": 1186
+  },
+  {
+    "id": "practice-complete",
+    "section": 6,
+    "title": "미리 복습에서 틀린 한자만 바로 다시 확인",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/practice-complete.png",
+    "width": 370,
+    "height": 385
+  },
+  {
+    "id": "today-complete",
+    "section": 5,
+    "title": "오늘 학습 완료 후 다음 복습 시각 안내",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/today-complete.png",
+    "width": 370,
+    "height": 162
+  },
+  {
+    "id": "meta-ready",
+    "section": 4,
+    "title": "메타 학습 준비와 시작",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-ready.png",
+    "width": 352,
+    "height": 276
+  },
+  {
+    "id": "meta-question",
+    "section": 4,
+    "title": "남은 시간과 훈음 첫 글자 선택",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-question.png",
+    "width": 368,
+    "height": 121
+  },
+  {
+    "id": "meta-answer",
+    "section": 4,
+    "title": "미리 복습의 자동 판정과 다음 문제",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-answer.png",
+    "width": 336,
+    "height": 60
+  },
+  {
+    "id": "select-list",
+    "section": 3,
+    "title": "배운 한자의 범위를 고르고 미리 복습 시작",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/select-list.png",
+    "width": 680,
+    "height": 476
+  },
+  {
+    "id": "choose",
+    "section": 3,
+    "title": "책갈피 범위를 골라 정답 없이 시험하기",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/choose.png",
+    "width": 764,
+    "height": 1056
+  },
+  {
+    "id": "answer",
+    "section": 4,
+    "title": "정답 확인과 두 가지 자기평가",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/answer.png",
+    "width": 696,
+    "height": 144
   }
 ]
