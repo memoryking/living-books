@@ -189,7 +189,7 @@ export default function HanjaReader() {
     <a className={styles.skipLink} href="#hanja-main">학습 본문으로 건너뛰기</a>
     <header className={styles.readerHeader}>
       <nav className={styles.tabs} aria-label="학습 메뉴">
-        {([['read', '01', '선택 학습'], ['recall', '02', '오늘 학습'], ['compare', '03', '헷갈림 비교'], ['guide', '04', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); if(id==='read' && filtered.length) start(filtered.map(e=>e.id),false,true,true); }}><span>{number}</span>{label}</button>)}
+        {([['recall', '01', '오늘 학습'], ['read', '02', '선택 학습'], ['compare', '03', '헷갈림 비교'], ['guide', '04', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); if(id==='read' && filtered.length) start(filtered.map(e=>e.id),false,true,true); }}><span>{number}</span>{label}</button>)}
       </nav>
     </header>
     {storageError && <p role="alert" className={styles.alert}>{storageError}</p>}
