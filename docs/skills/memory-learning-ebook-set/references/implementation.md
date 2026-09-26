@@ -9,9 +9,10 @@
 
 ## 파일 지도
 
-- `data/hanja-memory/book.json`: 유일한 편집 원본. entries, chapters, comparisons.
+- `data/hanja-memory/book.json`: 공통 한자 학습 원본. entries, chapters.
+- `data/hanja-memory/ebook-appendix.json`: 전자책 전용 헷갈림 비교 부록 원본. comparisons는 앱에 연동하지 않는다.
 - `source.tsv`: 최초 입력 보존본. 교정으로 덮어쓰지 않는다.
-- `scripts/build-hanja.mjs`: 공통 JSON에서 본문·비교·교정표 및 호환 TSV/JSON 생성. `lessons.tsv`, `editorial.json`, `chapters.json`, `comparisons.json`은 생성물이다.
+- `scripts/build-hanja.mjs`: 공통 JSON에서 본문·교정표를, 전자책 전용 JSON에서 비교 부록을 생성한다. `lessons.tsv`, `editorial.json`, `chapters.json`, `comparisons.json`은 생성물이다.
 - `package.json`: prebuild·predev가 content:sync 실행. 운영 빌드에도 적용. 개발 서버 실행 중 수정 시 content:sync 실행.
 - `src/lib/hanja-book.ts`: 그림형에서 같은 JSON을 직접 import.
 - `src/components/hanja/`: HanjaReader, HanjaImage, WritingPad, CSS. 대상 주제로 일반화하여 사용.

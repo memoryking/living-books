@@ -20,6 +20,7 @@ try {
     await send('Page.navigate',{url:(process.env.HANJA_QA_BASE || 'http://127.0.0.1:3100')+'/premium/hanja-memory/read'});
     await wait('Array.from(document.querySelectorAll("button")).some(b=>b.textContent.includes("학습 안내"))');
     await new Promise(r=>setTimeout(r,800));
+    assert.deepEqual(await ev('[...document.querySelectorAll("nav[aria-label] button")].map(e=>e.textContent.replace(/^0[1-3]/,""))'),['오늘 학습','미리 복습','학습 안내']);
     await ev('Array.from(document.querySelectorAll("button")).find(b=>b.textContent.includes("학습 안내")).click()');
     await wait('document.querySelectorAll("details").length===10');
     assert.equal(await ev('document.querySelectorAll("details[open]").length'),1);

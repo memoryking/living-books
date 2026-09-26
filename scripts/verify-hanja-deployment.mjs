@@ -14,6 +14,7 @@ for(const [route,needle] of pages){
   assert.ok(html.includes(needle),'Missing content: '+route);
   if(route==='/admin/export') {assert.ok(html.includes('① 그림 학습형'));assert.ok(html.includes('② 기존 전자책형'));}
   if(route==='/premium/hanja-memory/read') {
+    assert.ok(!html.includes('>헷갈림 비교</button>'));
     assert.ok(!html.includes('기존 방식으로 읽기'));
     assert.ok(!html.includes('type="search"'));
     assert.ok(!html.includes('훈음·연상 듣기'));
@@ -24,6 +25,7 @@ for(const [route,needle] of pages){
   console.log('PASS',route,response.status);
   if(route.includes('/read/full') || route.startsWith('/embed/')) {assert.ok(html.includes('data-image-id="38"'));assert.ok(html.includes('data-image-id="42"'));assert.ok(html.includes('data-image-id="121"'));}
   if(route.includes('/read/full') || route.startsWith('/embed/')) assert.ok(html.includes('hanja-reader.js?v=5'));
+  if(route.includes('/read/full') || route.startsWith('/embed/')) assert.ok(html.includes('부록 · 헷갈림 비교') && html.includes('이 부록은 전자책에서만 제공'));
 }
 const reader=await fetch(base+'/widget/hanja-reader.js?v=5');
 assert.equal(reader.status,200);

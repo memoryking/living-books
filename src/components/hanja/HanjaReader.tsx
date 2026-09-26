@@ -13,8 +13,8 @@ import MetaRound, { type MetaResult } from './MetaRound';
 import styles from './hanja.module.css';
 
 const STORAGE_KEY = 'living-books-hanja-memory-v1';
-const { entries, chapters, comparisons } = hanjaBook;
-type Tab = 'read' | 'recall' | 'compare' | 'guide';
+const { entries, chapters } = hanjaBook;
+type Tab = 'read' | 'recall' | 'guide';
 type Scope = 'all' | 'chapter' | 'bookmarks';
 type Session = { ids: number[]; index: number; good: number; missed: number[]; learning: boolean; reverse: boolean; practice: boolean; total: number; remaining: number[]; batchTotal: number };
 const formatDate = (time: number) => new Date(time).toLocaleString('ko-KR', { month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
@@ -118,7 +118,6 @@ export default function HanjaReader() {
   const visibleChecked = checked.filter(id=>filtered.some(e=>e.id===id));
   const practiceIds = filtered.filter(e=>!visibleChecked.length || visibleChecked.includes(e.id)).map(e=>e.id);
 
-  const go = (id: number) => { if (!study.records[id]?.attempts) { setTab('recall'); setSession(null); setNotice('아직 배우지 않은 한자입니다. 오늘 학습의 새 글자 배우기로 시작하세요.'); return; } setChecked([id]); setStudy(prev=>({...prev,lastId:id})); start([id], false, true, true); };
   const changeRange = (c: number, list: Scope) => {
     setChapter(c); setScope(list);
     setChecked([]); setSession(null); setShowAnswer(false);
@@ -143,7 +142,6 @@ export default function HanjaReader() {
   };
   const reveal = () => { grading.current = false; setShowAnswer(true); };
   const handleStartToday = () => {
-    // eslint-disable-next-line react-hooks/purity -- click handler rechecks eligibility, never called during render
     const clock = Date.now(); setNow(clock);
     const ids = entries.filter(e=>study.records[e.id]?.due<=clock).sort((a,b)=>study.records[a.id].due-study.records[b.id].due).slice(0,10).map(e=>e.id);
     if (!ids.length) { setNotice('아직 복습 시각이 되지 않아 지금 복습할 한자가 없습니다.'); return; }
@@ -197,7 +195,7 @@ export default function HanjaReader() {
     <a className={styles.skipLink} href="#hanja-main">학습 본문으로 건너뛰기</a>
     <header className={styles.readerHeader}>
       <nav className={styles.tabs} aria-label="학습 메뉴">
-        {([['recall', '01', '오늘 학습'], ['read', '02', '미리 복습'], ['compare', '03', '헷갈림 비교'], ['guide', '04', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); }}><span>{number}</span>{label}</button>)}
+        {([['recall', '01', '오늘 학습'], ['read', '02', '미리 복습'], ['guide', '03', '학습 안내']] as const).map(([id, number, label]) => <button key={id} aria-pressed={tab === id} onClick={() => { setTab(id); setNotice(''); setSession(null); setShowAnswer(false); }}><span>{number}</span>{label}</button>)}
       </nav>
     </header>
     {storageError && <p role="alert" className={styles.alert}>{storageError}</p>}
@@ -249,14 +247,13 @@ export default function HanjaReader() {
       </div>}
     </section>}
 
-    {tab === 'compare' && <section className={styles.compareSection}><p className={styles.eyebrow}>NOTICE THE DIFFERENCE</p><h2>차이 하나가, 기억을 가릅니다.</h2><p className={styles.lead}>비슷한 글자를 함께 보고 다른 획 하나를 말하세요. 설명을 읽은 뒤에는 비교 질문의 답도 가려 보세요.</p><div className={styles.comparisonGrid}>{comparisons.map(c => <article key={c.title} className={styles.comparison}><h3>{c.title}</h3><div className={styles.compareChars}>{c.ids.map(id => <button key={id} onClick={() => { go(id); }}><span lang="ko">{entries[id - 1].char}</span><small>{entries[id - 1].reading}</small></button>)}</div><p>{c.cue}</p><details><summary>{c.question}</summary><p>{c.answer}</p></details></article>)}</div></section>}
 
     {tab === 'guide' && <section className={styles.guideSection}><p className={styles.eyebrow}>HOW TO LEARN</p><h2>한자 학습앱 사용 안내</h2><p className={styles.lead}>처음 시작하는 방법부터 복습 일정과 기록 백업까지, 실제 버튼 순서대로 안내합니다.</p>
       <StudyGuide/>
       <div className={styles.guideProse}>
       <h3>학습 기록 관리</h3><p>기록은 이 브라우저에 저장됩니다. 다른 기기로 자동 동기화되지 않습니다. 기록 파일에는 책갈피와 개인 메모도 포함됩니다.</p><div className={styles.buttonRow}><button disabled={!ready} className={styles.primary} onClick={exportStudy}>학습 기록 내보내기</button><button disabled={!ready} className={styles.secondary} onClick={() => importInput.current?.click()}>기록 파일 가져오기</button><input ref={importInput} type="file" accept="application/json,.json" hidden onChange={readImport}/></div>
       {pendingImport && <div className={styles.importConfirm} role="region" aria-label="기록 가져오기 확인"><p>파일에 공부 기록 {Object.keys(pendingImport.records).length}개, 책갈피 {pendingImport.bookmarks.length}개가 있습니다. 현재 기록을 이 파일로 바꿉니다.</p><div className={styles.buttonRow}><button className={styles.primary} onClick={() => { setStudy(pendingImport); setChecked([]); setSession(null); setPendingImport(null); setNotice('학습 기록을 가져왔습니다.'); }}>이 기록으로 바꾸기</button><button className={styles.secondary} onClick={() => setPendingImport(null)}>취소</button></div></div>}
-      <h3>공부 방법 참고</h3><p>꺼내 보기와 간격을 둔 연습을 참고해 구성했습니다. 이 책의 이미지나 일정이 모든 글자에 대해 별도 실험으로 검증되었다는 뜻은 아닙니다.</p><ul><li><a href="https://www.retrievalpractice.org/spacing" target="_blank" rel="noreferrer">Retrieval Practice · 간격을 둔 연습</a></li><li><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noreferrer">Roediger·Karpicke · Test-Enhanced Learning</a></li></ul><p><Link href="/premium/hanja-memory/read/full">서문·29개 단원·복습 안내·비교표·교정표 전체 읽기 →</Link></p></div>
+      <h3>공부 방법 참고</h3><p>꺼내 보기와 간격을 둔 연습을 참고해 구성했습니다. 이 책의 이미지나 일정이 모든 글자에 대해 별도 실험으로 검증되었다는 뜻은 아닙니다.</p><ul><li><a href="https://www.retrievalpractice.org/spacing" target="_blank" rel="noreferrer">Retrieval Practice · 간격을 둔 연습</a></li><li><a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noreferrer">Roediger·Karpicke · Test-Enhanced Learning</a></li></ul><p><Link href="/premium/hanja-memory/read/full">서문·29개 단원·복습 안내·헷갈림 비교 부록·교정표 전체 읽기 →</Link></p></div>
     </section>}
     </main>
 

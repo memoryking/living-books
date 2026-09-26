@@ -2,7 +2,7 @@
 
 ## 데이터 원칙
 
-책 메타데이터(id/title/version/updated), 단원, 항목, 비교 세트를 하나의 정규 모델에 둔다. 항목에는 stable ID, 원문, 학습 표기, 뜻·읽기, 기억 장면, 암기 문장, 실제 설명, 활용 예시, 그림 참조, 교정 메모와 출처를 보관한다.
+책 메타데이터(id/title/version/updated), 단원, 한자별 항목을 공통 모델에 둔다. 헷갈림 비교는 전자책 전용 ebook-appendix.json으로 분리하며 앱에서 가져오지 않는다. 항목에는 stable ID, 원문, 학습 표기, 뜻·읽기, 기억 장면, 암기 문장, 실제 설명, 활용 예시, 그림 참조, 교정 메모와 출처를 보관한다.
 
 한자 기준 필드는 `id, char, reading, originalChar, originalReading, scene, memory, examples, englishScene, chapter, image, imageColumn, imageRow, note, source, kind, corrected`이다. 다른 주제는 `term, pronunciation, meaning, explanation` 등으로 일반화하고 렌더러를 맞춘다. 이름만 다른 원고 두 개를 만들지 않는다.
 

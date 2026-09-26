@@ -7,7 +7,9 @@ const root = process.argv[2] || 'data/hanja-memory';
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 const originals = read('source.tsv').trim().split(/\r?\n/).map(line => line.split('\t'));
 const book = JSON.parse(read('book.json'));
-const { entries, chapters, comparisons } = book;
+const { entries, chapters } = book;
+// Book-only appendix is not imported by the study app.
+const { comparisons } = JSON.parse(read('ebook-appendix.json'));
 assert.equal(originals.length, 453);
 assert.equal(entries.length, 453);
 assert.equal(chapters.length, 29);
@@ -58,7 +60,8 @@ for (const chapter of chapters) {
 }
 
 fs.writeFileSync(path.join(root, 'content', '31-comparisons.md'), [
-  '# 헷갈림 사전 — 차이 하나로 구별하기', '',
+  '# 부록 · 헷갈림 비교 — 차이 하나로 구별하기', '',
+  '이 부록은 전자책에서만 제공하며 암기앱의 학습 메뉴에는 포함되지 않습니다. 한자별 본문·훈음·그림·암기법·예시는 두 형식에서 동일하게 연동됩니다.', '',
   '비슷한 글자를 나란히 보고 차이를 말한 뒤, 한쪽을 가리고 직접 써 보세요.', '',
   ...comparisons.flatMap(c => [`## ${c.title}`, '', `**${c.ids.map(id => `${entries[id - 1].char} · ${entries[id - 1].reading}`).join(' / ')}**`, '', c.cue, '', `**스스로 묻기:** ${c.question}`, '', `<details><summary>답 확인</summary><p>${escape(c.answer)}</p></details>`, '']),
 ].join('\n'));
