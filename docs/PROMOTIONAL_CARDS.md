@@ -9,6 +9,7 @@
 - 각각의 상세페이지·표지 프롬프트·SNS 문구 5종·썸네일 프롬프트·메타 설명은 src/lib/hanja-marketing.ts.
 
 ## 제작·업데이트
+한자 암기앱·전자책 전단지는 “한자, 빠르고 쉽게 / 그림으로 외우세요!”를 가장 큰 제목으로 사용한다. 빠르고 쉬운 그림 암기라는 이점을 즉시 드러내는 사용자의 선택이다. 개별 수정 시 PROMO_IDS=hanja-memory,hanja로 생성·압축 범위를 지정할 수 있으며, 통합 A5/A4 묶음도 항상 갱신한다.
 원본: src/lib/promo-cards.ts(책별 카피/주소), src/lib/render-promo.ts(인쇄 조판), public/promo/art(생성 이미지), public/promo/fonts(글꼴·라이선스).
 
 관리자: /admin/export에서 개별 카드와 다운로드, /admin/promo/all에서 전체 보기. A4 인쇄는 ?layout=a4. A4 가로 한 장에 같은 카드 2장, 중앙 재단선. 전체 A4는 34페이지/68장. A5는 34페이지/34장.

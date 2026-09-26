@@ -26,8 +26,10 @@ try {
   const ids=await ev('[...document.querySelectorAll(".card")].map(c=>c.dataset.id)');
   assert.equal(new Set(ids).size,ids.length);
   assert.ok(ids.length>=34);
-  const manifest=[];
-  for(const id of ids){
+  const selected=process.env.PROMO_IDS?.split(',');
+  if(selected) assert.ok(selected.every(id=>ids.includes(id)),'Unknown PROMO_IDS');
+  const manifest=selected?JSON.parse(await fs.readFile('public/promo/manifest.json','utf8')).cards:[];
+  for(const id of ids.filter(id=>!selected||selected.includes(id))){
     await navigate('/admin/promo/'+id);
     const bounds=await ev(`(()=>{const c=document.querySelector('.card');return [...c.children].map(e=>({tag:e.tagName,overflow:e.scrollHeight-e.clientHeight,bottom:e.getBoundingClientRect().bottom,limit:c.getBoundingClientRect().bottom}));})()`);
     assert.ok(bounds.every(b=>b.overflow<=2 && b.bottom<=b.limit+1),id+JSON.stringify(bounds));
@@ -45,7 +47,9 @@ try {
     const image=await send('Page.captureScreenshot',{format:'png',clip:rect});await fs.writeFile(path.join(qa,id+'.png'),Buffer.from(image.data,'base64'));
     const pdf=await send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
     await fs.writeFile(path.join(out,id+'.pdf'),Buffer.from(pdf.data,'base64'));
-    manifest.push({id,url:links[0],pdf:'/promo/pdf/'+id+'.pdf',qa:'layout + rendered QR decoded'});
+    const entry={id,url:links[0],pdf:'/promo/pdf/'+id+'.pdf',qa:'layout + rendered QR decoded'};
+    const index=manifest.findIndex(c=>c.id===id);
+    if(index<0)manifest.push(entry);else manifest[index]=entry;
     console.log('PASS',id);
   }
   for(const layout of ['a5','a4']){
@@ -55,5 +59,5 @@ try {
     await fs.writeFile(path.join(out,'all-'+layout+'.pdf'),Buffer.from(pdf.data,'base64'));
   }
   await fs.writeFile('public/promo/manifest.json',JSON.stringify({date:new Date().toISOString(),count:ids.length,cards:manifest},null,2));
-  console.log(`DONE: ${ids.length} individual A5 PDFs + A5 bundle + A4 two-up bundle.`);
+  console.log(`DONE: ${selected?.length||ids.length} individual A5 PDFs updated + full A5/A4 bundles (${ids.length} cards).`);
 }finally{ws?.close();chrome.kill();}
