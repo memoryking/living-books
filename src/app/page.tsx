@@ -35,9 +35,18 @@ const generalBooks = [
 
 const premiumBooks = [
   {
+    id: "hanja",
+    emoji: "字",
+    title: "그림으로 기억하는 한자 453 · 전자책",
+    subtitle: "목차·스크롤·페이지형 읽기 · 전용 헷갈림 비교 부록",
+    tags: ["한자", "그림암기", "전자책"],
+    lastUpdated: "2026-09-26",
+    version: 1,
+  },
+  {
     id: "hanja-memory",
     emoji: "字",
-    title: "그림으로 기억하는 한자 453",
+    title: "그림으로 기억하는 한자 453 · 암기앱",
     subtitle: "453개 기억 장면 · 906개 활용 예시 · 꺼내 보는 복습",
     tags: ["한자", "그림암기", "반복학습"],
     lastUpdated: "2026-09-23",

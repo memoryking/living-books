@@ -8,6 +8,7 @@
  *   detail-builders-3.ts — 19~28번 (personal-branding ~ negotiation-skills)
  */
 
+import { hanjaDetails } from './hanja-marketing';
 import {
   buildDietSecrets,
   buildEndocrineDisruptors,
@@ -1377,7 +1378,7 @@ const BOOK_META = [
 ];
 
 export function generateAllDetails(): DetailOutput[] {
-  return BOOK_META.map((b) => {
+  return [...hanjaDetails(), ...BOOK_META.map((b) => {
     const html = b.builder();
     return {
       id: b.id,
@@ -1390,5 +1391,5 @@ export function generateAllDetails(): DetailOutput[] {
       thumbnailPrompt: buildThumbnailPrompt(b.id),
       metaDesc: buildMetaDesc(b.id),
     };
-  });
+  })];
 }

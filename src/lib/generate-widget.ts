@@ -406,6 +406,8 @@ function escHtml(s: string): string {
 }
 
 export function generateWidget(bookId: string): string | null {
+  // The book has its own public product ID; old embeds remain compatible.
+  if (bookId === 'hanja') bookId = 'hanja-memory';
   const book = PREMIUM_BOOKS.find((b) => b.id === bookId);
   if (!book) return null;
 

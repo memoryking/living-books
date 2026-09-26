@@ -1,7 +1,10 @@
 import assert from 'node:assert/strict';
-const base='https://living-books-beta.vercel.app';
+const base=process.env.HANJA_QA_BASE||'https://living-books-beta.vercel.app';
 const pages=[
   ['/admin/export','hanja-memory'],
+  ['/premium/hanja','전자책'],
+  ['/premium/hanja/read','부록 · 헷갈림 비교'],
+  ['/embed/hanja?preview=1','hanja-reader.js?v=5'],
   ['/premium/hanja-memory','그림으로'],
   ['/premium/hanja-memory/read','그림으로 기억하는 한자'],
   ['/premium/hanja-memory/read/full','그림으로 기억하는 한자 453'],
@@ -12,7 +15,7 @@ for(const [route,needle] of pages){
   const html=await response.text();
   assert.equal(response.status,200,route);
   assert.ok(html.includes(needle),'Missing content: '+route);
-  if(route==='/admin/export') {assert.ok(html.includes('① 그림 학습형'));assert.ok(html.includes('② 기존 전자책형'));}
+  if(route==='/admin/export') {assert.ok(html.includes('암기앱'));assert.ok(html.includes('hanja</code>'));assert.ok(!html.includes('① 그림 학습형'));assert.ok(html.includes('/promo/pdf/hanja.pdf'));}
   if(route==='/premium/hanja-memory/read') {
     assert.ok(!html.includes('>헷갈림 비교</button>'));
     assert.ok(!html.includes('기존 방식으로 읽기'));

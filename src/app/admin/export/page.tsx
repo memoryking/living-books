@@ -28,15 +28,15 @@ export default function ExportPage() {
 
   return (
     <WidgetExportClient
-      widgets={widgets.map((w) => ({
-        id: w.book.id,
-        title: w.book.title,
+      widgets={[{id:'hanja-memory',title:'그림으로 기억하는 한자 453 · 암기앱',emoji:'字',subtitle:'오늘 학습 · 미리 복습 · 메타 학습 · 쓰기 비교',html:'',charCount:0,markdown:''}, ...widgets.map((w) => ({
+        id: w.book.id === 'hanja-memory' ? 'hanja' : w.book.id,
+        title: w.book.title + (w.book.id === 'hanja-memory' ? ' · 전자책' : ''),
         emoji: w.book.emoji,
         subtitle: w.book.subtitle,
         html: w.html,
         charCount: w.html.length,
         markdown: readBookMarkdown(w.book.id),
-      }))}
+      }))]}
       details={details.map((d) => ({
         id: d.id,
         title: d.title,

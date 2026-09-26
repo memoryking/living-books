@@ -1,6 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import linkStatus from '../../../../public/promo/link-status.json';
+
+function PromoLinkStatus({id}:{id:string}) {
+  const s=linkStatus.results.find(r=>r.id===id);
+  if(!s || (s.status===200&&!s.login)) return null;
+  return <p className="mb-4 p-3 rounded-lg bg-amber-50 text-amber-900 text-sm">QR 연결 확인 필요: {s.status!==200 ? `vipup.site/${id}가 현재 ${s.status} 응답입니다. 아임웹에 해당 주소를 연결한 뒤 인쇄·배치해 주세요.` : '현재 로그인 화면으로 이동합니다. 홍보용 공개 소개 페이지로 연결할지 확인해 주세요.'}</p>;
+}
 
 interface WidgetData {
   id: string;
@@ -92,16 +99,16 @@ function PreviewModal({
 /* ── 위젯 카드 (전자책 뷰어) ── */
 function HanjaStudyCard() {
   const url = 'https://living-books-beta.vercel.app/premium/hanja-memory/read';
-  const code = `<iframe src="${url}" title="그림으로 기억하는 한자 453 — 그림 학습형" style="display:block;width:100%;height:90vh;height:90dvh;min-height:480px;border:0;" allow="clipboard-write"></iframe>`;
-  return <section className="p-5 rounded-xl border border-emerald-300 bg-emerald-50/40" aria-label="한자 그림 학습형 내보내기">
-    <h3 className="font-bold text-lg mb-2">① 그림 학습형</h3>
-    <p className="text-sm text-gray-600 mb-4">한 글자씩 그림으로 공부하는 화면입니다. 검색·답 가리기·쓰기 연습·복습 기록을 제공합니다.</p>
+  const code = `<iframe src="${url}" title="그림으로 기억하는 한자 453 — 암기앱" style="display:block;width:100%;height:90vh;height:90dvh;min-height:480px;border:0;" allow="clipboard-write"></iframe>`;
+  return <section className="p-5 rounded-xl border border-emerald-300 bg-emerald-50/40" aria-label="한자 암기앱 내보내기">
+    <h3 className="font-bold text-lg mb-2">암기앱</h3>
+    <p className="text-sm text-gray-600 mb-4">한 글자씩 그림으로 공부하는 화면입니다. 오늘 학습·미리 복습·메타 학습·쓰기 비교을 제공합니다.</p>
     <div className="flex flex-wrap gap-2">
-      <CopyButton text={code} label="🔗 그림 학습형 iframe 코드 복사" />
+      <CopyButton text={code} label="🔗 암기앱 iframe 코드 복사" />
       <CopyButton text={url} label="학습 화면 주소 복사" />
-      <a href="/premium/hanja-memory/read" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm bg-white">그림 학습형 미리보기 ↗</a>
+      <a href="/premium/hanja-memory/read" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm bg-white">암기앱 미리보기 ↗</a>
     </div>
-    <p className="mt-3 text-xs text-gray-600">모바일에서도 같은 학습 화면을 사용하며, 삽입된 화면 안에서 스크롤합니다. 학습 기록은 사용 중인 브라우저에 저장됩니다.</p>
+    <p className="mt-3 text-xs text-gray-600">PC·태블릿·모바일에서 화면에 맞춘 학습 공간을 제공합니다. 학습 기록은 사용 중인 브라우저에 저장됩니다.</p>
   </section>;
 }
 
@@ -154,14 +161,14 @@ function WidgetCard({ w }: { w: WidgetData }) {
 
   return (
     <div className="p-5 rounded-xl border border-gray-200">
-      {w.id === 'hanja-memory' && <><h3 className="font-bold text-lg mb-2">② 기존 전자책형</h3><p className="text-sm text-gray-600 mb-4">목차와 전체 본문을 바로 보여줍니다. 스크롤·페이지 넘김 방식이며 ‘꼭 알아야 할 10가지’는 표시하지 않습니다.</p></>}
+      {w.id === 'hanja' && <><h3 className="font-bold text-lg mb-2">전자책</h3><p className="text-sm text-gray-600 mb-4">목차와 전체 본문을 바로 보여줍니다. 스크롤·페이지 넘김 방식이며 ‘꼭 알아야 할 10가지’는 표시하지 않습니다.</p></>}
       <div className="flex items-center justify-between mb-3">
         <span className="text-sm font-medium text-gray-500">
           전자책 뷰어 위젯 · {(w.charCount / 1024).toFixed(1)}KB
         </span>
       </div>
       <div className="flex flex-wrap gap-2">
-        {w.id === 'hanja-memory' && <a href="/premium/hanja-memory/read/full" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm">기존 전자책형 미리보기 ↗</a>}
+        {w.id === 'hanja' && <a href="/premium/hanja/read" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm">전자책 미리보기 ↗</a>}
         <CopyButton text={w.markdown} label="📝 전자책 내용 복사" />
         <CopyButton text={iframeCode} label="🔗 iframe 코드 복사 (추천)" />
         <CopyButton text={w.html} label="📋 뷰어 코드 복사 (직접)" />
@@ -280,6 +287,8 @@ export default function WidgetExportClient({
         </div>
       </header>
 
+      <div className="mb-8 p-5 rounded-xl bg-emerald-50 border border-emerald-300"><h2 className="text-lg font-bold mb-2">전체 홍보카드 인쇄</h2><p className="text-sm mb-3">A5 148×210mm · A4 절반 크기. 실제 크기 100%, 머리글·바닥글 끄기.</p><div className="flex flex-wrap gap-3"><a className="underline" href="/admin/promo/all" target="_blank" rel="noreferrer">전체 카드 미리보기 ↗</a><a className="underline" href="/promo/pdf/all-a5.pdf" download>전체 A5 PDF</a><a className="underline" href="/promo/pdf/all-a4.pdf" download>A4 2장 배치 PDF</a><a className="underline" href="/promo/PROMPT.md" download>재사용 제작 프롬프트</a></div></div>
+      <div className="mb-8 p-5 rounded-xl border border-gray-200"><h3 className="font-bold mb-3">공개 가이드 홍보카드 3종</h3><div className="flex flex-wrap gap-3">{[['home-medicine','가정 상비약'],['pet-medicine','동물의약품'],['relationships','인간관계']].map(([id,title])=><a className="underline" key={id} href={`/admin/promo/${id}`} target="_blank" rel="noreferrer">{title} 카드 ↗</a>)}</div><p className="mt-3 text-sm text-amber-900">현재 이 3종과 AI 부업의 vipup.site 주소는 404 응답입니다. 주소 연결 후 배치해 주세요. 다른 일부 주소는 로그인이 필요합니다.</p><a className="underline text-sm" href="/promo/link-status.json" target="_blank" rel="noreferrer">전체 QR 목적지 점검 기록</a></div>
       {widgets.map((w) => {
         const d = details.find((dd) => dd.id === w.id);
         return (
@@ -300,10 +309,12 @@ export default function WidgetExportClient({
               <CopyButton text={w.id} label="📎 ID 복사" />
             </div>
 
-            {/* 4개 탭 */}
+            <PromoLinkStatus id={w.id}/>
+            {/* 상품별 내보내기 */}
             <div className="space-y-4">
               {w.id === 'hanja-memory' && <HanjaStudyCard />}
-              <WidgetCard w={w} />
+              {w.id !== 'hanja-memory' && <WidgetCard w={w} />}
+              <div className="p-5 rounded-xl border border-amber-300 bg-amber-50"><h3 className="font-bold mb-2">A5 홍보카드 · QR 포함</h3><p className="text-sm mb-3">한 장씩 가져가는 인쇄용 카드 · vipup.site/{w.id}</p><div className="flex flex-wrap gap-2"><a className="px-4 py-2 border rounded-lg bg-white text-sm" href={`/admin/promo/${w.id}`} target="_blank" rel="noreferrer">카드 보기·인쇄 ↗</a><a className="px-4 py-2 border rounded-lg bg-white text-sm" href={`/promo/pdf/${w.id}.pdf`} download>A5 PDF 다운로드</a><a className="px-4 py-2 border rounded-lg bg-white text-sm" href={`/admin/promo/${w.id}?layout=a4`} target="_blank" rel="noreferrer">A4에 같은 카드 2장 ↗</a></div></div>
 
               {d && (
                 <>

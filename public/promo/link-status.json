@@ -1,0 +1,243 @@
+{
+  "checkedAt": "2026-09-26T05:48:12.550Z",
+  "results": [
+    {
+      "id": "hanja-memory",
+      "url": "https://vipup.site/hanja-memory",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "hanja",
+      "url": "https://vipup.site/hanja",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "diet-secrets",
+      "url": "https://vipup.site/diet-secrets",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "endocrine-disruptors",
+      "url": "https://vipup.site/endocrine-disruptors",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "declutter-clean",
+      "url": "https://vipup.site/declutter-clean",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "glp1-guide",
+      "url": "https://vipup.site/glp1-guide",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "slow-aging",
+      "url": "https://vipup.site/slow-aging",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "love-skills",
+      "url": "https://vipup.site/love-skills",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "ai-sidejob",
+      "url": "https://vipup.site/ai-sidejob",
+      "status": 404,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "threads-marketing",
+      "url": "https://vipup.site/threads-marketing",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "eisenhower-matrix",
+      "url": "https://vipup.site/eisenhower-matrix",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "deep-focus",
+      "url": "https://vipup.site/deep-focus",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "storytelling",
+      "url": "https://vipup.site/storytelling",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "customer-retention",
+      "url": "https://vipup.site/customer-retention",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "launch-storytelling",
+      "url": "https://vipup.site/launch-storytelling",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "money-psychology",
+      "url": "https://vipup.site/money-psychology",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "idea-validation",
+      "url": "https://vipup.site/idea-validation",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "micro-audience",
+      "url": "https://vipup.site/micro-audience",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "writing-formula",
+      "url": "https://vipup.site/writing-formula",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "sns-growth",
+      "url": "https://vipup.site/sns-growth",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "personal-branding",
+      "url": "https://vipup.site/personal-branding",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "business-model",
+      "url": "https://vipup.site/business-model",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "selling-invisible",
+      "url": "https://vipup.site/selling-invisible",
+      "status": 200,
+      "login": true,
+      "confirmedProduct": false
+    },
+    {
+      "id": "diabetes-guide",
+      "url": "https://vipup.site/diabetes-guide",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "odyssey-life",
+      "url": "https://vipup.site/odyssey-life",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "hypertension-guide",
+      "url": "https://vipup.site/hypertension-guide",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "cholesterol-guide",
+      "url": "https://vipup.site/cholesterol-guide",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "otc-medicine-guide",
+      "url": "https://vipup.site/otc-medicine-guide",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "speaking-skills",
+      "url": "https://vipup.site/speaking-skills",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "negotiation-skills",
+      "url": "https://vipup.site/negotiation-skills",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "saying-no",
+      "url": "https://vipup.site/saying-no",
+      "status": 200,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "home-medicine",
+      "url": "https://vipup.site/home-medicine",
+      "status": 404,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "pet-medicine",
+      "url": "https://vipup.site/pet-medicine",
+      "status": 404,
+      "login": false,
+      "confirmedProduct": false
+    },
+    {
+      "id": "relationships",
+      "url": "https://vipup.site/relationships",
+      "status": 404,
+      "login": false,
+      "confirmedProduct": false
+    }
+  ]
+}
