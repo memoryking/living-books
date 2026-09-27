@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { imwebFooterStyle } from "@/lib/imweb-embed";
+import { homeScreenGuideCode } from "@/lib/home-screen-guide";
 import linkStatus from '../../../../public/promo/link-status.json';
 
 function PromoLinkStatus({id}:{id:string}) {
@@ -291,6 +292,12 @@ export default function WidgetExportClient({
 
       <div className="mb-8 p-5 rounded-xl bg-emerald-50 border border-emerald-300"><h2 className="text-lg font-bold mb-2">전체 홍보카드 인쇄</h2><p className="text-sm mb-3">A5 148×210mm · A4 절반 크기. 실제 크기 100%, 머리글·바닥글 끄기.</p><div className="flex flex-wrap gap-3"><a className="underline" href="/admin/promo/all" target="_blank" rel="noreferrer">전체 카드 미리보기 ↗</a><a className="underline" href="/promo/pdf/all-a5.pdf" download>전체 A5 PDF</a><a className="underline" href="/promo/pdf/all-a4.pdf" download>A4 2장 배치 PDF</a><a className="underline" href="/promo/PROMPT.md" download>재사용 제작 프롬프트</a></div></div>
       <div className="mb-8 p-5 rounded-xl border border-gray-200"><h3 className="font-bold mb-3">공개 가이드 홍보카드 3종</h3><div className="flex flex-wrap gap-3">{[['home-medicine','가정 상비약'],['pet-medicine','동물의약품'],['relationships','인간관계']].map(([id,title])=><a className="underline" key={id} href={`/admin/promo/${id}`} target="_blank" rel="noreferrer">{title} 카드 ↗</a>)}</div><p className="mt-3 text-sm text-amber-900">현재 이 3종과 AI 부업의 vipup.site 주소는 404 응답입니다. 주소 연결 후 배치해 주세요. 다른 일부 주소는 로그인이 필요합니다.</p><a className="underline text-sm" href="/promo/link-status.json" target="_blank" rel="noreferrer">전체 QR 목적지 점검 기록</a></div>
+      <section className="mb-8 p-5 rounded-xl border border-emerald-300 bg-emerald-50">
+        <h2 className="text-lg font-bold mb-2">VIPUP 홈 화면 추가 안내</h2>
+        <p className="text-sm mb-3">아임웹 공통 코드의 Body/Footer 영역 또는 VIPUP 첫 화면의 코드 위젯에 한 번 붙여넣으세요. iframe 안이 아닌 아임웹 페이지에 넣습니다.</p>
+        <div className="flex flex-wrap gap-3"><CopyButton text={homeScreenGuideCode} label="홈 화면 추가 안내 코드 복사"/><a href="/imweb/home-screen-preview.html" target="_blank" rel="noreferrer" className="underline py-2">안내 미리보기 ↗</a></div>
+        <p className="text-sm mt-3">vipup.site 첫 화면(/)에서만 표시합니다. 아이폰·안드로이드·PC별 안내, 닫으면 7일 숨김, ‘추가했어요’ 선택 시 계속 숨김을 제공합니다. 자동 설치·오프라인 기능은 아닙니다. 이후 안내 수정은 자동 반영됩니다.</p>
+      </section>
       {widgets.map((w) => {
         const d = details.find((dd) => dd.id === w.id);
         return (
