@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { imwebFooterStyle } from "@/lib/imweb-embed";
 import linkStatus from '../../../../public/promo/link-status.json';
 
 function PromoLinkStatus({id}:{id:string}) {
@@ -99,22 +100,23 @@ function PreviewModal({
 /* ── 위젯 카드 (전자책 뷰어) ── */
 function HanjaStudyCard() {
   const url = 'https://living-books-beta.vercel.app/premium/hanja-memory/read';
-  const code = `<iframe src="${url}" title="그림으로 기억하는 한자 453 — 암기앱" style="display:block;width:100%;height:90vh;height:90dvh;min-height:480px;border:0;" allow="clipboard-write"></iframe>`;
+  const code = `${imwebFooterStyle}\n<iframe data-lb-hide-imweb-footer src="${url}" title="그림으로 기억하는 한자 453 — 암기앱" style="display:block;width:100%;height:90vh;height:90dvh;min-height:480px;border:0;" allow="clipboard-write"></iframe>`;
   return <section className="p-5 rounded-xl border border-emerald-300 bg-emerald-50/40" aria-label="한자 암기앱 내보내기">
     <h3 className="font-bold text-lg mb-2">암기앱</h3>
-    <p className="text-sm text-gray-600 mb-4">한 글자씩 그림으로 공부하는 화면입니다. 오늘 학습·미리 복습·메타 학습·쓰기 비교을 제공합니다.</p>
+    <p className="text-sm text-gray-600 mb-4">한 글자씩 그림으로 공부하는 화면입니다. 오늘 학습·미리 복습·메타 학습·쓰기 비교를 제공합니다.</p>
     <div className="flex flex-wrap gap-2">
       <CopyButton text={code} label="🔗 암기앱 iframe 코드 복사" />
       <CopyButton text={url} label="학습 화면 주소 복사" />
       <a href="/premium/hanja-memory/read" target="_blank" rel="noreferrer" className="px-4 py-2 rounded-lg border border-gray-300 text-sm bg-white">암기앱 미리보기 ↗</a>
     </div>
     <p className="mt-3 text-xs text-gray-600">PC·태블릿·모바일에서 화면에 맞춘 학습 공간을 제공합니다. 학습 기록은 사용 중인 브라우저에 저장됩니다.</p>
+    <p className="mt-2 text-xs text-gray-600">이 iframe 코드를 넣은 아임웹 페이지의 푸터는 숨겨집니다. 기존 위젯은 새 코드로 한 번 교체해 주세요.</p>
   </section>;
 }
 
 function WidgetCard({ w }: { w: WidgetData }) {
   const [showCode, setShowCode] = useState(false);
-  const iframeCode = `<iframe id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
+  const iframeCode = `${imwebFooterStyle}\n<iframe data-lb-hide-imweb-footer id="eb-frame-${w.id}" src="https://living-books-beta.vercel.app/embed/${w.id}" style="width:100%;border:none;overflow:hidden;" scrolling="no"></iframe>
 <button id="eb-float-${w.id}" style="position:fixed;bottom:24px;right:24px;background:#2563eb;color:#fff;padding:10px 18px;border-radius:50px;cursor:pointer;font-size:14px;font-weight:600;box-shadow:0 2px 12px rgba(37,99,235,.35);z-index:9999;display:none;border:none;" onclick="var f=document.getElementById('eb-frame-${w.id}');if(f){var t=f.getBoundingClientRect().top+window.pageYOffset;window.scrollTo({top:t,behavior:'smooth'});}">📋 목차</button>
 <script>
 (function(){
@@ -180,7 +182,7 @@ function WidgetCard({ w }: { w: WidgetData }) {
         </button>
       </div>
       <div className="mt-2 p-3 rounded-lg bg-blue-50 border border-blue-200 text-xs text-blue-800">
-        <strong>iframe 추천:</strong> 아임웹 코드위젯에 iframe 코드를 붙여넣으면, 콘텐츠·CSS·JS 수정 시 자동 반영됩니다. 다시 붙여넣을 필요 없음.
+        <strong>iframe 추천:</strong> 이 코드를 넣은 아임웹 페이지의 푸터는 숨겨집니다. 기존 위젯은 새 코드로 한 번 교체해 주세요. 이후 전자책 내부 콘텐츠·CSS·JS 수정은 자동 반영됩니다.
       </div>
       {showCode && (
         <pre className="mt-3 p-3 rounded-lg bg-gray-900 text-gray-200 text-xs overflow-auto max-h-60">
