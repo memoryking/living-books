@@ -81,3 +81,9 @@
 
 /* One click opens the multi-select list; only the list scrolls. */
 .checklist{position:absolute;right:0;top:100%;z-index:40;width:min(390px,calc(100vw - 24px));padding:12px;border:1px solid var(--line);border-radius:12px;background:white;box-shadow:0 8px 25px #0003;color:var(--ink)}.checklist>p{font-size:13px;font-weight:700}.checklist>small{font-size:11px;color:var(--muted)}.checklistTools{display:flex;gap:6px;margin:8px 0}.checklistTools button{flex:1;min-height:36px;border:1px solid var(--line);background:#f1f5ec;border-radius:6px;color:var(--green);font-size:12px;padding:4px}.checklistItems{max-height:min(42dvh,340px);overflow-y:auto;overscroll-behavior:contain;display:grid;gap:5px}.focusApp .quickSelect .checklistItems label{display:flex;align-items:center;gap:8px;padding:9px;border-radius:7px;min-height:44px;cursor:pointer;color:inherit;font-size:14px}.checklistItems input{width:20px;height:20px;accent-color:var(--green);flex:none}.checklistItems strong{font-size:18px}.checklistItems span{margin-left:auto;font-size:11px}.checklistItems>p{padding:12px;font-size:12px}@media(max-height:500px){.checklist{padding:8px}.checklistItems{max-height:32dvh}.checklistTools{margin:4px 0}.checklistTools button{min-height:30px}}
+
+/* Keep navigation away from the iframe edge and center today's direction control. */
+.compactReader .readerHeader{padding-top:12px}
+.focusApp .recallSection>.direction{width:100%;max-width:430px;margin:8px auto;flex-shrink:0}
+@media(max-width:700px){.compactReader .readerHeader{padding-top:8px}}
+@media(max-height:600px){.focusApp .recallSection>.direction{margin:4px auto}}
