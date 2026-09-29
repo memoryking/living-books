@@ -296,7 +296,7 @@ export default function WidgetExportClient({
         <h2 className="text-lg font-bold mb-2">VIPUP 홈 화면 추가 안내</h2>
         <p className="text-sm mb-3">아임웹 공통 코드의 Body/Footer 영역 또는 VIPUP 첫 화면의 코드 위젯에 한 번 붙여넣으세요. iframe 안이 아닌 아임웹 페이지에 넣습니다.</p>
         <div className="flex flex-wrap gap-3"><CopyButton text={homeScreenGuideCode} label="홈 화면 추가 안내 코드 복사"/><a href="/imweb/home-screen-preview.html" target="_blank" rel="noreferrer" className="underline py-2">안내 미리보기 ↗</a></div>
-        <p className="text-sm mt-3">vipup.site 첫 화면(/)에서만 표시합니다. 아이폰·안드로이드·PC별 안내, 닫으면 7일 숨김, ‘추가했어요’ 선택 시 계속 숨김을 제공합니다. 자동 설치·오프라인 기능은 아닙니다. 이후 안내 수정은 자동 반영됩니다.</p>
+        <p className="text-sm mt-3">vipup.site 첫 화면(/)에서만 표시합니다. 아이폰·안드로이드·PC별 안내, 닫으면 오늘 하루 숨김·다음날 방문 시 다시 표시, ‘추가했어요’ 선택 시 계속 숨김을 제공합니다. 자동 설치·오프라인 기능은 아닙니다. 이후 안내 수정은 자동 반영됩니다.</p>
       </section>
       {widgets.map((w) => {
         const d = details.find((dd) => dd.id === w.id);

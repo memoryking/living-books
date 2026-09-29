@@ -35,7 +35,13 @@ try {
     assert.ok(await ev(`(()=>{const r=${root}.querySelector('section').getBoundingClientRect();return r.left>=0&&r.right<=innerWidth&&r.top>=0&&r.bottom<=innerHeight})()`));
     const shot=await send('Page.captureScreenshot',{format:'png'});await (await import('node:fs/promises')).writeFile('artifacts/home-guide-'+device+'.png',Buffer.from(shot.data,'base64'));
     await ev(root+".querySelector('.close').click()");await run();assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),false);
-    await ev('localStorage.setItem("vipup-home-guide-v1",JSON.stringify({until:Date.now()-1}))');await run();
+    await ev('localStorage.setItem("vipup-home-guide-v1",JSON.stringify({dismissedOn:new Date(Date.now()-86400000).toDateString()}))');await run();
+    assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),true);
+    await ev('document.getElementById("vipup-home-guide").remove();localStorage.setItem("vipup-home-guide-v1",JSON.stringify({until:Date.now()+6*86400000}))');await run();
+    assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),true);
+    await ev('document.getElementById("vipup-home-guide").remove();localStorage.setItem("vipup-home-guide-v1",JSON.stringify({until:Date.now()+7*86400000}))');await run();
+    assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),false);
+    await ev('localStorage.removeItem("vipup-home-guide-v1")');await run();
     await ev(root+".getElementById('done').click()");await run();assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),false);
     await ev('localStorage.removeItem("vipup-home-guide-v1");history.replaceState(null,"","/hanja-memory")');await run();assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),false);
     await ev('history.replaceState(null,"","/");Object.defineProperty(navigator,"standalone",{configurable:true,value:true});true');await run();assert.equal(await ev('!!document.getElementById("vipup-home-guide")'),false);
