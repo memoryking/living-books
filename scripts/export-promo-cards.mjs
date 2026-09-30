@@ -20,10 +20,10 @@ try {
   const send=(method,params={})=>new Promise((r,j)=>{const id=++seq;pending.set(id,{r,j});ws.send(JSON.stringify({id,method,params}));});
   const ev=async expression=>{const r=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
   const wait=async expression=>{for(let i=0;i<150;i++){if(await ev(expression))return;await new Promise(r=>setTimeout(r,100));}throw Error(expression);};
-  async function navigate(route){await send('Page.navigate',{url:base+route});await wait('document.readyState==="complete" && document.querySelector(".card")');await ev('document.fonts.ready.then(()=>true)');await wait('[...document.images].every(i=>i.complete&&i.naturalWidth>0)');}
+  async function navigate(route){await send('Page.navigate',{url:base+route});await wait('document.readyState==="complete" && !!document.querySelector(".card")');await ev('document.fonts.ready.then(()=>true)');await wait('[...document.images].every(i=>i.complete&&i.naturalWidth>0)');}
   await send('Page.enable');await send('Runtime.enable');await send('Emulation.setDeviceMetricsOverride',{width:1250,height:950,deviceScaleFactor:1,mobile:false});
   await navigate('/admin/promo/all');
-  const ids=await ev('[...document.querySelectorAll(".card")].map(c=>c.dataset.id)');
+  const ids=await ev('[...document.querySelectorAll(".front")].map(c=>c.dataset.id)');
   assert.equal(new Set(ids).size,ids.length);
   assert.ok(ids.length>=34);
   const selected=process.env.PROMO_IDS?.split(',');
@@ -31,7 +31,7 @@ try {
   const manifest=selected?JSON.parse(await fs.readFile('public/promo/manifest.json','utf8')).cards:[];
   for(const id of ids.filter(id=>!selected||selected.includes(id))){
     await navigate('/admin/promo/'+id);
-    const bounds=await ev(`(()=>{const c=document.querySelector('.card');return [...c.children].map(e=>({tag:e.tagName,overflow:e.scrollHeight-e.clientHeight,bottom:e.getBoundingClientRect().bottom,limit:c.getBoundingClientRect().bottom}));})()`);
+    const bounds=await ev(`(()=>{return [...document.querySelectorAll('.card')].flatMap(c=>[...c.children].map(e=>({tag:e.tagName,overflow:e.scrollHeight-e.clientHeight,bottom:e.getBoundingClientRect().bottom,limit:c.getBoundingClientRect().bottom})));})()`);
     assert.ok(bounds.every(b=>b.overflow<=2 && b.bottom<=b.limit+1),id+JSON.stringify(bounds));
     const links=await ev('[...document.querySelectorAll(".card a")].map(a=>a.href)');
     assert.ok(links.every(l=>l==='https://vipup.site/'+id),id+' QR URL');
@@ -47,14 +47,14 @@ try {
     const image=await send('Page.captureScreenshot',{format:'png',clip:rect});await fs.writeFile(path.join(qa,id+'.png'),Buffer.from(image.data,'base64'));
     const pdf=await send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
     await fs.writeFile(path.join(out,id+'.pdf'),Buffer.from(pdf.data,'base64'));
-    const entry={id,url:links[0],pdf:'/promo/pdf/'+id+'.pdf',qa:'layout + rendered QR decoded'};
+    const entry={id,pages:2,duplex:'long-edge',url:links[0],pdf:'/promo/pdf/'+id+'.pdf',qa:'layout + rendered QR decoded'};
     const index=manifest.findIndex(c=>c.id===id);
     if(index<0)manifest.push(entry);else manifest[index]=entry;
     console.log('PASS',id);
   }
   for(const layout of ['a5','a4']){
     await navigate('/admin/promo/all?layout='+layout);
-    assert.equal(await ev('document.querySelectorAll(".card").length'),layout==='a4'?ids.length*2:ids.length);
+    assert.equal(await ev('document.querySelectorAll(".card").length'),layout==='a4'?ids.length*4:ids.length*2);
     const pdf=await send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
     await fs.writeFile(path.join(out,'all-'+layout+'.pdf'),Buffer.from(pdf.data,'base64'));
   }

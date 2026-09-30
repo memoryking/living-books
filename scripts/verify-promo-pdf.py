@@ -9,14 +9,17 @@ manifest=json.loads(Path('public/promo/manifest.json').read_text(encoding='utf8'
 ids=[x['id'] for x in manifest['cards']]
 for key in ids+['all-a5','all-a4']:
     doc=fitz.open(root/(key+'.pdf'))
-    assert len(doc)==(len(ids) if key.startswith('all-') else 1),(key,len(doc))
+    assert len(doc)==(len(ids)*2 if key.startswith('all-') else 2),(key,len(doc))
     for index,page in enumerate(doc):
         width,height=(297,210) if key=='all-a4' else (148,210)
         assert abs(page.rect.width*25.4/72-width)<.5,(key,page.rect)
         assert abs(page.rect.height*25.4/72-height)<.5,(key,page.rect)
         text=page.get_text()
-        bookid=ids[index] if key.startswith('all-') else key
+        bookid=ids[index//2] if key.startswith('all-') else key
         assert 'vipup.site/'+bookid in text,(key,index,'missing URL')
+        assert text.count('vipup.site/'+bookid)>=(2 if key=='all-a4' else 1),(key,index,'copy pairing')
+        if index%2:
+            assert '03' in text and '01' in text,(key,index,'missing summary sections')
         assert '\ufffd' not in text,(key,index,'missing glyph')
         assert page.get_fonts(),key
         for block in page.get_text('dict')['blocks']:
@@ -26,7 +29,9 @@ for key in ids+['all-a5','all-a4']:
                     box=fitz.Rect(span['bbox'])
                     assert box.x0>=0 and box.y0>=0 and box.x1<=page.rect.width+.5 and box.y1<=page.rect.height+.5,(key,span)
         if not key.startswith('all-'):
-            page.get_pixmap(matrix=fitz.Matrix(2,2)).save(out/(key+'.png'))
+            page.get_pixmap(matrix=fitz.Matrix(2,2)).save(out/(key+('-back' if index%2 else '')+'.png'))
+        elif key=='all-a4':
+            page.get_pixmap().save(out/('a4-page-'+str(index+1)+'.png'))
     doc.close()
 
 # Contact sheets made from the actual PDF pages, not the source HTML screenshots.
@@ -36,9 +41,9 @@ for start in range(0,len(ids),9):
     for n,i in enumerate(range(start,min(start+9,len(ids)))):
         x=(n%3)*420;y=(n//3)*600
         # Raster contact thumbnails avoid cross-document variable-font grafting bugs.
-        p.insert_image(fitz.Rect(x+8,y+8,x+412,y+580),stream=source[i].get_pixmap().tobytes('png'))
+        p.insert_image(fitz.Rect(x+8,y+8,x+412,y+580),stream=source[i*2+1].get_pixmap().tobytes('png'))
         p.insert_text((x+10,y+594),ids[i],fontsize=11)
-    p.get_pixmap().save(out/('contact-'+str(start//9+1)+'.png'))
+    p.get_pixmap().save(out/('contact-back-'+str(start//9+1)+'.png'))
     sheet.close()
 # A4 placement sample and last sheet.
 doc=fitz.open(root/'all-a4.pdf')

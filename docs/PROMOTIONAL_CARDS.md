@@ -12,7 +12,11 @@
 한자 암기앱·전자책 전단지는 “한자, 빠르고 쉽게 / 그림으로 외우세요!”를 가장 큰 제목으로 사용한다. 빠르고 쉬운 그림 암기라는 이점을 즉시 드러내는 사용자의 선택이다. 개별 수정 시 PROMO_IDS=hanja-memory,hanja로 생성·압축 범위를 지정할 수 있으며, 통합 A5/A4 묶음도 항상 갱신한다.
 원본: src/lib/promo-cards.ts(책별 카피/주소), src/lib/render-promo.ts(인쇄 조판), public/promo/art(생성 이미지), public/promo/fonts(글꼴·라이선스).
 
-관리자: /admin/export에서 개별 카드와 다운로드, /admin/promo/all에서 전체 보기. A4 인쇄는 ?layout=a4. A4 가로 한 장에 같은 카드 2장, 중앙 재단선. 전체 A4는 34페이지/68장. A5는 34페이지/34장.
+관리자: /admin/export에서 개별 카드와 다운로드, /admin/promo/all에서 전체 보기. 2026-09-30부터 양면 전단지다. 홀수 페이지는 홍보 앞면, 다음 짝수 페이지는 같은 상품의 요약 뒷면이다. 개별 A5 PDF는 2페이지, 통합 A5는 68페이지/34장이다. A4 인쇄는 ?layout=a4: 같은 카드 앞면 2개 → 같은 카드 뒷면 2개 순서이며 중앙 재단선이 있다. 전체 A4는 68페이지/양면 용지 34장/재단 후 전단지 68장이다.
+
+뒷면은 src/lib/promo-summaries.ts에서 상품별 핵심 요약·읽기 순서·자기 질문을 편집한다. 서문을 그대로 인용한 것으로 표시하지 않는다. 프리미엄 책은 data/상품ID/content의 서문과 목차, 공개 가이드는 src/app/books 또는 guides의 해당 페이지를 근거로 작성한다. 한자 암기앱은 실제 학습 동작, 한자 전자책은 공통 원고와 전자책 전용 부록을 구분한다. 공통 원고 수정 시 요약도 검토한다. 통계·효과 보장·원고에 없는 기능을 추가하지 않는다.
+
+양면 설정: A5 세로는 긴 쪽 넘김, A4 가로는 짧은 쪽 넘김. 실제 크기 100%로 1~2페이지만 시험 인쇄한 뒤 전체를 인쇄한다. 동일 카드 복제이므로 뒷면 좌우 교환에 따른 상품 불일치가 없다. PDF에는 앞뒷면 순서가 들어 있지만 프린터 양면 옵션은 사용자가 설정해야 한다.
 
 빌드 후 새 로컬 서버를 켜고 PROMO_BASE 환경변수로 URL을 지정하여 node scripts/export-promo-cards.mjs 실행. Chrome CDP 9343 포트를 사용하므로 같은 스크립트 중복 실행 금지. 모든 실제 렌더 QR 해독, 레이아웃 검사, 개별 PDF와 통합 PDF, manifest 생성. python scripts/optimize-promo-pdf.py로 사진 스트림만 고품질 JPEG(90)로 압축하고 python scripts/verify-promo-pdf.py로 페이지 크기·수·폰트·잘림 검사와 실제 PDF 렌더링을 수행한다. 원본 PNG·벡터 글자·QR은 유지한다. PyMuPDF가 필요하며 프로젝트 임시 의존성 경로는 artifacts/pdf-python이다. 최종 PDF는 public/promo/pdf.
 
