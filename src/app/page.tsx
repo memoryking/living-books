@@ -35,6 +35,15 @@ const generalBooks = [
 
 const premiumBooks = [
   {
+    id: "love-skills-2",
+    emoji: "💕",
+    title: "연애의 기술2",
+    subtitle: "연락에 흔들리고, 서운함을 삼키는 당신을 위한 대화 실전서",
+    tags: ["연애", "대화", "경계", "실전도구"],
+    lastUpdated: "2026-10-02",
+    version: 1,
+  },
+  {
     id: "hanja",
     emoji: "字",
     title: "그림으로 기억하는 한자 453 · 전자책",

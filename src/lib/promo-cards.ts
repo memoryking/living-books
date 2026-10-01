@@ -2,6 +2,7 @@ import { PREMIUM_BOOKS } from './generate-widget';
 
 // Copy is grounded in each book's current manuscript. No outcome guarantees or invented social proof.
 const copy: Record<string, [string, string, string, string, string, string]> = {
+  'love-skills-2':['연락·갈등 대화 실전서','답장 하나에\n흔들리는 밤.','추측 대신 꺼낼 말을 준비하세요.','5부·20개 실전 수업 · 대화문 20개','연락 약속표 · 경계 문장 · 일주일 실행표','#a54556'],
   'home-medicine':['가정 상비약 기초 안내','우리 집 약 상자,\n무엇이 들어 있나요?','필요할 때 찾기 전에, 평소에 알아두세요.','가정에서 만나는 약의 성분과 용도','상비약 사용 시 확인할 점','#3b6083'],
   'pet-medicine':['반려동물 의약품 안내','우리 아이 약,\n사람 약과 같을까요?','강아지·고양이 약, 알아두어야 할 차이.','동물약국 이용 정보','반려동물 약과 주의할 사람 약','#447366'],
   'relationships':['듣고 실천하는 관계 안내','대화는 했는데,\n마음도 들었나요?','잘 말하는 것에서, 잘 듣는 관계로.','관계와 소통의 기본 돌아보기','일상에서 실천하는 대화 습관','#6c536c'],

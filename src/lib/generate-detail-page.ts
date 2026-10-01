@@ -9,6 +9,7 @@
  */
 
 import { hanjaDetails } from './hanja-marketing';
+import { loveSkills2Details } from './love-skills-2-marketing';
 import {
   buildDietSecrets,
   buildEndocrineDisruptors,
@@ -1378,7 +1379,7 @@ const BOOK_META = [
 ];
 
 export function generateAllDetails(): DetailOutput[] {
-  return [...hanjaDetails(), ...BOOK_META.map((b) => {
+  return [...hanjaDetails(), loveSkills2Details(), ...BOOK_META.map((b) => {
     const html = b.builder();
     return {
       id: b.id,

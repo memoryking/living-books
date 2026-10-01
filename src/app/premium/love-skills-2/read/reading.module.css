@@ -1,0 +1,15 @@
+.manuscript { overflow-wrap: anywhere; line-height: 1.95; }
+.manuscript > * + * { margin-top: 1.15em; }
+.manuscript h2 { font-size: 1.5em; line-height: 1.5; font-weight: 800; margin-top: 2.4em; word-break: keep-all; }
+.manuscript h3 { font-size: 1.18em; line-height: 1.6; font-weight: 750; margin-top: 1.7em; word-break: keep-all; }
+.manuscript blockquote { border-left: 4px solid #b96b72; padding: 1em 1.2em; background: #b96b7210; border-radius: 0 12px 12px 0; }
+.manuscript blockquote p + p { margin-top: 1em; }
+.manuscript ul, .manuscript ol { padding-left: 1.5em; }
+.manuscript ul { list-style: disc; }
+.manuscript ol { list-style: decimal; }
+.manuscript li + li { margin-top: .7em; }
+.manuscript table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: .91em; }
+.manuscript th, .manuscript td { border: 1px solid #a6a6a666; text-align: left; vertical-align: top; padding: .7em; }
+.manuscript th { background: #b96b7215; font-weight: 750; }
+.manuscript a { color: #b25460; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 480px) { .manuscript th, .manuscript td { padding: .5em; } }

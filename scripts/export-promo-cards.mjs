@@ -58,6 +58,9 @@ try {
     const pdf=await send('Page.printToPDF',{printBackground:true,preferCSSPageSize:true,displayHeaderFooter:false});
     await fs.writeFile(path.join(out,'all-'+layout+'.pdf'),Buffer.from(pdf.data,'base64'));
   }
-  await fs.writeFile('public/promo/manifest.json',JSON.stringify({date:new Date().toISOString(),count:ids.length,cards:manifest},null,2));
+  // Match the actual full-bundle page order even when a new card is added in a partial export.
+  const orderedManifest=ids.map(id=>manifest.find(card=>card.id===id));
+  assert.ok(orderedManifest.every(Boolean),'Missing card in PDF manifest');
+  await fs.writeFile('public/promo/manifest.json',JSON.stringify({date:new Date().toISOString(),count:ids.length,cards:orderedManifest},null,2));
   console.log(`DONE: ${selected?.length||ids.length} individual A5 PDFs updated + full A5/A4 bundles (${ids.length} cards).`);
 }finally{ws?.close();chrome.kill();}

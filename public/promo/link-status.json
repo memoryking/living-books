@@ -238,6 +238,14 @@
       "status": 404,
       "login": false,
       "confirmedProduct": false
+    },
+    {
+      "id": "love-skills-2",
+      "url": "https://vipup.site/love-skills-2",
+      "status": 404,
+      "login": false,
+      "confirmedProduct": false,
+      "checkedAt": "2026-10-01T20:36:57.896Z"
     }
   ]
 }

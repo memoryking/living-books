@@ -15,6 +15,7 @@ interface BookMeta {
 }
 
 export const PREMIUM_BOOKS: BookMeta[] = [
+  { id: "love-skills-2", title: "연애의 기술2", emoji: "💕", subtitle: "연락에 흔들리고, 서운함을 삼키는 당신을 위한 대화 실전서" },
   { id: "hanja-memory", title: "그림으로 기억하는 한자 453", emoji: "字", subtitle: "453개 기억 장면 · 906개 활용 예시 · 29개 단원" },
   {
     id: "diet-secrets",
@@ -258,6 +259,7 @@ const CROSS_SELL_BOOKS = [
 ];
 
 const WIDGET_CATEGORIES: Record<string, string> = {
+  "love-skills-2": "관계·소통",
   "diet-secrets": "건강·생활", "endocrine-disruptors": "건강·생활", "declutter-clean": "건강·생활",
   "glp1-guide": "건강·생활", "slow-aging": "건강·생활", "diabetes-guide": "건강·생활",
   "hypertension-guide": "건강·생활", "cholesterol-guide": "건강·생활", "otc-medicine-guide": "건강·생활",

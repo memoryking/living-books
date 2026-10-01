@@ -169,5 +169,12 @@
     "id": "saying-no",
     "prompt": "Create one unique premium editorial 3D still-life hero artwork, landscape 3:2 aspect ratio. Dramatic studio lighting, eye-catching strong color contrast, one very large dominant focal point with tactile sophisticated material details, refined high-end book campaign art direction. Beautiful sculptural composition with rich depth and clean negative space. Absolutely text-free: no letters, words, numbers, logos, watermark, QR codes, UI, titles, labels. No medical treatment claims or fake effects. Full bleed image, no frame. Scene: A translucent violet protective shield gently sheltering one red heart sculpture from several bland cream request paper planes, purple and cream setting. Healthy personal boundaries, gentle assured atmosphere.",
     "path": "public/promo/art/saying-no.png"
+  },
+  {
+    "id": "love-skills-2",
+    "prompt": "Premium editorial 3D still life, landscape 3:2, 1536x1024. Two distinct matte ceramic speech bubbles, warm coral and deep teal, face one another across a small curved brass bridge. Warm ivory studio, realistic shadows, clear silhouette, generous safe margins. No text, letters, QR, logos, people, mockup or invented outcome evidence.",
+    "path": "public/promo/art/love-skills-2.png",
+    "createdAt": "2026-10-02",
+    "source": "Built-in image generation; original stored under generated_images/01a0cd25-ae72-7652-b3af-2d8c93b885b1/exec-2a2506dd-4b88-4bbe-80f5-b1fe4a0972bc.png"
   }
 ]

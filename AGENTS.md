@@ -8,6 +8,14 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## 전자책 기획·집필·홍보 공통 기준
+
+기존 제작 프롬프트·전문 스킬이 기본이며 새 자료는 기획·목차·본문·부록·상세페이지의 내용 품질 보완에만 적용한다. HTML 전자책·아임웹 코드/iframe 임베딩·뷰어·관리자 내보내기 방식을 변경하지 않는다. PDF 전자책으로 전환하지 않는다. 별도 인쇄 홍보카드 PDF는 기존대로 유지한다. 충돌하면 기존 제작/출력 규칙이 우선한다.
+
+전자책 제작·개정 작업은 `docs/EBOOK_CREATION_PROMPT.md`를 먼저 읽고 필요한 단계에 `docs/EBOOK_PROMPT_MODULES.md`를 적용한다. 메모리학습 세트와 A5 홍보카드는 각각 `docs/skills/memory-learning-ebook-set/SKILL.md`, `docs/skills/ebook-promo-card/SKILL.md`의 전문 규칙을 함께 따른다. 웹 전자책 기본 형식, 공통 원고, 안정적 ID, 전자책 전용 부록을 유지한다. 부분 수정은 관련 단계만 적용한다.
+
+제작 규칙을 바꾸면 `docs/EBOOK_PROMPT_CHANGELOG.md`에 실제 날짜·버전·이유·변경 전후·영향 파일·검증·소급 적용 여부를 같은 작업에서 기록한다. 공통 문서와 관련 전문 스킬을 연결하고 프로젝트 `.agents/skills/`와 `docs/skills/` 사본을 일치시킨다. 개인 전역 스킬은 별도이며 수행하지 않은 동기화를 주장하지 않는다. 새 자료의 실제 내용과 분석 추론을 구분하고 원본 자료 전문을 공개 디렉터리에 복제하지 않는다.
+
 ## 기능과 학습 안내의 동시 갱신 (필수)
 
 한자 세트는 `book.json`의 한자별 학습 내용만 앱·전자책에 공통 연동한다. `ebook-appendix.json`의 헷갈림 비교는 전자책 전용 부록이며 앱 메뉴/데이터에서 제외한다. 부록 편집은 전자책에만 반영하고 `scripts/test-hanja-sync.mjs`로 분리 상태를 검증한다.
