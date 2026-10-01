@@ -128,6 +128,16 @@
 
 배포는 GitHub master 푸시 → Vercel 자동 배포로 진행하며, 실제 운영 확인 후 별도 기록한다.
 
+### 운영 반영 확인 · 2026-10-02
+
+- GitHub 콘텐츠 커밋 `faab581`을 master에 푸시했고 Vercel 상태 `success / Deployment has completed`를 확인했다.
+- 운영 소개: https://living-books-beta.vercel.app/premium/love-skills-2
+- 운영 읽기: https://living-books-beta.vercel.app/premium/love-skills-2/read
+- 관리자: https://living-books-beta.vercel.app/admin/export (`love-skills-2`)
+- 실제 운영 주소를 대상으로 `BOOK_BASE=https://living-books-beta.vercel.app node scripts/qa-love-skills-2.mjs`를 실행해 관리자 8종 복사 및 1440·820·390px 읽기/위젯 검사를 다시 통과했다.
+- 운영망에서 React 이벤트 연결 전 클릭하던 검사기 타이밍을 수정했다. 앱 동작 변경이 아닌 QA 대기 조건 보완이다.
+- 아임웹 `vipup.site/love-skills-2` 연결은 여전히 별도 작업이다. 전자책 배포와 판매처 슬러그 연결을 구분한다.
+
 ## 다음 개정 기록 양식
 
 `날짜 / 책 버전 / 사용자 요청·이유 / 변경 전후 / 영향 원고·소개·부록 / 근거 / 수행한 검사 / 배포 상태`

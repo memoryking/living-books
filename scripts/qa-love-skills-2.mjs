@@ -58,7 +58,7 @@ try{
     await shot('detail-'+width);
     await send('Page.navigate',{url:base+'/premium/love-skills-2/read'});
     await wait('[...document.querySelectorAll("button")].some(b=>b.textContent.includes("전체 내용"))');
-    await new Promise(r=>setTimeout(r,300));
+    await wait('Object.keys([...document.querySelectorAll("button")].find(b=>b.textContent.includes("전체 내용"))).some(k=>k.startsWith("__reactProps$"))');
     await ev('[...document.querySelectorAll("button")].find(b=>b.textContent.includes("전체 내용")).click()');
     await wait('!!document.getElementById("ls2-section-9")');
     assert.ok(await ev('document.documentElement.scrollWidth<=innerWidth+1'));
