@@ -28,6 +28,8 @@ try{
   await ev(`document.querySelector('[class*=directChoice] summary').click()`);if(width===390)await shot('choose','[class*=checklist]',true);await press('선택 완료');
   const old=(await read()).records[1];await press('미리 복습 시작');await wait(`!!document.querySelector('dialog[open]')`);if(width===390)await shot('meta-ready','dialog',true);
   await press('시작');await wait(`document.querySelectorAll('[class*=metaChoices] button').length===2`);await fits();if(width===390)await shot('meta-question','[class*=quizCard]',true);
+  const current=await ev(`document.querySelector('[class*=bigHanja]').textContent`);
+  for(const order of ['random','oldest','weak']){await ev(`(()=>{const s=document.querySelector('select[aria-label="출제 순서"]');s.value='${order}';s.dispatchEvent(new Event('change',{bubbles:true}));})()`);await delay(80);assert.equal(await ev(`document.querySelector('[class*=bigHanja]').textContent`),current);}
   // Equal legacy stability sorts by ID: first is 日, correct first syllable 날.
   await press('날');await wait(`document.body.innerText.includes('정답 · 저장 완료')`);await fits();assert.deepEqual((await read()).records[1],old);if(width===390)await shot('meta-answer','[class*=quizAnswer]',true);
   await shot('answer-'+width);await ev(`document.querySelector('[class*=gradeButtons] button').click()`);await delay(150);await wait(`document.querySelectorAll('[class*=metaChoices] button').length===2`);
@@ -40,7 +42,9 @@ try{
   if(width===390)await shot('practice-complete','[class*=studyHome]',true);
   await press('회차 이어하기');await press('시작');assert.ok(!(await ev(`document.querySelector('[class*=bigHanja]').textContent`)).includes('日'));
   await press('복습 나가기');await press('오늘 학습');await press('새 글자 배우기');if(width===390)await shot('new-lesson','[class*=quizAnswer]',true);await fits();
-  await press('학습 안내');assert.ok(!(await ev('document.body.innerText')).includes('자율 학습에서는'));if(width===390){await ev(`Array.from(document.querySelectorAll('h3')).find(e=>e.textContent==='학습 기록 관리').scrollIntoView()`);await shot('backup','[class*=guideProse]',true);}
+  await press('학습 안내');assert.ok(!(await ev('document.body.innerText')).includes('자율 학습에서는'));
+  await wait(`Array.from(document.querySelectorAll('[class*=detailedGuide] details[open] img')).every(i=>i.complete&&i.naturalWidth>0)`);await shot('guide-'+width);
+  if(width===390){await ev(`Array.from(document.querySelectorAll('h3')).find(e=>e.textContent==='학습 기록 관리').scrollIntoView()`);await shot('backup','[class*=guideProse]',true);}
   console.log('PASS browser',width,height);
  }
  
