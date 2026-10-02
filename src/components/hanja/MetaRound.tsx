@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { hanjaBook } from '@/lib/hanja-book';
@@ -65,7 +65,7 @@ export default function MetaRound({ practice = false, reading, seconds, prepared
     {phase !== 'running' && <dialog ref={dialog} className={styles.metaDialog} aria-labelledby="meta-ready-title" onCancel={e => e.preventDefault()}>
       <h2 id="meta-ready-title">{phase === 'ready' ? '메타 학습 준비' : '학습 일시정지'}</h2>
       <p>{phase === 'ready' ? `한 글자당 ${seconds}초 · 훈음의 첫 글자 고르기` : '계속하기를 누르면 남은 시간부터 이어집니다.'}</p>
-      <p>{practice ? '이번 연습만 평가합니다. 원래 복습 일정은 바뀌지 않아요.' : '선택 또는 시간 초과 시 자동으로 평가·저장합니다.'}</p>
+      <p>{practice ? '예정 전 정답은 일정 유지, 오답은 10분 뒤 재학습으로 연결됩니다.' : '선택 또는 시간 초과 시 자동으로 평가·저장합니다.'}</p>
       <button autoFocus className={styles.primary} onClick={begin}>{phase === 'ready' ? '시작' : '계속하기'}</button>
     </dialog>}
   </>;

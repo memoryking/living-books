@@ -87,3 +87,10 @@
 .focusApp .recallSection>.direction{width:100%;max-width:430px;margin:8px auto;flex-shrink:0}
 @media(max-width:700px){.compactReader .readerHeader{padding-top:8px}}
 @media(max-height:600px){.focusApp .recallSection>.direction{margin:4px auto}}
+.planStrip { display:flex; flex-wrap:wrap; justify-content:center; gap:6px 20px; padding:10px 16px; color:#31574b; font-size:13px; }
+.roundHistory { max-height:190px; overflow:auto; text-align:left; width:min(100%,650px); padding:10px; }
+.roundHistory p { margin:6px 0; font-size:13px; }
+@media(max-width:600px){.planStrip{font-size:11px;gap:3px 10px}.roundHistory{max-height:120px}}
+/* Prevent centered grid overflow from hiding the beginning of short-screen home cards. */
+@media(max-width:700px){.focusApp .dailyHome{align-content:start}.focusApp .quickSelect{grid-template-columns:1fr 1fr}.focusApp .directChoice{grid-column:1/-1}.focusApp .directChoice>summary{padding:6px}.focusApp .studyHome{overflow-y:auto;justify-content:safe center}}
+@media(max-height:650px){.focusApp .dailyCard{gap:4px;padding:10px}.focusApp .dailyCard>small{line-height:1.35}.focusApp .upcomingReview{padding:6px}.focusApp .planStrip{padding:5px 8px}}

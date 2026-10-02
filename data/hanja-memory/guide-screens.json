@@ -1,106 +1,82 @@
 [
   {
-    "id": "writing",
-    "section": 7,
-    "title": "뜻과 음을 보고 직접 쓰기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/writing.png",
-    "width": 324,
-    "height": 384
-  },
-  {
-    "id": "writing-answer",
-    "section": 7,
-    "title": "내 글씨 뒤에 정답을 겹쳐 비교하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/writing-answer.png",
-    "width": 224,
-    "height": 274
-  },
-  {
-    "id": "backup",
-    "section": 10,
-    "title": "학습 기록 내보내기와 가져오기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T06-46-41-086Z/backup.png",
-    "width": 740,
-    "height": 386
-  },
-  {
-    "id": "new-lesson",
-    "section": 1,
-    "title": "새 글자의 그림과 암기법 배우기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T13-53-44-731Z/new-lesson.png",
-    "width": 696,
-    "height": 738
-  },
-  {
-    "id": "today",
-    "section": 2,
-    "title": "오늘 복습과 새 글자 학습 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-25T22-00-53-306Z/today.png",
-    "width": 764,
-    "height": 1186
-  },
-  {
-    "id": "today-complete",
-    "section": 5,
-    "title": "오늘 학습 완료 후 다음 복습 시각 안내",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/today-complete.png",
+    "id": "practice-complete",
+    "section": 6,
+    "title": "회차 최초 결과와 저장된 진행",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/practice-complete.png",
     "width": 370,
-    "height": 162
+    "height": 640
   },
   {
     "id": "meta-ready",
     "section": 4,
-    "title": "메타 학습 준비와 시작",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-ready.png",
+    "title": "첫 글자 메타 학습 준비",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/meta-ready.png",
     "width": 352,
     "height": 276
   },
   {
     "id": "meta-question",
-    "section": 4,
-    "title": "남은 시간과 훈음 첫 글자 선택",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-question.png",
-    "width": 368,
-    "height": 121
+    "section": 1,
+    "title": "첫 글자 두 선택지와 막대 타이머",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/meta-question.png",
+    "width": 370,
+    "height": 640
   },
   {
     "id": "meta-answer",
     "section": 4,
-    "title": "미리 복습의 자동 판정과 다음 문제",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/meta-answer.png",
-    "width": 336,
-    "height": 60
-  },
-  {
-    "id": "answer",
-    "section": 4,
-    "title": "정답 확인과 두 가지 자기평가",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-06-22-940Z/answer.png",
-    "width": 696,
-    "height": 144
-  },
-  {
-    "id": "practice-complete",
-    "section": 6,
-    "title": "미리 복습에서 틀린 한자만 바로 다시 확인",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/practice-complete.png",
-    "width": 370,
-    "height": 485
+    "title": "전체 훈음 확인과 자동 저장 결과",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/meta-answer.png",
+    "width": 368,
+    "height": 571
   },
   {
     "id": "select-list",
     "section": 3,
-    "title": "배운 한자의 범위를 고르고 미리 복습 시작",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/select-list.png",
-    "width": 680,
-    "height": 476
+    "title": "회차 범위를 고르고 시작하기",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/select-list.png",
+    "width": 370,
+    "height": 640
+  },
+  {
+    "id": "today",
+    "section": 2,
+    "title": "하루 계획과 지금 복습",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/today.png",
+    "width": 370,
+    "height": 681
+  },
+  {
+    "id": "new-lesson",
+    "section": 1,
+    "title": "새 글자의 그림과 암기법",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/new-lesson.png",
+    "width": 368,
+    "height": 674
   },
   {
     "id": "choose",
     "section": 3,
-    "title": "책갈피 범위를 골라 정답 없이 시험하기",
-    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-09-26T04-40-57-322Z/choose.png",
-    "width": 756,
-    "height": 914
+    "title": "훈음을 숨긴 체크박스와 기억 상태",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/choose.png",
+    "width": 366,
+    "height": 463
+  },
+  {
+    "id": "writing-answer",
+    "section": 7,
+    "title": "보조 쓰기 정답 겹쳐 비교",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/writing-answer.png",
+    "width": 100,
+    "height": 125
+  },
+  {
+    "id": "backup",
+    "section": 8,
+    "title": "학습 계획 조정과 백업 관리",
+    "url": "https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev/ebook/hanja-memory/guide/2026-10-02T21-49-33-724Z/backup.png",
+    "width": 358,
+    "height": 401
   }
 ]

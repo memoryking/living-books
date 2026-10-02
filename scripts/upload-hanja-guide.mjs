@@ -7,7 +7,7 @@ for(const name of ['R2_ACCOUNT_ID','R2_ACCESS_KEY_ID','R2_SECRET_ACCESS_KEY'])if
 const client=new S3Client({region:'auto',endpoint:`https://${env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com`,credentials:{accessKeyId:env.R2_ACCESS_KEY_ID,secretAccessKey:env.R2_SECRET_ACCESS_KEY}});
 const base=(env.R2_PUBLIC_URL || 'https://pub-d0d60c2fafe34c62a9d8993114fe64ca.r2.dev').replace(/\/$/,'');
 const batch=new Date().toISOString().replace(/[:.]/g,'-');
-const shots=[['practice-complete',6,'미리 복습에서 틀린 한자만 바로 다시 확인'],["today-complete",5,"오늘 학습 완료 후 다음 복습 시각 안내"],["meta-ready",4,"메타 학습 준비와 시작"],["meta-question",4,"남은 시간과 훈음 첫 글자 선택"],["meta-answer",4,"미리 복습의 자동 판정과 다음 문제"],['select-list',3,'배운 한자의 범위를 고르고 미리 복습 시작'],['today',2,'오늘 복습과 새 글자 학습 선택'],['new-lesson',1,'새 글자의 그림과 암기법 배우기'],['choose',3,'책갈피 범위를 골라 정답 없이 시험하기'],['answer',4,'정답 확인과 두 가지 자기평가'],['writing',7,'뜻과 음을 보고 직접 쓰기'],['writing-answer',7,'내 글씨 뒤에 정답을 겹쳐 비교하기'],['backup',10,'학습 기록 내보내기와 가져오기']];
+const shots=[['practice-complete',6,'회차 최초 결과와 저장된 진행'],['meta-ready',4,'첫 글자 메타 학습 준비'],['meta-question',1,'첫 글자 두 선택지와 막대 타이머'],['meta-answer',4,'전체 훈음 확인과 자동 저장 결과'],['select-list',3,'회차 범위를 고르고 시작하기'],['today',2,'하루 계획과 지금 복습'],['new-lesson',1,'새 글자의 그림과 암기법'],['choose',3,'훈음을 숨긴 체크박스와 기억 상태'],['writing-answer',7,'보조 쓰기 정답 겹쳐 비교'],['backup',8,'학습 계획 조정과 백업 관리']];
 const only=process.argv.slice(2);
 const manifest=only.length?JSON.parse(await fs.readFile('data/hanja-memory/guide-screens.json','utf8')).filter(s=>!only.includes(s.id)):[];
 for(const [id,section,title] of shots){
